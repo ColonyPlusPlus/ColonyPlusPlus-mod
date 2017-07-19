@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ColonyPlusPlus.classes
 {
-    class type
+    public class type
     {
 
         // The JSONNode that holds the data
