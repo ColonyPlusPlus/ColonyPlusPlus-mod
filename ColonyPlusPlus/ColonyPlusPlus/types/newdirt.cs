@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.types
         {
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
+            this.SideAll = "SELF";
 
             this.Register();
         }

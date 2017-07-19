@@ -19,19 +19,9 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
         public static void AfterAddingBaseTypes()
         {
-            /*ItemTypesServer.AddTextureMapping("ExampleBlock1", new JSONNode(NodeType.Object)
-                .SetAs("albedo", "grassTemperate")
-                .SetAs("normal", "stoneblock")
-                .SetAs("emissive", "ovenLitFront")
-                .SetAs("height", "oreCoal")
-            );
-
-            ItemTypesServer.AddTextureMapping("ExampleBlock2", new JSONNode(NodeType.Object)
-                .SetAs("albedo", "grindstone")
-                .SetAs("normal", "berrybush")
-                .SetAs("emissive", "torch")
-                .SetAs("height", "snow")
-            );*/
+            
+            // Register Materials
+            classes.MaterialManager.initialiseMaterials();
 
             // Register types
             classes.TypeManager.registerTypes();
@@ -42,7 +32,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer)]
         public static void AfterItemTypesServer()
         {
-
+            // Register Tracked Block Types (Wheat?)
             classes.TypeManager.registerTrackedTypes();
         }
 

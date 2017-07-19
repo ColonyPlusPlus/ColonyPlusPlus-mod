@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.classes
     {
         public static void registerTypes()
         {
+            Utilities.WriteLog("Starting To Add Types");
 
             // test dirt!
             types.newdirt newdirt = new types.newdirt("newdirt");
