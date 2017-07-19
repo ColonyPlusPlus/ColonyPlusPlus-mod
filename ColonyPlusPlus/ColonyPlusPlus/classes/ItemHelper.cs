@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.classes
 {
-    class ItemHelper
+    public class ItemHelper
     {
         public struct OnRemove
         {
@@ -18,25 +18,25 @@ namespace ColonyPlusPlus.classes
                 this.amount = amount;
                 this.chance = chance;
             }
-            public string GetType
+            public string Type
             {
                 get
                 {
-                    return type;
+                    return this.type;
                 }
             }
-            public int GetAmount
+            public int Amount
             {
                 get
                 {
-                    return amount;
+                    return this.amount;
                 }
             }
-            public float GetChance
+            public float Chance
             {
                 get
                 {
-                    return chance;
+                    return this.chance;
                 }
             }
         }

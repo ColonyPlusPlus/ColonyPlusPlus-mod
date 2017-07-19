@@ -41,6 +41,8 @@ namespace ColonyPlusPlus.classes
         private float _NutritionalValue;
         private ushort _MaxStackSize;
 
+        private List<ItemHelper.OnRemove> _OnRemove;
+
 
         // Constructor
         public Type(string name)
@@ -331,6 +333,29 @@ namespace ColonyPlusPlus.classes
             set
             {
                 this._TypeName = value;
+            }
+        }
+
+        public List<ItemHelper.OnRemove> OnRemove
+        {
+            get
+            {
+                return this._OnRemove;
+            } 
+            set
+            {
+                this.OnRemove = value;
+
+                // make the on remove node node
+                JSONNode orn = new JSONNode(NodeType.Array);
+
+                // iterate over the list of onRemove structs, and add them to nodes, which are added to the node list
+                foreach (var orItem in value)
+                {
+                    orn.Add(new JSONNode(NodeType.Object).SetAs("type", orItem.Type).SetAs("amount", orItem.Amount).SetAs("chance", orItem.Chance));
+                }
+
+                this.node.SetAs("onRemove", orn);
             }
         }
 
