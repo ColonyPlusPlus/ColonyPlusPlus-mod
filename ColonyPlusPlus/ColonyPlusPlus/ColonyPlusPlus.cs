@@ -9,6 +9,13 @@ namespace ColonyPlusPlus
     [ModLoader.ModManager]
     public class ColonyPlusPlus
     {
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAssemblyLoad)]
+        public static void AfterAssemblyLoad()
+        {
+            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.0.0");
+            
+        }
+
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
         public static void AfterAddingBaseTypes()
         {

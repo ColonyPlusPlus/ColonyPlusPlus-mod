@@ -355,12 +355,12 @@ namespace ColonyPlusPlus.classes
         // Add the block!
         public void Register()
         {
-            ItemTypesServer.ItemActionBuilder builder = new ItemTypesServer.ItemActionBuilder();
+            //ItemTypesServer.ItemActionBuilder builder = new ItemTypesServer.ItemActionBuilder().SetOnAdd(classes.typecodemanager.OnAdd).SetOnRemove(classes.typecodemanager.OnRemove);
 
             //.SetOnAdd(ExampleClassCodeManager.OnAdd)
             //    .SetOnRemove(ExampleClassCodeManager.OnRemove
 
-            ItemTypesServer.RegisterType(this.TypeName, builder);
+            ItemTypes.AddRawType(this.TypeName, this.node);
         }
     }
 }

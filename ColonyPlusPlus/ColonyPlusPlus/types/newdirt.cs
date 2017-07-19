@@ -16,7 +16,7 @@ namespace ColonyPlusPlus.types
 
         public void run()
         {
-            classes.Type nd = new classes.Type("nwedirt");
+            classes.Type nd = new classes.Type("newdirt");
 
             nd.OnPlaceAudio = "dirtPlace";
             nd.OnRemoveAudio = "grassDelete";
