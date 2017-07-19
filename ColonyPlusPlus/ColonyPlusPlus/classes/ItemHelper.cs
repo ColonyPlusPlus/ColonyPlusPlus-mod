@@ -18,17 +18,26 @@ namespace ColonyPlusPlus.classes
                 this.amount = amount;
                 this.chance = chance;
             }
-            public string GetType()
+            public string GetType
             {
-                return type;
+                get
+                {
+                    return type;
+                }
             }
-            public int GetAmount()
+            public int GetAmount
             {
-                return amount;
+                get
+                {
+                    return amount;
+                }
             }
-            public float GetChance()
+            public float GetChance
             {
-                return chance;
+                get
+                {
+                    return chance;
+                }
             }
         }
     }
