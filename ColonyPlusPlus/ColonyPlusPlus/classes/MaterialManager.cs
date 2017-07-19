@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.classes
     {
         public static void initialiseMaterials()
         {
-            Material m = new Material("newdirt", "clay", "clay", "neutral", "oreCoal");
+            Material m = new Material("newdirt", "clay", "neutral", "oreCoal", "clay");
         }
     }
 }
