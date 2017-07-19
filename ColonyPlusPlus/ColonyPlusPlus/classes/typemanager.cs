@@ -6,7 +6,7 @@ using ColonyPlusPlus.classes;
 
 namespace ColonyPlusPlus.classes
 {
-    public static class Typemanager
+    public static class TypeManager
     {
         public static void registerTypes()
         {

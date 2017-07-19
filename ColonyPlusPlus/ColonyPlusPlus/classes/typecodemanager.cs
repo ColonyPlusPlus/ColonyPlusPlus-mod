@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.classes
 {
-    public static class typecodemanager
+    public static class TypeCodeManager
     {
         public static void OnAdd(Vector3Int position, ushort newType, NetworkID causedBy)
         {

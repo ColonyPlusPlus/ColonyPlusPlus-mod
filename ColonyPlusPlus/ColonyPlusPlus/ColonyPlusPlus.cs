@@ -34,7 +34,7 @@ namespace ColonyPlusPlus
             );*/
 
             // Register types
-            classes.Typemanager.registerTypes();
+            classes.TypeManager.registerTypes();
 
 
         }
@@ -43,7 +43,7 @@ namespace ColonyPlusPlus
         public static void AfterItemTypesServer()
         {
 
-            classes.Typemanager.registerTrackedTypes();
+            classes.TypeManager.registerTrackedTypes();
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
