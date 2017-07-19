@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ColonyPlusPlus.classes
 {
@@ -343,6 +342,12 @@ namespace ColonyPlusPlus.classes
 
         // Overridable onAdd() function for events
         public virtual void onAdd()
+        {
+
+        }
+
+        // Overridable onChange() function for events
+        public virtual void onChange()
         {
 
         }

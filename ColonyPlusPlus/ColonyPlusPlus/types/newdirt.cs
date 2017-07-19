@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using ColonyPlusPlus.classes;
 
 namespace ColonyPlusPlus.types
@@ -10,7 +9,12 @@ namespace ColonyPlusPlus.types
     public class newdirt
     {
 
-        void run()
+        public newdirt()
+        {
+
+        }
+
+        public void run()
         {
             classes.Type nd = new classes.Type("nwedirt");
 
