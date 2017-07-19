@@ -361,7 +361,7 @@ namespace ColonyPlusPlus.classes
             //    .SetOnRemove(ExampleClassCodeManager.OnRemove
 
             ItemTypes.AddRawType(this.TypeName, this.node);
-            Pipliz.Log.Write("Added Type: " + this.TypeName);
+            Utilities.WriteLog("Added Type: " + this.TypeName);
         }
     }
 }
