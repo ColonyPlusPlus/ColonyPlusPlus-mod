@@ -17,7 +17,7 @@ namespace ColonyPlusPlus.classes
         private string _OnPlaceAudio;
         private string _OnRemoveAudio;
         private string _ParentType;
-        private string _SideAll;
+        private string _SideAll = "SELF";
         private string _SideXMinus;
         private string _SideXPlus;
         private string _SideYMinus;
@@ -41,7 +41,7 @@ namespace ColonyPlusPlus.classes
         private float _NutritionalValue;
         private ushort _MaxStackSize;
 
-        private List<ItemHelper.OnRemove> _OnRemove;
+        private ItemHelper.OnRemove[] _OnRemove;
 
 
         // Constructor
@@ -336,7 +336,7 @@ namespace ColonyPlusPlus.classes
             }
         }
 
-        public List<ItemHelper.OnRemove> OnRemove
+        public ItemHelper.OnRemove[] OnRemove
         {
             get
             {
@@ -344,15 +344,15 @@ namespace ColonyPlusPlus.classes
             } 
             set
             {
-                this.OnRemove = value;
+                this._OnRemove = value;
 
                 // make the on remove node node
                 JSONNode orn = new JSONNode(NodeType.Array);
 
                 // iterate over the list of onRemove structs, and add them to nodes, which are added to the node list
-                foreach (var orItem in value)
+                for (int i = 0; i < value.Length; i++)
                 {
-                    orn.Add(new JSONNode(NodeType.Object).SetAs("type", orItem.Type).SetAs("amount", orItem.Amount).SetAs("chance", orItem.Chance));
+                    orn.Add(new JSONNode(NodeType.Object).SetAs("type", value[i].Type).SetAs("amount", value[i].Amount).SetAs("chance", value[i].Chance));
                 }
 
                 this.node.SetAs("onRemove", orn);
