@@ -6,22 +6,15 @@ using ColonyPlusPlus.classes;
 
 namespace ColonyPlusPlus.types
 {
-    public class newdirt
+    public class newdirt : classes.Type
     {
 
-        public newdirt()
+        public newdirt(string name) : base(name)
         {
+            this.OnPlaceAudio = "dirtPlace";
+            this.OnRemoveAudio = "grassDelete";
 
-        }
-
-        public void run()
-        {
-            classes.Type nd = new classes.Type("newdirt");
-
-            nd.OnPlaceAudio = "dirtPlace";
-            nd.OnRemoveAudio = "grassDelete";
-
-            nd.Register();
+            this.Register();
         }
 
     }

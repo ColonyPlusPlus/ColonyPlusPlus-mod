@@ -12,8 +12,7 @@ namespace ColonyPlusPlus.classes
         {
 
             // test dirt!
-            types.newdirt newdirt = new types.newdirt();
-            newdirt.run();
+            types.newdirt newdirt = new types.newdirt("newdirt");
 
         }
 
