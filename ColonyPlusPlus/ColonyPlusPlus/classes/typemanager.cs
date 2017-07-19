@@ -12,8 +12,25 @@ namespace ColonyPlusPlus.classes
         {
             Utilities.WriteLog("Starting To Add Types");
 
-            // test dirt!
-            types.newdirt newdirt = new types.newdirt("newdirt");
+            // init items
+
+            // blocks
+            types.WildBerryBush wildBerryBush = new types.WildBerryBush("wildberrybush");
+            types.Sugarcane sugarcane = new types.Sugarcane("sugarcane");
+
+            // materials
+            types.Sugar sugar = new types.Sugar("sugar");
+            types.Salt salt = new types.Salt("salt");
+            types.Milk milk = new types.Milk("milk");
+            types.Egg egg = new types.Egg("egg");
+            types.Feather feather = new types.Feather("feather");
+
+            // recipe items
+            types.Cake cake = new types.Cake("cake");
+            types.JamBread jamBread = new types.JamBread("jambread");
+
+            // misc items
+            types.SugarcaneItem sugarcaneItem= new types.SugarcaneItem("sugarcaneitem");
 
         }
 
