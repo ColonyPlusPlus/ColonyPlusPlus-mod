@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ColonyPlusPlus.classes
 {
-    public class type
+    public class Type
     {
 
         // The JSONNode that holds the data
@@ -44,7 +44,7 @@ namespace ColonyPlusPlus.classes
 
 
         // Constructor
-        public type(string name)
+        public Type(string name)
         {
             this.TypeName = name;
         }
