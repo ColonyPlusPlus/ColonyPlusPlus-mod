@@ -8,13 +8,13 @@ namespace ColonyPlusPlus.classes
 {
     public class Material
     {
-        public Material(string identifier, string albedo, string normal, string emissive, string height)
+        public Material(string identifier, string albedo, string emissive, string height, string normal)
         {
             ItemTypesServer.AddTextureMapping(identifier, new JSONNode(NodeType.Object)
                 .SetAs("albedo", albedo)
-                .SetAs("normal", normal)
                 .SetAs("emissive", emissive)
                 .SetAs("height", height)
+                .SetAs("normal", normal)
             );
         }
     }
