@@ -15,29 +15,30 @@ namespace ColonyPlusPlus.classes
             // init items
 
             // blocks
-            types.WildBerryBush wildBerryBush = new types.WildBerryBush("wildberrybush");
-            types.Sugarcane sugarcane = new types.Sugarcane("sugarcane");
+            types.blocks.WildBerryBush wildBerryBush    = new types.blocks.WildBerryBush("wildberrybush");
+            types.blocks.Sugarcane sugarcane            = new types.blocks.Sugarcane("sugarcane");
+            types.blocks.VegetablePatch vegetablepatch  = new types.blocks.VegetablePatch("vegetablepatch");
 
             // materials
-            types.Carrot carrot = new types.Carrot("carrot");
-            types.Egg egg = new types.Egg("egg");
-            types.Feather feather = new types.Feather("feather");
-            types.Lettuce lettuce = new types.Lettuce("lettuce");
-            types.Milk milk = new types.Milk("milk");
-            types.Onion onion = new types.Onion("onion");
-            types.Potato potato = new types.Potato("potato");
-            types.Salt salt = new types.Salt("salt");
-            types.Sugar sugar = new types.Sugar("sugar");
+            types.items.Carrot carrot                   = new types.items.Carrot("carrot");
+            types.items.Egg egg                         = new types.items.Egg("egg");
+            types.items.Feather feather                 = new types.items.Feather("feather");
+            types.items.Lettuce lettuce                 = new types.items.Lettuce("lettuce");
+            types.items.Milk milk                       = new types.items.Milk("milk");
+            types.items.Onion onion                     = new types.items.Onion("onion");
+            types.items.Potato potato                   = new types.items.Potato("potato");
+            types.items.Salt salt                       = new types.items.Salt("salt");
+            types.items.Sugar sugar                     = new types.items.Sugar("sugar");
 
             // recipe items
-            types.Butter butter = new types.Butter("butter");
-            types.Cake cake = new types.Cake("cake");
-            types.Jam jam = new types.Jam("jam");
-            types.JamBread jamBread = new types.JamBread("jambread");
-            types.Omlette omlette = new types.Omlette("omlette");
+            types.items.Butter butter                   = new types.items.Butter("butter");
+            types.items.Cake cake                       = new types.items.Cake("cake");
+            types.items.Jam jam                         = new types.items.Jam("jam");
+            types.items.JamBread jamBread               = new types.items.JamBread("jambread");
+            types.items.Omlette omlette                 = new types.items.Omlette("omlette");
 
             // misc items
-            types.SugarcaneItem sugarcaneItem= new types.SugarcaneItem("sugarcaneitem");
+            types.items.SugarcaneItem sugarcaneItem     = new types..itemsSugarcaneItem("sugarcaneitem");
 
         }
 

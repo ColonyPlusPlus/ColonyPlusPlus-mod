@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.items
+namespace ColonyPlusPlus.types.blocks
 {
-    class Onion : classes.Type
+    class VegetablePatch : classes.Type
     {
-        public Onion(string name) : base(name)
+        public VegetablePatch(string name) : base(name)
         {
             this.Register();
         }

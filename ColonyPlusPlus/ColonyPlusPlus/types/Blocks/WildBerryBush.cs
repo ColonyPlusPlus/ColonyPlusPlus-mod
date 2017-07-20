@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types
+namespace ColonyPlusPlus.types.blocks
 {
     class WildBerryBush : classes.Type
     {
@@ -15,7 +15,6 @@ namespace ColonyPlusPlus.types
                 new classes.ItemHelper.OnRemove("berry",        5,  0.01f),
                 new classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
             };
-            this.SideAll = "wildberrybush";
             this.OnRemove = onRemoveNode;
             this.Register();
         }
