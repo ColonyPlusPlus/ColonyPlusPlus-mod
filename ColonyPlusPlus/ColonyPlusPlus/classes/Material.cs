@@ -6,9 +6,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.classes
 {
-    public class Material
+    public static class Material
     {
-        public Material(string identifier, string albedo, string emissive, string height, string normal)
+        public static void createMaterial(string identifier, string albedo, string emissive, string height, string normal)
         {
             ItemTypesServer.AddTextureMapping(identifier, new JSONNode(NodeType.Object)
                 .SetAs("albedo", albedo)

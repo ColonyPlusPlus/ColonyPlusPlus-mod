@@ -6,20 +6,18 @@ namespace ColonyPlusPlus.classes.Managers
     {
         public static void registerbaking()
         {
-            RecipeFueled i;
 
-            List<InventoryItem> reqs = new List<InventoryItem>();
-         
-            reqs.Add(new InventoryItem(ItemTypes.IndexLookup.GetIndex("berry"), 2));
-            reqs.Add(new InventoryItem(ItemTypes.IndexLookup.GetIndex("bread"), 1));
+            Recipe.AddRecipe("baking",
+                new List<InventoryItem> {
+                    Recipe.Item("berry", 2),
+                    Recipe.Item("bread", 1)
+                },
+                new List<InventoryItem> {
+                    Recipe.Item("jambread", 1)
+                },
+                0.0f);
 
-            List<InventoryItem> result = new List<InventoryItem>();
-            result.Add(new InventoryItem(ItemTypes.IndexLookup.GetIndex("jambread"), 1));
-
-
-            i = new RecipeFueled(0.0f, reqs, result);
-
-            RecipeBaking.AllRecipes.Add(i);
+           
         }
 
         public static void registercrafting()

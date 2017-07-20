@@ -4,7 +4,7 @@
     {
         public static void initialiseMaterials()
         {
-            Material m = new Material("wildberrybush", "wildberrybush", "neutral", "berrybush", "berrybush");
+            Material.createMaterial("wildberrybush", "wildberrybush", "neutral", "berrybush", "berrybush");
         }
     }
 }

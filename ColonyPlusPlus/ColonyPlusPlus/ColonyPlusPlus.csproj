@@ -47,12 +47,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\type.cs" />
-    <Compile Include="classes\typecodemanager.cs" />
-    <Compile Include="classes\typemanager.cs" />
+    <Compile Include="classes\ItemHelper.cs" />
+    <Compile Include="classes\Managers\BlockManager.cs" />
+    <Compile Include="classes\Managers\ItemManager.cs" />
+    <Compile Include="classes\Managers\MaterialManager.cs" />
+    <Compile Include="classes\Managers\RecipeManager.cs" />
+    <Compile Include="classes\Material.cs" />
+    <Compile Include="classes\Recipe.cs" />
+    <Compile Include="classes\Type.cs" />
+    <Compile Include="classes\TypeCodeManager.cs" />
+    <Compile Include="classes\TypeManager.cs" />
+    <Compile Include="classes\Utilities.cs" />
     <Compile Include="ColonyPlusPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="types\newdirt.cs" />
+    <Compile Include="types\Blocks\BirdNest.cs" />
+    <Compile Include="types\Blocks\Sugarcane.cs" />
+    <Compile Include="types\Blocks\VegetablePatch.cs" />
+    <Compile Include="types\Blocks\WildBerryBush.cs" />
+    <Compile Include="types\Items\BakedPotato.cs" />
+    <Compile Include="types\Items\Butter.cs" />
+    <Compile Include="types\Items\Cake.cs" />
+    <Compile Include="types\Items\Carrot.cs" />
+    <Compile Include="types\Items\Cheese.cs" />
+    <Compile Include="types\Items\Egg.cs" />
+    <Compile Include="types\Items\Feather.cs" />
+    <Compile Include="types\Items\Jam.cs" />
+    <Compile Include="types\Items\JamBread.cs" />
+    <Compile Include="types\Items\Lettuce.cs" />
+    <Compile Include="types\Items\Milk.cs" />
+    <Compile Include="types\Items\Omlette.cs" />
+    <Compile Include="types\Items\Onion.cs" />
+    <Compile Include="types\Items\Potato.cs" />
+    <Compile Include="types\Items\Salt.cs" />
+    <Compile Include="types\Items\Sugar.cs" />
+    <Compile Include="types\Items\SugarcaneItem.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
