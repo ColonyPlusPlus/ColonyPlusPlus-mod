@@ -12,6 +12,11 @@ namespace ColonyPlusPlus.types.items
         {
             this.Register();
 
+            
+        }
+
+        public override void AddRecipes()
+        {
             RecipeManager.AddRecipe("grinding",
                 new List<InventoryItem> {
                     RecipeManager.Item("sugarcaneitem", 1)
@@ -20,6 +25,8 @@ namespace ColonyPlusPlus.types.items
                     RecipeManager.Item("sugar", 1)
                 },
                 0.0f);
+
+            classes.Utilities.WriteLog("Custom recipe");
         }
     }
 }

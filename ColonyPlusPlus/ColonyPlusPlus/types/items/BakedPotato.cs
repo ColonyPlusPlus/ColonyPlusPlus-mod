@@ -13,6 +13,12 @@ namespace ColonyPlusPlus.types.items
             this.NutritionalValue = 1.0f;
             this.Register();
 
+            
+        }
+
+        public override void AddRecipes()
+        {
+            
             RecipeManager.AddRecipe("baking",
                 new List<InventoryItem> {
                     RecipeManager.Item("potato", 2),

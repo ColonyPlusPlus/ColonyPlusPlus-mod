@@ -10,10 +10,12 @@ namespace ColonyPlusPlus.classes.Managers
         public static void register()
         {
             classes.Utilities.WriteLog("Starting To Register Items");
+            
             // init items
 
             // materials
             types.items.Carrot carrot                               = new types.items.Carrot("carrot");
+            types.items.Cheese cheese                               = new types.items.Cheese("cheese");
             types.items.Egg egg                                     = new types.items.Egg("egg");
             types.items.Feather feather                             = new types.items.Feather("feather");
             types.items.Lettuce lettuce                             = new types.items.Lettuce("lettuce");

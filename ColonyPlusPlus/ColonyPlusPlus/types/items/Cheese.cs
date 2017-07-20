@@ -11,7 +11,10 @@ namespace ColonyPlusPlus.types.items
         public Cheese(string name) : base(name)
         {
             this.Register();
+        }
 
+        public override void AddRecipes()
+        {
             RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
                     RecipeManager.Item("milk", 2)

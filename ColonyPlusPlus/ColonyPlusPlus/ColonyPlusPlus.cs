@@ -38,6 +38,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
         public static void AfterWorldLoad()
         {
+            classes.Managers.RecipeManager.BuildRecipeList();
             classes.Managers.RecipeManager.ProcessRecipes();
             //Stockpile.AddToInitialPile()
         }

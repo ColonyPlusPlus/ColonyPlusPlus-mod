@@ -6,6 +6,8 @@ namespace ColonyPlusPlus.classes.Managers
     {
 
         public static List<Recipe> recipeList = new List<Recipe>();
+        public static List<classes.Type> TypesThatHaveRecipes = new List<classes.Type>();
+
         public static int recipesAdded = 0;
 
 
@@ -16,6 +18,15 @@ namespace ColonyPlusPlus.classes.Managers
             return true;
         }
 
+        public static void BuildRecipeList()
+        {
+            foreach (Type t in TypesThatHaveRecipes)
+            {
+
+                
+                t.AddRecipes();
+            }
+        }
 
         public static void ProcessRecipes()
         {

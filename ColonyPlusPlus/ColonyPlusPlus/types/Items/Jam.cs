@@ -12,6 +12,10 @@ namespace ColonyPlusPlus.types.items
         {
             this.Register();
 
+        }
+
+        public override void AddRecipes()
+        {
             RecipeManager.AddRecipe("baking",
                 new List<InventoryItem> {
                     RecipeManager.Item("berry", 1),

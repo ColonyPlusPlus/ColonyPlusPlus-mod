@@ -52,6 +52,7 @@ namespace ColonyPlusPlus.classes
             // set default sideall
             this._SideAll = "SELF";
             this.node.SetAs("sideall", "SELF");
+            this.AddRecipeCallback();
         }
 
         // Getters & Setters
@@ -381,6 +382,17 @@ namespace ColonyPlusPlus.classes
 
         }
 
+        // base Add Recipes function
+        public virtual void AddRecipes()
+        {
+
+        }
+
+        public void AddRecipeCallback()
+        {
+            classes.Managers.RecipeManager.TypesThatHaveRecipes.Add(this);
+        }
+
         // Add the block!
         public void Register()
         {
@@ -391,6 +403,8 @@ namespace ColonyPlusPlus.classes
 
             ItemTypes.AddRawType(this.TypeName, this.node);
             Utilities.WriteLog("Added Type: " + this.TypeName);
+
+            
         }
     }
 }
