@@ -29,7 +29,7 @@ namespace ColonyPlusPlus.classes.Managers
             types.items.Jam jam                                     = new types.items.Jam("jam");
             types.items.JamBread jamBread                           = new types.items.JamBread("jambread");
             types.items.Omlette omlette                             = new types.items.Omlette("omlette");
-            types.items.Omlette bakedpotato                         = new types.items.Omlette("bakedpotato");
+            types.items.BakedPotato bakedpotato                     = new types.items.BakedPotato("bakedpotato");
 
             // misc items
             types.items.SugarcaneItem sugarcaneItem                 = new types.items.SugarcaneItem("sugarcaneitem");
