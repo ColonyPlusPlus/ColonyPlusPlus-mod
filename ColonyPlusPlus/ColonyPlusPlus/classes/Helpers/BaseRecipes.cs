@@ -53,7 +53,7 @@ namespace ColonyPlusPlus.classes
                     RecipeManager.Item("stonebricks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("furance", 1)
+                    RecipeManager.Item("furnace", 1)
                 },
                 0.0f, true);
 
@@ -170,13 +170,13 @@ namespace ColonyPlusPlus.classes
 				    RecipeManager.Item("flax", 5)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("lineseedoil", 1)
+                    RecipeManager.Item("linseedoil", 1)
                 },
                 0.0f, true);
 			
             RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-				    RecipeManager.Item("lineseedoil", 1),
+				    RecipeManager.Item("linseedoil", 1),
 				    RecipeManager.Item("planks", 1)
                 },
                 new List<InventoryItem> {
@@ -186,7 +186,7 @@ namespace ColonyPlusPlus.classes
 			
             RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-				    RecipeManager.Item("lineseedoil", 1),
+				    RecipeManager.Item("linseedoil", 1),
 				    RecipeManager.Item("dirt", 1)
                 },
                 new List<InventoryItem> {
