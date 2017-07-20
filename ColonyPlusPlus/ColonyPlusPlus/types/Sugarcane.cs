@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.types
                 new classes.ItemHelper.OnRemove("sugarcaneitem", 2, 0.5f)
             };
 
-            //this.OnRemove = onRemoveNode;
+            this.OnRemove = onRemoveNode;
             //classes.Utilities.WriteLog(onRemoveNode.ToString());
 
             this.Register();

@@ -352,7 +352,7 @@ namespace ColonyPlusPlus.classes
                 // iterate over the list of onRemove structs, and add them to nodes, which are added to the node list
                 for (int i = 0; i < value.Length; i++)
                 {
-                    orn.Add(new JSONNode(NodeType.Object).SetAs("type", value[i].Type).SetAs("amount", value[i].Amount).SetAs("chance", value[i].Chance));
+                    orn.AddToArray(new JSONNode(NodeType.Object).SetAs("type", value[i].Type).SetAs("amount", value[i].Amount).SetAs("chance", value[i].Chance));
                 }
 
                 this.node.SetAs("onRemove", orn);
