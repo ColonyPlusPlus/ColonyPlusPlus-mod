@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.types
                 new classes.ItemHelper.OnRemove("berry",        5,  0.01f),
                 new classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
             };
-
+            this.SideAll = "wildberrybush";
             this.OnRemove = onRemoveNode;
             this.Register();
         }
