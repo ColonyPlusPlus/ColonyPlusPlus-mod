@@ -47,7 +47,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\ItemHelper.cs" />
+    <Compile Include="classes\Helpers\BaseRecipes.cs" />
+    <Compile Include="classes\Helpers\ItemHelper.cs" />
     <Compile Include="classes\Managers\BlockManager.cs" />
     <Compile Include="classes\Managers\ItemManager.cs" />
     <Compile Include="classes\Managers\MaterialManager.cs" />
@@ -57,7 +58,7 @@
     <Compile Include="classes\Type.cs" />
     <Compile Include="classes\TypeCodeManager.cs" />
     <Compile Include="classes\TypeManager.cs" />
-    <Compile Include="classes\Utilities.cs" />
+    <Compile Include="classes\Helpers\Utilities.cs" />
     <Compile Include="ColonyPlusPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="types\Blocks\BirdNest.cs" />

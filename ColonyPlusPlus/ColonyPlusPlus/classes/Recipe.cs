@@ -16,7 +16,7 @@ namespace ColonyPlusPlus.classes
         private string type;
 
 
-        public Recipe(string type, List<InventoryItem> requirements, List<InventoryItem> results, float fuelCost = 0.0f, bool npcCraftable = false)
+        public Recipe(string type, List<InventoryItem> requirements, List<InventoryItem> results, float fuelCost = 0.0f, bool npcCraftable = true)
         {
             this.Type = type;
             this.Requirements = requirements;

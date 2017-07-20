@@ -58,6 +58,8 @@ namespace ColonyPlusPlus.classes.Managers
 
                         break;
                 }
+
+                
             }
 
             Utilities.WriteLog("Added " + recipesAdded + " recipes");
@@ -67,6 +69,20 @@ namespace ColonyPlusPlus.classes.Managers
         public static InventoryItem Item(string name, int num)
         {
             return new InventoryItem(ItemTypes.IndexLookup.GetIndex(name), num);
+        }
+
+
+        
+        public static void AddBaseRecipes()
+        {
+            BaseRecipes br = new BaseRecipes();
+
+            br.AddCraftingRecipes();
+            br.AddBakingRecipes();
+            br.AddGrindingRecipes();
+            br.AddMintingRecipes();
+            br.AddShoppingRecipes();
+            br.AddSmeltingRecipes();
         }
     }
 }
