@@ -12,7 +12,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAssemblyLoad)]
         public static void AfterAssemblyLoad()
         {
-            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.0.0");
+            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.0.14");
             
         }
 

@@ -12,5 +12,17 @@ namespace ColonyPlusPlus.types.items
         {
             this.Register();
         }
+
+        public override void AddRecipes()
+        {
+            RecipeManager.AddRecipe("shopping",
+                new List<InventoryItem> {
+                    RecipeManager.Item("goldcoin", 2)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("feather", 1)
+                },
+                0.0f);
+        }
     }
 }
