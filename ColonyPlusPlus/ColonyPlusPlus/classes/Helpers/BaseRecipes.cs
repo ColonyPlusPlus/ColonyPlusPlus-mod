@@ -8,7 +8,9 @@ namespace ColonyPlusPlus.classes
 {
     public class BaseRecipes
     {
-        //Crafting Recipes
+        /// <summary>
+        /// Add basegame crafting recipes
+        /// </summary>
         public void AddCraftingRecipes()
         {
             RecipeManager.AddRecipe("crafting",
@@ -230,7 +232,7 @@ namespace ColonyPlusPlus.classes
         // Baking Recipes
         public void AddBakingRecipes()
         {
-            RecipeManager.AddRecipe("grinding",
+            RecipeManager.AddRecipe("baking",
                 new List<InventoryItem> {
                     RecipeManager.Item("flour", 5)
                 },

@@ -8,14 +8,14 @@ namespace ColonyPlusPlus.classes
     public class Recipe
     {
 
-
+        // Private lists of requirements and results and other needed privates
         private List<InventoryItem> requirements;
         private List<InventoryItem> results;
         private float fuelCost;
         private bool npcCraftable;
         private string type;
 
-
+        // Constructor to assign these on initialisation
         public Recipe(string type, List<InventoryItem> requirements, List<InventoryItem> results, float fuelCost = 0.0f, bool npcCraftable = true)
         {
             this.Type = type;
@@ -25,6 +25,7 @@ namespace ColonyPlusPlus.classes
             this.NPCCraftable = npcCraftable;
         }
 
+        // Getters and Setters
         public string Type
         {
             get

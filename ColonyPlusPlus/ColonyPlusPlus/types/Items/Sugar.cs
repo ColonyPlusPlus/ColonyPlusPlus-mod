@@ -26,7 +26,7 @@ namespace ColonyPlusPlus.types.items
                 },
                 0.0f);
 
-            classes.Utilities.WriteLog("Custom recipe");
+            
         }
     }
 }

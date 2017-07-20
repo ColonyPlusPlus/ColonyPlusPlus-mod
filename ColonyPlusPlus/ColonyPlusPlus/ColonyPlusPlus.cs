@@ -41,7 +41,6 @@ namespace ColonyPlusPlus
             classes.Managers.RecipeManager.AddBaseRecipes();
             classes.Managers.RecipeManager.BuildRecipeList();
             classes.Managers.RecipeManager.ProcessRecipes();
-            //Stockpile.AddToInitialPile()
         }
     }
 }

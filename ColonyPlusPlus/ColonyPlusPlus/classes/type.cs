@@ -41,6 +41,7 @@ namespace ColonyPlusPlus.classes
         private float _NutritionalValue;
         private ushort _MaxStackSize;
 
+        // Array of OnRemove structs
         private ItemHelper.OnRemove[] _OnRemove;
 
 
@@ -52,6 +53,12 @@ namespace ColonyPlusPlus.classes
             // set default sideall
             this._SideAll = "SELF";
             this.node.SetAs("sideall", "SELF");
+
+            // set default isplacable 
+            this._IsPlaceable = false;
+            this.node.SetAs("isPlacable", false);
+
+            // Register the callback to add recipes
             this.AddRecipeCallback();
         }
 
@@ -396,12 +403,17 @@ namespace ColonyPlusPlus.classes
         // Add the block!
         public void Register()
         {
-            //ItemTypesServer.ItemActionBuilder builder = new ItemTypesServer.ItemActionBuilder().SetOnAdd(classes.typecodemanager.OnAdd).SetOnRemove(classes.typecodemanager.OnRemove);
 
+            // NOT YET IMPLEMENTED
+            //ItemTypesServer.ItemActionBuilder builder = new ItemTypesServer.ItemActionBuilder().SetOnAdd(classes.typecodemanager.OnAdd).SetOnRemove(classes.typecodemanager.OnRemove);
             //.SetOnAdd(ExampleClassCodeManager.OnAdd)
             //    .SetOnRemove(ExampleClassCodeManager.OnRemove
 
+
+            // Add the item
             ItemTypes.AddRawType(this.TypeName, this.node);
+
+            // Tell the user it was added
             Utilities.WriteLog("Added Type: " + this.TypeName);
 
             

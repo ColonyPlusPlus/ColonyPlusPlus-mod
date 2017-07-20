@@ -2,6 +2,9 @@
 {
     public static class MaterialManager
     {
+        /// <summary>
+        /// Function to initialise new materials
+        /// </summary>
         public static void initialiseMaterials()
         {
             Material.createMaterial("wildberrybush", "wildberrybush", "neutral", "berrybush", "berrybush");

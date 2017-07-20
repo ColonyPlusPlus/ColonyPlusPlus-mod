@@ -7,8 +7,12 @@ namespace ColonyPlusPlus.classes.Managers
 {
     class ItemManager
     {
+        /// <summary>
+        /// Register all the items
+        /// </summary>
         public static void register()
         {
+            // Tell the player what we're doing
             classes.Utilities.WriteLog("Starting To Register Items");
             
             // init items
