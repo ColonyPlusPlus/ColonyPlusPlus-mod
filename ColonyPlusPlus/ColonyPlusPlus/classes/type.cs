@@ -17,7 +17,7 @@ namespace ColonyPlusPlus.classes
         private string _OnPlaceAudio;
         private string _OnRemoveAudio;
         private string _ParentType;
-        private string _SideAll = "SELF";
+        private string _SideAll;
         private string _SideXMinus;
         private string _SideXPlus;
         private string _SideYMinus;
@@ -48,6 +48,10 @@ namespace ColonyPlusPlus.classes
         public Type(string name)
         {
             this.TypeName = name;
+
+            // set default sideall
+            this._SideAll = "SELF";
+            this.node.SetAs("sideall", value);
         }
 
         // Getters & Setters
