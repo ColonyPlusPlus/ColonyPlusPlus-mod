@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.types.blocks
                 new classes.ItemHelper.OnRemove("feather", 3, 0.5f),
                 new classes.ItemHelper.OnRemove("egg", 3, 0.5f)
             };
+
             this.Register();
         }
     }

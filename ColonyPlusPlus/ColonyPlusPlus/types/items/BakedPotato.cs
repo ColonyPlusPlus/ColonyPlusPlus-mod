@@ -12,8 +12,6 @@ namespace ColonyPlusPlus.types.items
         {
             this.NutritionalValue = 1.0f;
             this.Register();
-
-            
         }
 
         public override void AddRecipes()
