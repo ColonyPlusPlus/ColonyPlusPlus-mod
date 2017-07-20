@@ -5,7 +5,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.types
 {
-    class Jame
+    class Jam : classes.Type
     {
+        public Jam(string name) : base(name)
+        {
+            this.Register();
+        }
     }
 }

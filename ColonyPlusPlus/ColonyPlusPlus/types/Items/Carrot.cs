@@ -5,7 +5,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.types
 {
-    class Carrot
+    class Carrot : classes.Type
     {
+        public Carrot(string name) : base(name)
+        {
+            this.Register();
+        }
     }
 }
