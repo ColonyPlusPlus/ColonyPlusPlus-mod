@@ -56,7 +56,7 @@ namespace ColonyPlusPlus.classes
 
             // set default isplacable 
             this._IsPlaceable = false;
-            this.node.SetAs("isPlacable", false);
+            this.node.SetAs("isPlaceable", false);
 
             // Register the callback to add recipes
             this.AddRecipeCallback();
