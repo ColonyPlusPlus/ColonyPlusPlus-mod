@@ -2,42 +2,71 @@
 
 namespace ColonyPlusPlus.classes.Managers
 {
-    class RecipeManager
+    public static class RecipeManager
     {
-        public static void registerbaking()
+
+        public static List<Recipe> recipeList = new List<Recipe>();
+        public static int recipesAdded = 0;
+
+
+        public static bool AddRecipe(string type, List<InventoryItem> reqs, List<InventoryItem> result, float fuelAmount = 0.0f, bool npcCraft = false)
         {
-
-            Recipe.AddRecipe("baking",
-                new List<InventoryItem> {
-                    Recipe.Item("berry", 2),
-                    Recipe.Item("bread", 1)
-                },
-                new List<InventoryItem> {
-                    Recipe.Item("jambread", 1)
-                },
-                0.0f);
-
-           
+            Recipe r = new Recipe(type, reqs, result, fuelAmount, npcCraft);
+            recipeList.Add(r);
+            return true;
         }
 
-        public static void registercrafting()
+
+        public static void ProcessRecipes()
         {
+            foreach (Recipe RecipeInstance in recipeList)
+            {
+                switch (RecipeInstance.Type.ToLower())
+                {
+                    case "crafting":
+                        RecipeCraftingStatic.AllRecipes.Add(new RecipeCrafting(RecipeInstance.NPCCraftable, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+                    case "smelting":
+                        RecipeSmelting.AllRecipes.Add(new RecipeFueled(0.0f, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+                    case "minting":
+                        RecipeMinting.AllRecipes.Add(new RecipeCrafting(RecipeInstance.NPCCraftable, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+                    case "grinding":
+                        RecipeGrinding.AllRecipes.Add(new RecipeCrafting(RecipeInstance.NPCCraftable, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+                    case "shopping":
+                        RecipeShopping.AllRecipes.Add(new RecipeCrafting(RecipeInstance.NPCCraftable, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+                    case "baking":
+                        RecipeBaking.AllRecipes.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+                    default:
+                        Utilities.WriteLog("Unable to create recipe of type " + RecipeInstance.Type + " - invalid type");
+
+                        break;
+                }
+            }
+
+            Utilities.WriteLog("Added " + recipesAdded + " recipes");
+
         }
 
-        public static void registergrinding()
+        public static InventoryItem Item(string name, int num)
         {
-        }
-
-        public static void registerminting()
-        {
-        }
-
-        public static void registershopping()
-        {
-        }
-
-        public static void registersmeling()
-        {
+            return new InventoryItem(ItemTypes.IndexLookup.GetIndex(name), num);
         }
     }
 }

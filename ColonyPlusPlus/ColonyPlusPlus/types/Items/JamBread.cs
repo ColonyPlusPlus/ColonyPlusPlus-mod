@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ColonyPlusPlus.classes.Managers;
 
 namespace ColonyPlusPlus.types.items
 {
@@ -11,6 +12,16 @@ namespace ColonyPlusPlus.types.items
         {
             this.NutritionalValue = 1.0f;
             this.Register();
+
+            RecipeManager.AddRecipe("baking",
+                new List<InventoryItem> {
+                    RecipeManager.Item("berry", 2),
+                    RecipeManager.Item("bread", 1)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("jambread", 1)
+                },
+                0.0f);
         }
     }
 }

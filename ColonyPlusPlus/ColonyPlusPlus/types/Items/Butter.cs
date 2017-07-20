@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ColonyPlusPlus.classes.Managers;
 
 namespace ColonyPlusPlus.types.items
 {
@@ -10,6 +11,15 @@ namespace ColonyPlusPlus.types.items
         public Butter(string name) : base(name)
         {
             this.Register();
+
+            RecipeManager.AddRecipe("crafting",
+                new List<InventoryItem> {
+                    RecipeManager.Item("milk", 2)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("butter", 1)
+                },
+                0.0f);
         }
     }
 }
