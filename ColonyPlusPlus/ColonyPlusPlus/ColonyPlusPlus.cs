@@ -21,14 +21,11 @@ namespace ColonyPlusPlus
         {
             
             // Register Materials
-            classes.MaterialManager.initialiseMaterials();
+            classes.Managers.MaterialManager.initialiseMaterials();
 
             // Register types
-            classes.Managers.BlockManager.registerTypes();
-            classes.Managers.ItemManager.registerTypes();
-            classes.TypeManager.registerTypes();
-
-
+            classes.Managers.BlockManager.register();
+            classes.Managers.ItemManager.register();
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer)]
@@ -41,7 +38,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
         public static void AfterWorldLoad()
         {
-
+            classes.Managers.RecipeManager.registerbaking();
             //Stockpile.AddToInitialPile()
         }
     }

@@ -9,6 +9,7 @@ namespace ColonyPlusPlus.types.items
     {
         public Omlette(string name) : base(name)
         {
+            this.NutritionalValue = 1.0f;
             this.Register();
         }
     }

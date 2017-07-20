@@ -8,12 +8,6 @@ namespace ColonyPlusPlus.classes
 {
     public static class TypeManager
     {
-        public static void registerTypes()
-        {
-
-
-        }
-
         public static void registerTrackedTypes()
         {
             /*

@@ -7,7 +7,7 @@ namespace ColonyPlusPlus.classes.Managers
 {
     class BlockManager
     {
-        public static void registerTypes()
+        public static void register()
         {
             classes.Utilities.WriteLog("Starting To Register Blocks");
 

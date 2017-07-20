@@ -7,7 +7,7 @@ namespace ColonyPlusPlus.classes.Managers
 {
     class ItemManager
     {
-        public static void registerTypes()
+        public static void register()
         {
             classes.Utilities.WriteLog("Starting To Register Items");
             // init items
@@ -31,7 +31,7 @@ namespace ColonyPlusPlus.classes.Managers
             types.items.Omlette omlette                             = new types.items.Omlette("omlette");
 
             // misc items
-            types.items.SugarcaneItem sugarcaneItem                 = new types.items.itemsSugarcaneItem("sugarcaneitem");
+            types.items.SugarcaneItem sugarcaneItem                 = new types.items.SugarcaneItem("sugarcaneitem");
         }
     }
 }
