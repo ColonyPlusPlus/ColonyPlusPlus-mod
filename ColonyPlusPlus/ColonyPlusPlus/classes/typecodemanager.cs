@@ -10,6 +10,13 @@ namespace ColonyPlusPlus.classes
 {
     public static class TypeCodeManager
     {
+
+        /// <summary>
+        /// NOT YET IMPLEMENTED
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="newType"></param>
+        /// <param name="causedBy"></param>
         public static void OnAdd(Vector3Int position, ushort newType, NetworkID causedBy)
         {
             Chat.Send(causedBy, string.Format("You placed block {0} at {1}", ItemTypes.IndexLookup.GetName(newType), position));
