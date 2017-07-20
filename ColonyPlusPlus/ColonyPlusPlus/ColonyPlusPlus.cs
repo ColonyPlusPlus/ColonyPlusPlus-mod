@@ -2,7 +2,7 @@
 using Pipliz.Chatting;
 using Pipliz.JSON;
 using Pipliz.Threading;
-
+using ColonyPlusPlus;
 
 namespace ColonyPlusPlus
 {
@@ -24,6 +24,8 @@ namespace ColonyPlusPlus
             classes.MaterialManager.initialiseMaterials();
 
             // Register types
+            classes.Managers.BlockManager.registerTypes();
+            classes.Managers.ItemManager.registerTypes();
             classes.TypeManager.registerTypes();
 
 
