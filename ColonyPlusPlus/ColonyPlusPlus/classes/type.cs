@@ -51,7 +51,7 @@ namespace ColonyPlusPlus.classes
 
             // set default sideall
             this._SideAll = "SELF";
-            this.node.SetAs("sideall", value);
+            this.node.SetAs("sideall", "SELF");
         }
 
         // Getters & Setters
