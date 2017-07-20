@@ -16,6 +16,8 @@ namespace ColonyPlusPlus.types.blocks
                 new classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
             };
             this.OnRemove = onRemoveNode;
+            this.OnPlaceAudio = "dirtPlace";
+            this.OnRemoveAudio = "grassDelete";
             this.Register();
         }
     }

@@ -16,7 +16,9 @@ namespace ColonyPlusPlus.types.blocks
             };
 
             this.OnRemove = onRemoveNode;
-            //classes.Utilities.WriteLog(onRemoveNode.ToString());
+
+            this.OnPlaceAudio = "dirtPlace";
+            this.OnRemoveAudio = "grassDelete";
 
             this.Register();
         }

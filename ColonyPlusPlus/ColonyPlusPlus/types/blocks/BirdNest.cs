@@ -10,7 +10,8 @@ namespace ColonyPlusPlus.types.blocks
         public BirdNest(string name) : base(name)
         {
             classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("feather", 3, 0.5f)
+                new classes.ItemHelper.OnRemove("feather", 3, 0.5f),
+                new classes.ItemHelper.OnRemove("egg", 3, 0.5f)
             };
             this.Register();
         }
