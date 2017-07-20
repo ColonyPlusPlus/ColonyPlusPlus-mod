@@ -5,6 +5,7 @@
         public static void initialiseMaterials()
         {
             Material.createMaterial("wildberrybush", "wildberrybush", "neutral", "berrybush", "berrybush");
+            Material.createMaterial("vegetablepatch", "leavesTemperate", "neutral", "leavesTemperate", "leavesTemperate");
         }
     }
 }

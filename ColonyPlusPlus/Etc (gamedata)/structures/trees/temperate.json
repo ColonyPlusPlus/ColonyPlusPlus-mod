@@ -39,5 +39,15 @@
 			"tree" : "wildberrybush",
 			"chance" : 0.0222
 		}
+
+		{
+			"tree" : "vegetablepatch",
+			"chance" : 0.0222
+		}
+
+		{
+			"tree" : "sugarcane",
+			"chance" : 0.0222
+		}
 	]
 }
