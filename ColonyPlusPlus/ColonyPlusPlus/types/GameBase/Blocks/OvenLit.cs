@@ -22,36 +22,36 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         }
     }
 
-    class OverLitxPlus : classes.Type
+    class OvenLitxPlus : classes.Type
     {
-        public OverLitxPlus(string name) : base(name)
+        public OvenLitxPlus(string name) : base(name)
         {
             this.ParentType = "ovenlit";
             this.SideXPlus = "ovenlitfront";
             this.Register();
         }
     }
-    class OverLitxMinus : classes.Type
+    class OvenLitxMinus : classes.Type
     {
-        public OverLitxMinus(string name) : base(name)
+        public OvenLitxMinus(string name) : base(name)
         {
             this.ParentType = "ovenlit";
             this.SideXMinus = "ovenlitfront";
             this.Register();
         }
     }
-    class OverLitzPlus : classes.Type
+    class OvenLitzPlus : classes.Type
     {
-        public OverLitzPlus(string name) : base(name)
+        public OvenLitzPlus(string name) : base(name)
         {
             this.ParentType = "ovenlit";
             this.SideZPlus = "ovenlitfront";
             this.Register();
         }
     }
-    class OverLitzMinus : classes.Type
+    class OvenLitzMinus : classes.Type
     {
-        public OverLitzMinus(string name) : base(name)
+        public OvenLitzMinus(string name) : base(name)
         {
             this.ParentType = "ovenlit";
             this.SideZMinus = "ovenlitfront";

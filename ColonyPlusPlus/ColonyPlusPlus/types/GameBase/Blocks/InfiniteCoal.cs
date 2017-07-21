@@ -6,9 +6,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.types.GameBase.Blocks
 {
-    class infinitecoal : classes.Type
+    class infiniteCoal : classes.Type
     {
-        public infinitecoal(string name) : base(name)
+        public infiniteCoal(string name) : base(name)
         {
             this.OnRemoveAudio = "stoneDelete";
             this.DestructionTime = 1250;
