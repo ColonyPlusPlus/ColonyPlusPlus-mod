@@ -31,6 +31,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public QuiverxPlus(string name) : base(name)
         {
             this.ParentType = "quiver";
+            this.SideAll = "quiverarrow";
             this.Mesh = "quiverx+";
             this.Register();
         }
@@ -40,6 +41,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public QuiverxMinus(string name) : base(name)
         {
             this.ParentType = "quiver";
+            this.SideAll = "quiverarrow";
             this.Mesh = "quiverx-";
             this.Register();
         }
@@ -49,6 +51,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public QuiverzPlus(string name) : base(name)
         {
             this.ParentType = "quiver";
+            this.SideAll = "quiverarrow";
             this.Mesh = "quiverz+";
             this.Register();
         }
@@ -58,6 +61,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public QuiverzMinus(string name) : base(name)
         {
             this.ParentType = "quiver";
+            this.SideAll = "quiverarrow";
             this.Mesh = "quiverz-";
             this.Register();
         }

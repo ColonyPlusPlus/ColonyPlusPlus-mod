@@ -371,7 +371,7 @@ namespace ColonyPlusPlus.classes
             set
             {
                 this._IsAutoRotatable = value;
-                this.node.SetAs("isAutoRotatable", value);
+                this.node.SetAs("isRotatable", value);
             }
         }
 

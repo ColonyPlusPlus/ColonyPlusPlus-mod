@@ -16,7 +16,8 @@ namespace ColonyPlusPlus.types.blocks
             };
 
             this.OnRemove = onRemoveNode;
-            
+
+            this.Mesh = "sugarcane";
             this.OnRemoveAudio = "grassDelete";
 
             this.Register();

@@ -21,6 +21,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.RotatableZPlus = "ovenz+";
             this.RotatableZMinus = "ovenz-";
             this.IsPlaceable = true;
+            this.IsAutoRotatable = true;
 
             CustomDataItem[] customData = {
                 new CustomDataItem("volume", 0.2f),
@@ -42,6 +43,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public OvenxPlus(string name) : base(name)
         {
             this.ParentType = "oven";
+            this.SideAll = "stonebricks";
             this.SideXPlus = "ovenunlitfront";
             this.Register();
         }
@@ -51,6 +53,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public OvenxMinus(string name) : base(name)
         {
             this.ParentType = "oven";
+            this.SideAll = "stonebricks";
             this.SideXMinus = "ovenunlitfront";
             this.Register();
         }
@@ -60,6 +63,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public OvenzPlus(string name) : base(name)
         {
             this.ParentType = "oven";
+            this.SideAll = "stonebricks";
             this.SideZPlus = "ovenunlitfront";
             this.Register();
         }
@@ -69,6 +73,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public OvenzMinus(string name) : base(name)
         {
             this.ParentType = "oven";
+            this.SideAll = "stonebricks";
             this.SideZMinus = "ovenunlitfront";
             this.Register();
         }

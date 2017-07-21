@@ -28,6 +28,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public OvenLitxPlus(string name) : base(name)
         {
             this.ParentType = "ovenlit";
+            this.SideAll = "stonebricks";
             this.SideXPlus = "ovenlitfront";
             this.Register();
         }
@@ -37,6 +38,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public OvenLitxMinus(string name) : base(name)
         {
             this.ParentType = "ovenlit";
+            this.SideAll = "stonebricks";
             this.SideXMinus = "ovenlitfront";
             this.Register();
         }
@@ -46,6 +48,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public OvenLitzPlus(string name) : base(name)
         {
             this.ParentType = "ovenlit";
+            this.SideAll = "stonebricks";
             this.SideZPlus = "ovenlitfront";
             this.Register();
         }
@@ -55,6 +58,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public OvenLitzMinus(string name) : base(name)
         {
             this.ParentType = "ovenlit";
+            this.SideAll = "stonebricks";
             this.SideZMinus = "ovenlitfront";
             this.Register();
         }

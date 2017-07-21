@@ -37,6 +37,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.ParentType = "torch";
             this.Mesh = "torchx+";
+            this.SideAll = "torch";
             this.Register();
         }
     }
@@ -46,6 +47,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.ParentType = "torch";
             this.Mesh = "torchx-";
+            this.SideAll = "torch";
             this.Register();
         }
     }
@@ -56,6 +58,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.ParentType = "torch";
             this.NeedsBase = true;
             this.Mesh = "torchy+";
+            this.SideAll = "torch";
             this.Register();
         }
     }
@@ -65,6 +68,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.ParentType = "torch";
             this.Mesh = "torchz+";
+            this.SideAll = "torch";
             this.Register();
         }
     }
@@ -74,6 +78,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.ParentType = "torch";
             this.Mesh = "torchz-";
+            this.SideAll = "torch";
             this.Register();
         }
     }

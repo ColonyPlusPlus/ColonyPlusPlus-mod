@@ -29,6 +29,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public BedxPlus(string name) : base(name)
         {
             this.ParentType = "bed";
+            this.SideAll = "bed";
             this.Mesh = "bedx+";
             this.Register();
         }
@@ -38,6 +39,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public BedxMinus(string name) : base(name)
         {
             this.ParentType = "bed";
+            this.SideAll = "bed";
             this.Mesh = "bedx-";
             this.Register();
         }
@@ -47,6 +49,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public BedzPlus(string name) : base(name)
         {
             this.ParentType = "bed";
+            this.SideAll = "bed";
             this.Mesh = "bedz+";
             this.Register();
         }
@@ -56,6 +59,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public BedzMinus(string name) : base(name)
         {
             this.ParentType = "bed";
+            this.SideAll = "bed";
             this.Mesh = "bedz-";
             this.Register();
         }

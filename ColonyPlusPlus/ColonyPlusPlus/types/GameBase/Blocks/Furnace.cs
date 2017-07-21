@@ -58,6 +58,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public FurnancexPlus(string name) : base(name)
         {
             this.ParentType = "furnace";
+            this.SideAll = "furnaceside";
             this.SideXPlus = "furnaceunlitfront";
             this.Register();
         }
@@ -67,6 +68,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public FurnancexMinus(string name) : base(name)
         {
             this.ParentType = "furnace";
+            this.SideAll = "furnaceside";
             this.SideXMinus = "furnaceunlitfront";
             this.Register();
         }
@@ -76,6 +78,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public FurnancezPlus(string name) : base(name)
         {
             this.ParentType = "furnace";
+            this.SideAll = "furnaceside";
             this.SideZPlus = "furnaceunlitfront";
             this.Register();
         }
@@ -85,6 +88,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public FurnancezMinus(string name) : base(name)
         {
             this.ParentType = "furnace";
+            this.SideAll = "furnaceside";
             this.SideZMinus = "furnaceunlitfront";
             this.Register();
         }
