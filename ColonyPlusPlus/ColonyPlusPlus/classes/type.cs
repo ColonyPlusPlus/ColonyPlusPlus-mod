@@ -266,8 +266,8 @@ namespace ColonyPlusPlus.classes
             }
             set
             {
-                this._Icon = value;
-                this.node.SetAs("icon", value);
+                this._Icon = value + ".png";
+                this.node.SetAs("icon", value + ".png");
             }
         }
 
@@ -279,8 +279,8 @@ namespace ColonyPlusPlus.classes
             }
             set
             {
-                this._Mesh = value;
-                this.node.SetAs("mesh", value);
+                this._Mesh = value + ".obj";
+                this.node.SetAs("mesh", value + ".obj");
             }
         }
 
