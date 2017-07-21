@@ -17,6 +17,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.OnRemove = onRemoveNode;
             this.ParentType = "wheatstage";
             this.SideAll = "wheatwheat";
+            this.Mesh = "wheatstage2";
 
             this.Register();
         }

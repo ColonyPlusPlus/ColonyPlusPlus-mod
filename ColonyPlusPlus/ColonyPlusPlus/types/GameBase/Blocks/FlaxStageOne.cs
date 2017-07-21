@@ -9,12 +9,15 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
     {
         public FlaxStageOne(string name) : base(name)
         {
+            this.ParentType = "flaxstage";
+            this.NPCLimit = 100;
+            this.Mesh = "flaxstage1";
+
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("flaxstage1",   1,  0.8f)
             };
             this.OnRemove = onRemoveNode;
-            this.ParentType = "flaxstage";
-            this.NPCLimit = 100;
+
             this.Register();
         }
     }
