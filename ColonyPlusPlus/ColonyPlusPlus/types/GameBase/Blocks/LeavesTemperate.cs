@@ -16,6 +16,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "leaves";
+            this.IsPlaceable = true;
             this.Register();
         }
     }
