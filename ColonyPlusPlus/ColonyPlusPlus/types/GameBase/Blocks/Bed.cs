@@ -15,6 +15,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.IsSolid = false;
             this.NeedsBase = true;
             this.NPCLimit = 0;
+            this.IsPlaceable = true;
             this.Register();
         }
     }

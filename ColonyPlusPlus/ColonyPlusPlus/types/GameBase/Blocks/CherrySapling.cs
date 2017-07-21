@@ -15,6 +15,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.OnRemoveAudio = "grassDelete";
             this.SideAll = "sappling";
             this.NPCLimit = 0;
+            this.IsPlaceable = true;
             this.Register();
         }
     }

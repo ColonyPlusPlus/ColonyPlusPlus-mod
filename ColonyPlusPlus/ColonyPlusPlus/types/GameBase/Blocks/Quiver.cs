@@ -17,6 +17,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.IsAutoRotatable = true;
             this.NeedsBase = true;
             this.IsSolid = false;
+            this.IsPlaceable = true;
             this.Register();
         }
     }

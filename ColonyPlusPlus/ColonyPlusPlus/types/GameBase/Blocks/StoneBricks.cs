@@ -12,6 +12,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.DestructionTime = 600;
             this.OnPlaceAudio = "stonePlace";
             this.OnRemoveAudio = "stoneDelete";
+            this.IsPlaceable = true;
             this.Register();
         }
     }
