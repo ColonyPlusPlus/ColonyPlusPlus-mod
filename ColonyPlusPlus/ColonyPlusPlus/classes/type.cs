@@ -24,7 +24,13 @@ namespace ColonyPlusPlus.classes
         private string _SideYPlus;
         private string _SideZMinus;
         private string _SideZPlus;
+        private string _RotatableXMinus;
+        private string _RotatableXPlus;
+        private string _RotatableZMinus;
+        private string _RotatableZPlus;
         private string _TypeName;
+        private string _Icon;
+        private string _Mesh;
 
         private int _NPCLimit;
 		private int _OnRemoveAmount;
@@ -56,6 +62,10 @@ namespace ColonyPlusPlus.classes
             // set default sideall
             this._SideAll = "SELF";
             this.node.SetAs("sideall", "SELF");
+
+            // set defualt icon
+            this._Icon = name + ".png";
+            this.node.SetAs("icon", this._Icon);
 
             // set default isplacable 
             this._IsPlaceable = false;
@@ -193,6 +203,84 @@ namespace ColonyPlusPlus.classes
             {
                 this._SideZPlus = value;
                 this.node.SetAs("sidez+", value);
+            }
+        }
+
+        public string RotatableXMinus
+        {
+            get
+            {
+                return this._RotatableXMinus;
+            }
+            set
+            {
+                this._RotatableXMinus = value;
+                this.node.SetAs("rotatablex-", value);
+            }
+        }
+
+        public string RotatableXPlus
+        {
+            get
+            {
+                return this._RotatableXPlus;
+            }
+            set
+            {
+                this._RotatableXPlus = value;
+                this.node.SetAs("rotatablex+", value);
+            }
+        }
+
+        public string RotatableZMinus
+        {
+            get
+            {
+                return this._RotatableZMinus;
+            }
+            set
+            {
+                this._RotatableZMinus = value;
+                this.node.SetAs("rotatablez-", value);
+            }
+        }
+
+        public string RotatableZPlus
+        {
+            get
+            {
+                return this._RotatableZPlus;
+            }
+            set
+            {
+                this._RotatableZPlus = value;
+                this.node.SetAs("rotatablez+", value);
+            }
+        }
+
+        public string Icon
+        {
+            get
+            {
+                return this._Icon;
+            }
+            set
+            {
+                this._Icon = value;
+                this.node.SetAs("icon", value);
+            }
+        }
+
+        public string Mesh
+        {
+            get
+            {
+                return this._Mesh;
+            }
+            set
+            {
+                this._Mesh = value;
+                this.node.SetAs("mesh", value);
             }
         }
 
