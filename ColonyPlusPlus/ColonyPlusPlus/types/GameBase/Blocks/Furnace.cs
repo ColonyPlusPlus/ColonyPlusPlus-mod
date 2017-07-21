@@ -18,6 +18,10 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.SideXPlus = "furnacelitfront";
             this.DestructionTime = 800;
             this.NPCLimit = 0;
+            this.RotatableXPlus = "furnacex+";
+            this.RotatableXMinus = "furnacex-";
+            this.RotatableZPlus = "furnacez+";
+            this.RotatableZMinus = "furnacez-";
 
             CustomDataItem[] customDataUp = {
                 new CustomDataItem("volume", 0.3f),
@@ -45,6 +49,42 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             tempCustomDataNode.SetAs("side", cs.customDataNode);
             this.CustomData = tempCustomDataNode;
 
+            this.Register();
+        }
+    }
+    class FurnancexPlus : classes.Type
+    {
+        public FurnancexPlus(string name) : base(name)
+        {
+            this.ParentType = "furnace";
+            this.SideXPlus = "furnaceunlitfront";
+            this.Register();
+        }
+    }
+    class FurnancexMinus : classes.Type
+    {
+        public FurnancexMinus(string name) : base(name)
+        {
+            this.ParentType = "furnace";
+            this.SideXMinus = "furnaceunlitfront";
+            this.Register();
+        }
+    }
+    class FurnancezPlus : classes.Type
+    {
+        public FurnancezPlus(string name) : base(name)
+        {
+            this.ParentType = "furnace";
+            this.SideZPlus = "furnaceunlitfront";
+            this.Register();
+        }
+    }
+    class FurnancezMinus : classes.Type
+    {
+        public FurnancezMinus(string name) : base(name)
+        {
+            this.ParentType = "furnace";
+            this.SideZMinus = "furnaceunlitfront";
             this.Register();
         }
     }

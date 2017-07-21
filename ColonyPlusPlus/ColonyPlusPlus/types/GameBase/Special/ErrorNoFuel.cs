@@ -10,7 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Special
         public ErrorNoFuel(string name) : base(name)
         {
             this.ParentType = "missingerror";
-            this.icon = "errorNoFuel.png";
+            this.Icon = "errorNoFuel";
             this.Register();
         }
     }

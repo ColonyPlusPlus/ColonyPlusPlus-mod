@@ -11,10 +11,10 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.ParentType = "bed";
             this.IsAutoRotatable = true;
-            this.RotatablexPlus = "bedendx+";
-            this.RotatablexMinus = "bedendx-";
-            this.RotatablezPlus = "bedendz+";
-            this.RotatablezMinus = "bedendz-";
+            this.RotatableXPlus = "bedendx+";
+            this.RotatableXMinus = "bedendx-";
+            this.RotatableZPlus = "bedendz+";
+            this.RotatableZMinus = "bedendz-";
             this.Register();
         }
     }
@@ -24,7 +24,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public BedendxPlus(string name) : base(name)
         {
             this.ParentType = "bedend";
-            this.Mesh = "bedendx+.obj";
+            this.Mesh = "bedendx+";
             this.Register();
         }
     }
@@ -33,7 +33,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public BedendxMinus(string name) : base(name)
         {
             this.ParentType = "bedend";
-            this.Mesh = "bedendx-.obj";
+            this.Mesh = "bedendx-";
             this.Register();
         }
     }
@@ -42,7 +42,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public BedendzPlus(string name) : base(name)
         {
             this.ParentType = "bedend";
-            this.Mesh = "bedendz+.obj";
+            this.Mesh = "bedendz+";
             this.Register();
         }
     }
@@ -51,7 +51,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public BedendzMinus(string name) : base(name)
         {
             this.ParentType = "bedend";
-            this.Mesh = "bedendz-.obj";
+            this.Mesh = "bedendz-";
             this.Register();
         }
     }

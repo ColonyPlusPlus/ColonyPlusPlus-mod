@@ -10,7 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Special
         public ErrorNoPath(string name) : base(name)
         {
             this.ParentType = "missingerror";
-            this.icon = "errorNoPath.png";
+            this.Icon = "errorNoPath";
             this.Register();
         }
     }

@@ -10,7 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Special
         public ErrorIdle(string name) : base(name)
         {
             this.ParentType = "missingerror";
-            this.icon = "errorIdle.png";
+            this.Icon = "errorIdle";
             this.Register();
         }
     }
