@@ -9,11 +9,6 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
     {
         public Workbench(string name) : base(name)
         {
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("workbench",   1,  1.0f)
-            };
-            this.OnRemove = onRemoveNode;
-
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
             this.SideAll = "planks";

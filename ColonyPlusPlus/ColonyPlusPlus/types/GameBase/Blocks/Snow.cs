@@ -9,10 +9,6 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
     {
         public Snow(string name) : base(name)
         {
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("snow",         1,  1.0f)
-            };
-            this.OnRemove = onRemoveNode;
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
             this.IsPlaceable = true;
