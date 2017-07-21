@@ -11,6 +11,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.IsSolid = false;
             this.NeedsBase = true;
+            this.IsPlaceable = true;
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "grassDelete";
             this.MaxStackSize = 1200;

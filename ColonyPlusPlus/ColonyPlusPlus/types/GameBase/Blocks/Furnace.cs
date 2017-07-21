@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.OnPlaceAudio = "stonePlace";
             this.OnRemoveAudio = "stoneDelete";
             this.IsAutoRotatable = true;
+            this.IsPlaceable = true;
             this.SideAll = "furnaceside";
             this.SideYPlus = "furnacelittop";
             this.SideXPlus = "furnacelitfront";

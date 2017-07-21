@@ -11,6 +11,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.ParentType = "furnace";
             this.IsAutoRotatable = true;
+            this.IsPlaceable = true;
             this.SideAll = "furnaceside";
             this.SideXPlus = "furnacelitfront";
             this.SideYPlus = "furnacelittop";

@@ -14,6 +14,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "grassDelete";
             this.Mesh = "sapling";
+            this.Icon = "sapling";
             this.Register();
         }
     }

@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.OnRemoveAudio = "woodDeleteLight";
             this.SideAll = "planks";
             this.SideYPlus = "shop";
+            this.IsPlaceable = true;
             this.NPCLimit = 0;
             this.Register();
         }

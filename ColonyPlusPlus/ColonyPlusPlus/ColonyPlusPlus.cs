@@ -17,11 +17,6 @@ namespace ColonyPlusPlus
             
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnected)]
-        public static void OnPlaterConnected(Player p)
-        {
-            Chat.Send(p.ID, "Welcome to ColonyPlusPlus, the first mod for Colony Survival to implement the new Modding API. If you have any questions please see our Steam Forum thread or the GitHub repository.");
-        }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
         public static void AfterAddingBaseTypes()

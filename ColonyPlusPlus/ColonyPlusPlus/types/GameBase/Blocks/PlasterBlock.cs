@@ -12,6 +12,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.OnRemoveAudio = "dirtPlace";
             this.OnPlaceAudio = "dirtPlace";
             this.NPCLimit = 0;
+            this.IsPlaceable = true;
             this.Register();
         }
     }

@@ -14,6 +14,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.SideAll = "planks";
             this.SideYPlus = "grindstone";
             this.NPCLimit = 0;
+            this.IsPlaceable = true;
             this.Register();
         }
     }

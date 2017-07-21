@@ -84,10 +84,10 @@ namespace ColonyPlusPlus.classes.Managers
             types.GameBase.Blocks.OvenzMinus ovenzminus                 = new types.GameBase.Blocks.OvenzMinus("ovenz-");
             types.GameBase.Blocks.OvenzPlus ovenzplus                   = new types.GameBase.Blocks.OvenzPlus("ovenz+");
             types.GameBase.Blocks.OvenLit ovenlit                       = new types.GameBase.Blocks.OvenLit("ovenlit");
-            types.GameBase.Blocks.OvenLitxMinus ovenLitxminus           = new types.GameBase.Blocks.OvenLitxMinus("ovenLitx-");
-            types.GameBase.Blocks.OvenLitxPlus ovenLitxplus             = new types.GameBase.Blocks.OvenLitxPlus("ovenLitx+");
-            types.GameBase.Blocks.OvenLitzMinus ovenLitzminus           = new types.GameBase.Blocks.OvenLitzMinus("ovenLitz-");
-            types.GameBase.Blocks.OvenLitzPlus ovenLitzplus             = new types.GameBase.Blocks.OvenLitzPlus("ovenLitz+");
+            types.GameBase.Blocks.OvenLitxMinus ovenLitxminus           = new types.GameBase.Blocks.OvenLitxMinus("ovenlitx-");
+            types.GameBase.Blocks.OvenLitxPlus ovenLitxplus             = new types.GameBase.Blocks.OvenLitxPlus("ovenlitx+");
+            types.GameBase.Blocks.OvenLitzMinus ovenLitzminus           = new types.GameBase.Blocks.OvenLitzMinus("ovenlitz-");
+            types.GameBase.Blocks.OvenLitzPlus ovenLitzplus             = new types.GameBase.Blocks.OvenLitzPlus("ovenlitz+");
             types.GameBase.Blocks.Planks planks                         = new types.GameBase.Blocks.Planks("planks");
             types.GameBase.Blocks.PlasterBlock plasterblock             = new types.GameBase.Blocks.PlasterBlock("plasterblock");
             types.GameBase.Blocks.Quiver quiver                         = new types.GameBase.Blocks.Quiver("quiver");

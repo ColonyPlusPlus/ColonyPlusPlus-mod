@@ -20,6 +20,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.RotatableXMinus = "ovenx-";
             this.RotatableZPlus = "ovenz+";
             this.RotatableZMinus = "ovenz-";
+            this.IsPlaceable = true;
 
             CustomDataItem[] customData = {
                 new CustomDataItem("volume", 0.2f),

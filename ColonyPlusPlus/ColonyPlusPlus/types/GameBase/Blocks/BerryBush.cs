@@ -11,6 +11,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
+            this.IsPlaceable = true;
             this.NPCLimit = 0;
             this.Register();
         }
