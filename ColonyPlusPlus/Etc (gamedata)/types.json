@@ -1,0 +1,141 @@
+{
+	"banner" : {
+		"onRemoveAudio" : "woodDeleteLight",
+		"onPlaceAudio" : "woodPlace",
+		"onRemoveAmount" : 0,
+		"isSolid" : false,
+		"needsBase" : true,
+		"sideall" : "SELF",
+		"customData" : {
+			"farShadows" : true
+		}
+	},
+	"torch" : {
+		"onRemoveAudio" : "woodDeleteLight",
+		"onPlaceAudio" : "woodPlace",
+		"maxStackSize" : 600,
+		"sideall" : "SELF",
+		"isSolid" : false,
+		"npcLimit" : 0,
+		"customData" : {
+			"volume" : 0.5,
+			"intensity" : 12.5,
+			"range" : 16.0,
+			"red" : 195.0,
+			"green" : 135.0,
+			"blue" : 46.0
+		}
+	},
+	"furnace" : {
+		"onPlaceAudio" : "stonePlace",
+		"onRemoveAudio" : "stoneDelete",
+		"isAutoRotatable" : true,
+		"sideall" : "furnaceside",
+		"sidey+" : "furnaceunlittop",
+		"sidex+" : "furnaceunlitfront",
+		"destructionTime" : 800,
+		"npcLimit" : 0,
+		"customData" : {
+			"up" : {
+				"volume" : 0.3,
+				"intensity" : 2.5,
+				"range" : 8.0,
+				"red" : 195.0,
+				"green" : 135.0,
+				"blue" : 46.0
+			},
+			"side" : {
+				"volume" : 0.2,
+				"intensity" : 1.0,
+				"range" : 8.0,
+				"red" : 195.0,
+				"green" : 135.0,
+				"blue" : 46.0
+			}
+		}
+	},
+	"oven" : {
+		"onPlaceAudio" : "stonePlace",
+		"onRemoveAudio" : "stoneDelete",
+		"isAutoRotatable" : true,
+		"sideall" : "stonebricks",
+		"sidex+" : "ovenunlitfront",
+		"destructionTime" : 800,
+		"npcLimit" : 0,
+		"customData" : {
+			"volume" : 0.2,
+			"intensity" : 2.0,
+			"range" : 8.0,
+			"red" : 195.0,
+			"green" : 135.0,
+			"blue" : 46.0
+		}
+	},
+	"infinitegold" : {
+		"onRemoveType" : "goldore",
+		"onRemoveAudio" : "stoneDelete",
+		"destructionTime" : 5000,
+		"sideall" : "SELF",
+		"isDestructible" : false,
+		"customData" : {
+			"minerIsMineable" : true,
+			"minerMiningTime" : 8.0
+		}
+	},
+	"infiniteclay" : {
+		"onRemoveType" : "clay",
+		"onRemoveAudio" : "stoneDelete",
+		"destructionTime" : 1250,
+		"sideall" : "SELF",
+		"isDestructible" : false,
+		"customData" : {
+			"minerIsMineable" : true,
+			"minerMiningTime" : 8.0
+		}
+	},
+	"infiniteiron" : {
+		"onRemoveType" : "ironore",
+		"onRemoveAudio" : "stoneDelete",
+		"destructionTime" : 1250,
+		"sideall" : "SELF",
+		"isDestructible" : false,
+		"customData" : {
+			"minerIsMineable" : true,
+			"minerMiningTime" : 8.0
+		}
+	},
+	"infinitegypsum" : {
+		"onRemoveType" : "gypsum",
+		"onRemoveAmount" : 5,
+		"onRemoveAudio" : "stoneDelete",
+		"destructionTime" : 1250,
+		"sideall" : "SELF",
+		"isDestructible" : false,
+		"customData" : {
+			"minerIsMineable" : true,
+			"minerMiningTime" : 8.0
+		}
+	},
+	"infinitecoal" : {
+		"onRemoveType" : "coalore",
+		"isDestructible" : false,
+		"sideall" : "SELF",
+		"destructionTime" : 1250,
+		"onRemoveAudio" : "stoneDelete",
+		"customData" : {
+			"minerIsMineable" : true,
+			"minerMiningTime" : 8.0
+		}
+	},
+	"infinitestone" : {
+		"onRemoveType" : "stonebricks",
+		"onRemoveAudio" : "stoneDelete",
+		"destructionTime" : 1250,
+		"sideall" : "SELF",
+		"isDestructible" : false,
+		"customData" : {
+			"minerIsMineable" : true,
+			"minerMiningTime" : 3.0
+		}
+	},
+}
