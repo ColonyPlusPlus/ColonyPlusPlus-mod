@@ -424,6 +424,7 @@ namespace ColonyPlusPlus.classes
 
         }
 
+		// create a callback to the RecipeManager to have it attempt to generate recipes
         public void AddRecipeCallback()
         {
             classes.Managers.RecipeManager.TypesThatHaveRecipes.Add(this);
