@@ -33,6 +33,21 @@ namespace ColonyPlusPlus.classes
 			}
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:ColonyPlusPlus.classes.CustomDataHelper"/> class with child nodes
+		/// </summary>
+		/// <param name="childnodes">Childnodes.</param>
+		public CustomDataHelper(string name, CustomDataItem[] childnodes)
+		{
+			Pipliz.JSON.JSONNode customChildNode = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
+			foreach (CustomDataItem c in childnodes)
+			{
+				customChildNode = c.getCustomData(customChildNode);
+			}
+
+			customDataNode.SetAs(name, customChildNode);
+		}
+
 		// blah = new CustomDataHelper("itemname", "someitem");
 		// blah = new CustomDataHelper({ new CustomDataItem("childname", "childvalue"), new CustomDataItem("childname2", true) });
 
