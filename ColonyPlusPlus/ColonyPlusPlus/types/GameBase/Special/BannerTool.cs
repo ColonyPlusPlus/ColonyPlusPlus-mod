@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBaseItems
+namespace ColonyPlusPlus.types.GameBase.Special
 {
-    class Air : classes.Type
+    class BannerTool : classes.Type
     {
-        public Air(string name) : base(name)
+        public BannerTool(string name) : base(name)
         {
-            this.IsSolid = false;
             this.Register();
         }
     }

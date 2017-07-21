@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBaseItems
+namespace ColonyPlusPlus.types.GameBase.Items
 {
-    class Grass : classes.Type
+    class Straw : classes.Type
     {
-        public Grass(string name) : base(name)
+        public Straw(string name) : base(name)
         {
-            this.IsFertile = true;
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "dirtPlace";
+            this.MaxStackSize = 100;
             this.Register();
         }
     }

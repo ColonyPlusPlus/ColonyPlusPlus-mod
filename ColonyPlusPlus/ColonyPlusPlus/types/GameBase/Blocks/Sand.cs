@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBaseItems
+namespace ColonyPlusPlus.types.GameBase.Blocks
 {
     class Sand : classes.Type
     {
@@ -16,6 +16,7 @@ namespace ColonyPlusPlus.types.GameBaseItems
 
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "dirtPlace";
+            this.IsPlaceable = true;
             this.Register();
             
         }

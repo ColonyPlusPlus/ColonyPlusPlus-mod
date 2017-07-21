@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBaseItems
+namespace ColonyPlusPlus.types.GameBase.Blocks
 {
     class GrassTemperate : classes.Type
     {
@@ -18,6 +18,7 @@ namespace ColonyPlusPlus.types.GameBaseItems
 
             this.ParentType = "grass";
             this.NPCLimit = 0;
+            this.IsPlaceable = true;
 
             this.Register();
         }
