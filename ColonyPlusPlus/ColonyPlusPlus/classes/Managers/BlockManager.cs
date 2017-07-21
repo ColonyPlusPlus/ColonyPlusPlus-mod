@@ -60,6 +60,7 @@ namespace ColonyPlusPlus.classes.Managers
             types.GameBase.Blocks.Snow snow                             = new types.GameBase.Blocks.Snow("snow");
             types.GameBase.Blocks.StoneBlock stoneblock                 = new types.GameBase.Blocks.StoneBlock("stoneblock");
             types.GameBase.Blocks.StoneBricks stonebricks               = new types.GameBase.Blocks.StoneBricks("stonebricks");
+            types.GameBase.Blocks.Torch torch                           = new types.GameBase.Blocks.Torch("torch");
             types.GameBase.Blocks.TorchxMinus torchxMinus               = new types.GameBase.Blocks.TorchxMinus("torchx-");
             types.GameBase.Blocks.TorchxPlus torchxPlus                 = new types.GameBase.Blocks.TorchxPlus("torchx+");
             types.GameBase.Blocks.TorchyPlus torchyPlus                 = new types.GameBase.Blocks.TorchyPlus("torchy+");
