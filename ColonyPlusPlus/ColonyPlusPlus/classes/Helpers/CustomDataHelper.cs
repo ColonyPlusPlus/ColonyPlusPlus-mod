@@ -33,11 +33,14 @@ namespace ColonyPlusPlus.classes
 			}
 		}
 
+		// NOT YET IMPLEMENTED
 		/// <summary>
 		/// Initializes a new instance of the <see cref="T:ColonyPlusPlus.classes.CustomDataHelper"/> class with child nodes
 		/// </summary>
+		/// <param name="name">The name to give the node</param>
 		/// <param name="childnodes">Childnodes.</param>
-		public CustomDataHelper(string name, CustomDataItem[] childnodes)
+		/// <param name="node">The referenced parent node</param>
+		public CustomDataHelper(string name, CustomDataItem[] childnodes, Pipliz.JSON.JSONNode node)
 		{
 			Pipliz.JSON.JSONNode customChildNode = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
 			foreach (CustomDataItem c in childnodes)
@@ -45,7 +48,8 @@ namespace ColonyPlusPlus.classes
 				customChildNode = c.getCustomData(customChildNode);
 			}
 
-			customDataNode.SetAs(name, customChildNode);
+			node.SetAs(name, customChildNode);
+			customDataNode = node;
 		}
 
 		// blah = new CustomDataHelper("itemname", "someitem");

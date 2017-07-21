@@ -16,11 +16,12 @@ namespace ColonyPlusPlus.types.GameBase.Special
 			this.IsSolid = false;
 			this.NeedsBase = true;
 
-			CustomDataItem[] customData = { new CustomDataItem("farShadows", true)}; 
+			CustomDataItem[] customData = { new CustomDataItem("farShadows", true) };
 			CustomDataHelper c = new CustomDataHelper(customData);
 			this.CustomData = c.customDataNode;
 
             this.Register();
+
         }
     }
 }
