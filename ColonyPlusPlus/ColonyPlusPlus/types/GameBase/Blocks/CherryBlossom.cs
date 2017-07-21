@@ -11,12 +11,14 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.ParentType = "leaves";
             this.Mesh = "cherrysapling";
+            this.IsPlaceable = true;
 
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("cherryblossom",   1,  0.6f),
                 new classes.ItemHelper.OnRemove("cherrysapling",   1,  0.1f)
             };
             this.OnRemove = onRemoveNode;
+
             this.Register();
         }
     }

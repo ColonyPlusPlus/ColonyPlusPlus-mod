@@ -12,6 +12,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.ParentType = "flaxstage";
             this.NPCLimit = 100;
             this.Mesh = "flaxstage1";
+            this.IsPlaceable = true;
 
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("flaxstage1",   1,  0.8f)

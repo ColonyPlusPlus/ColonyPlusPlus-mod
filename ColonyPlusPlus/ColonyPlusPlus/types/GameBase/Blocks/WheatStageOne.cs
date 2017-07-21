@@ -16,7 +16,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.ParentType = "wheatstage";
             this.SideAll = "wheatwheat";
             this.Mesh = "wheatstage1";
-
+            this.IsPlaceable = true;
             this.Register();
         }
     }
