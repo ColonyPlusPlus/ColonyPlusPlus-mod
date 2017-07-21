@@ -273,10 +273,10 @@ namespace ColonyPlusPlus.classes
         {
             RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 200)
+                    RecipeManager.Item("goldcoin", 20)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("flaxstage1", 100)
+                    RecipeManager.Item("flaxstage1", 10)
                 },
                 0.0f);
 

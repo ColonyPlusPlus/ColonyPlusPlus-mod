@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
     {
         public Wheat(string name) : base(name)
         {
-            this.NutritionalValue = 0.4f;
+            this.NutritionalValue = 0.2f;
             this.MaxStackSize = 600;
             this.Register();
         }

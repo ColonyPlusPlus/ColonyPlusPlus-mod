@@ -1,0 +1,16 @@
+Version 0.1.0 (21-07-17):
+-------------------------------------
+
+Added:
+- Numerous food items (butter/carrot/cheese/egg/jam/lettuce/milk/onion/potato/salt/sugar/sugarcane)
+- A few recipes (baked potato/cake/Jambread/omlette)
+- Some misc items (feathers)
+- World spawns for sugarcane, berry bushes, vegetable patches which drop sugarcane, berries, and a random assortment of vegetables
+
+Changed:
+- Some basegame drops 
+	- wheat drops less straw now (10% chance not 33.33%)
+	- flax is cheaper to buy (200g = 100 flax is now 20g = 10 flax, ratio the same but less amount)
+	- flax is generally less difficult to get (3% chance to drop from breaking grass)
+- Food values
+	- Wheat is now a weaker foodstuff, pushing you quickly to bread/better breads/ better foods
