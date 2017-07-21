@@ -27,6 +27,7 @@ namespace ColonyPlusPlus.classes
         private string _TypeName;
 
         private int _NPCLimit;
+		private int _OnRemoveAmount;
 
         private bool _IsSolid;
         private bool _IsPlaceable;
@@ -196,17 +197,30 @@ namespace ColonyPlusPlus.classes
         }
 
         public int NPCLimit
-        {
-            get
-            {
-                return this._NPCLimit;
-            }
-            set
-            {
-                this._NPCLimit = value;
-                this.node.SetAs("npcLimit", value);
-            }
-        }
+		{
+			get
+			{
+				return this._NPCLimit;
+			}
+			set
+			{
+				this._NPCLimit = value;
+				this.node.SetAs("npcLimit", value);
+			}
+		}
+
+		public int OnRemoveAmount
+		{
+			get
+			{
+				return this._OnRemoveAmount;
+			}
+			set
+			{
+				this._OnRemoveAmount = value;
+				this.node.SetAs("onRemoveAmount", value);
+			}
+		}
 
         public bool IsSolid
         {

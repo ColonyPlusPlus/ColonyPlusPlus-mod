@@ -29,7 +29,7 @@ namespace ColonyPlusPlus.classes
 		{
 			foreach (CustomDataItem c in childnodes)
 			{
-				customDataNode.AddToArray(c.getCustomData());
+				customDataNode = c.getCustomData(customDataNode);
 			}
 		}
 
