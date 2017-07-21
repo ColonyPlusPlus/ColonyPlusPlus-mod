@@ -12,5 +12,6 @@ Changed:
 	- wheat drops less straw now (10% chance not 33.33%)
 	- flax is cheaper to buy (200g = 100 flax is now 20g = 10 flax, ratio the same but less amount)
 	- flax is generally less difficult to get (3% chance to drop from breaking grass)
+	- leaves now drop our custom feathers
 - Food values
 	- Wheat is now a weaker foodstuff, pushing you quickly to bread/better breads/ better foods

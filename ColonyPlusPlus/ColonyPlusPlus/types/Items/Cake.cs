@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ColonyPlusPlus.classes.Managers;
+using ColonyPlusPlus.classes;
 
 namespace ColonyPlusPlus.types.items
 {
@@ -10,7 +11,8 @@ namespace ColonyPlusPlus.types.items
     {
         public Cake(string name) : base(name)
         {
-            this.NutritionalValue = 3.0f;
+            this.NutritionalValue = 6.0f;
+			this.CustomData = new CustomDataHelper("test", "somevalue").customDataNode;
             this.Register();
         }
 
@@ -18,10 +20,10 @@ namespace ColonyPlusPlus.types.items
         {
             RecipeManager.AddRecipe("baking",
                 new List<InventoryItem> {
-                    RecipeManager.Item("flour", 2),
-                    RecipeManager.Item("egg", 1),
-                    RecipeManager.Item("butter", 1),
-                    RecipeManager.Item("sugar", 1)
+                    RecipeManager.Item("flour", 4),
+                    RecipeManager.Item("egg", 2),
+                    RecipeManager.Item("butter", 2),
+                    RecipeManager.Item("sugar", 2)
                 },
                 new List<InventoryItem> {
                     RecipeManager.Item("cake", 1)

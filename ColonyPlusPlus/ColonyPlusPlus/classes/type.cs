@@ -41,6 +41,8 @@ namespace ColonyPlusPlus.classes
         private float _NutritionalValue;
         private ushort _MaxStackSize;
 
+		private Pipliz.JSON.JSONNode _CustomData = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
+
         // Array of OnRemove structs
         private ItemHelper.OnRemove[] _OnRemove;
 
@@ -347,6 +349,19 @@ namespace ColonyPlusPlus.classes
                 this._TypeName = value;
             }
         }
+
+		public JSONNode CustomData
+		{
+			get
+			{
+				return this._CustomData;
+			} 
+			set 
+			{
+				this._CustomData = value;
+				this.node.SetAs("customData", value);
+			}
+		}
 
         public ItemHelper.OnRemove[] OnRemove
         {

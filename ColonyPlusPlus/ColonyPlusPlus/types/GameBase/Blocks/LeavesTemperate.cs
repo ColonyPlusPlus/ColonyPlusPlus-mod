@@ -11,7 +11,8 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("leavestemperate",   1,  0.6f),
-                new classes.ItemHelper.OnRemove("sappling",   1,  0.1f)
+                new classes.ItemHelper.OnRemove("sappling",   1,  0.1f),
+                new classes.ItemHelper.OnRemove("feather",   2,  0.1f),
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "leaves";
