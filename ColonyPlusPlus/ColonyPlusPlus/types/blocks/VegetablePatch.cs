@@ -10,9 +10,9 @@ namespace ColonyPlusPlus.types.blocks
         public VegetablePatch(string name) : base(name)
         {
             classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("carrot", 3, 0.5f),
-                new classes.ItemHelper.OnRemove("potato", 2, 0.5f),
-                new classes.ItemHelper.OnRemove("lettuce", 2, 0.5f),
+                new classes.ItemHelper.OnRemove("carrotstage1", 3, 0.5f),
+                new classes.ItemHelper.OnRemove("potatostage1", 2, 0.5f),
+                new classes.ItemHelper.OnRemove("lettucestage1", 2, 0.5f),
                 new classes.ItemHelper.OnRemove("onion", 2, 0.5f)
             };
 

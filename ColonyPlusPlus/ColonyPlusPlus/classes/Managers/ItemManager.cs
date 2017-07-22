@@ -14,6 +14,7 @@ namespace ColonyPlusPlus.classes.Managers
         {
             // Tell the player what we're doing
             classes.Utilities.WriteLog("Starting To Register Items");
+
             //Base Game Items
             types.GameBase.Items.Arrow arrow                        = new types.GameBase.Items.Arrow("arrow");
             types.GameBase.Items.Axe axe                            = new types.GameBase.Items.Axe("axe");
@@ -39,14 +40,10 @@ namespace ColonyPlusPlus.classes.Managers
             // init items
 
             // materials
-            types.items.Carrot carrot                               = new types.items.Carrot("carrot");
             types.items.Cheese cheese                               = new types.items.Cheese("cheese");
             types.items.Egg egg                                     = new types.items.Egg("egg");
             types.items.Feather feather                             = new types.items.Feather("feather");
-            types.items.Lettuce lettuce                             = new types.items.Lettuce("lettuce");
             types.items.Milk milk                                   = new types.items.Milk("milk");
-            types.items.Onion onion                                 = new types.items.Onion("onion");
-            types.items.Potato potato                               = new types.items.Potato("potato");
             types.items.Salt salt                                   = new types.items.Salt("salt");
             types.items.Sugar sugar                                 = new types.items.Sugar("sugar");
 

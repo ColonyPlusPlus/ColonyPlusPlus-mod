@@ -12,6 +12,8 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("wheatstage1",   1,  0.8f)
             };
+
+            this.OnRemove = onRemoveNode;
             this.NPCLimit = 0;
             this.ParentType = "wheatstage";
             this.SideAll = "wheatwheat";

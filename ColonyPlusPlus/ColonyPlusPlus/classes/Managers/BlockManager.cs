@@ -120,14 +120,33 @@ namespace ColonyPlusPlus.classes.Managers
             classes.Utilities.WriteLog("Starting To Register Blocks");
 
             // And register!
-            types.Blocks.PurpleRoof purpleroof                          = new types.Blocks.PurpleRoof("purpleroof");
-            types.Blocks.PurpleRoofxMinus purpleroofxminus              = new types.Blocks.PurpleRoofxMinus("purpleroofx-");
-            types.Blocks.PurpleRoofxPlus purpleroofxplus                = new types.Blocks.PurpleRoofxPlus("purpleroofx+");
-            types.Blocks.PurpleRoofzMinus purpleroofzminus              = new types.Blocks.PurpleRoofzMinus("purpleroofz-");
-            types.Blocks.PurpleRoofzPlus purpleroofzplus                = new types.Blocks.PurpleRoofzPlus("purpleroofz+");
+            //types.Blocks.PurpleRoof purpleroof                          = new types.Blocks.PurpleRoof("purpleroof");
+            //types.Blocks.PurpleRoofxMinus purpleroofxminus              = new types.Blocks.PurpleRoofxMinus("purpleroofx-");
+            //types.Blocks.PurpleRoofxPlus purpleroofxplus                = new types.Blocks.PurpleRoofxPlus("purpleroofx+");
+            //types.Blocks.PurpleRoofzMinus purpleroofzminus              = new types.Blocks.PurpleRoofzMinus("purpleroofz-");
+            //types.Blocks.PurpleRoofzPlus purpleroofzplus                = new types.Blocks.PurpleRoofzPlus("purpleroofz+");
             types.blocks.WildBerryBush wildBerryBush                    = new types.blocks.WildBerryBush("wildberrybush");
             types.blocks.Sugarcane sugarcane                            = new types.blocks.Sugarcane("sugarcane");
             types.blocks.VegetablePatch vegetablepatch                  = new types.blocks.VegetablePatch("vegetablepatch");
+
+            // Decorative blocks
+            types.Blocks.Decorative.clayblock clayblock = new types.Blocks.Decorative.clayblock("clayblock");
+            types.Blocks.Decorative.clayblock clayblockblack = new types.Blocks.Decorative.clayblock("clayblockblack");
+            types.Blocks.Decorative.clayblock clayblockblue = new types.Blocks.Decorative.clayblock("clayblockblue");
+            types.Blocks.Decorative.clayblock clayblockbrown = new types.Blocks.Decorative.clayblock("clayblockbrown");
+            types.Blocks.Decorative.clayblock clayblockcyan = new types.Blocks.Decorative.clayblock("clayblockcyan");
+            types.Blocks.Decorative.clayblock clayblockgray = new types.Blocks.Decorative.clayblock("clayblockgray");
+            types.Blocks.Decorative.clayblock clayblockgreen = new types.Blocks.Decorative.clayblock("clayblockgreen");
+            types.Blocks.Decorative.clayblock clayblocklightblue = new types.Blocks.Decorative.clayblock("clayblocklightblue");
+            types.Blocks.Decorative.clayblock clayblocklime = new types.Blocks.Decorative.clayblock("clayblocklime");
+            types.Blocks.Decorative.clayblock clayblockmagenta = new types.Blocks.Decorative.clayblock("clayblockmagenta");
+            types.Blocks.Decorative.clayblock clayblockorange = new types.Blocks.Decorative.clayblock("clayblockorange");
+            types.Blocks.Decorative.clayblock clayblockpink = new types.Blocks.Decorative.clayblock("clayblockpink");
+            types.Blocks.Decorative.clayblock clayblockpurple = new types.Blocks.Decorative.clayblock("clayblockpurple");
+            types.Blocks.Decorative.clayblock clayblockred = new types.Blocks.Decorative.clayblock("clayblockred");
+            types.Blocks.Decorative.clayblock clayblocksilver = new types.Blocks.Decorative.clayblock("clayblocksilver");
+            types.Blocks.Decorative.clayblock clayblockwhite = new types.Blocks.Decorative.clayblock("clayblockwhite");
+            types.Blocks.Decorative.clayblock clayblockyellow = new types.Blocks.Decorative.clayblock("clayblockyellow");
         }
     }
 }
