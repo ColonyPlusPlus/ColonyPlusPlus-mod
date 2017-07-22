@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ColonyPlusPlus.classes.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,18 @@ namespace ColonyPlusPlus.types.Blocks
             this.IsPlaceable = true;
             this.IsAutoRotatable = true;
             this.Register();
+
+            public override void AddRecipes()
+            {
+                RecipeManager.AddRecipe("crafting",
+                    new List<InventoryItem> {
+                        RecipeManager.Item("planks", 2)
+                    },
+                    new List<InventoryItem> {
+                        RecipeManager.Item("purpleroof", 1)
+                    },
+                    0.0f);
+            }
         }
     }
     class PurpleRoofxMinus : classes.Type
