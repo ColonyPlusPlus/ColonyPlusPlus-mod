@@ -9,6 +9,10 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
     {
         public WheatStageThree(string name) : base(name)
         {
+            this.ParentType = "wheatstage";
+            this.SideAll = "wheatwheat";
+            this.Mesh = "wheatstage3";
+
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("wheatstage1",   1,  1.0f),
                 new classes.ItemHelper.OnRemove("wheatstage1",   1,  0.1f),
@@ -16,9 +20,6 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
                 new classes.ItemHelper.OnRemove("straw",   1,  0.1f)
             };
             this.OnRemove = onRemoveNode;
-            this.ParentType = "wheatstage";
-            this.SideAll = "wheatwheat";
-            this.Mesh = "wheatstage3";
 
             this.Register();
         }
