@@ -9,6 +9,10 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
     {
         public GrassTemperate(string name) : base(name)
         {
+            this.ParentType = "grass";
+            this.NPCLimit = 0;
+            this.IsPlaceable = true;
+
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("grasstemperate",       1,  1.0f),
                 new classes.ItemHelper.OnRemove("wheatstage1",          1,  0.1f),
@@ -16,10 +20,6 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
                 new classes.ItemHelper.OnRemove("flaxstage1",             1,  0.03f)
             };
             this.OnRemove = onRemoveNode;
-
-            this.ParentType = "grass";
-            this.NPCLimit = 0;
-            this.IsPlaceable = true;
 
             this.Register();
         }

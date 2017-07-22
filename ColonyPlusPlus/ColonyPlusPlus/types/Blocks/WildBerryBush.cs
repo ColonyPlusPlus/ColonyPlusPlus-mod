@@ -12,6 +12,9 @@ namespace ColonyPlusPlus.types.blocks
     {
         public WildBerryBush(string name) : base(name)
         {
+            this.OnPlaceAudio = "dirtPlace";
+            this.OnRemoveAudio = "grassDelete";
+
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("berry",        1,  0.8f),
                 new classes.ItemHelper.OnRemove("berry",        2,  0.2f),
@@ -19,8 +22,7 @@ namespace ColonyPlusPlus.types.blocks
                 new classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
             };
             this.OnRemove = onRemoveNode;
-            this.OnPlaceAudio = "dirtPlace";
-            this.OnRemoveAudio = "grassDelete";
+
             this.Register();
         }
     }
