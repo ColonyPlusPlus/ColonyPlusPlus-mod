@@ -120,6 +120,11 @@ namespace ColonyPlusPlus.classes.Managers
             classes.Utilities.WriteLog("Starting To Register Blocks");
 
             // And register!
+            types.Blocks.PurpleRoof purpleroof                          = new types.Blocks.PurpleRoof("purpleroof");
+            types.Blocks.PurpleRoofxMinus purpleroofxminus              = new types.Blocks.PurpleRoofxMinus("purpleroofx-");
+            types.Blocks.PurpleRoofxPlus purpleroofxplus                = new types.Blocks.PurpleRoofxPlus("purpleroofx+");
+            types.Blocks.PurpleRoofzMinus purpleroofzminus              = new types.Blocks.PurpleRoofzMinus("purpleroofz-");
+            types.Blocks.PurpleRoofzPlus purpleroofzplus                = new types.Blocks.PurpleRoofzPlus("purpleroofz+");
             types.blocks.WildBerryBush wildBerryBush                    = new types.blocks.WildBerryBush("wildberrybush");
             types.blocks.Sugarcane sugarcane                            = new types.blocks.Sugarcane("sugarcane");
             types.blocks.VegetablePatch vegetablepatch                  = new types.blocks.VegetablePatch("vegetablepatch");

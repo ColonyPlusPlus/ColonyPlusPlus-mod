@@ -11,6 +11,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         {
             this.ParentType = "flaxstage";
             this.Mesh = "flaxstage2";
+            this.SideAll = "flax";
 
             classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new classes.ItemHelper.OnRemove("flaxstage1",   1,  1.1f),

@@ -1,3 +1,10 @@
+Version 0.1.2 (22-07-17):
+-------------------------------------
+Added:
+	Sloped roof block
+Fixed:
+	Textures on the furnace, Mint
+
 Version 0.1.0 (21-07-17):
 -------------------------------------
 

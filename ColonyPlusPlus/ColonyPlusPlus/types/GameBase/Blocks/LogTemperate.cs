@@ -14,6 +14,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "log";
+            this.Mesh = "log";
             this.IsPlaceable = true;
             this.Register();
         }

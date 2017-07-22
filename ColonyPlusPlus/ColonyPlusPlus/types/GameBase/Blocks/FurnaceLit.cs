@@ -12,9 +12,6 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.ParentType = "furnace";
             this.IsAutoRotatable = true;
             this.IsPlaceable = true;
-            this.SideAll = "furnaceside";
-            this.SideXPlus = "furnacelitfront";
-            this.SideYPlus = "furnacelittop";
             this.DestructionTime = 1250;
             this.RotatableXPlus = "furnacelitx+";
             this.RotatableXMinus = "furnacelitx-";
@@ -28,7 +25,9 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public FurnancelitxPlus(string name) : base(name)
         {
             this.ParentType = "furnacelit";
+            this.SideAll = "furnaceside";
             this.SideXPlus = "furnacelitfront";
+            this.SideYPlus = "furnacelittop";
             this.Register();
         }
     }
@@ -37,7 +36,9 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public FurnancelitxMinus(string name) : base(name)
         {
             this.ParentType = "furnacelit";
+            this.SideAll = "furnaceside";
             this.SideXMinus = "furnacelitfront";
+            this.SideYPlus = "furnacelittop";
             this.Register();
         }
     }
@@ -46,7 +47,9 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public FurnancelitzPlus(string name) : base(name)
         {
             this.ParentType = "furnacelit";
+            this.SideAll = "furnaceside";
             this.SideZPlus = "furnacelitfront";
+            this.SideYPlus = "furnacelittop";
             this.Register();
         }
     }
@@ -55,7 +58,9 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public FurnancelitzMinus(string name) : base(name)
         {
             this.ParentType = "furnacelit";
+            this.SideAll = "furnaceside";
             this.SideZMinus = "furnacelitfront";
+            this.SideYPlus = "furnacelittop";
             this.Register();
         }
     }

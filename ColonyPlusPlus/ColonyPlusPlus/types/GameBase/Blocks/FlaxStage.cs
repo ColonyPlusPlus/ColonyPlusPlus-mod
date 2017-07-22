@@ -12,10 +12,10 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.IsSolid = false;
             this.NeedsBase = true;
             this.IsPlaceable = true;
+            this.SideAll = "flax";
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "grassDelete";
             this.MaxStackSize = 1200;
-            this.SideAll = "flax";
             this.Register();
         }
     }
