@@ -18,6 +18,25 @@
 	"omlette" : "It's super fluffy!",
 
 
+	"clayblock" : "A Clay Block",
+	"clayblockblack" : "A Black Clay Block",
+	"clayblockblue" : "A Blue Clay Block",
+	"clayblockbrown" : "A Brown Clay Block",
+	"clayblockcyan" : "A Cyan Clay Block",
+	"clayblockgray" : "A Gray Clay Block",
+	"clayblockgreen" : "A Green Clay Block",
+	"clayblocklightblue" : "A Light Blue Clay Block",
+	"clayblocklime" : "A Lime Clay Block",
+	"clayblockmagenta" : "A Magenta Clay Block",
+	"clayblockorange" : "A Orange Clay Block",
+	"clayblockpink" : "A Pink Clay Block",
+	"clayblockpurple" : "A Purple Clay Block",
+	"clayblockred" : "A Red Clay Block",
+	"clayblocksilver" : "A Silver Clay Block",
+	"clayblockwhite" : "A White Clay Block",
+	"clayblockyellow" : "A Yellow Clay Block",
+
+
 	"planks" : "Now with 4 times the volume of logs!",
 	"torch" : "And let there be light!",
 	"crate" : "For all your storage needs!",

@@ -19,7 +19,7 @@ namespace ColonyPlusPlus.types.items
             
             RecipeManager.AddRecipe("baking",
                 new List<InventoryItem> {
-                    RecipeManager.Item("potato", 2),
+                    RecipeManager.Item("potatostage1", 2),
                     RecipeManager.Item("cheese", 1)
                 },
                 new List<InventoryItem> {

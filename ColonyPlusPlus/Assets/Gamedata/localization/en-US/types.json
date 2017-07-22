@@ -17,7 +17,26 @@
 	"jambread" : "Jam filled bun",
 	"omlette" : "Omlette",
 	
-	
+
+	"clayblock" : "Clay Block",
+	"clayblockblack" : "Black Clay Block",
+	"clayblockblue" : "Blue Clay Block",
+	"clayblockbrown" : "Brown Clay Block",
+	"clayblockcyan" : "Cyan Clay Block",
+	"clayblockgray" : "Gray Clay Block",
+	"clayblockgreen" : "Green Clay Block",
+	"clayblocklightblue" : "Light Blue Clay Block",
+	"clayblocklime" : "Lime Clay Block",
+	"clayblockmagenta" : "Magenta Clay Block",
+	"clayblockorange" : "Orange Clay Block",
+	"clayblockpink" : "Pink Clay Block",
+	"clayblockpurple" : "Purple Clay Block",
+	"clayblockred" : "Red Clay Block",
+	"clayblocksilver" : "Silver Clay Block",
+	"clayblockwhite" : "White Clay Block",
+	"clayblockyellow" : "Yellow Clay Block",
+
+
 	"grass" : "Grass",
 	"grasstemperate" : "Grass Temperate",
 	"grasstundra" : "Grass Tundra",

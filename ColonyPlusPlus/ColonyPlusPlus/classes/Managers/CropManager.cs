@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Pipliz.JSON;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -16,6 +18,8 @@ namespace ColonyPlusPlus.classes.Managers
 
         // keep isntances of all the classes
         public static Dictionary<string, GrowableType> CropTypes = new Dictionary<string, GrowableType>();
+
+        private static bool cropsLoaded = false;
               
 
         // Register crops
@@ -125,6 +129,17 @@ namespace ColonyPlusPlus.classes.Managers
 
             // Add it to the tracking list
             CropTracker.Add(cd);
+
+            SaveCropTracker();
+        }
+
+        public static void loadTrackCrop(Pipliz.Vector3Int location, GrowableType classInstance, float growth, double time)
+        {
+            // Create a CropData struct to hold the data for this crop in this specific location
+            Data.CropData cd = new Data.CropData(location, classInstance, growth, time);
+
+            // Add it to the tracking list
+            CropTracker.Add(cd);
         }
 
         // Stop tracking a crop
@@ -154,6 +169,8 @@ namespace ColonyPlusPlus.classes.Managers
                     CropTracker.Remove(c);
                 }
             }
+
+            SaveCropTracker();
         }
 
         // Does this type have a next growth stage?
@@ -230,5 +247,121 @@ namespace ColonyPlusPlus.classes.Managers
             return cropdata.growthAccumulated;
         }
 
+
+        private static string GetJSONPath()
+        {
+            return "gamedata/savegames/" + ServerManager.WorldName + "/cppcrops.json";
+        }
+
+
+        // Saving the crop tracker
+        public static void SaveCropTracker()
+        {
+            try
+            {
+                string jSONPath = GetJSONPath();
+                Pipliz.Helpers.Helper.MakeDirectoriesIfNeeded(jSONPath);
+                if (CropTracker.Count == 0)
+                {
+                    File.Delete(jSONPath);
+                }
+                else
+                {
+                    
+                    // make a JSON node
+                    JSONNode rootnode = new JSONNode(NodeType.Array);
+
+                    // then go through stuff
+                    foreach(classes.Data.CropData c in CropTracker)
+                    {
+                        // build a child node
+                        JSONNode child = new JSONNode(NodeType.Object);
+                 
+                        // Create the JSON
+                        child.SetAs("location", (JSONNode)c.location);
+                        child.SetAs("typename", c.classInstance.TypeName);
+                        child.SetAs("growthAccumulated", c.growthAccumulated);
+                        child.SetAs("lastUpdateTimecycleHours", c.lastUpdateTimecycleHours);
+
+                        rootnode.AddToArray(child);
+                    }
+
+                    Pipliz.JSON.JSON.Serialize(jSONPath, rootnode);
+                    
+                }
+            }
+            catch (Exception exception2)
+            {
+                Utilities.WriteLog("Exception in saving all UpdatableBlocks:" + exception2.Message);
+            }
+        }
+
+        public static void SaveCropTrackerInterval()
+        {
+            if (cropsLoaded == true)
+            {
+                SaveCropTracker();
+                Utilities.WriteLog("Updated Crop Save [Interval]");
+            }
+        }
+
+        public static void LoadCropTracker()
+        {
+            try
+            {
+
+                JSONNode array;
+                if (Pipliz.JSON.JSON.Deserialize(GetJSONPath(), out array, false))
+                {
+
+                    if (array != null)
+                    {
+                        foreach (JSONNode node in array.LoopArray())
+                        {
+                            try
+                            {
+                                // recapture location
+                                Pipliz.Vector3Int location = new Pipliz.Vector3Int();
+                                location = (Pipliz.Vector3Int)node["location"];
+
+                                // recapture instance class
+                                string typename = node["typename"].GetAs<string>();
+                                GrowableType instanceclass;
+                                CropTypes.TryGetValue(typename, out instanceclass);
+
+                                float growthAccumulated = node["growthAccumulated"].GetAs<float>();
+                                double lastUpdateTimecycleHours = node["lastUpdateTimecycleHours"].GetAs<double>();
+
+                                loadTrackCrop(location, instanceclass, growthAccumulated, lastUpdateTimecycleHours);
+
+                            }
+                            catch (Exception exception)
+                            {
+                                Utilities.WriteLog("Exception loading a wheat block;" + exception.Message);
+                            }
+                        }
+
+                        Utilities.WriteLog("Loaded Crop Saves");
+                        SaveCropTracker();
+                    } else
+                    {
+                        Utilities.WriteLog("Loading Crop Saves Returned 0 results");
+                    }
+                } else
+                {
+                    Utilities.WriteLog("Found no crop saves (read error?)");
+                }
+
+            }
+            catch (Exception exception2)
+            {
+                Utilities.WriteLog("Exception in saving all UpdatableBlocks:" + exception2.Message);
+            }
+
+            cropsLoaded = true;
+        }
+
     }
 }
+
+

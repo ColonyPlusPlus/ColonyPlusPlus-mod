@@ -23,5 +23,13 @@ namespace ColonyPlusPlus.classes.Data
             this.lastUpdateTimecycleHours = 0.0;
         }
 
+        public CropData(Vector3Int loc, GrowableType cl, float growth, double time)
+        {
+            this.location = loc;
+            this.classInstance = cl;
+            this.growthAccumulated = growth;
+            this.lastUpdateTimecycleHours = time;
+        }
+
     }
 }

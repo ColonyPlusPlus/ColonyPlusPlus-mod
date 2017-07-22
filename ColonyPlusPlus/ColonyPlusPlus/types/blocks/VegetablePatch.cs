@@ -13,7 +13,7 @@ namespace ColonyPlusPlus.types.blocks
                 new classes.ItemHelper.OnRemove("carrotstage1", 3, 0.5f),
                 new classes.ItemHelper.OnRemove("potatostage1", 2, 0.5f),
                 new classes.ItemHelper.OnRemove("lettucestage1", 2, 0.5f),
-                new classes.ItemHelper.OnRemove("onion", 2, 0.5f)
+                new classes.ItemHelper.OnRemove("onionstage1", 2, 0.5f)
             };
 
             this.OnRemove = onRemoveNode;
