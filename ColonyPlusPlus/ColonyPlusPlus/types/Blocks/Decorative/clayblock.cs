@@ -6,9 +6,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.types.Blocks.Decorative
 {
-    class clayblock : classes.Type
+    class ClayBlock : classes.Type
     {
-        public clayblock(string name) : base(name)
+        public ClayBlock(string name) : base(name)
         {
             this.DestructionTime = 600;
             this.OnPlaceAudio = "stonePlace";

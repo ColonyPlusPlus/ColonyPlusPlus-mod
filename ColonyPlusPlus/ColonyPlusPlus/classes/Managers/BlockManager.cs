@@ -130,23 +130,23 @@ namespace ColonyPlusPlus.classes.Managers
             types.blocks.VegetablePatch vegetablepatch                  = new types.blocks.VegetablePatch("vegetablepatch");
 
             // Decorative blocks
-            types.Blocks.Decorative.clayblock clayblock = new types.Blocks.Decorative.clayblock("clayblock");
-            types.Blocks.Decorative.clayblock clayblockblack = new types.Blocks.Decorative.clayblock("clayblockblack");
-            types.Blocks.Decorative.clayblock clayblockblue = new types.Blocks.Decorative.clayblock("clayblockblue");
-            types.Blocks.Decorative.clayblock clayblockbrown = new types.Blocks.Decorative.clayblock("clayblockbrown");
-            types.Blocks.Decorative.clayblock clayblockcyan = new types.Blocks.Decorative.clayblock("clayblockcyan");
-            types.Blocks.Decorative.clayblock clayblockgray = new types.Blocks.Decorative.clayblock("clayblockgray");
-            types.Blocks.Decorative.clayblock clayblockgreen = new types.Blocks.Decorative.clayblock("clayblockgreen");
-            types.Blocks.Decorative.clayblock clayblocklightblue = new types.Blocks.Decorative.clayblock("clayblocklightblue");
-            types.Blocks.Decorative.clayblock clayblocklime = new types.Blocks.Decorative.clayblock("clayblocklime");
-            types.Blocks.Decorative.clayblock clayblockmagenta = new types.Blocks.Decorative.clayblock("clayblockmagenta");
-            types.Blocks.Decorative.clayblock clayblockorange = new types.Blocks.Decorative.clayblock("clayblockorange");
-            types.Blocks.Decorative.clayblock clayblockpink = new types.Blocks.Decorative.clayblock("clayblockpink");
-            types.Blocks.Decorative.clayblock clayblockpurple = new types.Blocks.Decorative.clayblock("clayblockpurple");
-            types.Blocks.Decorative.clayblock clayblockred = new types.Blocks.Decorative.clayblock("clayblockred");
-            types.Blocks.Decorative.clayblock clayblocksilver = new types.Blocks.Decorative.clayblock("clayblocksilver");
-            types.Blocks.Decorative.clayblock clayblockwhite = new types.Blocks.Decorative.clayblock("clayblockwhite");
-            types.Blocks.Decorative.clayblock clayblockyellow = new types.Blocks.Decorative.clayblock("clayblockyellow");
+            types.Blocks.Decorative.ClayBlock clayblock = new types.Blocks.Decorative.ClayBlock("clayblock");
+            types.Blocks.Decorative.ClayBlock clayblockblack = new types.Blocks.Decorative.ClayBlock("clayblockblack");
+            types.Blocks.Decorative.ClayBlock clayblockblue = new types.Blocks.Decorative.ClayBlock("clayblockblue");
+            types.Blocks.Decorative.ClayBlock clayblockbrown = new types.Blocks.Decorative.ClayBlock("clayblockbrown");
+            types.Blocks.Decorative.ClayBlock clayblockcyan = new types.Blocks.Decorative.ClayBlock("clayblockcyan");
+            types.Blocks.Decorative.ClayBlock clayblockgray = new types.Blocks.Decorative.ClayBlock("clayblockgray");
+            types.Blocks.Decorative.ClayBlock clayblockgreen = new types.Blocks.Decorative.ClayBlock("clayblockgreen");
+            types.Blocks.Decorative.ClayBlock clayblocklightblue = new types.Blocks.Decorative.ClayBlock("clayblocklightblue");
+            types.Blocks.Decorative.ClayBlock clayblocklime = new types.Blocks.Decorative.ClayBlock("clayblocklime");
+            types.Blocks.Decorative.ClayBlock clayblockmagenta = new types.Blocks.Decorative.ClayBlock("clayblockmagenta");
+            types.Blocks.Decorative.ClayBlock clayblockorange = new types.Blocks.Decorative.ClayBlock("clayblockorange");
+            types.Blocks.Decorative.ClayBlock clayblockpink = new types.Blocks.Decorative.ClayBlock("clayblockpink");
+            types.Blocks.Decorative.ClayBlock clayblockpurple = new types.Blocks.Decorative.ClayBlock("clayblockpurple");
+            types.Blocks.Decorative.ClayBlock clayblockred = new types.Blocks.Decorative.ClayBlock("clayblockred");
+            types.Blocks.Decorative.ClayBlock clayblocksilver = new types.Blocks.Decorative.ClayBlock("clayblocksilver");
+            types.Blocks.Decorative.ClayBlock clayblockwhite = new types.Blocks.Decorative.ClayBlock("clayblockwhite");
+            types.Blocks.Decorative.ClayBlock clayblockyellow = new types.Blocks.Decorative.ClayBlock("clayblockyellow");
         }
     }
 }
