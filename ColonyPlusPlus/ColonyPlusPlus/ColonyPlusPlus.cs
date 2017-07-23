@@ -4,6 +4,9 @@ using Pipliz.JSON;
 using Pipliz.Threading;
 using ColonyPlusPlus;
 using static Players;
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine;
 
 namespace ColonyPlusPlus
 {
@@ -66,8 +69,6 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate)]
         public static void OnUpdate()
         {
-           
-
             if(Pipliz.Time.MillisecondsSinceStart > nextMillisecondUpdate)
             {
                 // do stuff
@@ -92,7 +93,6 @@ namespace ColonyPlusPlus
 
 
         }
-
         //[ModLoader.ModCallback(ModLoader.EModCallbackType.)]
     }
 }
