@@ -127,6 +127,10 @@
 	"clayblockwhitecurvecorner" : "A White Clay Curve Corner",
 	"clayblockyellowcurvecorner" : "A Yellow Clay Curve Corner",
 
+	"logcubetemperate" : "A Temperate Log (Cube)",
+	"logcubetemperaterotated" : "A Temperate Log (Cube, rotated)",
+	"logcubetaiga" : "A Taiga Log (Cube)",
+	"logcubetaigarotated" : "A Taiga Log (Cube, rotated)",
 
 	"planks" : "Now with 4 times the volume of logs!",
 	"torch" : "And let there be light!",

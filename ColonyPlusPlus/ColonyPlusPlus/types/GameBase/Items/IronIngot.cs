@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
         public IronIngot(string name) : base(name)
         {
             this.MaxStackSize = 200;
+            this.AllowCreative = true;
             this.Register();
         }
     }

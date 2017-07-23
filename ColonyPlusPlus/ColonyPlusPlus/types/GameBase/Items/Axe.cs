@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
         public Axe(string name) : base(name)
         {
             this.NPCLimit = 1;
+            this.AllowCreative = true;
             this.Register();
         }
     }

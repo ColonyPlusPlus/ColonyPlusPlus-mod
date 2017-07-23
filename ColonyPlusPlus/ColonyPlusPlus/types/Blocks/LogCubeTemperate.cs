@@ -20,6 +20,7 @@ namespace ColonyPlusPlus.types.Blocks
             this.SideYPlus = "cpplogtemperatetop";
             this.SideYMinus = "cpplogtemperatetop";
 
+            this.AllowCreative = true;
             this.IsPlaceable = true;
             this.Register();
         }

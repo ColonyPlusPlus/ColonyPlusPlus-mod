@@ -10,12 +10,15 @@ namespace ColonyPlusPlus.classes
     {
         private string BaseMaterial;
         private string CraftingType;
+        private string CraftingRequiredItem;
 
-        public DecorativeTypeBlock(string basename, string basematerial, string craftingtype) : base(basename)
+        public DecorativeTypeBlock(string basename, string basematerial, string craftingrequireditem, string craftingtype) : base(basename)
         {
             // decorative block specific
             this.BaseMaterial = basematerial;
             this.CraftingType = craftingtype;
+            this.CraftingRequiredItem = craftingrequireditem;
+            this.AllowCreative = true;
 
             this.OnPlaceAudio = "stonePlace";
             this.OnRemoveAudio = "stoneDelete";
@@ -28,7 +31,7 @@ namespace ColonyPlusPlus.classes
         {
             RecipeManager.AddRecipe(this.CraftingType,
                 new List<InventoryItem> {
-                    RecipeManager.Item(this.BaseMaterial, 1)
+                    RecipeManager.Item(this.CraftingRequiredItem, 1)
                 },
                 new List<InventoryItem> {
                     RecipeManager.Item(this.TypeName, 1)
@@ -62,7 +65,8 @@ namespace ColonyPlusPlus.classes
             this.Icon = basename + shape;
 
             this.SideAll = basematerial;
-            
+
+            this.MaxStackSize = 1000;
             this.NPCLimit = 0;
             this.IsPlaceable = true;
             this.IsAutoRotatable = true;

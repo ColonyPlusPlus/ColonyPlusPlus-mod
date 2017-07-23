@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.types.items
         {
             this.NutritionalValue = 6.0f;
 			this.CustomData = new CustomDataHelper("test", "somevalue").customDataNode;
+            this.AllowCreative = true;
             this.Register();
         }
 

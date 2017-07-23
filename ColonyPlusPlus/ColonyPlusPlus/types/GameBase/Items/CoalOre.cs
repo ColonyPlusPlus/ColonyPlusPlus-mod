@@ -11,6 +11,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
         {
             this.FuelValue = 1.0f;
             this.MaxStackSize = 50;
+            this.AllowCreative = true;
             this.Register();
         }
     }

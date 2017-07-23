@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.OnRemoveAudio = "stoneDelete";
             this.NPCLimit = 20;
             this.IsPlaceable = true;
+            this.AllowCreative = true;
             this.Register();
         }
     }

@@ -15,6 +15,7 @@ namespace ColonyPlusPlus.types.GameBase.Special
 			this.OnRemoveAmount = 0;
 			this.IsSolid = false;
 			this.NeedsBase = true;
+            this.AllowCreative = true;
             this.Mesh = "banner";
 
 			CustomDataItem[] customData = { new CustomDataItem("farShadows", true) };

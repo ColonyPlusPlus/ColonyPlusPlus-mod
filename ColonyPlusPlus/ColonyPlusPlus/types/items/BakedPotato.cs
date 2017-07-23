@@ -11,6 +11,7 @@ namespace ColonyPlusPlus.types.items
         public BakedPotato(string name) : base(name)
         {
             this.NutritionalValue = 1.0f;
+            this.AllowCreative = true;
             this.Register();
         }
 

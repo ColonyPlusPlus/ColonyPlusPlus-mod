@@ -41,6 +41,7 @@ namespace ColonyPlusPlus.classes
         private bool _NeedsBase;
         private bool _IsAutoRotatable;
         private bool _IsDestructible;
+        private bool _AllowCreative;
 
         private long _DestructionTime;
 
@@ -58,6 +59,9 @@ namespace ColonyPlusPlus.classes
         public Type(string name)
         {
             this.TypeName = name;
+
+            // disable creative on blocks
+            this.AllowCreative = false;
 
             // set default sideall
             this._SideAll = "SELF";
@@ -341,6 +345,7 @@ namespace ColonyPlusPlus.classes
             set
             {
                 this._IsPlaceable = value;
+                this._AllowCreative = true;
                 this.node.SetAs("isPlaceable", value);
             }
         }
@@ -396,7 +401,19 @@ namespace ColonyPlusPlus.classes
                 this.node.SetAs("isDestructible", value);
             }
         }
-                
+
+        public bool AllowCreative
+        {
+            get
+            {
+                return this._AllowCreative;
+            }
+            set
+            {
+                this._AllowCreative = value;
+            }
+        }
+
         public long DestructionTime
         {
             get
@@ -539,6 +556,14 @@ namespace ColonyPlusPlus.classes
 
             // Add the item
             ItemTypes.AddRawType(this.TypeName, this.node);
+
+            // register with our tracker, just in case we need to get these later!
+            classes.Managers.TypeManager.AddedTypes.Add(this.TypeName);
+
+            if(this._AllowCreative)
+            {
+                classes.Managers.TypeManager.CreativeAddedTypes.Add(this.TypeName);
+            }
 
             // Tell the user it was added
             Utilities.WriteLog("Added Type: " + this.TypeName);

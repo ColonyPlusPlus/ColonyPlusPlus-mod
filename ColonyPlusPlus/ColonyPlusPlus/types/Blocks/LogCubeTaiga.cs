@@ -20,7 +20,7 @@ namespace ColonyPlusPlus.types.Blocks
             this.SideAll = "cpplogtaiga";
             this.SideYPlus = "cpplogtaigatop";
             this.SideYMinus = "cpplogtaigatop";
-
+            this.AllowCreative = true;
             this.IsPlaceable = true;
             this.Register();
         }

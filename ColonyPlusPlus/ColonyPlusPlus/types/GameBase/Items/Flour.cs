@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
         public Flour(string name) : base(name)
         {
             this.MaxStackSize = 600;
+            this.AllowCreative = true;
             this.Register();
         }
     }

@@ -16,6 +16,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.NeedsBase = true;
             this.NPCLimit = 0;
             this.IsPlaceable = true;
+            this.AllowCreative = true;
             this.RotatableXPlus = "bedx+";
             this.RotatableXMinus = "bedx-";
             this.RotatableZPlus = "bedz+";

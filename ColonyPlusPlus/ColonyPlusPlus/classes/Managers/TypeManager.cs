@@ -11,6 +11,9 @@ namespace ColonyPlusPlus.classes.Managers
 
         public static List<GrowableType> GrowableTypesTracker = new List<GrowableType>();
 
+        public static List<string> AddedTypes = new List<string>();
+        public static List<string> CreativeAddedTypes = new List<string>();
+
         // using a prebuilt list of croptypes
         public static void registerTrackedTypes()
         {

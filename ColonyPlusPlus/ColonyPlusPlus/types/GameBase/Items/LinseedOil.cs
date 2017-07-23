@@ -11,6 +11,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
         {
             this.NPCLimit = 100;
             this.MaxStackSize = 600;
+            this.AllowCreative = true;
             this.Register();
         }
     }

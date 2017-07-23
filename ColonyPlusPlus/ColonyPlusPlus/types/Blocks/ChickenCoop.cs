@@ -18,6 +18,7 @@ namespace ColonyPlusPlus.types.blocks
             this.Mesh = "ChickenCoop";
             this.SideAll = "planks";
             this.IsPlaceable = true;
+            this.AllowCreative = true;
 
             CustomDataItem[] customData = { new CustomDataItem("minerIsMineable", true), new CustomDataItem("minerMiningTime", 8) };
             CustomDataHelper c = new CustomDataHelper(customData);

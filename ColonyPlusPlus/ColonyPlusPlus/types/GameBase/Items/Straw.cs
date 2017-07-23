@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
             this.OnPlaceAudio = "dirtPlace";
             this.MaxStackSize = 100;
             this.IsPlaceable = true;
+            this.AllowCreative = true;
             this.Register();
         }
     }

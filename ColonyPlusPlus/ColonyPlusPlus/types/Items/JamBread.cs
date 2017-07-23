@@ -11,6 +11,7 @@ namespace ColonyPlusPlus.types.items
         public JamBread(string name) : base(name)
         {
             this.NutritionalValue = 4.5f;
+            this.AllowCreative = true;
             this.Register();
         }
 

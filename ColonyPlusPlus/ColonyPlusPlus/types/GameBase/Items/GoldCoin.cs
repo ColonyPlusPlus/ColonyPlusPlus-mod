@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
         public GoldCoin(string name) : base(name)
         {
             this.MaxStackSize = 400;
+            this.AllowCreative = true;
             this.Register();
         }
     }

@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.types.items
     {
         public Cheese(string name) : base(name)
         {
+            this.AllowCreative = true;
             this.Register();
         }
 

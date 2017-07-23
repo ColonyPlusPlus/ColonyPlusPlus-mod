@@ -15,6 +15,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.NPCLimit = 0;
             this.FuelValue = 0.5f;
             this.IsPlaceable = true;
+            this.AllowCreative = true;
             this.Register();
         }
     }

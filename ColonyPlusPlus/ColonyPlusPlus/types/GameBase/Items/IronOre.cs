@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
         public IronOre(string name) : base(name)
         {
             this.MaxStackSize = 50;
+            this.AllowCreative = true;
             this.Register();
         }
     }

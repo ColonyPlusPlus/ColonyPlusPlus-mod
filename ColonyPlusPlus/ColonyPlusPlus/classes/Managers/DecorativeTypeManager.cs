@@ -34,7 +34,7 @@ namespace ColonyPlusPlus.classes.Managers
                 {
                     case TypeOption.Block:
 
-                        DecorativeTypeBlock d = new DecorativeTypeBlock(basename, basematerial, craftingtype);
+                        DecorativeTypeBlock d = new DecorativeTypeBlock(basename, basematerial, craftingrequireditem, craftingtype);
 
                         break;
                     case TypeOption.Slope:

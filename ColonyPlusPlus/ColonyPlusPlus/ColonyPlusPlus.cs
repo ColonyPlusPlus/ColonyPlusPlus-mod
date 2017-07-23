@@ -21,7 +21,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup)]
         public static void AfterStartup()
         {
-            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.1.2");
+            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.1.3");
             
         }
 
@@ -53,6 +53,9 @@ namespace ColonyPlusPlus
         {
             // Register Tracked Block Types (Wheat?)
             classes.Managers.TypeManager.registerTrackedTypes();
+
+            // Register Chat Commands
+            ChatCommands.CommandManager.RegisterCommand(new classes.ChatCommands.Creative());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]

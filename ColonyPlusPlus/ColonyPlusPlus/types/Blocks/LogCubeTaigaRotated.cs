@@ -22,6 +22,7 @@ namespace ColonyPlusPlus.types.Blocks
             this.RotatableZMinus = "logcubetaigarotatedz";
             this.RotatableZPlus = "logcubetaigarotatedz";
             this.IsAutoRotatable = true;
+            this.AllowCreative = true;
             this.IsPlaceable = true;
             this.Register();
         }

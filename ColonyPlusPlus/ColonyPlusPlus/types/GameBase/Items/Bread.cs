@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
         public Bread(string name) : base(name)
         {
             this.NutritionalValue = 3.0f;
+            this.AllowCreative = true;
             this.Register();
         }
     }

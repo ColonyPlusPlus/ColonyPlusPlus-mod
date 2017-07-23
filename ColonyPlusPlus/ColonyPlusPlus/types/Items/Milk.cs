@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.types.items
     {
         public Milk(string name) : base(name)
         {
+            this.AllowCreative = true;
             this.Register();
         }
 
