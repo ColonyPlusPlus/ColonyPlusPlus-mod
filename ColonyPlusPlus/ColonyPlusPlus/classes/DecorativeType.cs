@@ -45,7 +45,7 @@ namespace ColonyPlusPlus.classes
         private string CraftingRequiredItem;
         private string Shape;
 
-        public DecorativeTypeBase(string basename, string shape, string basematerial, string craftingrequireditem, string craftingtype) : base(basename + shape)
+        public DecorativeTypeBase(string basename, string shape, string basematerial, string craftingrequireditem, string craftingtype) : base(String.Format("{0}{1}",basename,shape))
         {
             // decorative block specific
             this.BaseMaterial = basematerial;
@@ -59,6 +59,10 @@ namespace ColonyPlusPlus.classes
             this.RotatableXPlus = basename + shape + "x+";
             this.RotatableZMinus = basename + shape + "z-";
             this.RotatableZPlus = basename + shape + "z+";
+            this.Icon = basename + shape;
+
+            this.SideAll = basematerial;
+            
             this.NPCLimit = 0;
             this.IsPlaceable = true;
             this.IsAutoRotatable = true;
@@ -83,6 +87,7 @@ namespace ColonyPlusPlus.classes
             this.ParentType = name + shape;
             this.SideAll = texture;
             this.Mesh = shape + "x-";
+            this.Icon = name + shape;
             this.Register();
         }
     }
@@ -93,6 +98,7 @@ namespace ColonyPlusPlus.classes
             this.ParentType = name + shape;
             this.SideAll = texture;
             this.Mesh = shape + "x+";
+            this.Icon = name + shape;
             this.Register();
         }
     }
@@ -103,6 +109,7 @@ namespace ColonyPlusPlus.classes
             this.ParentType = name + shape;
             this.SideAll = texture;
             this.Mesh = shape + "z-";
+            this.Icon = name + shape;
             this.Register();
         }
     }
@@ -113,6 +120,7 @@ namespace ColonyPlusPlus.classes
             this.ParentType = name + shape;
             this.SideAll = texture;
             this.Mesh = shape + "z+";
+            this.Icon = name + shape;
             this.Register();
         }
     }

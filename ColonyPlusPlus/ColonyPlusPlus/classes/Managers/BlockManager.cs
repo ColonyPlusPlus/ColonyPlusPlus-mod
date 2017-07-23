@@ -33,7 +33,7 @@ namespace ColonyPlusPlus.classes.Managers
             types.Blocks.LogCubeTaigaRotatedZ logcubetaigarotatedz = new types.Blocks.LogCubeTaigaRotatedZ("logcubetaigarotatedz");
 
             // interactive items
-            types.blocks.ChickenCoop chickencoop = new types.blocks.ChickenCoop("chickencoop");
+            //types.blocks.ChickenCoop chickencoop = new types.blocks.ChickenCoop("chickencoop");
 
             // Decorative blocks
 

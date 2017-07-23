@@ -79,14 +79,7 @@ namespace ColonyPlusPlus.classes
         // Don't pass a name to this, we will set it later
         public Type()
         {
-            // set default sideall
-            this._SideAll = "SELF";
-            this.node.SetAs("sideall", "SELF");
-
-            // set default isplacable 
-            this._IsPlaceable = false;
-            this.node.SetAs("isPlaceable", false);
-
+           
             // Register the callback to add recipes
             this.AddRecipeCallback();
         }
