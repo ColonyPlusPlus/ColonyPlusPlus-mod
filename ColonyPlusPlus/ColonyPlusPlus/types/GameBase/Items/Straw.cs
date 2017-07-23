@@ -12,6 +12,7 @@ namespace ColonyPlusPlus.types.GameBase.Items
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "dirtPlace";
             this.MaxStackSize = 100;
+            this.IsPlaceable = true;
             this.Register();
         }
     }

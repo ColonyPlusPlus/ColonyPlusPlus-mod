@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ColonyPlusPlus.classes.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace ColonyPlusPlus.types.blocks
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
 
-            this.Mesh = "ChickenCoop";
+            //this.Mesh = "ChickenCoop";
             this.SideAll = "planks";
             this.IsPlaceable = true;
 
@@ -22,14 +23,16 @@ namespace ColonyPlusPlus.types.blocks
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            /*RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logtaiga", 1)
+                    RecipeManager.Item("logtemperate", 1),
+                    RecipeManager.Item("planks", 4),
+                    RecipeManager.Item("straw", 3)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("logcubetaiga", 1)
+                    RecipeManager.Item("chickencoop", 1)
                 },
-                0.0f);
+                0.0f);*/
         }
     }
 }

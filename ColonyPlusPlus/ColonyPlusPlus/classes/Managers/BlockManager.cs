@@ -24,16 +24,16 @@ namespace ColonyPlusPlus.classes.Managers
             types.Blocks.LogCube logcube = new types.Blocks.LogCube("logcube");
             types.Blocks.LogCubeTemperate logcubetemperate = new types.Blocks.LogCubeTemperate("logcubetemperate");
             types.Blocks.LogCubeTaiga logcubetaiga = new types.Blocks.LogCubeTaiga("logcubetaiga");
-
             types.Blocks.LogCubeRotated logcuberotated = new types.Blocks.LogCubeRotated("logcuberotated");
             types.Blocks.LogCubeTemperateRotated logcubetemperaterotated = new types.Blocks.LogCubeTemperateRotated("logcubetemperaterotated");
             types.Blocks.LogCubeTemperateRotatedX logcubetemperaterotatedx = new types.Blocks.LogCubeTemperateRotatedX("logcubetemperaterotatedx");
             types.Blocks.LogCubeTemperateRotatedZ logcubetemperaterotatedz = new types.Blocks.LogCubeTemperateRotatedZ("logcubetemperaterotatedz");
             types.Blocks.LogCubeTaigaRotated logcubetaigarotated = new types.Blocks.LogCubeTaigaRotated("logcubetaigarotated");
-            types.Blocks.LogCubeTagiaRotatedX logcubetaigarotatedx = new types.Blocks.LogCubeTaigaRotatedX("logcubetaigarotatedx");
-            types.Blocks.LogCubeTaigaRotatedZ logcubetaigarotatedz = new types.Blocks.LogCubeTtaigaRotatedZ("logcubetaigarotatedz");
+            types.Blocks.LogCubeTaigaRotatedX logcubetaigarotatedx = new types.Blocks.LogCubeTaigaRotatedX("logcubetaigarotatedx");
+            types.Blocks.LogCubeTaigaRotatedZ logcubetaigarotatedz = new types.Blocks.LogCubeTaigaRotatedZ("logcubetaigarotatedz");
 
-
+            // interactive items
+            types.blocks.ChickenCoop chickencoop = new types.blocks.ChickenCoop("chickencoop");
 
             // Decorative blocks
 
@@ -42,22 +42,22 @@ namespace ColonyPlusPlus.classes.Managers
 
             classes.Managers.DecorativeTypeManager clayblock = new DecorativeTypeManager("clayblock", "clayblock", "clay", "crafting", clayblocktypes);
             //types.Blocks.Decorative.ClayBlock clayblock = new types.Blocks.Decorative.ClayBlock("clayblock");
-            classes.Managers.DecorativeTypeManager clayblockblack = new DecorativeTypeManager("clayblockblack", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockblue = new DecorativeTypeManager("clayblockblue", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockbrown = new DecorativeTypeManager("clayblockbrown", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockcyan = new DecorativeTypeManager("clayblockcyan", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockgray = new DecorativeTypeManager("clayblockgray", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockgreen = new DecorativeTypeManager("clayblockgreen", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblocklightblue = new DecorativeTypeManager("clayblocklightblue", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblocklime = new DecorativeTypeManager("clayblocklime", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockmagenta = new DecorativeTypeManager("clayblockmagenta", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockorange = new DecorativeTypeManager("clayblockorange", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockpink = new DecorativeTypeManager("clayblockpink", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockpurple = new DecorativeTypeManager("clayblockpurple", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockred = new DecorativeTypeManager("clayblockred", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblocksilver = new DecorativeTypeManager("clayblocksilver", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockwhite = new DecorativeTypeManager("clayblockwhite", "clayblock", "clay", "crafting", clayblocktypes);
-            classes.Managers.DecorativeTypeManager clayblockyellow = new DecorativeTypeManager("clayblockyellow", "clayblock", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockblack = new DecorativeTypeManager("clayblockblack", "clayblockblack", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockblue = new DecorativeTypeManager("clayblockblue", "clayblockblue", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockbrown = new DecorativeTypeManager("clayblockbrown", "clayblockbrown", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockcyan = new DecorativeTypeManager("clayblockcyan", "clayblockcyan", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockgray = new DecorativeTypeManager("clayblockgray", "clayblockgray", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockgreen = new DecorativeTypeManager("clayblockgreen", "clayblockgreen", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblocklightblue = new DecorativeTypeManager("clayblocklightblue", "clayblocklightblue", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblocklime = new DecorativeTypeManager("clayblocklime", "clayblocklime", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockmagenta = new DecorativeTypeManager("clayblockmagenta", "clayblockmagenta", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockorange = new DecorativeTypeManager("clayblockorange", "clayblockorange", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockpink = new DecorativeTypeManager("clayblockpink", "clayblockpink", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockpurple = new DecorativeTypeManager("clayblockpurple", "clayblockpurple", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockred = new DecorativeTypeManager("clayblockred", "clayblockred", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblocksilver = new DecorativeTypeManager("clayblocksilver", "clayblocksilver", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockwhite = new DecorativeTypeManager("clayblockwhite", "clayblockwhite", "clay", "crafting", clayblocktypes);
+            classes.Managers.DecorativeTypeManager clayblockyellow = new DecorativeTypeManager("clayblockyellow", "clayblockyellow", "clay", "crafting", clayblocktypes);
 
 
         }
