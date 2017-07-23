@@ -19,14 +19,12 @@ namespace ColonyPlusPlus.types.blocks
             this.SideAll = "planks";
             this.IsPlaceable = true;
 
-            CustomDataItem[] customData = { new CustomDataItem("minerIsMineable", true), new CustomDataItem("minerMiningTime", true) };
+            CustomDataItem[] customData = { new CustomDataItem("minerIsMineable", true), new CustomDataItem("minerMiningTime", 8) };
             CustomDataHelper c = new CustomDataHelper(customData);
             this.CustomData = c.customDataNode;
 
             classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("feather",    2,  1.0f),
-                new classes.ItemHelper.OnRemove("feather",    1,  0.55f),
-                new classes.ItemHelper.OnRemove("egg",        1,  0.2f)
+                new classes.ItemHelper.OnRemove("feather",    2,  1.0f)
             };
             this.OnRemove = onRemoveNode;
 
