@@ -69,7 +69,15 @@
     <Compile Include="ColonyPlusPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="types\Blocks\BirdNest.cs" />
-    <Compile Include="types\Blocks\Decorative\ClayBlock.cs" />
+    <Compile Include="types\Blocks\ChickenCoop.cs" />
+    <Compile Include="types\Blocks\LogCubeRotated.cs" />
+    <Compile Include="types\Blocks\LogCube.cs" />
+    <Compile Include="types\Blocks\LogCubeTaigaRotated.cs" />
+    <Compile Include="types\Blocks\LogCubeTaiga.cs" />
+    <Compile Include="types\Blocks\LogCubeTemperateRotatedX.cs" />
+    <Compile Include="types\Blocks\LogCubeTemperateRotatedZ.cs" />
+    <Compile Include="types\Blocks\LogCubeTemperateRotated.cs" />
+    <Compile Include="types\Blocks\LogCubeTemperate.cs" />
     <Compile Include="types\Blocks\Sugarcane.cs" />
     <Compile Include="types\Blocks\VegetablePatch.cs" />
     <Compile Include="types\Blocks\WildBerryBush.cs" />

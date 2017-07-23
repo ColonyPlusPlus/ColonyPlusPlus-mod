@@ -10,6 +10,12 @@
             Material.createMaterial("wildberrybush", "wildberrybush", "neutral", "berrybush", "berrybush");
             Material.createMaterial("vegetablepatch", "leavesTemperate", "neutral", "leavesTemperate", "leavesTemperate");
 
+
+            Material.createMaterial("cpplogtemperatetop", "cpplogtemperatetop", "neutral", "plasterblock", "plasterblock");
+            Material.createMaterial("cpplogtemperate", "cpplogtemperate", "neutral", "plasterblock", "plasterblock");
+            Material.createMaterial("cpplogtaiga", "cpplogtaiga", "neutral", "plasterblock", "plasterblock");
+            Material.createMaterial("cpplogtaigatop", "cpplogtaigatop", "neutral", "plasterblock", "plasterblock");
+
             // Decorative blocks
             Material.createMaterial("clayblock", "clayblock", "neutral", "plasterblock", "plasterblock");
             Material.createMaterial("clayblockblack", "clayblockblack", "neutral", "plasterblock", "plasterblock");
