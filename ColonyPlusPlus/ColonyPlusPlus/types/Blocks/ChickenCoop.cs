@@ -14,7 +14,7 @@ namespace ColonyPlusPlus.types.blocks
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
 
-            //this.Mesh = "ChickenCoop";
+            this.Mesh = "ChickenCoop";
             this.SideAll = "planks";
             this.IsPlaceable = true;
 
