@@ -42,13 +42,15 @@ namespace ColonyPlusPlus.classes
     {
         private string BaseMaterial;
         private string CraftingType;
+        private string CraftingRequiredItem;
         private string Shape;
 
-        public DecorativeTypeBase(string basename, string shape, string basematerial, string craftingtype) : base(basename)
+        public DecorativeTypeBase(string basename, string shape, string basematerial, string craftingrequireditem, string craftingtype) : base(basename + shape)
         {
             // decorative block specific
             this.BaseMaterial = basematerial;
             this.CraftingType = craftingtype;
+            this.CraftingRequiredItem = craftingrequireditem;
             this.Shape = shape;
 
             this.OnPlaceAudio = "stonePlace";
@@ -66,7 +68,7 @@ namespace ColonyPlusPlus.classes
         {
             RecipeManager.AddRecipe(this.CraftingType,
                 new List<InventoryItem> {
-                    RecipeManager.Item(this.BaseMaterial, 1)
+                    RecipeManager.Item(this.CraftingRequiredItem, 1)
                 },
                 new List<InventoryItem> {
                     RecipeManager.Item(this.TypeName, 1)
@@ -76,7 +78,7 @@ namespace ColonyPlusPlus.classes
     }
     class DecorativeTypeXMinus : classes.Type
     {
-        public DecorativeTypeXMinus(string name, string shape, string texture) : base(name)
+        public DecorativeTypeXMinus(string name, string shape, string texture) : base(name + shape + "x-")
         {
             this.ParentType = name + shape;
             this.SideAll = texture;
@@ -86,7 +88,7 @@ namespace ColonyPlusPlus.classes
     }
     class DecorativeTypeXPlus : classes.Type
     {
-        public DecorativeTypeXPlus(string name, string shape, string texture) : base(name)
+        public DecorativeTypeXPlus(string name, string shape, string texture) : base(name + shape + "x+")
         {
             this.ParentType = name + shape;
             this.SideAll = texture;
@@ -96,7 +98,7 @@ namespace ColonyPlusPlus.classes
     }
     class DecorativeTypeZMinus : classes.Type
     {
-        public DecorativeTypeZMinus(string name, string shape, string texture) : base(name)
+        public DecorativeTypeZMinus(string name, string shape, string texture) : base(name + shape + "z-")
         {
             this.ParentType = name + shape;
             this.SideAll = texture;
@@ -106,7 +108,7 @@ namespace ColonyPlusPlus.classes
     }
     class DecorativeTypeZPlus : classes.Type
     {
-        public DecorativeTypeZPlus(string name, string shape, string texture) : base(name)
+        public DecorativeTypeZPlus(string name, string shape, string texture) : base(name + shape + "z+")
         {
             this.ParentType = name + shape;
             this.SideAll = texture;

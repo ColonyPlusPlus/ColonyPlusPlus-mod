@@ -83,10 +83,6 @@ namespace ColonyPlusPlus.classes
             this._SideAll = "SELF";
             this.node.SetAs("sideall", "SELF");
 
-            // set defualt icon
-            this._Icon = name + ".png";
-            this.node.SetAs("icon", this._Icon);
-
             // set default isplacable 
             this._IsPlaceable = false;
             this.node.SetAs("isPlaceable", false);

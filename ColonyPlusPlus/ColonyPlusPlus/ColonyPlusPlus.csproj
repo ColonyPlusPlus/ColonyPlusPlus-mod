@@ -49,6 +49,9 @@
   <ItemGroup>
     <Compile Include="classes\CustomDataItem.cs" />
     <Compile Include="classes\Data\CropData.cs" />
+    <Compile Include="classes\DecorativeType.cs" />
+    <Compile Include="classes\Managers\BaseGameManager.cs" />
+    <Compile Include="classes\Managers\DecorativeTypeManager.cs" />
     <Compile Include="classes\GrowableType.cs" />
     <Compile Include="classes\Helpers\BaseRecipes.cs" />
     <Compile Include="classes\Helpers\CustomDataHelper.cs" />

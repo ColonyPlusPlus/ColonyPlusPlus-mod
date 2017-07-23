@@ -21,7 +21,7 @@ namespace ColonyPlusPlus.classes.Managers
             types.blocks.VegetablePatch vegetablepatch                  = new types.blocks.VegetablePatch("vegetablepatch");
 
             // Decorative blocks
-            classes.Managers.DecorativeTypeManager clayblock = new DecorativeTypeManager("clayblock", "clay", "crafting", new DecorativeTypeManager.TypeOption[] { DecorativeTypeManager.TypeOption.Block, DecorativeTypeManager.TypeOption.Curve, DecorativeTypeManager.TypeOption.CurveRotated, DecorativeTypeManager.TypeOption.CurveCorner, DecorativeTypeManager.TypeOption.Slope });
+            classes.Managers.DecorativeTypeManager clayblock = new DecorativeTypeManager("clayblock", "clayblock", "clay", "crafting", new DecorativeTypeManager.TypeOption[] { DecorativeTypeManager.TypeOption.Block, DecorativeTypeManager.TypeOption.Curve, DecorativeTypeManager.TypeOption.CurveRotated, DecorativeTypeManager.TypeOption.CurveCorner, DecorativeTypeManager.TypeOption.Slope });
             //types.Blocks.Decorative.ClayBlock clayblock = new types.Blocks.Decorative.ClayBlock("clayblock");
             types.Blocks.Decorative.ClayBlock clayblockblack = new types.Blocks.Decorative.ClayBlock("clayblockblack");
             types.Blocks.Decorative.ClayBlock clayblockblue = new types.Blocks.Decorative.ClayBlock("clayblockblue");
