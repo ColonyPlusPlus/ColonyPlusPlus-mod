@@ -75,6 +75,26 @@ namespace ColonyPlusPlus.classes
             this.AddRecipeCallback();
         }
 
+        // Constructor with no arguments
+        // Don't pass a name to this, we will set it later
+        public Type()
+        {
+            // set default sideall
+            this._SideAll = "SELF";
+            this.node.SetAs("sideall", "SELF");
+
+            // set defualt icon
+            this._Icon = name + ".png";
+            this.node.SetAs("icon", this._Icon);
+
+            // set default isplacable 
+            this._IsPlaceable = false;
+            this.node.SetAs("isPlaceable", false);
+
+            // Register the callback to add recipes
+            this.AddRecipeCallback();
+        }
+
         // Getters & Setters
         public string OnPlaceAudio
         {
