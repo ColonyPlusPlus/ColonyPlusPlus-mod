@@ -10,7 +10,6 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         public CherryBlossom(string name) : base(name)
         {
             this.ParentType = "leaves";
-            this.Mesh = "cherrysapling";
             this.IsPlaceable = true;
 
             classes.ItemHelper.OnRemove[] onRemoveNode = {

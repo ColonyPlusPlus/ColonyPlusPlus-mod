@@ -16,7 +16,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.SideAll = "sappling";
             this.NPCLimit = 0;
             this.IsPlaceable = true;
-            this.Mesh = "sapling";
+            this.Mesh = "cherrysapling";
             this.Register();
         }
     }
