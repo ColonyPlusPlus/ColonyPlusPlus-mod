@@ -16,8 +16,9 @@ namespace ColonyPlusPlus.classes.Managers
             SlopeCorner,
             Curve,
             CurveCorner,
-            CurveRotated
-
+            CurveRotated,
+            TwoStairs,
+            FourStairs
         };
 
         private string baseName;
@@ -82,6 +83,16 @@ namespace ColonyPlusPlus.classes.Managers
                         DecorativeTypeXPlus dcurvecornerxp = new DecorativeTypeXPlus(basename, "curvecorner", basematerial);
                         DecorativeTypeZMinus dcurvecornerzm = new DecorativeTypeZMinus(basename, "curvecorner", basematerial);
                         DecorativeTypeZPlus dcurvecornerzp = new DecorativeTypeZPlus(basename, "curvecorner", basematerial);
+
+                        break;
+
+                    case TypeOption.FourStairs:
+
+                        DecorativeTypeBase dfourstairs = new DecorativeTypeBase(basename, "fourstepstairs", basematerial, craftingrequireditem, craftingtype);
+                        DecorativeTypeXMinus dfourstairsxm = new DecorativeTypeXMinus(basename, "fourstepstairs", basematerial);
+                        DecorativeTypeXPlus dfourstairsxp = new DecorativeTypeXPlus(basename, "fourstepstairs", basematerial);
+                        DecorativeTypeZMinus dfourstairszm = new DecorativeTypeZMinus(basename, "fourstepstairs", basematerial);
+                        DecorativeTypeZPlus dfourtairszp = new DecorativeTypeZPlus(basename, "fourstepstairs", basematerial);
 
                         break;
 
