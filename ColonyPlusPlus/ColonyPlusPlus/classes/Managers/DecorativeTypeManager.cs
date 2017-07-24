@@ -86,6 +86,16 @@ namespace ColonyPlusPlus.classes.Managers
 
                         break;
 
+                    case TypeOption.TwoStairs:
+
+                        DecorativeTypeBase dtwostairs = new DecorativeTypeBase(basename, "twostepstairs", basematerial, craftingrequireditem, craftingtype);
+                        DecorativeTypeXMinus dtwostairsxm = new DecorativeTypeXMinus(basename, "twostepstairs", basematerial);
+                        DecorativeTypeXPlus dtwostairsxp = new DecorativeTypeXPlus(basename, "twostepstairs", basematerial);
+                        DecorativeTypeZMinus dtwostairszm = new DecorativeTypeZMinus(basename, "twostepstairs", basematerial);
+                        DecorativeTypeZPlus dtwostairszp = new DecorativeTypeZPlus(basename, "twostepstairs", basematerial);
+
+                        break;
+
                     case TypeOption.FourStairs:
 
                         DecorativeTypeBase dfourstairs = new DecorativeTypeBase(basename, "fourstepstairs", basematerial, craftingrequireditem, craftingtype);
