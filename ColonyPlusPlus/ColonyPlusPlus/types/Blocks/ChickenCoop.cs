@@ -20,7 +20,7 @@ namespace ColonyPlusPlus.types.blocks
             this.IsPlaceable = true;
             this.AllowCreative = true;
 
-            CustomDataItem[] customData = { new CustomDataItem("minerIsMineable", true), new CustomDataItem("minerMiningTime", 8) };
+            CustomDataItem[] customData = { new CustomDataItem("minerIsMineable", true), new CustomDataItem("minerMiningTime", 8.0f) };
             CustomDataHelper c = new CustomDataHelper(customData);
             this.CustomData = c.customDataNode;
 

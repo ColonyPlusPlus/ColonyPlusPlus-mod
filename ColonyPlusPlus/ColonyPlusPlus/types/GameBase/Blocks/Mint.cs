@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.OnPlaceAudio = "stonePlace";
             this.OnRemoveAudio = "stoneDelete";
             this.SideAll = "planks";
-            this.SideXPlus = "mint";
+            this.SideYPlus = "mint";
             this.NPCLimit = 0;
             this.IsPlaceable = true;
             this.Register();

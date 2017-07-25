@@ -35,6 +35,15 @@ namespace ColonyPlusPlus.types.Blocks
                     RecipeManager.Item("logcubetemperate", 1)
                 },
                 0.0f);
+
+            RecipeManager.AddRecipe("crafting",
+                new List<InventoryItem> {
+                    RecipeManager.Item("logcubetemperaterotated", 1)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("logcubetemperate", 1)
+                },
+                0.0f);
         }
     }
 }

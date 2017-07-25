@@ -1,12 +1,22 @@
+Version 0.1.5 (DD-MM-17):
+-------------------------------------
+Added:
+	New Arrow Recipe
+		1 - Plank, Feather, Iron Ingot = 12 arrows
+	Rotatable clay blocks
+		Two Step Stairs
+		Four Step Stairs
+	Can now change between the two cube logs
+		
+Fixed:
+	Mint texture
+
 Version 0.1.4 (24-07-17):
 -------------------------------------
 Added:
 	Creative Mode cheat
 		Adds 1000 of everything into your stockpile
 		How to enable: /creative true
-	Rotatable clay blocks
-		Two Step Stairs
-		Four Step Stairs
 		
 Fixed:
 	Cherry Sapling Mesh
