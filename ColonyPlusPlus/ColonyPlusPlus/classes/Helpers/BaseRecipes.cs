@@ -41,9 +41,13 @@ namespace ColonyPlusPlus.classes
                 },
                 0.0f, true);
 
+            /// <summary>
+            /// 2 planks = 1 bow
+            /// </summary>
             RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 2)
+                    RecipeManager.Item("planks", 2),
+                    RecipeManager.Item("flax", 2)
                 },
                 new List<InventoryItem> {
                     RecipeManager.Item("bow", 1)

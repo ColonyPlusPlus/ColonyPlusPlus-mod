@@ -7,7 +7,11 @@ Added:
 		Two Step Stairs
 		Four Step Stairs
 	Can now change between the two cube logs
-		
+	Now start with 2 bows and 4 flax seeds
+
+Changed:
+		Bow recipe has been changed to requires 2 flax
+
 Fixed:
 	Mint texture
 
