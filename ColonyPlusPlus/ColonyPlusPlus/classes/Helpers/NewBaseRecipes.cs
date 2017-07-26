@@ -20,6 +20,15 @@ namespace ColonyPlusPlus.classes.Helpers
                     RecipeManager.Item("arrow", 12)
                 },
                 0.0f, true);
+
+            RecipeManager.AddRecipe("shopping",
+                new List<InventoryItem> {
+                    RecipeManager.Item("goldcoin", 3)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("grasstaiga", 10)
+                },
+                0.0f);
         }
     }
 }
