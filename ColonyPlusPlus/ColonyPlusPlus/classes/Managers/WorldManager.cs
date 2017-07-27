@@ -156,6 +156,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
                     if (array != null)
                     {
+                        int chunksloaded = 0;
                         foreach (JSONNode node in array.LoopArray())
                         {
                             try
@@ -177,6 +178,8 @@ namespace ColonyPlusPlus.Classes.Managers
                                     instanceclass = new ChunkData(location, owned, new NetworkID(new CSteamID(playerID)));
 
                                     ChunkDataList.Add(chunkID, instanceclass);
+
+                                    chunksloaded += 1;
                                 }
                                 
 
@@ -187,7 +190,7 @@ namespace ColonyPlusPlus.Classes.Managers
                             }
                         }
 
-                        Utilities.WriteLog("Loaded Chunk Data");
+                        Utilities.WriteLog("Loaded Chunk Data (" + chunksloaded + ") chunks");
                         
                     }
                     else
