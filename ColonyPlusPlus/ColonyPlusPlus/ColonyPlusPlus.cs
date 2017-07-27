@@ -56,6 +56,7 @@ namespace ColonyPlusPlus
 
             // Register Chat Commands
             ChatCommands.CommandManager.RegisterCommand(new classes.ChatCommands.Creative());
+            ChatCommands.CommandManager.RegisterCommand(new classes.ChatCommands.Clear());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
