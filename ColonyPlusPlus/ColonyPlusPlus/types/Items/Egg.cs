@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes.Managers;
+using ColonyPlusPlus.Classes.Managers;
 
-namespace ColonyPlusPlus.types.items
+namespace ColonyPlusPlus.Types.Items
 {
-    class Egg : classes.Type
+    class Egg : Classes.Type
     {
         public Egg(string name) : base(name)
         {

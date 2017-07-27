@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Sand : classes.Type
+    class Sand : Classes.Type
     {
         public Sand(string name) : base(name)
         {
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("sand", 1, 1f),
-                new classes.ItemHelper.OnRemove("salt", 1, 0.2f),
-                new classes.ItemHelper.OnRemove("salt", 1, 0.2f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("sand", 1, 1f),
+                new Classes.ItemHelper.OnRemove("salt", 1, 0.2f),
+                new Classes.ItemHelper.OnRemove("salt", 1, 0.2f)
             };
 
             this.OnRemove = onRemoveNode;

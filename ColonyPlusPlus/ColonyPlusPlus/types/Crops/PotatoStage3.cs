@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes.Managers;
+using ColonyPlusPlus.Classes.Managers;
 
-namespace ColonyPlusPlus.types.Crops
+namespace ColonyPlusPlus.Types.Crops
 {
-    class PotatoStage3 : classes.Type
+    class PotatoStage3 : Classes.Type
     {
         public PotatoStage3(string name) : base(name)
         {
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("potatostage1",   1,  1.0f),
-                new classes.ItemHelper.OnRemove("potatostage1",   2,  0.4f),
-                new classes.ItemHelper.OnRemove("potatostage1",   2,  0.4f),
-                new classes.ItemHelper.OnRemove("potatostage1",   2,  0.4f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("potatostage1",   1,  1.0f),
+                new Classes.ItemHelper.OnRemove("potatostage1",   2,  0.4f),
+                new Classes.ItemHelper.OnRemove("potatostage1",   2,  0.4f),
+                new Classes.ItemHelper.OnRemove("potatostage1",   2,  0.4f)
             };
 
             this.OnRemove = onRemoveNode;

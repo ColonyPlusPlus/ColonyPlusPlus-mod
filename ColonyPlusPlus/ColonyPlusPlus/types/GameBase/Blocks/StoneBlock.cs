@@ -1,17 +1,17 @@
-﻿using ColonyPlusPlus.classes.Managers;
+﻿using ColonyPlusPlus.Classes.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class StoneBlock : classes.Type
+    class StoneBlock : Classes.Type
     {
         public StoneBlock(string name) : base(name)
         {
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("stoneblock",   1,  1.0f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("stoneblock",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
 

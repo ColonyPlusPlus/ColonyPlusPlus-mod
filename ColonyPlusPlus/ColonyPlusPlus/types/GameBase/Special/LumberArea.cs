@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Special
+namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class LumberArea : classes.Type
+    class LumberArea : Classes.Type
     {
         public LumberArea(string name) : base(name)
         {

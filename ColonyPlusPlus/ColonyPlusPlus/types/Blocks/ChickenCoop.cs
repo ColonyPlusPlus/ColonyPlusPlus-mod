@@ -1,13 +1,13 @@
-﻿using ColonyPlusPlus.classes;
-using ColonyPlusPlus.classes.Managers;
+﻿using ColonyPlusPlus.Classes;
+using ColonyPlusPlus.Classes.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.blocks
+namespace ColonyPlusPlus.Types.Blocks
 {
-    class ChickenCoop : classes.Type
+    class ChickenCoop : Classes.Type
     {
         public ChickenCoop(string name) : base(name)
         {
@@ -24,8 +24,8 @@ namespace ColonyPlusPlus.types.blocks
             CustomDataHelper c = new CustomDataHelper(customData);
             this.CustomData = c.customDataNode;
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("feather",    2,  1.0f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("feather",    2,  1.0f)
             };
             this.OnRemove = onRemoveNode;
 

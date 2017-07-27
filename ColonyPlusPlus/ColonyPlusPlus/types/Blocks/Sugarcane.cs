@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.blocks
+namespace ColonyPlusPlus.Types.Blocks
 {
-    class Sugarcane : classes.Type
+    class Sugarcane : Classes.Type
     {
         public Sugarcane(string name) : base(name)
         {
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("sugarcaneitem", 3, 0.5f),
-                new classes.ItemHelper.OnRemove("sugarcaneitem", 2, 0.5f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("sugarcaneitem", 3, 0.5f),
+                new Classes.ItemHelper.OnRemove("sugarcaneitem", 2, 0.5f)
             };
 
             this.OnRemove = onRemoveNode;

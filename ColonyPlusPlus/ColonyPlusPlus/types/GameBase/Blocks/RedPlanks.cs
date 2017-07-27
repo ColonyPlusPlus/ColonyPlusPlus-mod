@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class RedPlanks : classes.Type
+    class RedPlanks : Classes.Type
     {
         public RedPlanks(string name) : base(name)
         {

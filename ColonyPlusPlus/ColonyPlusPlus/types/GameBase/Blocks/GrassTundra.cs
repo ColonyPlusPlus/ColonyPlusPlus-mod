@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class GrassTundra : classes.Type
+    class GrassTundra : Classes.Type
     {
         public GrassTundra(string name) : base(name)
         {
             this.ParentType = "grass";
             this.IsPlaceable = true;
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("grasstundra",   1,  1.0f),
-                new classes.ItemHelper.OnRemove("wheatstage1",   1,  0.1f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("grasstundra",   1,  1.0f),
+                new Classes.ItemHelper.OnRemove("wheatstage1",   1,  0.1f)
             };
             this.OnRemove = onRemoveNode;
 

@@ -3,119 +3,119 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.classes.Managers
+namespace ColonyPlusPlus.Classes.Managers
 {
     class BaseGameManager
     {
         // Register all blocks
         public static void registerBlocks()
         {
-            classes.Utilities.WriteLog("Starting To Register Basegame Items");
+            Classes.Utilities.WriteLog("Starting To Register Basegame Items");
 
             //Base Game Special Items
-            types.GameBase.Special.Banner banner = new types.GameBase.Special.Banner("banner");
-            types.GameBase.Special.BannerTool bannertool = new types.GameBase.Special.BannerTool("bannertool");
-            types.GameBase.Special.CommandTool commandtool = new types.GameBase.Special.CommandTool("commandtool");
-            types.GameBase.Special.ConstructionTool constructiontool = new types.GameBase.Special.ConstructionTool("constructiontool");
-            types.GameBase.Special.LumberArea lumberarea = new types.GameBase.Special.LumberArea("lumberarea");
-            types.GameBase.Special.MissingError missingerror = new types.GameBase.Special.MissingError("missingerror");
-            types.GameBase.Special.ErrorNoFuel errornofuel = new types.GameBase.Special.ErrorNoFuel("errornofuel");
-            types.GameBase.Special.ErrorNoPath errornopath = new types.GameBase.Special.ErrorNoPath("errornopath");
-            types.GameBase.Special.ErrorIdle erroridle = new types.GameBase.Special.ErrorIdle("erroridle");
-            types.GameBase.Special.SaveTool savetool = new types.GameBase.Special.SaveTool("savetool");
+            Types.GameBase.Special.Banner banner = new Types.GameBase.Special.Banner("banner");
+            Types.GameBase.Special.BannerTool bannertool = new Types.GameBase.Special.BannerTool("bannertool");
+            Types.GameBase.Special.CommandTool commandtool = new Types.GameBase.Special.CommandTool("commandtool");
+            Types.GameBase.Special.ConstructionTool constructiontool = new Types.GameBase.Special.ConstructionTool("constructiontool");
+            Types.GameBase.Special.LumberArea lumberarea = new Types.GameBase.Special.LumberArea("lumberarea");
+            Types.GameBase.Special.MissingError missingerror = new Types.GameBase.Special.MissingError("missingerror");
+            Types.GameBase.Special.ErrorNoFuel errornofuel = new Types.GameBase.Special.ErrorNoFuel("errornofuel");
+            Types.GameBase.Special.ErrorNoPath errornopath = new Types.GameBase.Special.ErrorNoPath("errornopath");
+            Types.GameBase.Special.ErrorIdle erroridle = new Types.GameBase.Special.ErrorIdle("erroridle");
+            Types.GameBase.Special.SaveTool savetool = new Types.GameBase.Special.SaveTool("savetool");
 
             //Base Game Blocks!
-            types.GameBase.Blocks.Adobe adobe = new types.GameBase.Blocks.Adobe("adobe");
-            types.GameBase.Blocks.Air air = new types.GameBase.Blocks.Air("air");
-            types.GameBase.Blocks.Bed bed = new types.GameBase.Blocks.Bed("bed");
-            types.GameBase.Blocks.BedxMinus bedxminus = new types.GameBase.Blocks.BedxMinus("bedx-");
-            types.GameBase.Blocks.BedxPlus bedxplus = new types.GameBase.Blocks.BedxPlus("bedx+");
-            types.GameBase.Blocks.BedzMinus bedzminus = new types.GameBase.Blocks.BedzMinus("bedz-");
-            types.GameBase.Blocks.BedzPlus bedzplus = new types.GameBase.Blocks.BedzPlus("bedz+");
-            types.GameBase.Blocks.BedEnd bedend = new types.GameBase.Blocks.BedEnd("bedend");
-            types.GameBase.Blocks.BedendxMinus bedendxminus = new types.GameBase.Blocks.BedendxMinus("bedendx-");
-            types.GameBase.Blocks.BedendxPlus bedendxplus = new types.GameBase.Blocks.BedendxPlus("bedendx+");
-            types.GameBase.Blocks.BedendzMinus bedendzminus = new types.GameBase.Blocks.BedendzMinus("bedendz-");
-            types.GameBase.Blocks.BedendzPlus bedendzplus = new types.GameBase.Blocks.BedendzPlus("bedendz+");
-            types.GameBase.Blocks.BerryBush berrybush = new types.GameBase.Blocks.BerryBush("berrybush");
-            types.GameBase.Blocks.BlackPlanks blackplanks = new types.GameBase.Blocks.BlackPlanks("blackplanks");
-            types.GameBase.Blocks.Bricks bricks = new types.GameBase.Blocks.Bricks("bricks");
-            types.GameBase.Blocks.CherrySapling cherrysapling = new types.GameBase.Blocks.CherrySapling("cherrysapling");
-            types.GameBase.Blocks.CoatedPlanks coatedplanks = new types.GameBase.Blocks.CoatedPlanks("coatedplanks");
-            types.GameBase.Blocks.Crate crate = new types.GameBase.Blocks.Crate("crate");
-            types.GameBase.Blocks.Dirt dirt = new types.GameBase.Blocks.Dirt("dirt");
-            types.GameBase.Blocks.FlaxStage flaxstage = new types.GameBase.Blocks.FlaxStage("flaxstage");
-            types.GameBase.Blocks.FlaxStageOne flaxstageone = new types.GameBase.Blocks.FlaxStageOne("flaxstage1");
-            types.GameBase.Blocks.FlaxStageTwo flaxstagetwo = new types.GameBase.Blocks.FlaxStageTwo("flaxstage2");
-            types.GameBase.Blocks.Furnace furnace = new types.GameBase.Blocks.Furnace("furnace");
-            types.GameBase.Blocks.FurnancexMinus furnacexminus = new types.GameBase.Blocks.FurnancexMinus("furnacex-");
-            types.GameBase.Blocks.FurnancexPlus furnacexplus = new types.GameBase.Blocks.FurnancexPlus("furnacex+");
-            types.GameBase.Blocks.FurnancezMinus furnacezminus = new types.GameBase.Blocks.FurnancezMinus("furnacez-");
-            types.GameBase.Blocks.FurnancezPlus furnacezplus = new types.GameBase.Blocks.FurnancezPlus("furnacez+");
-            types.GameBase.Blocks.FurnaceLit furnacelit = new types.GameBase.Blocks.FurnaceLit("furnacelit");
-            types.GameBase.Blocks.FurnancelitxMinus furnacelitxminus = new types.GameBase.Blocks.FurnancelitxMinus("furnacelitx-");
-            types.GameBase.Blocks.FurnancelitxPlus furnacelitxplus = new types.GameBase.Blocks.FurnancelitxPlus("furnacelitx+");
-            types.GameBase.Blocks.FurnancelitzMinus furnacelitzminus = new types.GameBase.Blocks.FurnancelitzMinus("furnacelitz-");
-            types.GameBase.Blocks.FurnancelitzPlus furnacelitzplus = new types.GameBase.Blocks.FurnancelitzPlus("furnacelitz+");
-            types.GameBase.Blocks.Grass grass = new types.GameBase.Blocks.Grass("grass");
-            types.GameBase.Blocks.GrassRainforest grassrainforest = new types.GameBase.Blocks.GrassRainforest("grassrainforest");
-            types.GameBase.Blocks.GrassSavanna grasssavanna = new types.GameBase.Blocks.GrassSavanna("grasssavanna");
-            types.GameBase.Blocks.GrassTaiga grasstaiga = new types.GameBase.Blocks.GrassTaiga("grasstaiga");
-            types.GameBase.Blocks.GrassTemperate grasstemperate = new types.GameBase.Blocks.GrassTemperate("grasstemperate");
-            types.GameBase.Blocks.GrassTundra grasstundra = new types.GameBase.Blocks.GrassTundra("grasstundra");
-            types.GameBase.Blocks.Grindstone grindstone = new types.GameBase.Blocks.Grindstone("grindstone");
-            types.GameBase.Blocks.InfiniteClay infiniteclay = new types.GameBase.Blocks.InfiniteClay("infiniteclay");
-            types.GameBase.Blocks.infiniteCoal infinitecoal = new types.GameBase.Blocks.infiniteCoal("infinitecoal");
-            types.GameBase.Blocks.InfiniteGold infinitegold = new types.GameBase.Blocks.InfiniteGold("infinitegold");
-            types.GameBase.Blocks.InfiniteGypsum infinitegypsum = new types.GameBase.Blocks.InfiniteGypsum("infinitegypsum");
-            types.GameBase.Blocks.InfiniteIron infiniteiron = new types.GameBase.Blocks.InfiniteIron("infiniteiron");
-            types.GameBase.Blocks.InfiniteStone infinitestone = new types.GameBase.Blocks.InfiniteStone("infinitestone");
-            types.GameBase.Blocks.Leaves leaves = new types.GameBase.Blocks.Leaves("leaves");
-            types.GameBase.Blocks.LeavesTaiga leavestaiga = new types.GameBase.Blocks.LeavesTaiga("leavestaiga");
-            types.GameBase.Blocks.LeavesTemperate leavestemperate = new types.GameBase.Blocks.LeavesTemperate("leavestemperate");
-            types.GameBase.Blocks.CherryBlossom cherryblossom = new types.GameBase.Blocks.CherryBlossom("cherryblossom");
-            types.GameBase.Blocks.Log log = new types.GameBase.Blocks.Log("log");
-            types.GameBase.Blocks.LogTaiga logtaiga = new types.GameBase.Blocks.LogTaiga("logtaiga");
-            types.GameBase.Blocks.LogTemperate logtemperate = new types.GameBase.Blocks.LogTemperate("logtemperate");
-            types.GameBase.Blocks.Mint mint = new types.GameBase.Blocks.Mint("mint");
-            types.GameBase.Blocks.Oven oven = new types.GameBase.Blocks.Oven("oven");
-            types.GameBase.Blocks.OvenxMinus ovenxminus = new types.GameBase.Blocks.OvenxMinus("ovenx-");
-            types.GameBase.Blocks.OvenxPlus ovenxplus = new types.GameBase.Blocks.OvenxPlus("ovenx+");
-            types.GameBase.Blocks.OvenzMinus ovenzminus = new types.GameBase.Blocks.OvenzMinus("ovenz-");
-            types.GameBase.Blocks.OvenzPlus ovenzplus = new types.GameBase.Blocks.OvenzPlus("ovenz+");
-            types.GameBase.Blocks.OvenLit ovenlit = new types.GameBase.Blocks.OvenLit("ovenlit");
-            types.GameBase.Blocks.OvenLitxMinus ovenLitxminus = new types.GameBase.Blocks.OvenLitxMinus("ovenlitx-");
-            types.GameBase.Blocks.OvenLitxPlus ovenLitxplus = new types.GameBase.Blocks.OvenLitxPlus("ovenlitx+");
-            types.GameBase.Blocks.OvenLitzMinus ovenLitzminus = new types.GameBase.Blocks.OvenLitzMinus("ovenlitz-");
-            types.GameBase.Blocks.OvenLitzPlus ovenLitzplus = new types.GameBase.Blocks.OvenLitzPlus("ovenlitz+");
-            types.GameBase.Blocks.Planks planks = new types.GameBase.Blocks.Planks("planks");
-            types.GameBase.Blocks.PlasterBlock plasterblock = new types.GameBase.Blocks.PlasterBlock("plasterblock");
-            types.GameBase.Blocks.Quiver quiver = new types.GameBase.Blocks.Quiver("quiver");
-            types.GameBase.Blocks.QuiverxMinus quiverxminus = new types.GameBase.Blocks.QuiverxMinus("quiverx-");
-            types.GameBase.Blocks.QuiverxPlus quiverxplus = new types.GameBase.Blocks.QuiverxPlus("quiverx+");
-            types.GameBase.Blocks.QuiverzMinus quiverzminus = new types.GameBase.Blocks.QuiverzMinus("quiverz-");
-            types.GameBase.Blocks.QuiverzPlus quiverzplus = new types.GameBase.Blocks.QuiverzPlus("quiverz+");
-            types.GameBase.Blocks.RedPlanks redplanks = new types.GameBase.Blocks.RedPlanks("redplanks");
-            types.GameBase.Blocks.Sand sand = new types.GameBase.Blocks.Sand("sand");
-            types.GameBase.Blocks.Sappling sappling = new types.GameBase.Blocks.Sappling("sappling");
-            types.GameBase.Blocks.Shop shop = new types.GameBase.Blocks.Shop("shop");
-            types.GameBase.Blocks.Snow snow = new types.GameBase.Blocks.Snow("snow");
-            types.GameBase.Blocks.StoneBlock stoneblock = new types.GameBase.Blocks.StoneBlock("stoneblock");
-            types.GameBase.Blocks.StoneBricks stonebricks = new types.GameBase.Blocks.StoneBricks("stonebricks");
-            types.GameBase.Blocks.Torch torch = new types.GameBase.Blocks.Torch("torch");
-            types.GameBase.Blocks.TorchxMinus torchxMinus = new types.GameBase.Blocks.TorchxMinus("torchx-");
-            types.GameBase.Blocks.TorchxPlus torchxPlus = new types.GameBase.Blocks.TorchxPlus("torchx+");
-            types.GameBase.Blocks.TorchyPlus torchyPlus = new types.GameBase.Blocks.TorchyPlus("torchy+");
-            types.GameBase.Blocks.TorchzMinus torchzMinus = new types.GameBase.Blocks.TorchzMinus("torchz-");
-            types.GameBase.Blocks.TorchzPlus torchzPlus = new types.GameBase.Blocks.TorchzPlus("torchz+");
-            types.GameBase.Blocks.Water water = new types.GameBase.Blocks.Water("water");
-            types.GameBase.Blocks.WheatStage wheatstage = new types.GameBase.Blocks.WheatStage("wheatstage");
-            types.GameBase.Blocks.WheatStageOne wheatstageone = new types.GameBase.Blocks.WheatStageOne("wheatstage1");
-            types.GameBase.Blocks.WheatStageTwo wheatstagetwo = new types.GameBase.Blocks.WheatStageTwo("wheatstage2");
-            types.GameBase.Blocks.WheatStageThree wheatstagethree = new types.GameBase.Blocks.WheatStageThree("wheatstage3");
-            types.GameBase.Blocks.Workbench workbench = new types.GameBase.Blocks.Workbench("workbench");
+            Types.GameBase.Blocks.Adobe adobe = new Types.GameBase.Blocks.Adobe("adobe");
+            Types.GameBase.Blocks.Air air = new Types.GameBase.Blocks.Air("air");
+            Types.GameBase.Blocks.Bed bed = new Types.GameBase.Blocks.Bed("bed");
+            Types.GameBase.Blocks.BedxMinus bedxminus = new Types.GameBase.Blocks.BedxMinus("bedx-");
+            Types.GameBase.Blocks.BedxPlus bedxplus = new Types.GameBase.Blocks.BedxPlus("bedx+");
+            Types.GameBase.Blocks.BedzMinus bedzminus = new Types.GameBase.Blocks.BedzMinus("bedz-");
+            Types.GameBase.Blocks.BedzPlus bedzplus = new Types.GameBase.Blocks.BedzPlus("bedz+");
+            Types.GameBase.Blocks.BedEnd bedend = new Types.GameBase.Blocks.BedEnd("bedend");
+            Types.GameBase.Blocks.BedendxMinus bedendxminus = new Types.GameBase.Blocks.BedendxMinus("bedendx-");
+            Types.GameBase.Blocks.BedendxPlus bedendxplus = new Types.GameBase.Blocks.BedendxPlus("bedendx+");
+            Types.GameBase.Blocks.BedendzMinus bedendzminus = new Types.GameBase.Blocks.BedendzMinus("bedendz-");
+            Types.GameBase.Blocks.BedendzPlus bedendzplus = new Types.GameBase.Blocks.BedendzPlus("bedendz+");
+            Types.GameBase.Blocks.BerryBush berrybush = new Types.GameBase.Blocks.BerryBush("berrybush");
+            Types.GameBase.Blocks.BlackPlanks blackplanks = new Types.GameBase.Blocks.BlackPlanks("blackplanks");
+            Types.GameBase.Blocks.Bricks bricks = new Types.GameBase.Blocks.Bricks("bricks");
+            Types.GameBase.Blocks.CherrySapling cherrysapling = new Types.GameBase.Blocks.CherrySapling("cherrysapling");
+            Types.GameBase.Blocks.CoatedPlanks coatedplanks = new Types.GameBase.Blocks.CoatedPlanks("coatedplanks");
+            Types.GameBase.Blocks.Crate crate = new Types.GameBase.Blocks.Crate("crate");
+            Types.GameBase.Blocks.Dirt dirt = new Types.GameBase.Blocks.Dirt("dirt");
+            Types.GameBase.Blocks.FlaxStage flaxstage = new Types.GameBase.Blocks.FlaxStage("flaxstage");
+            Types.GameBase.Blocks.FlaxStageOne flaxstageone = new Types.GameBase.Blocks.FlaxStageOne("flaxstage1");
+            Types.GameBase.Blocks.FlaxStageTwo flaxstagetwo = new Types.GameBase.Blocks.FlaxStageTwo("flaxstage2");
+            Types.GameBase.Blocks.Furnace furnace = new Types.GameBase.Blocks.Furnace("furnace");
+            Types.GameBase.Blocks.FurnancexMinus furnacexminus = new Types.GameBase.Blocks.FurnancexMinus("furnacex-");
+            Types.GameBase.Blocks.FurnancexPlus furnacexplus = new Types.GameBase.Blocks.FurnancexPlus("furnacex+");
+            Types.GameBase.Blocks.FurnancezMinus furnacezminus = new Types.GameBase.Blocks.FurnancezMinus("furnacez-");
+            Types.GameBase.Blocks.FurnancezPlus furnacezplus = new Types.GameBase.Blocks.FurnancezPlus("furnacez+");
+            Types.GameBase.Blocks.FurnaceLit furnacelit = new Types.GameBase.Blocks.FurnaceLit("furnacelit");
+            Types.GameBase.Blocks.FurnancelitxMinus furnacelitxminus = new Types.GameBase.Blocks.FurnancelitxMinus("furnacelitx-");
+            Types.GameBase.Blocks.FurnancelitxPlus furnacelitxplus = new Types.GameBase.Blocks.FurnancelitxPlus("furnacelitx+");
+            Types.GameBase.Blocks.FurnancelitzMinus furnacelitzminus = new Types.GameBase.Blocks.FurnancelitzMinus("furnacelitz-");
+            Types.GameBase.Blocks.FurnancelitzPlus furnacelitzplus = new Types.GameBase.Blocks.FurnancelitzPlus("furnacelitz+");
+            Types.GameBase.Blocks.Grass grass = new Types.GameBase.Blocks.Grass("grass");
+            Types.GameBase.Blocks.GrassRainforest grassrainforest = new Types.GameBase.Blocks.GrassRainforest("grassrainforest");
+            Types.GameBase.Blocks.GrassSavanna grasssavanna = new Types.GameBase.Blocks.GrassSavanna("grasssavanna");
+            Types.GameBase.Blocks.GrassTaiga grasstaiga = new Types.GameBase.Blocks.GrassTaiga("grasstaiga");
+            Types.GameBase.Blocks.GrassTemperate grasstemperate = new Types.GameBase.Blocks.GrassTemperate("grasstemperate");
+            Types.GameBase.Blocks.GrassTundra grasstundra = new Types.GameBase.Blocks.GrassTundra("grasstundra");
+            Types.GameBase.Blocks.Grindstone grindstone = new Types.GameBase.Blocks.Grindstone("grindstone");
+            Types.GameBase.Blocks.InfiniteClay infiniteclay = new Types.GameBase.Blocks.InfiniteClay("infiniteclay");
+            Types.GameBase.Blocks.infiniteCoal infinitecoal = new Types.GameBase.Blocks.infiniteCoal("infinitecoal");
+            Types.GameBase.Blocks.InfiniteGold infinitegold = new Types.GameBase.Blocks.InfiniteGold("infinitegold");
+            Types.GameBase.Blocks.InfiniteGypsum infinitegypsum = new Types.GameBase.Blocks.InfiniteGypsum("infinitegypsum");
+            Types.GameBase.Blocks.InfiniteIron infiniteiron = new Types.GameBase.Blocks.InfiniteIron("infiniteiron");
+            Types.GameBase.Blocks.InfiniteStone infinitestone = new Types.GameBase.Blocks.InfiniteStone("infinitestone");
+            Types.GameBase.Blocks.Leaves leaves = new Types.GameBase.Blocks.Leaves("leaves");
+            Types.GameBase.Blocks.LeavesTaiga leavestaiga = new Types.GameBase.Blocks.LeavesTaiga("leavestaiga");
+            Types.GameBase.Blocks.LeavesTemperate leavestemperate = new Types.GameBase.Blocks.LeavesTemperate("leavestemperate");
+            Types.GameBase.Blocks.CherryBlossom cherryblossom = new Types.GameBase.Blocks.CherryBlossom("cherryblossom");
+            Types.GameBase.Blocks.Log log = new Types.GameBase.Blocks.Log("log");
+            Types.GameBase.Blocks.LogTaiga logtaiga = new Types.GameBase.Blocks.LogTaiga("logtaiga");
+            Types.GameBase.Blocks.LogTemperate logtemperate = new Types.GameBase.Blocks.LogTemperate("logtemperate");
+            Types.GameBase.Blocks.Mint mint = new Types.GameBase.Blocks.Mint("mint");
+            Types.GameBase.Blocks.Oven oven = new Types.GameBase.Blocks.Oven("oven");
+            Types.GameBase.Blocks.OvenxMinus ovenxminus = new Types.GameBase.Blocks.OvenxMinus("ovenx-");
+            Types.GameBase.Blocks.OvenxPlus ovenxplus = new Types.GameBase.Blocks.OvenxPlus("ovenx+");
+            Types.GameBase.Blocks.OvenzMinus ovenzminus = new Types.GameBase.Blocks.OvenzMinus("ovenz-");
+            Types.GameBase.Blocks.OvenzPlus ovenzplus = new Types.GameBase.Blocks.OvenzPlus("ovenz+");
+            Types.GameBase.Blocks.OvenLit ovenlit = new Types.GameBase.Blocks.OvenLit("ovenlit");
+            Types.GameBase.Blocks.OvenLitxMinus ovenLitxminus = new Types.GameBase.Blocks.OvenLitxMinus("ovenlitx-");
+            Types.GameBase.Blocks.OvenLitxPlus ovenLitxplus = new Types.GameBase.Blocks.OvenLitxPlus("ovenlitx+");
+            Types.GameBase.Blocks.OvenLitzMinus ovenLitzminus = new Types.GameBase.Blocks.OvenLitzMinus("ovenlitz-");
+            Types.GameBase.Blocks.OvenLitzPlus ovenLitzplus = new Types.GameBase.Blocks.OvenLitzPlus("ovenlitz+");
+            Types.GameBase.Blocks.Planks planks = new Types.GameBase.Blocks.Planks("planks");
+            Types.GameBase.Blocks.PlasterBlock plasterblock = new Types.GameBase.Blocks.PlasterBlock("plasterblock");
+            Types.GameBase.Blocks.Quiver quiver = new Types.GameBase.Blocks.Quiver("quiver");
+            Types.GameBase.Blocks.QuiverxMinus quiverxminus = new Types.GameBase.Blocks.QuiverxMinus("quiverx-");
+            Types.GameBase.Blocks.QuiverxPlus quiverxplus = new Types.GameBase.Blocks.QuiverxPlus("quiverx+");
+            Types.GameBase.Blocks.QuiverzMinus quiverzminus = new Types.GameBase.Blocks.QuiverzMinus("quiverz-");
+            Types.GameBase.Blocks.QuiverzPlus quiverzplus = new Types.GameBase.Blocks.QuiverzPlus("quiverz+");
+            Types.GameBase.Blocks.RedPlanks redplanks = new Types.GameBase.Blocks.RedPlanks("redplanks");
+            Types.GameBase.Blocks.Sand sand = new Types.GameBase.Blocks.Sand("sand");
+            Types.GameBase.Blocks.Sappling sappling = new Types.GameBase.Blocks.Sappling("sappling");
+            Types.GameBase.Blocks.Shop shop = new Types.GameBase.Blocks.Shop("shop");
+            Types.GameBase.Blocks.Snow snow = new Types.GameBase.Blocks.Snow("snow");
+            Types.GameBase.Blocks.StoneBlock stoneblock = new Types.GameBase.Blocks.StoneBlock("stoneblock");
+            Types.GameBase.Blocks.StoneBricks stonebricks = new Types.GameBase.Blocks.StoneBricks("stonebricks");
+            Types.GameBase.Blocks.Torch torch = new Types.GameBase.Blocks.Torch("torch");
+            Types.GameBase.Blocks.TorchxMinus torchxMinus = new Types.GameBase.Blocks.TorchxMinus("torchx-");
+            Types.GameBase.Blocks.TorchxPlus torchxPlus = new Types.GameBase.Blocks.TorchxPlus("torchx+");
+            Types.GameBase.Blocks.TorchyPlus torchyPlus = new Types.GameBase.Blocks.TorchyPlus("torchy+");
+            Types.GameBase.Blocks.TorchzMinus torchzMinus = new Types.GameBase.Blocks.TorchzMinus("torchz-");
+            Types.GameBase.Blocks.TorchzPlus torchzPlus = new Types.GameBase.Blocks.TorchzPlus("torchz+");
+            Types.GameBase.Blocks.Water water = new Types.GameBase.Blocks.Water("water");
+            Types.GameBase.Blocks.WheatStage wheatstage = new Types.GameBase.Blocks.WheatStage("wheatstage");
+            Types.GameBase.Blocks.WheatStageOne wheatstageone = new Types.GameBase.Blocks.WheatStageOne("wheatstage1");
+            Types.GameBase.Blocks.WheatStageTwo wheatstagetwo = new Types.GameBase.Blocks.WheatStageTwo("wheatstage2");
+            Types.GameBase.Blocks.WheatStageThree wheatstagethree = new Types.GameBase.Blocks.WheatStageThree("wheatstage3");
+            Types.GameBase.Blocks.Workbench workbench = new Types.GameBase.Blocks.Workbench("workbench");
 
-            classes.Utilities.WriteLog("Finished Registering Basegame Blocks");
+            Classes.Utilities.WriteLog("Finished Registering Basegame Blocks");
 
 
         }
@@ -123,30 +123,30 @@ namespace ColonyPlusPlus.classes.Managers
         public static void registerItems()
         {
             // Tell the player what we're doing
-            classes.Utilities.WriteLog("Starting To Register Basegame Items");
+            Classes.Utilities.WriteLog("Starting To Register Basegame Items");
 
             //Base Game Items
-            types.GameBase.Items.Arrow arrow = new types.GameBase.Items.Arrow("arrow");
-            types.GameBase.Items.Axe axe = new types.GameBase.Items.Axe("axe");
-            types.GameBase.Items.Berry berry = new types.GameBase.Items.Berry("berry");
-            types.GameBase.Items.Bow bow = new types.GameBase.Items.Bow("bow");
-            types.GameBase.Items.Bread bread = new types.GameBase.Items.Bread("bread");
-            types.GameBase.Items.Clay clay = new types.GameBase.Items.Clay("clay");
-            types.GameBase.Items.CoalOre coalore = new types.GameBase.Items.CoalOre("coalore");
-            types.GameBase.Items.Flax flax = new types.GameBase.Items.Flax("flax");
-            types.GameBase.Items.Flour flour = new types.GameBase.Items.Flour("flour");
-            types.GameBase.Items.GoldCoin goldcoin = new types.GameBase.Items.GoldCoin("goldcoin");
-            types.GameBase.Items.GoldIngot goldingot = new types.GameBase.Items.GoldIngot("goldingot");
-            types.GameBase.Items.GoldOre goldore = new types.GameBase.Items.GoldOre("goldore");
-            types.GameBase.Items.Gypsum gypsum = new types.GameBase.Items.Gypsum("gypsum");
-            types.GameBase.Items.IronIngot ironingot = new types.GameBase.Items.IronIngot("ironingot");
-            types.GameBase.Items.IronOre ironore = new types.GameBase.Items.IronOre("ironore");
-            types.GameBase.Items.LinseedOil linseedoil = new types.GameBase.Items.LinseedOil("linseedoil");
-            types.GameBase.Items.Pickaxe pickaxe = new types.GameBase.Items.Pickaxe("pickaxe");
-            types.GameBase.Items.Straw straw = new types.GameBase.Items.Straw("straw");
-            types.GameBase.Items.Wheat wheat = new types.GameBase.Items.Wheat("wheat");
+            Types.GameBase.Items.Arrow arrow = new Types.GameBase.Items.Arrow("arrow");
+            Types.GameBase.Items.Axe axe = new Types.GameBase.Items.Axe("axe");
+            Types.GameBase.Items.Berry berry = new Types.GameBase.Items.Berry("berry");
+            Types.GameBase.Items.Bow bow = new Types.GameBase.Items.Bow("bow");
+            Types.GameBase.Items.Bread bread = new Types.GameBase.Items.Bread("bread");
+            Types.GameBase.Items.Clay clay = new Types.GameBase.Items.Clay("clay");
+            Types.GameBase.Items.CoalOre coalore = new Types.GameBase.Items.CoalOre("coalore");
+            Types.GameBase.Items.Flax flax = new Types.GameBase.Items.Flax("flax");
+            Types.GameBase.Items.Flour flour = new Types.GameBase.Items.Flour("flour");
+            Types.GameBase.Items.GoldCoin goldcoin = new Types.GameBase.Items.GoldCoin("goldcoin");
+            Types.GameBase.Items.GoldIngot goldingot = new Types.GameBase.Items.GoldIngot("goldingot");
+            Types.GameBase.Items.GoldOre goldore = new Types.GameBase.Items.GoldOre("goldore");
+            Types.GameBase.Items.Gypsum gypsum = new Types.GameBase.Items.Gypsum("gypsum");
+            Types.GameBase.Items.IronIngot ironingot = new Types.GameBase.Items.IronIngot("ironingot");
+            Types.GameBase.Items.IronOre ironore = new Types.GameBase.Items.IronOre("ironore");
+            Types.GameBase.Items.LinseedOil linseedoil = new Types.GameBase.Items.LinseedOil("linseedoil");
+            Types.GameBase.Items.Pickaxe pickaxe = new Types.GameBase.Items.Pickaxe("pickaxe");
+            Types.GameBase.Items.Straw straw = new Types.GameBase.Items.Straw("straw");
+            Types.GameBase.Items.Wheat wheat = new Types.GameBase.Items.Wheat("wheat");
 
-            classes.Utilities.WriteLog("Finished Registering Basegame Items");
+            Classes.Utilities.WriteLog("Finished Registering Basegame Items");
         }
     }
 }

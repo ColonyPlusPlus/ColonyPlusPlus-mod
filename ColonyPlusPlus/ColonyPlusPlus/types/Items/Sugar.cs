@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes.Managers;
+using ColonyPlusPlus.Classes.Managers;
 
-namespace ColonyPlusPlus.types.items
+namespace ColonyPlusPlus.Types.Items
 {
-    class Sugar : classes.Type
+    class Sugar : Classes.Type
     {
         public Sugar(string name) : base(name)
         {

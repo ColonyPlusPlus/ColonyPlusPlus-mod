@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes;
+using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Torch : classes.Type
+    class Torch : Classes.Type
     {
         public Torch(string name) : base(name)
         {
@@ -31,7 +31,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchxPlus : classes.Type
+    class TorchxPlus : Classes.Type
     {
         public TorchxPlus(string name) : base(name)
         {
@@ -41,7 +41,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchxMinus : classes.Type
+    class TorchxMinus : Classes.Type
     {
         public TorchxMinus(string name) : base(name)
         {
@@ -51,7 +51,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchyPlus : classes.Type
+    class TorchyPlus : Classes.Type
     {
         public TorchyPlus(string name) : base(name)
         {
@@ -62,7 +62,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchzPlus : classes.Type
+    class TorchzPlus : Classes.Type
     {
         public TorchzPlus(string name) : base(name)
         {
@@ -72,7 +72,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchzMinus : classes.Type
+    class TorchzMinus : Classes.Type
     {
         public TorchzMinus(string name) : base(name)
         {

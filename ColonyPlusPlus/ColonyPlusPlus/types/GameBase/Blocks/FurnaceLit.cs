@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class FurnaceLit : classes.Type
+    class FurnaceLit : Classes.Type
     {
         public FurnaceLit(string name) : base(name)
         {
@@ -20,7 +20,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancelitxPlus : classes.Type
+    class FurnancelitxPlus : Classes.Type
     {
         public FurnancelitxPlus(string name) : base(name)
         {
@@ -31,7 +31,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancelitxMinus : classes.Type
+    class FurnancelitxMinus : Classes.Type
     {
         public FurnancelitxMinus(string name) : base(name)
         {
@@ -42,7 +42,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancelitzPlus : classes.Type
+    class FurnancelitzPlus : Classes.Type
     {
         public FurnancelitzPlus(string name) : base(name)
         {
@@ -53,7 +53,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancelitzMinus : classes.Type
+    class FurnancelitzMinus : Classes.Type
     {
         public FurnancelitzMinus(string name) : base(name)
         {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Special
+namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class ErrorNoFuel : classes.Type
+    class ErrorNoFuel : Classes.Type
     {
         public ErrorNoFuel(string name) : base(name)
         {

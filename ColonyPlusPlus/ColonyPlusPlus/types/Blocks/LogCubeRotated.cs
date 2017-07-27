@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.Blocks
+namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeRotated : classes.Type
+    class LogCubeRotated : Classes.Type
     {
         public LogCubeRotated(string name) : base(name)
         {

@@ -21,14 +21,14 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup)]
         public static void AfterStartup()
         {
-            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.1.3");
+            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.1.5");
             
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnected)]
-        public static void OnPlaterConnected(Player p)
+        public static void OnPlayerConnected(Player p)
         {
-            //Chat.Send(p.ID, "Welcome to ColonyPlusPlus, the first mod for Colony Survival to implement the new Modding API. If you have any questions please see our Steam Forum thread or the GitHub repository.");
+            Chat.Send(p.ID, "Welcome to ColonyPlusPlus, the first mod for Colony Survival to implement the new Modding API. If you have any questions please see our Steam Forum thread or the GitHub repository.");
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
@@ -36,36 +36,36 @@ namespace ColonyPlusPlus
         {
             
             // Register Materials
-            classes.Managers.MaterialManager.initialiseMaterials();
+            Classes.Managers.MaterialManager.initialiseMaterials();
 
-            // Register basegame types
-            classes.Managers.BaseGameManager.registerBlocks();
-            classes.Managers.BaseGameManager.registerItems();
+            // Register basegame Types
+            Classes.Managers.BaseGameManager.registerBlocks();
+            Classes.Managers.BaseGameManager.registerItems();
 
-            // Register types
-            classes.Managers.BlockManager.register();
-            classes.Managers.ItemManager.register();
-            classes.Managers.CropManager.register();
+            // Register Types
+            Classes.Managers.BlockManager.register();
+            Classes.Managers.ItemManager.register();
+            Classes.Managers.CropManager.register();
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer)]
         public static void AfterItemTypesServer()
         {
             // Register Tracked Block Types (Wheat?)
-            classes.Managers.TypeManager.registerTrackedTypes();
+            Classes.Managers.TypeManager.registerTrackedTypes();
 
             // Register Chat Commands
-            ChatCommands.CommandManager.RegisterCommand(new classes.ChatCommands.Creative());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Creative());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
         public static void AfterWorldLoad()
         {
-            classes.Managers.RecipeManager.AddBaseRecipes();
-            classes.Managers.RecipeManager.BuildRecipeList();
-            classes.Managers.RecipeManager.ProcessRecipes();
+            Classes.Managers.RecipeManager.AddBaseRecipes();
+            Classes.Managers.RecipeManager.BuildRecipeList();
+            Classes.Managers.RecipeManager.ProcessRecipes();
 
-            classes.Managers.CropManager.LoadCropTracker();
+            Classes.Managers.CropManager.LoadCropTracker();
         }
 
         // things to do every tick (or itnerval)
@@ -77,7 +77,7 @@ namespace ColonyPlusPlus
                 // do stuff
 
                 // update any crops
-                classes.Managers.CropManager.doCropUpdates();
+                Classes.Managers.CropManager.doCropUpdates();
 
                 // set the next update time!
                 nextMillisecondUpdate = Pipliz.Time.MillisecondsSinceStart + millisecondDelta;
@@ -88,7 +88,7 @@ namespace ColonyPlusPlus
             {
 
                 // save out crop progress to file
-                classes.Managers.CropManager.SaveCropTrackerInterval();
+                Classes.Managers.CropManager.SaveCropTrackerInterval();
 
                 // long term update time
                 nextMillisecondUpdateLong = Pipliz.Time.MillisecondsSinceStart +  60000;

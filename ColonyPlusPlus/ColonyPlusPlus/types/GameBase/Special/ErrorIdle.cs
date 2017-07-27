@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Special
+namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class ErrorIdle : classes.Type
+    class ErrorIdle : Classes.Type
     {
         public ErrorIdle(string name) : base(name)
         {

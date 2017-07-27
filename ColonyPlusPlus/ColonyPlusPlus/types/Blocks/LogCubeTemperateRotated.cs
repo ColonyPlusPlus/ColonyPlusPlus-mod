@@ -1,17 +1,17 @@
-﻿using ColonyPlusPlus.classes.Managers;
+﻿using ColonyPlusPlus.Classes.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.Blocks
+namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeTemperateRotated : classes.Type
+    class LogCubeTemperateRotated : Classes.Type
     {
         public LogCubeTemperateRotated(string name) : base(name)
         {
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("logcubetemperaterotated",   1,  1.0f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("logcubetemperaterotated",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "logcuberotated";

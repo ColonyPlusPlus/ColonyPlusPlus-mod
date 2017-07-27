@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Quiver : classes.Type
+    class Quiver : Classes.Type
     {
         public Quiver(string name) : base(name)
         {
@@ -26,7 +26,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         }
     }
 
-    class QuiverxPlus : classes.Type
+    class QuiverxPlus : Classes.Type
     {
         public QuiverxPlus(string name) : base(name)
         {
@@ -36,7 +36,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class QuiverxMinus : classes.Type
+    class QuiverxMinus : Classes.Type
     {
         public QuiverxMinus(string name) : base(name)
         {
@@ -46,7 +46,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class QuiverzPlus : classes.Type
+    class QuiverzPlus : Classes.Type
     {
         public QuiverzPlus(string name) : base(name)
         {
@@ -56,7 +56,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class QuiverzMinus : classes.Type
+    class QuiverzMinus : Classes.Type
     {
         public QuiverzMinus(string name) : base(name)
         {

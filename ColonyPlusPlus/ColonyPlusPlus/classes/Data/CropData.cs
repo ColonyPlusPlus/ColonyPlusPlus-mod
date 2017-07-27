@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Pipliz;
 
-namespace ColonyPlusPlus.classes.Data
+namespace ColonyPlusPlus.Classes.Data
 {
     public class CropData
     {

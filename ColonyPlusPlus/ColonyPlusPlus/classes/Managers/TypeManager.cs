@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes;
+using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlus.classes.Managers
+namespace ColonyPlusPlus.Classes.Managers
 {
     public static class TypeManager
     {
@@ -25,7 +25,7 @@ namespace ColonyPlusPlus.classes.Managers
             }
         }
 
-        // Register the crop in the growable types list.
+        // Register the crop in the growable Types list.
         public static void registerCrop(GrowableType classInstance)
         {
             GrowableTypesTracker.Add(classInstance);

@@ -1,12 +1,12 @@
-﻿using ColonyPlusPlus.classes;
+﻿using ColonyPlusPlus.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Furnace : classes.Type
+    class Furnace : Classes.Type
     {
         public Furnace(string name) : base(name)
         {
@@ -53,7 +53,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancexPlus : classes.Type
+    class FurnancexPlus : Classes.Type
     {
         public FurnancexPlus(string name) : base(name)
         {
@@ -63,7 +63,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancexMinus : classes.Type
+    class FurnancexMinus : Classes.Type
     {
         public FurnancexMinus(string name) : base(name)
         {
@@ -73,7 +73,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancezPlus : classes.Type
+    class FurnancezPlus : Classes.Type
     {
         public FurnancezPlus(string name) : base(name)
         {
@@ -83,7 +83,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancezMinus : classes.Type
+    class FurnancezMinus : Classes.Type
     {
         public FurnancezMinus(string name) : base(name)
         {

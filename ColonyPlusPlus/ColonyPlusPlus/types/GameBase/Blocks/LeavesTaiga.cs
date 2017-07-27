@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class LeavesTaiga : classes.Type
+    class LeavesTaiga : Classes.Type
     {
         public LeavesTaiga(string name) : base(name)
         {
             this.ParentType = "leaves";
             this.IsPlaceable = true;
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("leavestaiga",   1,  0.6f),
-                new classes.ItemHelper.OnRemove("sappling",   1,  0.1f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("leavestaiga",   1,  0.6f),
+                new Classes.ItemHelper.OnRemove("sappling",   1,  0.1f)
             };
             this.OnRemove = onRemoveNode;
 

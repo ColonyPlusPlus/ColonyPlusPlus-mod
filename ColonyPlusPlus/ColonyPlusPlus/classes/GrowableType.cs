@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes.Managers;
+using ColonyPlusPlus.Classes.Managers;
 
-namespace ColonyPlusPlus.classes
+namespace ColonyPlusPlus.Classes
 {
-    public class GrowableType : classes.Type
+    public class GrowableType : Classes.Type
     {
         // base variables
         public float growthMultiplierMin = 0.9F; // 90%-110% growth needed to grow

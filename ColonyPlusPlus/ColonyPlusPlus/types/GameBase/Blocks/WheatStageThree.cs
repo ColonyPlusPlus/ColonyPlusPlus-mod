@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class WheatStageThree : classes.Type
+    class WheatStageThree : Classes.Type
     {
         public WheatStageThree(string name) : base(name)
         {
@@ -13,11 +13,11 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.SideAll = "wheatwheat";
             this.Mesh = "wheatstage3";
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("wheatstage1",   1,  1.0f),
-                new classes.ItemHelper.OnRemove("wheatstage1",   1,  0.1f),
-                new classes.ItemHelper.OnRemove("wheat",   1,  1.0f),
-                new classes.ItemHelper.OnRemove("straw",   1,  0.1f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("wheatstage1",   1,  1.0f),
+                new Classes.ItemHelper.OnRemove("wheatstage1",   1,  0.1f),
+                new Classes.ItemHelper.OnRemove("wheat",   1,  1.0f),
+                new Classes.ItemHelper.OnRemove("straw",   1,  0.1f)
             };
             this.OnRemove = onRemoveNode;
 

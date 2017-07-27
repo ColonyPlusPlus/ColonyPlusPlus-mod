@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes;
+using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlus.types.GameBase.Special
+namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class Banner : classes.Type
+    class Banner : Classes.Type
     {
         public Banner(string name) : base(name)
         {

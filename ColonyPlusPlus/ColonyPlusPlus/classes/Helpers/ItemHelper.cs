@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.classes
+namespace ColonyPlusPlus.Classes
 {
     public class ItemHelper
     {
@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.classes
             // holds the type ("planks", "temperateLog")
             private string type;
 
-            // the number of items to give on remove
+            // the number of Items to give on remove
             private int amount;
 
             // The chance rating (0.0F-1.0F = 0%-100%)

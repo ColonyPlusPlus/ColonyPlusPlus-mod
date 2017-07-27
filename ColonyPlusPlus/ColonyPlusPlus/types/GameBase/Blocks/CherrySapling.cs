@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class CherrySapling : classes.Type
+    class CherrySapling : Classes.Type
     {
         public CherrySapling(string name) : base(name)
         {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes.Managers;
+using ColonyPlusPlus.Classes.Managers;
 
-namespace ColonyPlusPlus.types.items
+namespace ColonyPlusPlus.Types.Items
 {
-    class BakedPotato : classes.Type
+    class BakedPotato : Classes.Type
     {
         public BakedPotato(string name) : base(name)
         {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.classes
+namespace ColonyPlusPlus.Classes
 {
     public class Type
     {
@@ -541,7 +541,7 @@ namespace ColonyPlusPlus.classes
 		// create a callback to the RecipeManager to have it attempt to generate recipes
         public void AddRecipeCallback()
         {
-            classes.Managers.RecipeManager.TypesThatHaveRecipes.Add(this);
+            Classes.Managers.RecipeManager.TypesThatHaveRecipes.Add(this);
         }
 
         // Add the block!
@@ -558,11 +558,11 @@ namespace ColonyPlusPlus.classes
             ItemTypes.AddRawType(this.TypeName, this.node);
 
             // register with our tracker, just in case we need to get these later!
-            classes.Managers.TypeManager.AddedTypes.Add(this.TypeName);
+            Classes.Managers.TypeManager.AddedTypes.Add(this.TypeName);
 
             if(this._AllowCreative)
             {
-                classes.Managers.TypeManager.CreativeAddedTypes.Add(this.TypeName);
+                Classes.Managers.TypeManager.CreativeAddedTypes.Add(this.TypeName);
             }
 
             // Tell the user it was added

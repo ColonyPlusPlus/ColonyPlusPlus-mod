@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class FlaxStageOne : classes.Type
+    class FlaxStageOne : Classes.Type
     {
         public FlaxStageOne(string name) : base(name)
         {
@@ -15,8 +15,8 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.NPCLimit = 100;
             this.IsPlaceable = true;
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("flaxstage1",   1,  0.8f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("flaxstage1",   1,  0.8f)
             };
             this.OnRemove = onRemoveNode;
 

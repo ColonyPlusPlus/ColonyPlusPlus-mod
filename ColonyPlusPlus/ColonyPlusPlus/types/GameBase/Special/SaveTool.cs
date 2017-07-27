@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Special
+namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class SaveTool : classes.Type
+    class SaveTool : Classes.Type
     {
         public SaveTool(string name) : base(name)
         {

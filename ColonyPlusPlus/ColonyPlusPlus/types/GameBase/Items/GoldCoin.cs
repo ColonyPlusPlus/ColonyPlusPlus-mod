@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Items
+namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class GoldCoin : classes.Type
+    class GoldCoin : Classes.Type
     {
         public GoldCoin(string name) : base(name)
         {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Bed : classes.Type
+    class Bed : Classes.Type
     {
         public Bed(string name) : base(name)
         {
@@ -25,7 +25,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
         }
     }
 
-    class BedxPlus : classes.Type
+    class BedxPlus : Classes.Type
     {
         public BedxPlus(string name) : base(name)
         {
@@ -35,7 +35,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class BedxMinus : classes.Type
+    class BedxMinus : Classes.Type
     {
         public BedxMinus(string name) : base(name)
         {
@@ -45,7 +45,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class BedzPlus : classes.Type
+    class BedzPlus : Classes.Type
     {
         public BedzPlus(string name) : base(name)
         {
@@ -55,7 +55,7 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.Register();
         }
     }
-    class BedzMinus : classes.Type
+    class BedzMinus : Classes.Type
     {
         public BedzMinus(string name) : base(name)
         {

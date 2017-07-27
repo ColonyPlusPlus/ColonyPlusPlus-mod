@@ -1,10 +1,10 @@
-﻿using ColonyPlusPlus.classes.Managers;
+﻿using ColonyPlusPlus.Classes.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.classes
+namespace ColonyPlusPlus.Classes
 {
     public class BaseRecipes
     {

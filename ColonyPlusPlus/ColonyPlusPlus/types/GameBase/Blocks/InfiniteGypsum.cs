@@ -1,12 +1,12 @@
-﻿using ColonyPlusPlus.classes;
+﻿using ColonyPlusPlus.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class InfiniteGypsum : classes.Type
+    class InfiniteGypsum : Classes.Type
     {
         public InfiniteGypsum(string name) : base(name)
         {
@@ -14,8 +14,8 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.DestructionTime = 1250;
             this.IsDestructible = false;
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("gypsum",   5,  1.0f),
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("gypsum",   5,  1.0f),
             };
             this.OnRemove = onRemoveNode;
 

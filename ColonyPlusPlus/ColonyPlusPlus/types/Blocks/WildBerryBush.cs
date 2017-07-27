@@ -6,20 +6,20 @@ using Pipliz;
 using Pipliz.JSON;
 using UpdatableBlocks;
 
-namespace ColonyPlusPlus.types.blocks
+namespace ColonyPlusPlus.Types.Blocks
 {
-    class WildBerryBush : classes.Type
+    class WildBerryBush : Classes.Type
     {
         public WildBerryBush(string name) : base(name)
         {
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("berry",        1,  0.8f),
-                new classes.ItemHelper.OnRemove("berry",        2,  0.2f),
-                new classes.ItemHelper.OnRemove("berry",        5,  0.01f),
-                new classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("berry",        1,  0.8f),
+                new Classes.ItemHelper.OnRemove("berry",        2,  0.2f),
+                new Classes.ItemHelper.OnRemove("berry",        5,  0.01f),
+                new Classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
             };
             this.OnRemove = onRemoveNode;
 

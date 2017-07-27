@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes.Managers;
-using ColonyPlusPlus.classes;
+using ColonyPlusPlus.Classes.Managers;
+using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlus.types.items
+namespace ColonyPlusPlus.Types.Items
 {
-    class Cake : classes.Type
+    class Cake : Classes.Type
     {
         public Cake(string name) : base(name)
         {

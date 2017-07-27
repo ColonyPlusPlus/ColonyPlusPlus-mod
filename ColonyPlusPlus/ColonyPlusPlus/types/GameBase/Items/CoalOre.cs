@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Items
+namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class CoalOre : classes.Type
+    class CoalOre : Classes.Type
     {
         public CoalOre(string name) : base(name)
         {

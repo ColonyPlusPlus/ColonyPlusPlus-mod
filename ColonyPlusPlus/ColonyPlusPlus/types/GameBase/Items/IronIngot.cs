@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Items
+namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class IronIngot : classes.Type
+    class IronIngot : Classes.Type
     {
         public IronIngot(string name) : base(name)
         {

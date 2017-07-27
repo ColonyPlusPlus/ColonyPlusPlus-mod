@@ -1,12 +1,12 @@
-﻿using ColonyPlusPlus.classes.Managers;
+﻿using ColonyPlusPlus.Classes.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.classes
+namespace ColonyPlusPlus.Classes
 {
-    class DecorativeTypeBlock : classes.Type
+    class DecorativeTypeBlock : Classes.Type
     {
         private string BaseMaterial;
         private string CraftingType;
@@ -41,7 +41,7 @@ namespace ColonyPlusPlus.classes
     }
 
     // slope
-    class DecorativeTypeBase : classes.Type
+    class DecorativeTypeBase : Classes.Type
     {
         private string BaseMaterial;
         private string CraftingType;
@@ -84,7 +84,7 @@ namespace ColonyPlusPlus.classes
                 0.0f);
         }
     }
-    class DecorativeTypeXMinus : classes.Type
+    class DecorativeTypeXMinus : Classes.Type
     {
         public DecorativeTypeXMinus(string name, string shape, string texture) : base(name + shape + "x-")
         {
@@ -95,7 +95,7 @@ namespace ColonyPlusPlus.classes
             this.Register();
         }
     }
-    class DecorativeTypeXPlus : classes.Type
+    class DecorativeTypeXPlus : Classes.Type
     {
         public DecorativeTypeXPlus(string name, string shape, string texture) : base(name + shape + "x+")
         {
@@ -106,7 +106,7 @@ namespace ColonyPlusPlus.classes
             this.Register();
         }
     }
-    class DecorativeTypeZMinus : classes.Type
+    class DecorativeTypeZMinus : Classes.Type
     {
         public DecorativeTypeZMinus(string name, string shape, string texture) : base(name + shape + "z-")
         {
@@ -117,7 +117,7 @@ namespace ColonyPlusPlus.classes
             this.Register();
         }
     }
-    class DecorativeTypeZPlus : classes.Type
+    class DecorativeTypeZPlus : Classes.Type
     {
         public DecorativeTypeZPlus(string name, string shape, string texture) : base(name + shape + "z+")
         {

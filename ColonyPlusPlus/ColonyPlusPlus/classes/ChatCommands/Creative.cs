@@ -4,7 +4,7 @@ using Permissions;
 using Pipliz.Chatting;
 using System;
 
-namespace ColonyPlusPlus.classes.ChatCommands
+namespace ColonyPlusPlus.Classes.ChatCommands
 {
 
     public class Creative : IChatCommand
@@ -34,7 +34,7 @@ namespace ColonyPlusPlus.classes.ChatCommands
                 // get their stockpile
                 Stockpile s =  Stockpile.GetStockPile(id);
 
-                foreach(string itemname in classes.Managers.TypeManager.CreativeAddedTypes)
+                foreach(string itemname in Classes.Managers.TypeManager.CreativeAddedTypes)
                 {
                     ushort i = ItemTypes.IndexLookup.GetIndex(itemname);
                     s.Add(i, 10000);

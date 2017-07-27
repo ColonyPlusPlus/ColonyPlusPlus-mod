@@ -1,12 +1,12 @@
-﻿using ColonyPlusPlus.classes.Managers;
+﻿using ColonyPlusPlus.Classes.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.Blocks
+namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeTaigaRotatedX : classes.Type
+    class LogCubeTaigaRotatedX : Classes.Type
     {
         public LogCubeTaigaRotatedX(string name) : base(name)
         {

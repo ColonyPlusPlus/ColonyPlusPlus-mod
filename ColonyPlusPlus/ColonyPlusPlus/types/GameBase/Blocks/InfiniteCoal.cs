@@ -1,12 +1,12 @@
-﻿using ColonyPlusPlus.classes;
+﻿using ColonyPlusPlus.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class infiniteCoal : classes.Type
+    class infiniteCoal : Classes.Type
     {
         public infiniteCoal(string name) : base(name)
         {
@@ -14,8 +14,8 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.DestructionTime = 1250;
             this.IsDestructible = false;
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("coalore",   1,  1.0f),
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("coalore",   1,  1.0f),
             };
             this.OnRemove = onRemoveNode;
 

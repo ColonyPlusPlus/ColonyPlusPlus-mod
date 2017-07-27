@@ -4,7 +4,7 @@ using Permissions;
 using Pipliz.Chatting;
 using System;
 
-namespace ColonyPlusPlus.classes.ChatCommands
+namespace ColonyPlusPlus.Classes.ChatCommands
 {
 
     public class Clear : IChatCommand

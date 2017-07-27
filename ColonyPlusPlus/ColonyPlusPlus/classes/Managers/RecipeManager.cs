@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ColonyPlusPlus.classes.Managers
+namespace ColonyPlusPlus.Classes.Managers
 {
     public static class RecipeManager
     {
@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.classes.Managers
         public static List<Recipe> recipeList = new List<Recipe>();
 
         // List of all item classes, registered by the callback
-        public static List<classes.Type> TypesThatHaveRecipes = new List<classes.Type>();
+        public static List<Classes.Type> TypesThatHaveRecipes = new List<Classes.Type>();
 
         // Keep a count of all added recipes (just to output to the user later)
         public static int recipesAdded = 0;

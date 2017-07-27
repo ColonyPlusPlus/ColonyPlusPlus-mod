@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.classes.Managers
+namespace ColonyPlusPlus.Classes.Managers
 {
     public static class CropManager
     {
@@ -14,7 +14,7 @@ namespace ColonyPlusPlus.classes.Managers
         private static Dictionary<string, string> StageProgressions = new Dictionary<string, string>();
 
         // a list of crops in the world
-        private static List<classes.Data.CropData> CropTracker = new List<Data.CropData>();
+        private static List<Classes.Data.CropData> CropTracker = new List<Data.CropData>();
 
         // keep isntances of all the classes
         public static Dictionary<string, GrowableType> CropTypes = new Dictionary<string, GrowableType>();
@@ -25,26 +25,26 @@ namespace ColonyPlusPlus.classes.Managers
         // Register crops
         public static void register()
         {
-            classes.Utilities.WriteLog("Starting To Register Crops");
+            Classes.Utilities.WriteLog("Starting To Register Crops");
 
-            types.Crops.CarrotStage1 CarrotStage1 = new types.Crops.CarrotStage1("carrotstage1");
-            types.Crops.CarrotStage2 CarrotStage2 = new types.Crops.CarrotStage2("carrotstage2");
-            types.Crops.CarrotStage3 CarrotStage3 = new types.Crops.CarrotStage3("carrotstage3");
+            Types.Crops.CarrotStage1 CarrotStage1 = new Types.Crops.CarrotStage1("carrotstage1");
+            Types.Crops.CarrotStage2 CarrotStage2 = new Types.Crops.CarrotStage2("carrotstage2");
+            Types.Crops.CarrotStage3 CarrotStage3 = new Types.Crops.CarrotStage3("carrotstage3");
 
-            types.Crops.LettuceStage1 LettuceStage1 = new types.Crops.LettuceStage1("lettucestage1");
-            types.Crops.LettuceStage2 LettuceStage2 = new types.Crops.LettuceStage2("lettucestage2");
-            types.Crops.LettuceStage3 LettuceStage3 = new types.Crops.LettuceStage3("lettucestage3");
+            Types.Crops.LettuceStage1 LettuceStage1 = new Types.Crops.LettuceStage1("lettucestage1");
+            Types.Crops.LettuceStage2 LettuceStage2 = new Types.Crops.LettuceStage2("lettucestage2");
+            Types.Crops.LettuceStage3 LettuceStage3 = new Types.Crops.LettuceStage3("lettucestage3");
 
 
-            types.Crops.PotatoStage1 PotatoStage1 = new types.Crops.PotatoStage1("potatostage1");
-            types.Crops.PotatoStage2 PotatoStage2 = new types.Crops.PotatoStage2("potatostage2");
-            types.Crops.PotatoStage3 PotatoStage3 = new types.Crops.PotatoStage3("potatostage3");
+            Types.Crops.PotatoStage1 PotatoStage1 = new Types.Crops.PotatoStage1("potatostage1");
+            Types.Crops.PotatoStage2 PotatoStage2 = new Types.Crops.PotatoStage2("potatostage2");
+            Types.Crops.PotatoStage3 PotatoStage3 = new Types.Crops.PotatoStage3("potatostage3");
 
-            types.Crops.OnionStage1 OnionStage1 = new types.Crops.OnionStage1("onionstage1");
-            types.Crops.OnionStage2 OnionStage2 = new types.Crops.OnionStage2("onionstage2");
-            types.Crops.OnionStage3 OnionStage3 = new types.Crops.OnionStage3("onionstage3");
+            Types.Crops.OnionStage1 OnionStage1 = new Types.Crops.OnionStage1("onionstage1");
+            Types.Crops.OnionStage2 OnionStage2 = new Types.Crops.OnionStage2("onionstage2");
+            Types.Crops.OnionStage3 OnionStage3 = new Types.Crops.OnionStage3("onionstage3");
 
-            classes.Utilities.WriteLog("Ending Crop Registration");
+            Classes.Utilities.WriteLog("Ending Crop Registration");
         }
 
         // Run this every 500ms
@@ -55,13 +55,13 @@ namespace ColonyPlusPlus.classes.Managers
             {
 
                 // a list of blocks to update
-                List<classes.Data.CropData> updateList = new List<Data.CropData>();
+                List<Classes.Data.CropData> updateList = new List<Data.CropData>();
 
                 // a list of tracked crops to stop tracking (ie: where the crop is broken/finishes growing)
-                List<classes.Data.CropData> CropTrackerToRemove = new List<Data.CropData>();
+                List<Classes.Data.CropData> CropTrackerToRemove = new List<Data.CropData>();
 
                 // Go through each of the tracked crops
-                foreach (classes.Data.CropData c in CropTracker)
+                foreach (Classes.Data.CropData c in CropTracker)
                 {
                     // update the amount of accumulated growth, as well as updating the last time the AG was updated
                     c.growthAccumulated = AccumulateGrowth(c,c.classInstance);
@@ -87,7 +87,7 @@ namespace ColonyPlusPlus.classes.Managers
                 }
 
                 // Loop through everything pending to update
-                foreach (classes.Data.CropData c in updateList)
+                foreach (Classes.Data.CropData c in updateList)
                 {
 
                     // Get the next type
@@ -112,7 +112,7 @@ namespace ColonyPlusPlus.classes.Managers
                 if (CropTrackerToRemove.Count > 0)
                 {
                     // Loop through everything we've said to stop tracking
-                    foreach (classes.Data.CropData c in CropTrackerToRemove)
+                    foreach (Classes.Data.CropData c in CropTrackerToRemove)
                     {
                         // Remove it from the tracker
                         CropTracker.Remove(c);
@@ -146,7 +146,7 @@ namespace ColonyPlusPlus.classes.Managers
         public static void untrackCrop(Pipliz.Vector3Int location, GrowableType classInstance)
         {
             // Create a list of things to stop tracking
-            List<classes.Data.CropData> CropTrackerToRemove = new List<Data.CropData>();
+            List<Classes.Data.CropData> CropTrackerToRemove = new List<Data.CropData>();
 
             // Is it in our croptracker list?
             foreach (Data.CropData c in CropTracker)
@@ -163,7 +163,7 @@ namespace ColonyPlusPlus.classes.Managers
             if (CropTrackerToRemove.Count > 0)
             {
                 // Loop through them
-                foreach (classes.Data.CropData c in CropTrackerToRemove)
+                foreach (Classes.Data.CropData c in CropTrackerToRemove)
                 {
                     // Remove it from the tracker
                     CropTracker.Remove(c);
@@ -226,7 +226,7 @@ namespace ColonyPlusPlus.classes.Managers
         }
 
         // Add calculated growth to a crop
-        public static float AccumulateGrowth(classes.Data.CropData cropdata, GrowableType type)
+        public static float AccumulateGrowth(Classes.Data.CropData cropdata, GrowableType type)
         {
             // get the current daytime
             double totalTime = TimeCycle.TotalTime;
@@ -272,7 +272,7 @@ namespace ColonyPlusPlus.classes.Managers
                     JSONNode rootnode = new JSONNode(NodeType.Array);
 
                     // then go through stuff
-                    foreach(classes.Data.CropData c in CropTracker)
+                    foreach(Classes.Data.CropData c in CropTracker)
                     {
                         // build a child node
                         JSONNode child = new JSONNode(NodeType.Object);

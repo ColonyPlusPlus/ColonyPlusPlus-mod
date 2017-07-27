@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Items
+namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class Pickaxe : classes.Type
+    class Pickaxe : Classes.Type
     {
         public Pickaxe(string name) : base(name)
         {

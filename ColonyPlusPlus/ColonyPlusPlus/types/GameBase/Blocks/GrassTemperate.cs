@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class GrassTemperate : classes.Type
+    class GrassTemperate : Classes.Type
     {
         public GrassTemperate(string name) : base(name)
         {
@@ -13,11 +13,11 @@ namespace ColonyPlusPlus.types.GameBase.Blocks
             this.NPCLimit = 0;
             this.IsPlaceable = true;
 
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("grasstemperate",       1,  1.0f),
-                new classes.ItemHelper.OnRemove("wheatstage1",          1,  0.1f),
-                new classes.ItemHelper.OnRemove("sappling",             1,  0.03f),
-                new classes.ItemHelper.OnRemove("flaxstage1",             1,  0.03f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("grasstemperate",       1,  1.0f),
+                new Classes.ItemHelper.OnRemove("wheatstage1",          1,  0.1f),
+                new Classes.ItemHelper.OnRemove("sappling",             1,  0.03f),
+                new Classes.ItemHelper.OnRemove("flaxstage1",             1,  0.03f)
             };
             this.OnRemove = onRemoveNode;
 

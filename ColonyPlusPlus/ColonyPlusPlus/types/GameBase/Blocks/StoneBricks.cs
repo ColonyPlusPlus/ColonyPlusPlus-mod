@@ -1,12 +1,12 @@
-﻿using ColonyPlusPlus.classes.Managers;
+﻿using ColonyPlusPlus.Classes.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Blocks
+namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class StoneBricks : classes.Type
+    class StoneBricks : Classes.Type
     {
         public StoneBricks(string name) : base(name)
         {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ColonyPlusPlus.classes
+namespace ColonyPlusPlus.Classes
 {
 	public class CustomDataItem
 	{

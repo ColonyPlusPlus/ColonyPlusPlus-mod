@@ -1,4 +1,4 @@
-﻿namespace ColonyPlusPlus.classes.Managers
+﻿namespace ColonyPlusPlus.Classes.Managers
 {
     public static class MaterialManager
     {

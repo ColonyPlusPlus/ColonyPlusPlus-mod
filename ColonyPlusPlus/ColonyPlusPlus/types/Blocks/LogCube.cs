@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.Blocks
+namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCube : classes.Type
+    class LogCube : Classes.Type
     {
         public LogCube(string name) : base(name)
         {

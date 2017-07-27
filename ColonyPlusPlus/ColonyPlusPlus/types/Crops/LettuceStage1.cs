@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes.Managers;
+using ColonyPlusPlus.Classes.Managers;
 
-namespace ColonyPlusPlus.types.Crops
+namespace ColonyPlusPlus.Types.Crops
 {
-    class LettuceStage1 : classes.GrowableType
+    class LettuceStage1 : Classes.GrowableType
     {
         public LettuceStage1(string name) : base(name)
         {
-            classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new classes.ItemHelper.OnRemove("lettucestage1",   1,  0.6f)
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("lettucestage1",   1,  0.6f)
             };
             this.OnRemove = onRemoveNode;
             this.IsSolid = false;

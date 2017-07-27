@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.types.GameBase.Items
+namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class LinseedOil : classes.Type
+    class LinseedOil : Classes.Type
     {
         public LinseedOil(string name) : base(name)
         {

@@ -1,11 +1,11 @@
-﻿using ColonyPlusPlus.classes.Managers;
+﻿using ColonyPlusPlus.Classes.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.classes;
+using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlus.classes.Managers
+namespace ColonyPlusPlus.Classes.Managers
 {
     class DecorativeTypeManager
     {
