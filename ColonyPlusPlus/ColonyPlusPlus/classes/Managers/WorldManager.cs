@@ -190,7 +190,7 @@ namespace ColonyPlusPlus.Classes.Managers
                             }
                         }
 
-                        Utilities.WriteLog("Loaded Chunk Data (" + chunksloaded + ") chunks");
+                        Utilities.WriteLog("Loaded Chunk Data (" + chunksloaded + " chunks)");
                         
                     }
                     else
