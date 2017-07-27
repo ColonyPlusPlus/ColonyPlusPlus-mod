@@ -25,18 +25,23 @@ namespace ColonyPlusPlus.Classes.ChatCommands
         }
 
         public bool IsCommand(string chatItem) =>
-            (chatItem.StartsWith("/creative"));
+            (chatItem.StartsWith("/clear"));
 
         private bool ProcessCreative(NetworkID id, string chatItem)
         {
-            if (PermissionsManager.CheckAndWarnPermission(id, "cheats.creative"))
+            if (PermissionsManager.CheckAndWarnPermission(id, "cheats.clear"))
             {
                 // get their stockpile
                 Stockpile s = Stockpile.GetStockPile(id);
 
-                // CLEAR INVENTORY TODO
+                // Cycle through each item we manage, check how many we have, then remove that.
+                foreach (string itemname in classes.Managers.TypeManager.CreativeAddedTypes)
+                {
+                    ushort i = ItemTypes.IndexLookup.GetIndex(itemname);
+                    s.Remove(i, s.AmountContained(i));
+                }
 
-                Chat.Send(id, "Enabled Creative Mode", ChatSenderType.Server);
+                Chat.Send(id, "Cleared Inventory!", ChatSenderType.Server);
             }
 
 
@@ -47,7 +52,7 @@ namespace ColonyPlusPlus.Classes.ChatCommands
 
         public bool TryDoCommand(NetworkID id, string chatItem)
         {
-            if (chatItem.StartsWith("/creative"))
+            if (chatItem.StartsWith("/clear"))
             {
                 return this.ProcessCreative(id, chatItem);
             }
