@@ -57,6 +57,8 @@ namespace ColonyPlusPlus
             // Register Chat Commands
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Creative());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Clear());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.ClaimChunk());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.UnclaimChunk());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
@@ -67,6 +69,7 @@ namespace ColonyPlusPlus
             Classes.Managers.RecipeManager.ProcessRecipes();
 
             Classes.Managers.CropManager.LoadCropTracker();
+            Classes.Managers.WorldManager.LoadJSON();
         }
 
         // things to do every tick (or itnerval)
@@ -79,6 +82,9 @@ namespace ColonyPlusPlus
 
                 // update any crops
                 Classes.Managers.CropManager.doCropUpdates();
+
+                // Do player update stuff
+                Classes.Managers.PlayerManager.notifyNewChunkEntrances();
 
                 // set the next update time!
                 nextMillisecondUpdate = Pipliz.Time.MillisecondsSinceStart + millisecondDelta;

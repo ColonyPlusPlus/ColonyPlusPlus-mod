@@ -8,13 +8,13 @@ using System;
 namespace ColonyPlusPlus.Classes.ChatCommands
 {
 
-    public class ClaimChunk : IChatCommand
+    public class UnclaimChunk : IChatCommand
     {
- 
-        public bool IsCommand(string chatItem) =>
-            (chatItem.StartsWith("/claimchunk"));
 
-        private bool ProcessClaimChunk(NetworkID id, string chatItem)
+        public bool IsCommand(string chatItem) =>
+            (chatItem.StartsWith("/unclaimchunk"));
+
+        private bool ProcessUnclaimChunk(NetworkID id, string chatItem)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "chunk.claim"))
             {
@@ -27,20 +27,21 @@ namespace ColonyPlusPlus.Classes.ChatCommands
 
                 Vector3Int position = new Vector3Int(playerX, playerY, playerZ);
 
-                if (Managers.WorldManager.claimChunk(position, p.ID))
+                if (Managers.WorldManager.unclaimChunk(position, p.ID))
                 {
                     Vector3Int chunkPos = position.ToChunk();
                     int owned = Managers.WorldManager.getOwnedChunkCount(p.ID);
 
-                    Chat.Send(id, String.Format("Claimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), ChatSenderType.Server);
+                    Chat.Send(id, String.Format("Unclaimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), ChatSenderType.Server);
                     Chat.Send(id, String.Format("You now own {0} chunks.", owned), ChatSenderType.Server);
-                } else
+                }
+                else
                 {
                     // chunk already owned
-                    Chat.Send(id, "Unable to claim chunk", ChatSenderType.Server);
+                    Chat.Send(id, "Unable to unclaim chunk", ChatSenderType.Server);
                 }
 
-               
+
 
             }
 
@@ -52,9 +53,9 @@ namespace ColonyPlusPlus.Classes.ChatCommands
 
         public bool TryDoCommand(NetworkID id, string chatItem)
         {
-            if (chatItem.StartsWith("/claimchunk"))
+            if (chatItem.StartsWith("/unclaimchunk"))
             {
-                return this.ProcessClaimChunk(id, chatItem);
+                return this.ProcessUnclaimChunk(id, chatItem);
             }
             return false;
         }

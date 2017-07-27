@@ -10,7 +10,7 @@ namespace ColonyPlusPlus.Classes.Data
     public class ChunkData
     {
 
-        private Vector3Int location;
+        public Vector3Int location;
         private bool owned;
         private NetworkID playerID;
 
@@ -42,6 +42,7 @@ namespace ColonyPlusPlus.Classes.Data
                     return false;
                 } else
                 {
+                   
                     playerID = pID;
                     return true;
                 }
@@ -74,10 +75,11 @@ namespace ColonyPlusPlus.Classes.Data
         /// <summary>
         /// 
         /// </summary>
-        public void removeOwner()
+        public bool removeOwner()
         {
             owned = false;
-            playerID = new NetworkID(IDType.Invalid);
+            playerID = new NetworkID();
+            return true;
         }
         
 

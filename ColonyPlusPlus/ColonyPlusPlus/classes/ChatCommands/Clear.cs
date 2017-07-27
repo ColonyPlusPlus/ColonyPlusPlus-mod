@@ -35,7 +35,7 @@ namespace ColonyPlusPlus.Classes.ChatCommands
                 Stockpile s = Stockpile.GetStockPile(id);
 
                 // Cycle through each item we manage, check how many we have, then remove that.
-                foreach (string itemname in classes.Managers.TypeManager.CreativeAddedTypes)
+                foreach (string itemname in Classes.Managers.TypeManager.CreativeAddedTypes)
                 {
                     ushort i = ItemTypes.IndexLookup.GetIndex(itemname);
                     s.Remove(i, s.AmountContained(i));
