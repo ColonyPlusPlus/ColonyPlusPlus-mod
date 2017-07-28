@@ -1,4 +1,4 @@
-Version 0.1.5 (DD-MM-17):
+Version 0.1.5 (28-07-17):
 -------------------------------------
 Added:
 	New Arrow Recipe
@@ -10,7 +10,11 @@ Added:
 	Can now change between the two cube logs
 	Now start with 2 bows and 4 flax seeds
 	The ability to claim chunks, 
-		however we can not stop other players from placing blocks in those chunks at this time.
+		However we can not stop other players from placing blocks in those chunks at this time.
+		Requires "chunk.claim" permission node, with /claimchunk and /unclaimchunk commands
+	Online (/online) command
+		Requires "online" permission node
+
 
 Changed:
 	Bow recipe has been changed to requires 2 flax
@@ -21,6 +25,7 @@ Changed:
 
 Fixed:
 	Mint texture
+	Fixed missing milk, butter, cheese icons
 
 Version 0.1.4 (24-07-17):
 -------------------------------------
