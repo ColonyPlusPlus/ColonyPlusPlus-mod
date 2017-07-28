@@ -34,7 +34,6 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
         public static void AfterAddingBaseTypes()
         {
-            
             // Register Materials
             Classes.Managers.MaterialManager.initialiseMaterials();
 
@@ -70,6 +69,8 @@ namespace ColonyPlusPlus
 
             Classes.Managers.CropManager.LoadCropTracker();
             Classes.Managers.WorldManager.LoadJSON();
+
+            Pipliz.Log.Write("Finished loading ColonyPlusPlus");
         }
 
         // things to do every tick (or itnerval)
