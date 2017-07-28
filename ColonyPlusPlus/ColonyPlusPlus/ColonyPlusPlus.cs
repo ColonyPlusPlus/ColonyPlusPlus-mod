@@ -58,6 +58,7 @@ namespace ColonyPlusPlus
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Clear());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.ClaimChunk());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.UnclaimChunk());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Online());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
