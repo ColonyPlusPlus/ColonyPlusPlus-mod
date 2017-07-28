@@ -48,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ChatCommands\ClaimChunk.cs" />
+    <Compile Include="Classes\ChatCommands\TradeReject.cs" />
+    <Compile Include="Classes\ChatCommands\TradeAccept.cs" />
+    <Compile Include="Classes\ChatCommands\Trade.cs" />
     <Compile Include="Classes\ChatCommands\Clear.cs" />
     <Compile Include="Classes\ChatCommands\Creative.cs" />
     <Compile Include="Classes\ChatCommands\Online.cs" />

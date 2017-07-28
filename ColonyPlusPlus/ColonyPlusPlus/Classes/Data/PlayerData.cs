@@ -7,8 +7,9 @@ namespace ColonyPlusPlus.Classes.Data
 {
     class PlayerData
     {
-        private NetworkID PID;
+        public NetworkID PID { get; private set; }
         public string chunkID;
+        public TradeData tradeData;
 
         /// <summary>
         /// 
