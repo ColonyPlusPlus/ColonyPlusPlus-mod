@@ -58,6 +58,9 @@ namespace ColonyPlusPlus.Classes.Managers
             Classes.Managers.DecorativeTypeManager clayblockwhite = new DecorativeTypeManager("clayblockwhite", "clayblockwhite", "clay", "crafting", clayblocktypes);
             Classes.Managers.DecorativeTypeManager clayblockyellow = new DecorativeTypeManager("clayblockyellow", "clayblockyellow", "clay", "crafting", clayblocktypes);
 
+            DecorativeTypeManager.TypeOption[] testing = new DecorativeTypeManager.TypeOption[] { DecorativeTypeManager.TypeOption.SlopeInsideCorner };
+            Classes.Managers.DecorativeTypeManager clayblockn = new DecorativeTypeManager("clayblock", "clayblock", "clay", "crafting", testing);
+
 
         }
     }
