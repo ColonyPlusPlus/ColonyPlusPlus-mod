@@ -16,6 +16,8 @@ Changed:
 		Bow recipe has been changed to requires 2 flax
 		Food value of cake was increased from 6 to 15
 		Increased Dirt Maxstack from 50 to 100
+		All the clay decorative blocks are now smelted instead of NPC crafted
+		Butter is now NPC crafted instead of player crafted!
 
 Fixed:
 	Mint texture

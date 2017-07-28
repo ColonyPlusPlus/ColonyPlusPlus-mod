@@ -23,7 +23,7 @@ namespace ColonyPlusPlus.Types.Items
                 new List<InventoryItem> {
                     RecipeManager.Item("butter", 1)
                 },
-                0.0f);
+                0.0f, true);
         }
     }
 }
