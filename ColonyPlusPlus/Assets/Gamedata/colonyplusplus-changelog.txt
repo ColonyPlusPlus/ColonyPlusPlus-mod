@@ -9,10 +9,13 @@ Added:
 		Slope Inside Corner
 	Can now change between the two cube logs
 	Now start with 2 bows and 4 flax seeds
+	The ability to claim chunks, 
+		however we can not stop other players from placing blocks in those chunks at this time.
 
 Changed:
 		Bow recipe has been changed to requires 2 flax
 		Food value of cake was increased from 6 to 15
+		Increased Dirt Maxstack from 50 to 100
 
 Fixed:
 	Mint texture
