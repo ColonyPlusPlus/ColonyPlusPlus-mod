@@ -31,7 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>D:\Games\Steam\steamapps\common\Colony Survival\colonyserver_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Programs\Steam\steamapps\common\Colony Survival\colonyserver_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -40,59 +41,98 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>D:\Games\Steam\steamapps\common\Colony Survival\colonyserver_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Programs\Steam\steamapps\common\Colony Survival\colonyserver_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:\Games\Steam\steamapps\common\Colony Survival\colonyserver_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Programs\Steam\steamapps\common\Colony Survival\colonyserver_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\ChatCommands\ClaimChunk.cs" />
+    <Compile Include="classes\ChatCommands\Clear.cs" />
+    <Compile Include="classes\ChatCommands\Creative.cs" />
+    <Compile Include="classes\ChatCommands\UnclaimChunk.cs" />
     <Compile Include="classes\CustomDataItem.cs" />
+    <Compile Include="classes\Data\ChunkData.cs" />
     <Compile Include="classes\Data\CropData.cs" />
+    <Compile Include="classes\Data\PlayerData.cs" />
     <Compile Include="classes\DecorativeType.cs" />
-    <Compile Include="classes\Managers\BaseGameManager.cs" />
-    <Compile Include="classes\Managers\DecorativeTypeManager.cs" />
     <Compile Include="classes\GrowableType.cs" />
     <Compile Include="classes\Helpers\BaseRecipes.cs" />
     <Compile Include="classes\Helpers\CustomDataHelper.cs" />
     <Compile Include="classes\Helpers\ItemHelper.cs" />
+    <Compile Include="classes\Helpers\NewBaseRecipes.cs" />
+    <Compile Include="classes\Helpers\Utilities.cs" />
+    <Compile Include="classes\Managers\BaseGameManager.cs" />
     <Compile Include="classes\Managers\BlockManager.cs" />
+    <Compile Include="classes\Managers\ChatCommands\ClaimChunk.cs" />
+    <Compile Include="classes\Managers\ChatCommands\Clear.cs" />
+    <Compile Include="classes\Managers\ChatCommands\Creative.cs" />
     <Compile Include="classes\Managers\CropManager.cs" />
+    <Compile Include="classes\Managers\CustomDataItem.cs" />
+    <Compile Include="classes\Managers\Data\ChunkData.cs" />
+    <Compile Include="classes\Managers\Data\CropData.cs" />
+    <Compile Include="classes\Managers\Data\PlayerData.cs" />
+    <Compile Include="classes\Managers\DecorativeType.cs" />
+    <Compile Include="classes\Managers\DecorativeTypeManager.cs" />
+    <Compile Include="classes\Managers\GrowableType.cs" />
+    <Compile Include="classes\Managers\Helpers\BaseRecipes.cs" />
+    <Compile Include="classes\Managers\Helpers\CustomDataHelper.cs" />
+    <Compile Include="classes\Managers\Helpers\ItemHelper.cs" />
+    <Compile Include="classes\Managers\Helpers\NewBaseRecipes.cs" />
+    <Compile Include="classes\Managers\Helpers\Utilities.cs" />
     <Compile Include="classes\Managers\ItemManager.cs" />
+    <Compile Include="classes\Managers\Managers\BaseGameManager.cs" />
+    <Compile Include="classes\Managers\Managers\BlockManager.cs" />
+    <Compile Include="classes\Managers\Managers\CropManager.cs" />
+    <Compile Include="classes\Managers\Managers\DecorativeTypeManager.cs" />
+    <Compile Include="classes\Managers\Managers\ItemManager.cs" />
+    <Compile Include="classes\Managers\Managers\MaterialManager.cs" />
+    <Compile Include="classes\Managers\Managers\RecipeManager.cs" />
+    <Compile Include="classes\Managers\Managers\TypeManager.cs" />
+    <Compile Include="classes\Managers\Managers\WorldManager.cs" />
+    <Compile Include="classes\Managers\Material.cs" />
     <Compile Include="classes\Managers\MaterialManager.cs" />
+    <Compile Include="classes\Managers\PlayerManager.cs" />
+    <Compile Include="classes\Managers\Recipe.cs" />
     <Compile Include="classes\Managers\RecipeManager.cs" />
+    <Compile Include="classes\Managers\type.cs" />
+    <Compile Include="classes\Managers\TypeManager.cs" />
+    <Compile Include="classes\Managers\WorldManager.cs" />
     <Compile Include="classes\Material.cs" />
     <Compile Include="classes\Recipe.cs" />
     <Compile Include="classes\Type.cs" />
-    <Compile Include="classes\Managers\TypeManager.cs" />
-    <Compile Include="classes\Helpers\Utilities.cs" />
     <Compile Include="ColonyPlusPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="types\Blocks\BirdNest.cs" />
     <Compile Include="types\Blocks\ChickenCoop.cs" />
-    <Compile Include="types\Blocks\LogCubeRotated.cs" />
     <Compile Include="types\Blocks\LogCube.cs" />
-    <Compile Include="types\Blocks\LogCubeTaigaRotated.cs" />
+    <Compile Include="types\Blocks\LogCubeRotated.cs" />
     <Compile Include="types\Blocks\LogCubeTaiga.cs" />
+    <Compile Include="types\Blocks\LogCubeTaigaRotated.cs" />
+    <Compile Include="types\Blocks\LogCubeTaigaRotatedX.cs" />
+    <Compile Include="types\Blocks\LogCubeTaigaRotatedZ.cs" />
+    <Compile Include="types\Blocks\LogCubeTemperate.cs" />
+    <Compile Include="types\Blocks\LogCubeTemperateRotated.cs" />
     <Compile Include="types\Blocks\LogCubeTemperateRotatedX.cs" />
     <Compile Include="types\Blocks\LogCubeTemperateRotatedZ.cs" />
-    <Compile Include="types\Blocks\LogCubeTemperateRotated.cs" />
-    <Compile Include="types\Blocks\LogCubeTemperate.cs" />
     <Compile Include="types\Blocks\Sugarcane.cs" />
     <Compile Include="types\Blocks\VegetablePatch.cs" />
     <Compile Include="types\Blocks\WildBerryBush.cs" />
     <Compile Include="types\Crops\CarrotStage1.cs" />
     <Compile Include="types\Crops\CarrotStage2.cs" />
     <Compile Include="types\Crops\CarrotStage3.cs" />
-    <Compile Include="types\Crops\OnionStage1.cs" />
-    <Compile Include="types\Crops\PotatoStage1.cs" />
     <Compile Include="types\Crops\LettuceStage1.cs" />
-    <Compile Include="types\Crops\OnionStage2.cs" />
-    <Compile Include="types\Crops\PotatoStage2.cs" />
     <Compile Include="types\Crops\LettuceStage2.cs" />
-    <Compile Include="types\Crops\OnionStage3.cs" />
-    <Compile Include="types\Crops\PotatoStage3.cs" />
     <Compile Include="types\Crops\LettuceStage3.cs" />
+    <Compile Include="types\Crops\OnionStage1.cs" />
+    <Compile Include="types\Crops\OnionStage2.cs" />
+    <Compile Include="types\Crops\OnionStage3.cs" />
+    <Compile Include="types\Crops\PotatoStage1.cs" />
+    <Compile Include="types\Crops\PotatoStage2.cs" />
+    <Compile Include="types\Crops\PotatoStage3.cs" />
     <Compile Include="types\GameBase\Blocks\Adobe.cs" />
     <Compile Include="types\GameBase\Blocks\Air.cs" />
     <Compile Include="types\GameBase\Blocks\Bed.cs" />
