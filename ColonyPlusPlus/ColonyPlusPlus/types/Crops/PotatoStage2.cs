@@ -16,7 +16,7 @@ namespace ColonyPlusPlus.Types.Crops
             this.OnRemove = onRemoveNode;
             this.IsSolid = false;
             this.NeedsBase = true;
-            this.IsPlaceable = true;
+            this.AllowCreative = false;
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "grassDelete";
             this.MaxStackSize = 1200;
