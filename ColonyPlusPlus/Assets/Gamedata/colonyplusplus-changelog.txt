@@ -6,6 +6,7 @@ Added:
 	Rotatable clay blocks
 		Two Step Stairs
 		Four Step Stairs
+		Slope Inside Corner
 	Can now change between the two cube logs
 	Now start with 2 bows and 4 flax seeds
 
