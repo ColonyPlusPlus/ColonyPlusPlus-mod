@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.Classes.Managers
         public enum TypeOption
         {
             Block,
-            Slope,
+            Slope,              UpsideDownSlop,
             SlopeCorner,
             SlopeInsideCorner,
             Curve,
@@ -48,7 +48,14 @@ namespace ColonyPlusPlus.Classes.Managers
                         DecorativeTypeZPlus dslopezp = new DecorativeTypeZPlus(basename, "slope", basematerial);
 
                         break;
+                    case TypeOption.UpsideDownSlop:
+                        DecorativeTypeBase duslope = new DecorativeTypeBase(basename, "upsidedownslope", basematerial, craftingrequireditem, craftingtype);
+                        DecorativeTypeXMinus duslopexm = new DecorativeTypeXMinus(basename, "upsidedownslope", basematerial);
+                        DecorativeTypeXPlus duslopexp = new DecorativeTypeXPlus(basename, "upsidedownslope", basematerial);
+                        DecorativeTypeZMinus duslopezm = new DecorativeTypeZMinus(basename, "upsidedownslope", basematerial);
+                        DecorativeTypeZPlus duslopezp = new DecorativeTypeZPlus(basename, "upsidedownslope", basematerial);
 
+                        break;
                     case TypeOption.SlopeCorner:
 
                         DecorativeTypeBase dslopecorner = new DecorativeTypeBase(basename, "slopecorner", basematerial, craftingrequireditem, craftingtype);
