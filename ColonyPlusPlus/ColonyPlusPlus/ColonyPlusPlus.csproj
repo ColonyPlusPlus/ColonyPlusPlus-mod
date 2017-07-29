@@ -56,6 +56,7 @@
     <Compile Include="Classes\ChatCommands\ClaimChunk.cs" />
     <Compile Include="Classes\ChatCommands\Clear.cs" />
     <Compile Include="Classes\ChatCommands\Creative.cs" />
+    <Compile Include="Classes\ChatCommands\Online.cs" />
     <Compile Include="Classes\ChatCommands\UnclaimChunk.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
