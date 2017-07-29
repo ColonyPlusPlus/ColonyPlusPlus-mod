@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.SideAll = "wheatwheat";
             this.Mesh = "wheatstage1";
             this.IsPlaceable = true;
+            this.AllowCreative = true;
             this.NPCLimit = 0;
 
             Classes.ItemHelper.OnRemove[] onRemoveNode = {

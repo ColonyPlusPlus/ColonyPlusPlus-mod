@@ -34,7 +34,6 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
         public static void AfterAddingBaseTypes()
         {
-            
             // Register Materials
             Classes.Managers.MaterialManager.initialiseMaterials();
 
@@ -59,6 +58,7 @@ namespace ColonyPlusPlus
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Clear());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.ClaimChunk());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.UnclaimChunk());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Online());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
@@ -70,6 +70,8 @@ namespace ColonyPlusPlus
 
             Classes.Managers.CropManager.LoadCropTracker();
             Classes.Managers.WorldManager.LoadJSON();
+
+            Pipliz.Log.Write("Finished loading ColonyPlusPlus");
         }
 
         // things to do every tick (or itnerval)

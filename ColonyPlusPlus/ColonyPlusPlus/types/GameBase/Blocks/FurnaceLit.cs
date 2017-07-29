@@ -11,12 +11,12 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
         {
             this.ParentType = "furnace";
             this.IsAutoRotatable = true;
-            this.IsPlaceable = true;
             this.DestructionTime = 1250;
             this.RotatableXPlus = "furnacelitx+";
             this.RotatableXMinus = "furnacelitx-";
             this.RotatableZPlus = "furnacelitz+";
             this.RotatableZMinus = "furnacelitz-";
+            this.AllowCreative = false;
             this.Register();
         }
     }

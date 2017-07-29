@@ -18,7 +18,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.RotatableXPlus = "ovenlitx+";
             this.RotatableZMinus = "ovenlitz-";
             this.RotatableZPlus = "ovenz+";
-            this.IsPlaceable = true;
+            this.AllowCreative = false;
             this.Register();
         }
     }

@@ -14,6 +14,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Block,
             Slope,
             SlopeCorner,
+            SlopeInsideCorner,
             Curve,
             CurveCorner,
             CurveRotated,
@@ -55,6 +56,15 @@ namespace ColonyPlusPlus.Classes.Managers
                         DecorativeTypeXPlus dslopecornerxp = new DecorativeTypeXPlus(basename, "slopecorner", basematerial);
                         DecorativeTypeZMinus dslopecornerzm = new DecorativeTypeZMinus(basename, "slopecorner", basematerial);
                         DecorativeTypeZPlus dslopecornerzp = new DecorativeTypeZPlus(basename, "slopecorner", basematerial);
+
+                        break;
+                    case TypeOption.SlopeInsideCorner:
+
+                        DecorativeTypeBase dslopeinsidecorner = new DecorativeTypeBase(basename, "slopeinsidecorner", basematerial, craftingrequireditem, craftingtype);
+                        DecorativeTypeXMinus dslopeinsidecornerxm = new DecorativeTypeXMinus(basename, "slopeinsidecorner", basematerial);
+                        DecorativeTypeXPlus dslopeinsidecornerxp = new DecorativeTypeXPlus(basename, "slopeinsidecorner", basematerial);
+                        DecorativeTypeZMinus dslopeinsidecornerzm = new DecorativeTypeZMinus(basename, "slopeinsidecorner", basematerial);
+                        DecorativeTypeZPlus dslopeinsidecornerzp = new DecorativeTypeZPlus(basename, "slopeinsidecorner", basematerial);
 
                         break;
                     case TypeOption.Curve:

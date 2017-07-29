@@ -20,14 +20,13 @@ namespace ColonyPlusPlus.Types.Crops
             this.OnRemove = onRemoveNode;
             this.IsSolid = false;
             this.NeedsBase = true;
-            this.IsPlaceable = true;
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "grassDelete";
             this.MaxStackSize = 1200;
             this.NPCLimit = 0;
             this.SideAll = "wheatwheat";
             this.Mesh = "wheatstage3";
-            this.IsPlaceable = true;
+            this.AllowCreative = false;
 
             this.Register();
         }
