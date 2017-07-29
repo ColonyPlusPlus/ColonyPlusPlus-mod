@@ -64,6 +64,7 @@
     <Compile Include="Classes\Helpers\NewBaseRecipes.cs" />
     <Compile Include="Classes\Helpers\Utilities.cs" />
     <Compile Include="Classes\Managers\BaseGameManager.cs" />
+    <Compile Include="Classes\Managers\BaseGameMaterialManager.cs" />
     <Compile Include="Classes\Managers\BlockManager.cs" />
     <Compile Include="Classes\Managers\CropManager.cs" />
     <Compile Include="Classes\Managers\DecorativeTypeManager.cs" />

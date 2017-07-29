@@ -3,6 +3,9 @@ Version 0.1.6 (DD-MM7-17):
 Added:
 	Upsidedown versions of the slope blocks!
 	
+Changed:
+	Removed texturemaping from .json and put it in code!
+	
 Fixed:
 	Cheese can now be NPC crafted!
 

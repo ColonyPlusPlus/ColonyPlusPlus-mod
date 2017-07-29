@@ -35,6 +35,7 @@ namespace ColonyPlusPlus
         public static void AfterAddingBaseTypes()
         {
             // Register Materials
+            Classes.Managers.BaseGameMaterialManager.initialiseMaterials();
             Classes.Managers.MaterialManager.initialiseMaterials();
 
             // Register basegame Types
