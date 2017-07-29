@@ -59,6 +59,7 @@
     <Compile Include="Classes\Data\ChunkData.cs" />
     <Compile Include="Classes\Data\CropData.cs" />
     <Compile Include="Classes\Data\PlayerData.cs" />
+    <Compile Include="Classes\Data\TradeData.cs" />
     <Compile Include="Classes\DecorativeType.cs" />
     <Compile Include="Classes\GrowableType.cs" />
     <Compile Include="Classes\Helpers\BaseRecipes.cs" />
