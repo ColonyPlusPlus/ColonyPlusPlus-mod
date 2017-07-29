@@ -8,6 +8,7 @@ using System.IO;
 using Pipliz.JSON;
 using Steamworks;
 using UnityEngine;
+using Permissions;
 
 namespace ColonyPlusPlus.Classes.Managers
 {
@@ -55,11 +56,14 @@ namespace ColonyPlusPlus.Classes.Managers
             if (ChunkDataList.ContainsKey(chunkname))
             {
                 ChunkData c = ChunkDataList[chunkname];
+                if (c.getOwner() == playerid || PermissionsManager.CheckAndWarnPermission(playerid, "chunk.delete"))
+                {
+                    bool result = c.removeOwner();
+                    SaveJSON();
+                    return result;
+                }
+                return false;
 
-                bool result = c.removeOwner();
-                SaveJSON();
-
-                return result;
             }
             else
             {
