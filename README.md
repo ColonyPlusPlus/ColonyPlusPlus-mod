@@ -7,3 +7,10 @@ At the moment, the mod mainly sits as a base framework for other mods, while add
 At the moment we're still using a few assets from the [Smooth Operator](https://mods.curse.com/texture-packs/minecraft/230576-smooth-operator) Minecraft texture pack! We'll be replacing those as soon as possible!
 
 ColonyPlusPlus-Mod can be used as a base for making your own mods, but please remove the blocks we have added within your own mod to avoid conflicts from players using both ColonyPlusPlus and your own mod.
+
+## Contributing
+
+Clone the repository.
+Create a libs folder in the root folder (ColonyPlusPlus-mod.)
+Find the Assembly-CSharp.dll, UnityEngine.dll, and UnityEngine.UI.dll from the managed folder.
+Copy these dll's into the libs folder.
