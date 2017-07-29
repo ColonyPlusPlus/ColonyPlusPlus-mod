@@ -1,5 +1,8 @@
 Version 0.1.6 (DD-MM7-17):
 -------------------------------------
+Added:
+	Upsidedown versions of the slope blocks!
+	
 Fixed:
 	Cheese can now be NPC crafted!
 
