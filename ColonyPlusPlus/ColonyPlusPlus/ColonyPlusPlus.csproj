@@ -47,6 +47,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ChatCommands\ChunkCommands.cs" />
     <Compile Include="Classes\ChatCommands\ClaimChunk.cs" />
     <Compile Include="Classes\ChatCommands\Clear.cs" />
     <Compile Include="Classes\ChatCommands\Creative.cs" />
