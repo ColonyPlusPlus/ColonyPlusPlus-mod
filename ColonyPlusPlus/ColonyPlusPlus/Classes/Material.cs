@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Classes
 {
     public static class Material
     {
-
+        private static List<string> MatList = new List<string>();
         /// <summary>
         /// Pretty self explanatory
         /// </summary>
@@ -26,6 +26,12 @@ namespace ColonyPlusPlus.Classes
                 .SetAs("height", height)
                 .SetAs("normal", normal)
             );
+            MatList.Add(identifier);
+        }
+
+        public static bool ValidateMat(string id)
+        {
+            return MatList.Contains(id);
         }
     }
 }

@@ -64,8 +64,11 @@ namespace ColonyPlusPlus.Classes
             this.AllowCreative = false;
 
             // set default sideall
-            this._SideAll = "SELF";
-            this.node.SetAs("sideall", "SELF");
+            if(Material.ValidateMat(name))
+            {
+                this._SideAll = "SELF";
+                this.node.SetAs("sideall", "SELF");
+            }
 
             // set defualt icon
             if(Utilities.ValidateIcon(name))
