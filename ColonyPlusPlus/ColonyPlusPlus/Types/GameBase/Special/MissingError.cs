@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Special
     {
         public MissingError(string name) : base(name)
         {
-            this.SideAll = "error";
+            this.Icon = "error";
             this.Register();
         }
     }
