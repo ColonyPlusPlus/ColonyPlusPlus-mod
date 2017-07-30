@@ -1,9 +1,11 @@
-﻿using Pipliz.JSON;
+﻿using Pipliz;
+using Pipliz.JSON;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using UnityEngine.Profiling;
 
 namespace ColonyPlusPlus.Classes.Managers
 {
@@ -14,14 +16,14 @@ namespace ColonyPlusPlus.Classes.Managers
         private static Dictionary<string, string> StageProgressions = new Dictionary<string, string>();
 
         // a list of crops in the world
-        private static List<Classes.Data.CropData> CropTracker = new List<Data.CropData>();
+        private static Dictionary<string, Vector3Int> CropTracker = new Dictionary<string, Vector3Int>();
+        private static Dictionary<long, List<string>> CropUpdateHolder = new Dictionary<long, List<string>>();
 
         // keep isntances of all the classes
         public static Dictionary<string, GrowableType> CropTypes = new Dictionary<string, GrowableType>();
 
         private static bool cropsLoaded = false;
-              
-
+       
         // Register crops
         public static void register()
         {
@@ -50,127 +52,154 @@ namespace ColonyPlusPlus.Classes.Managers
         // Run this every 500ms
         public static void doCropUpdates()
         {
+            Profiler.BeginSample("CropUpdate");
+
+            long updateStartTime = Pipliz.Time.MillisecondsSinceStart;
+
+            
+
             // Do we have crops in the world?
-            if(CropTracker.Count > 0)
+            if(CropUpdateHolder.Count > 0)
             {
+                // A dictionary to store a list of keys
+                Dictionary<long, List<string>> CropsToUpdate = CropUpdateHolder.Where(c => c.Key < updateStartTime).ToDictionary(k => k.Key, k => k.Value); 
 
-                // a list of blocks to update
-                List<Classes.Data.CropData> updateList = new List<Data.CropData>();
-
-                // a list of tracked crops to stop tracking (ie: where the crop is broken/finishes growing)
-                List<Classes.Data.CropData> CropTrackerToRemove = new List<Data.CropData>();
-
-                // Go through each of the tracked crops
-                foreach (Classes.Data.CropData c in CropTracker)
+                // we have crops to update!
+                if(CropsToUpdate.Count > 0)
                 {
-                    // update the amount of accumulated growth, as well as updating the last time the AG was updated
-                    c.growthAccumulated = AccumulateGrowth(c,c.classInstance);
-                    c.lastUpdateTimecycleHours = TimeCycle.TotalTime;
-                    
-                    // If the crop is fully grown
-                    if (c.growthAccumulated > c.classInstance.maxGrowth)
+                    // loop through each expired time
+                    foreach(long time in CropsToUpdate.Keys)
                     {
-                        // update the crop!
-
-                        // Make sure the crop CAN be upgraded
-                        if(hasProgression(c.classInstance.TypeName))
+                        // does the child lsit have a nice list of crops to update at this time?
+                        if(CropsToUpdate[time].Count > 0)
                         {
-                            // set it as pending to update
-                            updateList.Add(c);
+                            foreach(string cropLocString in CropsToUpdate[time])
+                            {
+                                // get the instance of the crop tracker and check it exists!
+                                if(!CropTracker.ContainsKey(cropLocString))
+                                {
+                                    // it doesn't exist, so just ignore it
+                                    continue;
+                                }
 
-                        } else
-                        {
-                            // if there's no way to update it then queue it for deletion
-                            CropTrackerToRemove.Add(c);
+                                ushort currentBlockID;
+                                World.TryGetTypeAt(CropTracker[cropLocString], out currentBlockID);
+
+                                string currentBlockName = ItemTypes.IndexLookup.GetName(currentBlockID);
+
+                                // check if it can be updated
+                                if (hasProgression(currentBlockName))
+                                {
+                                    //Utilities.WriteLog("Can update " + currentBlockName);
+                                    // get the new stage
+                                    string newBlockName = getNextStage(currentBlockName);
+
+                                    // update the block
+                                    updateBlock(CropTracker[cropLocString], newBlockName);
+
+                                    // check this isn't the last stage
+                                    if (hasProgression(newBlockName))
+                                    {
+
+                                       // Utilities.WriteLog("Is not last stage!" + newBlockName);
+                                        // update the next update time
+
+                                        // get a new classinstance to calculate the proper growth time
+                                        GrowableType g = CropTypes[newBlockName];
+                                        long nextUpdate = (long)(Pipliz.Time.MillisecondsSinceStart + g.maxGrowth * Pipliz.Random.NextFloat(g.growthMultiplierMin, g.growthMultiplierMax) * 60000);
+
+                                        // add it to the update list
+                                        if(CropUpdateHolder.ContainsKey(nextUpdate))
+                                        {
+                                            // other crops are set to update at this time too, so add this to the list
+                                            CropUpdateHolder[nextUpdate].Add(cropLocString);
+                                        } else
+                                        {
+                                            // no crops are currently setup to update at this time, make a new list
+                                            CropUpdateHolder.Add(nextUpdate, new List<string>() { cropLocString });
+                                        }
+
+                                    } else
+                                    {
+                                        // this is the last stage, remove it from the croptracker too!
+                                        CropTracker.Remove(cropLocString);
+                                    }
+
+                                } else
+                                {
+                                    // this should have been removed but wasn't... remove it now I guess...
+                                    CropTracker.Remove(cropLocString);
+                                }
+                            }
+                           
                         }
+
+                        // remove the crop update holder, it'll be re-added anyway for the enxt update
+                        CropUpdateHolder.Remove(time);
+                        Utilities.WriteLog("Now tracking:" + CropTracker.Count + " crops");
                     }
-                }
 
-                // Loop through everything pending to update
-                foreach (Classes.Data.CropData c in updateList)
-                {
-
-                    // Get the next type
-                    string newBlock = getNextStage(c.classInstance.TypeName);
-
-                    // Update the block
-                    updateBlock(c.location, newBlock);
-
-                    // update the class relation in this struct (TODO: remove this in favour of type ushort)
-                    CropTypes.TryGetValue(newBlock, out c.classInstance);
-
-                    // Check again if the newblock has progression, if not, stop tracking this block
-                    if(hasProgression(newBlock) == false)
-                    {
-                        // remove the block tracking
-                        CropTrackerToRemove.Add(c);
-                    }
-                }
-
-
-                // Do we have have things to stop tracking?
-                if (CropTrackerToRemove.Count > 0)
-                {
-                    // Loop through everything we've said to stop tracking
-                    foreach (Classes.Data.CropData c in CropTrackerToRemove)
-                    {
-                        // Remove it from the tracker
-                        CropTracker.Remove(c);
-                    }
+                    SaveCropTracker();
                 }
             }
+
+            Profiler.EndSample();
+        }
+
+        // when is the next update?
+        public static long getNextUpdateTime(float maxGrowth, float growthMultiplierMin, float growthMultiplierMax)
+        {
+           return (long)(Pipliz.Time.MillisecondsSinceStart + maxGrowth * Pipliz.Random.NextFloat(growthMultiplierMin, growthMultiplierMax) * 60000);
         }
 
         // Track a crop
-        public static void trackCrop(Pipliz.Vector3Int location, GrowableType classInstance)
+        public static void trackCrop(Pipliz.Vector3Int location, GrowableType classInstance, bool save = false)
         {
-            // Create a CropData struct to hold the data for this crop in this specific location
-            Data.CropData cd = new Data.CropData(location, classInstance);
+            long nextUpdate = (long)(Pipliz.Time.MillisecondsSinceStart + classInstance.maxGrowth * Pipliz.Random.NextFloat(classInstance.growthMultiplierMin, classInstance.growthMultiplierMax) * 60000);
+            string cropLocString = Managers.WorldManager.positionToString(location);
 
-            // Add it to the tracking list
-            CropTracker.Add(cd);
+            CropTracker.Add(cropLocString, location);
+            
 
-            SaveCropTracker();
+            // add it to the update list
+            if (CropUpdateHolder.ContainsKey(nextUpdate))
+            {
+                // other crops are set to update at this time too, so add this to the list
+                CropUpdateHolder[nextUpdate].Add(cropLocString);
+            }
+            else
+            {
+                // no crops are currently setup to update at this time, make a new list
+                CropUpdateHolder.Add(nextUpdate, new List<string>() { cropLocString });
+            }
+
+            if(save == true)
+            {
+                SaveCropTracker();
+            }
         }
 
-        public static void loadTrackCrop(Pipliz.Vector3Int location, GrowableType classInstance, float growth, double time)
+        public static void loadTrackCrop(Pipliz.Vector3Int location, GrowableType classInstance)
         {
-            // Create a CropData struct to hold the data for this crop in this specific location
-            Data.CropData cd = new Data.CropData(location, classInstance, growth, time);
-
-            // Add it to the tracking list
-            CropTracker.Add(cd);
+            trackCrop(location, classInstance);
+            //SaveCropTracker();
         }
 
         // Stop tracking a crop
-        public static void untrackCrop(Pipliz.Vector3Int location, GrowableType classInstance)
+        public static void untrackCrop(Pipliz.Vector3Int location, GrowableType classInstance, bool save = false)
         {
-            // Create a list of things to stop tracking
-            List<Classes.Data.CropData> CropTrackerToRemove = new List<Data.CropData>();
+            // check if it's being tracked, if so remove it
+            string cropLocString = Managers.WorldManager.positionToString(location);
 
-            // Is it in our croptracker list?
-            foreach (Data.CropData c in CropTracker)
+            if (CropTracker.ContainsKey(cropLocString))
             {
-                // ah yes, it is, mark it for removal
-                if(c.location == location)
-                {
-                    // ...
-                    CropTrackerToRemove.Add(c);
-                }
+                CropTracker.Remove(cropLocString);
             }
 
-            // If we have things to remove (we should only ever have 1!)
-            if (CropTrackerToRemove.Count > 0)
+            if (save == true)
             {
-                // Loop through them
-                foreach (Classes.Data.CropData c in CropTrackerToRemove)
-                {
-                    // Remove it from the tracker
-                    CropTracker.Remove(c);
-                }
+                SaveCropTracker();
             }
-
-            SaveCropTracker();
         }
 
         // Does this type have a next growth stage?
@@ -225,27 +254,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
         }
 
-        // Add calculated growth to a crop
-        public static float AccumulateGrowth(Classes.Data.CropData cropdata, GrowableType type)
-        {
-            // get the current daytime
-            double totalTime = TimeCycle.TotalTime;
-
-            // Make sure it is both currently day, and is currently daytime
-            if ((cropdata.lastUpdateTimecycleHours >= 0.0) && TimeCycle.IsDay)
-            {
-                // calculate a time
-                float num2 = (float)(totalTime - cropdata.lastUpdateTimecycleHours);
-                if (num2 < TimeCycle.DayLength)
-                {
-                    // add it to the time, multiplied by a random float between min and max multiplier taken from the item class
-                    cropdata.growthAccumulated += num2 * Pipliz.Random.NextFloat(type.growthMultiplierMin, type.growthMultiplierMax);
-                }
-            }
-
-            // return the accumulated growth
-            return cropdata.growthAccumulated;
-        }
+       
 
 
         private static string GetJSONPath()
@@ -260,7 +269,7 @@ namespace ColonyPlusPlus.Classes.Managers
             try
             {
                 string jSONPath = GetJSONPath();
-                Pipliz.Helpers.Helper.MakeDirectoriesIfNeeded(jSONPath);
+                Utilities.MakeDirectoriesIfNeeded(jSONPath);
                 if (CropTracker.Count == 0)
                 {
                     File.Delete(jSONPath);
@@ -272,16 +281,19 @@ namespace ColonyPlusPlus.Classes.Managers
                     JSONNode rootnode = new JSONNode(NodeType.Array);
 
                     // then go through stuff
-                    foreach(Classes.Data.CropData c in CropTracker)
+                    foreach(string cLoc in CropTracker.Keys)
                     {
                         // build a child node
                         JSONNode child = new JSONNode(NodeType.Object);
                  
                         // Create the JSON
-                        child.SetAs("location", (JSONNode)c.location);
-                        child.SetAs("typename", c.classInstance.TypeName);
-                        child.SetAs("growthAccumulated", c.growthAccumulated);
-                        child.SetAs("lastUpdateTimecycleHours", c.lastUpdateTimecycleHours);
+                        child.SetAs("location", (JSONNode)CropTracker[cLoc]);
+
+                        ushort currentBlockID;
+                        World.TryGetTypeAt(CropTracker[cLoc], out currentBlockID);
+
+                        string currentBlockName = ItemTypes.IndexLookup.GetName(currentBlockID);
+                        child.SetAs("typename", currentBlockName);
 
                         rootnode.AddToArray(child);
                     }
@@ -325,14 +337,15 @@ namespace ColonyPlusPlus.Classes.Managers
                                 location = (Pipliz.Vector3Int)node["location"];
 
                                 // recapture instance class
-                                string typename = node["typename"].GetAs<string>();
-                                GrowableType instanceclass;
-                                CropTypes.TryGetValue(typename, out instanceclass);
+                                string typename;
+                                typename = node["typename"].GetAs<string>();
+                               
+                                if(CropTypes.ContainsKey(typename))
+                                {
+                                    loadTrackCrop(location, CropTypes[typename]);
+                                }
 
-                                float growthAccumulated = node["growthAccumulated"].GetAs<float>();
-                                double lastUpdateTimecycleHours = node["lastUpdateTimecycleHours"].GetAs<double>();
-
-                                loadTrackCrop(location, instanceclass, growthAccumulated, lastUpdateTimecycleHours);
+                                
 
                             }
                             catch (Exception exception)

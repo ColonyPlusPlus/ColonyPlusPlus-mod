@@ -7,6 +7,7 @@ using static Players;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using System;
 
 namespace ColonyPlusPlus
 {
@@ -16,13 +17,23 @@ namespace ColonyPlusPlus
 
         private static long nextMillisecondUpdate = 0;
         private static long nextMillisecondUpdateLong = 0;
+        public static long nextMillisecondUpdateRotator = 0;
         private static long millisecondDelta = 500;
+        public static long millisecondDeltaRotator = 0;
+
+        public static Version modVersion = new Version(0, 2, 0);
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup)]
         public static void AfterStartup()
         {
-            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.1.5");
-            
+            Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
+            Classes.Managers.VersionManager.runVersionCheck(modVersion);
+
+            // Initialise configuration
+            Classes.Managers.ConfigManager.initialise();
+            Classes.Managers.RotatingMessageManager.initialise();
+
+
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnected)]
@@ -105,8 +116,15 @@ namespace ColonyPlusPlus
                 nextMillisecondUpdateLong = Pipliz.Time.MillisecondsSinceStart +  60000;
             }
 
+            // run the rotator
+            Classes.Managers.RotatingMessageManager.doRun();
 
         }
-        //[ModLoader.ModCallback(ModLoader.EModCallbackType.)]
+
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly)]
+        public static void OnQuitEarly()
+        {
+            Classes.Managers.CropManager.SaveCropTracker();
+        }
     }
 }

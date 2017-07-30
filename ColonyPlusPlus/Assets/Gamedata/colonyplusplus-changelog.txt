@@ -1,7 +1,18 @@
-Version 0.1.6 (DD-MM7-17):
+Version 0.2.0 (DD-MM-17): (Colony Survival 0.3.0)
+-------------------------------------
+Changed:
+	Grass and stone blocks stack size has increase to 100 from 50
+	Modded Crops now save on server shutdown befure kicking out the players.
+		This should remove the lag of saving twice a second.
+
+
+
+Version 0.1.6 (DD-MM-17):
 -------------------------------------
 Added:
 	Upsidedown versions of the slope blocks!
+	Trading!
+		/trade playerID itemID amount
 	
 Changed:
 	Removed texturemaping from .json and put it in code!
@@ -14,6 +25,11 @@ Changed:
 Fixed:
 	Cheese can now be NPC crafted!
 	Butter can now be NPC crafted!
+	
+NOTICE: 
+	This will be the last version compatible with Colony Survival 0.2.7
+	We are going to start working on compatible for 0.3.0 for from this point on.
+
 
 Version 0.1.5 (28-07-17):
 -------------------------------------

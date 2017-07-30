@@ -23,7 +23,7 @@ namespace ColonyPlusPlus.Types.Crops
             this.Icon = "potato";
             this.NPCLimit = 0;
             this.SideAll = "wheatwheat";
-            this.Mesh = "wheatstage1";
+            this.Mesh = "wheatstage2";
             this.maxGrowth = 12f;
 
 

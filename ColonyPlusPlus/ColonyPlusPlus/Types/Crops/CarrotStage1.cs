@@ -24,8 +24,8 @@ namespace ColonyPlusPlus.Types.Crops
             this.Icon = "carrot";
             this.NPCLimit = 0;
             this.SideAll = "wheatwheat";
-            this.Mesh = "wheatstage1";
-            this.maxGrowth = 12f;
+            this.Mesh = "carrotstage1";
+            this.maxGrowth = 2f;
             this.NutritionalValue = 0.3F;
 
             

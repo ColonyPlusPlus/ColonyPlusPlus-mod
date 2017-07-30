@@ -21,10 +21,10 @@ namespace ColonyPlusPlus.Types.Crops
             this.MaxStackSize = 1200;
             this.NPCLimit = 0;
             this.SideAll = "wheatwheat";
-            this.Mesh = "wheatstage2";
+            this.Mesh = "carrotstage2";
             this.AllowCreative = false;
 
-            this.maxGrowth = 15f;
+            this.maxGrowth = 1f;
 
 
             TypeManager.registerCrop(this);
