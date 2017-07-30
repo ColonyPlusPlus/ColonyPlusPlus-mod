@@ -53,7 +53,6 @@
     <Compile Include="Classes\ChatCommands\Online.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
-    <Compile Include="Classes\Data\CropData.cs" />
     <Compile Include="Classes\Data\PlayerData.cs" />
     <Compile Include="Classes\DecorativeType.cs" />
     <Compile Include="Classes\GrowableType.cs" />

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using UnityEngine.Profiling;
 
 namespace ColonyPlusPlus.Classes.Managers
 {
@@ -51,9 +52,11 @@ namespace ColonyPlusPlus.Classes.Managers
         // Run this every 500ms
         public static void doCropUpdates()
         {
+            Profiler.BeginSample("CropUpdate");
+
             long updateStartTime = Pipliz.Time.MillisecondsSinceStart;
 
-            Pipliz.Chatting.Chat.SendToAll("Current time:" + updateStartTime, Pipliz.Chatting.ChatSenderType.Server);
+            
 
             // Do we have crops in the world?
             if(CropUpdateHolder.Count > 0)
@@ -140,6 +143,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 }
             }
 
+            Profiler.EndSample();
         }
 
         // when is the next update?
@@ -155,9 +159,7 @@ namespace ColonyPlusPlus.Classes.Managers
             string cropLocString = Managers.WorldManager.positionToString(location);
 
             CropTracker.Add(cropLocString, location);
-            Utilities.WriteLog("queued crop for update at: " + nextUpdate + "");
-
-            Utilities.WriteLog("Now tracking:" + CropTracker.Count + " crops");
+            
 
             // add it to the update list
             if (CropUpdateHolder.ContainsKey(nextUpdate))
@@ -337,7 +339,6 @@ namespace ColonyPlusPlus.Classes.Managers
                                 // recapture instance class
                                 string typename;
                                 typename = node["typename"].GetAs<string>();
-                                Utilities.WriteLog("Loaded crop of type: " + typename);
                                
                                 if(CropTypes.ContainsKey(typename))
                                 {
