@@ -104,6 +104,11 @@ namespace ColonyPlusPlus
 
 
         }
-        //[ModLoader.ModCallback(ModLoader.EModCallbackType.)]
+
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit)]
+        public static void OnQuit()
+        {
+            Classes.Managers.CropManager.SaveCropTracker();
+        }
     }
 }
