@@ -90,7 +90,7 @@ namespace ColonyPlusPlus.Classes.Managers
                                 // check if it can be updated
                                 if (hasProgression(currentBlockName))
                                 {
-                                    Utilities.WriteLog("Can update " + currentBlockName);
+                                    //Utilities.WriteLog("Can update " + currentBlockName);
                                     // get the new stage
                                     string newBlockName = getNextStage(currentBlockName);
 
@@ -101,7 +101,7 @@ namespace ColonyPlusPlus.Classes.Managers
                                     if (hasProgression(newBlockName))
                                     {
 
-                                        Utilities.WriteLog("Is not last stage!" + newBlockName);
+                                       // Utilities.WriteLog("Is not last stage!" + newBlockName);
                                         // update the next update time
 
                                         // get a new classinstance to calculate the proper growth time
