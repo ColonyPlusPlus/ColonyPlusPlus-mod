@@ -152,11 +152,20 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (partnerStockpile != null)
             {
-                if (partnerStockpile.AmountContained(pd.tradeData.takeId) <= pd.tradeData.takeAmount)
+                if (partnerStockpile.AmountContained(pd.tradeData.giveId) <= pd.tradeData.giveAmount)
+                {
+                    Chat.Send(player.ID, "Your partner can't afford this trade. It will need to be remade.");
+                    Chat.Send(partnerData.PID, "You can't afford your trade with " + player.Name + ". Please get the required items and send another request.");
+                    rejectTrade(player, true);
+                    return;
+                }
+
+                if (playerStockpile.AmountContained(pd.tradeData.takeId) <= pd.tradeData.takeAmount)
                 {
                     Chat.Send(player.ID, "You can't afford this trade. Please get the required items or reject the trade.");
                     return;
                 }
+
                 playerStockpile.Remove(pd.tradeData.takeId, pd.tradeData.takeAmount);
                 partnerStockpile.Remove(pd.tradeData.giveId, pd.tradeData.giveAmount);
                 playerStockpile.Add(pd.tradeData.giveId, pd.tradeData.giveAmount);
