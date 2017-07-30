@@ -60,7 +60,7 @@ namespace ColonyPlusPlus.Classes.Helpers
             Pipliz.Chatting.Chat.SendToAllBut(n, messageBuilt, sender);
         }
 
-        private static string buildMessage(string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal)
+        public static string buildMessage(string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal)
         {
             string colorPrefix = "<color=" + colour.ToString() + ">";
             string colorSuffix = "</color>";
