@@ -21,7 +21,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup)]
         public static void AfterStartup()
         {
-            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.1.5");
+            Pipliz.Log.Write("Loaded ColonyPlusPlus v0.1.6");
             
         }
 
