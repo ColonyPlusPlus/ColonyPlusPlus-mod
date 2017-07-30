@@ -58,7 +58,8 @@ namespace ColonyPlusPlus
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Creative());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Clear());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.ClaimChunk());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.UnclaimChunk());            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Online());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.UnclaimChunk());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Online());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Trade());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeAccept());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeReject());
