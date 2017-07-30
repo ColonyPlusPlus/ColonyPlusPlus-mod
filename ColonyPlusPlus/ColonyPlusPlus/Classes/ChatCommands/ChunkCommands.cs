@@ -19,19 +19,26 @@ namespace ColonyPlusPlus.Classes.ChatCommands
             if (chatItem.StartsWith("/chunk"))
             {
                 string[] s = chatItem.Split(' ');
-                if(s[1] == "claim")
+                if(s.Length >= 2)
                 {
+                    if (s[1] == "claim")
+                    {
 
-                    return this.ProcessClaimChunk(id, chatItem);
-                }
-                else if(s[1] == "unclaim")
+                        return this.ProcessClaimChunk(id, chatItem);
+                    }
+                    else if (s[1] == "unclaim")
+                    {
+                        return this.ProcessUnclaimChunk(id, chatItem);
+                    }
+                    else if (s[1] == "delete")
+                    {
+                        return this.ProcessDeleteChunk(id, chatItem);
+                    }
+                } else
                 {
-                    return this.ProcessUnclaimChunk(id, chatItem);
+                    Chat.Send(id, "Correct usage: /chunk {action} where action can be claim, unclaim, or delete", ChatSenderType.Server);
                 }
-                else if (s[1] == "delete")
-                {
-                    return this.ProcessDeleteChunk(id, chatItem);
-                }
+                
             }
             return false;
         }
