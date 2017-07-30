@@ -19,7 +19,7 @@ namespace ColonyPlusPlus.Classes.Managers
         private static bool worldManagerLoaded = false;
 
 
-        public static string chunkName(Vector3Int position)
+        public static string positionToString(Vector3Int position)
         {
             return position.x + "," + position.y + "," + position.z;
         }
@@ -27,7 +27,7 @@ namespace ColonyPlusPlus.Classes.Managers
         public static bool claimChunk(Vector3Int position, NetworkID playerid)
         {
             Vector3Int p = position.ToChunk();
-            string chunkname = chunkName(p);
+            string chunkname = positionToString(p);
             if (ChunkDataList.ContainsKey(chunkname))
             {
                 ChunkData c = ChunkDataList[chunkname];
@@ -51,7 +51,7 @@ namespace ColonyPlusPlus.Classes.Managers
         public static bool unclaimChunk(Vector3Int position, NetworkID playerid)
         {
             Vector3Int p = position.ToChunk();
-            string chunkname = chunkName(p);
+            string chunkname = positionToString(p);
 
             if (ChunkDataList.ContainsKey(chunkname))
             {
@@ -130,7 +130,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
                         // Create the JSON
                         child.SetAs("location", (JSONNode)c.location);
-                        child.SetAs("chunkID", chunkName(c.location));
+                        child.SetAs("chunkID", positionToString(c.location));
                         child.SetAs("owned", c.hasOwner());
                         child.SetAs("playerID", c.getOwner().steamID.m_SteamID);
 

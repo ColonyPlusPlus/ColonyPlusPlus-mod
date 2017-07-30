@@ -36,7 +36,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             
             // get the current chunkID
-            string cid = Managers.WorldManager.chunkName(Managers.WorldManager.positionToVector3Int(player.Position).ToChunk());
+            string cid = Managers.WorldManager.positionToString(Managers.WorldManager.positionToVector3Int(player.Position).ToChunk());
 
             if (playerDataDict.ContainsKey(player.ID))
             {
