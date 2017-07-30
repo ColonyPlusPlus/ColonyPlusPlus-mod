@@ -25,7 +25,7 @@ namespace ColonyPlusPlus.Types.Crops
             this.MaxStackSize = 1200;
             this.NPCLimit = 0;
             this.SideAll = "wheatwheat";
-            this.Mesh = "wheatstage3";
+            this.Mesh = "carrotstage3";
             this.AllowCreative = false;
 
             
