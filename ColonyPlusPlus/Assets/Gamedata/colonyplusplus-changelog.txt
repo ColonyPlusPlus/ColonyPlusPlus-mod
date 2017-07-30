@@ -1,4 +1,11 @@
-Version 0.1.6 (DD-MM7-17):
+Version 0.2.0 (DD-MM-17): (Colony Survival 0.3.0)
+-------------------------------------
+Changed:
+	Grass and stone blocks stack size has increase to 100 from 50
+
+
+
+Version 0.1.6 (DD-MM-17):
 -------------------------------------
 Added:
 	Upsidedown versions of the slope blocks!

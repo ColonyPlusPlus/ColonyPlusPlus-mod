@@ -19,6 +19,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.OnRemoveAudio = "stoneDelete";
             this.DestructionTime = 600;
             this.IsPlaceable = true;
+            this.MaxStackSize = 100;
             this.Register();
         }
 
