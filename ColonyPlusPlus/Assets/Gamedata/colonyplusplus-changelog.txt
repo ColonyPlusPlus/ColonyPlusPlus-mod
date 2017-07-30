@@ -16,6 +16,11 @@ Changed:
 Fixed:
 	Cheese can now be NPC crafted!
 	Butter can now be NPC crafted!
+	
+NOTICE: 
+	This will be the last version compatible with Colony Survival 0.2.7
+	We are going to start working on compatible for 0.3.0 for from this point on.
+
 
 Version 0.1.5 (28-07-17):
 -------------------------------------
