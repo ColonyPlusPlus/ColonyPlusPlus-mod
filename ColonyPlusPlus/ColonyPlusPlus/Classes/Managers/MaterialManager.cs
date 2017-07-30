@@ -9,6 +9,7 @@
         {
             Material.createMaterial("wildberrybush", "wildberrybush", "neutral", "berrybush", "berrybush");
             Material.createMaterial("vegetablepatch", "leavesTemperate", "neutral", "leavesTemperate", "leavesTemperate");
+            Material.createMaterial("sugarcane", "clayblocklime", "neutral", "leavesTemperate", "leavesTemperate");
 
 
             Material.createMaterial("cpplogtemperatetop", "cpplogtemperatetop", "neutral", "plasterblock", "plasterblock");
