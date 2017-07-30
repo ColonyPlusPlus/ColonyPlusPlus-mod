@@ -6,5 +6,5 @@
 	],
 	"rotatingmessages.color": "yellow",
 	"rotatingmessages.style": "bolditalic",
-	"rotatingmessages.frequency": 120
+	"rotatingmessages.interval": 120
 }
