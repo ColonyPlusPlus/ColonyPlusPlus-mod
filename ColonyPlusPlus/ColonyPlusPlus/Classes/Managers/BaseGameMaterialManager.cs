@@ -49,7 +49,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Material.createMaterial("furnacelitfront", "furnaceLitFront", "furnaceLitFront", "furnaceFront", "furnaceFront");
             Material.createMaterial("banner", "banner", "neutral", "neutral", "neutral");
             Material.createMaterial("bed", "bed", "neutral", "bed", "neutral");
-            Material.createMaterial("quiverarrow", "quiverarrow", "neutral", "neutral", "neutral");
+            Material.createMaterial("quiverarrow", "quiverArrow", "neutral", "neutral", "neutral");
             Material.createMaterial("sappling", "sappling", "neutral", "neutral", "neutral");
             Material.createMaterial("torch", "torch", "torch", "torch", "neutral");
             Material.createMaterial("wheatwheat", "wheat", "neutral", "neutral", "neutral");
