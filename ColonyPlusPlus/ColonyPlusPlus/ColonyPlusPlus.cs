@@ -7,6 +7,7 @@ using static Players;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using System;
 
 namespace ColonyPlusPlus
 {
@@ -20,10 +21,13 @@ namespace ColonyPlusPlus
         private static long millisecondDelta = 500;
         public static long millisecondDeltaRotator = 0;
 
+        public static Version modVersion = new Version(0, 2, 0);
+
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup)]
         public static void AfterStartup()
         {
-            Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v0.2.0</color></b>");
+            Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
+            Classes.Managers.VersionManager.runVersionCheck(modVersion);
 
             // Initialise configuration
             Classes.Managers.ConfigManager.initialise();
