@@ -61,6 +61,7 @@
     <Compile Include="Classes\DecorativeType.cs" />
     <Compile Include="Classes\GrowableType.cs" />
     <Compile Include="Classes\Helpers\BaseRecipes.cs" />
+    <Compile Include="Classes\Helpers\Chat.cs" />
     <Compile Include="Classes\Helpers\CustomDataHelper.cs" />
     <Compile Include="Classes\Helpers\ItemHelper.cs" />
     <Compile Include="Classes\Helpers\NewBaseRecipes.cs" />
@@ -68,12 +69,14 @@
     <Compile Include="Classes\Managers\BaseGameManager.cs" />
     <Compile Include="Classes\Managers\BaseGameMaterialManager.cs" />
     <Compile Include="Classes\Managers\BlockManager.cs" />
+    <Compile Include="Classes\Managers\ConfigManager.cs" />
     <Compile Include="Classes\Managers\CropManager.cs" />
     <Compile Include="Classes\Managers\DecorativeTypeManager.cs" />
     <Compile Include="Classes\Managers\ItemManager.cs" />
     <Compile Include="Classes\Managers\MaterialManager.cs" />
     <Compile Include="Classes\Managers\PlayerManager.cs" />
     <Compile Include="Classes\Managers\RecipeManager.cs" />
+    <Compile Include="Classes\Managers\RotatingMessageManager.cs" />
     <Compile Include="Classes\Managers\TypeManager.cs" />
     <Compile Include="Classes\Managers\WorldManager.cs" />
     <Compile Include="Classes\Material.cs" />
