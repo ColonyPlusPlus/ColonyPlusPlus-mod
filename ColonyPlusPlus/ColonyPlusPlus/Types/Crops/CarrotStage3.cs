@@ -28,6 +28,8 @@ namespace ColonyPlusPlus.Types.Crops
             this.Mesh = "wheatstage3";
             this.AllowCreative = false;
 
+            
+
             this.Register();
         }
     }

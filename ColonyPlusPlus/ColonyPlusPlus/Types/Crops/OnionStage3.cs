@@ -29,6 +29,8 @@ namespace ColonyPlusPlus.Types.Crops
             this.Mesh = "wheatstage3";
             this.NutritionalValue = 0.2f;
 
+
+
             this.Register();
         }
     }
