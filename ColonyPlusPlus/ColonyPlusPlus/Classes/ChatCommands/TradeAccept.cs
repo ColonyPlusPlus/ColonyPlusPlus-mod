@@ -10,7 +10,7 @@ namespace ColonyPlusPlus.Classes.ChatCommands
     public class TradeAccept : IChatCommand
     {
         public bool IsCommand(string chatItem) =>
-            (chatItem.StartsWith("/tradeaccept"));
+            (chatItem.StartsWith("/trade accept"));
 
         public bool TryDoCommand(NetworkID id, string chatItem)
         {

@@ -7,11 +7,11 @@ using System;
 namespace ColonyPlusPlus.Classes.ChatCommands
 {
 
-    public class Trade : IChatCommand
+    public class TradeGive : IChatCommand
     {
-        
+
         public bool IsCommand(string chatItem) =>
-            (chatItem.StartsWith("/trade send"));
+            (chatItem.StartsWith("/trade give"));
 
         private bool ProcessTrade(NetworkID id, string chatItem)
         {
@@ -26,36 +26,27 @@ namespace ColonyPlusPlus.Classes.ChatCommands
             if (target == NetworkID.Invalid)
             {
                 Chat.Send(id, "Player not found. Usage:");
-                Chat.Send(id, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>");
+                Chat.Send(id, "/trade give <playername> <myitemid> <myitemamount>");
                 return true;
             }
-            ushort takeid = 0;
-            int takeamt = 0;
             ushort giveid = 0;
             int giveamt = 0;
-            bool sucessful = UInt16.TryParse(splits[1], out takeid);
+            bool sucessful = UInt16.TryParse(splits[1], out giveid);
             if (!sucessful)
             {
-                sucessful = sucessful || ItemTypes.IndexLookup.TryGetIndex(splits[1], out takeid);
+                sucessful = sucessful || ItemTypes.IndexLookup.TryGetIndex(splits[1], out giveid);
             }
-            sucessful = sucessful && Int32.TryParse(splits[2], out takeamt);
-            bool giveSucessful = UInt16.TryParse(splits[3], out giveid);
-            if (!giveSucessful)
-            {
-                giveSucessful = giveSucessful || ItemTypes.IndexLookup.TryGetIndex(splits[3], out giveid);
-            }
-            sucessful = sucessful && giveSucessful;
-            sucessful = sucessful && Int32.TryParse(splits[4], out giveamt);
+            sucessful = sucessful && Int32.TryParse(splits[2], out giveamt);
             if (!sucessful)
             {
                 Chat.Send(id, "Invalid argument. Usage:");
-                Chat.Send(id, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>");
+                Chat.Send(id, "/trade give <playername> <myitemid> <myitemamount>");
                 return true;
             }
-            Managers.PlayerManager.notifyTrade(Players.GetPlayer(id), Players.GetPlayer(target), giveid, giveamt, takeid, takeamt);
+            Managers.PlayerManager.tradeGive(Players.GetPlayer(id), Players.GetPlayer(target), giveid, giveamt);
             return true;
         }
-        
+
         public bool TryDoCommand(NetworkID id, string chatItem)
         {
             return this.ProcessTrade(id, chatItem);

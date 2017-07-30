@@ -10,16 +10,12 @@ namespace ColonyPlusPlus.Classes.ChatCommands
     public class TradeReject : IChatCommand
     {
         public bool IsCommand(string chatItem) =>
-            (chatItem.StartsWith("/tradereject"));
+            (chatItem.StartsWith("/trade reject"));
 
         public bool TryDoCommand(NetworkID id, string chatItem)
         {
-            if (chatItem.StartsWith("/tradereject"))
-            {
-                Managers.PlayerManager.rejectTrade(Players.GetPlayer(id));
-                return true;
-            }
-            return false;
+            Managers.PlayerManager.rejectTrade(Players.GetPlayer(id));
+            return true;
         }
     }
 }
