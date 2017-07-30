@@ -111,7 +111,7 @@ namespace ColonyPlusPlus.Classes.Managers
             try
             {
                 string jSONPath = GetJSONPath();
-                Pipliz.Helpers.Helper.MakeDirectoriesIfNeeded(jSONPath);
+                Utilities.MakeDirectoriesIfNeeded(jSONPath);
                 if (ChunkDataList.Count == 0)
                 {
                     File.Delete(jSONPath);

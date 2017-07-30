@@ -17,5 +17,9 @@ namespace ColonyPlusPlus.Classes
         {
             return File.Exists(Directory.GetCurrentDirectory()  + "/gamedata/textures/icons/" + exists + ".png");
         }
+        public static void MakeDirectoriesIfNeeded(string path)
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+        }
     }
 }
