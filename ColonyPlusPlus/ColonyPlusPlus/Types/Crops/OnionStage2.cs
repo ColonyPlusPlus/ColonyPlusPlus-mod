@@ -20,7 +20,6 @@ namespace ColonyPlusPlus.Types.Crops
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "grassDelete";
             this.MaxStackSize = 1200;
-            this.Icon = "potato";
             this.NPCLimit = 0;
             this.SideAll = "wheatwheat";
             this.Mesh = "wheatstage2";
