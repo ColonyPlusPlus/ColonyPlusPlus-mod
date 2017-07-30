@@ -89,6 +89,17 @@ namespace ColonyPlusPlus.Classes.Managers
             return pd;
         }
 
+        /// <summary>
+        /// INTERNAL
+        /// Notifies player to that there is a trade offer from from.
+        /// If any of the arguments are invalid it will tell the users that they need to correct them.
+        /// </summary>
+        /// <param name="from">The player that is sending the request.</param>
+        /// <param name="to">The player that is getting sent the request.</param>
+        /// <param name="give">The ItemID of the item from is giving away.</param>
+        /// <param name="giveamt">How many from is giving to to.</param>
+        /// <param name="take">The ItemID of the item from wants from to.</param>
+        /// <param name="takeamt">How many from wants from to.</param>
         public static void notifyTrade(Players.Player from, Players.Player to, ushort give, int giveamt, ushort take, int takeamt)
         {
             PlayerData fromPd = getPlayerData(from);
@@ -134,6 +145,11 @@ namespace ColonyPlusPlus.Classes.Managers
             playerDataDict[to.ID] = toPd;
         }
 
+        /// <summary>
+        /// INTERNAL
+        /// Accepts the trade in player's current playerdata, set the items, and notify the users.
+        /// </summary>
+        /// <param name="player">The player who is accepting.</param>
         public static void acceptTrade(Players.Player player)
         {
             PlayerData pd = getPlayerData(player);
@@ -186,6 +202,12 @@ namespace ColonyPlusPlus.Classes.Managers
             playerDataDict[partnerData.PID] = partnerData;
         }
 
+        /// <summary>
+        /// INTERNAL
+        /// Rejects the trade in player's current playerdata and notifies the users.
+        /// </summary>
+        /// <param name="player">The player who is rejecting.</param>
+        /// <param name="isInternal">If this was called internally. If true then it doesn't notify the users.</param>
         public static void rejectTrade(Players.Player player, bool isInternal = false)
         {
 
@@ -212,6 +234,14 @@ namespace ColonyPlusPlus.Classes.Managers
             playerDataDict[partnerData.PID] = partnerData;
         }
 
+        /// <summary>
+        /// INTERNAL
+        /// From gives to items.
+        /// </summary>
+        /// <param name="from">The player sending the items.</param>
+        /// <param name="to">The player recieving the items.</param>
+        /// <param name="give">The ItemID of the item given.</param>
+        /// <param name="giveamt">How many of the item given.</param>
         public static void tradeGive(Players.Player from, Players.Player to, ushort give, int giveamt)
         {
             Stockpile playerStockpile = Stockpile.GetStockPile(from.ID);
