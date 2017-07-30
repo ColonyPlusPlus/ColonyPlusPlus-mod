@@ -2,6 +2,8 @@ Version 0.1.6 (DD-MM7-17):
 -------------------------------------
 Added:
 	Upsidedown versions of the slope blocks!
+	Trading!
+		/trade playerID itemID amount
 	
 Changed:
 	Removed texturemaping from .json and put it in code!
