@@ -51,10 +51,10 @@
     <Compile Include="Classes\ChatCommands\TradeReject.cs" />
     <Compile Include="Classes\ChatCommands\TradeAccept.cs" />
     <Compile Include="Classes\ChatCommands\Trade.cs" />
+    <Compile Include="Classes\ChatCommands\ChunkCommands.cs" />
     <Compile Include="Classes\ChatCommands\Clear.cs" />
     <Compile Include="Classes\ChatCommands\Creative.cs" />
     <Compile Include="Classes\ChatCommands\Online.cs" />
-    <Compile Include="Classes\ChatCommands\UnclaimChunk.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
     <Compile Include="Classes\Data\CropData.cs" />

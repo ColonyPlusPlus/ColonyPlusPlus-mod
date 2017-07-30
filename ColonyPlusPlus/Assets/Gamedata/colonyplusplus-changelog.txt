@@ -5,9 +5,15 @@ Added:
 	
 Changed:
 	Removed texturemaping from .json and put it in code!
+	Chunk commands:
+		They have been replaced with the following commands
+		/chunk claim	- replaced /claimchunk
+		/chunk unclaim	- replaced /unclaimchunk
+		/chunk delete	- for admins to unclaim chunks to stop someone from griefing
 	
 Fixed:
 	Cheese can now be NPC crafted!
+	Butter can now be NPC crafted!
 
 Version 0.1.5 (28-07-17):
 -------------------------------------
