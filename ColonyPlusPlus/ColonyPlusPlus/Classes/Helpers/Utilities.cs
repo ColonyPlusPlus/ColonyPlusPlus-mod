@@ -34,6 +34,17 @@ namespace ColonyPlusPlus.Classes
             Directory.CreateDirectory(Path.GetDirectoryName(path));
         }
 
+        /// <summary>
+        /// Finds the player that these arguments are trying to address.
+        /// Be sure when you pass the arguments that you remove the command from them.
+        /// IE. /trade send Dadadah 1 1 1 1 > the array will be
+        /// ["/trade", "send", "Dadadah", "1", "1", "1", "1"]
+        /// You need to cut off the command itself, so this example would change to
+        /// ["Dadadah", "1", "1", "1", "1"]
+        /// </summary>
+        /// <param name="argsBefore">The array of strings that are the arguments.</param>
+        /// <param name="argsAfter">The array of arguments after we have parsed the string.</param>
+        /// <returns>The subject these arguments are targeting.</returns>
         public static NetworkID GetSubject(string[] argsBefore, out string[] argsAfter)
         {
             argsAfter = argsBefore;
