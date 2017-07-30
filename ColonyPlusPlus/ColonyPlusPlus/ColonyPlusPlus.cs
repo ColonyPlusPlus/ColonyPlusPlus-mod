@@ -1,4 +1,4 @@
-﻿using Pipliz;
+using Pipliz;
 using Pipliz.Chatting;
 using Pipliz.JSON;
 using Pipliz.Threading;
@@ -71,6 +71,9 @@ namespace ColonyPlusPlus
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.ChunkCommands());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Online());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Trade());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeAccept());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeReject());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeGive());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]

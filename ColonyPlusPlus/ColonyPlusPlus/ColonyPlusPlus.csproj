@@ -50,14 +50,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ChatCommands\TradeReject.cs" />
+    <Compile Include="Classes\ChatCommands\TradeAccept.cs" />
+    <Compile Include="Classes\ChatCommands\TradeGive.cs" />
+    <Compile Include="Classes\ChatCommands\Trade.cs" />
     <Compile Include="Classes\ChatCommands\ChunkCommands.cs" />
     <Compile Include="Classes\ChatCommands\Clear.cs" />
     <Compile Include="Classes\ChatCommands\Creative.cs" />
     <Compile Include="Classes\ChatCommands\Online.cs" />
-    <Compile Include="Classes\ChatCommands\Trade.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
     <Compile Include="Classes\Data\PlayerData.cs" />
+    <Compile Include="Classes\Data\TradeData.cs" />
     <Compile Include="Classes\DecorativeType.cs" />
     <Compile Include="Classes\GrowableType.cs" />
     <Compile Include="Classes\Helpers\BaseRecipes.cs" />
