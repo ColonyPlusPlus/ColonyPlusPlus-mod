@@ -5,15 +5,17 @@ using Pipliz.Chatting;
 using System;
 using System.Collections.Generic;
 
-namespace ColonyPlusPlus.Classes.ChatCommands
+namespace ColonyPlusPlus.Classes.CPPChatCommands
 {
 
-    public class Online : IChatCommand
+    public class Online : BaseChatCommand
     {
-        public bool IsCommand(string chatItem) =>
-            (chatItem.StartsWith("/online"));
+        public Online() : base("/online", false)
+        {
 
-        private bool Process(NetworkID id, string chatItem)
+        }
+
+        override protected bool RunCommand(NetworkID id, string[] args, NetworkID target)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "online"))
             {
@@ -30,20 +32,8 @@ namespace ColonyPlusPlus.Classes.ChatCommands
                 
                 Chat.Send(id, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), ChatSenderType.Server);
             }
-
-
+            
             return true;
-        }
-
-
-
-        public bool TryDoCommand(NetworkID id, string chatItem)
-        {
-            if (chatItem.StartsWith("/online"))
-            {
-                return this.Process(id, chatItem);
-            }
-            return false;
         }
     }
 }

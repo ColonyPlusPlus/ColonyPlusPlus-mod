@@ -2,48 +2,32 @@
 using System;
 using ChatCommands;
 using NPC;
-using Permissions;
 using Pipliz;
 using ColonyPlusPlus.Classes.Helpers;
-using System;
 
-namespace ColonyPlusPlus.Classes.ChatCommands
+namespace ColonyPlusPlus.Classes.CPPChatCommands
 {
-    class ChunkCommands : IChatCommand
+    class Chunk : BaseChatCommand
     {
-        public bool IsCommand(string chatItem) =>
-            (chatItem.StartsWith("/chunk"));
-
-        public bool TryDoCommand(NetworkID id, string chatItem)
+        public ChunkCommand() : base("/chunk", false, true)
         {
-            if (chatItem.StartsWith("/chunk"))
-            {
-                string[] s = chatItem.Split(' ');
-                if(s.Length >= 2)
-                {
-                    if (s[1] == "claim")
-                    {
 
-                        return this.ProcessClaimChunk(id, chatItem);
-                    }
-                    else if (s[1] == "unclaim")
-                    {
-                        return this.ProcessUnclaimChunk(id, chatItem);
-                    }
-                    else if (s[1] == "delete")
-                    {
-                        return this.ProcessDeleteChunk(id, chatItem);
-                    }
-                } else
-                {
-                    Chat.send(id, "Correct usage: /chunk {action} where action can be claim, unclaim, or delete", Chat.ChatColour.lime, Chat.ChatStyle.bold);
-                }
-                
-            }
-            return false;
         }
 
-        private bool ProcessClaimChunk(NetworkID id, string chatItem)
+        protected override bool RunCommand(NetworkID id, string[] args, NetworkID target)
+        {
+            return false;
+        }
+    }
+
+    class ChunkClaim : BaseChatCommand
+    {
+        public ChunkClaim() : base("/chunk claim")
+        {
+
+        }
+
+        protected override bool RunCommand(NetworkID id, string[] args, NetworkID target)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "chunk.claim"))
             {
@@ -69,16 +53,21 @@ namespace ColonyPlusPlus.Classes.ChatCommands
                     // chunk already owned
                     Chat.send(id, "Unable to claim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
                 }
-
-
-
+                
             }
-
 
             return true;
         }
+    }
 
-        private bool ProcessUnclaimChunk(NetworkID id, string chatItem)
+    class ChunkUnClaim : BaseChatCommand
+    {
+        public ChunkUnClaim() : base("/chunk unclaim")
+        {
+
+        }
+
+        protected override bool RunCommand(NetworkID id, string[] args, NetworkID target)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "chunk.claim"))
             {
@@ -101,19 +90,24 @@ namespace ColonyPlusPlus.Classes.ChatCommands
                 }
                 else
                 {
-                    // chunk already owned
+                    // chunk not owned
                     Chat.send(id, "Unable to unclaim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
                 }
-
-
-
+                
             }
-
-
+            
             return true;
         }
+    }
 
-        private bool ProcessDeleteChunk(NetworkID id, string chatItem)
+    class ChunkDelete : BaseChatCommand
+    {
+        public ChunkDelete() : base("/chunk delete")
+        {
+
+        }
+
+        protected override bool RunCommand(NetworkID id, string[] args, NetworkID target)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "chunk.delete"))
             {
@@ -136,15 +130,12 @@ namespace ColonyPlusPlus.Classes.ChatCommands
                 }
                 else
                 {
-                    // chunk already owned
+                    // chunk not owned
                     Chat.send(id, "Unable to unclaim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
                 }
-
-
-
+                
             }
-
-
+            
             return true;
         }
     }
