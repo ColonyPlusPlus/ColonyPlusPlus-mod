@@ -1,6 +1,7 @@
 Version 0.2.0 (DD-MM-17): (Colony Survival 0.3.0)
 -------------------------------------
 Changed:
+	Cake's food value increased to 25 from 15
 	Grass and stone blocks stack size has increase to 100 from 50
 	Modded Crops now save on server shutdown befure kicking out the players.
 		This should remove the lag of saving twice a second.
