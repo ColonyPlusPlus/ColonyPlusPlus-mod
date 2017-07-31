@@ -13,7 +13,7 @@ namespace ColonyPlusPlus.Classes.ChatCommands
         public bool IsCommand(string chatItem) =>
             (chatItem.StartsWith("/online"));
 
-        private bool Process(NetworkID id, string chatItem)
+        private bool Process(Players.Player id, string chatItem)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "online"))
             {
@@ -37,7 +37,7 @@ namespace ColonyPlusPlus.Classes.ChatCommands
 
 
 
-        public bool TryDoCommand(NetworkID id, string chatItem)
+        public bool TryDoCommand(Players.Player id, string chatItem)
         {
             if (chatItem.StartsWith("/online"))
             {

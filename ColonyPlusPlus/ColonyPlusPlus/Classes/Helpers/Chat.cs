@@ -42,7 +42,7 @@ namespace ColonyPlusPlus.Classes.Helpers
             bolditalic
         }
 
-        public static void send(NetworkID n, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
+        public static void send(Players.Player n, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
         {
             string messageBuilt = buildMessage(message, colour, style);
             Pipliz.Chatting.Chat.Send(n, messageBuilt, sender);
@@ -54,7 +54,7 @@ namespace ColonyPlusPlus.Classes.Helpers
             Pipliz.Chatting.Chat.SendToAll(messageBuilt, sender);
         }
 
-        public static void sendToAllBut(NetworkID n, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
+        public static void sendToAllBut(Players.Player n, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
         {
             string messageBuilt = buildMessage(message, colour, style);
             Pipliz.Chatting.Chat.SendToAllBut(n, messageBuilt, sender);

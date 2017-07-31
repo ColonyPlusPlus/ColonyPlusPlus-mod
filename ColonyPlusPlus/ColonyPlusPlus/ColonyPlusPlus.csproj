@@ -58,6 +58,7 @@
     <Compile Include="Classes\ChatCommands\Clear.cs" />
     <Compile Include="Classes\ChatCommands\Creative.cs" />
     <Compile Include="Classes\ChatCommands\Online.cs" />
+    <Compile Include="Classes\ChatCommands\WorldEdit.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
     <Compile Include="Classes\Data\PlayerData.cs" />

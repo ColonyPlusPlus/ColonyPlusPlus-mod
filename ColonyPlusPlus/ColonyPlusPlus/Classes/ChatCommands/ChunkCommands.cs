@@ -14,7 +14,7 @@ namespace ColonyPlusPlus.Classes.ChatCommands
         public bool IsCommand(string chatItem) =>
             (chatItem.StartsWith("/chunk"));
 
-        public bool TryDoCommand(NetworkID id, string chatItem)
+        public bool TryDoCommand(Players.Player id, string chatItem)
         {
             if (chatItem.StartsWith("/chunk"))
             {
@@ -43,12 +43,12 @@ namespace ColonyPlusPlus.Classes.ChatCommands
             return false;
         }
 
-        private bool ProcessClaimChunk(NetworkID id, string chatItem)
+        private bool ProcessClaimChunk(Players.Player id, string chatItem)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "chunk.claim"))
             {
                 // get the current chunk
-                Players.Player p = Players.GetPlayer(id);
+                Players.Player p = id;
 
                 int playerX = Pipliz.Math.RoundToInt(p.Position.x);
                 int playerY = Pipliz.Math.RoundToInt(p.Position.y);
@@ -78,12 +78,12 @@ namespace ColonyPlusPlus.Classes.ChatCommands
             return true;
         }
 
-        private bool ProcessUnclaimChunk(NetworkID id, string chatItem)
+        private bool ProcessUnclaimChunk(Players.Player id, string chatItem)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "chunk.claim"))
             {
                 // get the current chunk
-                Players.Player p = Players.GetPlayer(id);
+                Players.Player p = id;
 
                 int playerX = Pipliz.Math.RoundToInt(p.Position.x);
                 int playerY = Pipliz.Math.RoundToInt(p.Position.y);
@@ -113,12 +113,12 @@ namespace ColonyPlusPlus.Classes.ChatCommands
             return true;
         }
 
-        private bool ProcessDeleteChunk(NetworkID id, string chatItem)
+        private bool ProcessDeleteChunk(Players.Player id, string chatItem)
         {
             if (PermissionsManager.CheckAndWarnPermission(id, "chunk.delete"))
             {
                 // get the current chunk
-                Players.Player p = Players.GetPlayer(id);
+                Players.Player p = id;
 
                 int playerX = Pipliz.Math.RoundToInt(p.Position.x);
                 int playerY = Pipliz.Math.RoundToInt(p.Position.y);

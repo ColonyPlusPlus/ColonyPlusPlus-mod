@@ -13,7 +13,7 @@ namespace ColonyPlusPlus.Classes.ChatCommands
         public bool IsCommand(string chatItem) =>
             (chatItem.StartsWith("/trade give"));
 
-        private bool ProcessTrade(NetworkID id, string chatItem)
+        private bool ProcessTrade(Players.Player id, string chatItem)
         {
             string[] presplit = chatItem.Split(' ');
             string[] arguments = new string[presplit.Length - 2];
@@ -43,11 +43,11 @@ namespace ColonyPlusPlus.Classes.ChatCommands
                 Chat.Send(id, "/trade give <playername> <myitemid> <myitemamount>");
                 return true;
             }
-            Managers.PlayerManager.tradeGive(Players.GetPlayer(id), Players.GetPlayer(target), giveid, giveamt);
+            Managers.PlayerManager.tradeGive(id, Players.GetPlayer(target), giveid, giveamt);
             return true;
         }
 
-        public bool TryDoCommand(NetworkID id, string chatItem)
+        public bool TryDoCommand(Players.Player id, string chatItem)
         {
             return this.ProcessTrade(id, chatItem);
         }
