@@ -74,6 +74,7 @@ namespace ColonyPlusPlus
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeAccept());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeReject());
             ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeGive());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.WorldEdit());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]

@@ -54,7 +54,7 @@ namespace ColonyPlusPlus.Classes.Managers
                         if(WorldManager.ChunkDataList[cid].getOwner() != player.ID)
                         {
                             // we are in a foreign owned chunk!
-                            Chat.Send(player.ID, String.Format("You now in chunk owned by: {0}", Players.GetPlayer(WorldManager.ChunkDataList[cid].getOwner()).Name), ChatSenderType.Server);
+                            Chat.Send(player, String.Format("You now in chunk owned by: {0}", Players.GetPlayer(WorldManager.ChunkDataList[cid].getOwner()).Name), ChatSenderType.Server);
                         }
                     }
                 }
@@ -107,8 +107,8 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (fromPd.tradeData != null || toPd.tradeData != null)
             {
-                Chat.Send(from.ID, "Trade to " + to.Name + " failed, you or your trade partner have an outstanding trade.");
-                Chat.Send(to.ID, "Trade from " + from.Name + " failed, you or your trade partner have an outstanding trade.");
+                Chat.Send(from, "Trade to " + to.Name + " failed, you or your trade partner have an outstanding trade.");
+                Chat.Send(to, "Trade from " + from.Name + " failed, you or your trade partner have an outstanding trade.");
                 return;
             }
             string name;
@@ -117,29 +117,29 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (!legalIds)
             {
-                Chat.Send(from.ID, "Invalid ID's");
+                Chat.Send(from, "Invalid ID's");
                 return;
             }
 
-            Stockpile fromSP = Stockpile.GetStockPile(fromPd.PID);
-            Stockpile toSP = Stockpile.GetStockPile(toPd.PID);
+            Stockpile fromSP = Stockpile.GetStockPile(from);
+            Stockpile toSP = Stockpile.GetStockPile(to);
 
             if (fromSP.AmountContained(take) <= takeamt)
             {
-                Chat.Send(from.ID, "You can't afford that trade.");
+                Chat.Send(from, "You can't afford that trade.");
                 return;
             }
 
             fromPd.tradeData = new TradeData(give, giveamt, take, takeamt, ref toPd, true);
             toPd.tradeData = new TradeData(take, takeamt, give, giveamt, ref fromPd, false);
 
-            Chat.Send(from.ID, "Trade sent to " + to.Name + ":");
-            Chat.Send(from.ID, fromPd.tradeData.ToString() + " from " + to.Name);
-            Chat.Send(from.ID, "Type '/trade reject' to cancel your trade.");
-            Chat.Send(to.ID, "Incoming trade request:");
-            Chat.Send(to.ID, toPd.tradeData.ToString() + " from " + from.Name);
-            Chat.Send(to.ID, "Type '/trade accept' to accept the trade.");
-            Chat.Send(to.ID, "Type '/trade reject' to reject the trade.");
+            Chat.Send(from, "Trade sent to " + to.Name + ":");
+            Chat.Send(from, fromPd.tradeData.ToString() + " from " + to.Name);
+            Chat.Send(from, "Type '/trade reject' to cancel your trade.");
+            Chat.Send(to, "Incoming trade request:");
+            Chat.Send(to, toPd.tradeData.ToString() + " from " + from.Name);
+            Chat.Send(to, "Type '/trade accept' to accept the trade.");
+            Chat.Send(to, "Type '/trade reject' to reject the trade.");
 
             playerDataDict[from.ID] = fromPd;
             playerDataDict[to.ID] = toPd;
@@ -156,29 +156,29 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (pd.tradeData == null)
             {
-                Chat.Send(player.ID, "You have no outstanding trade requests.");
+                Chat.Send(Players.GetPlayer(player.ID), "You have no outstanding trade requests.");
                 return;
             }
 
             PlayerData partnerData = pd.tradeData.partner;
 
-            Stockpile playerStockpile = Stockpile.GetStockPile(player.ID);
+            Stockpile playerStockpile = Stockpile.GetStockPile(Players.GetPlayer(player.ID));
             Stockpile partnerStockpile;
-            Stockpile.TryGetStockpile(partnerData.PID, out partnerStockpile);
+            Stockpile.TryGetStockpile(Players.GetPlayer(partnerData.PID), out partnerStockpile);
 
             if (partnerStockpile != null)
             {
                 if (partnerStockpile.AmountContained(pd.tradeData.giveId) <= pd.tradeData.giveAmount)
                 {
-                    Chat.Send(player.ID, "Your partner can't afford this trade. It will need to be remade.");
-                    Chat.Send(partnerData.PID, "You can't afford your trade with " + player.Name + ". Please get the required items and send another request.");
+                    Chat.Send(player, "Your partner can't afford this trade. It will need to be remade.");
+                    Chat.Send(Players.GetPlayer(partnerData.PID), "You can't afford your trade with " + player.Name + ". Please get the required items and send another request.");
                     rejectTrade(player, true);
                     return;
                 }
 
                 if (playerStockpile.AmountContained(pd.tradeData.takeId) <= pd.tradeData.takeAmount)
                 {
-                    Chat.Send(player.ID, "You can't afford this trade. Please get the required items or reject the trade.");
+                    Chat.Send(player, "You can't afford this trade. Please get the required items or reject the trade.");
                     return;
                 }
 
@@ -188,13 +188,13 @@ namespace ColonyPlusPlus.Classes.Managers
                 partnerStockpile.Add(pd.tradeData.takeId, pd.tradeData.takeAmount);
             } else
             {
-                Chat.Send(player.ID, "Your partner doesn't exist. Ignoring trade.");
+                Chat.Send(player, "Your partner doesn't exist. Ignoring trade.");
                 rejectTrade(player, true);
                 return;
             }
 
-            Chat.Send(player.ID, "Trade Accepted.");
-            Chat.Send(partnerData.PID, player.Name + " accepted your trade request.");
+            Chat.Send(player, "Trade Accepted.");
+            Chat.Send(Players.GetPlayer(partnerData.PID), player.Name + " accepted your trade request.");
 
             pd.tradeData = null;
             partnerData.tradeData = null;
@@ -215,7 +215,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (pd.tradeData == null)
             {
-                Chat.Send(player.ID, "You have no outstanding trade requests.");
+                Chat.Send(player, "You have no outstanding trade requests.");
                 return;
             }
 
@@ -223,8 +223,8 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (!isInternal)
             {
-                Chat.Send(player.ID, "Trade rejected.");
-                Chat.Send(partnerData.PID, player.Name + " rejected your trade request.");
+                Chat.Send(player, "Trade rejected.");
+                Chat.Send(Players.GetPlayer(partnerData.PID), player.Name + " rejected your trade request.");
             }
 
             pd.tradeData = null;
@@ -244,28 +244,28 @@ namespace ColonyPlusPlus.Classes.Managers
         /// <param name="giveamt">How many of the item given.</param>
         public static void tradeGive(Players.Player from, Players.Player to, ushort give, int giveamt)
         {
-            Stockpile playerStockpile = Stockpile.GetStockPile(from.ID);
-            Stockpile partnerStockpile = Stockpile.GetStockPile(to.ID);
+            Stockpile playerStockpile = Stockpile.GetStockPile(from);
+            Stockpile partnerStockpile = Stockpile.GetStockPile(to);
 
             string name;
             bool legalIds = ItemTypes.IndexLookup.TryGetName(give, out name);
 
             if (!legalIds)
             {
-                Chat.Send(from.ID, "Invalid ID's");
+                Chat.Send(from, "Invalid ID's");
                 return;
             }
 
             if (playerStockpile.AmountContained(give) <= giveamt)
             {
-                Chat.Send(from.ID, "You can't afford that.");
+                Chat.Send(from, "You can't afford that.");
                 return;
             }
 
             playerStockpile.Remove(give, giveamt);
             partnerStockpile.Add(give, giveamt);
-            Chat.Send(from.ID, "You sent " + giveamt + " " + name + " to " + to.Name + ".");
-            Chat.Send(to.ID, from.Name + " sent " + giveamt + " " + name + " to you.");
+            Chat.Send(from, "You sent " + giveamt + " " + name + " to " + to.Name + ".");
+            Chat.Send(to, from.Name + " sent " + giveamt + " " + name + " to you.");
         }
     }
 }

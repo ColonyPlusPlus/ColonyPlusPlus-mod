@@ -21,7 +21,7 @@ namespace ColonyPlusPlus.Classes
 
         
         // Run on add to world (also runs when added by game - ie: when a crop grows to the next stage)
-        public void OnAddAction(Vector3Int position, ushort newType, NetworkID causedBy)
+        public void OnAddAction(Vector3Int position, ushort newType, Players.Player causedBy)
         {
             ushort num;
             // check if the block below is fertile
@@ -36,7 +36,7 @@ namespace ColonyPlusPlus.Classes
 
                 // Get the air block, and replace the new crop with it
                 ushort airBlockID = ItemTypes.IndexLookup.GetIndex("air");
-                ServerManager.TrySetBlock(position, airBlockID, NetworkID.Invalid);
+                ServerManager.TryChangeBlock(position, airBlockID);
                 
 
                 // Give the user the block
@@ -52,12 +52,12 @@ namespace ColonyPlusPlus.Classes
             
         }
 
-        public void OnRemoveAction(Vector3Int position, ushort wasType, NetworkID causedBy)
+        public void OnRemoveAction(Vector3Int position, ushort wasType, Players.Player causedBy)
         {
             CropManager.untrackCrop(position, this);
         }
 
-        public void OnChangeAction(Vector3Int position, ushort wasType, ushort newType, NetworkID causedBy)
+        public void OnChangeAction(Vector3Int position, ushort wasType, ushort newType, Players.Player causedBy)
         {
             
         }

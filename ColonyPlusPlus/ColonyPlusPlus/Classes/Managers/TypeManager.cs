@@ -21,7 +21,11 @@ namespace ColonyPlusPlus.Classes.Managers
             foreach(GrowableType gt in GrowableTypesTracker)
             {
                 // register each crop with our custom crop actions
-                ItemTypesServer.RegisterType(gt.TypeName, new ItemTypesServer.ItemActionBuilder().SetOnAdd(gt.OnAddAction).SetOnRemove(gt.OnRemoveAction).SetOnChange(gt.OnChangeAction));
+                
+
+                ItemTypesServer.RegisterOnAdd(gt.TypeName, gt.OnAddAction);
+                ItemTypesServer.RegisterOnRemove(gt.TypeName, gt.OnRemoveAction);
+                ItemTypesServer.RegisterOnChange(gt.TypeName, gt.OnChangeAction);
             }
         }
 
