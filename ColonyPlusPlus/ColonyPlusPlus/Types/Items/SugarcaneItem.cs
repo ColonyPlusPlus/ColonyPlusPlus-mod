@@ -21,7 +21,7 @@ namespace ColonyPlusPlus.Types.Items
                     RecipeManager.Item("goldcoin", 2)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("sugarcaneitem", 1)
+                    RecipeManager.Item("sugarcaneitem", 2)
                 },
                 0.0f);
         }
