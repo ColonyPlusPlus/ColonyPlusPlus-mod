@@ -3,7 +3,7 @@ using ColonyPlusPlus.Classes.BlockJobs.CraftingJob;
 using NPC;
 using System.Collections.Generic;
 
-namespace Pipliz.BlockNPCs.Implementations
+namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob.Implementations
 {
 	public class WorkBenchJob : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
 	{

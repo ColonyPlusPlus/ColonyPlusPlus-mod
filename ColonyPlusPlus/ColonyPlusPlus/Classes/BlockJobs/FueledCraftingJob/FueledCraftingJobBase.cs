@@ -1,9 +1,10 @@
 ﻿using ColonyPlusPlus.Classes.BlockJobs;
 using NPC;
+using Pipliz;
 using Pipliz.JSON;
 using System.Collections.Generic;
 
-namespace Pipliz.BlockNPCs
+namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob
 {
 	public class FueledCraftingJobBase : BlockJobBase
 	{

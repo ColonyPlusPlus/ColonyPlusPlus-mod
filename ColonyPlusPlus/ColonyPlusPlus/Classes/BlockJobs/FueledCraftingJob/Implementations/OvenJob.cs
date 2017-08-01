@@ -1,9 +1,10 @@
 ﻿using BlockTypes.Builtin;
 using ColonyPlusPlus.Classes.BlockJobs;
 using NPC;
+using Pipliz;
 using System.Collections.Generic;
 
-namespace Pipliz.BlockNPCs.Implementations
+namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob.Implementations
 {
 	public class OvenJob : FueledCraftingJobBase, IBlockJobBase, INPCTypeDefiner
 	{

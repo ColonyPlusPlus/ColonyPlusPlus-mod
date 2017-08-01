@@ -1,6 +1,7 @@
 using Pipliz.Chatting;
 using static Players;
 using System;
+using System.Collections.Generic;
 
 namespace ColonyPlusPlus
 {
@@ -131,13 +132,27 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes)]
         public static void AfterDefiningNPCTypes()
         {
-            //Classes.BlockJobs.BlockJobManagerTracker.Register<JOBTYPE>("{BLOCKNAME}");
+            //Crafting Jobs!
+            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.GrinderJob>("grindstone");
+            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.MintJob>("mint");
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ShopJob>("shop");
+            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.WorkBenchJob>("workbench");
+            //Fueled Jobs!
+            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.Implementations.FurnaceJob>("furnace");
+            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.Implementations.OvenJob>("oven");
+            //Odd Jobs?
+            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Implementations.QuiverJob>("quiver");
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined)]
         public static void AfterItemTypesDefined()
         {
+            ItemTypesServer.RegisterChangeTypes("furnace", new List<string>()
+                { "furnacex+", "furnacex-", "furnacez+", "furnacez-", "furnacelitx+", "furnacelitx-", "furnacelitz+", "furnacelitz-" }
+);
+            ItemTypesServer.RegisterChangeTypes("oven", new List<string>()
+                { "ovenx+", "ovenz+", "ovenx-", "ovenz-", "ovenlitx+", "ovenlitz+", "ovenlitx-", "ovenlitz-" }
+            );
         }
     }
 }

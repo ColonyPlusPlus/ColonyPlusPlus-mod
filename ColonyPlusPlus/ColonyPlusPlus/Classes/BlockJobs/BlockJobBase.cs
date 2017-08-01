@@ -1,7 +1,6 @@
-﻿using System;
-using NPC;
-using Pipliz.JSON;
+﻿using NPC;
 using Pipliz;
+using Pipliz.JSON;
 
 namespace ColonyPlusPlus.Classes.BlockJobs
 {
@@ -161,7 +160,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs
             {
                 return false;
             }
-            timeJob = timeNow + (Pipliz.Random.NextFloat() * 0.2f + 1.0f) * TimeBetweenJobs;
+            timeJob = timeNow + (Random.NextFloat() * 0.2f + 1.0f) * TimeBetweenJobs;
             return true;
         }
     }

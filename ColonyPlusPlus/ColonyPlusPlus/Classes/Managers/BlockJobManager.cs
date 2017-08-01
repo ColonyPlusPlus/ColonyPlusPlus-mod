@@ -24,6 +24,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             ItemTypesServer.RegisterOnAdd(blockName, onAdd);
             ItemTypesServer.RegisterOnAdd(blockName, onRemove);
+            tracker.Load<T>();
         }
 
         private void onRemove(Vector3Int position, ushort type, Players.Player player)

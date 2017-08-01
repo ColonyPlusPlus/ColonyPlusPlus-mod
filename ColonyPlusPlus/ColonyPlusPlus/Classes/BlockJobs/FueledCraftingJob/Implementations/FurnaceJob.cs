@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using NPC;
 using ColonyPlusPlus.Classes.BlockJobs;
+using Pipliz;
 
-namespace Pipliz.BlockNPCs.Implementations
+namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob.Implementations
 {
 	public class FurnaceJob : FueledCraftingJobBase, IBlockJobBase, INPCTypeDefiner
 	{

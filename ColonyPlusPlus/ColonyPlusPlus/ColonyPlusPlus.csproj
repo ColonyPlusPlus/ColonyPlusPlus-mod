@@ -62,6 +62,7 @@
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Implementations\OvenJob.cs" />
     <Compile Include="Classes\BlockJobs\IBlockJobBase.cs" />
     <Compile Include="Classes\BlockJobs\IBlockJobManager.cs" />
+    <Compile Include="Classes\BlockJobs\Implementations\QuiverJob.cs" />
     <Compile Include="Classes\BlockJobs\INPCTypeDefiner.cs" />
     <Compile Include="Classes\ChatCommands\TradeReject.cs" />
     <Compile Include="Classes\ChatCommands\TradeAccept.cs" />
