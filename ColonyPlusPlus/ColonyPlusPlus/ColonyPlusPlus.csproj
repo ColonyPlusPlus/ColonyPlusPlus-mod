@@ -53,7 +53,13 @@
     <Compile Include="Classes\BlockJobs\BlockJobBase.cs" />
     <Compile Include="Classes\BlockJobs\BlockJobManagerTracker.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\CraftingJobBase.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\GrinderJob.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\MintJob.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\ShopJob.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\WorkBenchJob.cs" />
+    <Compile Include="Classes\BlockJobs\FueledCraftingJob\FueledCraftingJobBase.cs" />
+    <Compile Include="Classes\BlockJobs\FueledCraftingJob\Implementations\FurnaceJob.cs" />
+    <Compile Include="Classes\BlockJobs\FueledCraftingJob\Implementations\OvenJob.cs" />
     <Compile Include="Classes\BlockJobs\IBlockJobBase.cs" />
     <Compile Include="Classes\BlockJobs\IBlockJobManager.cs" />
     <Compile Include="Classes\BlockJobs\INPCTypeDefiner.cs" />
@@ -224,8 +230,6 @@
     <Compile Include="Types\Items\Sugar.cs" />
     <Compile Include="Types\Items\SugarcaneItem.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\BlockJobs\FueledCraftingJob\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

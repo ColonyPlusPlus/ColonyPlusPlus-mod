@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob.Implementations
     public class ShopJob : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {
         public override string NPCTypeKey { get { return "test.merchant"; } }
-        public override float TimeBetweenJobs {  get { return 1f; } }
+        public override float TimeBetweenJobs {  get { return 10f; } }
         public override List<Recipe> GetPossibleRecipes { get { return RecipeShopping.AllRecipes; } }
         public override int MaxRecipeCraftsPerHaul { get { return 1; } }
         public NPCTypeSettings GetNPCTypeDefinition()
