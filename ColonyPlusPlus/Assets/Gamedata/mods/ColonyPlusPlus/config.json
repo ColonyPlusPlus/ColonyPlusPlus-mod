@@ -1,4 +1,7 @@
 {
+	"motd": "Here is the MotD",
+	
+	
 	"rotatingmessages.enabled": true,
 	"rotatingmessages.list": [
 		"We hope you're all having fun!",

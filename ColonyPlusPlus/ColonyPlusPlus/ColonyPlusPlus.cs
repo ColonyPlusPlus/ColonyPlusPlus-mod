@@ -33,7 +33,9 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate)]
         public static void OnPlayerConnectedLate(Player p)
         {
-            Chat.Send(p, "Welcome to ColonyPlusPlus, the first mod for Colony Survival to implement the new Modding API. If you have any questions please see our Steam Forum thread or the GitHub repository.");
+
+            string MotD = Classes.Managers.ConfigManager.getConfigString("motd");
+            Chat.Send(p, MotD);
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
