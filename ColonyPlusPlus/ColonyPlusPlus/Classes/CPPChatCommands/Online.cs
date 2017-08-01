@@ -15,9 +15,9 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
 
         }
 
-        override protected bool RunCommand(NetworkID id, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(id, "online"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "online"))
             {
 
                 List<string> online = new List<string>() ;
@@ -30,7 +30,7 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
 
                 online.Sort();
                 
-                Chat.Send(id, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), ChatSenderType.Server);
+                Chat.Send(ply, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), ChatSenderType.Server);
             }
             
             return true;

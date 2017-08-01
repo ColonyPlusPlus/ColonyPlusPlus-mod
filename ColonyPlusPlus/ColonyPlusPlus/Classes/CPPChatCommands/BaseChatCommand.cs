@@ -20,17 +20,17 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
             isMasterCommand = ismastercom;
         }
 
-        public bool TryDoCommand(NetworkID id, string chatItem)
+        public bool TryDoCommand(Players.Player ply, string chatItem)
         {
             string[] splits = chatItem.Split(' ');
             if (isMasterCommand)
             {
                 BaseChatCommand newCommand;
                 if (Managers.ChatCommandManager.ChatCommandsList.TryGetValue(splits[0] + " " + splits[1], out newCommand))
-                    newCommand.TryDoCommand(id, chatItem);
+                    newCommand.TryDoCommand(ply, chatItem);
                 else
                 {
-                    Chat.Send(id, "Command " + splits[1] + " is not a part of " + splits[0]);
+                    Chat.Send(ply, "Command " + splits[1] + " is not a part of " + splits[0]);
                     return true;
                 }
             }
@@ -46,15 +46,15 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
                 NetworkID target = GetSubject(cutsplits, out newsplits);
                 if (target == NetworkID.Invalid)
                 {
-                    Chat.Send(id, "Player " + cutsplits[0] + " not found.");
+                    Chat.Send(ply, "Player " + cutsplits[0] + " not found.");
                     return true;
                 }
-                return RunCommand(id, newsplits, target);
+                return RunCommand(ply, newsplits, target);
             }
-            return RunCommand(id, cutsplits, NetworkID.Invalid);
+            return RunCommand(ply, cutsplits, NetworkID.Invalid);
         }
 
-        protected abstract bool RunCommand(NetworkID id, string[] args, NetworkID target);
+        protected abstract bool RunCommand(Players.Player id, string[] args, NetworkID target);
 
         private static NetworkID GetSubject(string[] argsBefore, out string[] argsAfter)
         {

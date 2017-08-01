@@ -6,29 +6,29 @@ using System.Text;
 
 namespace ColonyPlusPlus.Classes.CPPChatCommands
 {
-    class Trade : BaseChatCommand
+    public class Trade : BaseChatCommand
     {
         public Trade() : base("/trade", false, true)
         {
 
         }
 
-        protected override bool RunCommand(NetworkID id, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
             return false;
         }
     }
 
-    class TradeAccept : BaseChatCommand
+    public class TradeAccept : BaseChatCommand
     {
         public TradeAccept() : base("/trade accept", false)
         {
 
         }
 
-        override protected bool RunCommand(NetworkID id, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            Managers.PlayerManager.acceptTrade(Players.GetPlayer(id));
+            Managers.PlayerManager.acceptTrade(ply);
             return true;
         }
     }
@@ -40,14 +40,14 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
 
         }
 
-        override protected bool RunCommand(NetworkID id, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            Managers.PlayerManager.rejectTrade(Players.GetPlayer(id));
+            Managers.PlayerManager.rejectTrade(ply);
             return true;
         }
     }
 
-    class TradeGive : BaseChatCommand
+    public class TradeGive : BaseChatCommand
     {
 
         public TradeGive() : base("/trade give", true)
@@ -55,7 +55,7 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
 
         }
 
-        override protected bool RunCommand(NetworkID id, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
             ushort giveid = 0;
             int giveamt = 0;
@@ -67,11 +67,11 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
             sucessful = sucessful && Int32.TryParse(args[2], out giveamt);
             if (!sucessful)
             {
-                Chat.Send(id, "Invalid argument. Usage:");
-                Chat.Send(id, "/trade give <playername> <myitemid> <myitemamount>");
+                Chat.Send(ply, "Invalid argument. Usage:");
+                Chat.Send(ply, "/trade give <playername> <myitemid> <myitemamount>");
                 return true;
             }
-            Managers.PlayerManager.tradeGive(Players.GetPlayer(id), Players.GetPlayer(target), giveid, giveamt);
+            Managers.PlayerManager.tradeGive(ply, Players.GetPlayer(target), giveid, giveamt);
             return true;
         }
     }
@@ -83,7 +83,7 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
 
         }
 
-        override protected bool RunCommand(NetworkID id, string[] arguments, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] arguments, NetworkID target)
         {
             ushort takeid = 0;
             int takeamt = 0;
@@ -104,11 +104,11 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
             sucessful = sucessful && Int32.TryParse(arguments[4], out giveamt);
             if (!sucessful)
             {
-                Chat.Send(id, "Invalid argument. Usage:");
-                Chat.Send(id, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>");
+                Chat.Send(ply, "Invalid argument. Usage:");
+                Chat.Send(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>");
                 return true;
             }
-            Managers.PlayerManager.notifyTrade(Players.GetPlayer(id), Players.GetPlayer(target), giveid, giveamt, takeid, takeamt);
+            Managers.PlayerManager.notifyTrade(ply, Players.GetPlayer(target), giveid, giveamt, takeid, takeamt);
             return true;
         }
     }

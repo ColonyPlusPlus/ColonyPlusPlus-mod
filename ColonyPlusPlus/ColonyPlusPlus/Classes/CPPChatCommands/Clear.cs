@@ -1,6 +1,4 @@
-﻿using ChatCommands;
-using NPC;
-using Permissions;
+﻿using Permissions;
 using Pipliz.Chatting;
 using System;
 
@@ -14,21 +12,21 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
 
         }
 
-        override protected bool RunCommand(NetworkID id, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(id, "cheats.clear"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "cheats.clear"))
             {
                 // get their stockpile
-                Stockpile s = Stockpile.GetStockPile(id);
+                Stockpile s = Stockpile.GetStockPile(ply);
 
                 // Cycle through each item we manage, check how many we have, then remove that.
-                foreach (string itemname in Classes.Managers.TypeManager.AddedTypes)
+                foreach (string itemname in Managers.TypeManager.AddedTypes)
                 {
                     ushort i = ItemTypes.IndexLookup.GetIndex(itemname);
                     s.Remove(i, s.AmountContained(i));
                 }
 
-                Chat.Send(id, "Cleared Inventory!", ChatSenderType.Server);
+                Chat.Send(ply, "Cleared Inventory!", ChatSenderType.Server);
             }
             
             return true;

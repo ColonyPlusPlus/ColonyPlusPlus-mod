@@ -11,6 +11,7 @@
     <AssemblyName>ColonyPlusPlus</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,12 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CPPChatCommands\BaseChatCommand.cs" />
-    <Compile Include="Classes\CPPChatCommands\Trade.cs" />
-    <Compile Include="Classes\MasterChatCommand.cs" />
-    <Compile Include="Classes\CPPChatCommands\ChunkCommands.cs" />
+    <Compile Include="Classes\CPPChatCommands\Chunk.cs" />
     <Compile Include="Classes\CPPChatCommands\Clear.cs" />
     <Compile Include="Classes\CPPChatCommands\Creative.cs" />
+    <Compile Include="Classes\CPPChatCommands\MasterChatCommand.cs" />
     <Compile Include="Classes\CPPChatCommands\Online.cs" />
+    <Compile Include="Classes\CPPChatCommands\Trade.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
     <Compile Include="Classes\Data\PlayerData.cs" />

@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using ChatCommands;
 
-namespace ColonyPlusPlus.Classes
+namespace ColonyPlusPlus.Classes.CPPChatCommands
 {
     public class MasterChatCommand : IChatCommand
     {
         public bool IsCommand(string chatItem) =>
             (Managers.ChatCommandManager.ChatCommandsList.ContainsKey(chatItem.Split(' ')[0]));
 
-        public bool TryDoCommand(NetworkID id, string chatItem)
+        public bool TryDoCommand(Players.Player ply, string chatItem)
         {
-            CPPChatCommands.BaseChatCommand command;
+            BaseChatCommand command;
             Managers.ChatCommandManager.ChatCommandsList.TryGetValue(chatItem.Split(' ')[0], out command);
             if (command != null)
             {
-                return command.TryDoCommand(id, chatItem);
+                return command.TryDoCommand(ply, chatItem);
             }
             return false;
         }
