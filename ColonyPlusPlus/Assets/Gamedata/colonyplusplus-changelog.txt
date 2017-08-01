@@ -9,7 +9,7 @@ Changed:
 
 
 
-Version 0.1.6 (DD-MM-17):
+Version 0.1.6 (30-07-17):
 -------------------------------------
 Added:
 	Upsidedown versions of the slope blocks!
