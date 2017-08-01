@@ -65,7 +65,7 @@
     <Compile Include="Classes\BlockJobs\IBlockJobBase.cs" />
     <Compile Include="Classes\BlockJobs\IBlockJobManager.cs" />
     <Compile Include="Classes\BlockJobs\INPCTypeDefiner.cs" />
-    <Compile Include="Classes\ChatCommands\WorldEdit.cs" />
+    <Compile Include="Classes\CPPChatCommands\WorldEdit.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
     <Compile Include="Classes\Data\PlayerData.cs" />

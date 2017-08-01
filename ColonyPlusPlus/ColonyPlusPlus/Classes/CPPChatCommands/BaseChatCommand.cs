@@ -25,9 +25,13 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
             string[] splits = chatItem.Split(' ');
             if (isMasterCommand)
             {
+                if (splits.Length <= 1)
+                {
+                    return false;
+                }
                 BaseChatCommand newCommand;
                 if (Managers.ChatCommandManager.ChatCommandsList.TryGetValue(splits[0] + " " + splits[1], out newCommand))
-                    newCommand.TryDoCommand(ply, chatItem);
+                    return newCommand.TryDoCommand(ply, chatItem);
                 else
                 {
                     Chat.Send(ply, "Command " + splits[1] + " is not a part of " + splits[0]);
@@ -43,7 +47,13 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
             if (isTargetingCommand)
             {
                 string[] newsplits = splits;
+                if (cutsplits.Length == 0)
+                {
+                    Chat.Send(ply, "This command requires a target.");
+                    return true;
+                }
                 NetworkID target = GetSubject(cutsplits, out newsplits);
+                
                 if (target == NetworkID.Invalid)
                 {
                     Chat.Send(ply, "Player " + cutsplits[0] + " not found.");

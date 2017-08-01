@@ -12,57 +12,28 @@ namespace ColonyPlusPlus.Classes.Managers
 
         public static void Initialize()
         {
-            try
+            ChatCommandsList = new Dictionary<string, CPPChatCommands.BaseChatCommand>();
+            var typelist = Assembly.GetExecutingAssembly().GetTypes().Where(t => (t.Namespace.StartsWith("ColonyPlusPlus.Classes.CPPChatCommands") || t.Name.StartsWith("IChatCommand")));
+            foreach (var t in typelist)
             {
-                var typelist = Assembly.GetExecutingAssembly().GetTypes().Where(t => (t.Namespace.StartsWith("ColonyPlusPlus.Classes.CPPChatCommands") || t.Name.StartsWith("IChatCommand")));
-                foreach (var t in typelist)
+                try
                 {
-                    try
-                    {
-                        if (t.Equals(typeof(CPPChatCommands.BaseChatCommand)))
-                        {
-                            CPPChatCommands.BaseChatCommand command = ((CPPChatCommands.BaseChatCommand)Activator.CreateInstance(t));
-                            ChatCommandsList.Add(command.ChatCommandPrefix, command);
-                        }
-                    }
-                    catch (MethodAccessException mae)
-                    {
-                        // No worries here, we encountered an abstract class.
-                        Utilities.WriteLog(mae.Message);
-                    }
+                    CPPChatCommands.BaseChatCommand command = ((CPPChatCommands.BaseChatCommand)Activator.CreateInstance(t));
+                    ChatCommandsList.Add(command.ChatCommandPrefix, command);
+                    Utilities.WriteLog("Registered chat command: " + command.ChatCommandPrefix);
                 }
-            }
-            catch (ReflectionTypeLoadException ex)
-            {
-                // No worries here, we encountered a reflection error.
-                Utilities.WriteLog(ex.Message);
-                var typelist = ex.Types;
-                foreach (var t in typelist)
+                catch (MissingMethodException mme)
                 {
-                    try
-                    {
-                        if (t.Equals(typeof(CPPChatCommands.BaseChatCommand)))
-                        {
-                            CPPChatCommands.BaseChatCommand command = ((CPPChatCommands.BaseChatCommand)Activator.CreateInstance(t));
-                            ChatCommandsList.Add(command.ChatCommandPrefix, command);
-                        }
-                    }
-                    catch (MethodAccessException mae)
-                    {
-                        // No worries here, we encountered an abstract class.
-                        Utilities.WriteLog(mae.Message);
-                    }
+                    Utilities.WriteLog(t.Name + " cannot be instantiated. This probably isn't an error.");
+                    Pipliz.Log.WriteWarning(mme.Message);
+                }
+                catch (InvalidCastException ice)
+                {
+                    Utilities.WriteLog(t.Name + " doesn't use our command system. This probably isn't an error.");
+                    Pipliz.Log.WriteWarning(ice.Message);
                 }
             }
             Utilities.WriteLog("Chat Commands Loaded.");
-        }
-
-        public static void RegisterCommands()
-        {
-            foreach (CPPChatCommands.BaseChatCommand command in ChatCommandsList.Values)
-            {
-                ChatCommands.CommandManager.RegisterCommand((ChatCommands.IChatCommand) command);
-            }
         }
     }
 }

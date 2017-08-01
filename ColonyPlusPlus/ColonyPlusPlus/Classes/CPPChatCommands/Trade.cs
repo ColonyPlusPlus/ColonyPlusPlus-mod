@@ -57,6 +57,12 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
 
         override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
+            if (args.Length < 3)
+            {
+                Chat.Send(ply, "Not enough arguments. Usage:");
+                Chat.Send(ply, "/trade give <playername> <myitemid> <myitemamount>");
+                return true;
+            }
             ushort giveid = 0;
             int giveamt = 0;
             bool sucessful = UInt16.TryParse(args[1], out giveid);
@@ -83,25 +89,31 @@ namespace ColonyPlusPlus.Classes.CPPChatCommands
 
         }
 
-        override protected bool RunCommand(Players.Player ply, string[] arguments, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
+            if (args.Length < 5)
+            {
+                Chat.Send(ply, "Not enough arguments. Usage:");
+                Chat.Send(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>");
+                return true;
+            }
             ushort takeid = 0;
             int takeamt = 0;
             ushort giveid = 0;
             int giveamt = 0;
-            bool sucessful = UInt16.TryParse(arguments[1], out takeid);
+            bool sucessful = UInt16.TryParse(args[1], out takeid);
             if (!sucessful)
             {
-                sucessful = sucessful || ItemTypes.IndexLookup.TryGetIndex(arguments[1], out takeid);
+                sucessful = sucessful || ItemTypes.IndexLookup.TryGetIndex(args[1], out takeid);
             }
-            sucessful = sucessful && Int32.TryParse(arguments[2], out takeamt);
-            bool giveSucessful = UInt16.TryParse(arguments[3], out giveid);
+            sucessful = sucessful && Int32.TryParse(args[2], out takeamt);
+            bool giveSucessful = UInt16.TryParse(args[3], out giveid);
             if (!giveSucessful)
             {
-                giveSucessful = giveSucessful || ItemTypes.IndexLookup.TryGetIndex(arguments[3], out giveid);
+                giveSucessful = giveSucessful || ItemTypes.IndexLookup.TryGetIndex(args[3], out giveid);
             }
             sucessful = sucessful && giveSucessful;
-            sucessful = sucessful && Int32.TryParse(arguments[4], out giveamt);
+            sucessful = sucessful && Int32.TryParse(args[4], out giveamt);
             if (!sucessful)
             {
                 Chat.Send(ply, "Invalid argument. Usage:");

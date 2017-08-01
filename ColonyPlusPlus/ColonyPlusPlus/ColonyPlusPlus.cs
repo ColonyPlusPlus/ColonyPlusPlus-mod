@@ -61,9 +61,8 @@ namespace ColonyPlusPlus
             // Register Tracked Block Types (Wheat?)
             Classes.Managers.TypeManager.registerTrackedTypes();
 
-            // Register Chat Commands
+            // Register Master Command
             ChatCommands.CommandManager.RegisterCommand(new Classes.CPPChatCommands.MasterChatCommand());
-            Classes.Managers.ChatCommandManager.RegisterCommands();
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
