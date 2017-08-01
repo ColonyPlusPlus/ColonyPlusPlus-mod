@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Classes
 {
-    public class Recipe
+    public class CPPRecipe
     {
 
         // Private lists of requirements and results and other needed privates
@@ -16,7 +16,7 @@ namespace ColonyPlusPlus.Classes
         private string type;
 
         // Constructor to assign these on initialisation
-        public Recipe(string type, List<InventoryItem> requirements, List<InventoryItem> results, float fuelCost = 0.0f, bool npcCraftable = true)
+        public CPPRecipe(string type, List<InventoryItem> requirements, List<InventoryItem> results, float fuelCost = 0.0f, bool npcCraftable = true)
         {
             this.Type = type;
             this.Requirements = requirements;
