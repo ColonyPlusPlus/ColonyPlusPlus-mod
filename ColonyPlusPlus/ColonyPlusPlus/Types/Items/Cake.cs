@@ -11,7 +11,7 @@ namespace ColonyPlusPlus.Types.Items
     {
         public Cake(string name) : base(name)
         {
-            this.NutritionalValue = 15.0f;
+            this.NutritionalValue = 25.0f;
 			this.CustomData = new CustomDataHelper("test", "somevalue").customDataNode;
             this.AllowCreative = true;
             this.Register();

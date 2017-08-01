@@ -1,12 +1,5 @@
-using Pipliz;
 using Pipliz.Chatting;
-using Pipliz.JSON;
-using Pipliz.Threading;
-using ColonyPlusPlus;
 using static Players;
-using System.Collections.Generic;
-using System.Collections;
-using UnityEngine;
 using System;
 
 namespace ColonyPlusPlus
@@ -42,7 +35,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnected)]
         public static void OnPlayerConnected(Player p)
         {
-            Chat.Send(p.ID, "Welcome to ColonyPlusPlus, the first mod for Colony Survival to implement the new Modding API. If you have any questions please see our Steam Forum thread or the GitHub repository.");
+            Chat.Send(p, "Welcome to ColonyPlusPlus, the first mod for Colony Survival to implement the new Modding API. If you have any questions please see our Steam Forum thread or the GitHub repository.");
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
@@ -82,6 +75,8 @@ namespace ColonyPlusPlus
 
             Classes.Managers.CropManager.LoadCropTracker();
             Classes.Managers.WorldManager.LoadJSON();
+
+            Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
         }
 
         // things to do every tick (or itnerval)
@@ -122,6 +117,23 @@ namespace ColonyPlusPlus
         public static void OnQuitEarly()
         {
             Classes.Managers.CropManager.SaveCropTracker();
+        }
+
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit)]
+        public static void OnQuit()
+        {
+            Classes.BlockJobs.BlockJobManagerTracker.Save();
+        }
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes)]
+        public static void AfterDefiningNPCTypes()
+        {
+            //Classes.BlockJobs.BlockJobManagerTracker.Register<JOBTYPE>("{BLOCKNAME}");
+            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ShopJob>("shop");
+        }
+
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined)]
+        public static void AfterItemTypesDefined()
+        {
         }
     }
 }

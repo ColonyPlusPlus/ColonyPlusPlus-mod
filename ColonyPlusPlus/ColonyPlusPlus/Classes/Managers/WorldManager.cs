@@ -56,7 +56,7 @@ namespace ColonyPlusPlus.Classes.Managers
             if (ChunkDataList.ContainsKey(chunkname))
             {
                 ChunkData c = ChunkDataList[chunkname];
-                if (c.getOwner() == playerid || PermissionsManager.CheckAndWarnPermission(playerid, "chunk.delete"))
+                if (c.getOwner() == playerid || PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(playerid), "chunk.delete"))
                 {
                     bool result = c.removeOwner();
                     SaveJSON();

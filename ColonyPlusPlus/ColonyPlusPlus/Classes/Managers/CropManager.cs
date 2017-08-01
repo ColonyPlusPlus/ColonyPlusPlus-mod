@@ -224,7 +224,7 @@ namespace ColonyPlusPlus.Classes.Managers
             ushort newBlockID = ItemTypes.IndexLookup.GetIndex(newblocktype);
 
             // Set the block, don't send a causedby ID
-            ServerManager.TrySetBlock(location, newBlockID, NetworkID.Invalid);
+            ServerManager.TryChangeBlock(location, newBlockID);
 
         }
 

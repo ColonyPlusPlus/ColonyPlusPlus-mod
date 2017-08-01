@@ -8,6 +8,7 @@ namespace ColonyPlusPlus.Classes
 {
     public class BaseRecipes
     {
+
         /// <summary>
         /// Add basegame crafting recipes
         /// </summary>
@@ -264,7 +265,7 @@ namespace ColonyPlusPlus.Classes
         {
             RecipeManager.AddRecipe("minting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldingot", 2)
+                    RecipeManager.Item("goldingot", 1)
                 },
                 new List<InventoryItem> {
                     RecipeManager.Item("goldcoin", 2)

@@ -24,7 +24,7 @@ namespace ColonyPlusPlus.Types.Crops
             this.Icon = "potato";
             this.NPCLimit = 0;
             this.SideAll = "wheatwheat";
-            this.Mesh = "wheatstage1";
+            this.Mesh = "potatostage1";
             this.maxGrowth = 12f;
             this.NutritionalValue = 0.3F;
 
