@@ -22,17 +22,17 @@ namespace ColonyPlusPlus.Classes.Managers
 
         public void RegisterCallbackandLoad()
         {
-            ItemTypesServer.RegisterOnAdd(blockName, onAdd);
-            ItemTypesServer.RegisterOnAdd(blockName, onRemove);
+            ItemTypesServer.RegisterOnAdd(blockName, OnAdd);
+            ItemTypesServer.RegisterOnRemove(blockName, OnRemove);
             tracker.Load<T>();
         }
 
-        private void onRemove(Vector3Int position, ushort type, Players.Player player)
+        private void OnRemove(Vector3Int position, ushort type, Players.Player player)
         {
             tracker.Remove(position);
         }
 
-        private void onAdd(Vector3Int position, ushort type, Players.Player player)
+        private void OnAdd(Vector3Int position, ushort type, Players.Player player)
         {
             tracker.Add(new T().InitializeOnAdd(position, type, player));
         }

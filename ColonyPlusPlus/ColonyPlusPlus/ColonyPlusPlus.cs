@@ -129,6 +129,7 @@ namespace ColonyPlusPlus
         {
             Classes.BlockJobs.BlockJobManagerTracker.Save();
         }
+
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes)]
         public static void AfterDefiningNPCTypes()
         {
