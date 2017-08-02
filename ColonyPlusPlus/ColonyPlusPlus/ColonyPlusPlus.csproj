@@ -53,6 +53,7 @@
     <Compile Include="Classes\BlockJobs\BlockJobBase.cs" />
     <Compile Include="Classes\BlockJobs\BlockJobManagerTracker.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\CraftingJobBase.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\ChickenPluckerJob.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\GrinderJob.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\MintJob.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\ShopJob.cs" />

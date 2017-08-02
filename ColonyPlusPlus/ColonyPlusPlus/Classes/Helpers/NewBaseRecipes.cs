@@ -21,6 +21,9 @@ namespace ColonyPlusPlus.Classes.Helpers
                 },
                 0.0f, true);
 
+        }
+        public void AddShoppingRecipes()
+        {
             RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
                     RecipeManager.Item("goldcoin", 3)

@@ -14,6 +14,9 @@ namespace ColonyPlusPlus.Classes.Managers
         // Keep a count of all added recipes (just to output to the user later)
         public static int recipesAdded = 0;
 
+        //public static Dictionary<string, List<Recipe>> craftingRecipes = new Dictionary<string, List<Recipe>>();
+        //public static Dictionary<string, List<RecipeFueled>> craftingRecipesFueled = new Dictionary<string, List<RecipeFueled>>();
+
         // Add a new recipe object to the list, this is called by the type's AddRecipes() function
         public static bool AddRecipe(string type, List<InventoryItem> reqs, List<InventoryItem> result, float fuelAmount = 0.0f, bool npcCraft = false)
         {
@@ -79,6 +82,9 @@ namespace ColonyPlusPlus.Classes.Managers
                         recipesAdded += 1;
 
                         break;
+                    case "chickenplucker":
+                        recipesAdded += 1;
+                        break;
                     default:
                         // if the type isn't registered (or is something random) then just say "nah ain't happenin' man"
                         Utilities.WriteLog("Unable to create recipe of type " + RecipeInstance.Type + " - invalid type");
@@ -121,6 +127,10 @@ namespace ColonyPlusPlus.Classes.Managers
             br.AddMintingRecipes();
             br.AddShoppingRecipes();
             br.AddSmeltingRecipes();
+
+            Helpers.NewBaseRecipes nbr = new Helpers.NewBaseRecipes();
+            nbr.AddCraftingRecipes();
+            nbr.AddShoppingRecipes();
         }
     }
 }
