@@ -42,10 +42,10 @@ namespace ColonyPlusPlus.Classes.Helpers
             bolditalic
         }
 
-        public static void send(Players.Player n, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
+        public static void send(Players.Player ply, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
         {
             string messageBuilt = buildMessage(message, colour, style);
-            Pipliz.Chatting.Chat.Send(n, messageBuilt, sender);
+            Pipliz.Chatting.Chat.Send(ply, messageBuilt, sender);
         }
 
         public static void sendToAll(string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
@@ -54,10 +54,10 @@ namespace ColonyPlusPlus.Classes.Helpers
             Pipliz.Chatting.Chat.SendToAll(messageBuilt, sender);
         }
 
-        public static void sendToAllBut(Players.Player n, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
+        public static void sendToAllBut(Players.Player ply, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
         {
             string messageBuilt = buildMessage(message, colour, style);
-            Pipliz.Chatting.Chat.SendToAllBut(n, messageBuilt, sender);
+            Pipliz.Chatting.Chat.SendToAllBut(ply, messageBuilt, sender);
         }
 
         public static string buildMessage(string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal)

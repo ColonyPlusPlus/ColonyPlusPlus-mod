@@ -27,6 +27,9 @@ namespace ColonyPlusPlus
             Classes.Managers.ConfigManager.initialise();
             Classes.Managers.RotatingMessageManager.initialise();
 
+            // Initialize chat commands
+            Classes.Managers.ChatCommandManager.Initialize();
+
 
         }
 
@@ -61,16 +64,8 @@ namespace ColonyPlusPlus
             // Register Tracked Block Types (Wheat?)
             Classes.Managers.TypeManager.registerTrackedTypes();
 
-            // Register Chat Commands
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Creative());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Clear());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.ChunkCommands());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Online());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.Trade());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeAccept());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeReject());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.TradeGive());
-            ChatCommands.CommandManager.RegisterCommand(new Classes.ChatCommands.WorldEdit());
+            // Register Master Command
+            ChatCommands.CommandManager.RegisterCommand(new Classes.CPPChatCommands.MasterChatCommand());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
