@@ -277,7 +277,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("SpawnProtectionRadius");
 
-                if (distancex > SpawnProtectionDistance && distancez > SpawnProtectionDistance)
+                if (distancex > SpawnProtectionDistance || distancez > SpawnProtectionDistance)
                 {
                     return true;
                 } else
