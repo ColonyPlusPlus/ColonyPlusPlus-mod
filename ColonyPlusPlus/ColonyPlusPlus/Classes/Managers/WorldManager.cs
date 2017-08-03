@@ -265,9 +265,10 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 int distancex, distancez = 0;
 
-                int playerX = (int)Pipliz.Math.RoundToInt(d.requestedBy.Position.x);
-                int playerZ = (int)Pipliz.Math.RoundToInt(d.requestedBy.Position.z);
-
+                
+                int playerX = (int)Pipliz.Math.RoundToInt(d.position.x);
+                int playerZ = (int)Pipliz.Math.RoundToInt(d.position.z);
+                
                 distancex = System.Math.Abs(playerX - startingX);
                 distancez = System.Math.Abs(playerZ - startingZ);
 
