@@ -184,7 +184,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser)]
         public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
         {
-            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position);
+            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position.ToChunk());
             if(Classes.Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
             {
                 Classes.Data.ChunkData cd = Classes.Managers.WorldManager.ChunkDataList[ChunkID];
