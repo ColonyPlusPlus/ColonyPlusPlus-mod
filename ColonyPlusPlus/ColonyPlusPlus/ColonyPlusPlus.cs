@@ -42,8 +42,7 @@ namespace ColonyPlusPlus
         public static void OnPlayerConnectedLate(Player p)
         {
 
-            string MotD = Classes.Managers.ConfigManager.getConfigString("motd");
-            Chat.Send(p, MotD);
+            Chat.Send(p, Classes.Managers.ConfigManager.getConfigString("motd"));
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
