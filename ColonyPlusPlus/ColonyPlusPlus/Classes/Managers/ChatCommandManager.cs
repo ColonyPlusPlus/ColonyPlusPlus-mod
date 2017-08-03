@@ -13,7 +13,7 @@ namespace ColonyPlusPlus.Classes.Managers
         public static void Initialize()
         {
             ChatCommandsList = new Dictionary<string, CPPChatCommands.BaseChatCommand>();
-            var typelist = Assembly.GetExecutingAssembly().GetTypes().Where(t => (t.Namespace.StartsWith("ColonyPlusPlus.Classes.CPPChatCommands") || t.Name.StartsWith("IChatCommand")));
+            var typelist = Assembly.GetExecutingAssembly().GetTypes().Where(t => (t != null && t.Namespace != null && t.Namespace.StartsWith("ColonyPlusPlus.Classes.CPPChatCommands")));
             foreach (var t in typelist)
             {
                 try
