@@ -221,6 +221,7 @@ namespace ColonyPlusPlus.Classes.Managers
             if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.build"))
             {
                 Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You have build permissions");
+
                 // first check if near spawn
                 if (allowBlockFarEnoughFromSpawn(d))
                 {
@@ -238,8 +239,15 @@ namespace ColonyPlusPlus.Classes.Managers
                 }
                 else
                 {
-                    Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn");
-                    return false;
+                    if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.buildspawn"))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn");
+                        return false;
+                    }
                 }
             }
             else
