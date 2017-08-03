@@ -98,7 +98,6 @@ namespace ColonyPlusPlus.Classes.Managers
         }
 
 
-
         private static string GetJSONPath()
         {
             return "gamedata/savegames/" + ServerManager.WorldName + "/cppchunkdata.json";
@@ -146,7 +145,6 @@ namespace ColonyPlusPlus.Classes.Managers
                 Utilities.WriteLog("Exception in saving all Owned Chunks:" + exception2.Message);
             }
         }
-
         
 
         public static void LoadJSON()
@@ -215,8 +213,5 @@ namespace ColonyPlusPlus.Classes.Managers
 
             worldManagerLoaded = true;
         }
-
-
-
     }
 }

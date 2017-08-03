@@ -180,5 +180,26 @@ namespace ColonyPlusPlus
             {
             }
         }
+
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser)]
+        public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
+        {
+            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position);
+            if(Classes.Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
+            {
+                Classes.Data.ChunkData cd = Classes.Managers.WorldManager.ChunkDataList[ChunkID];
+                NetworkID id = cd.getOwner();
+                if (id == d.requestedBy.ID)
+                {
+                    return true;
+                }
+                else
+                {
+                    Chat.Send(d.requestedBy, "This chunk is claimed by someone!");
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
