@@ -114,13 +114,12 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
                 Vector3Int position = new Vector3Int(playerX, playerY, playerZ);
 
-                if (Managers.WorldManager.unclaimChunk(position, ply.ID))
+                if (Managers.WorldManager.unclaimChunk(position, ply.ID, true))
                 {
                     Vector3Int chunkPos = position.ToChunk();
                     int owned = Managers.WorldManager.getOwnedChunkCount(ply.ID);
 
-                    Chat.send(ply, string.Format("Unclaimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
-                    Chat.send(ply, string.Format("You now own {0} chunks.", owned), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                    Chat.send(ply, string.Format("Chunk Owner Deleted ({0}, {1}, {2})", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
                 }
                 else
                 {

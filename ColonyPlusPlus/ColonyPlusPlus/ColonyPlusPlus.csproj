@@ -99,6 +99,7 @@
     <Compile Include="Classes\Managers\PlayerManager.cs" />
     <Compile Include="Classes\Managers\RecipeManager.cs" />
     <Compile Include="Classes\Managers\RotatingMessageManager.cs" />
+    <Compile Include="Classes\Managers\ServerVariablesManager.cs" />
     <Compile Include="Classes\Managers\TypeManager.cs" />
     <Compile Include="Classes\Managers\VersionManager.cs" />
     <Compile Include="Classes\Managers\WorldManager.cs" />

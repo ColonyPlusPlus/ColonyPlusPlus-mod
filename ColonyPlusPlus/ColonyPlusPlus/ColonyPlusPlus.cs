@@ -2,6 +2,7 @@ using Pipliz.Chatting;
 using static Players;
 using System;
 using System.Collections.Generic;
+using ColonyPlusPlus.Classes;
 
 namespace ColonyPlusPlus
 {
@@ -28,6 +29,7 @@ namespace ColonyPlusPlus
             // Initialise configuration
             Classes.Managers.ConfigManager.initialise();
             Classes.Managers.RotatingMessageManager.initialise();
+            Classes.Managers.ServerVariablesManager.init();
 
             CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs");
             CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("CustomCrops");
@@ -35,7 +37,8 @@ namespace ColonyPlusPlus
             // Initialize chat commands
             Classes.Managers.ChatCommandManager.Initialize();
 
-
+           
+            
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate)]
@@ -46,6 +49,10 @@ namespace ColonyPlusPlus
                 Classes.Helpers.Chat.send(p, Classes.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), Classes.Helpers.Chat.ChatColour.red);
             }
             Chat.Send(p, Classes.Managers.ConfigManager.getConfigString("motd"));
+
+           
+
+            
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
@@ -184,22 +191,10 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser)]
         public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
         {
-            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position.ToChunk());
-            if(Classes.Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
-            {
-                Classes.Data.ChunkData cd = Classes.Managers.WorldManager.ChunkDataList[ChunkID];
-                NetworkID id = cd.getOwner();
-                if (id == d.requestedBy.ID)
-                {
-                    return true;
-                }
-                else
-                {
-                    Chat.Send(d.requestedBy, "This chunk is claimed by someone!");
-                    return false;
-                }
-            }
-            return true;
+             bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
+
+            Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
+            return allowed;
         }
     }
 }
