@@ -41,7 +41,10 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate)]
         public static void OnPlayerConnectedLate(Player p)
         {
-
+            if(p.ID.steamID.m_SteamID == 0)
+            {
+                Classes.Helpers.Chat.send(p, Classes.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), Classes.Helpers.Chat.ChatColour.red);
+            }
             Chat.Send(p, Classes.Managers.ConfigManager.getConfigString("motd"));
         }
 
