@@ -267,5 +267,12 @@ namespace ColonyPlusPlus.Classes.Managers
             Chat.Send(from, "You sent " + giveamt + " " + name + " to " + to.Name + ".");
             Chat.Send(to, from.Name + " sent " + giveamt + " " + name + " to you.");
         }
+
+        public static void teleportPlayer(Players.Player ply, Pipliz.Vector3Int target)
+        {
+            // This feels like a hack. We should see if there is a better way of doing this.
+            ply.Position = target.Vector;
+            Chat.Send(ply, "Teleport complete.");
+        }
     }
 }
