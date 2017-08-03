@@ -6,6 +6,8 @@ Added:
 	Message of the Day Feature.
 	Rotating Messages:
 		Rotates between messages after X seconds, both of these can be set in the config.json file
+	Version checking:
+		When you sign into the game it'll check if your running the newest version of the mod
 
 Changed:
 	Goldcoin Recipe is now 1 goldingot = 2 gold coins
