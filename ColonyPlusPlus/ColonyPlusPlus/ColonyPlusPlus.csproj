@@ -51,13 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CPPChatCommands\BaseChatCommand.cs" />
-    <Compile Include="Classes\CPPChatCommands\Chunk.cs" />
-    <Compile Include="Classes\CPPChatCommands\Clear.cs" />
-    <Compile Include="Classes\CPPChatCommands\Creative.cs" />
-    <Compile Include="Classes\CPPChatCommands\MasterChatCommand.cs" />
-    <Compile Include="Classes\CPPChatCommands\Online.cs" />
-    <Compile Include="Classes\CPPChatCommands\Trade.cs" />
+    <Compile Include="Classes\BaseChatCommand.cs" />
+    <Compile Include="Classes\CustomChatCommands\Chunk.cs" />
+    <Compile Include="Classes\CustomChatCommands\Clear.cs" />
+    <Compile Include="Classes\CustomChatCommands\Creative.cs" />
+    <Compile Include="Classes\Managers\MasterChatCommandManager.cs" />
+    <Compile Include="Classes\CustomChatCommands\Online.cs" />
+    <Compile Include="Classes\CustomChatCommands\Trade.cs" />
     <Compile Include="Classes\BlockJobs\BlockJobBase.cs" />
     <Compile Include="Classes\BlockJobs\BlockJobManagerTracker.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\CraftingJobBase.cs" />
@@ -73,7 +73,7 @@
     <Compile Include="Classes\BlockJobs\IBlockJobManager.cs" />
     <Compile Include="Classes\BlockJobs\Implementations\QuiverJob.cs" />
     <Compile Include="Classes\BlockJobs\INPCTypeDefiner.cs" />
-    <Compile Include="Classes\CPPChatCommands\WorldEdit.cs" />
+    <Compile Include="Classes\CustomChatCommands\WorldEdit.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
     <Compile Include="Classes\Data\PlayerData.cs" />
@@ -103,7 +103,7 @@
     <Compile Include="Classes\Managers\VersionManager.cs" />
     <Compile Include="Classes\Managers\WorldManager.cs" />
     <Compile Include="Classes\Material.cs" />
-    <Compile Include="Classes\CPPRecipe.cs" />
+    <Compile Include="Classes\Recipe.cs" />
     <Compile Include="Classes\Type.cs" />
     <Compile Include="ColonyPlusPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

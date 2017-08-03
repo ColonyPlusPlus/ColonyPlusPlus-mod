@@ -4,7 +4,7 @@ using Permissions;
 using Pipliz.Chatting;
 using System;
 
-namespace ColonyPlusPlus.Classes.CPPChatCommands
+namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
 
     public class Creative : BaseChatCommand

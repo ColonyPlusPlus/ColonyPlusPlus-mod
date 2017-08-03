@@ -74,7 +74,7 @@ namespace ColonyPlusPlus
                 Classes.Managers.TypeManager.registerTrackedTypes();
 
             // Register Master Command
-            ChatCommands.CommandManager.RegisterCommand(new Classes.CPPChatCommands.MasterChatCommand());
+            ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.MasterChatCommandManager());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]

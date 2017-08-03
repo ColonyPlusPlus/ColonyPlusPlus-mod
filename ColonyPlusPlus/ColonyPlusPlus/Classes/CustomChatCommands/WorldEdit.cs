@@ -4,7 +4,7 @@ using Permissions;
 using ColonyPlusPlus.Classes.Helpers;
 using System;
 
-namespace ColonyPlusPlus.Classes.CPPChatCommands
+namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
 
     public class WorldEdit : BaseChatCommand

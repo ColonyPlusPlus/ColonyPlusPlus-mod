@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
     {
         NPCInventory blockInventory;
         bool shouldTakeItems;
-        Recipe selectedRecipe;
+        global::Recipe selectedRecipe;
 
         public override JSONNode GetJSON()
         {
@@ -34,7 +34,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
 
         public override bool NeedsItems { get { return shouldTakeItems; } }
 
-        public virtual List<Recipe> GetPossibleRecipes { get { throw new System.NotImplementedException(); } }
+        public virtual List<global::Recipe> GetPossibleRecipes { get { throw new System.NotImplementedException(); } }
 
         public virtual int MaxRecipeCraftsPerHaul { get { throw new System.NotImplementedException(); } }
 
@@ -68,11 +68,11 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
             }
             else
             {
-                var recipeMatch = Recipe.MatchRecipe(GetPossibleRecipes, usedNPC.Colony.UsedStockpile);
+                var recipeMatch = global::Recipe.MatchRecipe(GetPossibleRecipes, usedNPC.Colony.UsedStockpile);
                 switch (recipeMatch.MatchType)
                 {
-                    case Recipe.RecipeMatchType.AllDone:
-                    case Recipe.RecipeMatchType.FoundMissingRequirements:
+                    case global::Recipe.RecipeMatchType.AllDone:
+                    case global::Recipe.RecipeMatchType.FoundMissingRequirements:
                         if (!state.Inventory.IsEmpty || !blockInventory.IsEmpty)
                         {
                             blockInventory.Dump(usedNPC.Inventory);
@@ -81,7 +81,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
                         else
                         {
                             state.JobIsDone = false;
-                            if (recipeMatch.MatchType == Recipe.RecipeMatchType.AllDone)
+                            if (recipeMatch.MatchType == global::Recipe.RecipeMatchType.AllDone)
                             {
                                 state.SetIndicator(NPCIndicatorType.SuccessIdle, 6f);
                             }
@@ -92,7 +92,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
                             OverrideCooldown(6.0);
                         }
                         break;
-                    case Recipe.RecipeMatchType.FoundCraftable:
+                    case global::Recipe.RecipeMatchType.FoundCraftable:
                         blockInventory.Dump(usedNPC.Inventory);
                         selectedRecipe = recipeMatch.FoundRecipe;
                         shouldTakeItems = true;
@@ -107,14 +107,14 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
             state.Inventory.TryDump(usedNPC.Colony.UsedStockpile);
             shouldTakeItems = false;
             state.JobIsDone = true;
-            var recipeMatch = Recipe.MatchRecipe(GetPossibleRecipes, usedNPC.Colony.UsedStockpile);
+            var recipeMatch = global::Recipe.MatchRecipe(GetPossibleRecipes, usedNPC.Colony.UsedStockpile);
             switch (recipeMatch.MatchType)
             {
-                case Recipe.RecipeMatchType.FoundMissingRequirements:
-                case Recipe.RecipeMatchType.AllDone:
+                case global::Recipe.RecipeMatchType.FoundMissingRequirements:
+                case global::Recipe.RecipeMatchType.AllDone:
                     OverrideCooldown(0.5);
                     break;
-                case Recipe.RecipeMatchType.FoundCraftable:
+                case global::Recipe.RecipeMatchType.FoundCraftable:
                     selectedRecipe = recipeMatch.FoundRecipe;
                     int count = Pipliz.Math.Min(recipeMatch.FoundRecipeCount, MaxRecipeCraftsPerHaul);
                     for (int i = 0; i < selectedRecipe.Requirements.Count; i++)

@@ -8,17 +8,17 @@ namespace ColonyPlusPlus.Classes.Managers
 {
     public static class ChatCommandManager
     {
-        public static Dictionary<String, CPPChatCommands.BaseChatCommand> ChatCommandsList;
+        public static Dictionary<String, BaseChatCommand> ChatCommandsList;
 
         public static void Initialize()
         {
-            ChatCommandsList = new Dictionary<string, CPPChatCommands.BaseChatCommand>();
-            var typelist = Assembly.GetExecutingAssembly().GetTypes().Where(t => (t != null && t.Namespace != null && t.Namespace.StartsWith("ColonyPlusPlus.Classes.CPPChatCommands")));
+            ChatCommandsList = new Dictionary<string, BaseChatCommand>();
+            var typelist = Assembly.GetExecutingAssembly().GetTypes().Where(t => (t != null && t.Namespace != null && t.Namespace.StartsWith("ColonyPlusPlus.Classes.CustomChatCommands")));
             foreach (var t in typelist)
             {
                 try
                 {
-                    CPPChatCommands.BaseChatCommand command = ((CPPChatCommands.BaseChatCommand)Activator.CreateInstance(t));
+                    BaseChatCommand command = ((BaseChatCommand)Activator.CreateInstance(t));
                     ChatCommandsList.Add(command.ChatCommandPrefix, command);
                     Utilities.WriteLog("Registered chat command: " + command.ChatCommandPrefix);
                 }

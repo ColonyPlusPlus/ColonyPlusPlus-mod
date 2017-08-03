@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob.Implementations
 
         public override float TimeBetweenJobs { get { return 2.9f; } }
 
-        public override List<Recipe> GetPossibleRecipes { get { return RecipeGrinding.AllRecipes; } }
+        public override List<global::Recipe> GetPossibleRecipes { get { return RecipeGrinding.AllRecipes; } }
 
         public override int MaxRecipeCraftsPerHaul { get { return 6; } }
 

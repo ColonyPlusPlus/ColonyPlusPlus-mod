@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.Classes.CPPChatCommands
+namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
     public class Trade : BaseChatCommand
     {

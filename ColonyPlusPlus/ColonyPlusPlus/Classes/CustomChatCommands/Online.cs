@@ -5,7 +5,7 @@ using Pipliz.Chatting;
 using System;
 using System.Collections.Generic;
 
-namespace ColonyPlusPlus.Classes.CPPChatCommands
+namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
 
     public class Online : BaseChatCommand

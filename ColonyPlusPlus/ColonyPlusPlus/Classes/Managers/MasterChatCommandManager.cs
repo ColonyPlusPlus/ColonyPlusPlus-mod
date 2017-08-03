@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using ChatCommands;
 
-namespace ColonyPlusPlus.Classes.CPPChatCommands
+namespace ColonyPlusPlus.Classes.Managers
 {
-    public class MasterChatCommand : IChatCommand
+    public class MasterChatCommandManager : IChatCommand
     {
         public bool IsCommand(string chatItem) =>
             (Managers.ChatCommandManager.ChatCommandsList.ContainsKey(chatItem.Split(' ')[0]));

@@ -92,28 +92,28 @@ namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob
 					OverrideCooldown(0.1);
 				}
 			} else {
-				var recipeMatch = Recipe.MatchRecipe(GetPossibleRecipes, usedNPC.Colony.UsedStockpile);
+				var recipeMatch = global::Recipe.MatchRecipe(GetPossibleRecipes, usedNPC.Colony.UsedStockpile);
 				switch (recipeMatch.MatchType) {
-					case Recipe.RecipeMatchType.AllDone:
-					case Recipe.RecipeMatchType.FoundMissingRequirements:
+					case global::Recipe.RecipeMatchType.AllDone:
+					case global::Recipe.RecipeMatchType.FoundMissingRequirements:
 						if (!state.Inventory.IsEmpty || !blockInventory.IsEmpty) {
-							blockInventory.Dump(usedNPC.Inventory);
-							shouldTakeItems = true;
+                            blockInventory.Dump(usedNPC.Inventory);
+                            shouldTakeItems = true;
 						} else {
 							state.JobIsDone = false;
-							if (recipeMatch.MatchType == Recipe.RecipeMatchType.AllDone) {
+							if (recipeMatch.MatchType == global::Recipe.RecipeMatchType.AllDone) {
 								state.SetIndicator(NPCIndicatorType.SuccessIdle, 6f);
 							} else {
 								state.SetIndicator(NPCIndicatorType.MissingItem, 6f, recipeMatch.FoundRecipe.Requirements[0].Type);
 							}
-							OverrideCooldown(6.0);
+                            OverrideCooldown(6.0);
 						}
 						break;
-					case Recipe.RecipeMatchType.FoundCraftable:
-						blockInventory.Dump(usedNPC.Inventory);
-						selectedRecipe = recipeMatch.FoundRecipe;
-						shouldTakeItems = true;
-						OverrideCooldown(0.5);
+					case global::Recipe.RecipeMatchType.FoundCraftable:
+                        blockInventory.Dump(usedNPC.Inventory);
+                        selectedRecipe = recipeMatch.FoundRecipe;
+                        shouldTakeItems = true;
+                        OverrideCooldown(0.5);
 						break;
 				}
 			}
@@ -125,29 +125,29 @@ namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob
 			state.Inventory.TryDump(usedNPC.Colony.UsedStockpile);
 			shouldTakeItems = false;
 			state.JobIsDone = true;
-			var recipeMatch = Recipe.MatchRecipe(GetPossibleRecipes, usedNPC.Colony.UsedStockpile);
+			var recipeMatch = global::Recipe.MatchRecipe(GetPossibleRecipes, usedNPC.Colony.UsedStockpile);
 			switch (recipeMatch.MatchType) {
-				case Recipe.RecipeMatchType.FoundMissingRequirements:
-				case Recipe.RecipeMatchType.AllDone:
-					OverrideCooldown(0.5);
+				case global::Recipe.RecipeMatchType.FoundMissingRequirements:
+				case global::Recipe.RecipeMatchType.AllDone:
+                    OverrideCooldown(0.5);
 					break;
-				case Recipe.RecipeMatchType.FoundCraftable:
-					selectedRecipe = recipeMatch.FoundRecipe;
+				case global::Recipe.RecipeMatchType.FoundCraftable:
+                    selectedRecipe = recipeMatch.FoundRecipe;
 					int count = Math.Min(recipeMatch.FoundRecipeCount, MaxRecipeCraftsPerHaul);
 					float fuelNeeded = (count * selectedRecipe.FuelPerCraft) - storedFuel;
 					if (fuelNeeded > 0f) {
 						if (!usedNPC.Colony.UsedStockpile.TryTransferFuel(fuelNeeded, state.Inventory)) {
 							state.SetIndicator(NPCIndicatorType.NoFuel, 5.0f);
-							shouldTakeItems = true;
-							OverrideCooldown(5.0);
+                            shouldTakeItems = true;
+                            OverrideCooldown(5.0);
 							return;
 						}
 					}
 					for (int i = 0; i < selectedRecipe.Requirements.Count; i++) {
 						state.Inventory.Add(selectedRecipe.Requirements[i] * count);
-						usedNPC.Colony.UsedStockpile.Remove(selectedRecipe.Requirements[i] * count);
+                        usedNPC.Colony.UsedStockpile.Remove(selectedRecipe.Requirements[i] * count);
 					}
-					OverrideCooldown(0.5);
+                    OverrideCooldown(0.5);
 					break;
 			}
 		}

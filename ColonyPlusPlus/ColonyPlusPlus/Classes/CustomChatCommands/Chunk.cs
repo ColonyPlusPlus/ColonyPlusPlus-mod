@@ -5,7 +5,7 @@ using NPC;
 using Pipliz;
 using ColonyPlusPlus.Classes.Helpers;
 
-namespace ColonyPlusPlus.Classes.CPPChatCommands
+namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
     public class Chunk : BaseChatCommand
     {

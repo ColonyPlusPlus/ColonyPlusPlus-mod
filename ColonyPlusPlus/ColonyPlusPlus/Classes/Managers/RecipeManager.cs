@@ -6,7 +6,7 @@ namespace ColonyPlusPlus.Classes.Managers
     {
 
         // list of classes.recipe objects
-        public static List<CPPRecipe> recipeList = new List<CPPRecipe>();
+        public static List<Recipe> recipeList = new List<Recipe>();
 
         // List of all item classes, registered by the callback
         public static List<Classes.Type> TypesThatHaveRecipes = new List<Classes.Type>();
@@ -21,7 +21,7 @@ namespace ColonyPlusPlus.Classes.Managers
         public static bool AddRecipe(string type, List<InventoryItem> reqs, List<InventoryItem> result, float fuelAmount = 0.0f, bool npcCraft = false)
         {
             // Pass the variables
-            CPPRecipe r = new CPPRecipe(type, reqs, result, fuelAmount, npcCraft);
+            Recipe r = new Recipe(type, reqs, result, fuelAmount, npcCraft);
 
             // Add it to the list
             recipeList.Add(r);
@@ -47,7 +47,7 @@ namespace ColonyPlusPlus.Classes.Managers
         public static void ProcessRecipes()
         {
             // Go through each registered recipe class
-            foreach (CPPRecipe RecipeInstance in recipeList)
+            foreach (Recipe RecipeInstance in recipeList)
             {
                 // Switch depending on the "type" registered in the recipe class
                 switch (RecipeInstance.Type.ToLower())
