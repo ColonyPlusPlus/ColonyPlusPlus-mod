@@ -9,5 +9,8 @@
 	],
 	"rotatingmessages.color": "yellow",
 	"rotatingmessages.style": "bolditalic",
-	"rotatingmessages.interval": 120
+	"rotatingmessages.interval": 120,
+	
+	"CustomJobs": true,
+	"CustomCrops": true
 }

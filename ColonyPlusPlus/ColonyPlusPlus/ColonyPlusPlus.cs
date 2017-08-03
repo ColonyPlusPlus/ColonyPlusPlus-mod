@@ -14,6 +14,8 @@ namespace ColonyPlusPlus
         public static long nextMillisecondUpdateRotator = 0;
         private static long millisecondDelta = 500;
         public static long millisecondDeltaRotator = 0;
+        private static bool CustomCrops = false;
+        private static bool CustomJobs = false;
 
         public static Version modVersion = new Version(0, 2, 0);
 
@@ -26,6 +28,9 @@ namespace ColonyPlusPlus
             // Initialise configuration
             Classes.Managers.ConfigManager.initialise();
             Classes.Managers.RotatingMessageManager.initialise();
+
+            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs");
+            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("CustomCrops");
 
             // Initialize chat commands
             Classes.Managers.ChatCommandManager.Initialize();
@@ -55,14 +60,16 @@ namespace ColonyPlusPlus
             // Register Types
             Classes.Managers.BlockManager.register();
             Classes.Managers.ItemManager.register();
-            Classes.Managers.CropManager.register();
+            if(CustomCrops)
+                Classes.Managers.CropManager.register();
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer)]
         public static void AfterItemTypesServer()
         {
             // Register Tracked Block Types (Wheat?)
-            Classes.Managers.TypeManager.registerTrackedTypes();
+            if (CustomCrops)
+                Classes.Managers.TypeManager.registerTrackedTypes();
 
             // Register Master Command
             ChatCommands.CommandManager.RegisterCommand(new Classes.CPPChatCommands.MasterChatCommand());
@@ -75,7 +82,9 @@ namespace ColonyPlusPlus
             Classes.Managers.RecipeManager.BuildRecipeList();
             Classes.Managers.RecipeManager.ProcessRecipes();
 
-            Classes.Managers.CropManager.LoadCropTracker();
+
+            if (CustomCrops)
+                Classes.Managers.CropManager.LoadCropTracker();
             Classes.Managers.WorldManager.LoadJSON();
 
             Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
@@ -90,7 +99,8 @@ namespace ColonyPlusPlus
                 // do stuff
 
                 // update any crops
-                Classes.Managers.CropManager.doCropUpdates();
+                if (CustomCrops)
+                    Classes.Managers.CropManager.doCropUpdates();
 
                 // Do player update stuff
                 Classes.Managers.PlayerManager.notifyNewChunkEntrances();
@@ -104,7 +114,8 @@ namespace ColonyPlusPlus
             {
 
                 // save out crop progress to file
-                Classes.Managers.CropManager.SaveCropTrackerInterval();
+                if (CustomCrops)
+                    Classes.Managers.CropManager.SaveCropTrackerInterval();
 
                 // long term update time
                 nextMillisecondUpdateLong = Pipliz.Time.MillisecondsSinceStart +  60000;
@@ -118,7 +129,8 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly)]
         public static void OnQuitEarly()
         {
-            Classes.Managers.CropManager.SaveCropTracker();
+            if (CustomCrops)
+                Classes.Managers.CropManager.SaveCropTracker();
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit)]
@@ -131,7 +143,6 @@ namespace ColonyPlusPlus
         public static void AfterDefiningNPCTypes()
         {
             //Crafting Jobs!
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ChickenPluckerJob>("bricks");
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.GrinderJob>("grindstone");
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.MintJob>("mint");
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ShopJob>("shop");
@@ -141,6 +152,13 @@ namespace ColonyPlusPlus
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.Implementations.OvenJob>("oven");
             //Odd Jobs?
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Implementations.QuiverJob>("quiver");
+
+
+            //Custom jobs!
+            if (Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs"))
+            {
+                Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ChickenPluckerJob>("bricks");
+            }
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined)]
@@ -152,6 +170,13 @@ namespace ColonyPlusPlus
             ItemTypesServer.RegisterChangeTypes("oven", new List<string>()
                 { "ovenx+", "ovenz+", "ovenx-", "ovenz-", "ovenlitx+", "ovenlitz+", "ovenlitx-", "ovenlitz-" }
             );
+
+
+
+            //Custom jobs!
+            if (Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs"))
+            {
+            }
         }
     }
 }
