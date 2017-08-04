@@ -28,7 +28,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             try
             {
-                if (keys.Length > 0 && keyIndex < keys.Length)
+                if (keys.Length > 0 && keyIndex < keys.Length - 1)
                 {
                     if (node.HasChild(keys[keyIndex]))
                     {
@@ -73,7 +73,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             try
             {
-                if (keys.Length > 0 && keyIndex < keys.Length)
+                if (keys.Length > 0 && keyIndex < keys.Length - 1)
                 {
                     if (node.HasChild(keys[keyIndex]))
                     {
@@ -118,7 +118,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             try
             {
-                if (keys.Length > 0 && keyIndex < keys.Length)
+                if (keys.Length > 0 && keyIndex < keys.Length - 1)
                 {
                     if (node.HasChild(keys[keyIndex]))
                     {
@@ -163,7 +163,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             try
             {
-                if (keys.Length > 0 && keyIndex < keys.Length)
+                if (keys.Length > 0 && keyIndex < keys.Length - 1)
                 {
                     if (node.HasChild(keys[keyIndex]))
                     {
@@ -208,7 +208,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             try
             {
-                if (keys.Length > 0 && keyIndex < keys.Length)
+                if (keys.Length > 0 && keyIndex < keys.Length - 1)
                 {
                     if (node.HasChild(keys[keyIndex]))
                     {
