@@ -14,6 +14,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.OnPlaceAudio = "stonePlace";
             this.OnRemoveAudio = "stoneDelete";
             this.IsPlaceable = true;
+            this.MaxStackSize = 100;
             this.Register();
         }
 

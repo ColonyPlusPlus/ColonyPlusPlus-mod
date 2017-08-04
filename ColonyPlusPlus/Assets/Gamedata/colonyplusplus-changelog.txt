@@ -16,6 +16,7 @@ Changed:
 	Modded Crops now save on server shutdown befure kicking out the players.
 		This should remove the lag of saving twice a second.
 	More Advanced Trade system!
+	Increased Brick, Dirt, Grass, Stone Bricks to match the new maxstack of the Base Game
 
 
 

@@ -14,6 +14,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.NPCLimit = 20;
             this.IsPlaceable = true;
             this.AllowCreative = true;
+            this.MaxStackSize = 100;
             this.Register();
         }
     }
