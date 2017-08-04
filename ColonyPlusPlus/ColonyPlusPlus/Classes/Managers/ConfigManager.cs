@@ -11,86 +11,232 @@ namespace ColonyPlusPlus.Classes.Managers
 
         private static JSONNode configSettings;
 
+        public static string getConfigString(string key) {
+            string[] keys = key.Split('.');
 
-        public static string getConfigString(string identifier)
+            if (keys.Length > 0)
+            {
+                return getConfigStringFromNode(keys, 0, configSettings);
+            }
+            else
+            {
+                return node.GetAs<string>(key);
+            }
+        }
+
+        private static string getConfigStringFromNode(string[] keys, int keyIndex, JSONNode node)
         {
             try
             {
-                string ret;
-                configSettings.TryGetAs<string>(identifier, out ret);
-                return ret;
+                if (keys.Length > 0 && keyIndex < keys.Length)
+                {
+                    if (node.HasChild(keys[keyIndex]))
+                    {
+                        // has child
+                        JSONNode c = new JSONNode(NodeType.Object);
+                        c = node.GetAs<JSONNode>(keys[keyIndex]);
+                        return getConfigStringFromNode(keys, keyIndex + 1, c);
+
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+                else
+                {
+                    return node.GetAs<string>(key);
+                }
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration (" + identifier + "):" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + exception.Message);
                 return "";
             }
 
         }
 
-        public static bool getConfigBoolean(string identifier)
+        public static bool getConfigBoolean(string key) {
+            string[] keys = key.Split('.');
+
+            if (keys.Length > 0)
+            {
+                return getConfigBoolFromNode(keys, 0, configSettings);
+            }
+            else
+            {
+                return node.GetAs<bool>(key);
+            }
+        }
+
+        private static bool getConfigBoolFromNode(string[] keys, int keyIndex, JSONNode node)
         {
             try
             {
-                bool ret;
-                configSettings.TryGetAs<bool>(identifier, out ret);
-                return ret;
+                if (keys.Length > 0 && keyIndex < keys.Length)
+                {
+                    if (node.HasChild(keys[keyIndex]))
+                    {
+                        // has child
+                        JSONNode c = new JSONNode(NodeType.Object);
+                        c = node.GetAs<JSONNode>(keys[keyIndex]);
+                        return getConfigBoolFromNode(keys, keyIndex + 1, c);
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return node.GetAs<bool>(keys[keyIndex]);
+                }
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration (" + identifier + "):" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + exception.Message);
                 return false;
             }
 
         }
 
-        public static int getConfigInt(string identifier)
+        public static int getConfigInt(string key) {
+            string[] keys = key.Split('.');
+
+            if (keys.Length > 0)
+            {
+                return getConfigBoolFromNode(keys, 0, configSettings);
+            }
+            else
+            {
+                return node.GetAs<int>(key);
+            }
+        }
+
+        private static int getConfigIntFromNode(string[] keys, int keyIndex, JSONNode node)
         {
             try
             {
-                int ret;
-                configSettings.TryGetAs<int>(identifier, out ret);
-                return ret;
+                if (keys.Length > 0 && keyIndex < keys.Length)
+                {
+                    if (node.HasChild(keys[keyIndex]))
+                    {
+                        // has child
+                        JSONNode c = new JSONNode(NodeType.Object);
+                        c = node.GetAs<JSONNode>(keys[keyIndex]);
+                        return getConfigIntFromNode(keys, keyIndex + 1, c);
+
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+                else
+                {
+                    return node.GetAs<int>(keys[keyIndex]);
+                }
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration (" + identifier + "):" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + exception.Message);
                 return -1;
             }
 
+        }  
+
+        public static float getConfigFloat(string key) {
+            string[] keys = key.Split('.');
+
+            if (keys.Length > 0)
+            {
+                return getConfigFloatFromNode(keys, 0, configSettings);
+            }
+            else
+            {
+                return node.GetAs<float>(key);
+            }
         }
 
-        public static float getConfigFloat(string identifier)
+        private static float getConfigFloatFromNode(string[] keys, int keyIndex, JSONNode node)
         {
             try
             {
-                float ret;
-                configSettings.TryGetAs<float>(identifier, out ret);
-                return ret;
+                if (keys.Length > 0 && keyIndex < keys.Length)
+                {
+                    if (node.HasChild(keys[keyIndex]))
+                    {
+                        // has child
+                        JSONNode c = new JSONNode(NodeType.Object);
+                        c = node.GetAs<JSONNode>(keys[keyIndex]);
+                        return getConfigFloatFromNode(keys, keyIndex + 1, c);
+
+                    }
+                    else
+                    {
+                        return 0f;
+                    }
+                }
+                else
+                {
+                    return node.GetAs<float>(keys[keyIndex]);
+                }
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration (" + identifier + "):" + exception.Message);
-                return 0.0f;
+                Utilities.WriteLog("Error getting configuration:" + exception.Message);
+                return 0f;
             }
 
         }
 
-        public static JSONNode getConfigNode(string identifier)
+        public static JSONNode getConfigNode(string key) {
+            string[] keys = key.Split('.');
+
+            if (keys.Length > 0)
+            {
+                return getConfigNodeFromNode(keys, 0, configSettings);
+            }
+            else
+            {
+                return node.GetAs<JSONNode>(key);
+            }
+        }
+
+        private static JSONNode getConfigNodeFromNode(string[] keys, int keyIndex, JSONNode node)
         {
             try
             {
-                JSONNode ret;
-                configSettings.TryGetAs<JSONNode>(identifier, out ret);
-                return ret;
+                if (keys.Length > 0 && keyIndex < keys.Length)
+                {
+                    if (node.HasChild(keys[keyIndex]))
+                    {
+                        // has child
+                        JSONNode c = new JSONNode(NodeType.Object);
+                        c = node.GetAs<JSONNode>(keys[keyIndex]);
+                        return getConfigNodeFromNode(keys, keyIndex + 1, c);
+
+                    }
+                    else
+                    {
+                        return new JSONNode(NodeType.Array);
+                    }
+                }
+                else
+                {
+                    return node.GetAs<JSONNode>(keys[keyIndex]);
+                }
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration (" + identifier + "):" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + exception.Message);
                 return new JSONNode(NodeType.Array);
             }
 
         }
+
+        
 
         /// <summary>
         /// Initialise the config manager

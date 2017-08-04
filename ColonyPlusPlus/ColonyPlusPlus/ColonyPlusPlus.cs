@@ -48,7 +48,7 @@ namespace ColonyPlusPlus
             {
                 Classes.Helpers.Chat.send(p, Classes.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), Classes.Helpers.Chat.ChatColour.red);
             }
-            Chat.Send(p, Classes.Managers.ConfigManager.getConfigString("motd"));
+            Chat.Send(p, Classes.Managers.ConfigManager.getConfigString("motd.message"));
 
            
 
@@ -164,7 +164,7 @@ namespace ColonyPlusPlus
 
 
             //Custom jobs!
-            if (Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs"))
+            if (Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs"))
             {
                 Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ChickenPluckerJob>("bricks");
             }
@@ -183,7 +183,7 @@ namespace ColonyPlusPlus
 
 
             //Custom jobs!
-            if (Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs"))
+            if (Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs"))
             {
             }
         }
