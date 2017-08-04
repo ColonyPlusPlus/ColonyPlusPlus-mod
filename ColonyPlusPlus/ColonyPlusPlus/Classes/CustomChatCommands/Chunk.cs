@@ -29,7 +29,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && Classes.Managers.ConfigManager.getConfigBoolean("chunk.allowclaiming"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
             {
                 int maxClaims = Classes.Managers.ConfigManager.getConfigInt("chunk.maxclaims");
 
