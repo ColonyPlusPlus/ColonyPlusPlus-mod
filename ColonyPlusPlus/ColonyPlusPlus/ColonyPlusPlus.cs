@@ -85,6 +85,7 @@ namespace ColonyPlusPlus
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplus.AfterWorldLoad")]
+        [ModLoader.ModCallbackDependsOn("pipliz.blocknpcs.loadrecipes")]
         public static void AfterWorldLoad()
         {
             Classes.Managers.RecipeManager.AddBaseRecipes();
@@ -96,7 +97,7 @@ namespace ColonyPlusPlus
                 Classes.Managers.CropManager.LoadCropTracker();
             Classes.Managers.WorldManager.LoadJSON();
 
-            Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
+            //Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
         }
 
         // things to do every tick (or itnerval)
@@ -145,13 +146,13 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonyplusplus.OnQuit")]
         public static void OnQuit()
         {
-            Classes.BlockJobs.BlockJobManagerTracker.Save();
+            //Classes.BlockJobs.BlockJobManagerTracker.Save();
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
         public static void AfterDefiningNPCTypes()
         {
-            //Crafting Jobs!
+           /* //Crafting Jobs!
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.GrinderJob>("grindstone");
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.MintJob>("mint");
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ShopJob>("shop");
@@ -168,6 +169,7 @@ namespace ColonyPlusPlus
             {
                 Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ChickenPluckerJob>("bricks");
             }
+            */
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]

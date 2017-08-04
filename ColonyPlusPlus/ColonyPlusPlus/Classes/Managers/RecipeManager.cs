@@ -46,6 +46,13 @@ namespace ColonyPlusPlus.Classes.Managers
         /// </summary>
         public static void ProcessRecipes()
         {
+            List<global::Recipe> RecipeCraftingStatic = new List<global::Recipe>();
+            List<global::Recipe> RecipeSmelting = new List<global::Recipe>();
+            List<global::Recipe> RecipeMinting = new List<global::Recipe>();
+            List<global::Recipe> RecipeGrinding = new List<global::Recipe>();
+            List<global::Recipe> RecipeShopping = new List<global::Recipe>();
+            List<global::Recipe> RecipeBaking = new List<global::Recipe>();
+
             // Go through each registered recipe class
             foreach (Recipe RecipeInstance in recipeList)
             {
@@ -53,32 +60,33 @@ namespace ColonyPlusPlus.Classes.Managers
                 switch (RecipeInstance.Type.ToLower())
                 {
                     case "crafting":
-                        RecipeCraftingStatic.AllRecipes.Add(new RecipeCrafting(RecipeInstance.NPCCraftable, RecipeInstance.Requirements, RecipeInstance.Results));
+  //                      
+                        RecipeCraftingStatic.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
                         
                         break;
                     case "smelting":
-                        RecipeSmelting.AllRecipes.Add(new RecipeFueled(0.0f, RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeSmelting.Add(new global::RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
                     case "minting":
-                        RecipeMinting.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeMinting.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
                     case "grinding":
-                        RecipeGrinding.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeGrinding.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
                     case "shopping":
-                        RecipeShopping.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeShopping.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
                     case "baking":
-                        RecipeBaking.AllRecipes.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeBaking.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
@@ -94,6 +102,13 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 
             }
+
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.crafter", RecipeCraftingStatic);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.grinder", RecipeGrinding);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.minter", RecipeMinting);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.merchant", RecipeShopping);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.smelter", RecipeSmelting);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.baker", RecipeBaking);
 
             // Log the number of added recipes
             Utilities.WriteLog("Added " + recipesAdded + " recipes");
