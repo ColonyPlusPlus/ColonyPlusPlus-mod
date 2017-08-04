@@ -241,6 +241,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 {
                     if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.buildspawn"))
                     {
+                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn, but you are admin");
                         return true;
                     }
                     else
