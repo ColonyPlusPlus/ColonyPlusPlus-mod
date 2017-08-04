@@ -280,10 +280,11 @@ namespace ColonyPlusPlus.Classes.Managers
                 distancex = System.Math.Abs(playerX - startingX);
                 distancez = System.Math.Abs(playerZ - startingZ);
 
-
-                Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), String.Format("Distance from spawn: X {0}, Z {1}", distancex, distancez));
-
                 int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("spawnprotection.radius");
+
+                Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), String.Format("Distance from spawn: X {0}, Z {1}. Protection Radius: {2}", distancex, distancez, SpawnProtectionDistance));
+
+                
 
                 if (distancex > SpawnProtectionDistance || distancez > SpawnProtectionDistance)
                 {
