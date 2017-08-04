@@ -55,7 +55,7 @@ namespace ColonyPlusPlus.Classes.Managers
                     case "crafting":
                         RecipeCraftingStatic.AllRecipes.Add(new RecipeCrafting(RecipeInstance.NPCCraftable, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
+                        
                         break;
                     case "smelting":
                         RecipeSmelting.AllRecipes.Add(new RecipeFueled(0.0f, RecipeInstance.Requirements, RecipeInstance.Results));
