@@ -95,7 +95,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + keys[keyIndex] + keys.Length.ToString() + keyIndex.ToString() + exception.Message + exception.StackTrace);
+                Utilities.WriteLog("Error getting configuration:" + keys[keyIndex-1] + keys.Length.ToString() + keyIndex.ToString() + exception.Message + exception.StackTrace);
                 return false;
             }
 
