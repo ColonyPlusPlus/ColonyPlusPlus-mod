@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class Cake : Classes.Type
     {
-        public Cake(string name) : base(name)
+        public Cake(string name) : base(name, true)
         {
             this.NutritionalValue = 25.0f;
 			this.CustomData = new CustomDataHelper("test", "somevalue").customDataNode;

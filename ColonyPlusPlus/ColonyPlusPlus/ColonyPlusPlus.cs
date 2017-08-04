@@ -20,7 +20,7 @@ namespace ColonyPlusPlus
 
         public static Version modVersion = new Version(0, 2, 0);
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplus.AfterStartup")]
         public static void AfterStartup()
         {
             Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
@@ -41,7 +41,7 @@ namespace ColonyPlusPlus
             
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate, "colonyplusplus.OnPlayerConnectedLate")]
         public static void OnPlayerConnectedLate(Player p)
         {
             if(p.ID.steamID.m_SteamID == 0)
@@ -55,7 +55,7 @@ namespace ColonyPlusPlus
             
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplus.AfterAddingBaseTypes")]
         public static void AfterAddingBaseTypes()
         {
             // Register Materials
@@ -73,7 +73,7 @@ namespace ColonyPlusPlus
                 Classes.Managers.CropManager.register();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplus.AfterItemTypesServer" )]
         public static void AfterItemTypesServer()
         {
             // Register Tracked Block Types (Wheat?)
@@ -84,7 +84,7 @@ namespace ColonyPlusPlus
             ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.MasterChatCommandManager());
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplus.AfterWorldLoad")]
         public static void AfterWorldLoad()
         {
             Classes.Managers.RecipeManager.AddBaseRecipes();
@@ -100,7 +100,7 @@ namespace ColonyPlusPlus
         }
 
         // things to do every tick (or itnerval)
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate, "colonyplusplus.OnUpdate")]
         public static void OnUpdate()
         {
             if(Pipliz.Time.MillisecondsSinceStart > nextMillisecondUpdate)
@@ -135,20 +135,20 @@ namespace ColonyPlusPlus
 
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly, "colonyplusplus.OnQuitEarly")]
         public static void OnQuitEarly()
         {
             if (CustomCrops)
                 Classes.Managers.CropManager.SaveCropTracker();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonyplusplus.OnQuit")]
         public static void OnQuit()
         {
             Classes.BlockJobs.BlockJobManagerTracker.Save();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
         public static void AfterDefiningNPCTypes()
         {
             //Crafting Jobs!
@@ -170,7 +170,7 @@ namespace ColonyPlusPlus
             }
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
         public static void AfterItemTypesDefined()
         {
             ItemTypesServer.RegisterChangeTypes("furnace", new List<string>()
@@ -188,7 +188,7 @@ namespace ColonyPlusPlus
             }
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplus.OnTryChangeBlockUser")]
         public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
         {
              bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);

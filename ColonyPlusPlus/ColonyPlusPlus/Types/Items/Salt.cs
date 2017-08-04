@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class Salt : Classes.Type
     {
-        public Salt(string name) : base(name)
+        public Salt(string name) : base(name, true)
         {
             this.AllowCreative = true;
             this.Register();

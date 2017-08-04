@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class LogCubeTemperate : Classes.Type
     {
-        public LogCubeTemperate(string name) : base(name)
+        public LogCubeTemperate(string name) : base(name, true)
         {
             Classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new Classes.ItemHelper.OnRemove("logcubetemperate",   1,  1.0f)

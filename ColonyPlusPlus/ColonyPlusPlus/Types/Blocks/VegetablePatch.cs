@@ -7,7 +7,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class VegetablePatch : Classes.Type
     {
-        public VegetablePatch(string name) : base(name)
+        public VegetablePatch(string name) : base(name, true)
         {
             Classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new Classes.ItemHelper.OnRemove("carrotstage1", 3, 0.5f),

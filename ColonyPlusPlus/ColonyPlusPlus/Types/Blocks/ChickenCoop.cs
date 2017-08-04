@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class ChickenCoop : Classes.Type
     {
-        public ChickenCoop(string name) : base(name)
+        public ChickenCoop(string name) : base(name, true)
         {
 
             this.OnPlaceAudio = "woodPlace";

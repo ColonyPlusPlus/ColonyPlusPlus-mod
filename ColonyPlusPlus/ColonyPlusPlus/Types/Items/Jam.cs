@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class Jam : Classes.Type
     {
-        public Jam(string name) : base(name)
+        public Jam(string name) : base(name, true)
         {
             this.AllowCreative = true;
             this.Register();

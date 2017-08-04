@@ -10,7 +10,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class WildBerryBush : Classes.Type
     {
-        public WildBerryBush(string name) : base(name)
+        public WildBerryBush(string name) : base(name, true)
         {
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";

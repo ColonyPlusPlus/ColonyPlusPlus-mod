@@ -7,7 +7,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class LogCube : Classes.Type
     {
-        public LogCube(string name) : base(name)
+        public LogCube(string name) : base(name, true)
         {
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";

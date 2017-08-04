@@ -56,15 +56,18 @@ namespace ColonyPlusPlus.Classes
 
 
         // Constructor
-        public Type(string name)
+        public Type(string name, bool newtype = false)
         {
             this.TypeName = name;
 
             // disable creative on blocks
             this.AllowCreative = false;
 
+            // save to JSON if this is a new item that's been added
+            this.node.SetAs("newtype", newtype);
+
             // set default sideall
-            if(Material.ValidateMat(name))
+            if (Material.ValidateMat(name))
             {
                 this._SideAll = "SELF";
                 this.node.SetAs("sideall", "SELF");

@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class Feather : Classes.Type
     {
-        public Feather(string name) : base(name)
+        public Feather(string name) : base(name, true)
         {
             this.AllowCreative = true;
             this.Register();

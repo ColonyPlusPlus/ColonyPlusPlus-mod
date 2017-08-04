@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.Classes
         public float maxGrowth = 10F; // defaults to 10 hours
 
         // Extend the base class, passing type name
-        public GrowableType(string name) : base(name)
+        public GrowableType(string name, bool isnew) : base(name, isnew)
         {
         }
 

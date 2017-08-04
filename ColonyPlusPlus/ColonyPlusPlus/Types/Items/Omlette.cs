@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class Omlette : Classes.Type
     {
-        public Omlette(string name) : base(name)
+        public Omlette(string name) : base(name, true)
         {
             this.NutritionalValue = 1.0f;
             this.AllowCreative = true;

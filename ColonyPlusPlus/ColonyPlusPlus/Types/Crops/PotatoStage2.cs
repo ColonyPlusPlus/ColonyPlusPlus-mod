@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Crops
 {
     class PotatoStage2 : Classes.GrowableType
     {
-        public PotatoStage2(string name) : base(name)
+        public PotatoStage2(string name) : base(name, true)
         {
             Classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new Classes.ItemHelper.OnRemove("potatostage1",   1,  0.8f)

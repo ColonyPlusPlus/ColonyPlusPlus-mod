@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class Butter : Classes.Type
     {
-        public Butter(string name) : base(name)
+        public Butter(string name) : base(name, true)
         {
             this.AllowCreative = true;
             this.Register();

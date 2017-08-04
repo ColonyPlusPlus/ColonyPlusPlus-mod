@@ -32,6 +32,11 @@ namespace ColonyPlusPlus.Classes.Managers
                     Utilities.WriteLog(t.Name + " doesn't use our command system. This probably isn't an error.");
                     Pipliz.Log.WriteWarning(ice.Message);
                 }
+                catch (Exception e)
+                {
+                    Utilities.WriteLog(t.Name + " Command Error.");
+                    Pipliz.Log.WriteWarning(e.Message + e.StackTrace);
+                }
             }
             Utilities.WriteLog("Chat Commands Loaded.");
         }

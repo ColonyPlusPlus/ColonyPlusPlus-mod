@@ -55,6 +55,7 @@
     <Compile Include="Classes\CustomChatCommands\Chunk.cs" />
     <Compile Include="Classes\CustomChatCommands\Clear.cs" />
     <Compile Include="Classes\CustomChatCommands\Creative.cs" />
+    <Compile Include="Classes\CustomChatCommands\Debug.cs" />
     <Compile Include="Classes\Managers\MasterChatCommandManager.cs" />
     <Compile Include="Classes\CustomChatCommands\Online.cs" />
     <Compile Include="Classes\CustomChatCommands\Trade.cs" />
