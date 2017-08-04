@@ -50,7 +50,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + exception.Message + exception.StackTrace);
                 return "";
             }
 
@@ -95,7 +95,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + exception.Message + exception.StackTrace);
                 return false;
             }
 
@@ -140,7 +140,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + exception.Message + exception.StackTrace);
                 return -1;
             }
 
@@ -230,7 +230,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + exception.Message + exception.StackTrace);
                 return new JSONNode(NodeType.Array);
             }
 
@@ -249,7 +249,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception2)
             {
-                Utilities.WriteLog("Error loading configuration:" + exception2.Message);
+                Utilities.WriteLog("Error loading configuration:" + exception2.Message + exception.StackTrace);
             }
         }
 
