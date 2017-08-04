@@ -14,14 +14,19 @@
 		"style": "bolditalic",
 		"interval": 120,
 	},
+	
 	"modules": {
 		"CustomJobs": true,
 		"CustomCrops": true
 	},
+	
 	"spawnprotection": {
 		"enabled": true,
 		"radius": 10
+	},
+	
+	"chunks": {
+		"enabled": true,
+		"maxclaim": 12
 	}
-	
-	
 }
