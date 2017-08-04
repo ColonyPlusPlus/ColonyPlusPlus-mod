@@ -249,7 +249,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception2)
             {
-                Utilities.WriteLog("Error loading configuration:" + exception2.Message + exception.StackTrace);
+                Utilities.WriteLog("Error loading configuration:" + exception2.Message + exception2.StackTrace);
             }
         }
 
