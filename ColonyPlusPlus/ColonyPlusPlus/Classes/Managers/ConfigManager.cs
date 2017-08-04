@@ -20,7 +20,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             else
             {
-                return node.GetAs<string>(key);
+                return configSettings.GetAs<string>(key);
             }
         }
 
@@ -65,7 +65,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             else
             {
-                return node.GetAs<bool>(key);
+                return configSettings.GetAs<bool>(key);
             }
         }
 
@@ -106,11 +106,11 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (keys.Length > 0)
             {
-                return getConfigBoolFromNode(keys, 0, configSettings);
+                return getConfigIntFromNode(keys, 0, configSettings);
             }
             else
             {
-                return node.GetAs<int>(key);
+                return configSettings.GetAs<int>(key);
             }
         }
 
@@ -155,7 +155,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             else
             {
-                return node.GetAs<float>(key);
+                return configSettings.GetAs<float>(key);
             }
         }
 
@@ -200,7 +200,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             else
             {
-                return node.GetAs<JSONNode>(key);
+                return configSettings.GetAs<JSONNode>(key);
             }
         }
 
