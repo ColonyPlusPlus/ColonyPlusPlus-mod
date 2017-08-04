@@ -12,8 +12,7 @@ Added:
 Changed:
 	Goldcoin Recipe is now 1 goldingot = 2 gold coins
 	Cake's food value increased to 25 from 15
-	Grass and stone blocks stack size has increase to 100 from 50
-	Modded Crops now save on server shutdown befure kicking out the players.
+	Modded Crops now save on server shutdown before kicking out the players.
 		This should remove the lag of saving twice a second.
 	More Advanced Trade system!
 	Increased Brick, Dirt, Grass, Stone Bricks to match the new maxstack of the Base Game
