@@ -31,8 +31,8 @@ namespace ColonyPlusPlus
             Classes.Managers.RotatingMessageManager.initialise();
             Classes.Managers.ServerVariablesManager.init();
 
-            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs");
-            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("CustomCrops");
+            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
+            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
 
             // Initialize chat commands
             Classes.Managers.ChatCommandManager.Initialize();
