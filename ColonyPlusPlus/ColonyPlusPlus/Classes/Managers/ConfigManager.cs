@@ -45,7 +45,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 }
                 else
                 {
-                    return node.GetAs<string>(key);
+                    return node.GetAs<string>(keys[keyIndex]);
                 }
             }
             catch (Exception exception)
