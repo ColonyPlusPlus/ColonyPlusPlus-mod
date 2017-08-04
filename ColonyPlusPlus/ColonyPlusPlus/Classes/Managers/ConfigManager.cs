@@ -50,7 +50,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + keyIndex + exception.Message + exception.StackTrace);
+                Utilities.WriteLog("Error getting configuration:" + keys.Count + keyIndex + exception.Message + exception.StackTrace);
                 return "";
             }
 
@@ -95,7 +95,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + keyIndex + exception.Message + exception.StackTrace);
+                Utilities.WriteLog("Error getting configuration:" + keys.Count + keyIndex + exception.Message + exception.StackTrace);
                 return false;
             }
 
@@ -140,7 +140,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + keyIndex + exception.Message + exception.StackTrace);
+                Utilities.WriteLog("Error getting configuration:" + keys.Count + keyIndex + exception.Message + exception.StackTrace);
                 return -1;
             }
 
@@ -185,7 +185,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + exception.Message);
+                Utilities.WriteLog("Error getting configuration:" + keys.Count + keyIndex + exception.Message + exception.Message);
                 return 0f;
             }
 
@@ -230,7 +230,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception)
             {
-                Utilities.WriteLog("Error getting configuration:" + keyIndex + exception.Message + exception.StackTrace);
+                Utilities.WriteLog("Error getting configuration:" + keys.Count + keyIndex + exception.Message + exception.StackTrace);
                 return new JSONNode(NodeType.Array);
             }
 
