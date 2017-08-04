@@ -42,6 +42,7 @@ namespace ColonyPlusPlus.Classes
         private bool _IsAutoRotatable;
         private bool _IsDestructible;
         private bool _AllowCreative;
+        private bool _AllowPlayerCraft;
 
         private long _DestructionTime;
 
@@ -62,6 +63,7 @@ namespace ColonyPlusPlus.Classes
 
             // disable creative on blocks
             this.AllowCreative = false;
+            this.AllowPlayerCraft = false;
 
             // save to JSON if this is a new item that's been added
             this.node.SetAs("newtype", newtype);
@@ -420,6 +422,18 @@ namespace ColonyPlusPlus.Classes
             set
             {
                 this._AllowCreative = value;
+            }
+        }
+
+        public bool AllowPlayerCraft
+        {
+            get
+            {
+                return this._AllowPlayerCraft;
+            }
+            set
+            {
+                this._AllowPlayerCraft = value;
             }
         }
 

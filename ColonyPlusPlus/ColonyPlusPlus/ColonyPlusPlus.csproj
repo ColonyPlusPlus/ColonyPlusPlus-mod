@@ -172,6 +172,7 @@
     <Compile Include="Types\GameBase\Blocks\Snow.cs" />
     <Compile Include="Types\GameBase\Blocks\StoneBlock.cs" />
     <Compile Include="Types\GameBase\Blocks\StoneBricks.cs" />
+    <Compile Include="Types\GameBase\Blocks\TailorShop.cs" />
     <Compile Include="Types\GameBase\Blocks\Torch.cs" />
     <Compile Include="Types\GameBase\Blocks\Water.cs" />
     <Compile Include="Types\GameBase\Blocks\WheatStage.cs" />

@@ -85,13 +85,9 @@ namespace ColonyPlusPlus
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplus.AfterWorldLoad")]
-        [ModLoader.ModCallbackDependsOn("pipliz.blocknpcs.loadrecipes")]
         public static void AfterWorldLoad()
         {
-            Classes.Managers.RecipeManager.AddBaseRecipes();
-            Classes.Managers.RecipeManager.BuildRecipeList();
-            Classes.Managers.RecipeManager.ProcessRecipes();
-
+            
 
             if (CustomCrops)
                 Classes.Managers.CropManager.LoadCropTracker();
@@ -173,8 +169,16 @@ namespace ColonyPlusPlus
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
+        [ModLoader.ModCallbackDependsOn("pipliz.blocknpcs.loadrecipes")]
+        [ModLoader.ModCallbackProvidesFor("pipliz.apiprovider.registerrecipes")]
         public static void AfterItemTypesDefined()
         {
+            Classes.Managers.RecipeManager.AddBaseRecipes();
+            Classes.Managers.RecipeManager.BuildRecipeList();
+            Classes.Managers.RecipeManager.ProcessRecipes();
+
+
+
             ItemTypesServer.RegisterChangeTypes("furnace", new List<string>()
                 { "furnacex+", "furnacex-", "furnacez+", "furnacez-", "furnacelitx+", "furnacelitx-", "furnacelitz+", "furnacelitz-" }
 );
