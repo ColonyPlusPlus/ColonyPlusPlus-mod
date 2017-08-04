@@ -17,6 +17,10 @@
 	"modules": {
 		"CustomJobs": true,
 		"CustomCrops": true
+	},
+	"spawnprotection": {
+		"enabled": true,
+		"radius": 10
 	}
 	
 	

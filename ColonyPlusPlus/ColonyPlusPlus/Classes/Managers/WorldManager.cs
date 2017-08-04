@@ -266,7 +266,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
         private static bool allowBlockFarEnoughFromSpawn(ModLoader.OnTryChangeBlockUserData d)
         {
-            if(Classes.Managers.ConfigManager.getConfigBoolean("SpawnProtection"))
+            if(Classes.Managers.ConfigManager.getConfigBoolean("spawnprotection.enabled"))
             {
                 int startingX = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingX");
                 int startingZ = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingZ");
@@ -283,7 +283,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), String.Format("Distance from spawn: X {0}, Z {1}", distancex, distancez));
 
-                int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("SpawnProtectionRadius");
+                int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("spawnprotection.radius");
 
                 if (distancex > SpawnProtectionDistance || distancez > SpawnProtectionDistance)
                 {
