@@ -29,29 +29,37 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && Classes.Managers.ConfigManager.getConfigBoolean("chunk.allowclaiming"))
             {
-                // get the current chunk
-                int playerX = Pipliz.Math.RoundToInt(ply.Position.x);
-                int playerY = Pipliz.Math.RoundToInt(ply.Position.y);
-                int playerZ = Pipliz.Math.RoundToInt(ply.Position.z);
+                int maxClaims = Classes.Managers.ConfigManager.getConfigInt("chunk.maxclaims");
 
-                Vector3Int position = new Vector3Int(playerX, playerY, playerZ);
+                if( Managers.WorldManager.getOwnedChunkCount(ply.ID) < maxClaims) {
+                    // get the current chunk
+                    int playerX = Pipliz.Math.RoundToInt(ply.Position.x);
+                    int playerY = Pipliz.Math.RoundToInt(ply.Position.y);
+                    int playerZ = Pipliz.Math.RoundToInt(ply.Position.z);
 
-                if (Managers.WorldManager.claimChunk(position, ply.ID))
-                {
-                    Vector3Int chunkPos = position.ToChunk();
-                    int owned = Managers.WorldManager.getOwnedChunkCount(ply.ID);
+                    Vector3Int position = new Vector3Int(playerX, playerY, playerZ);
 
-                    Chat.send(ply, string.Format("Claimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
-                    Chat.send(ply, string.Format("You now own {0} chunks.", owned), Chat.ChatColour.lime, Chat.ChatStyle.bold);
-                }
-                else
-                {
-                    // chunk already owned
-                    Chat.send(ply, "Unable to claim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                    if (Managers.WorldManager.claimChunk(position, ply.ID))
+                    {
+                        Vector3Int chunkPos = position.ToChunk();
+                        int owned = Managers.WorldManager.getOwnedChunkCount(ply.ID);
+
+                        Chat.send(ply, string.Format("Claimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                        Chat.send(ply, string.Format("You now own {0} chunks.", owned), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                    }
+                    else
+                    {
+                        // chunk already owned
+                        Chat.send(ply, "Unable to claim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                    }
+                } else {
+                    Chat.send(ply, String.Format("You already own the maximum number of chunks ({0}), please unclaim one to claim another.", maxClaims), Chat.ChatColour.red, Chat.ChatStyle.bold);
                 }
                 
+            } else {
+                Chat.send(ply, "You cannot claim chunks", Chat.ChatColour.red, Chat.ChatStyle.bold);
             }
 
             return true;
@@ -117,7 +125,6 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                 if (Managers.WorldManager.unclaimChunk(position, ply.ID, true))
                 {
                     Vector3Int chunkPos = position.ToChunk();
-                    int owned = Managers.WorldManager.getOwnedChunkCount(ply.ID);
 
                     Chat.send(ply, string.Format("Chunk Owner Deleted ({0}, {1}, {2})", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
                 }
