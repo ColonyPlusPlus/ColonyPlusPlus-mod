@@ -20,6 +20,7 @@ namespace ColonyPlusPlus
 
         public static Version modVersion = new Version(0, 2, 0);
 
+
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplus.AfterStartup")]
         public static void AfterStartup()
         {
@@ -148,15 +149,15 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
         public static void AfterDefiningNPCTypes()
         {
-             /*if (CustomJobs)
+             if (CustomJobs)
              {
-                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
-                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
-                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.ChickenPluckerJob>("chickencoop");
-                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.StoneMason>("masontable");
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.ChickenPluckerJob>("chickencoop");
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.StoneMason>("masontable");
 
-                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
-             }*/
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
+             }
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
@@ -168,20 +169,14 @@ namespace ColonyPlusPlus
             Classes.Managers.RecipeManager.BuildRecipeList();
             Classes.Managers.RecipeManager.ProcessRecipes();
 
-
-
-            ItemTypesServer.RegisterChangeTypes("furnace", new List<string>()
-                { "furnacex+", "furnacex-", "furnacez+", "furnacez-", "furnacelitx+", "furnacelitx-", "furnacelitz+", "furnacelitz-" }
-);
-            ItemTypesServer.RegisterChangeTypes("oven", new List<string>()
-                { "ovenx+", "ovenz+", "ovenx-", "ovenz-", "ovenlitx+", "ovenlitz+", "ovenlitx-", "ovenlitz-" }
-            );
-
-
-
             //Custom jobs!
             if (CustomJobs)
             {
+                //RecipeManager.LoadRecipes("cpp.Carpenter", Path.Combine(ModGamedataDirectory, "tailoring.json"));
+                //RecipeManager.LoadRecipes("cpp.chickenplucker", Path.Combine(ModGamedataDirectory, "crafting.json"));
+                //RecipeManager.LoadRecipes("cpp.StoneMason", Path.Combine(ModGamedataDirectory, "grinding.json"));
+                //RecipeManager.LoadRecipes("cpp.Blacksmith", Path.Combine(ModGamedataDirectory, "minting.json"));
+                //RecipeManager.LoadRecipesFueled("cpp.Potter", Path.Combine(ModGamedataDirectory, "smelting.json"));
             }
         }
 
