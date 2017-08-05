@@ -19,7 +19,7 @@ namespace ColonyPlusPlus.Classes.Helpers
                 new List<InventoryItem> {
                     RecipeManager.Item("arrow", 12)
                 },
-                0.0f, true);
+                0.0f, true, true);
 
         }
         public void AddShoppingRecipes()
@@ -31,7 +31,7 @@ namespace ColonyPlusPlus.Classes.Helpers
                 new List<InventoryItem> {
                     RecipeManager.Item("grasstaiga", 10)
                 },
-                0.0f);
+                0.0f, true);
         }
     }
 }
