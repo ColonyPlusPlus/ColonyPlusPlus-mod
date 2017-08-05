@@ -15,6 +15,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             BaseChatCommand command;
             Managers.ChatCommandManager.ChatCommandsList.TryGetValue(chatItem.Split(' ')[0], out command);
+            Utilities.WriteLog(chatItem + chatItem.Split(' ')[0]);
             if (command != null)
             {
                 return command.TryDoCommand(ply, chatItem);

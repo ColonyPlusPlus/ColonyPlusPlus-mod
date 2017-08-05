@@ -48,7 +48,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
         }
 
-        public static bool unclaimChunk(Vector3Int position, NetworkID playerid)
+        public static bool unclaimChunk(Vector3Int position, NetworkID playerid, bool force = false)
         {
             Vector3Int p = position.ToChunk();
             string chunkname = positionToString(p);
@@ -56,7 +56,7 @@ namespace ColonyPlusPlus.Classes.Managers
             if (ChunkDataList.ContainsKey(chunkname))
             {
                 ChunkData c = ChunkDataList[chunkname];
-                if (c.getOwner() == playerid || PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(playerid), "chunk.delete"))
+                if (c.getOwner() == playerid || force)
                 {
                     bool result = c.removeOwner();
                     SaveJSON();
@@ -212,6 +212,125 @@ namespace ColonyPlusPlus.Classes.Managers
             }
 
             worldManagerLoaded = true;
+        }
+
+
+        public static bool AllowPlaceBlock(ModLoader.OnTryChangeBlockUserData d)
+        {
+            // Check permissions
+            if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.build"))
+            {
+                Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You have build permissions");
+
+                // first check if near spawn
+                if (allowBlockFarEnoughFromSpawn(d))
+                {
+                    Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You are far enough from spawn");
+                    // what about chunk ownership
+                    if (allowBlockPlaceChunkOwnership(d))
+                    {
+                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You own the chunk");
+                        return true;
+                    } else
+                    {
+                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You dno't own the chunk");
+                        return false;
+                    }
+                }
+                else
+                {
+                    if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "spawnbuilder"))
+                    {
+                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn, but you are admin");
+                        return true;
+                    }
+                    else
+                    {
+                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn");
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You don't have build permissions");
+                return false;
+            }
+
+
+
+
+
+
+            
+        }
+
+        private static bool allowBlockFarEnoughFromSpawn(ModLoader.OnTryChangeBlockUserData d)
+        {
+            if(Classes.Managers.ConfigManager.getConfigBoolean("spawnprotection.enabled"))
+            {
+                int startingX = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingX");
+                int startingZ = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingZ");
+
+                int distancex, distancez = 0;
+
+                
+                int playerX = (int)Pipliz.Math.RoundToInt(d.position.x);
+                int playerZ = (int)Pipliz.Math.RoundToInt(d.position.z);
+                
+                distancex = System.Math.Abs(playerX - startingX);
+                distancez = System.Math.Abs(playerZ - startingZ);
+
+                int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("spawnprotection.radius");
+
+                Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), String.Format("Distance from spawn: X {0}, Z {1}. Protection Radius: {2}", distancex, distancez, SpawnProtectionDistance));
+
+                
+
+                if (distancex > SpawnProtectionDistance || distancez > SpawnProtectionDistance)
+                {
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            } else
+            {
+                return true;
+            }
+            
+        }
+
+        private static bool allowBlockPlaceChunkOwnership(ModLoader.OnTryChangeBlockUserData d)
+        {
+            if (d.requestedBy.ID.steamID.m_SteamID == 0)
+            {
+                return true;
+            }
+
+            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position.ToChunk());
+            if (Classes.Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
+            {
+                Classes.Data.ChunkData cd = Classes.Managers.WorldManager.ChunkDataList[ChunkID];
+                NetworkID id = cd.getOwner();
+                if (cd.hasOwner())
+                {
+                    if (id == d.requestedBy.ID)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+
+                }
+            }
+            return true;
         }
     }
 }

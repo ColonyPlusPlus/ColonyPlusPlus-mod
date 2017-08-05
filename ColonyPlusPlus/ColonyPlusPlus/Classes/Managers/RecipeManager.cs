@@ -18,10 +18,10 @@ namespace ColonyPlusPlus.Classes.Managers
         //public static Dictionary<string, List<RecipeFueled>> craftingRecipesFueled = new Dictionary<string, List<RecipeFueled>>();
 
         // Add a new recipe object to the list, this is called by the type's AddRecipes() function
-        public static bool AddRecipe(string type, List<InventoryItem> reqs, List<InventoryItem> result, float fuelAmount = 0.0f, bool npcCraft = false)
+        public static bool AddRecipe(string type, List<InventoryItem> reqs, List<InventoryItem> result, float fuelAmount = 0.0f, bool npcCraft = false, bool playerCraft = false)
         {
             // Pass the variables
-            Recipe r = new Recipe(type, reqs, result, fuelAmount, npcCraft);
+            Recipe r = new Recipe(type, reqs, result, fuelAmount, npcCraft, playerCraft);
 
             // Add it to the list
             recipeList.Add(r);
@@ -46,39 +46,53 @@ namespace ColonyPlusPlus.Classes.Managers
         /// </summary>
         public static void ProcessRecipes()
         {
+            List<global::Recipe> RecipeCraftingStatic = new List<global::Recipe>();
+            List<global::RecipeFueled> RecipeSmelting = new List<global::RecipeFueled>();
+            List<global::Recipe> RecipeMinting = new List<global::Recipe>();
+            List<global::Recipe> RecipeGrinding = new List<global::Recipe>();
+            List<global::Recipe> RecipeShopping = new List<global::Recipe>();
+            List<global::RecipeFueled> RecipeBaking = new List<global::RecipeFueled>();
+            List<global::Recipe> PlayerRecipes = new List<global::Recipe>();
+
             // Go through each registered recipe class
             foreach (Recipe RecipeInstance in recipeList)
             {
+                
                 // Switch depending on the "type" registered in the recipe class
                 switch (RecipeInstance.Type.ToLower())
                 {
                     case "crafting":
-                        RecipeCraftingStatic.AllRecipes.Add(new RecipeCrafting(RecipeInstance.NPCCraftable, RecipeInstance.Requirements, RecipeInstance.Results));
+  //                      
+                        RecipeCraftingStatic.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
+                        if (RecipeInstance.PlayerCraftable == true)
+                        {
+                            global::RecipePlayer.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        }
                         break;
                     case "smelting":
-                        RecipeSmelting.AllRecipes.Add(new RecipeFueled(0.0f, RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeSmelting.Add(new global::RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
+                        //Utilities.WriteLog("Added a smelting recipe!");
 
                         break;
                     case "minting":
-                        RecipeMinting.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeMinting.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
                     case "grinding":
-                        RecipeGrinding.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeGrinding.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
                     case "shopping":
-                        RecipeShopping.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeShopping.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
                     case "baking":
-                        RecipeBaking.AllRecipes.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+                        RecipeBaking.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
@@ -94,6 +108,14 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 
             }
+
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.crafter", RecipeCraftingStatic);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.grinder", RecipeGrinding);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.minter", RecipeMinting);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.merchant", RecipeShopping);
+            Utilities.WriteLog("Number of smelting recipes: " + RecipeSmelting.Count);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("pipliz.smelter", RecipeSmelting);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("pipliz.baker", RecipeBaking);
 
             // Log the number of added recipes
             Utilities.WriteLog("Added " + recipesAdded + " recipes");

@@ -2,6 +2,7 @@ using Pipliz.Chatting;
 using static Players;
 using System;
 using System.Collections.Generic;
+using ColonyPlusPlus.Classes;
 
 namespace ColonyPlusPlus
 {
@@ -19,7 +20,7 @@ namespace ColonyPlusPlus
 
         public static Version modVersion = new Version(0, 2, 0);
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplus.AfterStartup")]
         public static void AfterStartup()
         {
             Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
@@ -28,27 +29,33 @@ namespace ColonyPlusPlus
             // Initialise configuration
             Classes.Managers.ConfigManager.initialise();
             Classes.Managers.RotatingMessageManager.initialise();
+            Classes.Managers.ServerVariablesManager.init();
 
-            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs");
-            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("CustomCrops");
+            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
+            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
 
             // Initialize chat commands
             Classes.Managers.ChatCommandManager.Initialize();
 
-
+           
+            
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate, "colonyplusplus.OnPlayerConnectedLate")]
         public static void OnPlayerConnectedLate(Player p)
         {
             if(p.ID.steamID.m_SteamID == 0)
             {
                 Classes.Helpers.Chat.send(p, Classes.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), Classes.Helpers.Chat.ChatColour.red);
             }
-            Chat.Send(p, Classes.Managers.ConfigManager.getConfigString("motd"));
+            Chat.Send(p, Classes.Managers.ConfigManager.getConfigString("motd.message"));
+
+           
+
+            
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplus.AfterAddingBaseTypes")]
         public static void AfterAddingBaseTypes()
         {
             // Register Materials
@@ -66,7 +73,7 @@ namespace ColonyPlusPlus
                 Classes.Managers.CropManager.register();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplus.AfterItemTypesServer" )]
         public static void AfterItemTypesServer()
         {
             // Register Tracked Block Types (Wheat?)
@@ -77,23 +84,20 @@ namespace ColonyPlusPlus
             ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.MasterChatCommandManager());
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplus.AfterWorldLoad")]
         public static void AfterWorldLoad()
         {
-            Classes.Managers.RecipeManager.AddBaseRecipes();
-            Classes.Managers.RecipeManager.BuildRecipeList();
-            Classes.Managers.RecipeManager.ProcessRecipes();
-
+            
 
             if (CustomCrops)
                 Classes.Managers.CropManager.LoadCropTracker();
             Classes.Managers.WorldManager.LoadJSON();
 
-            Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
+            //Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
         }
 
         // things to do every tick (or itnerval)
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate, "colonyplusplus.OnUpdate")]
         public static void OnUpdate()
         {
             if(Pipliz.Time.MillisecondsSinceStart > nextMillisecondUpdate)
@@ -128,23 +132,23 @@ namespace ColonyPlusPlus
 
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly, "colonyplusplus.OnQuitEarly")]
         public static void OnQuitEarly()
         {
             if (CustomCrops)
                 Classes.Managers.CropManager.SaveCropTracker();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonyplusplus.OnQuit")]
         public static void OnQuit()
         {
-            Classes.BlockJobs.BlockJobManagerTracker.Save();
+            //Classes.BlockJobs.BlockJobManagerTracker.Save();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
         public static void AfterDefiningNPCTypes()
         {
-            //Crafting Jobs!
+           /* //Crafting Jobs!
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.GrinderJob>("grindstone");
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.MintJob>("mint");
             Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ShopJob>("shop");
@@ -157,15 +161,24 @@ namespace ColonyPlusPlus
 
 
             //Custom jobs!
-            if (Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs"))
+            if (Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs"))
             {
                 Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ChickenPluckerJob>("bricks");
             }
+            */
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
+        [ModLoader.ModCallbackDependsOn("pipliz.blocknpcs.loadrecipes")]
+        [ModLoader.ModCallbackProvidesFor("pipliz.apiprovider.registerrecipes")]
         public static void AfterItemTypesDefined()
         {
+            Classes.Managers.RecipeManager.AddBaseRecipes();
+            Classes.Managers.RecipeManager.BuildRecipeList();
+            Classes.Managers.RecipeManager.ProcessRecipes();
+
+
+
             ItemTypesServer.RegisterChangeTypes("furnace", new List<string>()
                 { "furnacex+", "furnacex-", "furnacez+", "furnacez-", "furnacelitx+", "furnacelitx-", "furnacelitz+", "furnacelitz-" }
 );
@@ -176,30 +189,18 @@ namespace ColonyPlusPlus
 
 
             //Custom jobs!
-            if (Classes.Managers.ConfigManager.getConfigBoolean("CustomJobs"))
+            if (Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs"))
             {
             }
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser)]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplus.OnTryChangeBlockUser")]
         public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
         {
-            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position);
-            if(Classes.Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
-            {
-                Classes.Data.ChunkData cd = Classes.Managers.WorldManager.ChunkDataList[ChunkID];
-                NetworkID id = cd.getOwner();
-                if (id == d.requestedBy.ID)
-                {
-                    return true;
-                }
-                else
-                {
-                    Chat.Send(d.requestedBy, "This chunk is claimed by someone!");
-                    return false;
-                }
-            }
-            return true;
+             bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
+
+            Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
+            return allowed;
         }
     }
 }

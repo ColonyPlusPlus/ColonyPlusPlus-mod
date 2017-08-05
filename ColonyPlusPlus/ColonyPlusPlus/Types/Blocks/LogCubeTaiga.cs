@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class LogCubeTaiga : Classes.Type
     {
-        public LogCubeTaiga(string name) : base(name)
+        public LogCubeTaiga(string name) : base(name, true)
         {
             Classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new Classes.ItemHelper.OnRemove("logcubetaiga",   1,  1.0f)

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="APIProvider">
+      <HintPath>..\..\libs\APIProvider.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\Assembly-CSharp.dll</HintPath>
@@ -55,24 +58,10 @@
     <Compile Include="Classes\CustomChatCommands\Chunk.cs" />
     <Compile Include="Classes\CustomChatCommands\Clear.cs" />
     <Compile Include="Classes\CustomChatCommands\Creative.cs" />
+    <Compile Include="Classes\CustomChatCommands\Debug.cs" />
     <Compile Include="Classes\Managers\MasterChatCommandManager.cs" />
     <Compile Include="Classes\CustomChatCommands\Online.cs" />
     <Compile Include="Classes\CustomChatCommands\Trade.cs" />
-    <Compile Include="Classes\BlockJobs\BlockJobBase.cs" />
-    <Compile Include="Classes\BlockJobs\BlockJobManagerTracker.cs" />
-    <Compile Include="Classes\BlockJobs\CraftingJob\CraftingJobBase.cs" />
-    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\ChickenPluckerJob.cs" />
-    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\GrinderJob.cs" />
-    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\MintJob.cs" />
-    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\ShopJob.cs" />
-    <Compile Include="Classes\BlockJobs\CraftingJob\Implementations\WorkBenchJob.cs" />
-    <Compile Include="Classes\BlockJobs\FueledCraftingJob\FueledCraftingJobBase.cs" />
-    <Compile Include="Classes\BlockJobs\FueledCraftingJob\Implementations\FurnaceJob.cs" />
-    <Compile Include="Classes\BlockJobs\FueledCraftingJob\Implementations\OvenJob.cs" />
-    <Compile Include="Classes\BlockJobs\IBlockJobBase.cs" />
-    <Compile Include="Classes\BlockJobs\IBlockJobManager.cs" />
-    <Compile Include="Classes\BlockJobs\Implementations\QuiverJob.cs" />
-    <Compile Include="Classes\BlockJobs\INPCTypeDefiner.cs" />
     <Compile Include="Classes\CustomChatCommands\WorldEdit.cs" />
     <Compile Include="Classes\CustomDataItem.cs" />
     <Compile Include="Classes\Data\ChunkData.cs" />
@@ -88,7 +77,6 @@
     <Compile Include="Classes\Helpers\Utilities.cs" />
     <Compile Include="Classes\Managers\BaseGameManager.cs" />
     <Compile Include="Classes\Managers\BaseGameMaterialManager.cs" />
-    <Compile Include="Classes\Managers\BlockJobManager.cs" />
     <Compile Include="Classes\Managers\BlockManager.cs" />
     <Compile Include="Classes\Managers\ChatCommandManager.cs" />
     <Compile Include="Classes\Managers\ConfigManager.cs" />
@@ -99,6 +87,7 @@
     <Compile Include="Classes\Managers\PlayerManager.cs" />
     <Compile Include="Classes\Managers\RecipeManager.cs" />
     <Compile Include="Classes\Managers\RotatingMessageManager.cs" />
+    <Compile Include="Classes\Managers\ServerVariablesManager.cs" />
     <Compile Include="Classes\Managers\TypeManager.cs" />
     <Compile Include="Classes\Managers\VersionManager.cs" />
     <Compile Include="Classes\Managers\WorldManager.cs" />
@@ -183,6 +172,7 @@
     <Compile Include="Types\GameBase\Blocks\Snow.cs" />
     <Compile Include="Types\GameBase\Blocks\StoneBlock.cs" />
     <Compile Include="Types\GameBase\Blocks\StoneBricks.cs" />
+    <Compile Include="Types\GameBase\Blocks\TailorShop.cs" />
     <Compile Include="Types\GameBase\Blocks\Torch.cs" />
     <Compile Include="Types\GameBase\Blocks\Water.cs" />
     <Compile Include="Types\GameBase\Blocks\WheatStage.cs" />

@@ -7,7 +7,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class BirdNest : Classes.Type
     {
-        public BirdNest(string name) : base(name)
+        public BirdNest(string name) : base(name, true)
         {
             Classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new Classes.ItemHelper.OnRemove("feather", 3, 0.5f),

@@ -7,7 +7,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class Sugarcane : Classes.Type
     {
-        public Sugarcane(string name) : base(name)
+        public Sugarcane(string name) : base(name, true)
         {
 
             Classes.ItemHelper.OnRemove[] onRemoveNode = {

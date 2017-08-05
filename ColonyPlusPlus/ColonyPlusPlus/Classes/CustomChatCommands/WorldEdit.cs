@@ -14,15 +14,36 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        override protected bool RunCommand(Players.Player id, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player player, string[] args, NetworkID target)
         {
-            if(args.Length > 1)
+            if(args.Length > 0)
             {
-                Chat.send(id, args[1],Chat.ChatColour.magenta);
+                string commandType = args[0];
 
-                return true;
+                switch(commandType)
+                {
+                    case "fill":
+                        Chat.send(player, "WorldEdit Command" + commandType, Chat.ChatColour.yellow);
+                        return true;
+
+                    case "clear":
+                        Chat.send(player, "WorldEdit Command" + commandType, Chat.ChatColour.yellow);
+                        return true;
+
+                    case "circle":
+                        Chat.send(player, "WorldEdit Command" + commandType, Chat.ChatColour.yellow);
+                        return true;
+                        
+                    default:
+                        Chat.send(player, "Invalid WorldEdit Command", Chat.ChatColour.yellow);
+                        return false;
+
+                }
+                
             } else
             {
+                Chat.send(player, "Invalid WorldEdit Command", Chat.ChatColour.yellow);
+                Chat.send(player, "Usage: /worldedit {command} {arguments...}", Chat.ChatColour.yellow);
                 return false;
             }
         }

@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class BakedPotato : Classes.Type
     {
-        public BakedPotato(string name) : base(name)
+        public BakedPotato(string name) : base(name, true)
         {
             this.NutritionalValue = 1.0f;
             this.AllowCreative = true;

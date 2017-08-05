@@ -42,6 +42,7 @@ namespace ColonyPlusPlus.Classes
         private bool _IsAutoRotatable;
         private bool _IsDestructible;
         private bool _AllowCreative;
+        private bool _AllowPlayerCraft;
 
         private long _DestructionTime;
 
@@ -56,15 +57,19 @@ namespace ColonyPlusPlus.Classes
 
 
         // Constructor
-        public Type(string name)
+        public Type(string name, bool newtype = false)
         {
             this.TypeName = name;
 
             // disable creative on blocks
             this.AllowCreative = false;
+            this.AllowPlayerCraft = false;
+
+            // save to JSON if this is a new item that's been added
+            this.node.SetAs("newtype", newtype);
 
             // set default sideall
-            if(Material.ValidateMat(name))
+            if (Material.ValidateMat(name))
             {
                 this._SideAll = "SELF";
                 this.node.SetAs("sideall", "SELF");
@@ -417,6 +422,18 @@ namespace ColonyPlusPlus.Classes
             set
             {
                 this._AllowCreative = value;
+            }
+        }
+
+        public bool AllowPlayerCraft
+        {
+            get
+            {
+                return this._AllowPlayerCraft;
+            }
+            set
+            {
+                this._AllowPlayerCraft = value;
             }
         }
 

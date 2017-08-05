@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Blocks
 {
     class LogCubeTemperateRotatedX : Classes.Type
     {
-        public LogCubeTemperateRotatedX(string name) : base(name)
+        public LogCubeTemperateRotatedX(string name) : base(name, true)
         {
 
             this.ParentType = "logcubetemperaterotated";

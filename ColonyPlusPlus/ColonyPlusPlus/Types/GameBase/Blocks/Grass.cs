@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.IsFertile = true;
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "dirtPlace";
-            this.MaxStackSize = 100;
+            this.MaxStackSize = 200;
             this.Register();
         }
     }

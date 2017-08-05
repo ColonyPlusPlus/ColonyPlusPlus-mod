@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class JamBread : Classes.Type
     {
-        public JamBread(string name) : base(name)
+        public JamBread(string name) : base(name, true)
         {
             this.NutritionalValue = 4.5f;
             this.AllowCreative = true;

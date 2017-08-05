@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class Egg : Classes.Type
     {
-        public Egg(string name) : base(name)
+        public Egg(string name) : base(name, true)
         {
             this.AllowCreative = true;
             this.Register();

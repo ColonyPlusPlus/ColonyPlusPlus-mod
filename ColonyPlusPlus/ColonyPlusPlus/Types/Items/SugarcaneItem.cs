@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Types.Items
 {
     class SugarcaneItem : Classes.Type
     {
-        public SugarcaneItem(string name) : base(name)
+        public SugarcaneItem(string name) : base(name, true)
         {
             this.AllowCreative = true;
             this.Register();
