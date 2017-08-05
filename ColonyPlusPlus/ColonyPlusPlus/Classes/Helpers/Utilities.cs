@@ -33,5 +33,10 @@ namespace ColonyPlusPlus.Classes
         {
             Directory.CreateDirectory(Path.GetDirectoryName(path));
         }
+
+		public static string GetDebugJSONPath(string type)
+		{
+			return "gamedata/debug/" + type + ".json";
+		}
     }
 }

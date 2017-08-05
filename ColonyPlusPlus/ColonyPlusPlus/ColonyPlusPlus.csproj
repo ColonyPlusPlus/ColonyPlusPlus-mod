@@ -222,6 +222,7 @@
     <Compile Include="Types\Items\Salt.cs" />
     <Compile Include="Types\Items\Sugar.cs" />
     <Compile Include="Types\Items\SugarcaneItem.cs" />
+    <Compile Include="Classes\Helpers\Debug.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
