@@ -52,6 +52,7 @@ namespace ColonyPlusPlus.Classes.Managers
             List<global::Recipe> RecipeGrinding = new List<global::Recipe>();
             List<global::Recipe> RecipeShopping = new List<global::Recipe>();
             List<global::RecipeFueled> RecipeBaking = new List<global::RecipeFueled>();
+            List<global::Recipe> RecipePottery = new List<global::Recipe>();
             List<global::Recipe> PlayerRecipes = new List<global::Recipe>();
 
             // Go through each registered recipe class
@@ -94,6 +95,10 @@ namespace ColonyPlusPlus.Classes.Managers
                     case "baking":
                         RecipeBaking.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
+                        break;
+                    case "pottery":
+                        RecipePottery.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
 
                         break;
                     case "chickenplucker":
@@ -116,6 +121,10 @@ namespace ColonyPlusPlus.Classes.Managers
             Utilities.WriteLog("Number of smelting recipes: " + RecipeSmelting.Count);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("pipliz.smelter", RecipeSmelting);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("pipliz.baker", RecipeBaking);
+
+
+            // custom jobs
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.potter", RecipeShopping);
 
             // Log the number of added recipes
             Utilities.WriteLog("Added " + recipesAdded + " recipes");
