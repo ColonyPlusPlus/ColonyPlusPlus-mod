@@ -33,5 +33,15 @@ namespace ColonyPlusPlus.Classes
         {
             Directory.CreateDirectory(Path.GetDirectoryName(path));
         }
+
+        public static bool TryParseItemFromArgument(string arg, out ushort value)
+        {
+            bool sucessful = UInt16.TryParse(arg, out value);
+            if (!sucessful)
+            {
+                sucessful = ItemTypes.IndexLookup.TryGetIndex(arg, out value);
+            }
+            return sucessful;
+        }
     }
 }

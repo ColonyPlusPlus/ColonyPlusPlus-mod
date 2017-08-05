@@ -9,13 +9,13 @@ namespace ColonyPlusPlus.Classes
 {
     public abstract class BaseChatCommand
     {
-        public string ChatCommandPrefix;
-        protected bool isTargetingCommand;
-        protected bool isMasterCommand;
+        public string chatCommandPrefix;
+        private bool isTargetingCommand;
+        private bool isMasterCommand;
 
         public BaseChatCommand(string prefix, bool istargetcom = false, bool ismastercom = false)
         {
-            ChatCommandPrefix = prefix;
+            chatCommandPrefix = prefix;
             isTargetingCommand = istargetcom;
             isMasterCommand = ismastercom;
         }
@@ -29,16 +29,20 @@ namespace ColonyPlusPlus.Classes
                 {
                     return false;
                 }
-                BaseChatCommand newCommand;
-                if (Managers.ChatCommandManager.ChatCommandsList.TryGetValue(splits[0] + " " + splits[1], out newCommand))
-                    return newCommand.TryDoCommand(ply, chatItem);
-                else
+                if (RunCommand(ply, splits, NetworkID.Invalid))
                 {
-                    Chat.Send(ply, "Command " + splits[1] + " is not a part of " + splits[0]);
-                    return true;
+                    BaseChatCommand newCommand;
+                    if (Managers.ChatCommandManager.ChatCommandsList.TryGetValue(splits[0] + " " + splits[1], out newCommand))
+                        return newCommand.TryDoCommand(ply, chatItem);
+                    else
+                    {
+                        Chat.Send(ply, "Command " + splits[1] + " is not a part of " + splits[0]);
+                        return true;
+                    }
                 }
+                else return true;
             }
-            int cuts = ChatCommandPrefix.Split(' ').Length;
+            int cuts = chatCommandPrefix.Split(' ').Length;
             string[] cutsplits = new string[splits.Length - cuts];
             for (int i = 0; i < cutsplits.Length; i++)
             {

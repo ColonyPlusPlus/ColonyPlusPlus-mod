@@ -19,8 +19,8 @@ namespace ColonyPlusPlus.Classes.Managers
                 try
                 {
                     BaseChatCommand command = ((BaseChatCommand)Activator.CreateInstance(t));
-                    ChatCommandsList.Add(command.ChatCommandPrefix, command);
-                    Utilities.WriteLog("Registered chat command: " + command.ChatCommandPrefix);
+                    ChatCommandsList.Add(command.chatCommandPrefix, command);
+                    Utilities.WriteLog("Registered chat command: " + command.chatCommandPrefix);
                 }
                 catch (MissingMethodException mme)
                 {
