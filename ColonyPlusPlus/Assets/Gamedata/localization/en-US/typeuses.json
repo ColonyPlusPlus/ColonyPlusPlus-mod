@@ -282,5 +282,6 @@
 	"berry" : "Not poisonous",
 	"redplanks" : "Does not have any food value, but it tastes pretty good",
 	"blackplanks" : "Highly flammable",
-	"cherryblossom" : "The pinkest thing in the game"
+	"cherryblossom" : "The pinkest thing in the game",
+	"tailorshop": "A tailor's shop"
 }
