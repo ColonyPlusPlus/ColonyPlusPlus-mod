@@ -9,61 +9,46 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
     public class Debug : BaseChatCommand
     {
-        public Debug() : base("/cppdebug")
+        public Debug() : base("/cppdebug", false, true)
         {
 
         }
 
-        override protected bool RunCommand(Players.Player player, string[] args, NetworkID target)
-        {
-            if (PermissionsManager.CheckAndWarnPermission(player, "debug") && Classes.Managers.ConfigManager.getConfigBoolean("debug.enabled"))
-            {
-                if (args.Length > 0)
-                {
-                    string commandType = args[0];
+		protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+		{
+			return false;
+		}
 
-                    switch (commandType)
-                    {
-                        case "output_types":
-                            Pipliz.JSON.JSONNode node = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
 
-                            foreach (string typename in Managers.TypeManager.AddedTypes)
-                            {
-                                Pipliz.JSON.JSONNode itemJson = ItemTypes.GetTypesJSON.GetAs<Pipliz.JSON.JSONNode>(typename);
-                                node.SetAs<Pipliz.JSON.JSONNode>(typename, itemJson);
-                            }
 
-                            Pipliz.JSON.JSON.Serialize(GetJSONPath("types"), node);
-                            Chat.send(player, "Debug Command" + commandType, Chat.ChatColour.yellow);
-                            return true;
 
-                        default:
-                            Chat.send(player, "Invalid Debug Command", Chat.ChatColour.yellow);
-                            return false;
+    }
 
-                    }
-                }
-                else
-                {
-                    Chat.send(player, "Invalid Debug Command", Chat.ChatColour.yellow);
-                    Chat.send(player, "Usage: /debug {command} {arguments...}", Chat.ChatColour.yellow);
-                    return false;
-                }
-
+    public class DebugTypes: BaseChatCommand
+    {
+        public DebugTypes() : base("/cppdebug json") {
             
-
-            } else
-            {
-                Chat.send(player, "You are unable to use debug commands", Chat.ChatColour.yellow);
-                return false;
-            }
-           
         }
 
-        private static string GetJSONPath(string type)
-        {
-            return "gamedata/debug/" + type + ".json";
-        }
+		override protected bool RunCommand(Players.Player player, string[] args, NetworkID target)
+		{
+			if (PermissionsManager.CheckAndWarnPermission(player, "debug") && Classes.Managers.ConfigManager.getConfigBoolean("debug.enabled"))
+			{
+				Helpers.Debug.outputTypes();
+                Helpers.Debug.outputRecipes();
+
+				Chat.send(player, "Outputted JSON to Debug Directory", Chat.ChatColour.yellow);
+				return true;
+
+
+			}
+			else
+			{
+				Chat.send(player, "You are unable to use debug commands", Chat.ChatColour.yellow);
+				return false;
+			}
+
+		}
     }
 }
 
