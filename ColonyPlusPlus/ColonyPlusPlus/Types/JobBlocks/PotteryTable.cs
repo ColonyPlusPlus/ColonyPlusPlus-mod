@@ -5,17 +5,19 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class ChickenCoop : Classes.Type
+    class PotteryTable : Classes.Type
     {
-        public ChickenCoop(string name) : base(name)
+        public PotteryTable(string name) : base(name)
         {
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
-            this.Mesh = "ChickenCoop";
             this.SideAll = "planks";
+            this.SideXPlus = "furnace";
+            this.SideYPlus = "workbenchtop";
+            this.NPCLimit = 0;
             this.IsPlaceable = true;
             this.AllowCreative = true;
-            this.NPCLimit = 0;
+            this.AllowPlayerCraft = true;
             this.Register();
         }
     }

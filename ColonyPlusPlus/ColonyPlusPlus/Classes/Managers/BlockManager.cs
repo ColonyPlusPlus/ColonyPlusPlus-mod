@@ -32,6 +32,14 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.Blocks.LogCubeTaigaRotatedX logcubetaigarotatedx = new Types.Blocks.LogCubeTaigaRotatedX("logcubetaigarotatedx");
             Types.Blocks.LogCubeTaigaRotatedZ logcubetaigarotatedz = new Types.Blocks.LogCubeTaigaRotatedZ("logcubetaigarotatedz");
 
+
+            // job stuff
+            Types.JobBlocks.PotteryTable potterytable = new Types.JobBlocks.PotteryTable("potterytable");
+            Types.JobBlocks.PotteryTable masontable = new Types.JobBlocks.PotteryTable("masontable");
+            Types.JobBlocks.PotteryTable sawmill = new Types.JobBlocks.PotteryTable("sawmill");
+            Types.JobBlocks.PotteryTable anvil = new Types.JobBlocks.PotteryTable("anvil");
+            Types.JobBlocks.ChickenCoop chickencoop = new Types.JobBlocks.ChickenCoop("chickencoop");
+
             // interactive Items
             //Types.blocks.ChickenCoop chickencoop = new Types.blocks.ChickenCoop("chickencoop");
 
