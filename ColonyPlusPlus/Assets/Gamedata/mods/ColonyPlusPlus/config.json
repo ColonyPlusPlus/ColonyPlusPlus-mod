@@ -32,5 +32,10 @@
 
 	"debug": {
 		"enabled": true
+	},
+
+	"trade": {
+		"enabled": true
 	}
+
 }
