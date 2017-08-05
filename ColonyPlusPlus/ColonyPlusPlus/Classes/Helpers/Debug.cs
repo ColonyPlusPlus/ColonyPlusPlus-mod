@@ -8,7 +8,7 @@ namespace ColonyPlusPlus.Classes.Helpers
     {
 		public static void outputTypes()
 		{
-			Pipliz.JSON.JSONNode node = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
+			Pipliz.JSON.JSONNode node = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Array);
 
 			foreach (string typename in Managers.TypeManager.AddedTypes)
 			{
@@ -44,7 +44,7 @@ namespace ColonyPlusPlus.Classes.Helpers
 
                 outputtype.SetAs("isbaseblock", isBaseBlock);
 
-				node.SetAs<Pipliz.JSON.JSONNode>(typename, outputtype);
+				node.AddToArray(outputtype);
 			}
 
 			Pipliz.JSON.JSON.Serialize(Utilities.GetDebugJSONPath("types"), node);

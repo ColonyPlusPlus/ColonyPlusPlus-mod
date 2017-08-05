@@ -20,6 +20,7 @@ namespace ColonyPlusPlus.Types.Blocks
 
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
+            this.IsBaseBlock = false;
 
             this.Register();
         }

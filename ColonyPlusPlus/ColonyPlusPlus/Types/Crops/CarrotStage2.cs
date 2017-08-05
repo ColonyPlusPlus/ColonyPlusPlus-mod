@@ -23,6 +23,7 @@ namespace ColonyPlusPlus.Types.Crops
             this.SideAll = "wheatwheat";
             this.Mesh = "carrotstage2";
             this.AllowCreative = false;
+            this.IsBaseBlock = false;
 
             this.maxGrowth = 1f;
 

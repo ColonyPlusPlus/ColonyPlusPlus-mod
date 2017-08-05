@@ -27,8 +27,9 @@ namespace ColonyPlusPlus.Types.Crops
             this.SideAll = "wheatwheat";
             this.Mesh = "carrotstage3";
             this.AllowCreative = false;
+            this.IsBaseBlock = false;
 
-            
+
 
             this.Register();
         }

@@ -16,6 +16,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.SideAll = "cpplogtaiga";
             this.SideXPlus = "cpplogtaigatop";
             this.SideXMinus = "cpplogtaigatop";
+            this.IsBaseBlock = false;
 
 
             this.Register();

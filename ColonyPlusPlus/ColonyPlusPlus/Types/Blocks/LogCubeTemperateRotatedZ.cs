@@ -16,8 +16,9 @@ namespace ColonyPlusPlus.Types.Blocks
             this.SideAll = "cpplogtemperate";
             this.SideZPlus = "cpplogtemperatetop";
             this.SideZMinus = "cpplogtemperatetop";
+            this.IsBaseBlock = false;
 
-           
+
             this.Register();
         }
 
