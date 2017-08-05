@@ -43,6 +43,7 @@ namespace ColonyPlusPlus.Classes
         private bool _IsDestructible;
         private bool _AllowCreative;
         private bool _AllowPlayerCraft;
+        private bool _IsBaseBlock;
 
         private long _DestructionTime;
 
@@ -64,6 +65,8 @@ namespace ColonyPlusPlus.Classes
             // disable creative on blocks
             this.AllowCreative = false;
             this.AllowPlayerCraft = false;
+            this.IsBaseBlock = true;
+            
 
             // save to JSON if this is a new item that's been added
             this.node.SetAs("newtype", newtype);
@@ -437,6 +440,19 @@ namespace ColonyPlusPlus.Classes
             set
             {
                 this._AllowPlayerCraft = value;
+            }
+        }
+
+        public bool IsBaseBlock
+        {
+            get
+            {
+                return this._IsBaseBlock;
+            }
+            set
+            {
+                this._IsBaseBlock = value;
+                this.node.SetAs("isBaseBlock", value);
             }
         }
 

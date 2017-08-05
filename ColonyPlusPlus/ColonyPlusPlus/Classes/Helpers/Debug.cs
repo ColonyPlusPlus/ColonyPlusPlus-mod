@@ -16,21 +16,33 @@ namespace ColonyPlusPlus.Classes.Helpers
 
 				Pipliz.JSON.JSONNode itemJson = ItemTypes.GetTypesJSON.GetAs<Pipliz.JSON.JSONNode>(typename);
 
+                //Utilities.WriteLog("Outputting JSON: " + typename);
+
                 string icon = "";
-                outputtype.TryGetAs<string>("icon", out icon);
+                itemJson.TryGetAs<string>("icon", out icon);
 
 				outputtype.SetAs("icon", icon);
 
                 int maxstack = 0;
-                outputtype.TryGetAs<int>("maxStackSize", out maxstack);
+                itemJson.TryGetAs<int>("maxStackSize", out maxstack);
                           
                 outputtype.SetAs("maxstack", maxstack);
 				outputtype.SetAs("name", typename);
 
                 bool newtype = false;
-                outputtype.TryGetAs<bool>("newtype", out newtype);
+                itemJson.TryGetAs<bool>("newtype", out newtype);
 
-				outputtype.SetAs("newtype", newtype);
+                outputtype.SetAs("newtype", newtype);
+
+                bool isPlaceable = false;
+                itemJson.TryGetAs<bool>("isPlaceable", out isPlaceable);
+
+                outputtype.SetAs("isplaceable", isPlaceable);
+
+                bool isBaseBlock = false;
+                itemJson.TryGetAs<bool>("isBaseBlock", out isBaseBlock);
+
+                outputtype.SetAs("isbaseblock", isBaseBlock);
 
 				node.SetAs<Pipliz.JSON.JSONNode>(typename, outputtype);
 			}
@@ -40,7 +52,7 @@ namespace ColonyPlusPlus.Classes.Helpers
 
 		public static void outputRecipes()
 		{
-			Pipliz.JSON.JSONNode node = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
+			Pipliz.JSON.JSONNode node = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Array);
 
 			foreach (Recipe recipe in Managers.RecipeManager.recipeList)
 			{
@@ -74,27 +86,19 @@ namespace ColonyPlusPlus.Classes.Helpers
 					resItem.SetAs("type", typename);
 					resItem.SetAs("amount", i.Amount);
 
-					requirementArr.AddToArray(resItem);
-
-                    // flag an recipes that have more than 1 result (for the website)
-                    if(resultingTypes.Count == 0) {
-                        recipenode.SetAs("repeatRecipe", false);
-					}
-					else
-					{
-                        recipenode.SetAs("repeatRecipe", true);
-                    }
+					resultArr.AddToArray(resItem);
 
                     resultingTypes.Add(typename);
 				}
 
 				recipenode.SetAs("requirements", requirementArr);
 				recipenode.SetAs("results", resultArr);
+                recipenode.SetAs("mainresulttype", resultingTypes[0]);
 
-				node.SetAs<Pipliz.JSON.JSONNode>(resultingTypes[0], recipenode);
+				node.AddToArray(recipenode);
 			}
 
-			Pipliz.JSON.JSON.Serialize(Utilities.GetDebugJSONPath("types"), node);
+			Pipliz.JSON.JSON.Serialize(Utilities.GetDebugJSONPath("recipes"), node);
 		}
     }
 }
