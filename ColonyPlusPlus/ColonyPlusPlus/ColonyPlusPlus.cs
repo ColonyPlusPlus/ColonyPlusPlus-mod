@@ -197,7 +197,12 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplus.OnTryChangeBlockUser")]
         public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
         {
-             bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
+
+            if (d.requestedBy.ID.steamID.m_SteamID == 0)
+            {
+                return true;
+            }
+            bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
 
             Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
             return allowed;

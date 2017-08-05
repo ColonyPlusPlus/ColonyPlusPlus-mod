@@ -31,7 +31,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
             {
-                int maxClaims = Classes.Managers.ConfigManager.getConfigInt("chunk.maxclaims");
+                int maxClaims = Classes.Managers.ConfigManager.getConfigInt("chunks.maxclaims");
 
                 if( Managers.WorldManager.getOwnedChunkCount(ply.ID) < maxClaims) {
                     // get the current chunk

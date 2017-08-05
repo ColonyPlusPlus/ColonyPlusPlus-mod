@@ -36,7 +36,7 @@ namespace ColonyPlusPlus.Types.Blocks
                 new List<InventoryItem> {
                     RecipeManager.Item("logcubetaigarotated", 1)
                 },
-                0.0f);
+                0.0f, false, true);
         }
     }
 }
