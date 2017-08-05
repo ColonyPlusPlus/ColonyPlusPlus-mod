@@ -229,11 +229,20 @@ namespace ColonyPlusPlus.Classes.Managers
                     // what about chunk ownership
                     if (allowBlockPlaceChunkOwnership(d))
                     {
+                        if (d.typeNew == ItemTypes.IndexLookup.GetIndex("water"))
+                        {
+                            if (PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "spawnbuilder"))
+                            {
+                                return true;
+                            }
+                            return false;
+                        }
                         Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You own the chunk");
                         return true;
-                    } else
+                    }
+                    else
                     {
-                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You dno't own the chunk");
+                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You don't own the chunk");
                         return false;
                     }
                 }
