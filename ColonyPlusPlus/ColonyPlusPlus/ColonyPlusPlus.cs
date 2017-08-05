@@ -148,24 +148,15 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
         public static void AfterDefiningNPCTypes()
         {
-           /* //Crafting Jobs!
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.GrinderJob>("grindstone");
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.MintJob>("mint");
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ShopJob>("shop");
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.WorkBenchJob>("workbench");
-            //Fueled Jobs!
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.Implementations.FurnaceJob>("furnace");
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.Implementations.OvenJob>("oven");
-            //Odd Jobs?
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Implementations.QuiverJob>("quiver");
+             if (CustomJobs)
+             {
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.ChickenPluckerJob>("chickencoop");
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.StoneMason>("masontable");
 
-
-            //Custom jobs!
-            if (Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs"))
-            {
-                Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ChickenPluckerJob>("bricks");
-            }
-            */
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
+             }
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
@@ -189,14 +180,8 @@ namespace ColonyPlusPlus
 
 
             //Custom jobs!
-            if (Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs"))
+            if (CustomJobs)
             {
-                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.ChickenPluckerJob>("chicken");
-                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
-                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
-
-
-                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
             }
         }
 
