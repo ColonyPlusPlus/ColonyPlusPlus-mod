@@ -268,11 +268,92 @@ namespace ColonyPlusPlus.Classes.Managers
             Chat.Send(to, from.Name + " sent " + giveamt + " " + name + " to you.");
         }
 
-        public static void teleportPlayer(Players.Player ply, Pipliz.Vector3Int target)
+        public static void notifyTeleport(Players.Player from, Players.Player to, bool here)
         {
-            // This feels like a hack. We should see if there is a better way of doing this.
-            ply.Position = target.Vector;
-            Chat.Send(ply, "Teleport complete.");
+            PlayerData fromPD = getPlayerData(from);
+            PlayerData toPD = getPlayerData(to);
+
+            if (fromPD.requestingTP || fromPD.tpRequester != NetworkID.Invalid)
+            {
+                Chat.Send(from, "You already have an outstanding tp request.");
+                return;
+            }
+
+            if (toPD.tpRequester != NetworkID.Invalid || toPD.requestingTP)
+            {
+                Chat.Send(from, "That player already has a request.");
+                Chat.Send(to, "Someone tried to send you a tp request, but you already have one.");
+                return;
+            }
+
+            toPD.tpRequester = from.ID;
+            fromPD.tpRequester = to.ID;
+            fromPD.requestingTP = true;
+            toPD.tpHere = here;
+
+            Chat.Send(from, (here?"TPHere":"TP") + " request sent to " + to.Name + ".");
+            Chat.Send(from, "Type '/tpreject' to cancel the request.");
+            Chat.Send(to, (here ? "TPHere" : "TP") + " request from " + from.Name + ".");
+            Chat.Send(to, "Type '/tpaccept' to allow " + from.Name + " to teleport " + (here?"here.":"to you, or type '/tpreject' to disallow."));
+
+            playerDataDict[from.ID] = fromPD;
+            playerDataDict[to.ID] = toPD;
+        }
+
+        public static void acceptTeleport(Players.Player ply)
+        {
+            PlayerData pd = getPlayerData(ply);
+            bool sucessful = Players.TryGetPlayer(pd.tpRequester, out Players.Player partner);
+            if (!sucessful)
+            {
+                Chat.Send(ply, "TP request invalid, deleting.");
+            } else
+            {
+                PlayerData partnerPD = getPlayerData(partner);
+                if (pd.tpHere)
+                {
+                    Chat.Send(ply, "Teleporting you to " + partner.Name + ".");
+                    Chat.Send(partner, "Teleporting " + ply.Name + " to you.");
+                    ChatCommands.Implementations.Teleport.TeleportTo(ply, partner.Position);
+                } else
+                {
+                    Chat.Send(ply, "Teleporting " + partner.Name + " to you.");
+                    Chat.Send(partner, "Teleporting you to " + ply.Name + ".");
+                    ChatCommands.Implementations.Teleport.TeleportTo(partner, ply.Position);
+                }
+                partnerPD.tpRequester = NetworkID.Invalid;
+                partnerPD.requestingTP = false;
+                partnerPD.tpHere = false;
+                playerDataDict[partner.ID] = partnerPD;
+            }
+            pd.tpRequester = NetworkID.Invalid;
+            pd.requestingTP = false;
+            pd.tpHere = false;
+            playerDataDict[ply.ID] = pd;
+        }
+
+        public static void rejectTeleport(Players.Player ply)
+        {
+            PlayerData pd = getPlayerData(ply);
+            bool sucessful = Players.TryGetPlayer(pd.tpRequester, out Players.Player partner);
+            if (!sucessful )
+            {
+                Chat.Send(ply, "TP request invalid, deleting.");
+            }
+            else
+            {
+                PlayerData partnerPD = getPlayerData(partner);
+                Chat.Send(ply, "You canceled your TP request to " + partner.Name + ".");
+                Chat.Send(partner, ply.Name + " canceled their TP request.");
+                partnerPD.tpRequester = NetworkID.Invalid;
+                partnerPD.requestingTP = false;
+                partnerPD.tpHere = false;
+                playerDataDict[partner.ID] = partnerPD;
+            }
+            pd.tpRequester = NetworkID.Invalid;
+            pd.requestingTP = false;
+            pd.tpHere = false;
+            playerDataDict[ply.ID] = pd;
         }
     }
 }

@@ -64,7 +64,7 @@ namespace ColonyPlusPlus.Classes
             return RunCommand(ply, cutsplits, NetworkID.Invalid);
         }
 
-        protected abstract bool RunCommand(Players.Player id, string[] args, NetworkID target);
+        protected abstract bool RunCommand(Players.Player ply, string[] args, NetworkID target);
 
         private static NetworkID GetSubject(string[] argsBefore, out string[] argsAfter)
         {
