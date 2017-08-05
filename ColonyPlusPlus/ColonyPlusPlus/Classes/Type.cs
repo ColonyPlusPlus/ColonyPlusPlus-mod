@@ -79,8 +79,11 @@ namespace ColonyPlusPlus.Classes
             if(Utilities.ValidateIcon(name))
             {
                 this._Icon = name + ".png";
-                this.node.SetAs("icon", this._Icon);
+            } else {
+                this._Icon = "missing.png";
             }
+
+            this.node.SetAs("icon", this._Icon);
 
             // set default isplacable 
             this._IsPlaceable = false;

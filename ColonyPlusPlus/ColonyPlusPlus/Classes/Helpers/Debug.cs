@@ -16,10 +16,21 @@ namespace ColonyPlusPlus.Classes.Helpers
 
 				Pipliz.JSON.JSONNode itemJson = ItemTypes.GetTypesJSON.GetAs<Pipliz.JSON.JSONNode>(typename);
 
-				outputtype.SetAs("icon", outputtype.GetAs<string>("icon"));
-				outputtype.SetAs("maxstack", outputtype.GetAs<int>("maxStackSize"));
+                string icon = "";
+                outputtype.TryGetAs<string>("icon", out icon);
+
+				outputtype.SetAs("icon", icon);
+
+                int maxstack = 0;
+                outputtype.TryGetAs<int>("maxStackSize", out maxstack);
+                          
+                outputtype.SetAs("maxstack", maxstack);
 				outputtype.SetAs("name", typename);
-				outputtype.SetAs("newtype", outputtype.GetAs<bool>("newtype"));
+
+                bool newtype = false;
+                outputtype.TryGetAs<bool>("newtype", out newtype);
+
+				outputtype.SetAs("newtype", newtype);
 
 				node.SetAs<Pipliz.JSON.JSONNode>(typename, outputtype);
 			}
