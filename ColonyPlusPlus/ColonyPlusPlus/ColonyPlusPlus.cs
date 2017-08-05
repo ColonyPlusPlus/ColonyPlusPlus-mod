@@ -31,8 +31,8 @@ namespace ColonyPlusPlus
             Classes.Managers.RotatingMessageManager.initialise();
             Classes.Managers.ServerVariablesManager.init();
 
-            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
-            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
+            CustomJobs = true; // Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
+            CustomCrops = true; // Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
 
             // Initialize chat commands
             Classes.Managers.ChatCommandManager.Initialize();
@@ -148,7 +148,7 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
         public static void AfterDefiningNPCTypes()
         {
-             if (CustomJobs)
+             /*if (CustomJobs)
              {
                  Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
                  Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
@@ -156,7 +156,7 @@ namespace ColonyPlusPlus
                  Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.StoneMason>("masontable");
 
                  Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
-             }
+             }*/
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]

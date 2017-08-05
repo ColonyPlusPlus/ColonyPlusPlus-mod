@@ -124,7 +124,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
 
             // custom jobs
-            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.potter", RecipeShopping);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.potter", RecipePottery);
 
             // Log the number of added recipes
             Utilities.WriteLog("Added " + recipesAdded + " recipes");
