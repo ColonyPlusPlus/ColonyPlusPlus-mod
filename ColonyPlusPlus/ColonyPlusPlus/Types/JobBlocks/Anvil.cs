@@ -19,6 +19,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
             this.IsPlaceable = true;
             this.AllowCreative = true;
             this.AllowPlayerCraft = true;
+            this.Mesh = "anvil";
             this.Register();
         }
 
