@@ -99,7 +99,7 @@ namespace ColonyPlusPlus.Classes.Managers
                     case "pottery":
                         RecipePottery.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
+                        Utilities.WriteLog("Added pottery recipe");
                         break;
                     case "chickenplucker":
                         recipesAdded += 1;

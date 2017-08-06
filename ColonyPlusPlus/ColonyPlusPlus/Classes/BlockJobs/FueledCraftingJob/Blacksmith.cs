@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
 {
     class Blacksmith : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {
-        public override string NPCTypeKey { get { return "cpp.Blacksmith"; } }
+        public override string NPCTypeKey { get { return "cpp.blacksmith"; } }
 
         public override float TimeBetweenJobs { get { return 2.9f; } }
 
