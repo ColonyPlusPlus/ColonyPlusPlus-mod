@@ -47,7 +47,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                         int owned = Managers.WorldManager.getOwnedChunkCount(ply.ID);
 
                         Chat.send(ply, string.Format("Claimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
-                        Chat.send(ply, string.Format("You now own {0} chunks.", owned), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                        Chat.send(ply, string.Format("You now own {0} chunks (max {1}).", owned, maxClaims), Chat.ChatColour.lime, Chat.ChatStyle.bold);
                     }
                     else
                     {

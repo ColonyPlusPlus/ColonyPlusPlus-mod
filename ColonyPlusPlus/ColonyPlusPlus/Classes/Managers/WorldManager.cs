@@ -335,7 +335,13 @@ namespace ColonyPlusPlus.Classes.Managers
                 }
                 else
                 {
-                    return true;
+                    if(ConfigManager.getConfigBoolean("chunk.enforce") == true)
+                    {
+                        return false;
+                    } else
+                    {
+                        return true;
+                    }
 
                 }
             }

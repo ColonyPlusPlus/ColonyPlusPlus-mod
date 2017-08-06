@@ -18,6 +18,8 @@ Changed:
 	More Advanced Trade system!
 	Increased Brick, Dirt, Grass, Stone Bricks to match the new maxstack of the Base Game
 	Dozens of recipes changed to fit in the new jobs
+	Chunk Ownership
+		You are now notified if you enter your own chunk (makes finding them easier!)	
 
 
 

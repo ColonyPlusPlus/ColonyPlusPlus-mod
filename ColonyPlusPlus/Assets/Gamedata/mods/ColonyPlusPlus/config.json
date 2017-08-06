@@ -27,7 +27,8 @@
 	
 	"chunks": {
 		"enabled": true,
-		"maxclaims": 12
+		"maxclaims": 12,
+		"enforce": true
 	},
 
 	"debug": {
