@@ -5,7 +5,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob
 {
     class PotteryJob : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
      {
-        public override string NPCTypeKey { get { return "cpp.Potter"; } }
+        public override string NPCTypeKey { get { return "cpp.potter"; } }
 
         public override float TimeBetweenJobs { get { return 2.9f; } }
 

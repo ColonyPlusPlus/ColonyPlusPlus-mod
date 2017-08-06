@@ -6,18 +6,18 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class PotteryTable : Classes.Type
+    class Anvil : Classes.Type
     {
-        public PotteryTable(string name) : base(name)
+        public Anvil(string name) : base(name)
         {
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
-            this.SideAll = "stonebricks";
-            this.Mesh = "potterywheel";
+            this.SideAll = "furnaceside";
             this.NPCLimit = 0;
             this.IsPlaceable = true;
             this.AllowCreative = true;
             this.AllowPlayerCraft = true;
+            this.Mesh = "anvil";
             this.Register();
         }
 
@@ -25,12 +25,10 @@ namespace ColonyPlusPlus.Types.JobBlocks
         {
             RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logtemperate", 1),
-                    RecipeManager.Item("planks", 4),
-                    RecipeManager.Item("stonebricks", 1)
+                    RecipeManager.Item("ironingot", 8)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("potterytable", 1)
+                    RecipeManager.Item("anvil", 1)
                 },
                 0.0f,true, true);
         }

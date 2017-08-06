@@ -240,6 +240,12 @@
 	"logcubetaiga" : "A Taiga Log (Cube)",
 	"logcubetaigarotated" : "A Taiga Log (Cube, rotated)",
 
+	"anvil": "An anvil for blacksmithing",
+	"potterytable": "A pottery table for creating clay goods",
+	"masontable": "A stonemason's table",
+	"chickencoop": "A chicken coop",
+	"sawmill": "A sawmill for carpentry",
+
 	"planks" : "Now with 4 times the volume of logs!",
 	"torch" : "And let there be light!",
 	"crate" : "For all your storage needs!",

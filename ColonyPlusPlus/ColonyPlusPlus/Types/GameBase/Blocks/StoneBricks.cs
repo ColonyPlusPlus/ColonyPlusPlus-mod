@@ -21,14 +21,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
         public override void AddRecipes()
         {
 
-            RecipeManager.AddRecipe("crafting",
-                new List<InventoryItem> {
-                    RecipeManager.Item("stoneblock", 1)
-                },
-                new List<InventoryItem> {
-                    RecipeManager.Item("stonebricks", 1)
-                },
-                0.0f);
+           
         }
 
     }

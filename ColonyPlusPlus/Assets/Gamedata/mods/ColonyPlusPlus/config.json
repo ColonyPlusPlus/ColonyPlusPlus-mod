@@ -27,7 +27,8 @@
 	
 	"chunks": {
 		"enabled": true,
-		"maxclaims": 12
+		"maxclaims": 12,
+		"enforce": true
 	},
 
 	"debug": {
@@ -36,6 +37,24 @@
 
 	"trade": {
 		"enabled": true
+	},
+
+	"chat": {
+		"enabled": true,
+		"colors": [
+			{
+				"permissionstring": "admin",
+				"color": "lime",
+				"style": "normal",
+				"prefix": "Admin"
+			},
+			{
+				"permissionstring": "moderator",
+				"color": "yellow",
+				"style": "normal",
+				"prefix": "Mod"
+			},
+		]
 	}
 
 }

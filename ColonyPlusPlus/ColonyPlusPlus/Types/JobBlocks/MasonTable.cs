@@ -6,14 +6,14 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class PotteryTable : Classes.Type
+    class MasonTable : Classes.Type
     {
-        public PotteryTable(string name) : base(name)
+        public MasonTable(string name) : base(name)
         {
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
             this.SideAll = "stonebricks";
-            this.Mesh = "potterywheel";
+            this.SideYPlus = "furnaceunlittop";
             this.NPCLimit = 0;
             this.IsPlaceable = true;
             this.AllowCreative = true;
@@ -27,12 +27,12 @@ namespace ColonyPlusPlus.Types.JobBlocks
                 new List<InventoryItem> {
                     RecipeManager.Item("logtemperate", 1),
                     RecipeManager.Item("planks", 4),
-                    RecipeManager.Item("stonebricks", 1)
+                    RecipeManager.Item("stonebricks", 3)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("potterytable", 1)
+                    RecipeManager.Item("masontable", 1)
                 },
-                0.0f,true, true);
+                0.0f, true, true);
         }
     }
 }

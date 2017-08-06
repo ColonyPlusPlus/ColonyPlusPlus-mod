@@ -25,7 +25,7 @@ namespace ColonyPlusPlus.Types.Crops
             this.NPCLimit = 0;
             this.SideAll = "wheatwheat";
             this.Mesh = "carrotstage1";
-            this.maxGrowth = 2f;
+            this.maxGrowth = 12f;
             this.NutritionalValue = 0.3F;
 
             

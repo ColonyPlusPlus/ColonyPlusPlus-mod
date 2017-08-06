@@ -14,7 +14,7 @@ namespace ColonyPlusPlus.Classes
         /// </summary>
         public void AddCraftingRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("planks", 3),
                     RecipeManager.Item("straw", 3)
@@ -24,7 +24,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("planks", 1)
                 },
@@ -33,7 +33,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("planks", 1)
                 },
@@ -45,7 +45,7 @@ namespace ColonyPlusPlus.Classes
             /// <summary>
             /// 2 planks = 1 bow
             /// </summary>
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("planks", 2),
                     RecipeManager.Item("flax", 2)
@@ -55,7 +55,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("masonry",
                 new List<InventoryItem> {
                     RecipeManager.Item("stonebricks", 1)
                 },
@@ -64,7 +64,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("masonry",
                 new List<InventoryItem> {
                     RecipeManager.Item("stonebricks", 1)
                 },
@@ -73,7 +73,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("stonebricks", 1),
 				    RecipeManager.Item("planks", 1)
@@ -83,7 +83,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("logtemperate", 1)
                 },
@@ -92,7 +92,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("logtaiga", 1)
                 },
@@ -111,7 +111,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
 				    RecipeManager.Item("planks", 1)
                 },
@@ -120,7 +120,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("planks", 1),
                     RecipeManager.Item("ironingot", 1),
@@ -131,17 +131,17 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("blacksmithing",
                 new List<InventoryItem> {
                     RecipeManager.Item("planks", 1),
                     RecipeManager.Item("ironingot", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("arrow", 8)
+                    RecipeManager.Item("arrow", 4)
                 },
-                0.0f, true, true);
+                0.0f, true);
 
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("blacksmithing",
                 new List<InventoryItem> {
 				    RecipeManager.Item("planks", 1),
 				    RecipeManager.Item("ironingot", 1)
@@ -151,7 +151,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("blacksmithing",
                 new List<InventoryItem> {
 				    RecipeManager.Item("planks", 1),
 				    RecipeManager.Item("ironingot", 1)
@@ -161,7 +161,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
 				    RecipeManager.Item("planks", 1),
 				    RecipeManager.Item("ironingot", 1),
@@ -172,7 +172,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
 				    RecipeManager.Item("goldcoin", 5),
 				    RecipeManager.Item("planks", 1),
@@ -192,7 +192,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
 				    RecipeManager.Item("linseedoil", 1),
 				    RecipeManager.Item("planks", 1)
@@ -212,7 +212,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("masonry",
                 new List<InventoryItem> {
 				    RecipeManager.Item("gypsum", 1),
 				    RecipeManager.Item("stonebricks", 1)
@@ -364,7 +364,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.2f);
 
-            RecipeManager.AddRecipe("smelting",
+            RecipeManager.AddRecipe("pottery",
                 new List<InventoryItem> {
                     RecipeManager.Item("clay", 3)
                 },

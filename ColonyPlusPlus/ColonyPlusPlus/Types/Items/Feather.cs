@@ -24,6 +24,16 @@ namespace ColonyPlusPlus.Types.Items
                     RecipeManager.Item("feather", 1)
                 },
                 0.0f);
+
+            RecipeManager.AddRecipe("chickenplucker",
+               new List<InventoryItem> {
+                    RecipeManager.Item("straw", 1),
+                    RecipeManager.Item("wheatstage1", 1)
+               },
+               new List<InventoryItem> {
+                    RecipeManager.Item("feather", 2)
+               },
+               0.0f, true);
         }
     }
 }

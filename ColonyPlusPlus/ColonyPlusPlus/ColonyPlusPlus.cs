@@ -71,7 +71,10 @@ namespace ColonyPlusPlus
             Classes.Managers.BlockManager.register();
             Classes.Managers.ItemManager.register();
             if(CustomCrops)
+            {
                 Classes.Managers.CropManager.register();
+            }
+               
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplus.AfterItemTypesServer" )]
@@ -79,7 +82,12 @@ namespace ColonyPlusPlus
         {
             // Register Tracked Block Types (Wheat?)
             if (CustomCrops)
+            {
                 Classes.Managers.TypeManager.registerTrackedTypes();
+            }
+
+            // Register our chat parser
+            ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.ChatManager());
 
             // Register Master Command
             ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.MasterChatCommandManager());
@@ -91,7 +99,10 @@ namespace ColonyPlusPlus
             
 
             if (CustomCrops)
+            {
                 Classes.Managers.CropManager.LoadCropTracker();
+            }
+               
             Classes.Managers.WorldManager.LoadJSON();
 
             //Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
@@ -107,7 +118,10 @@ namespace ColonyPlusPlus
 
                 // update any crops
                 if (CustomCrops)
+                {
                     Classes.Managers.CropManager.doCropUpdates();
+                }
+                    
 
                 // Do player update stuff
                 Classes.Managers.PlayerManager.notifyNewChunkEntrances();
@@ -122,7 +136,10 @@ namespace ColonyPlusPlus
 
                 // save out crop progress to file
                 if (CustomCrops)
+                {
                     Classes.Managers.CropManager.SaveCropTrackerInterval();
+                }
+                    
 
                 // long term update time
                 nextMillisecondUpdateLong = Pipliz.Time.MillisecondsSinceStart +  60000;
@@ -137,7 +154,10 @@ namespace ColonyPlusPlus
         public static void OnQuitEarly()
         {
             if (CustomCrops)
+            {
                 Classes.Managers.CropManager.SaveCropTracker();
+            }
+               
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonyplusplus.OnQuit")]
@@ -151,12 +171,12 @@ namespace ColonyPlusPlus
         {
              if (CustomJobs)
              {
-                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
-                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
-                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.ChickenPluckerJob>("chickencoop");
-                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.StoneMason>("masontable");
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.ChickenPluckerJob>("chickencoop");
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.StoneMason>("masontable");
 
-                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
+                 Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
              }
         }
 
@@ -169,6 +189,7 @@ namespace ColonyPlusPlus
             Classes.Managers.RecipeManager.BuildRecipeList();
             Classes.Managers.RecipeManager.ProcessRecipes();
 
+            
             //Custom jobs!
             if (CustomJobs)
             {
@@ -190,7 +211,7 @@ namespace ColonyPlusPlus
             }
             bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
 
-            Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
+            //Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
             return allowed;
         }
     }

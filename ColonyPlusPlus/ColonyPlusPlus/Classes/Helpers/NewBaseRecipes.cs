@@ -10,7 +10,7 @@ namespace ColonyPlusPlus.Classes.Helpers
     {
         public void AddCraftingRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            RecipeManager.AddRecipe("blacksmithing",
                 new List<InventoryItem> {
                     RecipeManager.Item("planks", 1),
                     RecipeManager.Item("ironingot", 1),
@@ -19,7 +19,16 @@ namespace ColonyPlusPlus.Classes.Helpers
                 new List<InventoryItem> {
                     RecipeManager.Item("arrow", 12)
                 },
-                0.0f, true, true);
+                0.0f, true);
+
+            RecipeManager.AddRecipe("masonry",
+               new List<InventoryItem> {
+                    RecipeManager.Item("stoneblock", 1)
+               },
+               new List<InventoryItem> {
+                    RecipeManager.Item("stonebricks", 1)
+               },
+               0.0f,true, true);
 
         }
         public void AddShoppingRecipes()
