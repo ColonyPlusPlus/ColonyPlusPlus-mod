@@ -59,6 +59,7 @@
     <Compile Include="Classes\BlockJobs\CraftingJob\Carpenter.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\ChickenPluckerJob.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\StoneMason.cs" />
+    <Compile Include="Classes\BlockJobs\Defense\QuiverT2.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
     <Compile Include="Classes\CustomChatCommands\Chunk.cs" />

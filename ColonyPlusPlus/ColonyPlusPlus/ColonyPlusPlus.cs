@@ -15,9 +15,12 @@ namespace ColonyPlusPlus
         public static long nextMillisecondUpdateRotator = 0;
         private static long millisecondDelta = 500;
         public static long millisecondDeltaRotator = 0;
+
         private static bool CustomCrops = false;
         private static bool CustomJobs = false;
-
+        private static bool ColonyLimitEnabled = false;
+        private static int ColonyLimit = 0;
+        private static int plyID = 0;
         public static Version modVersion = new Version(0, 2, 0);
 
 
@@ -32,8 +35,13 @@ namespace ColonyPlusPlus
             Classes.Managers.RotatingMessageManager.initialise();
             Classes.Managers.ServerVariablesManager.init();
 
-            CustomJobs = true; // Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
-            CustomCrops = true; // Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
+            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
+            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
+            ColonyLimitEnabled = Classes.Managers.ConfigManager.getConfigBoolean("Colony.LimitEnabled");
+            if(ColonyLimitEnabled)
+            {
+                ColonyLimit = Classes.Managers.ConfigManager.getConfigInt("Colony.Limit");
+            }
 
             // Initialize chat commands
             Classes.Managers.ChatCommandManager.Initialize();
@@ -114,7 +122,22 @@ namespace ColonyPlusPlus
         {
             if(Pipliz.Time.MillisecondsSinceStart > nextMillisecondUpdate)
             {
-                // do stuff
+                if(ColonyLimitEnabled)
+                {
+                    if (plyID >= Players.CountConnected)
+                    {
+                        plyID = 0;
+                    }
+                    if(Players.CountConnected != 0)
+                    {
+                        Colony col = Colony.Get(Players.GetConnectedByIndex(plyID));
+                        if (col.FollowerCount > ColonyLimit)
+                        {
+                            col.RemoveNPC(col.FindLaborer(ColonyLimit));
+                        }
+                        plyID++;
+                    }
+                }
 
                 // update any crops
                 if (CustomCrops)
@@ -188,17 +211,6 @@ namespace ColonyPlusPlus
             Classes.Managers.RecipeManager.AddBaseRecipes();
             Classes.Managers.RecipeManager.BuildRecipeList();
             Classes.Managers.RecipeManager.ProcessRecipes();
-
-            
-            //Custom jobs!
-            if (CustomJobs)
-            {
-                //RecipeManager.LoadRecipes("cpp.Carpenter", Path.Combine(ModGamedataDirectory, "tailoring.json"));
-                //RecipeManager.LoadRecipes("cpp.chickenplucker", Path.Combine(ModGamedataDirectory, "crafting.json"));
-                //RecipeManager.LoadRecipes("cpp.StoneMason", Path.Combine(ModGamedataDirectory, "grinding.json"));
-                //RecipeManager.LoadRecipes("cpp.Blacksmith", Path.Combine(ModGamedataDirectory, "minting.json"));
-                //RecipeManager.LoadRecipesFueled("cpp.Potter", Path.Combine(ModGamedataDirectory, "smelting.json"));
-            }
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplus.OnTryChangeBlockUser")]
