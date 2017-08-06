@@ -57,11 +57,16 @@ namespace ColonyPlusPlus.Classes.Managers
             List<global::Recipe> RecipeMasonry = new List<global::Recipe>();
             List<global::Recipe> RecipeSmithing = new List<global::Recipe>();
             List<global::Recipe> PlayerRecipes = new List<global::Recipe>();
+            List<global::Recipe> RecipeChickenCoop = new List<global::Recipe>();
 
             // Go through each registered recipe class
             foreach (Recipe RecipeInstance in recipeList)
             {
-                
+                if (RecipeInstance.PlayerCraftable == true)
+                {
+                    global::RecipePlayer.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                }
+
                 // Switch depending on the "type" registered in the recipe class
                 switch (RecipeInstance.Type.ToLower())
                 {
@@ -69,10 +74,7 @@ namespace ColonyPlusPlus.Classes.Managers
   //                      
                         RecipeCraftingStatic.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-                        if (RecipeInstance.PlayerCraftable == true)
-                        {
-                            global::RecipePlayer.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
-                        }
+                        
                         break;
                     case "smelting":
                         RecipeSmelting.Add(new global::RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
@@ -123,6 +125,8 @@ namespace ColonyPlusPlus.Classes.Managers
 
                         break;
                     case "chickenplucker":
+                        RecipeChickenCoop.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+
                         recipesAdded += 1;
                         break;
                     default:
@@ -149,6 +153,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.carpenter", RecipeCarpentry);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.potter", RecipePottery);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.stonemason", RecipeMasonry);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.chickenplucker", RecipeChickenCoop);
 
             // Log the number of added recipes
             Utilities.WriteLog("Added " + recipesAdded + " recipes");

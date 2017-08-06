@@ -139,7 +139,7 @@ namespace ColonyPlusPlus.Classes
                 new List<InventoryItem> {
                     RecipeManager.Item("arrow", 8)
                 },
-                0.0f, true, true);
+                0.0f, true);
 
             RecipeManager.AddRecipe("blacksmithing",
                 new List<InventoryItem> {
