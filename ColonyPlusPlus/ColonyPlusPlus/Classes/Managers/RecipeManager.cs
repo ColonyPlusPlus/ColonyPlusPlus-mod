@@ -53,6 +53,9 @@ namespace ColonyPlusPlus.Classes.Managers
             List<global::Recipe> RecipeShopping = new List<global::Recipe>();
             List<global::RecipeFueled> RecipeBaking = new List<global::RecipeFueled>();
             List<global::Recipe> RecipePottery = new List<global::Recipe>();
+            List<global::Recipe> RecipeCarpentry = new List<global::Recipe>();
+            List<global::Recipe> RecipeMasonry = new List<global::Recipe>();
+            List<global::Recipe> RecipeSmithing = new List<global::Recipe>();
             List<global::Recipe> PlayerRecipes = new List<global::Recipe>();
 
             // Go through each registered recipe class
@@ -99,7 +102,25 @@ namespace ColonyPlusPlus.Classes.Managers
                     case "pottery":
                         RecipePottery.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-                        Utilities.WriteLog("Added pottery recipe");
+
+                        break;
+
+                    case "carpentry":
+                        RecipeCarpentry.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+
+                    case "masonry":
+                        RecipeMasonry.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+
+                    case "blacksmithing":
+                        RecipeSmithing.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
                         break;
                     case "chickenplucker":
                         recipesAdded += 1;
@@ -124,7 +145,10 @@ namespace ColonyPlusPlus.Classes.Managers
 
 
             // custom jobs
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.blacksmith", RecipeSmithing);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.carpenter", RecipeCarpentry);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.potter", RecipePottery);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.stonemason", RecipeMasonry);
 
             // Log the number of added recipes
             Utilities.WriteLog("Added " + recipesAdded + " recipes");

@@ -35,9 +35,9 @@ namespace ColonyPlusPlus.Classes.Managers
 
             // job stuff
             Types.JobBlocks.PotteryTable potterytable = new Types.JobBlocks.PotteryTable("potterytable");
-            Types.JobBlocks.PotteryTable masontable = new Types.JobBlocks.PotteryTable("masontable");
-            Types.JobBlocks.PotteryTable sawmill = new Types.JobBlocks.PotteryTable("sawmill");
-            Types.JobBlocks.PotteryTable anvil = new Types.JobBlocks.PotteryTable("anvil");
+            Types.JobBlocks.MasonTable masontable = new Types.JobBlocks.MasonTable("masontable");
+            Types.JobBlocks.Sawmill sawmill = new Types.JobBlocks.Sawmill("sawmill");
+            Types.JobBlocks.Anvil anvil = new Types.JobBlocks.Anvil("anvil");
             Types.JobBlocks.ChickenCoop chickencoop = new Types.JobBlocks.ChickenCoop("chickencoop");
 
             // interactive Items
