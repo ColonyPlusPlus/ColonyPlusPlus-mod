@@ -15,7 +15,12 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            return true;
+            if (!Managers.ConfigManager.getConfigBoolean("trade.enable"))
+            {
+                Chat.Send(ply, "Trade has been disabled on this server.");
+                return false;
+            }
+            else return true;
         }
     }
 

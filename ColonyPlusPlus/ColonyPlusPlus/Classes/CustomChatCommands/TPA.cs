@@ -16,12 +16,15 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "teleport.request"))
+            if (!Managers.ConfigManager.getConfigBoolean("tp.enable"))
             {
-                return true;
-            }
-            Chat.Send(ply, "You don't have permission to use tp.");
-            return false;
+                Chat.Send(ply, "TP is disabled on this server.");
+                return false;
+            } else if (!(PermissionsManager.CheckAndWarnPermission(ply, "tp.request") || PermissionsManager.CheckAndWarnPermission(ply, "tp.admin")))
+            {
+                Chat.Send(ply, "You don't have permission to use tp.");
+                return false;
+            } else return true;
         }
     }
 
@@ -90,7 +93,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "cheat.tp"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "tp.admin"))
             {
                 Players.Player targetPly = Players.GetPlayer(target);
                 ChatCommands.Implementations.Teleport.TeleportTo(ply, targetPly.Position);
