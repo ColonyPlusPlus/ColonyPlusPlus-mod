@@ -28,7 +28,7 @@ namespace ColonyPlusPlus.Classes.Helpers
                new List<InventoryItem> {
                     RecipeManager.Item("stonebricks", 1)
                },
-               0.0f);
+               0.0f,true, true);
 
         }
         public void AddShoppingRecipes()

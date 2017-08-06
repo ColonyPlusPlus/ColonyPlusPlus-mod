@@ -211,7 +211,7 @@ namespace ColonyPlusPlus
             }
             bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
 
-            Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
+            //Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
             return allowed;
         }
     }

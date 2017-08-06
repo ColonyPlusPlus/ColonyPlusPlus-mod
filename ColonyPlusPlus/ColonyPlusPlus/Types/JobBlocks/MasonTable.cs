@@ -27,7 +27,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
                 new List<InventoryItem> {
                     RecipeManager.Item("logtemperate", 1),
                     RecipeManager.Item("planks", 4),
-                    RecipeManager.Item("straw", 3)
+                    RecipeManager.Item("stonebricks", 3)
                 },
                 new List<InventoryItem> {
                     RecipeManager.Item("masontable", 1)

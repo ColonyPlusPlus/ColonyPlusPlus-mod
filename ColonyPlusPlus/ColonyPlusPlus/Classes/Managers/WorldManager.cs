@@ -220,12 +220,12 @@ namespace ColonyPlusPlus.Classes.Managers
             // Check permissions
             if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.build"))
             {
-                Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You have build permissions");
+                //Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You have build permissions");
 
                 // first check if near spawn
                 if (allowBlockFarEnoughFromSpawn(d))
                 {
-                    Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You are far enough from spawn");
+                    //Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You are far enough from spawn");
                     // what about chunk ownership
                     if (allowBlockPlaceChunkOwnership(d))
                     {
@@ -237,7 +237,7 @@ namespace ColonyPlusPlus.Classes.Managers
                             }
                             return false;
                         }
-                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You own the chunk");
+                      //  Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You own the chunk");
                         return true;
                     }
                     else
@@ -250,7 +250,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 {
                     if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "spawnbuilder"))
                     {
-                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn, but you are admin");
+                        //Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn, but you are admin");
                         return true;
                     }
                     else
@@ -292,7 +292,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("spawnprotection.radius");
 
-                Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), String.Format("Distance from spawn: X {0}, Z {1}. Protection Radius: {2}", distancex, distancez, SpawnProtectionDistance));
+                //Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), String.Format("Distance from spawn: X {0}, Z {1}. Protection Radius: {2}", distancex, distancez, SpawnProtectionDistance));
 
                 
 
