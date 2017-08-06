@@ -23,6 +23,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 string chatColor = "white";
                 string chatStyle = "normal";
                 string playerPerm = "";
+                string chatPrefix = ""; 
 
                 foreach (JSONNode perm in chatColors.LoopArray())
                 {
@@ -35,6 +36,7 @@ namespace ColonyPlusPlus.Classes.Managers
                         playerPerm = permName;
                         perm.TryGetAs<string>("color", out chatColor);
                         perm.TryGetAs<string>("style", out chatStyle);
+                        perm.TryGetAs<string>("prefix", out chatPrefix);
                     }
 
                 }
@@ -43,10 +45,19 @@ namespace ColonyPlusPlus.Classes.Managers
                 Helpers.Chat.ChatColour chatColorEnum = (Helpers.Chat.ChatColour)Enum.Parse(typeof(Helpers.Chat.ChatColour), chatColor);
                 Helpers.Chat.ChatStyle chatStyleEnum = (Helpers.Chat.ChatStyle)Enum.Parse(typeof(Helpers.Chat.ChatStyle), chatStyle);
 
-                Helpers.Chat.sendToAll(chat, chatColorEnum, chatStyleEnum);
+                string message = "";
+                if (chatPrefix != "")
+                {
+                    message = String.Format("[{0}] {1}: {2}", chatPrefix, player.Name, chat);
+                } else
+                {
+                    message = String.Format("{0}: {1}", player.Name, chat);
+                }
+
+                Helpers.Chat.sendToAll(message , chatColorEnum, chatStyleEnum);
             } else
             {
-                Helpers.Chat.sendToAll(chat, Helpers.Chat.ChatColour.white);
+                Helpers.Chat.sendToAll(String.Format("{0}: {1}", player.Name, chat), Helpers.Chat.ChatColour.white);
             }
 
                 

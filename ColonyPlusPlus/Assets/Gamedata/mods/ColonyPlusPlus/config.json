@@ -43,13 +43,15 @@
 		"colors": [
 			{
 				"permissionstring": "admin",
-				"color": "red",
-				"style": "normal"
+				"color": "lime",
+				"style": "normal",
+				"prefix": "Admin"
 			},
 			{
 				"permissionstring": "moderator",
-				"color": "orange",
-				"style": "bold"
+				"color": "yellow",
+				"style": "normal",
+				"prefix": "Mod"
 			},
 		]
 	}
