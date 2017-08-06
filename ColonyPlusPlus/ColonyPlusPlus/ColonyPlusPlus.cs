@@ -85,7 +85,9 @@ namespace ColonyPlusPlus
             {
                 Classes.Managers.TypeManager.registerTrackedTypes();
             }
-                
+
+            // Register our chat parser
+            ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.ChatManager());
 
             // Register Master Command
             ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.MasterChatCommandManager());

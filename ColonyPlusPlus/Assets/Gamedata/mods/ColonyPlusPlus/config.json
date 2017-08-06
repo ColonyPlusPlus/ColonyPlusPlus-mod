@@ -36,6 +36,20 @@
 
 	"trade": {
 		"enabled": true
+	},
+
+	"chat": {
+		"enabled": true,
+		"colors": [
+			{
+				"permissionstring": "admin",
+				"color": "red"
+			},
+			{
+				"permissionstring": "moderator",
+				"color": "orange"
+			},
+		]
 	}
 
 }
