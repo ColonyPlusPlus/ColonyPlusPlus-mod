@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.Classes.Data
         public Vector3Int location;
         private bool owned;
         private NetworkID playerID;
+        public List<NetworkID> ownerHistory;
 
         /// <summary>
         /// Instantiate a new chunk class
@@ -20,11 +21,12 @@ namespace ColonyPlusPlus.Classes.Data
         /// <param name="loc"></param>
         /// <param name="o"></param>
         /// <param name="p"></param>
-        public ChunkData(Vector3Int loc, bool o, NetworkID p)
+        public ChunkData(Vector3Int loc, bool o, NetworkID p, List<NetworkID> history)
         {
             location = loc;
             owned = o;
             playerID = p;
+            ownerHistory = history;
         }
 
         /// <summary>
@@ -44,12 +46,14 @@ namespace ColonyPlusPlus.Classes.Data
                 {
                    
                     playerID = pID;
+                    ownerHistory.Add(pID);
                     return true;
                 }
             } else
             {
                 owned = true;
                 playerID = pID;
+                ownerHistory.Add(pID);
                 return true;
             }
         }

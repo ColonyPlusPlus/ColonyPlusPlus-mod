@@ -4,6 +4,7 @@ using ChatCommands;
 using NPC;
 using Pipliz;
 using ColonyPlusPlus.Classes.Helpers;
+using System.Collections.Generic;
 
 namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
@@ -139,4 +140,95 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             return true;
         }
     }
+
+    public class ChunkList : BaseChatCommand
+    {
+        public ChunkList() : base("/chunk list")
+        {
+
+        }
+
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        {
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.list") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
+            {
+
+                if (Managers.WorldManager.getOwnedChunkCount(ply.ID) > 0)
+                {
+                    string ownedChunks = "You own " + Managers.WorldManager.getOwnedChunkCount(ply.ID) + " chunks: ";
+
+                    foreach (Data.ChunkData c in Managers.WorldManager.ChunkDataList.Values)
+                    {
+                        if (c.getOwner() == ply.ID)
+                        {
+                            ownedChunks += "[" + Managers.WorldManager.positionToString(c.location.ToChunk()) + "], ";
+                        }
+                    }
+
+                    Chat.send(ply, ownedChunks, Chat.ChatColour.cyan, Chat.ChatStyle.bold);
+                    
+                }
+                else
+                {
+                    Chat.send(ply, "You own no chunks", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                }
+
+            }
+            else
+            {
+                Chat.send(ply, "You cannot claim chunks", Chat.ChatColour.red, Chat.ChatStyle.bold);
+            }
+
+            return true;
+        }
+    }
+
+    public class ChunkInfo : BaseChatCommand
+    {
+        public ChunkInfo() : base("/chunk info")
+        {
+
+        }
+
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        {
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.info") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
+            {
+                Vector3Int pos = Managers.WorldManager.positionToVector3Int(ply.Position).ToChunk();
+                string chunkName = Managers.WorldManager.positionToString(pos);
+                if (Managers.WorldManager.ChunkDataList.ContainsKey(chunkName))
+                {
+                    Data.ChunkData c = Managers.WorldManager.ChunkDataList[chunkName];
+                    Chat.send(ply, String.Format("Chunk data for chunk: {0}", chunkName), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                    Chat.send(ply, String.Format("Currently owned: {0}", c.hasOwner()), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+
+                    if(c.hasOwner())
+                    {
+
+                        Chat.send(ply, String.Format("Currently owned by: {0}", Players.GetPlayer(c.getOwner()).Name), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                    }
+
+                    string prevOwners = "";
+
+                    foreach (NetworkID n in c.ownerHistory)
+                    {
+                        prevOwners += Players.GetPlayer(n).Name + ", "; 
+                    }
+
+                    Chat.send(ply, String.Format("Previous Owners ({0}): {1}", c.ownerHistory.Count, prevOwners), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                } else
+                {
+                    Chat.send(ply, "No chunk data", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                }
+               
+            }
+            else
+            {
+                Chat.send(ply, "You cannot check chunk info", Chat.ChatColour.red, Chat.ChatStyle.bold);
+            }
+
+            return true;
+        }
+    }
+
 }

@@ -57,7 +57,7 @@ namespace ColonyPlusPlus.Classes.Managers
                             Chat.Send(player, String.Format("You now in chunk owned by: {0}", Players.GetPlayer(WorldManager.ChunkDataList[cid].getOwner()).Name), ChatSenderType.Server);
                         } else
                         {
-                            Chat.Send(player, "You own this chunk", ChatSenderType.Server);
+                            //Chat.Send(player, "You own this chunk", ChatSenderType.Server);
                         }
                     }
                 }

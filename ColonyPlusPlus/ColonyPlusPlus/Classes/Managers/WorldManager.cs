@@ -39,7 +39,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             else
             {
-                ChunkData c = new ChunkData(p, true, playerid);
+                ChunkData c = new ChunkData(p, true, playerid, new List<NetworkID>() { playerid });
               
                 ChunkDataList.Add(chunkname, c);
                 SaveJSON();
@@ -127,11 +127,20 @@ namespace ColonyPlusPlus.Classes.Managers
                         // build a child node
                         JSONNode child = new JSONNode(NodeType.Object);
 
+                        JSONNode history = new JSONNode(NodeType.Array);
+                        foreach(NetworkID n in c.ownerHistory)
+                        {
+                            JSONNode j = new JSONNode(NodeType.Object);
+                            j.SetAs("id", n.steamID.m_SteamID);
+                            history.AddToArray(j);
+                        }
+
                         // Create the JSON
                         child.SetAs("location", (JSONNode)c.location);
                         child.SetAs("chunkID", positionToString(c.location));
                         child.SetAs("owned", c.hasOwner());
                         child.SetAs("playerID", c.getOwner().steamID.m_SteamID);
+                        child.SetAs("ownerHistory", history);
 
                         rootnode.AddToArray(child);
                     }
@@ -174,10 +183,17 @@ namespace ColonyPlusPlus.Classes.Managers
 
                                 bool owned = node["owned"].GetAs<bool>();
                                 ulong playerID = node["playerID"].GetAs<ulong>();
+                                JSONNode history = node["ownerHistory"].GetAs<JSONNode>();
+                                List<NetworkID> ownerHistory = new List<NetworkID>();
+
+                                foreach (JSONNode j in history.LoopArray())
+                                {
+                                    ownerHistory.Add(new NetworkID(new CSteamID(j.GetAs<ulong>("id"))));
+                                }
 
                                 if(playerID > 0)
                                 {
-                                    instanceclass = new ChunkData(location, owned, new NetworkID(new CSteamID(playerID)));
+                                    instanceclass = new ChunkData(location, owned, new NetworkID(new CSteamID(playerID)),  ownerHistory);
 
                                     ChunkDataList.Add(chunkID, instanceclass);
 
@@ -335,17 +351,30 @@ namespace ColonyPlusPlus.Classes.Managers
                 }
                 else
                 {
-                    if(ConfigManager.getConfigBoolean("chunk.enforce") == true)
+                    //Utilities.WriteLog("Enforce: " + ConfigManager.getConfigBoolean("chunks.enforce"));
+                    if (ConfigManager.getConfigBoolean("chunks.enforce") == true)
                     {
                         return false;
-                    } else
+                    }
+                    else
                     {
                         return true;
                     }
 
                 }
             }
-            return true;
+            else
+            {
+                //Utilities.WriteLog("Enforce: " + ConfigManager.getConfigBoolean("chunks.enforce"));
+                if (ConfigManager.getConfigBoolean("chunks.enforce") == true)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
         }
     }
 }
