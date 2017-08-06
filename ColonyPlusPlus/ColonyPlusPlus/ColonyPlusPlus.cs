@@ -20,6 +20,7 @@ namespace ColonyPlusPlus
 
         public static Version modVersion = new Version(0, 2, 0);
 
+
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplus.AfterStartup")]
         public static void AfterStartup()
         {
@@ -31,8 +32,8 @@ namespace ColonyPlusPlus
             Classes.Managers.RotatingMessageManager.initialise();
             Classes.Managers.ServerVariablesManager.init();
 
-            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
-            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
+            CustomJobs = true; // Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
+            CustomCrops = true; // Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
 
             // Initialize chat commands
             Classes.Managers.ChatCommandManager.Initialize();
@@ -148,24 +149,15 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
         public static void AfterDefiningNPCTypes()
         {
-           /* //Crafting Jobs!
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.GrinderJob>("grindstone");
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.MintJob>("mint");
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ShopJob>("shop");
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.WorkBenchJob>("workbench");
-            //Fueled Jobs!
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.Implementations.FurnaceJob>("furnace");
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.Implementations.OvenJob>("oven");
-            //Odd Jobs?
-            Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Implementations.QuiverJob>("quiver");
+             if (CustomJobs)
+             {
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.ChickenPluckerJob>("chickencoop");
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.StoneMason>("masontable");
 
-
-            //Custom jobs!
-            if (Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs"))
-            {
-                Classes.BlockJobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Implementations.ChickenPluckerJob>("bricks");
-            }
-            */
+                 //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
+             }
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
@@ -177,27 +169,26 @@ namespace ColonyPlusPlus
             Classes.Managers.RecipeManager.BuildRecipeList();
             Classes.Managers.RecipeManager.ProcessRecipes();
 
-
-
-            ItemTypesServer.RegisterChangeTypes("furnace", new List<string>()
-                { "furnacex+", "furnacex-", "furnacez+", "furnacez-", "furnacelitx+", "furnacelitx-", "furnacelitz+", "furnacelitz-" }
-);
-            ItemTypesServer.RegisterChangeTypes("oven", new List<string>()
-                { "ovenx+", "ovenz+", "ovenx-", "ovenz-", "ovenlitx+", "ovenlitz+", "ovenlitx-", "ovenlitz-" }
-            );
-
-
-
             //Custom jobs!
-            if (Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs"))
+            if (CustomJobs)
             {
+                //RecipeManager.LoadRecipes("cpp.Carpenter", Path.Combine(ModGamedataDirectory, "tailoring.json"));
+                //RecipeManager.LoadRecipes("cpp.chickenplucker", Path.Combine(ModGamedataDirectory, "crafting.json"));
+                //RecipeManager.LoadRecipes("cpp.StoneMason", Path.Combine(ModGamedataDirectory, "grinding.json"));
+                //RecipeManager.LoadRecipes("cpp.Blacksmith", Path.Combine(ModGamedataDirectory, "minting.json"));
+                //RecipeManager.LoadRecipesFueled("cpp.Potter", Path.Combine(ModGamedataDirectory, "smelting.json"));
             }
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplus.OnTryChangeBlockUser")]
         public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
         {
-             bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
+
+            if (d.requestedBy.ID.steamID.m_SteamID == 0)
+            {
+                return true;
+            }
+            bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
 
             Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
             return allowed;

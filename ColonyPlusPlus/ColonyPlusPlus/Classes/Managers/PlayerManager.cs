@@ -210,28 +210,34 @@ namespace ColonyPlusPlus.Classes.Managers
         /// <param name="isInternal">If this was called internally. If true then it doesn't notify the users.</param>
         public static void rejectTrade(Players.Player player, bool isInternal = false)
         {
-
-            PlayerData pd = getPlayerData(player);
-
-            if (pd.tradeData == null)
+            if (getTradeEnabled())
             {
-                Chat.Send(player, "You have no outstanding trade requests.");
-                return;
+                PlayerData pd = getPlayerData(player);
+
+                if (pd.tradeData == null)
+                {
+                    Chat.Send(player, "You have no outstanding trade requests.");
+                    return;
+                }
+
+                PlayerData partnerData = playerDataDict[pd.tradeData.partner.PID];
+
+                if (!isInternal)
+                {
+                    Chat.Send(player, "Trade rejected.");
+                    Chat.Send(Players.GetPlayer(partnerData.PID), player.Name + " rejected your trade request.");
+                }
+
+                pd.tradeData = null;
+                partnerData.tradeData = null;
+
+                playerDataDict[pd.PID] = pd;
+                playerDataDict[partnerData.PID] = partnerData;
             }
-
-            PlayerData partnerData = playerDataDict[pd.tradeData.partner.PID];
-
-            if (!isInternal)
+            else
             {
-                Chat.Send(player, "Trade rejected.");
-                Chat.Send(Players.GetPlayer(partnerData.PID), player.Name + " rejected your trade request.");
+                Chat.Send(player, "Trade Disabled.");
             }
-
-            pd.tradeData = null;
-            partnerData.tradeData = null;
-
-            playerDataDict[pd.PID] = pd;
-            playerDataDict[partnerData.PID] = partnerData;
         }
 
         /// <summary>
@@ -244,28 +250,42 @@ namespace ColonyPlusPlus.Classes.Managers
         /// <param name="giveamt">How many of the item given.</param>
         public static void tradeGive(Players.Player from, Players.Player to, ushort give, int giveamt)
         {
-            Stockpile playerStockpile = Stockpile.GetStockPile(from);
-            Stockpile partnerStockpile = Stockpile.GetStockPile(to);
-
-            string name;
-            bool legalIds = ItemTypes.IndexLookup.TryGetName(give, out name);
-
-            if (!legalIds)
+            if (getTradeEnabled())
             {
-                Chat.Send(from, "Invalid ID's");
-                return;
+
+                Stockpile playerStockpile = Stockpile.GetStockPile(from);
+                Stockpile partnerStockpile = Stockpile.GetStockPile(to);
+
+                string name;
+                bool legalIds = ItemTypes.IndexLookup.TryGetName(give, out name);
+
+                if (!legalIds)
+                {
+                    Chat.Send(from, "Invalid ID's");
+                    return;
+                }
+
+                if (playerStockpile.AmountContained(give) <= giveamt)
+                {
+                    Chat.Send(from, "You can't afford that.");
+                    return;
+                }
+
+                playerStockpile.Remove(give, giveamt);
+                partnerStockpile.Add(give, giveamt);
+                Chat.Send(from, "You sent " + giveamt + " " + name + " to " + to.Name + ".");
+                Chat.Send(to, from.Name + " sent " + giveamt + " " + name + " to you.");
+            }
+            else
+            {
+                Chat.Send(from, "Trade Disabled.");
             }
 
-            if (playerStockpile.AmountContained(give) <= giveamt)
-            {
-                Chat.Send(from, "You can't afford that.");
-                return;
-            }
+        }
 
-            playerStockpile.Remove(give, giveamt);
-            partnerStockpile.Add(give, giveamt);
-            Chat.Send(from, "You sent " + giveamt + " " + name + " to " + to.Name + ".");
-            Chat.Send(to, from.Name + " sent " + giveamt + " " + name + " to you.");
+        public static bool getTradeEnabled()
+        {
+            return Classes.Managers.ConfigManager.getConfigBoolean("trade.enabled");
         }
 
         public static void notifyTeleport(Players.Player from, Players.Player to, bool here)

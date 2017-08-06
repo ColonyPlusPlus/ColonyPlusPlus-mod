@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Pipliz.APIProvider.Jobs;
+using System;
 using NPC;
 
-namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob.Implementations
+namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
 {
-    class ChickenPluckerJob : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
+    class StoneMason : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {
-        public override string NPCTypeKey { get { return "cpp.chickenplucker"; } }
+        public override string NPCTypeKey { get { return "cpp.StoneMason"; } }
 
         public override float TimeBetweenJobs { get { return 2.9f; } }
-
-        public override List<global::Recipe> GetPossibleRecipes { get { return RecipeGrinding.AllRecipes; } }
 
         public override int MaxRecipeCraftsPerHaul { get { return 6; } }
 
@@ -20,7 +16,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob.Implementations
         {
             NPCTypeSettings def = NPCTypeSettings.Default;
             def.keyName = NPCTypeKey;
-            def.printName = "ChickenPlucker";
+            def.printName = "StoneMason";
             def.maskColor1 = new UnityEngine.Color32(10, 10, 10, 255);
             def.type = NPCTypeID.GetNextID();
             return def;

@@ -92,6 +92,7 @@ namespace ColonyPlusPlus.Classes
             this.SideAll = texture;
             this.Mesh = shape + "x-";
             this.Icon = name + shape;
+            this.IsBaseBlock = false;
             this.Register();
         }
     }
@@ -103,6 +104,7 @@ namespace ColonyPlusPlus.Classes
             this.SideAll = texture;
             this.Mesh = shape + "x+";
             this.Icon = name + shape;
+            this.IsBaseBlock = false;
             this.Register();
         }
     }
@@ -114,6 +116,7 @@ namespace ColonyPlusPlus.Classes
             this.SideAll = texture;
             this.Mesh = shape + "z-";
             this.Icon = name + shape;
+            this.IsBaseBlock = false;
             this.Register();
         }
     }
@@ -125,6 +128,7 @@ namespace ColonyPlusPlus.Classes
             this.SideAll = texture;
             this.Mesh = shape + "z+";
             this.Icon = name + shape;
+            this.IsBaseBlock = false;
             this.Register();
         }
     }

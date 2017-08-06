@@ -19,6 +19,7 @@ namespace ColonyPlusPlus.Types.Blocks
 
             this.Mesh = "sugarcane";
             this.OnRemoveAudio = "grassDelete";
+            this.IsBaseBlock = false;
 
             this.Register();
         }

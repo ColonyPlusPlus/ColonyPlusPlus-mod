@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -43,5 +43,10 @@ namespace ColonyPlusPlus.Classes
             }
             return sucessful;
         }
+
+		public static string GetDebugJSONPath(string type)
+		{
+			return "gamedata/debug/" + type + ".json";
+		}
     }
 }

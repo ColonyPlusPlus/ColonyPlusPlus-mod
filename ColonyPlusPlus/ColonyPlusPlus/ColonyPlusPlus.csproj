@@ -31,7 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="APIProvider">
+    <Reference Include="APIProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\APIProvider.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -55,6 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BaseChatCommand.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\Carpenter.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\ChickenPluckerJob.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\StoneMason.cs" />
+    <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
+    <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
     <Compile Include="Classes\CustomChatCommands\Chunk.cs" />
     <Compile Include="Classes\CustomChatCommands\Clear.cs" />
     <Compile Include="Classes\CustomChatCommands\Creative.cs" />
@@ -223,6 +229,9 @@
     <Compile Include="Types\Items\Salt.cs" />
     <Compile Include="Types\Items\Sugar.cs" />
     <Compile Include="Types\Items\SugarcaneItem.cs" />
+    <Compile Include="Classes\Helpers\Debug.cs" />
+    <Compile Include="Types\JobBlocks\ChickenCoop.cs" />
+    <Compile Include="Types\JobBlocks\PotteryTable.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -34,7 +34,7 @@ namespace ColonyPlusPlus.Types.Blocks
                 new List<InventoryItem> {
                     RecipeManager.Item("logcubetaiga", 1)
                 },
-                0.0f);
+                0.0f, false, true);
         }
     }
 }

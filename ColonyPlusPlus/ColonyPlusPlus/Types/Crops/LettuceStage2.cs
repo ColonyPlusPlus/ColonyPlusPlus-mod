@@ -24,6 +24,7 @@ namespace ColonyPlusPlus.Types.Crops
             this.SideAll = "wheatwheat";
             this.Mesh = "wheatstage2";
             this.maxGrowth = 12f;
+            this.IsBaseBlock = false;
 
 
 

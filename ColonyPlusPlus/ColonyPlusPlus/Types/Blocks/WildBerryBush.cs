@@ -22,6 +22,7 @@ namespace ColonyPlusPlus.Types.Blocks
                 new Classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
             };
             this.OnRemove = onRemoveNode;
+            this.IsBaseBlock = false;
 
             this.Register();
         }
