@@ -21,6 +21,7 @@ namespace ColonyPlusPlus.Classes.Managers
             {
                 JSONNode chatColors = ConfigManager.getConfigNode("chat.colors");
                 string chatColor = "white";
+                string chatStyle = "normal";
                 string playerPerm = "";
 
                 foreach (JSONNode perm in chatColors.LoopArray())
@@ -33,15 +34,16 @@ namespace ColonyPlusPlus.Classes.Managers
                         // this player is in this group
                         playerPerm = permName;
                         perm.TryGetAs<string>("color", out chatColor);
+                        perm.TryGetAs<string>("style", out chatStyle);
                     }
 
                 }
 
-                Helpers.Chat.sendToAll("Chat color: " + chatColor + " (group: " + playerPerm + ")");
+                
+                Helpers.Chat.ChatColour chatColorEnum = (Helpers.Chat.ChatColour)Enum.Parse(typeof(Helpers.Chat.ChatColour), chatColor);
+                Helpers.Chat.ChatStyle chatStyleEnum = (Helpers.Chat.ChatStyle)Enum.Parse(typeof(Helpers.Chat.ChatStyle), chatStyle);
 
-                Helpers.Chat.ChatColour chatColorEnum = (Helpers.Chat.ChatColour) Enum.Parse(typeof(Helpers.Chat.ChatColour), chatColor);
-
-                Helpers.Chat.sendToAll(chat, chatColorEnum);
+                Helpers.Chat.sendToAll(chat, chatColorEnum, chatStyleEnum);
             } else
             {
                 Helpers.Chat.sendToAll(chat, Helpers.Chat.ChatColour.white);

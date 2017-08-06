@@ -233,6 +233,12 @@
 	"clayblocksilverupsidedownslopeinsidecorner" : "Silver Clay Slope (Upsidedown Inside Corner)",
 	"clayblockwhiteupsidedownslopeinsidecorner" : "White Clay Slope (Upsidedown Inside Corner)",
 	"clayblockyellowupsidedownslopeinsidecorner" : "Yellow Clay Slope (Upsidedown Inside Corner)",
+
+	"anvil": "Anvil",
+	"potterytable": "Pottery Table",
+	"masontable": "Mason Table",
+	"chickencoop": "Chicken Coop",
+	"sawmill": "Sawmill",
 	
 	"logcubetemperate" : "Temperate Log (Cube)",
 	"logcubetemperaterotated" : "Temperate Log (Cube, rotated)",
