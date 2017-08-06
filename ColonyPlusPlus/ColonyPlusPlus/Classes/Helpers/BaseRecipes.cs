@@ -137,7 +137,7 @@ namespace ColonyPlusPlus.Classes
                     RecipeManager.Item("ironingot", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("arrow", 8)
+                    RecipeManager.Item("arrow", 4)
                 },
                 0.0f, true);
 
