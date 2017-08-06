@@ -33,7 +33,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
                 new List<InventoryItem> {
                     RecipeManager.Item("sawmill", 1)
                 },
-                0.0f);
+                0.0f, true, true);
         }
     }
 }

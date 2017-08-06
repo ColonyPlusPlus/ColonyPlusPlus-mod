@@ -31,7 +31,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
                 new List<InventoryItem> {
                     RecipeManager.Item("anvil", 1)
                 },
-                0.0f);
+                0.0f,true, true);
         }
     }
 }

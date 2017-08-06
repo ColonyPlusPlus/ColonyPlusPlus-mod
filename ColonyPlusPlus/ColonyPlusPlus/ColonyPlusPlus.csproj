@@ -103,7 +103,6 @@
     <Compile Include="ColonyPlusPlus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\Blocks\BirdNest.cs" />
-    <Compile Include="Types\Blocks\ChickenCoop.cs" />
     <Compile Include="Types\Blocks\LogCube.cs" />
     <Compile Include="Types\Blocks\LogCubeRotated.cs" />
     <Compile Include="Types\Blocks\LogCubeTaiga.cs" />
@@ -229,8 +228,11 @@
     <Compile Include="Types\Items\Sugar.cs" />
     <Compile Include="Types\Items\SugarcaneItem.cs" />
     <Compile Include="Classes\Helpers\Debug.cs" />
+    <Compile Include="Types\JobBlocks\Anvil.cs" />
     <Compile Include="Types\JobBlocks\ChickenCoop.cs" />
+    <Compile Include="Types\JobBlocks\MasonTable.cs" />
     <Compile Include="Types\JobBlocks\PotteryTable.cs" />
+    <Compile Include="Types\JobBlocks\Sawmill.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
