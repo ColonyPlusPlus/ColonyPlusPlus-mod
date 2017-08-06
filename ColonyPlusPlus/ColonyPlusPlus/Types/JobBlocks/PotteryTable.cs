@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
             this.SideAll = "planks";
-            this.SideXPlus = "furnace";
+            this.SideXPlus = "furnacelitfront";
             this.SideYPlus = "workbenchtop";
             this.NPCLimit = 0;
             this.IsPlaceable = true;

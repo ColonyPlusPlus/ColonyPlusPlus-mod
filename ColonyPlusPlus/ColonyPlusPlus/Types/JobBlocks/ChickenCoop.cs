@@ -11,7 +11,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
         {
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
-            this.Mesh = "ChickenCoop";
+            //this.Mesh = "ChickenCoop";
             this.SideAll = "planks";
             this.IsPlaceable = true;
             this.AllowCreative = true;
