@@ -25,7 +25,7 @@ namespace ColonyPlusPlus.Types.Crops
             this.AllowCreative = false;
             this.IsBaseBlock = false;
 
-            this.maxGrowth = 1f;
+            this.maxGrowth = 12f;
 
 
             TypeManager.registerCrop(this);
