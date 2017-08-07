@@ -1,8 +1,31 @@
 Version 0.2.0 (DD-MM-17): (Colony Survival 0.3.0)
 -------------------------------------
 Added:
-	CUSTOM JOBS!
-		Chicken plucker, Stonemason, Carpenter, Blacksmith, Potter, Skilled Archer
+	CUSTOM JOBS
+		Chicken plucker
+			Requires: Chickencoop
+		Stonemason
+			Requires: Mason Table
+		Carpenter
+			Requires: Sawmill
+		Blacksmith
+			Requires: Anvil
+		Potter
+			Requires: Pottery Table
+		Skilled Archer
+			Requires: QuiverTier2 (Needs to be named something better)
+	Anvil
+		Recipe: 8 Iron Ingot
+	Chickencoop
+		Recipe: 8 Planks, 9 Straw
+	Mason Table
+		Recipe: Temperate Log, 4 Planks, 3 Stone Brick
+	Pottery Table
+		Recipe: Temperate Log, 4 Planks, 1 Stone Brick
+	QuiverTier2
+		Recipe: Quiver, 5 Iron Ingot
+	Sawmill
+		Recipe: 12 Planks, 1 Iron Ingot
 	Can now enable or disable parts of the mod via the config.json file in the mod folder.
 	Message of the Day Feature.
 	Rotating Messages:

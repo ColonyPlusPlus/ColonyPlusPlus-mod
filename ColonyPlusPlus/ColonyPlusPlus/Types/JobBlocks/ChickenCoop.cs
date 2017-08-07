@@ -24,9 +24,8 @@ namespace ColonyPlusPlus.Types.JobBlocks
         {
             RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logtemperate", 1),
-                    RecipeManager.Item("planks", 4),
-                    RecipeManager.Item("straw", 3)
+                    RecipeManager.Item("planks", 8),
+                    RecipeManager.Item("straw", 9)
                 },
                 new List<InventoryItem> {
                     RecipeManager.Item("chickencoop", 1)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ColonyPlusPlus.Classes.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,19 @@ namespace ColonyPlusPlus.Types.JobBlocks
             this.RotatableZPlus = "quivert2z+";
             this.RotatableZMinus = "quivert2z-";
             this.Register();
+        }
+
+        public override void AddRecipes()
+        {
+            RecipeManager.AddRecipe("crafting",
+                new List<InventoryItem> {
+                    RecipeManager.Item("quiver", 1),
+                    RecipeManager.Item("ironingot", 5)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("quivert2", 1)
+                },
+                0.0f, true, true);
         }
     }
 
