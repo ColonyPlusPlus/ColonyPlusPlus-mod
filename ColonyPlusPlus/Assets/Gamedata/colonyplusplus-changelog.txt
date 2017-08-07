@@ -2,7 +2,7 @@ Version 0.2.0 (DD-MM-17): (Colony Survival 0.3.0)
 -------------------------------------
 Added:
 	CUSTOM JOBS!
-		Chicken plucker, Stonemason, Carpenter, Blacksmith, Potter
+		Chicken plucker, Stonemason, Carpenter, Blacksmith, Potter, Skilled Archer
 	Can now enable or disable parts of the mod via the config.json file in the mod folder.
 	Message of the Day Feature.
 	Rotating Messages:

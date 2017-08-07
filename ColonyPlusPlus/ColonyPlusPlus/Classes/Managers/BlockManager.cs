@@ -50,21 +50,6 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.JobBlocks.QuiverT2xPlus quivert2xplus         = new Types.JobBlocks.QuiverT2xPlus("quivert2x+");
             Types.JobBlocks.QuiverT2zMinus quivert2zminus       = new Types.JobBlocks.QuiverT2zMinus("quivert2z-");
             Types.JobBlocks.QuiverT2zPlus quivert2zplus         = new Types.JobBlocks.QuiverT2zPlus("quivert2z+");
-            Types.JobBlocks.QuiverT3 quivert3                   = new Types.JobBlocks.QuiverT3("quivert3");
-            Types.JobBlocks.QuiverT3xMinus quivert3xminus       = new Types.JobBlocks.QuiverT3xMinus("quivert3x-");
-            Types.JobBlocks.QuiverT3xPlus quivert3xplus         = new Types.JobBlocks.QuiverT3xPlus("quivert3x+");
-            Types.JobBlocks.QuiverT3zMinus quivert3zminus       = new Types.JobBlocks.QuiverT3zMinus("quivert3z-");
-            Types.JobBlocks.QuiverT3zPlus quivert3zplus         = new Types.JobBlocks.QuiverT3zPlus("quivert3z+");
-            Types.JobBlocks.QuiverT4 quivert4                   = new Types.JobBlocks.QuiverT4("quivert4");
-            Types.JobBlocks.QuiverT4xMinus quivert4xminus       = new Types.JobBlocks.QuiverT4xMinus("quivert4x-");
-            Types.JobBlocks.QuiverT4xPlus quivert4xplus         = new Types.JobBlocks.QuiverT4xPlus("quivert4x+");
-            Types.JobBlocks.QuiverT4zMinus quivert4zminus       = new Types.JobBlocks.QuiverT4zMinus("quivert4z-");
-            Types.JobBlocks.QuiverT4zPlus quivert4zplus         = new Types.JobBlocks.QuiverT4zPlus("quivert4z+");
-            Types.JobBlocks.QuiverT5 quivert5                   = new Types.JobBlocks.QuiverT5("quivert5");
-            Types.JobBlocks.QuiverT5xMinus quivert5xminus       = new Types.JobBlocks.QuiverT5xMinus("quivert5x-");
-            Types.JobBlocks.QuiverT5xPlus quivert5xplus         = new Types.JobBlocks.QuiverT5xPlus("quivert5x+");
-            Types.JobBlocks.QuiverT5zMinus quivert5zminus       = new Types.JobBlocks.QuiverT5zMinus("quivert5z-");
-            Types.JobBlocks.QuiverT5zPlus quivert5zplus         = new Types.JobBlocks.QuiverT5zPlus("quivert5z+");
 
             // interactive Items
             //Types.blocks.ChickenCoop chickencoop = new Types.blocks.ChickenCoop("chickencoop");

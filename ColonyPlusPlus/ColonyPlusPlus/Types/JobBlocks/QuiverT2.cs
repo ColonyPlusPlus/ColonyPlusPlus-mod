@@ -18,10 +18,10 @@ namespace ColonyPlusPlus.Types.JobBlocks
             this.NeedsBase = true;
             this.IsSolid = false;
             this.IsPlaceable = true;
-            this.RotatableXPlus = "quiverx+";
-            this.RotatableXMinus = "quiverx-";
-            this.RotatableZPlus = "quiverz+";
-            this.RotatableZMinus = "quiverz-";
+            this.RotatableXPlus = "quivert2x+";
+            this.RotatableXMinus = "quivert2x-";
+            this.RotatableZPlus = "quivert2z+";
+            this.RotatableZMinus = "quivert2z-";
             this.Register();
         }
     }

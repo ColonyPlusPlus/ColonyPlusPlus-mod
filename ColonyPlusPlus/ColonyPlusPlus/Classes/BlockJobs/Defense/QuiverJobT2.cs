@@ -12,14 +12,16 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
     {
         ushort quiverType;
         Zombie target;
-
+        
+        
         public override string NPCTypeKey { get { return "cpp.guardbowt2"; } }
 
-        public override float TimeBetweenJobs { get { return 2.25f; } }
+        //Time between finding a new target.
+        public override float TimeBetweenJobs { get { return 1.5f; } }
 
         public override bool ToSleep { get { return false; } }
 
-        public override InventoryItem RecruitementItem { get { return new InventoryItem(BuiltinBlocks.Dirt, 1); } }
+        public override InventoryItem RecruitementItem { get { return new InventoryItem(BuiltinBlocks.Bow, 1); } }
 
         public override ITrackableBlock InitializeFromJSON(Players.Player player, JSONNode node)
         {
@@ -53,7 +55,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
                     if (Stockpile.GetStockPile(owner).Remove(BuiltinBlocks.Arrow, 1))
                     {
 						Arrow.New(npcPos, targetPos, target.Direction);
-                        OverrideCooldown(4.5);
+                        OverrideCooldown(3.0);
                     }
                     else
                     {
@@ -72,19 +74,19 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
                 if (target == null)
                 {
                     Vector3 desiredPosition = usedNPC.Position;
-                    if (quiverType == BuiltinBlocks.QuiverXN)
+                    if (quiverType == ItemTypes.IndexLookup.GetIndex("quivert2x-"))
                     {
                         desiredPosition += Vector3.left;
                     }
-                    else if (quiverType == BuiltinBlocks.QuiverXP)
+                    else if (quiverType == ItemTypes.IndexLookup.GetIndex("quivert2x+"))
                     {
                         desiredPosition += Vector3.right;
                     }
-                    else if (quiverType == BuiltinBlocks.QuiverZP)
+                    else if (quiverType == ItemTypes.IndexLookup.GetIndex("quivert2z+"))
                     {
                         desiredPosition += Vector3.forward;
                     }
-                    else if (quiverType == BuiltinBlocks.QuiverZN)
+                    else if (quiverType == ItemTypes.IndexLookup.GetIndex("quivert2z-"))
                     {
                         desiredPosition += Vector3.back;
                     }
@@ -101,8 +103,8 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
         {
             NPCTypeSettings def = NPCTypeSettings.Default;
             def.keyName = NPCTypeKey;
-            def.printName = "Bow guard Level 2";
-            def.maskColor1 = new Color32(125, 125, 125, 255);
+            def.printName = "Bow guardLevel 5";
+            def.maskColor1 = new Color32(255, 255, 255, 255);
             def.type = NPCTypeID.GetNextID();
             return def;
         }
