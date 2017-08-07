@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pipliz;
+using Pipliz.Chatting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -59,6 +61,41 @@ namespace ColonyPlusPlus.Classes.Helpers
             string messageBuilt = buildMessage(message, colour, style);
             Pipliz.Chatting.Chat.SendToAllBut(ply, messageBuilt, sender);
         }
+
+        public static void sendSilent(Players.Player player, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
+        {
+            ChatSenderType type = ChatSenderType.Server;
+
+            if (!(player.ID == NetworkID.Server))
+            {
+                string messageBuilt = buildMessage(message, colour, style);
+
+                using (ByteBuilder byteBuilder = ByteBuilder.Get())
+                {
+                    byteBuilder.Write(15);
+                    byteBuilder.Write((byte)type);
+                    byteBuilder.Write(messageBuilt);
+                    NetworkWrapper.Send(byteBuilder.ToArray(), player, NetworkMessageReliability.ReliableWithBuffering);
+                }
+            }
+        }
+
+        public static void sendAllSilent(string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
+        {
+            ChatSenderType type = ChatSenderType.Server;
+            string messageBuilt = buildMessage(message, colour, style);
+
+
+            using (ByteBuilder byteBuilder = ByteBuilder.Get())
+            {
+                byteBuilder.Write(15);
+                byteBuilder.Write((byte)type);
+                byteBuilder.Write(messageBuilt);
+                Players.SendToAll(byteBuilder.ToArray(), NetworkMessageReliability.ReliableWithBuffering);
+            }
+        }
+
+
 
         public static string buildMessage(string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal)
         {

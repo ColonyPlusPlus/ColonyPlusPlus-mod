@@ -19,7 +19,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             {
                 var targetPlayer = Players.GetPlayer(target);
                 ServerManager.Disconnect(targetPlayer);
-                Chat.Send(ply, $"Kicked {targetPlayer.Name}");
+               Helpers.Chat.send(ply, $"Kicked {targetPlayer.Name}", Helpers.Chat.ChatColour.magenta);
             }
             return true;
         }
