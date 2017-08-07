@@ -64,7 +64,7 @@ namespace ColonyPlusPlus.Classes.Helpers
 
         public static void sendSilent(Players.Player player, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
         {
-            ChatSenderType type = ChatSenderType.Server;
+            /*ChatSenderType type = ChatSenderType.Server;
 
             if (!(player.ID == NetworkID.Server))
             {
@@ -77,12 +77,13 @@ namespace ColonyPlusPlus.Classes.Helpers
                     byteBuilder.Write(messageBuilt);
                     NetworkWrapper.Send(byteBuilder.ToArray(), player, NetworkMessageReliability.ReliableWithBuffering);
                 }
-            }
+            }*/
+            send(player, message, colour, style, sender);
         }
 
         public static void sendAllSilent(string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
         {
-            ChatSenderType type = ChatSenderType.Server;
+            /*ChatSenderType type = ChatSenderType.Server;
             string messageBuilt = buildMessage(message, colour, style);
 
 
@@ -92,7 +93,9 @@ namespace ColonyPlusPlus.Classes.Helpers
                 byteBuilder.Write((byte)type);
                 byteBuilder.Write(messageBuilt);
                 Players.SendToAll(byteBuilder.ToArray(), NetworkMessageReliability.ReliableWithBuffering);
-            }
+            }*/
+
+            sendToAll(message, colour, style, sender);
         }
 
 

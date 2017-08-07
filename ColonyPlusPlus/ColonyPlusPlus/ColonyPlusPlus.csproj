@@ -59,7 +59,6 @@
     <Compile Include="Classes\BlockJobs\CraftingJob\Carpenter.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\ChickenPluckerJob.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\StoneMason.cs" />
-    <Compile Include="Classes\BlockJobs\Defense\QuiverJobShortbow.cs" />
     <Compile Include="Classes\BlockJobs\Defense\QuiverJobT2.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
@@ -239,7 +238,6 @@
     <Compile Include="Types\JobBlocks\MasonTable.cs" />
     <Compile Include="Types\JobBlocks\PotteryTable.cs" />
     <Compile Include="Types\JobBlocks\QuiverT2.cs" />
-    <Compile Include="Types\JobBlocks\QuiverShortbow.cs" />
     <Compile Include="Types\JobBlocks\Sawmill.cs" />
   </ItemGroup>
   <ItemGroup />
