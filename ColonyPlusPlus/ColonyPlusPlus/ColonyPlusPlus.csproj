@@ -66,10 +66,13 @@
     <Compile Include="Classes\BlockJobs\Defense\QuiverJobT2.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
+    <Compile Include="Classes\CustomChatCommands\Ban.cs" />
     <Compile Include="Classes\CustomChatCommands\Chunk.cs" />
     <Compile Include="Classes\CustomChatCommands\Clear.cs" />
     <Compile Include="Classes\CustomChatCommands\Creative.cs" />
     <Compile Include="Classes\CustomChatCommands\Debug.cs" />
+    <Compile Include="Classes\CustomChatCommands\Kick.cs" />
+    <Compile Include="Classes\CustomChatCommands\Locate.cs" />
     <Compile Include="Classes\Managers\ChatManager.cs" />
     <Compile Include="Classes\Managers\MasterChatCommandManager.cs" />
     <Compile Include="Classes\CustomChatCommands\Online.cs" />
