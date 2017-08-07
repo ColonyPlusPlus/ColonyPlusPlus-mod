@@ -13,13 +13,13 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
         ushort quiverType;
         Zombie target;
 
-        public override string NPCTypeKey { get { return "cpp.guardbow"; } }
+        public override string NPCTypeKey { get { return "cpp.guardbowt2"; } }
 
         public override float TimeBetweenJobs { get { return 2.25f; } }
 
         public override bool ToSleep { get { return false; } }
 
-        public override InventoryItem RecruitementItem { get { return new InventoryItem(BuiltinBlocks.Bow, 1); } }
+        public override InventoryItem RecruitementItem { get { return new InventoryItem(BuiltinBlocks.Dirt, 1); } }
 
         public override ITrackableBlock InitializeFromJSON(Players.Player player, JSONNode node)
         {
@@ -101,8 +101,8 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
         {
             NPCTypeSettings def = NPCTypeSettings.Default;
             def.keyName = NPCTypeKey;
-            def.printName = "Bow guard";
-            def.maskColor1 = new Color32(159, 155, 152, 255);
+            def.printName = "Bow guard Level 2";
+            def.maskColor1 = new Color32(125, 125, 125, 255);
             def.type = NPCTypeID.GetNextID();
             return def;
         }

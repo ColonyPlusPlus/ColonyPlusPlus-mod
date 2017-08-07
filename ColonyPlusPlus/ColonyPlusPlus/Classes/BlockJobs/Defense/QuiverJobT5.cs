@@ -13,9 +13,8 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
         ushort quiverType;
         Zombie target;
         
-
-
-        public override string NPCTypeKey { get { return "cpp.guardbow"; } }
+        
+        public override string NPCTypeKey { get { return "cpp.guardbowt5"; } }
 
         //Time between finding a new target.
         public override float TimeBetweenJobs { get { return 1.5f; } }
@@ -104,8 +103,8 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
         {
             NPCTypeSettings def = NPCTypeSettings.Default;
             def.keyName = NPCTypeKey;
-            def.printName = "Bow guard";
-            def.maskColor1 = new Color32(159, 155, 152, 255);
+            def.printName = "Bow guardLevel 5";
+            def.maskColor1 = new Color32(255, 255, 255, 255);
             def.type = NPCTypeID.GetNextID();
             return def;
         }

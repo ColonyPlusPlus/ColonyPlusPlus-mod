@@ -30,7 +30,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
     {
         public QuiverT5xPlus(string name) : base(name)
         {
-            this.ParentType = "quiver";
+            this.ParentType = "quivert5";
             this.SideAll = "quiverarrow";
             this.Mesh = "quiverx+";
             this.Register();
@@ -40,7 +40,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
     {
         public QuiverT5xMinus(string name) : base(name)
         {
-            this.ParentType = "quiver";
+            this.ParentType = "quivert5";
             this.SideAll = "quiverarrow";
             this.Mesh = "quiverx-";
             this.Register();
@@ -50,7 +50,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
     {
         public QuiverT5zPlus(string name) : base(name)
         {
-            this.ParentType = "quiver";
+            this.ParentType = "quivert5";
             this.SideAll = "quiverarrow";
             this.Mesh = "quiverz+";
             this.Register();
@@ -60,7 +60,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
     {
         public QuiverT5zMinus(string name) : base(name)
         {
-            this.ParentType = "quiver";
+            this.ParentType = "quivert5";
             this.SideAll = "quiverarrow";
             this.Mesh = "quiverz-";
             this.Register();

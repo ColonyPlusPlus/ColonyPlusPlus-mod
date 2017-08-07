@@ -202,11 +202,11 @@ namespace ColonyPlusPlus
                 //FueledCraftingJobs
                  Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
                 //DefenseJobs
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobShortbow>("quivershortbow");
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT2>("quivert2");
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT3>("quivert3");
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT4>("quivert4");
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT5>("quivert5");
+                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobShortbow>("quivershortbow");
+                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT2>("quivert2");
+                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT3>("quivert3");
+                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT4>("quivert4");
+                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT5>("quivert5");
             }
         }
 
