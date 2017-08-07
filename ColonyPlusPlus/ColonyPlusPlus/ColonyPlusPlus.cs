@@ -133,7 +133,7 @@ namespace ColonyPlusPlus
                         Colony col = Colony.Get(Players.GetConnectedByIndex(plyID));
                         if (col.FollowerCount > ColonyLimit)
                         {
-                            col.RemoveNPC(col.FindLaborer(ColonyLimit));
+                            col.TakeMonsterHit(10000000, 1000000);
                         }
                         plyID++;
                     }
