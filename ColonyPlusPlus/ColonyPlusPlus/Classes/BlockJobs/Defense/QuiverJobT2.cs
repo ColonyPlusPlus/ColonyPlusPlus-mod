@@ -1,12 +1,14 @@
-﻿using BlockTypes.Builtin;
+﻿using System;
+using BlockTypes.Builtin;
 using NPC;
+using Pipliz;
 using Pipliz.APIProvider.Jobs;
 using Pipliz.JSON;
 using UnityEngine;
 
-namespace Pipliz.BlockNPCs.Implementations
+namespace ColonyPlusPlus.Classes.BlockJobs.Defense
 {
-    public class QuiverT2 : BlockJobBase, IBlockJobBase, INPCTypeDefiner
+    public class QuiverJobT2 : BlockJobBase, IBlockJobBase, INPCTypeDefiner
     {
         ushort quiverType;
         Zombie target;
