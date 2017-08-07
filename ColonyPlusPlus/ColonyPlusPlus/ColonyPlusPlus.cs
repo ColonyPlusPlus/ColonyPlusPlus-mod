@@ -9,7 +9,6 @@ namespace ColonyPlusPlus
     [ModLoader.ModManager]
     public class ColonyPlusPlus
     {
-
         private static long nextMillisecondUpdate = 0;
         private static long nextMillisecondUpdateLong = 0;
         public static long nextMillisecondUpdateRotator = 0;
