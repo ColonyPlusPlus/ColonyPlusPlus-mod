@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
 
         public override string NPCTypeKey { get { return "cpp.guardbow"; } }
 
-        public override float TimeBetweenJobs { get { return 2.5f; } }
+        public override float TimeBetweenJobs { get { return 1.75f; } }
 
         public override bool ToSleep { get { return false; } }
 
@@ -53,7 +53,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
                     if (Stockpile.GetStockPile(owner).Remove(BuiltinBlocks.Arrow, 1))
                     {
 						Arrow.New(npcPos, targetPos, target.Direction);
-                        OverrideCooldown(5.0);
+                        OverrideCooldown(3.5);
                     }
                     else
                     {

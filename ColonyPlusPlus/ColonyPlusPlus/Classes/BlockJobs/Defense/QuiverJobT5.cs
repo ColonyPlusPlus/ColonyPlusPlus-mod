@@ -12,10 +12,13 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
     {
         ushort quiverType;
         Zombie target;
+        
+
 
         public override string NPCTypeKey { get { return "cpp.guardbow"; } }
 
-        public override float TimeBetweenJobs { get { return 2.5f; } }
+        //Time between finding a new target.
+        public override float TimeBetweenJobs { get { return 1.5f; } }
 
         public override bool ToSleep { get { return false; } }
 
@@ -53,7 +56,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
                     if (Stockpile.GetStockPile(owner).Remove(BuiltinBlocks.Arrow, 1))
                     {
 						Arrow.New(npcPos, targetPos, target.Direction);
-                        OverrideCooldown(5.0);
+                        OverrideCooldown(3.0);
                     }
                     else
                     {
