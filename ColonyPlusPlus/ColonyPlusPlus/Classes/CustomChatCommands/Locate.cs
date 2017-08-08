@@ -1,9 +1,6 @@
 ﻿using Permissions;
-using Pipliz.Chatting;
-using System;
-using System.Collections.Generic;
+using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
 using System.Linq;
-using System.Text;
 
 namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
@@ -19,8 +16,10 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             {
                 var player = Players.GetPlayer(target);
                 var status = player.IsConnected ? "online" : "offline";
-                Helpers.Chat.send(ply,
-                    $"{player.Name} is {status} and was last seen at x:{player.Position.x} y:{player.Position.y} z:{player.Position.z}", Helpers.Chat.ChatColour.magenta);
+
+                Chat.send(ply,
+                    $"{player.Name} is {status} and was last seen at x:{player.Position.x} y:{player.Position.y} z:{player.Position.z}", Chat.ChatColour.magenta);
+
             }
 
             return true;
@@ -43,10 +42,11 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                     where b.Owner == player
                     select b).FirstOrDefault();
 
-                Helpers.Chat.send(ply,
+                Chat.send(ply,
                     banner != null
                         ? $"{player.Name} has a banner at x:{banner.KeyLocation.x} y:{banner.KeyLocation.y} z:{banner.KeyLocation.z}"
-                        : $"{player.Name} doesnt have a banner", Helpers.Chat.ChatColour.magenta);
+                        : $"{player.Name} doesn't have a banner",Chat.ChatColour.magenta);
+
             }
             return true;
         }

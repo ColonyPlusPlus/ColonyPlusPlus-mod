@@ -1,9 +1,5 @@
 ﻿using Permissions;
-using Pipliz.Chatting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
 
 namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
@@ -21,7 +17,26 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                 var targetPlayer = Players.GetPlayer(target);
                 BlackAndWhitelisting.AddBlackList(targetPlayer.ID.steamID.m_SteamID);
                 ServerManager.Disconnect(targetPlayer);
-                Helpers.Chat.send(ply, $"Banned {targetPlayer.Name}", Helpers.Chat.ChatColour.cyan);
+                Chat.send(ply, $"Banned {targetPlayer.Name}", Chat.ChatColour.cyan);
+            }
+            return true;
+        }
+    }
+
+    public class Unban : BaseChatCommand
+    {
+        public Unban() : base("/unban", true)
+        {
+        }
+
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        {
+            if (PermissionsManager.CheckAndWarnPermission(ply, "unban"))
+            {
+                //TODO: Log unbans
+                var targetPlayer = Players.GetPlayer(target);
+                BlackAndWhitelisting.RemoveBlackList(targetPlayer.ID.steamID.m_SteamID);
+                Chat.send(ply, $"Unbanned {targetPlayer.Name}", Chat.ChatColour.cyan);
             }
             return true;
         }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Permissions;
-using Pipliz.Chatting;
+﻿using Permissions;
+using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
 
 namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
@@ -19,7 +15,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             {
                 var targetPlayer = Players.GetPlayer(target);
                 ServerManager.Disconnect(targetPlayer);
-               Helpers.Chat.send(ply, $"Kicked {targetPlayer.Name}", Helpers.Chat.ChatColour.magenta);
+                Chat.send(ply, $"Kicked {targetPlayer.Name}",Chat.ChatColour.magenta);
             }
             return true;
         }
