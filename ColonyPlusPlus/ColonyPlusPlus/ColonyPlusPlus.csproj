@@ -59,13 +59,17 @@
     <Compile Include="Classes\BlockJobs\CraftingJob\Carpenter.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\ChickenPluckerJob.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\StoneMason.cs" />
+    <Compile Include="Classes\BlockJobs\Defense\QuiverJobT2.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
+    <Compile Include="Classes\CustomChatCommands\Ban.cs" />
     <Compile Include="Classes\CustomChatCommands\Chunk.cs" />
     <Compile Include="Classes\CustomChatCommands\Clear.cs" />
     <Compile Include="Classes\CustomChatCommands\Creative.cs" />
     <Compile Include="Classes\CustomChatCommands\Debug.cs" />
     <Compile Include="Classes\CustomChatCommands\TPA.cs" />
+    <Compile Include="Classes\CustomChatCommands\Kick.cs" />
+    <Compile Include="Classes\CustomChatCommands\Locate.cs" />
     <Compile Include="Classes\Managers\ChatManager.cs" />
     <Compile Include="Classes\Managers\MasterChatCommandManager.cs" />
     <Compile Include="Classes\CustomChatCommands\Online.cs" />
@@ -234,6 +238,7 @@
     <Compile Include="Types\JobBlocks\ChickenCoop.cs" />
     <Compile Include="Types\JobBlocks\MasonTable.cs" />
     <Compile Include="Types\JobBlocks\PotteryTable.cs" />
+    <Compile Include="Types\JobBlocks\QuiverT2.cs" />
     <Compile Include="Types\JobBlocks\Sawmill.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -39,6 +39,12 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.JobBlocks.Sawmill sawmill = new Types.JobBlocks.Sawmill("sawmill");
             Types.JobBlocks.Anvil anvil = new Types.JobBlocks.Anvil("anvil");
             Types.JobBlocks.ChickenCoop chickencoop = new Types.JobBlocks.ChickenCoop("chickencoop");
+            
+            Types.JobBlocks.QuiverT2 quivert2                   = new Types.JobBlocks.QuiverT2("quivert2");
+            Types.JobBlocks.QuiverT2xMinus quivert2xminus       = new Types.JobBlocks.QuiverT2xMinus("quivert2x-");
+            Types.JobBlocks.QuiverT2xPlus quivert2xplus         = new Types.JobBlocks.QuiverT2xPlus("quivert2x+");
+            Types.JobBlocks.QuiverT2zMinus quivert2zminus       = new Types.JobBlocks.QuiverT2zMinus("quivert2z-");
+            Types.JobBlocks.QuiverT2zPlus quivert2zplus         = new Types.JobBlocks.QuiverT2zPlus("quivert2z+");
 
             // interactive Items
             //Types.blocks.ChickenCoop chickencoop = new Types.blocks.ChickenCoop("chickencoop");
