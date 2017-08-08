@@ -8,9 +8,11 @@ namespace ColonyPlusPlus.Classes.Data
     public class NPCData
     {
         public XPData XPData;
+        public Players.Player owner;
 
-        public NPCData()
+        public NPCData(Players.Player o)
         {
+            owner = o;
             XPData = new XPData();
         }
     }
