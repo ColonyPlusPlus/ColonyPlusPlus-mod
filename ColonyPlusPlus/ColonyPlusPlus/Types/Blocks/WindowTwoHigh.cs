@@ -23,10 +23,10 @@ namespace ColonyPlusPlus.Types.Blocks
         {
             RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 2)
+                    RecipeManager.Item("planks", 4)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("window", 1)
+                    RecipeManager.Item("windowtwohigh", 1)
                 },
                 0.0f, false, true);
         }
