@@ -34,6 +34,9 @@ Added:
 		Rotates between messages after X seconds, both of these can be set in the config.json file
 	Version checking:
 		When you sign into the game it'll check if your running the newest version of the mod
+	New commands (Admins)
+		Ban/Unban - Can now ban or unban a player via command, banning kicks the player from the server.
+		Kick - Kicks a player from the server
 
 Changed:
 	Goldcoin Recipe is now 1 goldingot = 2 gold coins
