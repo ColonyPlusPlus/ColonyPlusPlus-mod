@@ -9,11 +9,36 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
 {
     class Blacksmith : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {
+        public string jobtype = "blacksmithing";
+
         public override string NPCTypeKey { get { return "cpp.blacksmith"; } }
 
-        public override float TimeBetweenJobs { get { return 2.9f; } }
+        public override float TimeBetweenJobs { get {
+                Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID);
+
+                return 2.9f * d.XPData.getCraftingMultiplier(jobtype);
+            } }
 
         public override int MaxRecipeCraftsPerHaul { get { return 6; } }
+
+        public override void OnNPCDoJob(ref NPCBase.NPCState state)
+        {
+            base.OnNPCDoJob(ref state);
+
+            if(state.JobIsDone == true)
+            {
+                Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID);
+                d.XPData.addXP(jobtype, this.owner);
+                Managers.NPCManager.updateNPCData(this.usedNPC.ID, d);
+            }
+           
+
+        }
+
+        public void nOnRemovedNPC()
+        {
+            Managers.NPCManager.removeNPCData(this.usedNPC.ID);
+        }
 
         public NPCTypeSettings GetNPCTypeDefinition()
         {

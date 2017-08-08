@@ -70,6 +70,8 @@
     <Compile Include="Classes\CustomChatCommands\Kick.cs" />
     <Compile Include="Classes\CustomChatCommands\Locate.cs" />
     <Compile Include="Classes\Data\BanData.cs" />
+    <Compile Include="Classes\Data\NPCData.cs" />
+    <Compile Include="Classes\Data\XPData.cs" />
     <Compile Include="Classes\Managers\BanManager.cs" />
     <Compile Include="Classes\Managers\ChatManager.cs" />
     <Compile Include="Classes\Managers\MasterChatCommandManager.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Classes\Managers\DecorativeTypeManager.cs" />
     <Compile Include="Classes\Managers\ItemManager.cs" />
     <Compile Include="Classes\Managers\MaterialManager.cs" />
+    <Compile Include="Classes\Managers\NPCManager.cs" />
     <Compile Include="Classes\Managers\PlayerManager.cs" />
     <Compile Include="Classes\Managers\RecipeManager.cs" />
     <Compile Include="Classes\Managers\RotatingMessageManager.cs" />
