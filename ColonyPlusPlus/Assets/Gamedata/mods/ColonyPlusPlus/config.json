@@ -55,9 +55,14 @@
 			},
 		]
 	},
+	
 	"crops": {
 		"enabled": true,
 		"growthMultiplier": 1
+	},
+	
+	"colony":{
+		"enabled": true,
+		"limit": 150
 	}
-
 }

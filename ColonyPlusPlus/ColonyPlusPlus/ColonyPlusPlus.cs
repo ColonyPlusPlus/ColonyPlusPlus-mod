@@ -37,10 +37,10 @@ namespace ColonyPlusPlus
 
             CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("jobs.enabled");
             CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("crops.enabled");
-            ColonyLimitEnabled = Classes.Managers.ConfigManager.getConfigBoolean("Colony.LimitEnabled");
+            ColonyLimitEnabled = Classes.Managers.ConfigManager.getConfigBoolean("colony.enabled");
             if(ColonyLimitEnabled)
             {
-                ColonyLimit = Classes.Managers.ConfigManager.getConfigInt("Colony.Limit");
+                ColonyLimit = Classes.Managers.ConfigManager.getConfigInt("colony.limit");
             }
 
             // Initialize chat commands
