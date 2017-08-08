@@ -26,6 +26,8 @@ Added:
 		Recipe: Quiver, 5 Iron Ingot
 	Sawmill
 		Recipe: 12 Planks, 1 Iron Ingot
+	NPC Jobs now gain XP and do their job faster!
+	Windows both single and two block high.
 	Can now enable or disable parts of the mod via the config.json file in the mod folder.
 	Message of the Day Feature.
 	Rotating Messages:
