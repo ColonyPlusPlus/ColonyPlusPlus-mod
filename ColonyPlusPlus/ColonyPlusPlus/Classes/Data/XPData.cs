@@ -77,9 +77,9 @@ namespace ColonyPlusPlus.Classes.Data
         public int getLevel(string jobtype)
         {
             int level = 0;
-            int baseXP = 10;
-            int maxLevel = 25;
-            int XPMultiplier = 2;
+            int baseXP = Managers.NPCManager.baseXP;
+            int maxLevel = Managers.NPCManager.maxLevel;
+            float XPMultiplier = Managers.NPCManager.XPMultiplier;
 
             if (XPAmounts.ContainsKey(jobtype))
             {
@@ -113,7 +113,7 @@ namespace ColonyPlusPlus.Classes.Data
             int level = getLevel(jobtype);
 
             // 2% bonus per level
-            return (float)(1 - (level * 0.02));
+            return (float)(1 - (level * Managers.NPCManager.EfficiencyPerLevel));
         }
 
         public Pipliz.JSON.JSONNode toJSON()

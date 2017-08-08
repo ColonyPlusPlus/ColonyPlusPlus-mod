@@ -1,4 +1,5 @@
-﻿using Pipliz;
+﻿using General.Networking;
+using Pipliz;
 using Pipliz.Chatting;
 using System;
 using System.Collections.Generic;
@@ -64,7 +65,7 @@ namespace ColonyPlusPlus.Classes.Helpers
 
         public static void sendSilent(Players.Player player, string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
         {
-            /*ChatSenderType type = ChatSenderType.Server;
+            ChatSenderType type = ChatSenderType.Server;
 
             if (!(player.ID == NetworkID.Server))
             {
@@ -72,30 +73,30 @@ namespace ColonyPlusPlus.Classes.Helpers
 
                 using (ByteBuilder byteBuilder = ByteBuilder.Get())
                 {
-                    byteBuilder.Write(15);
+                    byteBuilder.Write((ushort)ClientMessageType.Chat);
                     byteBuilder.Write((byte)type);
                     byteBuilder.Write(messageBuilt);
                     NetworkWrapper.Send(byteBuilder.ToArray(), player, NetworkMessageReliability.ReliableWithBuffering);
                 }
-            }*/
-            send(player, message, colour, style, sender);
+            }
+            //send(player, message, colour, style, sender);
         }
 
         public static void sendAllSilent(string message, ChatColour colour = ChatColour.white, ChatStyle style = ChatStyle.normal, Pipliz.Chatting.ChatSenderType sender = Pipliz.Chatting.ChatSenderType.Server)
         {
-            /*ChatSenderType type = ChatSenderType.Server;
+            ChatSenderType type = ChatSenderType.Server;
             string messageBuilt = buildMessage(message, colour, style);
 
 
             using (ByteBuilder byteBuilder = ByteBuilder.Get())
             {
-                byteBuilder.Write(15);
+                byteBuilder.Write((ushort)ClientMessageType.Chat);
                 byteBuilder.Write((byte)type);
                 byteBuilder.Write(messageBuilt);
                 Players.SendToAll(byteBuilder.ToArray(), NetworkMessageReliability.ReliableWithBuffering);
-            }*/
+            }
 
-            sendToAll(message, colour, style, sender);
+            //sendToAll(message, colour, style, sender);
         }
 
 

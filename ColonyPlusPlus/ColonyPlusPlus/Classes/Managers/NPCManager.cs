@@ -13,9 +13,20 @@ namespace ColonyPlusPlus.Classes.Managers
 
         private static Dictionary<int, Data.NPCData> NPCDataList = new Dictionary<int, Data.NPCData>();
 
+        public static int baseXP = 10;
+        public static int maxLevel = 25;
+        public static float XPMultiplier = 2;
+        public static float EfficiencyPerLevel = 0.02f;
+
         public static void initialise()
         {
             loadNPCData();
+            baseXP = ConfigManager.getConfigInt("jobs.baseXP");
+            maxLevel = ConfigManager.getConfigInt("jobs.maxLevel");
+            XPMultiplier = ConfigManager.getConfigFloat("jobs.xpMultiplier");
+            EfficiencyPerLevel = ConfigManager.getConfigFloat("jobs.efficiencyPerLevel");
+
+            Utilities.WriteLog(String.Format("NPC Config: baseXP: {0}, maxLevel: {1}, xpMultiplier: {2}, efficiencyPerLevel: {3}",baseXP, maxLevel, XPMultiplier, EfficiencyPerLevel));
         }
 
         public static Data.NPCData getNPCData(int id, Players.Player owner)
@@ -104,6 +115,9 @@ namespace ColonyPlusPlus.Classes.Managers
                                 int npcID = node["id"].GetAs<int>();
                                 Players.Player owner = Players.GetPlayer(new NetworkID(new CSteamID(node["owner"].GetAs<ulong>())));
 
+
+                                //Utilities.WriteLog("Loaded NPC: " + npcID);
+
                                 if (!NPCDataList.ContainsKey(npcID))
                                 {
                                     // doesn't exist, add it!
@@ -115,8 +129,11 @@ namespace ColonyPlusPlus.Classes.Managers
                                         foreach (KeyValuePair<string, JSONNode> current in xpdata.LoopObject())
                                         {
                                             npcData.XPData.setXP(current.Key, current.Value.GetAs<ushort>());
+                                            //Utilities.WriteLog("Added XP: " + current.Key + " value: " + current.Value.GetAs<ushort>());
                                         }
                                     }
+
+                                    NPCDataList.Add(npcID, npcData);
 
                                 }
 
@@ -133,7 +150,7 @@ namespace ColonyPlusPlus.Classes.Managers
                     }
                     else
                     {
-                        Utilities.WriteLog("Loading Crop Saves Returned 0 results");
+                        Utilities.WriteLog("Loading NPC data returned 0 results");
                     }
                 }
                 else
@@ -144,7 +161,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception2)
             {
-                Utilities.WriteLog("Exception in saving all UpdatableBlocks:" + exception2.Message);
+                Utilities.WriteLog("Exception in loading NPC data:" + exception2.Message);
             }
         }
 
