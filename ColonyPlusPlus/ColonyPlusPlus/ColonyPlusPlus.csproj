@@ -124,6 +124,7 @@
     <Compile Include="Types\Blocks\VegetablePatch.cs" />
     <Compile Include="Types\Blocks\WildBerryBush.cs" />
     <Compile Include="Types\Blocks\Window.cs" />
+    <Compile Include="Types\Blocks\WindowTwoHigh.cs" />
     <Compile Include="Types\Crops\CarrotStage1.cs" />
     <Compile Include="Types\Crops\CarrotStage2.cs" />
     <Compile Include="Types\Crops\CarrotStage3.cs" />

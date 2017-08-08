@@ -18,6 +18,7 @@ namespace ColonyPlusPlus.Classes.Managers
             // And register!
             Types.Blocks.WildBerryBush wildBerryBush                    = new Types.Blocks.WildBerryBush("wildberrybush");
             Types.Blocks.Window window                                  = new Types.Blocks.Window("window");
+            Types.Blocks.WindowTwoHigh windowtwohigh                    = new Types.Blocks.WindowTwoHigh("windowtwohigh");
             Types.Blocks.Sugarcane sugarcane                            = new Types.Blocks.Sugarcane("sugarcane");
             Types.Blocks.VegetablePatch vegetablepatch                  = new Types.Blocks.VegetablePatch("vegetablepatch");
 
