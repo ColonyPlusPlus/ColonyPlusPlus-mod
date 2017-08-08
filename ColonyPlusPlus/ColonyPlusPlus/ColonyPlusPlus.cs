@@ -33,6 +33,7 @@ namespace ColonyPlusPlus
             Classes.Managers.ConfigManager.initialise();
             Classes.Managers.RotatingMessageManager.initialise();
             Classes.Managers.ServerVariablesManager.init();
+            Classes.Managers.BanManager.initialise();
 
             CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
             CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");

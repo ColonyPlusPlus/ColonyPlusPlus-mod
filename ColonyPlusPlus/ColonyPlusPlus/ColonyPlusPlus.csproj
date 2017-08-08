@@ -69,6 +69,8 @@
     <Compile Include="Classes\CustomChatCommands\Debug.cs" />
     <Compile Include="Classes\CustomChatCommands\Kick.cs" />
     <Compile Include="Classes\CustomChatCommands\Locate.cs" />
+    <Compile Include="Classes\Data\BanData.cs" />
+    <Compile Include="Classes\Managers\BanManager.cs" />
     <Compile Include="Classes\Managers\ChatManager.cs" />
     <Compile Include="Classes\Managers\MasterChatCommandManager.cs" />
     <Compile Include="Classes\CustomChatCommands\Online.cs" />

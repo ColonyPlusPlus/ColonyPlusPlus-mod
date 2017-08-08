@@ -13,9 +13,10 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "ban"))
             {
-                //TODO: Log bans
+                
                 var targetPlayer = Players.GetPlayer(target);
                 BlackAndWhitelisting.AddBlackList(targetPlayer.ID.steamID.m_SteamID);
+                Classes.Managers.BanManager.addBan(targetPlayer.ID, "some reason");
                 ServerManager.Disconnect(targetPlayer);
                 Chat.send(ply, $"Banned {targetPlayer.Name}", Chat.ChatColour.cyan);
             }
@@ -35,6 +36,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             {
                 //TODO: Log unbans
                 var targetPlayer = Players.GetPlayer(target);
+                Classes.Managers.BanManager.removeBan(targetPlayer.ID);
                 BlackAndWhitelisting.RemoveBlackList(targetPlayer.ID.steamID.m_SteamID);
                 Chat.send(ply, $"Unbanned {targetPlayer.Name}", Chat.ChatColour.cyan);
             }
