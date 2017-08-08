@@ -233,8 +233,13 @@ namespace ColonyPlusPlus.Classes.Managers
 
         public static bool AllowPlaceBlock(ModLoader.OnTryChangeBlockUserData d)
         {
+            if (PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.admin"))
+            {
+                return true;
+            }
+            
             // Check permissions
-            if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.build"))
+            if (PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.build"))
             {
                 //Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You have build permissions");
 
@@ -247,7 +252,7 @@ namespace ColonyPlusPlus.Classes.Managers
                     {
                         if (d.typeNew == ItemTypes.IndexLookup.GetIndex("water"))
                         {
-                            if (PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "spawnbuilder"))
+                            if (PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.spawnbuilder"))
                             {
                                 return true;
                             }
