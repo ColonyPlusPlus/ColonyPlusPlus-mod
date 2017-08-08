@@ -16,6 +16,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Classes.Utilities.WriteLog("Starting To Register Blocks");
 
             // And register!
+            Types.Blocks.Pillar pillar = new Types.Blocks.Pillar("pillar");
             Types.Blocks.WildBerryBush wildBerryBush                    = new Types.Blocks.WildBerryBush("wildberrybush");
             Types.Blocks.Window window                                  = new Types.Blocks.Window("window");
             Types.Blocks.WindowTwoHigh windowtwohigh                    = new Types.Blocks.WindowTwoHigh("windowtwohigh");
@@ -77,8 +78,6 @@ namespace ColonyPlusPlus.Classes.Managers
             Classes.Managers.DecorativeTypeManager clayblocksilver = new DecorativeTypeManager("clayblocksilver", "clayblocksilver", "clay", "pottery", clayblocktypes);
             Classes.Managers.DecorativeTypeManager clayblockwhite = new DecorativeTypeManager("clayblockwhite", "clayblockwhite", "clay", "pottery", clayblocktypes);
             Classes.Managers.DecorativeTypeManager clayblockyellow = new DecorativeTypeManager("clayblockyellow", "clayblockyellow", "clay", "pottery", clayblocktypes);
-
-
         }
     }
 }

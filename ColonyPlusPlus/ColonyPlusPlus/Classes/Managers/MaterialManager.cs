@@ -35,6 +35,8 @@
             Material.createMaterial("clayblocksilver", "clayblocksilver", "neutral", "plasterblock", "plasterblock");
             Material.createMaterial("clayblockwhite", "clayblockwhite", "neutral", "plasterblock", "plasterblock");
             Material.createMaterial("clayblockyellow", "clayblockyellow", "neutral", "plasterblock", "plasterblock");
+
+            Material.createMaterial("marble", "graymarble", "neutral", "neutral", "neutral");
         }
     }
 }

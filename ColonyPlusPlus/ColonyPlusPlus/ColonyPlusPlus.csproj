@@ -120,6 +120,7 @@
     <Compile Include="Types\Blocks\LogCubeTemperateRotated.cs" />
     <Compile Include="Types\Blocks\LogCubeTemperateRotatedX.cs" />
     <Compile Include="Types\Blocks\LogCubeTemperateRotatedZ.cs" />
+    <Compile Include="Types\Blocks\Pillar.cs" />
     <Compile Include="Types\Blocks\Sugarcane.cs" />
     <Compile Include="Types\Blocks\VegetablePatch.cs" />
     <Compile Include="Types\Blocks\WildBerryBush.cs" />
