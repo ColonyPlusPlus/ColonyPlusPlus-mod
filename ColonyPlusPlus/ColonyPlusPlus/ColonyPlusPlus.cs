@@ -35,8 +35,8 @@ namespace ColonyPlusPlus
             Classes.Managers.ServerVariablesManager.init();
             Classes.Managers.BanManager.initialise();
 
-            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomJobs");
-            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("modules.CustomCrops");
+            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("jobs.enabled");
+            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("crops.enabled");
             ColonyLimitEnabled = Classes.Managers.ConfigManager.getConfigBoolean("Colony.LimitEnabled");
             if(ColonyLimitEnabled)
             {
