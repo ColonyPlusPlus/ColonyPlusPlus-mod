@@ -17,20 +17,21 @@ namespace ColonyPlusPlus.Classes.Managers
 
             // And register!
             Types.Blocks.WildBerryBush wildBerryBush                    = new Types.Blocks.WildBerryBush("wildberrybush");
+            Types.Blocks.Window window                                  = new Types.Blocks.Window("window");
             Types.Blocks.Sugarcane sugarcane                            = new Types.Blocks.Sugarcane("sugarcane");
-            Types.Blocks.VegetablePatch vegetablepatch = new Types.Blocks.VegetablePatch("vegetablepatch");
+            Types.Blocks.VegetablePatch vegetablepatch                  = new Types.Blocks.VegetablePatch("vegetablepatch");
 
             // logs
-            Types.Blocks.LogCube logcube = new Types.Blocks.LogCube("logcube");
-            Types.Blocks.LogCubeTemperate logcubetemperate = new Types.Blocks.LogCubeTemperate("logcubetemperate");
-            Types.Blocks.LogCubeTaiga logcubetaiga = new Types.Blocks.LogCubeTaiga("logcubetaiga");
-            Types.Blocks.LogCubeRotated logcuberotated = new Types.Blocks.LogCubeRotated("logcuberotated");
+            Types.Blocks.LogCube logcube                                = new Types.Blocks.LogCube("logcube");
+            Types.Blocks.LogCubeTemperate logcubetemperate              = new Types.Blocks.LogCubeTemperate("logcubetemperate");
+            Types.Blocks.LogCubeTaiga logcubetaiga                      = new Types.Blocks.LogCubeTaiga("logcubetaiga");
+            Types.Blocks.LogCubeRotated logcuberotated                  = new Types.Blocks.LogCubeRotated("logcuberotated");
             Types.Blocks.LogCubeTemperateRotated logcubetemperaterotated = new Types.Blocks.LogCubeTemperateRotated("logcubetemperaterotated");
             Types.Blocks.LogCubeTemperateRotatedX logcubetemperaterotatedx = new Types.Blocks.LogCubeTemperateRotatedX("logcubetemperaterotatedx");
             Types.Blocks.LogCubeTemperateRotatedZ logcubetemperaterotatedz = new Types.Blocks.LogCubeTemperateRotatedZ("logcubetemperaterotatedz");
-            Types.Blocks.LogCubeTaigaRotated logcubetaigarotated = new Types.Blocks.LogCubeTaigaRotated("logcubetaigarotated");
-            Types.Blocks.LogCubeTaigaRotatedX logcubetaigarotatedx = new Types.Blocks.LogCubeTaigaRotatedX("logcubetaigarotatedx");
-            Types.Blocks.LogCubeTaigaRotatedZ logcubetaigarotatedz = new Types.Blocks.LogCubeTaigaRotatedZ("logcubetaigarotatedz");
+            Types.Blocks.LogCubeTaigaRotated logcubetaigarotated        = new Types.Blocks.LogCubeTaigaRotated("logcubetaigarotated");
+            Types.Blocks.LogCubeTaigaRotatedX logcubetaigarotatedx      = new Types.Blocks.LogCubeTaigaRotatedX("logcubetaigarotatedx");
+            Types.Blocks.LogCubeTaigaRotatedZ logcubetaigarotatedz      = new Types.Blocks.LogCubeTaigaRotatedZ("logcubetaigarotatedz");
 
 
             // job stuff
