@@ -109,6 +109,7 @@ namespace ColonyPlusPlus
             }
                
             Classes.Managers.WorldManager.LoadJSON();
+            Classes.Managers.NPCManager.initialise();
 
             //Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
         }
@@ -177,7 +178,8 @@ namespace ColonyPlusPlus
             {
                 Classes.Managers.CropManager.SaveCropTracker();
             }
-               
+
+            Classes.Managers.NPCManager.saveNPCData();
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonyplusplus.OnQuit")]

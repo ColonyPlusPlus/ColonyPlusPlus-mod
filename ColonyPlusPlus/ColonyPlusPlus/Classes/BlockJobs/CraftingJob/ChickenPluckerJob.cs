@@ -9,7 +9,15 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
 
         public override string NPCTypeKey { get { return "cpp.chickenplucker"; } }
 
-        public override float TimeBetweenJobs { get { return 2.9f; } }
+        public override float TimeBetweenJobs
+        {
+            get
+            {
+                Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID, this.owner);
+
+                return 2.9f * d.XPData.getCraftingMultiplier(jobtype);
+            }
+        }
 
         public override int MaxRecipeCraftsPerHaul { get { return 6; } }
 
@@ -29,7 +37,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
 
             if (state.JobIsDone == true)
             {
-                Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID);
+                Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID, this.owner);
                 d.XPData.addXP(jobtype, this.owner);
                 Managers.NPCManager.updateNPCData(this.usedNPC.ID, d);
             }
