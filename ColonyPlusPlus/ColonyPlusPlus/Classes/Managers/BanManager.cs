@@ -26,6 +26,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 string bantime = Pipliz.Time.FullTimeStamp();
                 Data.BanData bd = new Data.BanData(id,  reason, bantime);
                 BanList.Add(id.steamID.m_SteamID, bd);
+                SaveBanList();
 
                 return true;
             }
@@ -37,6 +38,7 @@ namespace ColonyPlusPlus.Classes.Managers
             if(BanList.ContainsKey(id.steamID.m_SteamID))
             {
                 BanList.Remove(id.steamID.m_SteamID);
+                SaveBanList();
                 return true;
             } else
             {
