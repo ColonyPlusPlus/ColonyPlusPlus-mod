@@ -55,6 +55,9 @@
 				"prefix": "Mod"
 			},
 		]
+	},
+	"crops": {
+		"growthMultiplier": 1
 	}
 
 }

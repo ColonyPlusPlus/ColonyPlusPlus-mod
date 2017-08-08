@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ColonyPlusPlus.Classes.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,24 @@ namespace ColonyPlusPlus.Types.JobBlocks
             this.NeedsBase = true;
             this.IsSolid = false;
             this.IsPlaceable = true;
-            this.RotatableXPlus = "quiverx+";
-            this.RotatableXMinus = "quiverx-";
-            this.RotatableZPlus = "quiverz+";
-            this.RotatableZMinus = "quiverz-";
+            this.RotatableXPlus = "quivert2x+";
+            this.RotatableXMinus = "quivert2x-";
+            this.RotatableZPlus = "quivert2z+";
+            this.RotatableZMinus = "quivert2z-";
             this.Register();
+        }
+
+        public override void AddRecipes()
+        {
+            RecipeManager.AddRecipe("crafting",
+                new List<InventoryItem> {
+                    RecipeManager.Item("quiver", 1),
+                    RecipeManager.Item("ironingot", 5)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("quivert2", 1)
+                },
+                0.0f, true, true);
         }
     }
 
@@ -30,7 +44,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
     {
         public QuiverT2xPlus(string name) : base(name)
         {
-            this.ParentType = "quiver";
+            this.ParentType = "quivert2";
             this.SideAll = "quiverarrow";
             this.Mesh = "quiverx+";
             this.Register();
@@ -40,7 +54,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
     {
         public QuiverT2xMinus(string name) : base(name)
         {
-            this.ParentType = "quiver";
+            this.ParentType = "quivert2";
             this.SideAll = "quiverarrow";
             this.Mesh = "quiverx-";
             this.Register();
@@ -50,7 +64,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
     {
         public QuiverT2zPlus(string name) : base(name)
         {
-            this.ParentType = "quiver";
+            this.ParentType = "quivert2";
             this.SideAll = "quiverarrow";
             this.Mesh = "quiverz+";
             this.Register();
@@ -60,7 +74,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
     {
         public QuiverT2zMinus(string name) : base(name)
         {
-            this.ParentType = "quiver";
+            this.ParentType = "quivert2";
             this.SideAll = "quiverarrow";
             this.Mesh = "quiverz-";
             this.Register();

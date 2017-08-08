@@ -9,7 +9,6 @@ namespace ColonyPlusPlus
     [ModLoader.ModManager]
     public class ColonyPlusPlus
     {
-
         private static long nextMillisecondUpdate = 0;
         private static long nextMillisecondUpdateLong = 0;
         public static long nextMillisecondUpdateRotator = 0;
@@ -133,7 +132,7 @@ namespace ColonyPlusPlus
                         Colony col = Colony.Get(Players.GetConnectedByIndex(plyID));
                         if (col.FollowerCount > ColonyLimit)
                         {
-                            col.RemoveNPC(col.FindLaborer(ColonyLimit));
+                            col.TakeMonsterHit(10000000, 1000000);
                         }
                         plyID++;
                     }
@@ -202,11 +201,7 @@ namespace ColonyPlusPlus
                 //FueledCraftingJobs
                  Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
                 //DefenseJobs
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobShortbow>("quivershortbow");
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT2>("quivert2");
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT3>("quivert3");
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT4>("quivert4");
-                //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT5>("quivert5");
+                Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT2>("quivert2");
             }
         }
 

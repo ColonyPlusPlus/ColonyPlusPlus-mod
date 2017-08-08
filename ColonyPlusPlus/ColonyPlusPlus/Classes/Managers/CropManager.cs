@@ -106,7 +106,12 @@ namespace ColonyPlusPlus.Classes.Managers
 
                                         // get a new classinstance to calculate the proper growth time
                                         GrowableType g = CropTypes[newBlockName];
-                                        long nextUpdate = (long)(Pipliz.Time.MillisecondsSinceStart + g.maxGrowth * Pipliz.Random.NextFloat(g.growthMultiplierMin, g.growthMultiplierMax) * 60000);
+                                        float growthMulitiplier = ConfigManager.getConfigFloat("crops.growthMultiplier");
+                                        if(growthMulitiplier == 0f)
+                                        {
+                                            growthMulitiplier = 1f;
+                                        }
+                                        long nextUpdate = (long)(Pipliz.Time.MillisecondsSinceStart + g.maxGrowth * growthMulitiplier * Pipliz.Random.NextFloat(g.growthMultiplierMin, g.growthMultiplierMax) * 60000);
 
                                         // add it to the update list
                                         if(CropUpdateHolder.ContainsKey(nextUpdate))

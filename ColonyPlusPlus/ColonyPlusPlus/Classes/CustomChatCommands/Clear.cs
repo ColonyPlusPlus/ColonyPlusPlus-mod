@@ -26,7 +26,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                     s.Remove(i, s.AmountContained(i));
                 }
 
-                Chat.Send(ply, "Cleared Inventory!", ChatSenderType.Server);
+                Helpers.Chat.sendSilent(ply, "Cleared Inventory!", Helpers.Chat.ChatColour.lime);
             }
             
             return true;

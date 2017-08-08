@@ -16,8 +16,10 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             {
                 var player = Players.GetPlayer(target);
                 var status = player.IsConnected ? "online" : "offline";
+
                 Chat.send(ply,
-                    $"{player.Name} is {status} and was last seen at x:{player.Position.x} y:{player.Position.y} z:{player.Position.z}", Chat.ChatColour.cyan);
+                    $"{player.Name} is {status} and was last seen at x:{player.Position.x} y:{player.Position.y} z:{player.Position.z}", Chat.ChatColour.magenta);
+
             }
 
             return true;
@@ -43,7 +45,8 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                 Chat.send(ply,
                     banner != null
                         ? $"{player.Name} has a banner at x:{banner.KeyLocation.x} y:{banner.KeyLocation.y} z:{banner.KeyLocation.z}"
-                        : $"{player.Name} doesnt have a banner",Chat.ChatColour.cyan);
+                        : $"{player.Name} doesn't have a banner",Chat.ChatColour.magenta);
+
             }
             return true;
         }

@@ -110,8 +110,8 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (fromPd.tradeData != null || toPd.tradeData != null)
             {
-                Chat.Send(from, "Trade to " + to.Name + " failed, you or your trade partner have an outstanding trade.");
-                Chat.Send(to, "Trade from " + from.Name + " failed, you or your trade partner have an outstanding trade.");
+                Helpers.Chat.sendSilent(from, "Trade to " + to.Name + " failed, you or your trade partner have an outstanding trade.", Helpers.Chat.ChatColour.orange);
+                Helpers.Chat.sendSilent(to, "Trade from " + from.Name + " failed, you or your trade partner have an outstanding trade.", Helpers.Chat.ChatColour.orange);
                 return;
             }
             string name;
@@ -120,7 +120,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (!legalIds)
             {
-                Chat.Send(from, "Invalid ID's");
+                Helpers.Chat.sendSilent(from, "Invalid ID's", Helpers.Chat.ChatColour.orange);
                 return;
             }
 
@@ -129,20 +129,20 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (fromSP.AmountContained(take) <= takeamt)
             {
-                Chat.Send(from, "You can't afford that trade.");
+                Helpers.Chat.sendSilent(from, "You can't afford that trade.", Helpers.Chat.ChatColour.orange);
                 return;
             }
 
             fromPd.tradeData = new TradeData(give, giveamt, take, takeamt, ref toPd, true);
             toPd.tradeData = new TradeData(take, takeamt, give, giveamt, ref fromPd, false);
 
-            Chat.Send(from, "Trade sent to " + to.Name + ":");
-            Chat.Send(from, fromPd.tradeData.ToString() + " from " + to.Name);
-            Chat.Send(from, "Type '/trade reject' to cancel your trade.");
-            Chat.Send(to, "Incoming trade request:");
-            Chat.Send(to, toPd.tradeData.ToString() + " from " + from.Name);
-            Chat.Send(to, "Type '/trade accept' to accept the trade.");
-            Chat.Send(to, "Type '/trade reject' to reject the trade.");
+            Helpers.Chat.sendSilent(from, "Trade sent to " + to.Name + ":", Helpers.Chat.ChatColour.orange);
+            Helpers.Chat.sendSilent(from, fromPd.tradeData.ToString() + " from " + to.Name, Helpers.Chat.ChatColour.orange);
+            Helpers.Chat.sendSilent(from, "Type '/trade reject' to cancel your trade.", Helpers.Chat.ChatColour.orange);
+            Helpers.Chat.sendSilent(to, "Incoming trade request:", Helpers.Chat.ChatColour.orange);
+            Helpers.Chat.sendSilent(to, toPd.tradeData.ToString() + " from " + from.Name, Helpers.Chat.ChatColour.orange);
+            Helpers.Chat.sendSilent(to, "Type '/trade accept' to accept the trade.", Helpers.Chat.ChatColour.orange);
+            Helpers.Chat.sendSilent(to, "Type '/trade reject' to reject the trade.", Helpers.Chat.ChatColour.orange);
 
             playerDataDict[from.ID] = fromPd;
             playerDataDict[to.ID] = toPd;
@@ -159,7 +159,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (pd.tradeData == null)
             {
-                Chat.Send(Players.GetPlayer(player.ID), "You have no outstanding trade requests.");
+                Helpers.Chat.sendSilent(Players.GetPlayer(player.ID), "You have no outstanding trade requests.", Helpers.Chat.ChatColour.orange);
                 return;
             }
 
@@ -173,15 +173,15 @@ namespace ColonyPlusPlus.Classes.Managers
             {
                 if (partnerStockpile.AmountContained(pd.tradeData.giveId) <= pd.tradeData.giveAmount)
                 {
-                    Chat.Send(player, "Your partner can't afford this trade. It will need to be remade.");
-                    Chat.Send(Players.GetPlayer(partnerData.PID), "You can't afford your trade with " + player.Name + ". Please get the required items and send another request.");
+                    Helpers.Chat.sendSilent(player, "Your partner can't afford this trade. It will need to be remade.", Helpers.Chat.ChatColour.orange);
+                    Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), "You can't afford your trade with " + player.Name + ". Please get the required items and send another request.", Helpers.Chat.ChatColour.orange);
                     rejectTrade(player, true);
                     return;
                 }
 
                 if (playerStockpile.AmountContained(pd.tradeData.takeId) <= pd.tradeData.takeAmount)
                 {
-                    Chat.Send(player, "You can't afford this trade. Please get the required items or reject the trade.");
+                    Helpers.Chat.sendSilent(player, "You can't afford this trade. Please get the required items or reject the trade.", Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
@@ -191,13 +191,13 @@ namespace ColonyPlusPlus.Classes.Managers
                 partnerStockpile.Add(pd.tradeData.takeId, pd.tradeData.takeAmount);
             } else
             {
-                Chat.Send(player, "Your partner doesn't exist. Ignoring trade.");
+                Helpers.Chat.sendSilent(player, "Your partner doesn't exist. Ignoring trade.", Helpers.Chat.ChatColour.orange);
                 rejectTrade(player, true);
                 return;
             }
 
-            Chat.Send(player, "Trade Accepted.");
-            Chat.Send(Players.GetPlayer(partnerData.PID), player.Name + " accepted your trade request.");
+            Helpers.Chat.sendSilent(player, "Trade Accepted.", Helpers.Chat.ChatColour.lime);
+            Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), player.Name + " accepted your trade request.", Helpers.Chat.ChatColour.lime);
 
             pd.tradeData = null;
             partnerData.tradeData = null;
@@ -219,7 +219,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 if (pd.tradeData == null)
                 {
-                    Chat.Send(player, "You have no outstanding trade requests.");
+                    Helpers.Chat.sendSilent(player, "You have no outstanding trade requests.", Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
@@ -227,8 +227,8 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 if (!isInternal)
                 {
-                    Chat.Send(player, "Trade rejected.");
-                    Chat.Send(Players.GetPlayer(partnerData.PID), player.Name + " rejected your trade request.");
+                    Helpers.Chat.sendSilent(player, "Trade rejected.", Helpers.Chat.ChatColour.orange);
+                    Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), player.Name + " rejected your trade request.", Helpers.Chat.ChatColour.orange);
                 }
 
                 pd.tradeData = null;
@@ -239,7 +239,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             else
             {
-                Chat.Send(player, "Trade Disabled.");
+                Helpers.Chat.sendSilent(player, "Trade Disabled.", Helpers.Chat.ChatColour.red);
             }
         }
 
@@ -264,24 +264,24 @@ namespace ColonyPlusPlus.Classes.Managers
 
                 if (!legalIds)
                 {
-                    Chat.Send(from, "Invalid ID's");
+                    Helpers.Chat.sendSilent(from, "Invalid ID's", Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
                 if (playerStockpile.AmountContained(give) <= giveamt)
                 {
-                    Chat.Send(from, "You can't afford that.");
+                    Helpers.Chat.sendSilent(from, "You can't afford that.", Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
                 playerStockpile.Remove(give, giveamt);
                 partnerStockpile.Add(give, giveamt);
-                Chat.Send(from, "You sent " + giveamt + " " + name + " to " + to.Name + ".");
-                Chat.Send(to, from.Name + " sent " + giveamt + " " + name + " to you.");
+                Helpers.Chat.sendSilent(from, "You sent " + giveamt + " " + name + " to " + to.Name + ".", Helpers.Chat.ChatColour.orange);
+                Helpers.Chat.sendSilent(to, from.Name + " sent " + giveamt + " " + name + " to you.", Helpers.Chat.ChatColour.orange);
             }
             else
             {
-                Chat.Send(from, "Trade Disabled.");
+                Helpers.Chat.sendSilent(from, "Trade Disabled.", Helpers.Chat.ChatColour.red);
             }
 
         }
