@@ -71,23 +71,25 @@ namespace ColonyPlusPlus.Classes.Managers
                 DecorativeTypeManager.TypeOption.UpsideDownSlope, DecorativeTypeManager.TypeOption.UpsideDownSlopeCorner, DecorativeTypeManager.TypeOption.UpsideDownSlopInsideCorner,
                 DecorativeTypeManager.TypeOption.TwoStairs, DecorativeTypeManager.TypeOption.FourStairs };
 
-            Classes.Managers.DecorativeTypeManager clayblock = new DecorativeTypeManager("clayblock", "clayblock", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockblack = new DecorativeTypeManager("clayblockblack", "clayblockblack", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockblue = new DecorativeTypeManager("clayblockblue", "clayblockblue", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockbrown = new DecorativeTypeManager("clayblockbrown", "clayblockbrown", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockcyan = new DecorativeTypeManager("clayblockcyan", "clayblockcyan", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockgray = new DecorativeTypeManager("clayblockgray", "clayblockgray", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockgreen = new DecorativeTypeManager("clayblockgreen", "clayblockgreen", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblocklightblue = new DecorativeTypeManager("clayblocklightblue", "clayblocklightblue", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblocklime = new DecorativeTypeManager("clayblocklime", "clayblocklime", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockmagenta = new DecorativeTypeManager("clayblockmagenta", "clayblockmagenta", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockorange = new DecorativeTypeManager("clayblockorange", "clayblockorange", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockpink = new DecorativeTypeManager("clayblockpink", "clayblockpink", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockpurple = new DecorativeTypeManager("clayblockpurple", "clayblockpurple", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockred = new DecorativeTypeManager("clayblockred", "clayblockred", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblocksilver = new DecorativeTypeManager("clayblocksilver", "clayblocksilver", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockwhite = new DecorativeTypeManager("clayblockwhite", "clayblockwhite", "clay", "pottery", clayblocktypes);
-            Classes.Managers.DecorativeTypeManager clayblockyellow = new DecorativeTypeManager("clayblockyellow", "clayblockyellow", "clay", "pottery", clayblocktypes);
+            List<InventoryItem> clayblockReqs = new List<InventoryItem>() { RecipeManager.Item("clay", 1), RecipeManager.Item("waterbottle", 1) };
+
+            Classes.Managers.DecorativeTypeManager clayblock = new DecorativeTypeManager("clayblock", "clayblock", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockblack = new DecorativeTypeManager("clayblockblack", "clayblockblack", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockblue = new DecorativeTypeManager("clayblockblue", "clayblockblue", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockbrown = new DecorativeTypeManager("clayblockbrown", "clayblockbrown", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockcyan = new DecorativeTypeManager("clayblockcyan", "clayblockcyan", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockgray = new DecorativeTypeManager("clayblockgray", "clayblockgray", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockgreen = new DecorativeTypeManager("clayblockgreen", "clayblockgreen", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblocklightblue = new DecorativeTypeManager("clayblocklightblue", "clayblocklightblue", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblocklime = new DecorativeTypeManager("clayblocklime", "clayblocklime", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockmagenta = new DecorativeTypeManager("clayblockmagenta", "clayblockmagenta", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockorange = new DecorativeTypeManager("clayblockorange", "clayblockorange", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockpink = new DecorativeTypeManager("clayblockpink", "clayblockpink", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockpurple = new DecorativeTypeManager("clayblockpurple", "clayblockpurple", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockred = new DecorativeTypeManager("clayblockred", "clayblockred", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblocksilver = new DecorativeTypeManager("clayblocksilver", "clayblocksilver", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockwhite = new DecorativeTypeManager("clayblockwhite", "clayblockwhite", clayblockReqs, "pottery", clayblocktypes);
+            Classes.Managers.DecorativeTypeManager clayblockyellow = new DecorativeTypeManager("clayblockyellow", "clayblockyellow", clayblockReqs, "pottery", clayblocktypes);
         }
     }
 }

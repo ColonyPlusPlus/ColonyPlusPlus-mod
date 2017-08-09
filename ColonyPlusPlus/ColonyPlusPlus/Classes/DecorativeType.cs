@@ -10,14 +10,14 @@ namespace ColonyPlusPlus.Classes
     {
         private string BaseMaterial;
         private string CraftingType;
-        private string CraftingRequiredItem;
+        private List<InventoryItem> CraftingRequiredItem;
 
-        public DecorativeTypeBlock(string basename, string basematerial, string craftingrequireditem, string craftingtype) : base(basename, true)
+        public DecorativeTypeBlock(string basename, string basematerial, List<InventoryItem> craftingingredients, string craftingtype) : base(basename, true)
         {
             // decorative block specific
             this.BaseMaterial = basematerial;
             this.CraftingType = craftingtype;
-            this.CraftingRequiredItem = craftingrequireditem;
+            this.CraftingRequiredItem = craftingingredients;
             this.AllowCreative = true;
 
             this.OnPlaceAudio = "stonePlace";
@@ -30,9 +30,7 @@ namespace ColonyPlusPlus.Classes
         public override void AddRecipes()
         {
             RecipeManager.AddRecipe(this.CraftingType,
-                new List<InventoryItem> {
-                    RecipeManager.Item(this.CraftingRequiredItem, 1)
-                },
+                CraftingRequiredItem,
                 new List<InventoryItem> {
                     RecipeManager.Item(this.TypeName, 1)
                 },
@@ -45,15 +43,15 @@ namespace ColonyPlusPlus.Classes
     {
         private string BaseMaterial;
         private string CraftingType;
-        private string CraftingRequiredItem;
+        private List<InventoryItem> CraftingRequiredItem;
         private string Shape;
 
-        public DecorativeTypeBase(string basename, string shape, string basematerial, string craftingrequireditem, string craftingtype) : base(String.Format("{0}{1}",basename,shape), true)
+        public DecorativeTypeBase(string basename, string shape, string basematerial, List<InventoryItem> craftingingredients, string craftingtype) : base(String.Format("{0}{1}",basename,shape), true)
         {
             // decorative block specific
             this.BaseMaterial = basematerial;
             this.CraftingType = craftingtype;
-            this.CraftingRequiredItem = craftingrequireditem;
+            this.CraftingRequiredItem = craftingingredients;
             this.Shape = shape;
 
             this.OnPlaceAudio = "stonePlace";
@@ -75,9 +73,7 @@ namespace ColonyPlusPlus.Classes
         public override void AddRecipes()
         {
             RecipeManager.AddRecipe(this.CraftingType,
-                new List<InventoryItem> {
-                    RecipeManager.Item(this.CraftingRequiredItem, 1)
-                },
+                CraftingRequiredItem,
                 new List<InventoryItem> {
                     RecipeManager.Item(this.TypeName, 1)
                 },

@@ -25,7 +25,7 @@ namespace ColonyPlusPlus.Classes.Managers
         private string baseName;
 
 
-        public DecorativeTypeManager(string basename, string basematerial, string craftingrequireditem, string craftingtype, TypeOption[] typeoptions)
+        public DecorativeTypeManager(string basename, string basematerial, List<InventoryItem> craftingrequireditem, string craftingtype, TypeOption[] typeoptions)
         {
             this.baseName = basename;
            
