@@ -158,6 +158,17 @@ namespace ColonyPlusPlus.Classes
             }
         }
 
+        public string Sides
+        {
+            set
+            {
+                this.SideXMinus = value;
+                this.SideXPlus = value;
+                this.SideZMinus = value;
+                this.SideZPlus = value;
+            }
+        }
+
         public string SideXMinus
         {
             get

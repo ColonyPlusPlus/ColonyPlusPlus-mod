@@ -37,6 +37,7 @@
             Material.createMaterial("clayblockyellow", "clayblockyellow", "neutral", "plasterblock", "plasterblock");
 
             Material.createMaterial("marble", "graymarble", "neutral", "neutral", "neutral");
+            Material.createMaterial("grasstemperateside", "grassTemperateSide", "neutral", "grassGenericSide", "grassGenericSide");
         }
     }
 }

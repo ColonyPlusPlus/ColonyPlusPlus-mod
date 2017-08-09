@@ -12,6 +12,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.ParentType = "grass";
             this.NPCLimit = 0;
             this.IsPlaceable = true;
+            this.Sides = "grasstemperateside";
 
             Classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new Classes.ItemHelper.OnRemove("grasstemperate",       1,  1.0f),

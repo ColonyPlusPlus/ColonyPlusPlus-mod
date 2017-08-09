@@ -30,7 +30,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
                 online.Sort();
                 
-                Chat.sendSilent(ply, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), ChatSenderType.Server);
+                Chat.send(ply, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), Chat.ChatColour.white, Chat.ChatStyle.normal ,Pipliz.Chatting.ChatSenderType.Server);
             }
             
             return true;
