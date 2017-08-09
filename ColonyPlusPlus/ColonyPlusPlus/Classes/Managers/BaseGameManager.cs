@@ -116,6 +116,10 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.GameBase.Blocks.WheatStageThree wheatstagethree = new Types.GameBase.Blocks.WheatStageThree("wheatstage3");
             Types.GameBase.Blocks.Workbench workbench = new Types.GameBase.Blocks.Workbench("workbench");
             Types.GameBase.Blocks.TechnologistTable technologisttable = new Types.GameBase.Blocks.TechnologistTable("technologisttable");
+            Types.GameBase.Blocks.Carpet carpet = new Types.GameBase.Blocks.Carpet("carpet");
+            Types.GameBase.Blocks.CarpetYellow carpetred = new Types.GameBase.Blocks.CarpetYellow("carpetred");
+            Types.GameBase.Blocks.CarpetRed carpetyellow = new Types.GameBase.Blocks.CarpetRed("carpetyellow");
+            Types.GameBase.Blocks.CarpetBlue carpetblue = new Types.GameBase.Blocks.CarpetBlue("carpetblue");
 
             Classes.Utilities.WriteLog("Finished Registering Basegame Blocks");
 
