@@ -135,6 +135,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.GameBase.Items.Bread bread = new Types.GameBase.Items.Bread("bread");
             Types.GameBase.Items.Clay clay = new Types.GameBase.Items.Clay("clay");
             Types.GameBase.Items.CoalOre coalore = new Types.GameBase.Items.CoalOre("coalore");
+            Types.GameBase.Items.Clothing clothing = new Types.GameBase.Items.Clothing("clothing");
             Types.GameBase.Items.Flax flax = new Types.GameBase.Items.Flax("flax");
             Types.GameBase.Items.Flour flour = new Types.GameBase.Items.Flour("flour");
             Types.GameBase.Items.GoldCoin goldcoin = new Types.GameBase.Items.GoldCoin("goldcoin");
@@ -143,14 +144,14 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.GameBase.Items.Gypsum gypsum = new Types.GameBase.Items.Gypsum("gypsum");
             Types.GameBase.Items.IronIngot ironingot = new Types.GameBase.Items.IronIngot("ironingot");
             Types.GameBase.Items.IronOre ironore = new Types.GameBase.Items.IronOre("ironore");
-            Types.GameBase.Items.LinseedOil linseedoil = new Types.GameBase.Items.LinseedOil("linseedoil");
-            Types.GameBase.Items.Pickaxe pickaxe = new Types.GameBase.Items.Pickaxe("pickaxe");
-            Types.GameBase.Items.Straw straw = new Types.GameBase.Items.Straw("straw");
-            Types.GameBase.Items.Wheat wheat = new Types.GameBase.Items.Wheat("wheat");
             Types.GameBase.Items.Linen linen = new Types.GameBase.Items.Linen("linen");
             Types.GameBase.Items.LinenBag linenbag = new Types.GameBase.Items.LinenBag("linenbag");
+            Types.GameBase.Items.LinseedOil linseedoil = new Types.GameBase.Items.LinseedOil("linseedoil");
+            Types.GameBase.Items.Pickaxe pickaxe = new Types.GameBase.Items.Pickaxe("pickaxe");
             Types.GameBase.Items.ScienceBagBasic sbb = new Types.GameBase.Items.ScienceBagBasic("sciencebagbasic");
             Types.GameBase.Items.ScienceBagLife sbl = new Types.GameBase.Items.ScienceBagLife("sciencebaglife");
+            Types.GameBase.Items.Straw straw = new Types.GameBase.Items.Straw("straw");
+            Types.GameBase.Items.Wheat wheat = new Types.GameBase.Items.Wheat("wheat");
 
             Classes.Utilities.WriteLog("Finished Registering Basegame Items");
         }
