@@ -45,6 +45,10 @@ namespace ColonyPlusPlus.Classes
         private bool _AllowPlayerCraft;
         private bool _IsBaseBlock;
 
+        private bool _HasAddAction;
+        private bool _HasRemoveAction;
+        private bool _HasChangeAction;
+
         private long _DestructionTime;
 
         private float _FuelValue;
@@ -467,6 +471,42 @@ namespace ColonyPlusPlus.Classes
             }
         }
 
+        public bool HasAddAction
+        {
+            get
+            {
+                return this._HasAddAction;
+            }
+            set
+            {
+                this._HasAddAction = value;
+            }
+        }
+
+        public bool HasRemoveAction
+        {
+            get
+            {
+                return this._HasRemoveAction;
+            }
+            set
+            {
+                this._HasRemoveAction = value;
+            }
+        }
+
+        public bool HasChangeAction
+        {
+            get
+            {
+                return this._HasChangeAction;
+            }
+            set
+            {
+                this._HasChangeAction = value;
+            }
+        }
+
         public long DestructionTime
         {
             get
@@ -568,21 +608,43 @@ namespace ColonyPlusPlus.Classes
         }
 
         // Overridable onRemove() function for events
-        public virtual void onRemove()
+        public virtual void onRemoveAction(Pipliz.Vector3Int location, ushort type, Players.Player causedBy)
         {
 
         }
 
         // Overridable onAdd() function for events
-        public virtual void onAdd()
+        public virtual void onAddAction(Pipliz.Vector3Int location, ushort type, Players.Player causedBy)
+        {
+            Utilities.WriteLog("Called virtual onAdd");
+        }
+
+        // Overridable onChange() function for events
+        public virtual void onChangeAction(Pipliz.Vector3Int location, ushort fromtype, ushort totype, Players.Player causedBy)
         {
 
         }
 
-        // Overridable onChange() function for events
-        public virtual void onChange()
+        public void RegisterActionCallback()
         {
+           // Utilities.WriteLog("Registering actions for:" + this.TypeName);
+            if (this._HasAddAction)
+            {
+                Utilities.WriteLog(this.TypeName + " has action Add");
+                ItemTypesServer.RegisterOnAdd(this.TypeName, this.onAddAction);
+            }
 
+            if (this._HasChangeAction)
+            {
+                Utilities.WriteLog(this.TypeName + " has action change");
+                ItemTypesServer.RegisterOnChange(this.TypeName, this.onChangeAction);
+            }
+
+            if (this._HasRemoveAction)
+            {
+                Utilities.WriteLog(this.TypeName + " has action remove");
+                ItemTypesServer.RegisterOnRemove(this.TypeName, this.onRemoveAction);
+            }
         }
 
         // base Add Recipes function
@@ -597,14 +659,12 @@ namespace ColonyPlusPlus.Classes
             Classes.Managers.RecipeManager.TypesThatHaveRecipes.Add(this);
         }
 
+
         // Add the block!
         public void Register()
         {
 
-            // NOT YET IMPLEMENTED
-            //ItemTypesServer.ItemActionBuilder builder = new ItemTypesServer.ItemActionBuilder().SetOnAdd(classes.typecodemanager.OnAdd).SetOnRemove(classes.typecodemanager.OnRemove);
-            //.SetOnAdd(ExampleClassCodeManager.OnAdd)
-            //    .SetOnRemove(ExampleClassCodeManager.OnRemove
+            
 
 
             // Add the item
@@ -612,6 +672,7 @@ namespace ColonyPlusPlus.Classes
 
             // register with our tracker, just in case we need to get these later!
             Classes.Managers.TypeManager.AddedTypes.Add(this.TypeName);
+            Classes.Managers.TypeManager.registerActionableTypeCallback(this);
 
             if(this._AllowCreative)
             {

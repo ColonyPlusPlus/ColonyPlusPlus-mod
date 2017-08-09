@@ -14,6 +14,13 @@ namespace ColonyPlusPlus.Types.Blocks
             this.IsPlaceable = true;
 
             this.AllowCreative = false;
+
+            Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new Classes.ItemHelper.OnRemove("welltop", 1, 0.0f)
+            };
+
+            this.OnRemove = onRemoveNode;
+
             this.Register();
         }
     }

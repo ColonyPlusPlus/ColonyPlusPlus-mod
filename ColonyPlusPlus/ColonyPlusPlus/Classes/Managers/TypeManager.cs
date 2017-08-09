@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
         public static List<string> AddedTypes = new List<string>();
         public static List<string> CreativeAddedTypes = new List<string>();
+        public static List<Type> ActionTypeRegistry = new List<Type>(); 
 
         // using a prebuilt list of croptypes
         public static void registerTrackedTypes()
@@ -27,7 +28,28 @@ namespace ColonyPlusPlus.Classes.Managers
                 ItemTypesServer.RegisterOnRemove(gt.TypeName, gt.OnRemoveAction);
                 ItemTypesServer.RegisterOnChange(gt.TypeName, gt.OnChangeAction);
             }
+
+            Utilities.WriteLog("Registered Crop Actions");
         }
+
+        public static void registerActionableTypes()
+        {
+            if(ActionTypeRegistry.Count > 0)
+            {
+                foreach (Type t in ActionTypeRegistry)
+                {
+                    t.RegisterActionCallback();
+                }
+            }
+            
+        }
+
+        public static void registerActionableTypeCallback(Type t)
+        {
+            ActionTypeRegistry.Add(t);
+        }
+
+        
 
         // Register the crop in the growable Types list.
         public static void registerCrop(GrowableType classInstance)

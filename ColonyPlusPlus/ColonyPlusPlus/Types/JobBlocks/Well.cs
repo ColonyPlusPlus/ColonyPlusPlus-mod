@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Pipliz;
+using ColonyPlusPlus.Classes.Helpers;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
@@ -18,6 +20,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
             this.IsPlaceable = true;
             this.AllowCreative = true;
             this.AllowPlayerCraft = true;
+            this.HasAddAction = true;
             this.Register();
         }
 
@@ -33,5 +36,14 @@ namespace ColonyPlusPlus.Types.JobBlocks
                 },
                 0.0f, true, true);
         }
+
+        /*public override void onAddAction(Vector3Int location, ushort type, Players.Player causedBy)
+        {
+            
+
+            Classes.Utilities.WriteLog("Added well");
+            Classes.Helpers.Chat.send(causedBy, "Added well");
+            base.onAddAction(location, type, causedBy);
+        }*/
     }
 }
