@@ -39,7 +39,7 @@ namespace ColonyPlusPlus.Classes.Data
                 {
                     // the NPC has levelled up!
                     XPLevels[jobtype] += 1;
-                    Helpers.Chat.send(owner, String.Format("NPC [{0}] has levelled up! Now level {1} ({2} XP) ({3}% efficiency boost)", jobtype, XPLevels[jobtype], XPAmounts[jobtype], (1 - getCraftingMultiplier(jobtype)) * 100), Helpers.Chat.ChatColour.orange);
+                    Helpers.Chat.send(owner, String.Format("NPC [{0}] has levelled up! Now level {1} ({2} XP) ({3}% efficiency boost)", jobtype, XPLevels[jobtype], XPAmounts[jobtype], Math.Round((1 - getCraftingMultiplier(jobtype)) * 100,0)), Helpers.Chat.ChatColour.orange);
                 }
             }
             else
@@ -114,6 +114,31 @@ namespace ColonyPlusPlus.Classes.Data
 
             // 2% bonus per level
             return (float)(1 - (level * Managers.NPCManager.EfficiencyPerLevel));
+        }
+
+        public void recalculateAllLevels(bool silent = true)
+        {
+            if(XPAmounts.Count > 0)
+            {
+                foreach (string job in XPAmounts.Keys)
+                {
+                    if(XPLevels.ContainsKey(job))
+                    {
+                        XPLevels[job] = getLevel(job);
+                    } else
+                    {
+                        XPLevels.Add(job, getLevel(job));
+                    }
+
+                    if (silent == false)
+                    {
+                        Utilities.WriteLog("Updated NPC level in " + job + " to level " + getLevel(job));
+                    }
+                }
+
+                
+            }
+            
         }
 
         public Pipliz.JSON.JSONNode toJSON()

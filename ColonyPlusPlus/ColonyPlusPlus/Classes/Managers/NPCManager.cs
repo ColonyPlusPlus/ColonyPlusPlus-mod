@@ -132,6 +132,7 @@ namespace ColonyPlusPlus.Classes.Managers
                                             //Utilities.WriteLog("Added XP: " + current.Key + " value: " + current.Value.GetAs<ushort>());
                                         }
                                     }
+                                    npcData.XPData.recalculateAllLevels();
 
                                     NPCDataList.Add(npcID, npcData);
 
