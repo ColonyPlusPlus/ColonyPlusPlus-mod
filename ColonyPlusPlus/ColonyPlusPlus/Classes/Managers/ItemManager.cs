@@ -34,6 +34,8 @@ namespace ColonyPlusPlus.Classes.Managers
 
             // misc Items
             Types.Items.SugarcaneItem sugarcaneItem                 = new Types.Items.SugarcaneItem("sugarcaneitem");
+            Types.Items.Bottle bottle = new Types.Items.Bottle("bottle");
+            Types.Items.WaterBottle waterbottle = new Types.Items.WaterBottle("waterbottle");
         }
     }
 }
