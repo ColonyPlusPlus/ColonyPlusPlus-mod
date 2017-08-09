@@ -37,14 +37,14 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 				Helpers.Debug.outputTypes();
                 Helpers.Debug.outputRecipes();
 
-				Chat.sendSilent(player, "Outputted JSON to Debug Directory", Chat.ChatColour.yellow);
+				Chat.send(player, "Outputted JSON to Debug Directory", Chat.ChatColour.yellow);
 				return true;
 
 
 			}
 			else
 			{
-				Chat.sendSilent(player, "You are unable to use debug commands", Chat.ChatColour.yellow);
+				Chat.send(player, "You are unable to use debug commands", Chat.ChatColour.yellow);
 				return false;
 			}
 

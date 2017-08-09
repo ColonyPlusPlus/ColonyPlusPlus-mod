@@ -1,7 +1,7 @@
 ﻿using ChatCommands;
 using NPC;
 using Permissions;
-using Pipliz.Chatting;
+using ColonyPlusPlus.Classes.Helpers;
 using System;
 using System.Collections.Generic;
 
@@ -30,7 +30,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
                 online.Sort();
                 
-                Chat.Send(ply, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), ChatSenderType.Server);
+                Chat.sendSilent(ply, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), ChatSenderType.Server);
             }
             
             return true;

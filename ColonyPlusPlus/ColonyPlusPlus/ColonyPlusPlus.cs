@@ -55,10 +55,10 @@ namespace ColonyPlusPlus
         {
             if(p.ID.steamID.m_SteamID == 0)
             {
-                Classes.Helpers.Chat.send(p, Classes.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), Classes.Helpers.Chat.ChatColour.red);
+                Classes.Helpers.Chat.sendSilent(p, Classes.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), Classes.Helpers.Chat.ChatColour.red);
             }
-            Chat.Send(p, Classes.Managers.ConfigManager.getConfigString("motd.message"));
-            Chat.Send(p, "The server is using ColonyPlusPlus v" + modVersion.ToString());
+            Classes.Helpers.Chat.sendSilent(p, Classes.Managers.ConfigManager.getConfigString("motd.message"));
+            Classes.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus v" + modVersion.ToString());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplus.AfterAddingBaseTypes")]

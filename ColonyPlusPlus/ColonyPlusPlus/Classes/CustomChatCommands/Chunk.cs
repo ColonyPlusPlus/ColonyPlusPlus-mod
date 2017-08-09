@@ -62,7 +62,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             } else {
                 Chat.sendSilent(ply, "You cannot claim chunks", Chat.ChatColour.red, Chat.ChatStyle.bold);
             }
-
+            Utilities.WriteLog(ply.Name + " attempted to use /chunk claim!");
             return true;
         }
     }
@@ -98,9 +98,8 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                     // chunk not owned
                     Chat.sendSilent(ply, "Unable to unclaim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
                 }
-                
             }
-            
+            Utilities.WriteLog(ply.Name + " attempted to use /chunk unclaim!");
             return true;
         }
     }
@@ -134,9 +133,9 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                     // chunk not owned
                     Chat.sendSilent(ply, "Unable to unclaim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
                 }
-                
+
             }
-            
+            Utilities.WriteLog(ply.Name + " attempted to use /chunk delete!");
             return true;
         }
     }

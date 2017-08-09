@@ -1,8 +1,5 @@
-﻿using Pipliz.Chatting;
+﻿using ColonyPlusPlus.Classes.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
@@ -73,8 +70,8 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             sucessful = sucessful && Int32.TryParse(args[2], out giveamt);
             if (!sucessful)
             {
-                Helpers.Chat.send(ply, "Invalid argument. Usage:", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.send(ply, "/trade give <playername> <myitemid> <myitemamount>", Helpers.Chat.ChatColour.orange);
+                Helpers.Chat.sendSilent(ply, "Invalid argument. Usage:", Helpers.Chat.ChatColour.orange);
+                Helpers.Chat.sendSilent(ply, "/trade give <playername> <myitemid> <myitemamount>", Helpers.Chat.ChatColour.orange);
                 return true;
             }
             Managers.PlayerManager.tradeGive(ply, Players.GetPlayer(target), giveid, giveamt);
@@ -93,8 +90,8 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
             if (args.Length < 5)
             {
-                Helpers.Chat.send(ply, "Not enough arguments. Usage:", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.send(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", Helpers.Chat.ChatColour.orange);
+                Helpers.Chat.sendSilent(ply, "Not enough arguments. Usage:", Helpers.Chat.ChatColour.orange);
+                Helpers.Chat.sendSilent(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", Helpers.Chat.ChatColour.orange);
                 return true;
             }
             ushort takeid = 0;
@@ -116,8 +113,8 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             sucessful = sucessful && Int32.TryParse(args[4], out giveamt);
             if (!sucessful)
             {
-                Helpers.Chat.send(ply, "Invalid argument. Usage:", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.send(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", Helpers.Chat.ChatColour.orange);
+                Helpers.Chat.sendSilent(ply, "Invalid argument. Usage:", Helpers.Chat.ChatColour.orange);
+                Helpers.Chat.sendSilent(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", Helpers.Chat.ChatColour.orange);
                 return true;
             }
             Managers.PlayerManager.notifyTrade(ply, Players.GetPlayer(target), giveid, giveamt, takeid, takeamt);
