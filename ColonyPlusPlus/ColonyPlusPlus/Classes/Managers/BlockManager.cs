@@ -19,6 +19,10 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.Blocks.Pillar pillar = new Types.Blocks.Pillar("pillar");
             Types.Blocks.WildBerryBush wildBerryBush                    = new Types.Blocks.WildBerryBush("wildberrybush");
             Types.Blocks.Window window                                  = new Types.Blocks.Window("window");
+            Types.Blocks.WindowXMinus windowxminus = new Types.Blocks.WindowXMinus("windowx-");
+            Types.Blocks.WindowXPlus windowxplus = new Types.Blocks.WindowXPlus("windowx+");
+            Types.Blocks.WindowZMinus windowzminus = new Types.Blocks.WindowZMinus("windowz-");
+            Types.Blocks.WindowZPlus windowzplus = new Types.Blocks.WindowZPlus("windowz+");
             Types.Blocks.WindowTwoHigh windowtwohigh                    = new Types.Blocks.WindowTwoHigh("windowtwohigh");
             Types.Blocks.Sugarcane sugarcane                            = new Types.Blocks.Sugarcane("sugarcane");
             Types.Blocks.VegetablePatch vegetablepatch                  = new Types.Blocks.VegetablePatch("vegetablepatch");

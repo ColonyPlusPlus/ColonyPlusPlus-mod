@@ -16,6 +16,11 @@ namespace ColonyPlusPlus.Types.Blocks
             this.SideAll = "planks";
             this.IsPlaceable = true;
             this.AllowCreative = true;
+            this.IsAutoRotatable = true;
+            this.RotatableXMinus = "windowx-";
+            this.RotatableXPlus = "windowx+";
+            this.RotatableZMinus = "windowz-";
+            this.RotatableZPlus = "windowz+";
             this.Register();
         }
 
@@ -29,6 +34,55 @@ namespace ColonyPlusPlus.Types.Blocks
                     RecipeManager.Item("window", 1)
                 },
                 0.0f, false, true);
+        }
+    }
+
+    class WindowXMinus : Classes.Type
+    {
+        public WindowXMinus(string name) : base(name)
+        {
+            this.ParentType = "window";
+
+            this.Mesh = "windowx";
+            this.IsBaseBlock = false;
+            
+            this.Register();
+        }
+    }
+    class WindowXPlus : Classes.Type
+    {
+        public WindowXPlus(string name) : base(name)
+        {
+            this.ParentType = "window";
+
+            this.Mesh = "windowx";
+            this.IsBaseBlock = false;
+
+            this.Register();
+        }
+    }
+    class WindowZMinus : Classes.Type
+    {
+        public WindowZMinus(string name) : base(name)
+        {
+            this.ParentType = "window";
+
+            this.Mesh = "windowz";
+            this.IsBaseBlock = false;
+
+            this.Register();
+        }
+    }
+    class WindowZPlus : Classes.Type
+    {
+        public WindowZPlus(string name) : base(name)
+        {
+            this.ParentType = "window";
+
+            this.Mesh = "windowz";
+            this.IsBaseBlock = false;
+
+            this.Register();
         }
     }
 }
