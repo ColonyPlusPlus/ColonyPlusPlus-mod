@@ -663,7 +663,7 @@ namespace ColonyPlusPlus.Classes
         // Add the block!
         public void Register()
         {
-
+            Utilities.WriteLog(this.TypeName);
             
 
 

@@ -194,6 +194,7 @@
     <Compile Include="Types\GameBase\Blocks\StoneBlock.cs" />
     <Compile Include="Types\GameBase\Blocks\StoneBricks.cs" />
     <Compile Include="Types\GameBase\Blocks\TailorShop.cs" />
+    <Compile Include="Types\GameBase\Blocks\TechnologistTable.cs" />
     <Compile Include="Types\GameBase\Blocks\Torch.cs" />
     <Compile Include="Types\GameBase\Blocks\Water.cs" />
     <Compile Include="Types\GameBase\Blocks\WheatStage.cs" />
@@ -216,8 +217,12 @@
     <Compile Include="Types\GameBase\Items\Gypsum.cs" />
     <Compile Include="Types\GameBase\Items\IronIngot.cs" />
     <Compile Include="Types\GameBase\Items\IronOre.cs" />
+    <Compile Include="Types\GameBase\Items\Linen.cs" />
+    <Compile Include="Types\GameBase\Items\LinenBag.cs" />
     <Compile Include="Types\GameBase\Items\LinseedOil.cs" />
     <Compile Include="Types\GameBase\Items\Pickaxe.cs" />
+    <Compile Include="Types\GameBase\Items\ScienceBagBasic.cs" />
+    <Compile Include="Types\GameBase\Items\ScienceBagLife.cs" />
     <Compile Include="Types\GameBase\Items\Straw.cs" />
     <Compile Include="Types\GameBase\Items\Wheat.cs" />
     <Compile Include="Types\GameBase\Special\Banner.cs" />

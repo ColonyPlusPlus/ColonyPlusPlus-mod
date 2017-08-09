@@ -20,6 +20,7 @@ namespace ColonyPlusPlus.Classes.Managers
         // Add a new recipe object to the list, this is called by the type's AddRecipes() function
         public static bool AddRecipe(string type, List<InventoryItem> reqs, List<InventoryItem> result, float fuelAmount = 0.0f, bool npcCraft = false, bool playerCraft = false)
         {
+            Utilities.WriteLog(ItemTypes.GetNamePrintable(result[0].Type));
             // Pass the variables
             Recipe r = new Recipe(type, reqs, result, fuelAmount, npcCraft, playerCraft);
 
