@@ -291,5 +291,9 @@
 	"redplanks" : "Does not have any food value, but it tastes pretty good",
 	"blackplanks" : "Highly flammable",
 	"cherryblossom" : "The pinkest thing in the game",
-	"tailorshop": "A tailor's shop"
+	"tailorshop": "A tailor's shop",
+	"technologisttable" : "Crafts Science Bags",
+	"bag" : "Required to craft Science Bags",
+	"sciencebaglife" : "Required to research science related to health and life",
+	"sciencebagbasic" : "Required to research basic science",
 }

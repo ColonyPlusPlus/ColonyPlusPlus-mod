@@ -147,6 +147,8 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.GameBase.Items.Pickaxe pickaxe = new Types.GameBase.Items.Pickaxe("pickaxe");
             Types.GameBase.Items.Straw straw = new Types.GameBase.Items.Straw("straw");
             Types.GameBase.Items.Wheat wheat = new Types.GameBase.Items.Wheat("wheat");
+            Types.GameBase.Items.Linen linen = new Types.GameBase.Items.Linen("linen");
+            Types.GameBase.Items.LinenBag linenbag = new Types.GameBase.Items.LinenBag("linenbag");
             Types.GameBase.Items.ScienceBagBasic sbb = new Types.GameBase.Items.ScienceBagBasic("sciencebagbasic");
             Types.GameBase.Items.ScienceBagLife sbl = new Types.GameBase.Items.ScienceBagLife("sciencebaglife");
 

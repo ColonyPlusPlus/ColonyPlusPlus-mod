@@ -308,5 +308,10 @@
 	"cherryblossom" : "Cherry Blossom",
 	"redplanks" : "Red Planks",
 	"blackplanks" : "Black Planks",
-	"tailorshop": "Tailor Shop"
+	"tailorshop": "Tailor Shop",
+	"technologisttable" : "Technologist's Table",
+	"linenbag" : "Linen Bag",
+	"sciencebaglife" : "Life Science Bag",
+	"sciencebagbasic" : "Basic Science Bag",
+	
 }
