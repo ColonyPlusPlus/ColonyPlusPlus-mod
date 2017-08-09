@@ -55,7 +55,7 @@ namespace ColonyPlusPlus.Classes
                 },
                 0.0f, true, true);
 
-            /*RecipeManager.AddRecipe("carpentry",
+            RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     RecipeManager.Item("coatedplanks", 1),
                     RecipeManager.Item("ironingot", 1),
@@ -64,7 +64,7 @@ namespace ColonyPlusPlus.Classes
                 new List<InventoryItem> {
                     RecipeManager.Item("technologisttable", 1)
                 },
-                0.0f, true, true);*/
+                0.0f, true, true);
 
             RecipeManager.AddRecipe("masonry",
                 new List<InventoryItem> {

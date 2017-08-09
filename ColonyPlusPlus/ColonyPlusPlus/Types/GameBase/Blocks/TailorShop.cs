@@ -14,6 +14,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.SideAll = "planks";
             this.SideXPlus = "tailorshop";
             this.NPCLimit = 0;
+            this.IsPlaceable = true;
             this.Register();
         }
     }

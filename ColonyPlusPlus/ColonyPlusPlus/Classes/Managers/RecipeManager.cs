@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ColonyPlusPlus.Classes.Managers
 {
@@ -20,7 +21,7 @@ namespace ColonyPlusPlus.Classes.Managers
         // Add a new recipe object to the list, this is called by the type's AddRecipes() function
         public static bool AddRecipe(string type, List<InventoryItem> reqs, List<InventoryItem> result, float fuelAmount = 0.0f, bool npcCraft = false, bool playerCraft = false)
         {
-            Utilities.WriteLog(ItemTypes.GetNamePrintable(result[0].Type));
+            //Utilities.WriteLog(ItemTypes.GetNamePrintable(result[0].Type));
             // Pass the variables
             Recipe r = new Recipe(type, reqs, result, fuelAmount, npcCraft, playerCraft);
 
@@ -176,7 +177,19 @@ namespace ColonyPlusPlus.Classes.Managers
         /// <returns></returns>
         public static InventoryItem Item(string name, int num)
         {
-            return new InventoryItem(ItemTypes.IndexLookup.GetIndex(name), num);
+            try
+            {
+                ushort u;
+                ItemTypes.IndexLookup.TryGetIndex(name, out u);
+                InventoryItem i = new InventoryItem(u, num);
+                return i;
+            } catch (Exception e)
+            {
+                Utilities.WriteLog("Error finding " + name);
+            }
+
+            return new InventoryItem(0, 0);
+            
         }
 
 

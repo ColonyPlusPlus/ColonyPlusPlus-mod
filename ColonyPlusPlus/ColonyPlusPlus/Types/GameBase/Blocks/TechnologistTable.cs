@@ -9,7 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public TechnologistTable(string name) : base(name)
         {
-            this.OnPlaceAudio = "wooPlace";
+            this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
             this.SideAll = "coatedplanks";
             this.SideYPlus = "technologisttable";

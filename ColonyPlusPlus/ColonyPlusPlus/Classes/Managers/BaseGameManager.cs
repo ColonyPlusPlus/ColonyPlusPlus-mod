@@ -150,6 +150,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.GameBase.Items.IronOre ironore = new Types.GameBase.Items.IronOre("ironore");
             Types.GameBase.Items.Linen linen = new Types.GameBase.Items.Linen("linen");
             Types.GameBase.Items.LinenBag linenbag = new Types.GameBase.Items.LinenBag("linenbag");
+            Types.GameBase.Items.LinenBag sciencebag = new Types.GameBase.Items.LinenBag("sciencebag");
             Types.GameBase.Items.LinseedOil linseedoil = new Types.GameBase.Items.LinseedOil("linseedoil");
             Types.GameBase.Items.Pickaxe pickaxe = new Types.GameBase.Items.Pickaxe("pickaxe");
             Types.GameBase.Items.ScienceBagBasic sbb = new Types.GameBase.Items.ScienceBagBasic("sciencebagbasic");

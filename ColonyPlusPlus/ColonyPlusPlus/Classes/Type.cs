@@ -616,7 +616,7 @@ namespace ColonyPlusPlus.Classes
         // Overridable onAdd() function for events
         public virtual void onAddAction(Pipliz.Vector3Int location, ushort type, Players.Player causedBy)
         {
-            Utilities.WriteLog("Called virtual onAdd");
+            //Utilities.WriteLog("Called virtual onAdd");
         }
 
         // Overridable onChange() function for events
@@ -663,7 +663,7 @@ namespace ColonyPlusPlus.Classes
         // Add the block!
         public void Register()
         {
-            Utilities.WriteLog(this.TypeName);
+            //Utilities.WriteLog(this.TypeName);
             
 
 
