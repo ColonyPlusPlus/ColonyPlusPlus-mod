@@ -16,7 +16,11 @@
 	},
 	
 	"jobs": {
-		"enabled": true
+		"enabled": true,
+		"baseXP": 10,
+		"maxLevel": 25,
+		"xpMultiplier": 2,
+		"efficiencyPerLevel": 0.02
 	},
 	
 	"spawnprotection": {
