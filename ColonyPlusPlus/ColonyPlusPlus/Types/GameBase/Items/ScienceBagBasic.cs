@@ -13,6 +13,7 @@ namespace ColonyPlusPlus.Types.GameBase.Items
             this.MaxStackSize = 50;
             this.AllowCreative = true;
             this.IsPlaceable = false;
+            this.Icon = "sciencebagbasic";
             this.Register();
         }
     }
