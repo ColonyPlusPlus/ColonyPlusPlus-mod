@@ -29,6 +29,31 @@ namespace ColonyPlusPlus.Classes.Managers
             Utilities.WriteLog(String.Format("NPC Config: baseXP: {0}, maxLevel: {1}, xpMultiplier: {2}, efficiencyPerLevel: {3}",baseXP, maxLevel, XPMultiplier, EfficiencyPerLevel));
         }
 
+        public static void registerAllJobs()
+        {
+            removeBaseJobs();
+
+            //REIMPLEMENTED BASE JOBS
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Grinder>("grindstone");
+
+            // CUSTOM JOBS
+            //CraftingJobs
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Blacksmith>("anvil");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.Carpenter>("sawmill");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.ChickenPluckerJob>("chickencoop");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.StoneMason>("masontable");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.CraftingJob.WellOperator>("well");
+            //FueledCraftingJobs
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
+            //DefenseJobs
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT2>("quivert2");
+        }
+
+        public static void removeBaseJobs()
+        {
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("grindstone");
+        }
+
         public static Data.NPCData getNPCData(int id, Players.Player owner)
         {
             if (NPCDataList.ContainsKey(id)) {

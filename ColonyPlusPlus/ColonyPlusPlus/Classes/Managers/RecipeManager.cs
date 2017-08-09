@@ -148,7 +148,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
 
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.crafter", RecipeCraftingStatic);
-            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.grinder", RecipeGrinding);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.grinder", RecipeGrinding);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.minter", RecipeMinting);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.merchant", RecipeShopping);
             Utilities.WriteLog("Number of smelting recipes: " + RecipeSmelting.Count);
@@ -177,7 +177,7 @@ namespace ColonyPlusPlus.Classes.Managers
         /// <returns></returns>
         public static InventoryItem Item(string name, int num)
         {
-            try
+            /*try
             {
                 ushort u;
                 ItemTypes.IndexLookup.TryGetIndex(name, out u);
@@ -189,7 +189,8 @@ namespace ColonyPlusPlus.Classes.Managers
             }
 
             return new InventoryItem(0, 0);
-            
+            */
+            return new InventoryItem(ItemTypes.IndexLookup.GetIndex(name), num);
         }
 
 

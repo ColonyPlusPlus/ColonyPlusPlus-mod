@@ -39,6 +39,12 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
         {
             base.OnNPCDoJob(ref state);
 
+            if(state.IndicatorState.IndicatorType == NPCIndicatorType.Crafted)
+            {
+
+            }
+
+            
             if (state.JobIsDone == true)
             {
                 Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID, this.owner);
