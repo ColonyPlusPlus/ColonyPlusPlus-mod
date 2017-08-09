@@ -208,6 +208,7 @@
 		},
 		"inventory" : {
 			"crafting" : "Crafting",
+			"scienceheader": "Science",
 			"stockpile" : "Stockpile",
 			"stockpiledescription" : "You can only craft things with the items in the slots on the bottom. Colonists can only use items in your stockpile.",
 			"foodvalue" : "Food value:",
@@ -281,9 +282,18 @@
 		}
 	},
 	"localecoverage" : 1,
-	"popup.limits.cpp.carpenter" : "Carpentry Limits",
-	"popup.limits.cpp.blacksmith" : "Smithing Limits",
-	"popup.limits.cpp.stonemason" : "Masonry Limits",
-	"popup.limits.cpp.potter" : "Pottery Limits",
-	"popup.limits.cpp.chickenplucker" : "Chicken Coop Limits"
+	"popup.limits.cpp.baker": "Baker Limits",
+	"popup.limits.cpp.blacksmith": "Smithing Limits",
+	"popup.limits.cpp.carpenter": "Carpentry Limits",
+	"popup.limits.cpp.chickenplucker" : "Chicken Coop Limits",
+	"popup.limits.cpp.crafter": "Crafting Limits",
+	"popup.limits.cpp.grinder": "Grinding Limits",
+	"popup.limits.cpp.merchant": "Merchant Limits",
+	"popup.limits.cpp.minter": "Minting Limits",
+	"popup.limits.cpp.smelter": "Smelting Limits",
+	"popup.limits.cpp.stonemason": "Masonry Limits",
+	"popup.limits.cpp.potter": "Pottery Limits"
+	"popup.limits.cpp.tailor": "Tailoring Limits",
+	"popup.limits.cpp.technologist": "Technologist Limits",
+	'popup.limits.cpp.welloperator": "Well Operation Limits"
 }
