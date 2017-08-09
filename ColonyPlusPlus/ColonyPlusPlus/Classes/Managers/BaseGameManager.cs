@@ -115,6 +115,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.GameBase.Blocks.WheatStageTwo wheatstagetwo = new Types.GameBase.Blocks.WheatStageTwo("wheatstage2");
             Types.GameBase.Blocks.WheatStageThree wheatstagethree = new Types.GameBase.Blocks.WheatStageThree("wheatstage3");
             Types.GameBase.Blocks.Workbench workbench = new Types.GameBase.Blocks.Workbench("workbench");
+            Types.GameBase.Blocks.TechnologistTable technologisttable = new Types.GameBase.Blocks.TechnologistTable("technologisttable");
 
             Classes.Utilities.WriteLog("Finished Registering Basegame Blocks");
 
@@ -146,6 +147,8 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.GameBase.Items.Pickaxe pickaxe = new Types.GameBase.Items.Pickaxe("pickaxe");
             Types.GameBase.Items.Straw straw = new Types.GameBase.Items.Straw("straw");
             Types.GameBase.Items.Wheat wheat = new Types.GameBase.Items.Wheat("wheat");
+            Types.GameBase.Items.ScienceBagBasic sbb = new Types.GameBase.Items.ScienceBagBasic("sciencebagbasic");
+            Types.GameBase.Items.ScienceBagLife sbl = new Types.GameBase.Items.ScienceBagLife("sciencebaglife");
 
             Classes.Utilities.WriteLog("Finished Registering Basegame Items");
         }

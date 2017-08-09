@@ -61,6 +61,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Material.createMaterial("grindstone", "grindstone", "neutral", "grindstone", "grindstone");
             Material.createMaterial("berrybush", "berrybush", "neutral", "berrybush", "berrybush");
             Material.createMaterial("error", "error", "neutral", "neutral", "neutral");
+            Material.createMaterial("technologisttable", "technologisttable", "neutral", "neutral", "technologisttable");
         }
     }
 }
