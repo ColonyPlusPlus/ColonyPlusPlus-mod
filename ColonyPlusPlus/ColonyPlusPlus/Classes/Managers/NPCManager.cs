@@ -35,6 +35,13 @@ namespace ColonyPlusPlus.Classes.Managers
 
             //REIMPLEMENTED BASE JOBS
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Grinder>("grindstone");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Minter>("mint");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Merchant>("shop");
+            //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Merchant>("tailorshop");
+            //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Technologist>("technologisttable");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Crafter>("workbench");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Smelter>("furnace");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Baker>("oven");
 
             // CUSTOM JOBS
             //CraftingJobs
@@ -47,11 +54,21 @@ namespace ColonyPlusPlus.Classes.Managers
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
             //DefenseJobs
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT2>("quivert2");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.BaseQuiver>("quiver");
+
         }
 
         public static void removeBaseJobs()
         {
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("grindstone");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("mint");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("shop");
+            //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("tailorshop");
+            //Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("technologisttable");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("workbench");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("furnace");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("oven");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.ClearType("quiver");
         }
 
         public static Data.NPCData getNPCData(int id, Players.Player owner)

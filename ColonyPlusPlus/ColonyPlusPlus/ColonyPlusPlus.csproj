@@ -56,10 +56,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BaseChatCommand.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Baker.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Crafter.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Smelter.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Minter.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Merchant.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Tailor.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Technologist.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\Carpenter.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\ChickenPluckerJob.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Grinder.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\StoneMason.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\WellOperator.cs" />
+    <Compile Include="Classes\BlockJobs\Defense\BaseQuiver.cs" />
     <Compile Include="Classes\BlockJobs\Defense\QuiverJobT2.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />

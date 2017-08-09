@@ -147,13 +147,13 @@ namespace ColonyPlusPlus.Classes.Managers
                 
             }
 
-            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.crafter", RecipeCraftingStatic);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.crafter", RecipeCraftingStatic);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.grinder", RecipeGrinding);
-            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.minter", RecipeMinting);
-            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("pipliz.merchant", RecipeShopping);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.minter", RecipeMinting);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.merchant", RecipeShopping);
             Utilities.WriteLog("Number of smelting recipes: " + RecipeSmelting.Count);
-            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("pipliz.smelter", RecipeSmelting);
-            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("pipliz.baker", RecipeBaking);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("cpp.smelter", RecipeSmelting);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("cpp.baker", RecipeBaking);
 
 
             // custom jobs

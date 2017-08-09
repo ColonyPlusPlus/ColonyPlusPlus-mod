@@ -39,7 +39,7 @@ namespace ColonyPlusPlus.Classes.Data
                 {
                     // the NPC has levelled up!
                     XPLevels[jobtype] += 1;
-                    Helpers.Chat.send(owner, String.Format("NPC [{0}] has levelled up! Now level {1} ({2} XP) ({3}% efficiency boost)", jobtype, XPLevels[jobtype], XPAmounts[jobtype], Math.Round((1 - getCraftingMultiplier(jobtype)) * 100,0)), Helpers.Chat.ChatColour.orange);
+                    Helpers.Chat.sendSilent(owner, String.Format("NPC [{0}] has levelled up! Now level {1} ({2} XP) ({3}% efficiency boost)", jobtype, XPLevels[jobtype], XPAmounts[jobtype], Math.Round((1 - getCraftingMultiplier(jobtype)) * 100,0)), Helpers.Chat.ChatColour.orange);
                 }
             }
             else

@@ -7,11 +7,11 @@ using Pipliz.APIProvider.Jobs;
 
 namespace ColonyPlusPlus.Classes.BlockJobs.BaseJobs
 {
-    public class Grinder : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
+    public class Crafter : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {
-        public string jobtype = "grinding";
+        public string jobtype = "crafting";
 
-        public override string NPCTypeKey { get { return "cpp.grinder"; } }
+        public override string NPCTypeKey { get { return "cpp.crafter"; } }
 
         public override float TimeBetweenJobs
         {
@@ -19,7 +19,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.BaseJobs
             {
                 Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID, this.owner);
 
-                return 2.9f * d.XPData.getCraftingMultiplier(jobtype);
+                return 5f * d.XPData.getCraftingMultiplier(jobtype);
             }
         }
 
@@ -41,8 +41,8 @@ namespace ColonyPlusPlus.Classes.BlockJobs.BaseJobs
         {
             NPCTypeSettings def = NPCTypeSettings.Default;
             def.keyName = NPCTypeKey;
-            def.printName = "Grinder";
-            def.maskColor1 = new UnityEngine.Color32(87, 66, 41, 255);
+            def.printName = "Crafter";
+            def.maskColor1 = new UnityEngine.Color32(81, 121, 123, 255);
             def.type = NPCTypeID.GetNextID();
             return def;
         }
