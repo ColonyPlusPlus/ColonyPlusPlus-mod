@@ -59,6 +59,7 @@
     <Compile Include="Classes\BlockJobs\CraftingJob\Carpenter.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\ChickenPluckerJob.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\StoneMason.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\WellOperator.cs" />
     <Compile Include="Classes\BlockJobs\Defense\QuiverJobT2.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Types\Blocks\Pillar.cs" />
     <Compile Include="Types\Blocks\Sugarcane.cs" />
     <Compile Include="Types\Blocks\VegetablePatch.cs" />
+    <Compile Include="Types\Blocks\WellTop.cs" />
     <Compile Include="Types\Blocks\WildBerryBush.cs" />
     <Compile Include="Types\Blocks\Window.cs" />
     <Compile Include="Types\Blocks\WindowTwoHigh.cs" />
@@ -229,6 +231,7 @@
     <Compile Include="Types\GameBase\Special\MissingError.cs" />
     <Compile Include="Types\GameBase\Special\SaveTool.cs" />
     <Compile Include="Types\Items\BakedPotato.cs" />
+    <Compile Include="Types\Items\Bottle.cs" />
     <Compile Include="Types\Items\Butter.cs" />
     <Compile Include="Types\Items\Cake.cs" />
     <Compile Include="Types\Items\Cheese.cs" />
@@ -242,12 +245,14 @@
     <Compile Include="Types\Items\Sugar.cs" />
     <Compile Include="Types\Items\SugarcaneItem.cs" />
     <Compile Include="Classes\Helpers\Debug.cs" />
+    <Compile Include="Types\Items\WaterBottle.cs" />
     <Compile Include="Types\JobBlocks\Anvil.cs" />
     <Compile Include="Types\JobBlocks\ChickenCoop.cs" />
     <Compile Include="Types\JobBlocks\MasonTable.cs" />
     <Compile Include="Types\JobBlocks\PotteryTable.cs" />
     <Compile Include="Types\JobBlocks\QuiverT2.cs" />
     <Compile Include="Types\JobBlocks\Sawmill.cs" />
+    <Compile Include="Types\JobBlocks\Well.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

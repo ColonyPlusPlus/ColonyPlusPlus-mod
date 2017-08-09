@@ -17,6 +17,9 @@
             Material.createMaterial("cpplogtaiga", "cpplogtaiga", "neutral", "plasterblock", "plasterblock");
             Material.createMaterial("cpplogtaigatop", "cpplogtaigatop", "neutral", "plasterblock", "plasterblock");
 
+            // job stuff
+            Material.createMaterial("welltop", "well", "neutral", "well", "plasterblock");
+
             // Decorative blocks
             Material.createMaterial("clayblock", "clayblock", "neutral", "plasterblock", "plasterblock");
             Material.createMaterial("clayblockblack", "clayblockblack", "neutral", "plasterblock", "plasterblock");

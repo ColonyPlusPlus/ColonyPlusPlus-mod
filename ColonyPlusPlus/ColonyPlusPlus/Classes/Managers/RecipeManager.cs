@@ -58,6 +58,7 @@ namespace ColonyPlusPlus.Classes.Managers
             List<global::Recipe> RecipeSmithing = new List<global::Recipe>();
             List<global::Recipe> PlayerRecipes = new List<global::Recipe>();
             List<global::Recipe> RecipeChickenCoop = new List<global::Recipe>();
+            List<global::Recipe> RecipeWell = new List<global::Recipe>();
 
             // Go through each registered recipe class
             foreach (Recipe RecipeInstance in recipeList)
@@ -129,6 +130,11 @@ namespace ColonyPlusPlus.Classes.Managers
 
                         recipesAdded += 1;
                         break;
+                    case "well":
+                        RecipeWell.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
+
+                        recipesAdded += 1;
+                        break;
                     default:
                         // if the type isn't registered (or is something random) then just say "nah ain't happenin' man"
                         Utilities.WriteLog("Unable to create recipe of type " + RecipeInstance.Type + " - invalid type");
@@ -154,6 +160,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.potter", RecipePottery);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.stonemason", RecipeMasonry);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.chickenplucker", RecipeChickenCoop);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.welloperator", RecipeWell);
 
             // Log the number of added recipes
             Utilities.WriteLog("Added " + recipesAdded + " recipes");
