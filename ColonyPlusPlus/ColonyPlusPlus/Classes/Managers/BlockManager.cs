@@ -24,6 +24,10 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.Blocks.WindowZMinus windowzminus = new Types.Blocks.WindowZMinus("windowz-");
             Types.Blocks.WindowZPlus windowzplus = new Types.Blocks.WindowZPlus("windowz+");
             Types.Blocks.WindowTwoHigh windowtwohigh                    = new Types.Blocks.WindowTwoHigh("windowtwohigh");
+            Types.Blocks.WindowTwoHighXMinus windowtwohighxminus = new Types.Blocks.WindowTwoHighXMinus("windowtwohighx-");
+            Types.Blocks.WindowTwoHighXPlus windowtwohighxplus = new Types.Blocks.WindowTwoHighXPlus("windowtwohighx+");
+            Types.Blocks.WindowTwoHighZMinus windowtwohighzminus = new Types.Blocks.WindowTwoHighZMinus("windowtwohighz-");
+            Types.Blocks.WindowTwoHighZPlus windowtwohighzplus = new Types.Blocks.WindowTwoHighZPlus("windowtwohighz+");
             Types.Blocks.Sugarcane sugarcane                            = new Types.Blocks.Sugarcane("sugarcane");
             Types.Blocks.VegetablePatch vegetablepatch                  = new Types.Blocks.VegetablePatch("vegetablepatch");
 
