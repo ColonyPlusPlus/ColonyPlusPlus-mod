@@ -13,10 +13,10 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "wellroof";
             this.IsPlaceable = true;
 
-            this.AllowCreative = false;
+            this.AllowCreative = true;
 
             Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("welltop", 1, 0.0f)
+                new Classes.ItemHelper.OnRemove("welltop", 1, 1.0f)
             };
 
             this.OnRemove = onRemoveNode;

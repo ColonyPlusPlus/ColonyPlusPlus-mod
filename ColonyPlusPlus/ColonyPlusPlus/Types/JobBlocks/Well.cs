@@ -32,7 +32,8 @@ namespace ColonyPlusPlus.Types.JobBlocks
                     RecipeManager.Item("planks", 6)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("well", 1)
+                    RecipeManager.Item("well", 1),
+                    RecipeManager.Item("welltop", 1)
                 },
                 0.0f, true, true);
         }
