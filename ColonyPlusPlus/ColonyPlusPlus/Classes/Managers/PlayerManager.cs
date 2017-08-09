@@ -286,6 +286,46 @@ namespace ColonyPlusPlus.Classes.Managers
 
         }
 
+
+        /// <summary>
+        /// INTERNAL
+        /// Trashes items.
+        /// </summary>
+        /// <param name="item">The ItemID of the item given.</param>
+        /// <param name="amount">How many of the item given.</param>
+        public static void trashItems(Players.Player player, ushort item, int amount)
+        {
+            if (Permissions.PermissionsManager.CheckAndWarnPermission(player, "trash"))
+            {
+
+                Stockpile playerStockpile = Stockpile.GetStockPile(player);
+
+                string name;
+                bool legalIds = ItemTypes.IndexLookup.TryGetName(item, out name);
+
+                if (!legalIds)
+                {
+                    Helpers.Chat.sendSilent(player, "Invalid ID's", Helpers.Chat.ChatColour.orange);
+                    return;
+                }
+
+                int stockPileAmount = playerStockpile.AmountContained(item);
+                if (stockPileAmount <= amount)
+                {
+                    Helpers.Chat.sendSilent(player, "You have less than " + amount +", trashing all.", Helpers.Chat.ChatColour.orange);
+                    amount = stockPileAmount;
+                }
+
+                playerStockpile.Remove(item, amount);
+                Helpers.Chat.sendSilent(player, String.Format("{0} of item [{1}] trashed.", amount, name), Helpers.Chat.ChatColour.orange);
+            }
+            else
+            {
+                Helpers.Chat.sendSilent(player, "Trashing Failed.", Helpers.Chat.ChatColour.red);
+            }
+
+        }
+
         public static bool getTradeEnabled()
         {
             return Classes.Managers.ConfigManager.getConfigBoolean("trade.enabled");
