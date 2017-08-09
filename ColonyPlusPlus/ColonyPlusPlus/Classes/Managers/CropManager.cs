@@ -318,7 +318,7 @@ namespace ColonyPlusPlus.Classes.Managers
             if (cropsLoaded == true)
             {
                 SaveCropTracker();
-                Utilities.WriteLog("Updated Crop Save [Interval]");
+                //Utilities.WriteLog("Updated Crop Save [Interval]");
             }
         }
 
