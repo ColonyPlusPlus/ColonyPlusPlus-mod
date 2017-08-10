@@ -26,7 +26,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob
             NPCTypeSettings def = NPCTypeSettings.Default;
             def.keyName = NPCTypeKey;
             def.printName = "Potter";
-            def.maskColor1 = new UnityEngine.Color32(10, 10, 10, 255);
+            def.maskColor1 = new UnityEngine.Color32(204, 133, 108, 255);
             def.type = NPCTypeID.GetNextID();
             return def;
         }

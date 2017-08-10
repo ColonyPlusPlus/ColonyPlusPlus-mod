@@ -27,7 +27,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
             NPCTypeSettings def = NPCTypeSettings.Default;
             def.keyName = NPCTypeKey;
             def.printName = "StoneMason";
-            def.maskColor1 = new UnityEngine.Color32(10, 10, 10, 255);
+            def.maskColor1 = new UnityEngine.Color32(70, 70, 70, 255);
             def.type = NPCTypeID.GetNextID();
             return def;
         }
