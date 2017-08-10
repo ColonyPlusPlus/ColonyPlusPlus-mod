@@ -24,10 +24,12 @@ namespace ColonyPlusPlus.Types.Items
                     RecipeManager.Item("flour", 4),
                     RecipeManager.Item("egg", 2),
                     RecipeManager.Item("butter", 2),
-                    RecipeManager.Item("sugar", 2)
+                    RecipeManager.Item("sugar", 2),
+                    RecipeManager.Item("bottle", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("cake", 1)
+                    RecipeManager.Item("cake", 1),
+                    RecipeManager.Item("bottle", 1)
                 },
                 0.0f);
         }
