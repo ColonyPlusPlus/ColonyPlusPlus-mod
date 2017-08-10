@@ -39,14 +39,13 @@ namespace ColonyPlusPlus.Classes.Data
         /// <returns></returns>
         public bool setOwner(NetworkID pID, bool overwrite = false)
         {
-            if(owned == true)
+            if(owned == true && isSpawn == true)
             {
                 if(overwrite == false)
                 {
                     return false;
                 } else
                 {
-                   
                     playerID = pID;
                     ownerHistory.Add(pID);
                     return true;

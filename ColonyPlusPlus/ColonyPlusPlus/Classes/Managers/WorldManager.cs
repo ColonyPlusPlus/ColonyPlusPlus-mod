@@ -28,7 +28,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             Vector3Int p = position.ToChunk();
             string chunkname = positionToString(p);
-            if (ChunkDataList.ContainsKey(chunkname) && !ChunkDataList[chunkname].getSpawn())
+            if (ChunkDataList.ContainsKey(chunkname))
             {
                 ChunkData c = ChunkDataList[chunkname];
 
@@ -124,10 +124,7 @@ namespace ColonyPlusPlus.Classes.Managers
                     // then go through stuff
                     foreach (Classes.Data.ChunkData c in ChunkDataList.Values)
                     {
-                        if(c.getSpawn())
-                        {
-                            continue;
-                        }
+                        //if(c.getSpawn()) { continue; }
                         // build a child node
                         JSONNode child = new JSONNode(NodeType.Object);
 
@@ -414,8 +411,10 @@ namespace ColonyPlusPlus.Classes.Managers
             {
                 for (int z = p.z - SpawnProtectionDistance; z < p.z + SpawnProtectionDistance; z++)
                 {
-                    claimChunk(new Vector3Int(x,0,z), new NetworkID(NetworkID.IDType.LocalHost), true);
-                    Utilities.WriteLog("Spawn claimed X: " + x+ " Y: " + p.y + " Z: " + z);
+                    for (int y = 0; y < 320; y += 16)
+                    {
+                        claimChunk(new Vector3Int(x * 16, y, z * 16), new NetworkID(NetworkID.IDType.Server), true);
+                    }
                 }
             }
         }
