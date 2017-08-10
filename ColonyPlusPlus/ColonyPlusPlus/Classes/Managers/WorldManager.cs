@@ -24,11 +24,11 @@ namespace ColonyPlusPlus.Classes.Managers
             return position.x + "," + position.y + "," + position.z;
         }
 
-        public static bool claimChunk(Vector3Int position, NetworkID playerid)
+        public static bool claimChunk(Vector3Int position, NetworkID playerid, bool isSpawn = false)
         {
             Vector3Int p = position.ToChunk();
             string chunkname = positionToString(p);
-            if (ChunkDataList.ContainsKey(chunkname))
+            if (ChunkDataList.ContainsKey(chunkname) && !ChunkDataList[chunkname].getSpawn())
             {
                 ChunkData c = ChunkDataList[chunkname];
 
@@ -39,7 +39,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             else
             {
-                ChunkData c = new ChunkData(p, true, playerid, new List<NetworkID>() { playerid });
+                ChunkData c = new ChunkData(p, true, playerid, new List<NetworkID>() { playerid }, isSpawn);
               
                 ChunkDataList.Add(chunkname, c);
                 SaveJSON();
@@ -124,6 +124,10 @@ namespace ColonyPlusPlus.Classes.Managers
                     // then go through stuff
                     foreach (Classes.Data.ChunkData c in ChunkDataList.Values)
                     {
+                        if(c.getSpawn())
+                        {
+                            continue;
+                        }
                         // build a child node
                         JSONNode child = new JSONNode(NodeType.Object);
 
@@ -321,7 +325,6 @@ namespace ColonyPlusPlus.Classes.Managers
                 int startingZ = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingZ");
 
                 int distancex, distancez = 0;
-
                 
                 int playerX = (int)Pipliz.Math.RoundToInt(d.position.x);
                 int playerZ = (int)Pipliz.Math.RoundToInt(d.position.z);
@@ -396,6 +399,23 @@ namespace ColonyPlusPlus.Classes.Managers
                 else
                 {
                     return true;
+                }
+            }
+        }
+
+        public static void SetupSpawn()
+        {
+            Vector3Int pos = new Vector3Int();
+            pos.x = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingX");
+            pos.z = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingZ");
+            Vector3Int p = pos.ToChunk();
+            int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("spawnprotection.radius");
+            for(int x = p.x - SpawnProtectionDistance; x < p.x + SpawnProtectionDistance; x++)
+            {
+                for (int z = p.z - SpawnProtectionDistance; z < p.z + SpawnProtectionDistance; z++)
+                {
+                    claimChunk(new Vector3Int(x,0,z), new NetworkID(NetworkID.IDType.LocalHost), true);
+                    Utilities.WriteLog("Spawn claimed X: " + x+ " Y: " + p.y + " Z: " + z);
                 }
             }
         }

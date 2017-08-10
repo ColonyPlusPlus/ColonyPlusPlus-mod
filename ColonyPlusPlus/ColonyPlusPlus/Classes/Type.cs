@@ -680,9 +680,7 @@ namespace ColonyPlusPlus.Classes
             }
 
             // Tell the user it was added
-            //Utilities.WriteLog("Added Type: " + this.TypeName, Helpers.Chat.ChatColour.green, Helpers.Chat.ChatStyle.italic);
-             
-            
+            Utilities.WriteLog("Added Type: " + this.TypeName, Helpers.Chat.ChatColour.green, Helpers.Chat.ChatStyle.italic);
         }
     }
 }
