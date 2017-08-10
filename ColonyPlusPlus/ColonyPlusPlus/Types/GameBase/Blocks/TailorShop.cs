@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
             this.SideAll = "planks";
-            this.SideXPlus = "tailorshop";
+            this.SideYPlus = "tailorshop";
             this.NPCLimit = 0;
             this.IsPlaceable = true;
             this.Register();
