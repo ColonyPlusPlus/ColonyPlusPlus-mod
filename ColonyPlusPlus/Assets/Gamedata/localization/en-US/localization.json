@@ -218,15 +218,21 @@
 			}
 		},
 		"limits" : {
-			"pipliz" : {
-				"crafter" : "Crafting limits",
+			"cpp" : {
 				"baker" : "Baking limits",
-				"smelter" : "Smelting limits",
-				"minter" : "Minting limits",
-				"merchant" : "Shopping limits",
+				"blacksmith": "Smithing Limits",
+				"carpenter": "Carpentry Limits",
+				"crafter" : "Crafting limits",
+				"chickenplucker" : "Chicken Coop Limits",
 				"grinder" : "Grinding limits",
+				"merchant" : "Shopping limits",
+				"minter" : "Minting limits",
+				"potter": "Pottery Limits",
+				"smelter" : "Smelting limits",
+				"stonemason": "Masonry Limits",
 				"tailor" : "Tailoring limits",
-				"technologist" : "Technologist limits"
+				"technologist" : "Technologist limits",
+				"welloperator": "Well Operation Limits"
 			},
 			"description" : "Colonists will work until the set amount is reached in the stockpile."
 		},
@@ -282,18 +288,4 @@
 		}
 	},
 	"localecoverage" : 1,
-	"popup.limits.cpp.baker": "Baker Limits",
-	"popup.limits.cpp.blacksmith": "Smithing Limits",
-	"popup.limits.cpp.carpenter": "Carpentry Limits",
-	"popup.limits.cpp.chickenplucker" : "Chicken Coop Limits",
-	"popup.limits.cpp.crafter": "Crafting Limits",
-	"popup.limits.cpp.grinder": "Grinding Limits",
-	"popup.limits.cpp.merchant": "Merchant Limits",
-	"popup.limits.cpp.minter": "Minting Limits",
-	"popup.limits.cpp.smelter": "Smelting Limits",
-	"popup.limits.cpp.stonemason": "Masonry Limits",
-	"popup.limits.cpp.potter": "Pottery Limits"
-	"popup.limits.cpp.tailor": "Tailoring Limits",
-	"popup.limits.cpp.technologist": "Technologist Limits",
-	'popup.limits.cpp.welloperator": "Well Operation Limits"
 }
