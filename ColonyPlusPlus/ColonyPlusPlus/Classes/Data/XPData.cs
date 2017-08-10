@@ -16,12 +16,12 @@ namespace ColonyPlusPlus.Classes.Data
             XPLevels = new Dictionary<string, int>();
         }
 
-        public void addXP(string jobtype, Players.Player owner)
+        public void addXP(int npcID, string jobtype, Players.Player owner)
         {
-            addXPAmount(jobtype, 1, owner);
+            addXPAmount(npcID, jobtype, 1, owner);
         }
 
-        public void addXPAmount(string jobtype, ushort amount, Players.Player owner)
+        public void addXPAmount(int npcID, string jobtype, ushort amount, Players.Player owner)
         {
             if (XPAmounts.ContainsKey(jobtype))
             {
@@ -37,9 +37,10 @@ namespace ColonyPlusPlus.Classes.Data
                 //Utilities.WriteLog("Level: " + XPLevels[jobtype] + "/" + getLevel(jobtype));
                 if (getLevel(jobtype) > XPLevels[jobtype])
                 {
+                    NPCData n = Managers.NPCManager.getNPCData(npcID, owner);
                     // the NPC has levelled up!
                     XPLevels[jobtype] += 1;
-                    Helpers.Chat.sendSilent(owner, String.Format("NPC [{0}] has levelled up! Now level {1} ({2} XP) ({3}% efficiency boost)", jobtype, XPLevels[jobtype], XPAmounts[jobtype], Math.Round((1 - getCraftingMultiplier(jobtype)) * 100,0)), Helpers.Chat.ChatColour.orange);
+                    Helpers.Chat.sendSilent(owner, String.Format("{0} [{1}] has gained a level in {2} (Level: {3}, {4}% efficiency boost)", n.name, npcID, jobtype, XPLevels[jobtype], Math.Round((1 - getCraftingMultiplier(jobtype)) * 100,0)), Helpers.Chat.ChatColour.orange);
                 }
             }
             else

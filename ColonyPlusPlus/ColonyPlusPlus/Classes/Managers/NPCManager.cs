@@ -12,6 +12,7 @@ namespace ColonyPlusPlus.Classes.Managers
     {
 
         private static Dictionary<int, Data.NPCData> NPCDataList = new Dictionary<int, Data.NPCData>();
+        private static JSONNode NPCNameList = new JSONNode(NodeType.Array);
 
         public static int baseXP = 10;
         public static int maxLevel = 25;
@@ -27,6 +28,20 @@ namespace ColonyPlusPlus.Classes.Managers
             EfficiencyPerLevel = ConfigManager.getConfigFloat("jobs.efficiencyPerLevel");
 
             Utilities.WriteLog(String.Format("NPC Config: baseXP: {0}, maxLevel: {1}, xpMultiplier: {2}, efficiencyPerLevel: {3}",baseXP, maxLevel, XPMultiplier, EfficiencyPerLevel));
+
+            JSONNode array;
+            if (Pipliz.JSON.JSON.Deserialize("gamedata/mods/colonyplusplus/npcnames.json", out array, false))
+            {
+                NPCNameList = array;
+                Utilities.WriteLog("Loaded NPC Names List");
+            } else
+            {
+                JSONNode j = new JSONNode(NodeType.Array);
+                j.SetAs<string>("Dave");
+                NPCNameList.AddToArray(j);
+
+                Utilities.WriteLog("Failed to load NPC Names List - assumed Dave");
+            }
         }
 
         public static void registerAllJobs()
@@ -123,6 +138,7 @@ namespace ColonyPlusPlus.Classes.Managers
                         child.SetAs("id", npcID);
                         child.SetAs("owner", npcData.owner.ID.steamID);
                         child.SetAs("xpdata", npcData.XPData.toJSON());
+                        child.SetAs("name", npcData.name);
 
                         rootnode.AddToArray(child);
                     }
@@ -152,6 +168,7 @@ namespace ColonyPlusPlus.Classes.Managers
                         {
                             try
                             {
+
                                
                                 int npcID = node["id"].GetAs<int>();
                                 Players.Player owner = Players.GetPlayer(new NetworkID(new CSteamID(node["owner"].GetAs<ulong>())));
@@ -163,6 +180,7 @@ namespace ColonyPlusPlus.Classes.Managers
                                 {
                                     // doesn't exist, add it!
                                     Data.NPCData npcData = new Data.NPCData(owner);
+                                    
                                     JSONNode xpdata = node["xpdata"].GetAs<JSONNode>();
 
                                     if (xpdata.ChildCount > 0)
@@ -174,6 +192,9 @@ namespace ColonyPlusPlus.Classes.Managers
                                         }
                                     }
                                     npcData.XPData.recalculateAllLevels();
+
+                                    string npcName = node["name"].GetAs<string>();
+                                    npcData.name = npcName;
 
                                     NPCDataList.Add(npcID, npcData);
 
@@ -210,6 +231,18 @@ namespace ColonyPlusPlus.Classes.Managers
         private static string GetJSONPath()
         {
             return "gamedata/savegames/" + ServerManager.WorldName + "/cppnpcxp.json";
+        }
+
+        public static string getRandomName()
+        {
+            string name = "";
+
+            int maxN = NPCNameList.ChildCount;
+            int nameIndex = Pipliz.Random.Next(0, maxN - 1);
+
+            name = NPCNameList[nameIndex].GetAs<string>();
+
+            return name;
         }
 
     }

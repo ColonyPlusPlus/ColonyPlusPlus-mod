@@ -37,7 +37,7 @@ namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob
             if (state.JobIsDone == true)
             {
                 Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID, this.owner);
-                d.XPData.addXP(jobtype, this.owner);
+                d.XPData.addXP(this.usedNPC.ID, jobtype, this.owner);
                 Managers.NPCManager.updateNPCData(this.usedNPC.ID, d);
             }
 
