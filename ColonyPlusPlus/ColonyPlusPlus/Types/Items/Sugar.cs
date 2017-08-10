@@ -6,7 +6,7 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Sugar : Classes.Type
+    class Sugar : ColonyAPI.Classes.Type
     {
         public Sugar(string name) : base(name, true)
         {

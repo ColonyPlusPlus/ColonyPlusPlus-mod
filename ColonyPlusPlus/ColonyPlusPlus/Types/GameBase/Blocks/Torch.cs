@@ -6,7 +6,7 @@ using ColonyPlusPlus.Classes;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Torch : Classes.Type
+    class Torch : ColonyAPI.Classes.Type
     {
         public Torch(string name) : base(name)
         {
@@ -31,7 +31,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchxPlus : Classes.Type
+    class TorchxPlus : ColonyAPI.Classes.Type
     {
         public TorchxPlus(string name) : base(name)
         {
@@ -41,7 +41,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchxMinus : Classes.Type
+    class TorchxMinus : ColonyAPI.Classes.Type
     {
         public TorchxMinus(string name) : base(name)
         {
@@ -51,7 +51,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchyPlus : Classes.Type
+    class TorchyPlus : ColonyAPI.Classes.Type
     {
         public TorchyPlus(string name) : base(name)
         {
@@ -62,7 +62,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchzPlus : Classes.Type
+    class TorchzPlus : ColonyAPI.Classes.Type
     {
         public TorchzPlus(string name) : base(name)
         {
@@ -72,7 +72,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class TorchzMinus : Classes.Type
+    class TorchzMinus : ColonyAPI.Classes.Type
     {
         public TorchzMinus(string name) : base(name)
         {

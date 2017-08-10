@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class MasonTable : Classes.Type
+    class MasonTable : ColonyAPI.Classes.Type
     {
         public MasonTable(string name) : base(name)
         {

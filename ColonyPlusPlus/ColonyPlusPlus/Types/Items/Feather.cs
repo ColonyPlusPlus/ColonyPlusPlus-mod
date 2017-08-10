@@ -6,7 +6,7 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Feather : Classes.Type
+    class Feather : ColonyAPI.Classes.Type
     {
         public Feather(string name) : base(name, true)
         {

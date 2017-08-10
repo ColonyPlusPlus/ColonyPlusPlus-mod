@@ -6,12 +6,12 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeTemperate : Classes.Type
+    class LogCubeTemperate : ColonyAPI.Classes.Type
     {
         public LogCubeTemperate(string name) : base(name, true)
         {
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("logcubetemperate",   1,  1.0f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("logcubetemperate",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "logcube";

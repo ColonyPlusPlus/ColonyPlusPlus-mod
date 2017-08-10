@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class FlaxStageTwo : Classes.Type
+    class FlaxStageTwo : ColonyAPI.Classes.Type
     {
         public FlaxStageTwo(string name) : base(name)
         {
@@ -13,9 +13,9 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Mesh = "flaxstage2";
             this.SideAll = "flax";
 
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("flaxstage1",   1,  1.1f),
-                new Classes.ItemHelper.OnRemove("flax",   3,  1f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("flaxstage1",   1,  1.1f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("flax",   3,  1f)
             };
             this.OnRemove = onRemoveNode;
 

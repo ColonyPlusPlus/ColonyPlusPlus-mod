@@ -13,7 +13,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
         public static List<string> AddedTypes = new List<string>();
         public static List<string> CreativeAddedTypes = new List<string>();
-        public static List<Type> ActionTypeRegistry = new List<Type>(); 
+        public static List<ColonyAPI.Classes.Type> ActionTypeRegistry = new List<ColonyAPI.Classes.Type>(); 
 
         // using a prebuilt list of croptypes
         public static void registerTrackedTypes()
@@ -36,7 +36,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             if(ActionTypeRegistry.Count > 0)
             {
-                foreach (Type t in ActionTypeRegistry)
+                foreach (ColonyAPI.Classes.Type t in ActionTypeRegistry)
                 {
                     t.RegisterActionCallback();
                 }
@@ -44,7 +44,7 @@ namespace ColonyPlusPlus.Classes.Managers
             
         }
 
-        public static void registerActionableTypeCallback(Type t)
+        public static void registerActionableTypeCallback(ColonyAPI.Classes.Type t)
         {
             ActionTypeRegistry.Add(t);
         }

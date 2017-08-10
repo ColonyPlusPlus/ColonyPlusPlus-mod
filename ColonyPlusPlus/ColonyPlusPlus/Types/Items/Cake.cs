@@ -7,7 +7,7 @@ using ColonyPlusPlus.Classes;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Cake : Classes.Type
+    class Cake : ColonyAPI.Classes.Type
     {
         public Cake(string name) : base(name, true)
         {

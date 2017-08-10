@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Grindstone : Classes.Type
+    class Grindstone : ColonyAPI.Classes.Type
     {
         public Grindstone(string name) : base(name)
         {

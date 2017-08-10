@@ -8,7 +8,7 @@ using ColonyPlusPlus.Classes.Helpers;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class Well : Classes.Type
+    class Well : ColonyAPI.Classes.Type
     {
         public Well(string name) : base(name)
         {

@@ -21,7 +21,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
         public static string positionToString(Vector3Int position)
         {
-            return position.x + "," + position.y + "," + position.z;
+            return position.x + "," + position.z;
         }
 
         public static bool claimChunk(Vector3Int position, NetworkID playerid, bool isSpawn = false)
@@ -411,10 +411,9 @@ namespace ColonyPlusPlus.Classes.Managers
             {
                 for (int z = p.z - SpawnProtectionDistance; z < p.z + SpawnProtectionDistance; z++)
                 {
-                    for (int y = 0; y < 320; y += 16)
-                    {
-                        claimChunk(new Vector3Int(x * 16, y, z * 16), new NetworkID(NetworkID.IDType.Server), true);
-                    }
+                   
+                        claimChunk(new Vector3Int(x * 16, 0, z * 16), new NetworkID(NetworkID.IDType.Server), true);
+
                 }
             }
         }

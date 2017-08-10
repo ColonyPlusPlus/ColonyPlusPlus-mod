@@ -7,7 +7,7 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Classes
 {
-    public class GrowableType : Classes.Type
+    public class GrowableType : ColonyAPI.Classes.Type
     {
         // base variables
         public float growthMultiplierMin = 0.9F; // 90%-110% growth needed to grow

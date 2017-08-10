@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class WheatStage : Classes.Type
+    class WheatStage : ColonyAPI.Classes.Type
     {
         public WheatStage(string name) : base(name)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class FurnaceLit : Classes.Type
+    class FurnaceLit : ColonyAPI.Classes.Type
     {
         public FurnaceLit(string name) : base(name)
         {
@@ -20,7 +20,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancelitxPlus : Classes.Type
+    class FurnancelitxPlus : ColonyAPI.Classes.Type
     {
         public FurnancelitxPlus(string name) : base(name)
         {
@@ -31,7 +31,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancelitxMinus : Classes.Type
+    class FurnancelitxMinus : ColonyAPI.Classes.Type
     {
         public FurnancelitxMinus(string name) : base(name)
         {
@@ -42,7 +42,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancelitzPlus : Classes.Type
+    class FurnancelitzPlus : ColonyAPI.Classes.Type
     {
         public FurnancelitzPlus(string name) : base(name)
         {
@@ -53,7 +53,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancelitzMinus : Classes.Type
+    class FurnancelitzMinus : ColonyAPI.Classes.Type
     {
         public FurnancelitzMinus(string name) : base(name)
         {

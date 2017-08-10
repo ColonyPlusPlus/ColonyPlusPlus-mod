@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class Pillar : Classes.Type
+    class Pillar : ColonyAPI.Classes.Type
     {
         public Pillar(string name) : base(name, true)
         {

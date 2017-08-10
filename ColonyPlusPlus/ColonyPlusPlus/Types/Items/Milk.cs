@@ -6,7 +6,7 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Milk : Classes.Type
+    class Milk : ColonyAPI.Classes.Type
     {
         public Milk(string name) : base(name, true)
         {

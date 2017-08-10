@@ -54,7 +54,7 @@ namespace ColonyPlusPlus.Classes.Helpers
 		{
 			Pipliz.JSON.JSONNode node = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Array);
 
-			foreach (Recipe recipe in Managers.RecipeManager.recipeList)
+			foreach (ColonyAPI.Classes.Recipe recipe in Managers.RecipeManager.recipeList)
 			{
 				Pipliz.JSON.JSONNode recipenode = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
 

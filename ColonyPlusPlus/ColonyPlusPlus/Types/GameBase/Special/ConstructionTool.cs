@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class ConstructionTool : Classes.Type
+    class ConstructionTool : ColonyAPI.Classes.Type
     {
         public ConstructionTool(string name) : base(name)
         {

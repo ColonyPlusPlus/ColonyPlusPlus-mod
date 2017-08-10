@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Quiver : Classes.Type
+    class Quiver : ColonyAPI.Classes.Type
     {
         public Quiver(string name) : base(name)
         {
@@ -26,7 +26,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
         }
     }
 
-    class QuiverxPlus : Classes.Type
+    class QuiverxPlus : ColonyAPI.Classes.Type
     {
         public QuiverxPlus(string name) : base(name)
         {
@@ -36,7 +36,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class QuiverxMinus : Classes.Type
+    class QuiverxMinus : ColonyAPI.Classes.Type
     {
         public QuiverxMinus(string name) : base(name)
         {
@@ -46,7 +46,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class QuiverzPlus : Classes.Type
+    class QuiverzPlus : ColonyAPI.Classes.Type
     {
         public QuiverzPlus(string name) : base(name)
         {
@@ -56,7 +56,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class QuiverzMinus : Classes.Type
+    class QuiverzMinus : ColonyAPI.Classes.Type
     {
         public QuiverzMinus(string name) : base(name)
         {

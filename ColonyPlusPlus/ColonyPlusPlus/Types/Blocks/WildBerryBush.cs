@@ -8,18 +8,18 @@ using UpdatableBlocks;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class WildBerryBush : Classes.Type
+    class WildBerryBush : ColonyAPI.Classes.Type
     {
         public WildBerryBush(string name) : base(name, true)
         {
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
 
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("berry",        1,  0.8f),
-                new Classes.ItemHelper.OnRemove("berry",        2,  0.2f),
-                new Classes.ItemHelper.OnRemove("berry",        5,  0.01f),
-                new Classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("berry",        1,  0.8f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("berry",        2,  0.2f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("berry",        5,  0.01f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("berrybush",    1,  0.15f)
             };
             this.OnRemove = onRemoveNode;
             this.IsBaseBlock = false;

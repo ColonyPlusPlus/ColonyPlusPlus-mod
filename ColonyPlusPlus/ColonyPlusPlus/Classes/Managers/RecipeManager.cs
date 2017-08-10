@@ -7,10 +7,10 @@ namespace ColonyPlusPlus.Classes.Managers
     {
 
         // list of classes.recipe objects
-        public static List<Recipe> recipeList = new List<Recipe>();
+        public static List<ColonyAPI.Classes.Recipe> recipeList = new List<ColonyAPI.Classes.Recipe>();
 
         // List of all item classes, registered by the callback
-        public static List<Classes.Type> TypesThatHaveRecipes = new List<Classes.Type>();
+        public static List<ColonyAPI.Classes.Type> TypesThatHaveRecipes = new List<ColonyAPI.Classes.Type>();
 
         // Keep a count of all added recipes (just to output to the user later)
         public static int recipesAdded = 0;
@@ -23,7 +23,7 @@ namespace ColonyPlusPlus.Classes.Managers
         {
             //Utilities.WriteLog(ItemTypes.GetNamePrintable(result[0].Type));
             // Pass the variables
-            Recipe r = new Recipe(type, reqs, result, fuelAmount, npcCraft, playerCraft);
+            ColonyAPI.Classes.Recipe r = new ColonyAPI.Classes.Recipe(type, reqs, result, fuelAmount, npcCraft, playerCraft);
 
             // Add it to the list
             recipeList.Add(r);
@@ -36,7 +36,7 @@ namespace ColonyPlusPlus.Classes.Managers
         public static void BuildRecipeList()
         {
             // Loop through
-            foreach (Type t in TypesThatHaveRecipes)
+            foreach (ColonyAPI.Classes.Type t in TypesThatHaveRecipes)
             { 
                 // Add it :)
                 t.AddRecipes();
@@ -65,11 +65,12 @@ namespace ColonyPlusPlus.Classes.Managers
             List<global::Recipe> RecipeWell = new List<global::Recipe>();
 
             // Go through each registered recipe class
-            foreach (Recipe RecipeInstance in recipeList)
+            foreach (ColonyAPI.Classes.Recipe RecipeInstance in recipeList)
             {
                 if (RecipeInstance.PlayerCraftable == true)
                 {
                     global::RecipePlayer.AllRecipes.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                    
                 }
 
                 // Switch depending on the "type" registered in the recipe class

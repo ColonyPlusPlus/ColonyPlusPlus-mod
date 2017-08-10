@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Furnace : Classes.Type
+    class Furnace : ColonyAPI.Classes.Type
     {
         public Furnace(string name) : base(name)
         {
@@ -53,7 +53,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancexPlus : Classes.Type
+    class FurnancexPlus : ColonyAPI.Classes.Type
     {
         public FurnancexPlus(string name) : base(name)
         {
@@ -63,7 +63,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancexMinus : Classes.Type
+    class FurnancexMinus : ColonyAPI.Classes.Type
     {
         public FurnancexMinus(string name) : base(name)
         {
@@ -73,7 +73,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancezPlus : Classes.Type
+    class FurnancezPlus : ColonyAPI.Classes.Type
     {
         public FurnancezPlus(string name) : base(name)
         {
@@ -83,7 +83,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class FurnancezMinus : Classes.Type
+    class FurnancezMinus : ColonyAPI.Classes.Type
     {
         public FurnancezMinus(string name) : base(name)
         {

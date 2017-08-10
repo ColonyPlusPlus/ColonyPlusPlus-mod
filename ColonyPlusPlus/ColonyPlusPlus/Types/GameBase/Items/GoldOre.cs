@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class GoldOre : Classes.Type
+    class GoldOre : ColonyAPI.Classes.Type
     {
         public GoldOre(string name) : base(name)
         {

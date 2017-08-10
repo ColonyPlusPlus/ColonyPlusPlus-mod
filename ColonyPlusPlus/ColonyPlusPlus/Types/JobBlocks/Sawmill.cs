@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class Sawmill : Classes.Type
+    class Sawmill : ColonyAPI.Classes.Type
     {
         public Sawmill(string name) : base(name)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class ErrorIdle : Classes.Type
+    class ErrorIdle : ColonyAPI.Classes.Type
     {
         public ErrorIdle(string name) : base(name)
         {

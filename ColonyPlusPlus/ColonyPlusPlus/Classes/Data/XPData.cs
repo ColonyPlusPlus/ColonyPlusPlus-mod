@@ -7,8 +7,8 @@ namespace ColonyPlusPlus.Classes.Data
 {
     public class XPData
     {
-        private Dictionary<string, ushort> XPAmounts;
-        private Dictionary<string, int> XPLevels;
+        public Dictionary<string, ushort> XPAmounts;
+        public Dictionary<string, int> XPLevels;
 
         public XPData()
         {
@@ -107,6 +107,21 @@ namespace ColonyPlusPlus.Classes.Data
             }
 
             return level;
+        }
+
+        public ushort getXPForNextLevel(int level)
+        {
+            int baseXP = Managers.NPCManager.baseXP;
+            int maxLevel = Managers.NPCManager.maxLevel;
+            float XPMultiplier = Managers.NPCManager.XPMultiplier;
+
+            if(level + 1 > maxLevel)
+            {
+                level = level - 1;
+            }
+            ushort xp = (ushort)Math.Floor(baseXP * Math.Pow(XPMultiplier,(level + 1)));
+
+            return xp;
         }
 
         public float getCraftingMultiplier(string jobtype)

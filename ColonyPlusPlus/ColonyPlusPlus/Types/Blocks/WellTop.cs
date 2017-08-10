@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class WellTop : Classes.Type
+    class WellTop : ColonyAPI.Classes.Type
     {
         public WellTop(string name) : base(name, true)
         {
@@ -15,8 +15,8 @@ namespace ColonyPlusPlus.Types.Blocks
 
             this.AllowCreative = true;
 
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("welltop", 1, 1.0f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("welltop", 1, 1.0f)
             };
 
             this.OnRemove = onRemoveNode;

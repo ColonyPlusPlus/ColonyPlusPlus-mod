@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class Flax : Classes.Type
+    class Flax : ColonyAPI.Classes.Type
     {
         public Flax(string name) : base(name)
         {

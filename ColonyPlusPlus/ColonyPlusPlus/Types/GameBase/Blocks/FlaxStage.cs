@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class FlaxStage : Classes.Type
+    class FlaxStage : ColonyAPI.Classes.Type
     {
         public FlaxStage(string name) : base(name)
         {

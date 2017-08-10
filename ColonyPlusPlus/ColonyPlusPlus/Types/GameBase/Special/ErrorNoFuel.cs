@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class ErrorNoFuel : Classes.Type
+    class ErrorNoFuel : ColonyAPI.Classes.Type
     {
         public ErrorNoFuel(string name) : base(name)
         {

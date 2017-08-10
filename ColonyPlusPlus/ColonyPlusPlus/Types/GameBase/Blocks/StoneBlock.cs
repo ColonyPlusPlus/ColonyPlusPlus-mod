@@ -6,12 +6,12 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class StoneBlock : Classes.Type
+    class StoneBlock : ColonyAPI.Classes.Type
     {
         public StoneBlock(string name) : base(name)
         {
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("stoneblock",   1,  1.0f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("stoneblock",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
 

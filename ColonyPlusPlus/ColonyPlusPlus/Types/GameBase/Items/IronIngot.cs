@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class IronIngot : Classes.Type
+    class IronIngot : ColonyAPI.Classes.Type
     {
         public IronIngot(string name) : base(name)
         {

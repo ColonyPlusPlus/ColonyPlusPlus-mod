@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeRotated : Classes.Type
+    class LogCubeRotated : ColonyAPI.Classes.Type
     {
         public LogCubeRotated(string name) : base(name, true)
         {

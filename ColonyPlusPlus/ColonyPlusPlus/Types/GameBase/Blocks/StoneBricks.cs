@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class StoneBricks : Classes.Type
+    class StoneBricks : ColonyAPI.Classes.Type
     {
         public StoneBricks(string name) : base(name)
         {

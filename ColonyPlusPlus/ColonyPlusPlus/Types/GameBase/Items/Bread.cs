@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class Bread : Classes.Type
+    class Bread : ColonyAPI.Classes.Type
     {
         public Bread(string name) : base(name)
         {

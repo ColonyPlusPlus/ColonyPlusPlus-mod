@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class ErrorNoPath : Classes.Type
+    class ErrorNoPath : ColonyAPI.Classes.Type
     {
         public ErrorNoPath(string name) : base(name)
         {

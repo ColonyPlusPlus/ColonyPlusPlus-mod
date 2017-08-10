@@ -5,12 +5,12 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class LogTaiga : Classes.Type
+    class LogTaiga : ColonyAPI.Classes.Type
     {
         public LogTaiga(string name) : base(name)
         {
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("logtaiga",   1,  1.0f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("logtaiga",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "log";

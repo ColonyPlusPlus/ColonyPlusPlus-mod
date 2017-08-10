@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Adobe : Classes.Type
+    class Adobe : ColonyAPI.Classes.Type
     {
         public Adobe(string name) : base(name)
         {

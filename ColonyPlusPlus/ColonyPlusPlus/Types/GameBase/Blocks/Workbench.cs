@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Workbench : Classes.Type
+    class Workbench : ColonyAPI.Classes.Type
     {
         public Workbench(string name) : base(name)
         {

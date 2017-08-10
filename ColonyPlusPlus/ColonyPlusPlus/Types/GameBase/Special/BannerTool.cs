@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class BannerTool : Classes.Type
+    class BannerTool : ColonyAPI.Classes.Type
     {
         public BannerTool(string name) : base(name)
         {

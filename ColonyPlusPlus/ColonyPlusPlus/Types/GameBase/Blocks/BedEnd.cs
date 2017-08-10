@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class BedEnd : Classes.Type
+    class BedEnd : ColonyAPI.Classes.Type
     {
         public BedEnd(string name) : base(name)
         {
@@ -19,7 +19,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
         }
     }
 
-    class BedendxPlus : Classes.Type
+    class BedendxPlus : ColonyAPI.Classes.Type
     {
         public BedendxPlus(string name) : base(name)
         {
@@ -29,7 +29,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class BedendxMinus : Classes.Type
+    class BedendxMinus : ColonyAPI.Classes.Type
     {
         public BedendxMinus(string name) : base(name)
         {
@@ -39,7 +39,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class BedendzPlus : Classes.Type
+    class BedendzPlus : ColonyAPI.Classes.Type
     {
         public BedendzPlus(string name) : base(name)
         {
@@ -49,7 +49,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class BedendzMinus : Classes.Type
+    class BedendzMinus : ColonyAPI.Classes.Type
     {
         public BedendzMinus(string name) : base(name)
         {

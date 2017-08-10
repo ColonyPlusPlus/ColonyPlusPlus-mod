@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Items
 {
-    class Pickaxe : Classes.Type
+    class Pickaxe : ColonyAPI.Classes.Type
     {
         public Pickaxe(string name) : base(name)
         {

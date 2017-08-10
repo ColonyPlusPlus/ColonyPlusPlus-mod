@@ -10,8 +10,8 @@ namespace ColonyPlusPlus.Types.Crops
     {
         public OnionStage1(string name) : base(name, true)
         {
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("onionstage1",   1,  0.6f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("onionstage1",   1,  0.6f)
             };
             this.OnRemove = onRemoveNode;
             this.IsSolid = false;

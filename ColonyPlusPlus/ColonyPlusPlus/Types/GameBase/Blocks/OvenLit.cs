@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class OvenLit : Classes.Type
+    class OvenLit : ColonyAPI.Classes.Type
     {
         public OvenLit(string name) : base(name)
         {
@@ -23,7 +23,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
         }
     }
 
-    class OvenLitxPlus : Classes.Type
+    class OvenLitxPlus : ColonyAPI.Classes.Type
     {
         public OvenLitxPlus(string name) : base(name)
         {
@@ -33,7 +33,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class OvenLitxMinus : Classes.Type
+    class OvenLitxMinus : ColonyAPI.Classes.Type
     {
         public OvenLitxMinus(string name) : base(name)
         {
@@ -43,7 +43,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class OvenLitzPlus : Classes.Type
+    class OvenLitzPlus : ColonyAPI.Classes.Type
     {
         public OvenLitzPlus(string name) : base(name)
         {
@@ -53,7 +53,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.Register();
         }
     }
-    class OvenLitzMinus : Classes.Type
+    class OvenLitzMinus : ColonyAPI.Classes.Type
     {
         public OvenLitzMinus(string name) : base(name)
         {

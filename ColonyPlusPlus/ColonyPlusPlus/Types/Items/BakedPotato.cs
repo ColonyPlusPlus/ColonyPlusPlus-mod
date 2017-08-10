@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using ColonyPlusPlus.Classes.Managers;
 
+
 namespace ColonyPlusPlus.Types.Items
 {
-    class BakedPotato : Classes.Type
+    class BakedPotato : ColonyAPI.Classes.Type
     {
         public BakedPotato(string name) : base(name, true)
         {

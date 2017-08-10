@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Mint : Classes.Type
+    class Mint : ColonyAPI.Classes.Type
     {
         public Mint(string name) : base(name)
         {

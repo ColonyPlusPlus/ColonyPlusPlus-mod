@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class ChickenCoop : Classes.Type
+    class ChickenCoop : ColonyAPI.Classes.Type
     {
         public ChickenCoop(string name) : base(name)
         {

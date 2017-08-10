@@ -6,7 +6,7 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Salt : Classes.Type
+    class Salt : ColonyAPI.Classes.Type
     {
         public Salt(string name) : base(name, true)
         {

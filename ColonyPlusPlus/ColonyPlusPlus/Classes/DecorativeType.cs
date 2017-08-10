@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Classes
 {
-    class DecorativeTypeBlock : Classes.Type
+    class DecorativeTypeBlock : ColonyAPI.Classes.Type
     {
         private string BaseMaterial;
         private string CraftingType;
@@ -45,7 +45,7 @@ namespace ColonyPlusPlus.Classes
     }
 
     // slope
-    class DecorativeTypeBase : Classes.Type
+    class DecorativeTypeBase : ColonyAPI.Classes.Type
     {
         private string BaseMaterial;
         private string CraftingType;
@@ -92,7 +92,7 @@ namespace ColonyPlusPlus.Classes
                 0.0f);
         }
     }
-    class DecorativeTypeXMinus : Classes.Type
+    class DecorativeTypeXMinus : ColonyAPI.Classes.Type
     {
         public DecorativeTypeXMinus(string name, string shape, string texture) : base(name + shape + "x-", true)
         {
@@ -104,7 +104,7 @@ namespace ColonyPlusPlus.Classes
             this.Register();
         }
     }
-    class DecorativeTypeXPlus : Classes.Type
+    class DecorativeTypeXPlus : ColonyAPI.Classes.Type
     {
         public DecorativeTypeXPlus(string name, string shape, string texture) : base(name + shape + "x+", true)
         {
@@ -116,7 +116,7 @@ namespace ColonyPlusPlus.Classes
             this.Register();
         }
     }
-    class DecorativeTypeZMinus : Classes.Type
+    class DecorativeTypeZMinus : ColonyAPI.Classes.Type
     {
         public DecorativeTypeZMinus(string name, string shape, string texture) : base(name + shape + "z-", true)
         {
@@ -128,7 +128,7 @@ namespace ColonyPlusPlus.Classes
             this.Register();
         }
     }
-    class DecorativeTypeZPlus : Classes.Type
+    class DecorativeTypeZPlus : ColonyAPI.Classes.Type
     {
         public DecorativeTypeZPlus(string name, string shape, string texture) : base(name + shape + "z+", true)
         {

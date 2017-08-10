@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class WindowTwoHigh : Classes.Type
+    class WindowTwoHigh : ColonyAPI.Classes.Type
     {
         public WindowTwoHigh(string name) : base (name)
         {
@@ -37,7 +37,7 @@ namespace ColonyPlusPlus.Types.Blocks
         }
     }
 
-    class WindowTwoHighXMinus : Classes.Type
+    class WindowTwoHighXMinus : ColonyAPI.Classes.Type
     {
         public WindowTwoHighXMinus(string name) : base(name)
         {
@@ -49,7 +49,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowTwoHighXPlus : Classes.Type
+    class WindowTwoHighXPlus : ColonyAPI.Classes.Type
     {
         public WindowTwoHighXPlus(string name) : base(name)
         {
@@ -61,7 +61,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowTwoHighZMinus : Classes.Type
+    class WindowTwoHighZMinus : ColonyAPI.Classes.Type
     {
         public WindowTwoHighZMinus(string name) : base(name)
         {
@@ -73,7 +73,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowTwoHighZPlus : Classes.Type
+    class WindowTwoHighZPlus : ColonyAPI.Classes.Type
     {
         public WindowTwoHighZPlus(string name) : base(name)
         {

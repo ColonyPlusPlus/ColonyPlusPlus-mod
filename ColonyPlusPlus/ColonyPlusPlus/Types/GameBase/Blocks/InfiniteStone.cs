@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class InfiniteStone : Classes.Type
+    class InfiniteStone : ColonyAPI.Classes.Type
     {
         public InfiniteStone(string name) : base(name)
         {
@@ -14,8 +14,8 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.DestructionTime = 1250;
             this.IsDestructible = false;
             
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("stonebricks",   1,  1.0f),
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("stonebricks",   1,  1.0f),
             };
             this.OnRemove = onRemoveNode;
 

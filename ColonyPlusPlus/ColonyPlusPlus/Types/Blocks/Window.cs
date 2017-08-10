@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class Window : Classes.Type
+    class Window : ColonyAPI.Classes.Type
     {
         public Window(string name) : base (name)
         {
@@ -37,7 +37,7 @@ namespace ColonyPlusPlus.Types.Blocks
         }
     }
 
-    class WindowXMinus : Classes.Type
+    class WindowXMinus : ColonyAPI.Classes.Type
     {
         public WindowXMinus(string name) : base(name)
         {
@@ -49,7 +49,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowXPlus : Classes.Type
+    class WindowXPlus : ColonyAPI.Classes.Type
     {
         public WindowXPlus(string name) : base(name)
         {
@@ -61,7 +61,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowZMinus : Classes.Type
+    class WindowZMinus : ColonyAPI.Classes.Type
     {
         public WindowZMinus(string name) : base(name)
         {
@@ -73,7 +73,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowZPlus : Classes.Type
+    class WindowZPlus : ColonyAPI.Classes.Type
     {
         public WindowZPlus(string name) : base(name)
         {

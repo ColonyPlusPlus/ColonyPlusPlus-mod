@@ -97,6 +97,17 @@ namespace ColonyPlusPlus.Classes.Managers
             }
         }
 
+        public static bool npcExists(int i)
+        {
+            if(NPCDataList.ContainsKey(i))
+            {
+                return true; 
+            } else
+            {
+                return false;
+            }
+        }
+
         public static void updateNPCData(int id, Data.NPCData d)
         {
             NPCDataList[id] = d;
@@ -171,16 +182,28 @@ namespace ColonyPlusPlus.Classes.Managers
 
                                
                                 int npcID = node["id"].GetAs<int>();
-                                Players.Player owner = Players.GetPlayer(new NetworkID(new CSteamID(node["owner"].GetAs<ulong>())));
+
+                                Utilities.WriteLog("Loading NPC:" + npcID);
+                                ulong ownerU = node["owner"].GetAs<ulong>();
+                                Players.Player owner;
+
+                                if (ownerU == 0)
+                                {
+                                    owner = Players.GetPlayer(new NetworkID(NetworkID.IDType.LocalHost));
+                                } else
+                                {
+                                    owner = Players.GetPlayer(new NetworkID(new CSteamID(ownerU)));
+                                }
 
 
-                                //Utilities.WriteLog("Loaded NPC: " + npcID);
+                                
 
                                 if (!NPCDataList.ContainsKey(npcID))
                                 {
                                     // doesn't exist, add it!
                                     Data.NPCData npcData = new Data.NPCData(owner);
-                                    
+
+                                    Utilities.WriteLog(String.Format("ID: {0}, ownerU: {1}, ", npcID, ownerU));
                                     JSONNode xpdata = node["xpdata"].GetAs<JSONNode>();
 
                                     if (xpdata.ChildCount > 0)
@@ -238,8 +261,15 @@ namespace ColonyPlusPlus.Classes.Managers
             string name = "";
 
             int maxN = NPCNameList.ChildCount;
-            int nameIndex = Pipliz.Random.Next(0, maxN - 1);
 
+            int nameIndex = 0;
+
+            if (maxN > 0)
+            {
+                nameIndex = Pipliz.Random.Next(0, maxN - 1);
+            } else {
+                return "Dave";
+            }
             name = NPCNameList[nameIndex].GetAs<string>();
 
             return name;

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class Anvil : Classes.Type
+    class Anvil : ColonyAPI.Classes.Type
     {
         public Anvil(string name) : base(name)
         {

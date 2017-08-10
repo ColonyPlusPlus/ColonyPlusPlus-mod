@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class MissingError : Classes.Type
+    class MissingError : ColonyAPI.Classes.Type
     {
         public MissingError(string name) : base(name)
         {

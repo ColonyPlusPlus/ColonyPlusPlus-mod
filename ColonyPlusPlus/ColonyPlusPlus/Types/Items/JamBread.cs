@@ -6,7 +6,7 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class JamBread : Classes.Type
+    class JamBread : ColonyAPI.Classes.Type
     {
         public JamBread(string name) : base(name, true)
         {

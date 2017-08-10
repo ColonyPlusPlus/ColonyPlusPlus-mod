@@ -6,7 +6,7 @@ using ColonyPlusPlus.Classes;
 
 namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class Banner : Classes.Type
+    class Banner : ColonyAPI.Classes.Type
     {
         public Banner(string name) : base(name)
         {

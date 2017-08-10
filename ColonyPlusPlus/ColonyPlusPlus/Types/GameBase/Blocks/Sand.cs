@@ -5,14 +5,14 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Sand : Classes.Type
+    class Sand : ColonyAPI.Classes.Type
     {
         public Sand(string name) : base(name)
         {
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("sand", 1, 1f),
-                new Classes.ItemHelper.OnRemove("salt", 1, 0.2f),
-                new Classes.ItemHelper.OnRemove("salt", 1, 0.2f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("sand", 1, 1f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("salt", 1, 0.2f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("salt", 1, 0.2f)
             };
 
             this.OnRemove = onRemoveNode;

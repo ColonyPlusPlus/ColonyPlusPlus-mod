@@ -6,7 +6,7 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Jam : Classes.Type
+    class Jam : ColonyAPI.Classes.Type
     {
         public Jam(string name) : base(name, true)
         {

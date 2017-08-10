@@ -6,15 +6,15 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Crops
 {
-    class CarrotStage3 : Classes.Type
+    class CarrotStage3 : ColonyAPI.Classes.Type
     {
         public CarrotStage3(string name) : base(name, true)
         {
-            Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new Classes.ItemHelper.OnRemove("carrotstage1",   1,  1.0f),
-                new Classes.ItemHelper.OnRemove("carrotstage1",   2,  0.4f),
-                new Classes.ItemHelper.OnRemove("carrotstage1",   2,  0.4f),
-                new Classes.ItemHelper.OnRemove("carrotstage1",   2,  0.4f)
+            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("carrotstage1",   1,  1.0f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("carrotstage1",   2,  0.4f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("carrotstage1",   2,  0.4f),
+                new ColonyAPI.Helpers.ItemHelper.OnRemove("carrotstage1",   2,  0.4f)
             };
 
             this.OnRemove = onRemoveNode;

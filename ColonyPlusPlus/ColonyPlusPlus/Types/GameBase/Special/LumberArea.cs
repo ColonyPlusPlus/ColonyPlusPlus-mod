@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Special
 {
-    class LumberArea : Classes.Type
+    class LumberArea : ColonyAPI.Classes.Type
     {
         public LumberArea(string name) : base(name)
         {

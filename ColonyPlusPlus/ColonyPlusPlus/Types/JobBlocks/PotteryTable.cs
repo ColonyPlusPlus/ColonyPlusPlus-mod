@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class PotteryTable : Classes.Type
+    class PotteryTable : ColonyAPI.Classes.Type
     {
         public PotteryTable(string name) : base(name)
         {
