@@ -124,6 +124,10 @@ namespace ColonyPlusPlus.Classes.Managers
                     // then go through stuff
                     foreach (Classes.Data.ChunkData c in ChunkDataList.Values)
                     {
+                        if(c.getSpawn())
+                        {
+                            continue;
+                        }
                         // build a child node
                         JSONNode child = new JSONNode(NodeType.Object);
 
