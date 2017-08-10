@@ -53,7 +53,6 @@ namespace ColonyPlusPlus.Classes.Managers
             //FueledCraftingJobs
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.FueledCraftingJob.PotteryJob>("potterytable");
             //DefenseJobs
-            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.QuiverJobT2>("quivert2");
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.Defense.BaseQuiver>("quiver");
 
         }
