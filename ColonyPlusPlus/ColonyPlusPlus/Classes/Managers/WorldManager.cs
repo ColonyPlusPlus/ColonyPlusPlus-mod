@@ -258,17 +258,35 @@ namespace ColonyPlusPlus.Classes.Managers
                             }
                             return false;
                         }
-                      //  Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You own the chunk");
+                        //Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You own the chunk");
                         return true;
                     }
                     else
                     {
+                        if(d.typeNew == ItemTypes.IndexLookup.GetIndex("banner"))
+                        {
+                            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position.ToChunk());
+                            if (Classes.Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
+                            {
+                                Classes.Data.ChunkData cd = Classes.Managers.WorldManager.ChunkDataList[ChunkID];
+                                if (cd.hasOwner())
+                                {
+                                    NetworkID id = cd.getOwner();
+                                    if (id == d.requestedBy.ID)
+                                    {
+                                        return true;
+                                    }
+                                    return false;
+                                }
+                            }
+                        }
                         Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You don't own the chunk");
                         return false;
                     }
                 }
                 else
                 {
+                    //This section is for spawn.
                     if(PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "spawnbuilder"))
                     {
                         //Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn, but you are admin");
