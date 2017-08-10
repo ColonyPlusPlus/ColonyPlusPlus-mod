@@ -9,6 +9,19 @@ namespace ColonyPlusPlus.Classes
     public class BaseRecipes
     {
 
+        public void AddAllRecipes()
+        {
+            AddBakingRecipes();
+            AddCraftingRecipes();
+            AddGrindingRecipes();
+            AddMintingRecipes();
+            AddShoppingRecipes();
+            AddSmeltingRecipes();
+            AddTailoringRecipes();
+            AddTechnologistRecipes();
+        }
+
+
         /// <summary>
         /// Add basegame crafting recipes
         /// </summary>
@@ -383,6 +396,99 @@ namespace ColonyPlusPlus.Classes
                     RecipeManager.Item("bricks", 3)
                 },
                 0.2f);
+        }
+
+        // Tailoring Recipes
+        public void AddTailoringRecipes()
+        {
+            RecipeManager.AddRecipe("tailoring",
+                new List<InventoryItem> {
+                    RecipeManager.Item("flax", 1)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("linen", 1)
+                },
+                0.0f);
+
+            RecipeManager.AddRecipe("tailoring",
+               new List<InventoryItem> {
+                    RecipeManager.Item("linen", 3)
+               },
+               new List<InventoryItem> {
+                    RecipeManager.Item("clothing", 1)
+               },
+               0.0f);
+
+            RecipeManager.AddRecipe("tailoring",
+               new List<InventoryItem> {
+                    RecipeManager.Item("linen", 3)
+               },
+               new List<InventoryItem> {
+                    RecipeManager.Item("linenbag", 1)
+               },
+               0.0f);
+
+            RecipeManager.AddRecipe("tailoring",
+               new List<InventoryItem> {
+                    RecipeManager.Item("flax", 1),
+                    RecipeManager.Item("linen", 1),
+                    RecipeManager.Item("planks", 1)
+               },
+               new List<InventoryItem> {
+                    RecipeManager.Item("carpetblue", 1)
+               },
+               0.0f);
+
+            RecipeManager.AddRecipe("tailoring",
+              new List<InventoryItem> {
+                    RecipeManager.Item("flax", 1),
+                    RecipeManager.Item("linen", 1),
+                    RecipeManager.Item("planks", 1)
+              },
+              new List<InventoryItem> {
+                    RecipeManager.Item("carpetred", 1)
+              },
+              0.0f);
+
+            RecipeManager.AddRecipe("tailoring",
+              new List<InventoryItem> {
+                    RecipeManager.Item("flax", 1),
+                    RecipeManager.Item("linen", 1),
+                    RecipeManager.Item("planks", 1)
+              },
+              new List<InventoryItem> {
+                    RecipeManager.Item("carpetyellow", 1)
+              },
+              0.0f);
+
+        }
+
+        // Techhnologist Recipes
+        public void AddTechnologistRecipes()
+        {
+            RecipeManager.AddRecipe("technologist",
+                new List<InventoryItem> {
+                    RecipeManager.Item("bread", 1),
+                    RecipeManager.Item("berry", 5),
+                    RecipeManager.Item("clothing", 1),
+                    RecipeManager.Item("linenbag", 1),
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("sciencebaglife", 2)
+                },
+                0.0f);
+
+            RecipeManager.AddRecipe("technologist",
+                new List<InventoryItem> {
+                    RecipeManager.Item("ironingot", 1),
+                    RecipeManager.Item("bricks", 3),
+                    RecipeManager.Item("goldcoin", 1),
+                    RecipeManager.Item("linenbag", 1),
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("sciencebagbasic", 2)
+                },
+                0.0f);
         }
     }
 }

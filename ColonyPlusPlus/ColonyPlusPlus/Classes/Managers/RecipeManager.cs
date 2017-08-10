@@ -58,6 +58,8 @@ namespace ColonyPlusPlus.Classes.Managers
             List<global::Recipe> RecipeCarpentry = new List<global::Recipe>();
             List<global::Recipe> RecipeMasonry = new List<global::Recipe>();
             List<global::Recipe> RecipeSmithing = new List<global::Recipe>();
+            List<global::Recipe> RecipeTailoring = new List<global::Recipe>();
+            List<global::Recipe> RecipeTechnologist = new List<global::Recipe>();
             List<global::Recipe> PlayerRecipes = new List<global::Recipe>();
             List<global::Recipe> RecipeChickenCoop = new List<global::Recipe>();
             List<global::Recipe> RecipeWell = new List<global::Recipe>();
@@ -97,6 +99,18 @@ namespace ColonyPlusPlus.Classes.Managers
                         break;
                     case "shopping":
                         RecipeShopping.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+
+                    case "tailoring":
+                        RecipeTailoring.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
+                        recipesAdded += 1;
+
+                        break;
+
+                    case "technologist":
+                        RecipeTechnologist.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
 
                         break;
@@ -151,7 +165,8 @@ namespace ColonyPlusPlus.Classes.Managers
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.grinder", RecipeGrinding);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.minter", RecipeMinting);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.merchant", RecipeShopping);
-            Utilities.WriteLog("Number of smelting recipes: " + RecipeSmelting.Count);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.tailor", RecipeTailoring);
+            Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.technologist", RecipeTechnologist);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("cpp.smelter", RecipeSmelting);
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipesFueled("cpp.baker", RecipeBaking);
 
@@ -203,12 +218,7 @@ namespace ColonyPlusPlus.Classes.Managers
             BaseRecipes br = new BaseRecipes();
 
             // I'm sure you can figure this out ;)
-            br.AddCraftingRecipes();
-            br.AddBakingRecipes();
-            br.AddGrindingRecipes();
-            br.AddMintingRecipes();
-            br.AddShoppingRecipes();
-            br.AddSmeltingRecipes();
+            br.AddAllRecipes();
 
             Helpers.NewBaseRecipes nbr = new Helpers.NewBaseRecipes();
             nbr.AddCraftingRecipes();
