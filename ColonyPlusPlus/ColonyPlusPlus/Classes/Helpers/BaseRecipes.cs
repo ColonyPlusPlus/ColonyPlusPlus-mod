@@ -272,14 +272,7 @@ namespace ColonyPlusPlus.Classes
         // Baking Recipes
         public void AddBakingRecipes()
         {
-            RecipeManager.AddRecipe("baking",
-                new List<InventoryItem> {
-                    RecipeManager.Item("flour", 5)
-                },
-                new List<InventoryItem> {
-                    RecipeManager.Item("bread", 2)
-                },
-                0.26f);
+            
         }
 
         // Grinding Recipes

@@ -30,6 +30,17 @@ namespace ColonyPlusPlus.Classes.Helpers
                },
                0.0f,true, true);
 
+            RecipeManager.AddRecipe("baking",
+                new List<InventoryItem> {
+                    RecipeManager.Item("flour", 5),
+                    RecipeManager.Item("waterbottle", 1)
+                },
+                new List<InventoryItem> {
+                    RecipeManager.Item("bread", 2),
+                    RecipeManager.Item("bottle", 1)
+                },
+                0.26f);
+
         }
         public void AddShoppingRecipes()
         {
