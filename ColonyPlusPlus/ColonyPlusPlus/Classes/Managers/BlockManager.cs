@@ -66,7 +66,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 DecorativeTypeManager.TypeOption.UpsideDownSlope, DecorativeTypeManager.TypeOption.UpsideDownSlopeCorner, DecorativeTypeManager.TypeOption.UpsideDownSlopInsideCorner,
                 DecorativeTypeManager.TypeOption.TwoStairs, DecorativeTypeManager.TypeOption.FourStairs };
 
-            List<InventoryItem> clayblockReqs = new List<InventoryItem>() { RecipeManager.Item("clay", 1), RecipeManager.Item("waterbottle", 1) };
+            List<KeyValuePair<string, int>> clayblockReqs = new List<KeyValuePair<string, int>>() { new KeyValuePair<string, int>("clay", 1), new KeyValuePair<string, int>("waterbottle", 1) };
 
             Classes.Managers.DecorativeTypeManager clayblock = new DecorativeTypeManager("clayblock", "clayblock", clayblockReqs, "pottery", clayblocktypes);
             Classes.Managers.DecorativeTypeManager clayblockblack = new DecorativeTypeManager("clayblockblack", "clayblockblack", clayblockReqs, "pottery", clayblocktypes);

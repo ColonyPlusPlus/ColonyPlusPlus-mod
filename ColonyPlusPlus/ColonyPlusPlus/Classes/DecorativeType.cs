@@ -10,9 +10,9 @@ namespace ColonyPlusPlus.Classes
     {
         private string BaseMaterial;
         private string CraftingType;
-        private List<InventoryItem> CraftingRequiredItem;
+        private List<KeyValuePair<string, int>> CraftingRequiredItem;
 
-        public DecorativeTypeBlock(string basename, string basematerial, List<InventoryItem> craftingingredients, string craftingtype) : base(basename, true)
+        public DecorativeTypeBlock(string basename, string basematerial, List<KeyValuePair<string, int>> craftingingredients, string craftingtype) : base(basename, true)
         {
             // decorative block specific
             this.BaseMaterial = basematerial;
@@ -29,8 +29,14 @@ namespace ColonyPlusPlus.Classes
         }
         public override void AddRecipes()
         {
+            List<InventoryItem> l = new List<InventoryItem>();
+            foreach (KeyValuePair<string, int> kvp in CraftingRequiredItem)
+            {
+                l.Add(RecipeManager.Item( kvp.Key, kvp.Value));
+            }
+
             RecipeManager.AddRecipe(this.CraftingType,
-                CraftingRequiredItem,
+                l,
                 new List<InventoryItem> {
                     RecipeManager.Item(this.TypeName, 1)
                 },
@@ -43,10 +49,10 @@ namespace ColonyPlusPlus.Classes
     {
         private string BaseMaterial;
         private string CraftingType;
-        private List<InventoryItem> CraftingRequiredItem;
+        private List<KeyValuePair<string, int>> CraftingRequiredItem;
         private string Shape;
 
-        public DecorativeTypeBase(string basename, string shape, string basematerial, List<InventoryItem> craftingingredients, string craftingtype) : base(String.Format("{0}{1}",basename,shape), true)
+        public DecorativeTypeBase(string basename, string shape, string basematerial, List<KeyValuePair<string, int>> craftingingredients, string craftingtype) : base(String.Format("{0}{1}",basename,shape), true)
         {
             // decorative block specific
             this.BaseMaterial = basematerial;
@@ -72,8 +78,14 @@ namespace ColonyPlusPlus.Classes
         }
         public override void AddRecipes()
         {
+            List<InventoryItem> l = new List<InventoryItem>();
+            foreach (KeyValuePair<string, int> kvp in CraftingRequiredItem)
+            {
+                l.Add(RecipeManager.Item(kvp.Key, kvp.Value));
+            }
+
             RecipeManager.AddRecipe(this.CraftingType,
-                CraftingRequiredItem,
+                l,
                 new List<InventoryItem> {
                     RecipeManager.Item(this.TypeName, 1)
                 },
