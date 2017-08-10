@@ -69,7 +69,6 @@
     <Compile Include="Classes\BlockJobs\CraftingJob\StoneMason.cs" />
     <Compile Include="Classes\BlockJobs\CraftingJob\WellOperator.cs" />
     <Compile Include="Classes\BlockJobs\Defense\BaseQuiver.cs" />
-    <Compile Include="Classes\BlockJobs\Defense\QuiverJobT2.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
     <Compile Include="Classes\CustomChatCommands\Ban.cs" />
@@ -269,7 +268,6 @@
     <Compile Include="Types\JobBlocks\ChickenCoop.cs" />
     <Compile Include="Types\JobBlocks\MasonTable.cs" />
     <Compile Include="Types\JobBlocks\PotteryTable.cs" />
-    <Compile Include="Types\JobBlocks\QuiverT2.cs" />
     <Compile Include="Types\JobBlocks\Sawmill.cs" />
     <Compile Include="Types\JobBlocks\Well.cs" />
   </ItemGroup>
