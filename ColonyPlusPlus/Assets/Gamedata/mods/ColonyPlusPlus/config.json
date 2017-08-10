@@ -16,7 +16,6 @@
 	},
 	
 	"jobs": {
-		"enabled": true,
 		"baseXP": 10,
 		"maxLevel": 25,
 		"xpMultiplier": 2,
@@ -61,7 +60,6 @@
 	},
 	
 	"crops": {
-		"enabled": true,
 		"growthMultiplier": 1
 	},
 	
