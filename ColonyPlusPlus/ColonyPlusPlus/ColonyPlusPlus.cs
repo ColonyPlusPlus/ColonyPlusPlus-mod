@@ -15,8 +15,6 @@ namespace ColonyPlusPlus
         private static long millisecondDelta = 500;
         public static long millisecondDeltaRotator = 0;
 
-        private static bool CustomCrops = false;
-        private static bool CustomJobs = false;
         private static bool ColonyLimitEnabled = false;
         private static int ColonyLimit = 0;
         private static int plyID = 0;
@@ -72,8 +70,9 @@ namespace ColonyPlusPlus
             Classes.Managers.BaseGameManager.registerItems();
 
             // Register Types
-            Classes.Managers.BlockManager.register();
+
             Classes.Managers.ItemManager.register();
+            Classes.Managers.BlockManager.register();
             Classes.Managers.CropManager.register();
             
                
