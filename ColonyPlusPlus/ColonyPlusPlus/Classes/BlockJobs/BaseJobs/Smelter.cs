@@ -84,6 +84,12 @@ namespace ColonyPlusPlus.Classes.BlockJobs.BaseJobs
             return positionNPC;
         }
 
+        public override void OnRemovedNPC()
+        {
+            Managers.NPCManager.removeNPCData(this.usedNPC.ID);
+            base.OnRemovedNPC();
+        }
+
         NPCTypeSettings INPCTypeDefiner.GetNPCTypeDefinition()
         {
             NPCTypeSettings def = NPCTypeSettings.Default;

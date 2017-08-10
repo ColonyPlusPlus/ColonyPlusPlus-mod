@@ -94,6 +94,12 @@ namespace ColonyPlusPlus.Classes.BlockJobs.BaseJobs
             }
         }
 
+        public override void OnRemovedNPC()
+        {
+            Managers.NPCManager.removeNPCData(this.usedNPC.ID);
+            base.OnRemovedNPC();
+        }
+
         public override List<string> GetCraftingLimitsTriggers()
         {
             return new List<string>()

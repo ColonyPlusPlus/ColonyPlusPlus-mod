@@ -108,12 +108,18 @@ namespace ColonyPlusPlus.Classes.BlockJobs.Defense
             }
         }
 
-       private void AddXP()
-       {
+        public override void OnRemovedNPC()
+        {
+            Managers.NPCManager.removeNPCData(this.usedNPC.ID);
+            base.OnRemovedNPC();
+        }
+
+        private void AddXP()
+        {
             Data.NPCData d = Managers.NPCManager.getNPCData(this.usedNPC.ID, this.owner);
             d.XPData.addXP(jobtype, this.owner);
             Managers.NPCManager.updateNPCData(this.usedNPC.ID, d);
-       }
+        }
 
         NPCTypeSettings INPCTypeDefiner.GetNPCTypeDefinition()
         {

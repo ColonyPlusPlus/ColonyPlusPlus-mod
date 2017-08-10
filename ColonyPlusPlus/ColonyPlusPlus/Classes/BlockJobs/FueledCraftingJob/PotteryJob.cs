@@ -44,9 +44,10 @@ namespace ColonyPlusPlus.Classes.BlockJobs.FueledCraftingJob
 
         }
 
-        public void nOnRemovedNPC()
+        public override void OnRemovedNPC()
         {
             Managers.NPCManager.removeNPCData(this.usedNPC.ID);
+            base.OnRemovedNPC();
         }
     }
 }

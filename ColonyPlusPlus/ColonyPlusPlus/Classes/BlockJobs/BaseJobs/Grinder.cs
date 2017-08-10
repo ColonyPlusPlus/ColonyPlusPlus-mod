@@ -37,6 +37,12 @@ namespace ColonyPlusPlus.Classes.BlockJobs.BaseJobs
 
         public override int MaxRecipeCraftsPerHaul { get { return 6; } }
 
+        public override void OnRemovedNPC()
+        {
+            Managers.NPCManager.removeNPCData(this.usedNPC.ID);
+            base.OnRemovedNPC();
+
+        }
         NPCTypeSettings INPCTypeDefiner.GetNPCTypeDefinition()
         {
             NPCTypeSettings def = NPCTypeSettings.Default;
