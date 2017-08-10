@@ -37,7 +37,7 @@ namespace ColonyPlusPlus.Classes.Managers
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Grinder>("grindstone");
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Minter>("mint");
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Merchant>("shop");
-            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Merchant>("tailorshop");
+            Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Tailor>("tailorshop");
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Technologist>("technologisttable");
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Crafter>("workbench");
             Pipliz.APIProvider.Jobs.BlockJobManagerTracker.Register<Classes.BlockJobs.BaseJobs.Smelter>("furnace");
