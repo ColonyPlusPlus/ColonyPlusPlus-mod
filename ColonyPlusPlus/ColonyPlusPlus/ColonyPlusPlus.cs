@@ -34,9 +34,8 @@ namespace ColonyPlusPlus
             Classes.Managers.RotatingMessageManager.initialise();
             Classes.Managers.ServerVariablesManager.init();
             Classes.Managers.BanManager.initialise();
+            
 
-            CustomJobs = Classes.Managers.ConfigManager.getConfigBoolean("jobs.enabled");
-            CustomCrops = Classes.Managers.ConfigManager.getConfigBoolean("crops.enabled");
             ColonyLimitEnabled = Classes.Managers.ConfigManager.getConfigBoolean("colony.enabled");
             if(ColonyLimitEnabled)
             {
@@ -75,10 +74,8 @@ namespace ColonyPlusPlus
             // Register Types
             Classes.Managers.BlockManager.register();
             Classes.Managers.ItemManager.register();
-            if(CustomCrops)
-            {
-                Classes.Managers.CropManager.register();
-            }
+            Classes.Managers.CropManager.register();
+            
                
         }
 
@@ -86,11 +83,8 @@ namespace ColonyPlusPlus
         public static void AfterItemTypesServer()
         {
             // Register Tracked Block Types (Wheat?)
-            if (CustomCrops)
-            {
-                Classes.Managers.TypeManager.registerTrackedTypes();
-            }
-
+            Classes.Managers.TypeManager.registerTrackedTypes();
+            
             // Regsiter types with actions
             Classes.Managers.TypeManager.registerActionableTypes();
 
@@ -104,12 +98,8 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplus.AfterWorldLoad")]
         public static void AfterWorldLoad()
         {
-            
-
-            if (CustomCrops)
-            {
-                Classes.Managers.CropManager.LoadCropTracker();
-            }
+            Classes.Managers.CropManager.LoadCropTracker();
+           
                
             Classes.Managers.WorldManager.LoadJSON();
             Classes.Managers.NPCManager.initialise();
@@ -141,12 +131,8 @@ namespace ColonyPlusPlus
                 }
 
                 // update any crops
-                if (CustomCrops)
-                {
-                    Classes.Managers.CropManager.doCropUpdates();
-                }
-                    
-
+                Classes.Managers.CropManager.doCropUpdates();
+                
                 // Do player update stuff
                 Classes.Managers.PlayerManager.notifyNewChunkEntrances();
 
@@ -159,12 +145,8 @@ namespace ColonyPlusPlus
             {
 
                 // save out crop progress to file
-                if (CustomCrops)
-                {
-                    Classes.Managers.CropManager.SaveCropTrackerInterval();
-                }
-                    
-
+                Classes.Managers.CropManager.SaveCropTrackerInterval();
+                              
                 // long term update time
                 nextMillisecondUpdateLong = Pipliz.Time.MillisecondsSinceStart +  60000;
             }
@@ -177,10 +159,8 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly, "colonyplusplus.OnQuitEarly")]
         public static void OnQuitEarly()
         {
-            if (CustomCrops)
-            {
-                Classes.Managers.CropManager.SaveCropTracker();
-            }
+            Classes.Managers.CropManager.SaveCropTracker();
+           
 
             Classes.Managers.NPCManager.saveNPCData();
         }
@@ -195,14 +175,8 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallbackProvidesForAttribute("pipliz.apiprovider.jobs.resolvetypes")]
         public static void AfterDefiningNPCTypes()
         {
-             if (CustomJobs)
-             {
-                Utilities.WriteLog("Custom Jobs Enabled");
-                Classes.Managers.NPCManager.registerAllJobs();
-            } else
-            {
-                Utilities.WriteLog("Custom Jobs Disabled");
-            }
+            Classes.Managers.NPCManager.registerAllJobs();
+        
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
