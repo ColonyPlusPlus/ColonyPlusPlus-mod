@@ -19,6 +19,8 @@
 
             // job stuff
             Material.createMaterial("welltop", "well", "neutral", "well", "plasterblock");
+            Material.createMaterial("masontable", "masontable", "neutral", "masontable", "plasterblock");
+            Material.createMaterial("carpentrytable", "carpentrytable", "neutral", "carpentrytable", "plasterblock");
 
             // Decorative blocks
             Material.createMaterial("clayblock", "clayblock", "neutral", "plasterblock", "plasterblock");
