@@ -75,6 +75,4 @@ namespace ColonyPlusPlus.Classes.Managers
             }
         }
     }
-
-
 }

@@ -50,12 +50,15 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate, "colonyplusplus.OnPlayerConnectedLate")]
         public static void OnPlayerConnectedLate(Player p)
         {
-            if(p.ID.steamID.m_SteamID == 0)
+            if (p.ID.steamID.m_SteamID == 0)
             {
                 Classes.Helpers.Chat.sendSilent(p, Classes.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), Classes.Helpers.Chat.ChatColour.red);
             }
-            Classes.Helpers.Chat.sendSilent(p, Classes.Managers.ConfigManager.getConfigString("motd.message"));
-            Classes.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus v" + modVersion.ToString());
+            else
+            {
+                Classes.Helpers.Chat.sendSilent(p, Classes.Managers.ConfigManager.getConfigString("motd.message"));
+                Classes.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus v" + modVersion.ToString());
+            }
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplus.AfterAddingBaseTypes")]
@@ -74,8 +77,6 @@ namespace ColonyPlusPlus
             Classes.Managers.ItemManager.register();
             Classes.Managers.BlockManager.register();
             Classes.Managers.CropManager.register();
-            
-               
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplus.AfterItemTypesServer" )]
@@ -101,6 +102,7 @@ namespace ColonyPlusPlus
            
                
             Classes.Managers.WorldManager.LoadJSON();
+            Classes.Managers.WorldManager.SetupSpawn();
             Classes.Managers.NPCManager.initialise();
 
             //Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
