@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.Classes
+namespace ColonyPlusPlusDecorative.Classes
 {
     class DecorativeTypeBlock : ColonyAPI.Classes.Type
     {
@@ -32,7 +32,7 @@ namespace ColonyPlusPlus.Classes
             List<InventoryItem> l = new List<InventoryItem>();
             foreach (KeyValuePair<string, int> kvp in CraftingRequiredItem)
             {
-                l.Add(RecipeManager.Item( kvp.Key, kvp.Value));
+                l.Add(ColonyAPI.Managers.RecipeManager.Item( kvp.Key, kvp.Value));
             }
 
             RecipeManager.AddRecipe(this.CraftingType,

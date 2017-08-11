@@ -2,9 +2,9 @@ using Pipliz.Chatting;
 using static Players;
 using System;
 using System.Collections.Generic;
-using ColonyPlusPlus.Classes;
+using ColonyPlusPlusDecorative.Classes;
 
-namespace ColonyPlusPlus
+namespace ColonyPlusPlusDecorative
 {
     [ModLoader.ModManager]
     public class ColonyPlusPlus
@@ -21,10 +21,11 @@ namespace ColonyPlusPlus
         public static Version modVersion = new Version(0, 2, 0);
 
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplus.AfterStartup")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "cpp-decorative.AfterStartup")]
         [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
         public static void AfterStartup()
         {
+
             Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
             Classes.Managers.VersionManager.runVersionCheck(modVersion);
 
