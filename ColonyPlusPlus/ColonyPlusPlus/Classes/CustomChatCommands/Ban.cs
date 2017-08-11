@@ -17,7 +17,14 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             {
                 var targetPlayer = Players.GetPlayer(target);
                 BlackAndWhitelisting.AddBlackList(targetPlayer.ID.steamID.m_SteamID);
-                Classes.Managers.BanManager.addBan(targetPlayer.ID, String.Join(" ", args.Where(p => p != args[0]).ToArray()));
+
+                var reason = "";
+                if (args.Length > 1)
+                {
+                    reason = String.Join(" ", args, 1, args.Length - 1);
+                }
+
+                Classes.Managers.BanManager.addBan(targetPlayer.ID, reason);
                 ServerManager.Disconnect(targetPlayer);
                 Chat.send(ply, $"Banned {targetPlayer.Name}", Chat.ChatColour.cyan);
             }
