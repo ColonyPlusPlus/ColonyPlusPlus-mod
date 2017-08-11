@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ColonyPlusPlus.Classes.Helpers
 {
@@ -129,6 +130,22 @@ namespace ColonyPlusPlus.Classes.Helpers
             }
 
             return stylePrefix + colorPrefix + message + colorSuffix + styleSuffix;
+        }
+
+        /// <summary>
+        /// Splits chat into individual parameters, quoted text becomes 1 parameter
+        /// </summary>
+        /// <param name="chat"></param>
+        /// <param name="prefix"></param>
+        /// <returns>command parameter array</returns>
+        public static string[] ParseChatCommand(this string chat, string prefix)
+        {
+            if (!chat.Contains(" "))
+                return new string[0];
+            
+            chat = chat.Remove(0, prefix.Length);
+
+            return Regex.Split(chat, "(?<=^[^\"]*(?:\"[^\"]*\"[^\"]*)*) (?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         }
     }
 }
