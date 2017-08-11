@@ -22,6 +22,7 @@ namespace ColonyPlusPlusUtilities
         [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
         public static void AfterStartup()
         {
+            ColonyAPI.Managers.ConfigManager.registerConfig("ColonyPlusPlus-Utilities");
             Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
             ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlusUtilities", modVersion);
 
@@ -30,10 +31,10 @@ namespace ColonyPlusPlusUtilities
             Managers.BanManager.initialise();
             
 
-            ColonyLimitEnabled = ColonyAPI.Managers.ConfigManager.getConfigBoolean("colony.enabled");
+            ColonyLimitEnabled = ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "colony.enabled");
             if(ColonyLimitEnabled)
             {
-                ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("colony.limit");
+                ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlusUtilities", "colony.limit");
             }
 
             // Initialize chat commands
@@ -48,11 +49,11 @@ namespace ColonyPlusPlusUtilities
         {
             if (p.ID.steamID.m_SteamID == 0)
             {
-                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), ColonyAPI.Helpers.Chat.ChatColour.red);
+                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.VersionManager.SinglePlayerrunVersionCheck("ColonyPlusPlusUtilities", modVersion), ColonyAPI.Helpers.Chat.ChatColour.red);
             }
             else
             {
-                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.ConfigManager.getConfigString("motd.message"));
+                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.ConfigManager.getConfigString("ColonyPlusPlusUtilities", "motd.message"));
                 ColonyAPI.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus v" + modVersion.ToString());
             }
         }
