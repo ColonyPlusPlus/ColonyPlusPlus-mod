@@ -1,7 +1,7 @@
 ﻿using NPC;
 using Pipliz.APIProvider.Jobs;
 
-namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
+namespace ColonyPlusPlusCore.Classes.BlockJobs.CraftingJob
 {
     class ChickenPluckerJob : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {

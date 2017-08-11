@@ -6,7 +6,7 @@ using Pipliz;
 using Pipliz.JSON;
 using UpdatableBlocks;
 
-namespace ColonyPlusPlus.Types.Blocks
+namespace ColonyPlusPlusCore.Types.Blocks
 {
     class WildBerryBush : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusCore.Classes.Managers
 {
     public static class RecipeManager
     {

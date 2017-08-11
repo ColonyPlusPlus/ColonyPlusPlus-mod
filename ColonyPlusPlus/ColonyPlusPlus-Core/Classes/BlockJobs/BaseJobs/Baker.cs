@@ -4,7 +4,7 @@ using NPC;
 using Pipliz.APIProvider.Jobs;
 using Pipliz;
 
-namespace ColonyPlusPlus.Classes.BlockJobs.BaseJobs
+namespace ColonyPlusPlusCore.Classes.BlockJobs.BaseJobs
 {
     public class Baker : FueledCraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {

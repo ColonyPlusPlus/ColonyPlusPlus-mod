@@ -6,7 +6,7 @@ using System.Text;
 using Pipliz;
 using ColonyPlusPlus.Classes.Helpers;
 
-namespace ColonyPlusPlus.Types.JobBlocks
+namespace ColonyPlusPlusCore.Types.JobBlocks
 {
     class Well : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {

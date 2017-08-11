@@ -5,7 +5,7 @@ using System.Text;
 using ColonyPlusPlus.Classes.Managers;
 using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlus.Types.Items
+namespace ColonyPlusPlusCore.Types.Items
 {
     class Cake : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {

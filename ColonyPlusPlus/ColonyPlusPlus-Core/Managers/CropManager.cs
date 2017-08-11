@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine.Profiling;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusCore.Classes.Managers
 {
     public static class CropManager
     {

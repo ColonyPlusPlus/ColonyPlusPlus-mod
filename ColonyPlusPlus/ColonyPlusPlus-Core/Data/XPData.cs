@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.Classes.Data
+namespace ColonyPlusPlusCore.Classes.Data
 {
     public class XPData
     {

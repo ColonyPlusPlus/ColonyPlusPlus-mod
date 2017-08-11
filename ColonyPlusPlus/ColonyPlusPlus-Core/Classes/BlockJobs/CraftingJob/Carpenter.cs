@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using NPC;
 
-namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
+namespace ColonyPlusPlusCore.Classes.BlockJobs.CraftingJob
 {
     class Carpenter : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {

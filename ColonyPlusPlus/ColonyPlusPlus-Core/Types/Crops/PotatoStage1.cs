@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ColonyPlusPlus.Classes.Managers;
 
-namespace ColonyPlusPlus.Types.Crops
+namespace ColonyPlusPlusCore.Types.Crops
 {
     class PotatoStage1 : Classes.GrowableType
     {

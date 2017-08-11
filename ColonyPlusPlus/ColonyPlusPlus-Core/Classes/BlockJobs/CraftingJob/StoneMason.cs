@@ -2,7 +2,7 @@
 using System;
 using NPC;
 
-namespace ColonyPlusPlus.Classes.BlockJobs.CraftingJob
+namespace ColonyPlusPlusCore.Classes.BlockJobs.CraftingJob
 {
     class StoneMason : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {

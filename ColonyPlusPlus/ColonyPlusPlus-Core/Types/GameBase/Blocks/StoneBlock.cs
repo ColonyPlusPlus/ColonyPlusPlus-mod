@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.Types.GameBase.Blocks
+namespace ColonyPlusPlusCore.Types.GameBase.Blocks
 {
     class StoneBlock : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {

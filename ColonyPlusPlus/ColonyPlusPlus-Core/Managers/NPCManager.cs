@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusCore.Classes.Managers
 {
     public static class NPCManager
     {

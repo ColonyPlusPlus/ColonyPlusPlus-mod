@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.Types.JobBlocks
+namespace ColonyPlusPlusCore.Types.JobBlocks
 {
     class MasonTable : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
