@@ -55,7 +55,7 @@ namespace ColonyPlusPlus.Classes
 
                 if (targets.Count == 0)
                 {
-                    Chat.Send(ply, "Player not found");
+                    Chat.Send(ply, $"Player {commandParameters[0]} not found");
                     return true;
                 }
                 return RunCommand(ply, commandParameters, targets.ToArray());
