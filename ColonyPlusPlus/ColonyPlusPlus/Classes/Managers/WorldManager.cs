@@ -411,7 +411,6 @@ namespace ColonyPlusPlus.Classes.Managers
             {
                 for (int z = p.z - SpawnProtectionDistance; z < p.z + SpawnProtectionDistance; z++)
                 {
-                   
                         claimChunk(new Vector3Int(x * 16, 0, z * 16), new NetworkID(NetworkID.IDType.Server), true);
 
                 }
