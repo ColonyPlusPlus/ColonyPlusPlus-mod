@@ -9,6 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public Log() : base()
         {
+            this.TypeName = "log";
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
             this.FuelValue = 0.6f;

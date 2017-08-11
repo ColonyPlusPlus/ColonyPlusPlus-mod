@@ -9,6 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public LeavesTaiga() : base()
         {
+            this.TypeName = "leavestaiga";
             this.ParentType = "leaves";
             this.IsPlaceable = true;
 

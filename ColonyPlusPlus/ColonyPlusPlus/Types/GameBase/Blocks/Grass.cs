@@ -9,6 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public Grass() : base()
         {
+            this.TypeName = "grass";
             this.IsFertile = true;
             this.OnRemoveAudio = "grassDelete";
             this.OnPlaceAudio = "dirtPlace";

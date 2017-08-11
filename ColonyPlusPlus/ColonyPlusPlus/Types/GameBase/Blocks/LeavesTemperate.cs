@@ -9,6 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public LeavesTemperate() : base()
         {
+            this.TypeName = "leavestemperate";
             ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("leavestemperate",   1,  0.6f),
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("sappling",   1,  0.1f),

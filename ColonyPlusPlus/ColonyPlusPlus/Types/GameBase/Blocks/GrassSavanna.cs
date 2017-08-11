@@ -9,6 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public GrassSavanna() : base()
         {
+            this.TypeName = "grasssavanna";
             this.ParentType = "grass";
             this.IsPlaceable = true;
 

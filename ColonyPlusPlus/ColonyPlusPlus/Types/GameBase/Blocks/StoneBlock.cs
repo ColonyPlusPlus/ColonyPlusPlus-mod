@@ -10,6 +10,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public StoneBlock() : base()
         {
+            this.TypeName = "stoneblock";
             ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("stoneblock",   1,  1.0f)
             };

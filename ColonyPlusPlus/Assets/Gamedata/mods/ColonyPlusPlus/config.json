@@ -24,7 +24,7 @@
 	
 	"spawnprotection": {
 		"enabled": true,
-		"radius": 6
+		"radius": 1
 	},
 	
 	"chunks": {

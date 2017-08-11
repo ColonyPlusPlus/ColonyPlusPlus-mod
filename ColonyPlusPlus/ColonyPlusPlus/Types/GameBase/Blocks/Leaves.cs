@@ -9,6 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public Leaves() : base()
         {
+            this.TypeName = "leaves";
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
             this.DestructionTime = 200;

@@ -9,6 +9,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
     {
         public GrassTemperate() : base()
         {
+            this.TypeName = "grasstemperate";
             this.ParentType = "grass";
             this.NPCLimit = 0;
             this.IsPlaceable = true;

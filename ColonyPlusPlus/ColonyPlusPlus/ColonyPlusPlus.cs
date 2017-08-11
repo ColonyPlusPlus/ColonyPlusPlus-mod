@@ -72,8 +72,8 @@ namespace ColonyPlusPlus
             Classes.Managers.MaterialManager.initialiseMaterials();
 
             // Register basegame Types
-            Classes.Managers.BaseGameManager.registerItems();
-            Classes.Managers.BaseGameManager.registerBlocks();
+            //Classes.Managers.BaseGameManager.registerItems();
+            //Classes.Managers.BaseGameManager.registerBlocks();
 
             // Register Types
 
