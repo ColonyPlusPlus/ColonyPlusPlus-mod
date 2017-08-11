@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EB0467E-36F4-447F-80FA-194CAE8CBA73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ColonyPlusPlus_Core</RootNamespace>
+    <AssemblyName>ColonyPlusPlus-Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\BaseRecipes.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Baker.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Crafter.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Grinder.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Merchant.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Minter.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Smelter.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Tailor.cs" />
+    <Compile Include="Classes\BlockJobs\BaseJobs\Technologist.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\Carpenter.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\ChickenPluckerJob.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\StoneMason.cs" />
+    <Compile Include="Classes\BlockJobs\CraftingJob\WellOperator.cs" />
+    <Compile Include="Classes\BlockJobs\Defense\BaseQuiver.cs" />
+    <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
+    <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Classes\NewBaseRecipes.cs" />
+    <Compile Include="ColonyPlusPlus.cs" />
+    <Compile Include="Data\NPCData.cs" />
+    <Compile Include="Data\XPData.cs" />
+    <Compile Include="GrowableType.cs" />
+    <Compile Include="Managers\CropManager.cs" />
+    <Compile Include="Managers\MaterialManager.cs" />
+    <Compile Include="Managers\NPCManager.cs" />
+    <Compile Include="Managers\PlayerManager.cs" />
+    <Compile Include="Managers\RecipeManager.cs" />
+    <Compile Include="Managers\TypeManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\Blocks\BirdNest.cs" />
+    <Compile Include="Types\Blocks\LogCube.cs" />
+    <Compile Include="Types\Blocks\LogCubeRotated.cs" />
+    <Compile Include="Types\Blocks\LogCubeTaiga.cs" />
+    <Compile Include="Types\Blocks\LogCubeTaigaRotated.cs" />
+    <Compile Include="Types\Blocks\LogCubeTaigaRotatedX.cs" />
+    <Compile Include="Types\Blocks\LogCubeTaigaRotatedZ.cs" />
+    <Compile Include="Types\Blocks\LogCubeTemperate.cs" />
+    <Compile Include="Types\Blocks\LogCubeTemperateRotated.cs" />
+    <Compile Include="Types\Blocks\LogCubeTemperateRotatedX.cs" />
+    <Compile Include="Types\Blocks\LogCubeTemperateRotatedZ.cs" />
+    <Compile Include="Types\Blocks\Pillar.cs" />
+    <Compile Include="Types\Blocks\Sugarcane.cs" />
+    <Compile Include="Types\Blocks\VegetablePatch.cs" />
+    <Compile Include="Types\Blocks\WellTop.cs" />
+    <Compile Include="Types\Blocks\WildBerryBush.cs" />
+    <Compile Include="Types\Blocks\Window.cs" />
+    <Compile Include="Types\Blocks\WindowTwoHigh.cs" />
+    <Compile Include="Types\Crops\CarrotStage1.cs" />
+    <Compile Include="Types\Crops\CarrotStage2.cs" />
+    <Compile Include="Types\Crops\CarrotStage3.cs" />
+    <Compile Include="Types\Crops\LettuceStage1.cs" />
+    <Compile Include="Types\Crops\LettuceStage2.cs" />
+    <Compile Include="Types\Crops\LettuceStage3.cs" />
+    <Compile Include="Types\Crops\OnionStage1.cs" />
+    <Compile Include="Types\Crops\OnionStage2.cs" />
+    <Compile Include="Types\Crops\OnionStage3.cs" />
+    <Compile Include="Types\Crops\PotatoStage1.cs" />
+    <Compile Include="Types\Crops\PotatoStage2.cs" />
+    <Compile Include="Types\Crops\PotatoStage3.cs" />
+    <Compile Include="Types\GameBase\Blocks\Grass.cs" />
+    <Compile Include="Types\GameBase\Blocks\GrassRainforest.cs" />
+    <Compile Include="Types\GameBase\Blocks\GrassSavanna.cs" />
+    <Compile Include="Types\GameBase\Blocks\GrassTaiga.cs" />
+    <Compile Include="Types\GameBase\Blocks\GrassTemperate.cs" />
+    <Compile Include="Types\GameBase\Blocks\GrassTundra.cs" />
+    <Compile Include="Types\GameBase\Blocks\Leaves.cs" />
+    <Compile Include="Types\GameBase\Blocks\LeavesTaiga.cs" />
+    <Compile Include="Types\GameBase\Blocks\LeavesTemperate.cs" />
+    <Compile Include="Types\GameBase\Blocks\Log.cs" />
+    <Compile Include="Types\GameBase\Blocks\LogTaiga.cs" />
+    <Compile Include="Types\GameBase\Blocks\LogTemperate.cs" />
+    <Compile Include="Types\GameBase\Blocks\StoneBlock.cs" />
+    <Compile Include="Types\Items\BakedPotato.cs" />
+    <Compile Include="Types\Items\Bottle.cs" />
+    <Compile Include="Types\Items\Butter.cs" />
+    <Compile Include="Types\Items\Cake.cs" />
+    <Compile Include="Types\Items\Cheese.cs" />
+    <Compile Include="Types\Items\Egg.cs" />
+    <Compile Include="Types\Items\Feather.cs" />
+    <Compile Include="Types\Items\Jam.cs" />
+    <Compile Include="Types\Items\JamBread.cs" />
+    <Compile Include="Types\Items\Milk.cs" />
+    <Compile Include="Types\Items\Omlette.cs" />
+    <Compile Include="Types\Items\Salt.cs" />
+    <Compile Include="Types\Items\Sugar.cs" />
+    <Compile Include="Types\Items\SugarcaneItem.cs" />
+    <Compile Include="Types\Items\WaterBottle.cs" />
+    <Compile Include="Types\JobBlocks\Anvil.cs" />
+    <Compile Include="Types\JobBlocks\ChickenCoop.cs" />
+    <Compile Include="Types\JobBlocks\MasonTable.cs" />
+    <Compile Include="Types\JobBlocks\PotteryTable.cs" />
+    <Compile Include="Types\JobBlocks\Sawmill.cs" />
+    <Compile Include="Types\JobBlocks\Well.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
