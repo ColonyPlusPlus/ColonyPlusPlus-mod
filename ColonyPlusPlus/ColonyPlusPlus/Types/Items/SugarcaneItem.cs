@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.Types.Items
         {
             this.TypeName = "sugarcaneitem";
             this.AllowCreative = true;
-            this.Register();
+            ) : base()
         }
 
         public override void AddRecipes()

@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.OnRemoveAudio = "woodDeleteLight";
             this.FuelValue = 0.6f;
             this.IsBaseBlock = false;
-            this.Register();
+            ) : base()
         }
     }
 }

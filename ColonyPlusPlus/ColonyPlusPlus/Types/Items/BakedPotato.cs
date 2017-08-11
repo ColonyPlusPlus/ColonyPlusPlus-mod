@@ -14,7 +14,7 @@ namespace ColonyPlusPlus.Types.Items
             this.TypeName = "bakedpotato";
             this.NutritionalValue = 1.0f;
             this.AllowCreative = true;
-            this.Register();
+            ) : base()
         }
 
         public override void AddRecipes()

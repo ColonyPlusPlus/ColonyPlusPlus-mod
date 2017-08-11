@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.Types.Items
             this.NutritionalValue = 25.0f;
 			this.CustomData = new CustomDataHelper("test", "somevalue").customDataNode;
             this.AllowCreative = true;
-            this.Register();
+            ) : base()
         }
 
         public override void AddRecipes()

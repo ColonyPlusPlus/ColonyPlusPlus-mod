@@ -19,7 +19,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
             this.IsPlaceable = true;
             this.AllowCreative = true;
             this.AllowPlayerCraft = true;
-            this.Register();
+            ) : base()
         }
 
         public override void AddRecipes()

@@ -22,7 +22,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.RotatableXPlus = "windowtwohighx+";
             this.RotatableZMinus = "windowtwohighz-";
             this.RotatableZPlus = "windowtwohighz+";
-            this.Register();
+            ) : base()
         }
 
         public override void AddRecipes()
@@ -49,7 +49,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "windowtwohighx";
             this.IsBaseBlock = false;
 
-            this.Register();
+            ) : base()
         }
     }
     class WindowTwoHighXPlus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
@@ -63,7 +63,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "windowtwohighx";
             this.IsBaseBlock = false;
 
-            this.Register();
+            ) : base()
         }
     }
     class WindowTwoHighZMinus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
@@ -77,7 +77,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "windowtwohighz";
             this.IsBaseBlock = false;
 
-            this.Register();
+            ) : base()
         }
     }
     class WindowTwoHighZPlus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
@@ -91,7 +91,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "windowtwohighz";
             this.IsBaseBlock = false;
 
-            this.Register();
+            ) : base()
         }
     }
 }
