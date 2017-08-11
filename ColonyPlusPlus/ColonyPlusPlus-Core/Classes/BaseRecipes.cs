@@ -27,244 +27,244 @@ namespace ColonyPlusPlusCore.Classes
         /// </summary>
         public void AddCraftingRecipes()
         {
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 3),
-                    RecipeManager.Item("straw", 3)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 3),
+                    ColonyAPI.Managers.RecipeManager.Item("straw", 3)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("bed", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("bed", 1)
                 },
-                0.0f, true, true);
+                true, true);
 
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("crate", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("crate", 1)
                 },
-                0.0f, true, true);
+                true, true);
 
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("quiver", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("quiver", 2)
                 },
-                0.0f, true, true);
+                true, true);
 
             /// <summary>
             /// 2 planks = 1 bow
             /// </summary>
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 2),
-                    RecipeManager.Item("flax", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 2),
+                    ColonyAPI.Managers.RecipeManager.Item("flax", 2)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("bow", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("bow", 1)
                 },
-                0.0f, true, true);
+                true, true);
 
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("coatedplanks", 1),
-                    RecipeManager.Item("ironingot", 1),
-                    RecipeManager.Item("linenbag", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("coatedplanks", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("ironingot", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("linenbag", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("technologisttable", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("technologisttable", 1)
                 },
-                0.0f, true, true);
+                true, true);
 
-            RecipeManager.AddRecipe("masonry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("masonry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("stonebricks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("stonebricks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("furnace", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("furnace", 1)
                 },
-                0.0f, true, true);
+               true, true);
 
-            RecipeManager.AddRecipe("masonry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("masonry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("stonebricks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("stonebricks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("oven", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("oven", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("stonebricks", 1),
-				    RecipeManager.Item("planks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("stonebricks", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("grindstone", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("grindstone", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logtemperate", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("logtemperate", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 4)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 4)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logtaiga", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("logtaiga", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 4)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 4)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 1),
-				    RecipeManager.Item("coalore", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("coalore", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("torch", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("torch", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-				    RecipeManager.Item("planks", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("workbench", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("workbench", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 1),
-                    RecipeManager.Item("ironingot", 1),
-                    RecipeManager.Item("flax", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("ironingot", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("flax", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("tailorshop", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("tailorshop", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 
-            RecipeManager.AddRecipe("blacksmithing",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("blacksmithing",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 1),
-                    RecipeManager.Item("ironingot", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("ironingot", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("arrow", 4)
+                    ColonyAPI.Managers.RecipeManager.Item("arrow", 4)
                 },
-                0.0f, true);
+                 true);
 
-            RecipeManager.AddRecipe("blacksmithing",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("blacksmithing",
                 new List<InventoryItem> {
-				    RecipeManager.Item("planks", 1),
-				    RecipeManager.Item("ironingot", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("ironingot", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("pickaxe", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("pickaxe", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("blacksmithing",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("blacksmithing",
                 new List<InventoryItem> {
-				    RecipeManager.Item("planks", 1),
-				    RecipeManager.Item("ironingot", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("ironingot", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("axe", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("axe", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-				    RecipeManager.Item("planks", 1),
-				    RecipeManager.Item("ironingot", 1),
-				    RecipeManager.Item("goldingot", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("ironingot", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("goldingot", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("mint", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("mint", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-				    RecipeManager.Item("goldcoin", 5),
-				    RecipeManager.Item("planks", 1),
-				    RecipeManager.Item("stonebricks", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 5),
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("stonebricks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("shop", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("shop", 1)
                 },
-                0.0f, true, true);
+                 true, true);
 			
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-				    RecipeManager.Item("flax", 5)
+				    ColonyAPI.Managers.RecipeManager.Item("flax", 5)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("linseedoil", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("linseedoil", 1)
                 },
-                0.0f, true);
+                 true);
 			
-            RecipeManager.AddRecipe("carpentry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
-				    RecipeManager.Item("linseedoil", 1),
-				    RecipeManager.Item("planks", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("linseedoil", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("coatedplanks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("coatedplanks", 1)
                 },
-                0.0f, true);
+                 true);
 			
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-				    RecipeManager.Item("linseedoil", 1),
-				    RecipeManager.Item("dirt", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("linseedoil", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("dirt", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("adobe", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("adobe", 1)
                 },
-                0.0f, true);
+                 true);
 			
-            RecipeManager.AddRecipe("masonry",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("masonry",
                 new List<InventoryItem> {
-				    RecipeManager.Item("gypsum", 1),
-				    RecipeManager.Item("stonebricks", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("gypsum", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("stonebricks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("plasterblock", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("plasterblock", 1)
                 },
-                0.0f, true);
+                 true);
 			
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-				    RecipeManager.Item("berry", 1),
-				    RecipeManager.Item("planks", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("berry", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("redplanks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("redplanks", 1)
                 },
-                0.0f, true);
+                 true);
 			
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-				    RecipeManager.Item("coalore", 1),
-				    RecipeManager.Item("planks", 1)
+				    ColonyAPI.Managers.RecipeManager.Item("coalore", 1),
+				    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("blackplanks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("blackplanks", 1)
                 },
-                0.0f, true);
+                 true);
 
         }
         
@@ -278,115 +278,115 @@ namespace ColonyPlusPlusCore.Classes
         // Grinding Recipes
         public void AddGrindingRecipes()
         {
-            RecipeManager.AddRecipe("grinding",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("grinding",
                 new List<InventoryItem> {
-                    RecipeManager.Item("wheat", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("wheat", 2)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("flour", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("flour", 2)
                 },
-                0.0f);
+                );
         }
 
         // Grinding Recipes
         public void AddMintingRecipes()
         {
-            RecipeManager.AddRecipe("minting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("minting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldingot", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("goldingot", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 2)
                 },
-                0.0f); 
+                ); 
         }
 
         // Shopping Recipes
         public void AddShoppingRecipes()
         {
-            RecipeManager.AddRecipe("shopping",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 20)
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 20)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("flaxstage1", 10)
+                    ColonyAPI.Managers.RecipeManager.Item("flaxstage1", 10)
                 },
-                0.0f);
+                );
 
-            RecipeManager.AddRecipe("shopping",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 10)
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 10)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("cherrysapling", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("cherrysapling", 1)
                 },
-                0.0f);
+                );
 
-            RecipeManager.AddRecipe("shopping",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 300)
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 300)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("berrybush", 10)
+                    ColonyAPI.Managers.RecipeManager.Item("berrybush", 10)
                 },
-                0.0f);
+                );
 
-            RecipeManager.AddRecipe("shopping",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 12)
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 12)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("wheatstage1", 6)
+                    ColonyAPI.Managers.RecipeManager.Item("wheatstage1", 6)
                 },
-                0.0f);
+                );
 
-            RecipeManager.AddRecipe("shopping",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 3)
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 3)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("dirt", 10)
+                    ColonyAPI.Managers.RecipeManager.Item("dirt", 10)
                 },
-                0.0f);
+                );
 
-            RecipeManager.AddRecipe("shopping",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 3)
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 3)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("grasstemperate", 10)
+                    ColonyAPI.Managers.RecipeManager.Item("grasstemperate", 10)
                 },
-                0.0f);
+                );
 
         }
 
         // Smelting Recipes
         public void AddSmeltingRecipes()
         {
-            RecipeManager.AddRecipe("smelting",
+            ColonyAPI.Managers.RecipeManager.AddRecipeFueled("smelting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("ironore", 3)
+                    ColonyAPI.Managers.RecipeManager.Item("ironore", 3)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("ironingot", 1)
-                },
-                0.2f);
-
-            RecipeManager.AddRecipe("smelting",
-                new List<InventoryItem> {
-                    RecipeManager.Item("goldore", 3)
-                },
-                new List<InventoryItem> {
-                    RecipeManager.Item("goldingot", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("ironingot", 1)
                 },
                 0.2f);
 
-            RecipeManager.AddRecipe("pottery",
+            ColonyAPI.Managers.RecipeManager.AddRecipeFueled("smelting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("clay", 3)
+                    ColonyAPI.Managers.RecipeManager.Item("goldore", 3)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("bricks", 3)
+                    ColonyAPI.Managers.RecipeManager.Item("goldingot", 1)
+                },
+                0.2f);
+
+            ColonyAPI.Managers.RecipeManager.AddRecipeFueled("pottery",
+                new List<InventoryItem> {
+                    ColonyAPI.Managers.RecipeManager.Item("clay", 3)
+                },
+                new List<InventoryItem> {
+                    ColonyAPI.Managers.RecipeManager.Item("bricks", 3)
                 },
                 0.2f);
         }
@@ -394,94 +394,94 @@ namespace ColonyPlusPlusCore.Classes
         // Tailoring Recipes
         public void AddTailoringRecipes()
         {
-            RecipeManager.AddRecipe("tailoring",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
                 new List<InventoryItem> {
-                    RecipeManager.Item("flax", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("flax", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("linen", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("linen", 1)
                 },
-                0.0f);
+                );
 
-            RecipeManager.AddRecipe("tailoring",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
                new List<InventoryItem> {
-                    RecipeManager.Item("linen", 3)
+                    ColonyAPI.Managers.RecipeManager.Item("linen", 3)
                },
                new List<InventoryItem> {
-                    RecipeManager.Item("clothing", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("clothing", 1)
                },
-               0.0f);
+               );
 
-            RecipeManager.AddRecipe("tailoring",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
                new List<InventoryItem> {
-                    RecipeManager.Item("linen", 3)
+                    ColonyAPI.Managers.RecipeManager.Item("linen", 3)
                },
                new List<InventoryItem> {
-                    RecipeManager.Item("linenbag", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("linenbag", 1)
                },
-               0.0f);
+               );
 
-            RecipeManager.AddRecipe("tailoring",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
                new List<InventoryItem> {
-                    RecipeManager.Item("flax", 1),
-                    RecipeManager.Item("linen", 1),
-                    RecipeManager.Item("planks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("flax", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("linen", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
                },
                new List<InventoryItem> {
-                    RecipeManager.Item("carpetblue", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("carpetblue", 1)
                },
-               0.0f);
+               );
 
-            RecipeManager.AddRecipe("tailoring",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
               new List<InventoryItem> {
-                    RecipeManager.Item("flax", 1),
-                    RecipeManager.Item("linen", 1),
-                    RecipeManager.Item("planks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("flax", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("linen", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
               },
               new List<InventoryItem> {
-                    RecipeManager.Item("carpetred", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("carpetred", 1)
               },
-              0.0f);
+              );
 
-            RecipeManager.AddRecipe("tailoring",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
               new List<InventoryItem> {
-                    RecipeManager.Item("flax", 1),
-                    RecipeManager.Item("linen", 1),
-                    RecipeManager.Item("planks", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("flax", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("linen", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 1)
               },
               new List<InventoryItem> {
-                    RecipeManager.Item("carpetyellow", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("carpetyellow", 1)
               },
-              0.0f);
+              );
 
         }
 
         // Techhnologist Recipes
         public void AddTechnologistRecipes()
         {
-            RecipeManager.AddRecipe("technologist",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("technologist",
                 new List<InventoryItem> {
-                    RecipeManager.Item("bread", 1),
-                    RecipeManager.Item("berry", 5),
-                    RecipeManager.Item("clothing", 1),
-                    RecipeManager.Item("linenbag", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("bread", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("berry", 5),
+                    ColonyAPI.Managers.RecipeManager.Item("clothing", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("linenbag", 1),
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("sciencebaglife", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("sciencebaglife", 2)
                 },
-                0.0f);
+                );
 
-            RecipeManager.AddRecipe("technologist",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("technologist",
                 new List<InventoryItem> {
-                    RecipeManager.Item("ironingot", 1),
-                    RecipeManager.Item("bricks", 3),
-                    RecipeManager.Item("goldcoin", 1),
-                    RecipeManager.Item("linenbag", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("ironingot", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("bricks", 3),
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("linenbag", 1),
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("sciencebagbasic", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("sciencebagbasic", 2)
                 },
-                0.0f);
+                );
         }
     }
 }
