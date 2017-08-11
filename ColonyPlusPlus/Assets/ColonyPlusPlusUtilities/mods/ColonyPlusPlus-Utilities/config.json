@@ -1,0 +1,70 @@
+{
+	"motd": {
+		"enabled": true,
+		"message": "Here is the MotD"
+	},
+	
+	"rotatingmessages": {
+		"enabled": true,
+		"list": [
+			"We hope you're all having fun!",
+			"Visit http://colonyplusplus.com for more info on this mod!"
+		],
+		"color": "yellow",
+		"style": "bolditalic",
+		"interval": 120,
+	},
+	
+	"jobs": {
+		"baseXP": 10,
+		"maxLevel": 25,
+		"xpMultiplier": 2,
+		"efficiencyPerLevel": 0.02
+	},
+	
+	"spawnprotection": {
+		"enabled": true,
+		"radius": 1
+	},
+	
+	"chunks": {
+		"enabled": true,
+		"maxclaims": 12,
+		"enforce": true
+	},
+
+	"debug": {
+		"enabled": true
+	},
+
+	"trade": {
+		"enabled": true
+	},
+
+	"chat": {
+		"enabled": true,
+		"colors": [
+			{
+				"permissionstring": "admin",
+				"color": "lime",
+				"style": "normal",
+				"prefix": "Admin"
+			},
+			{
+				"permissionstring": "moderator",
+				"color": "yellow",
+				"style": "normal",
+				"prefix": "Mod"
+			},
+		]
+	},
+	
+	"crops": {
+		"growthMultiplier": 1
+	},
+	
+	"colony":{
+		"enabled": true,
+		"limit": 150
+	}
+}
