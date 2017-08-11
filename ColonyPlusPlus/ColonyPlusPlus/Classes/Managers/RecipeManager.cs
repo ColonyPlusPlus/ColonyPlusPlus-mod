@@ -79,86 +79,79 @@ namespace ColonyPlusPlus.Classes.Managers
   //                      
                         RecipeCraftingStatic.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-                        
                         break;
+
                     case "smelting":
                         RecipeSmelting.Add(new global::RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
                         //Utilities.WriteLog("Added a smelting recipe!");
-
                         break;
+
                     case "minting":
                         RecipeMinting.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
+
                     case "grinding":
                         RecipeGrinding.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
+
                     case "shopping":
                         RecipeShopping.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
 
                     case "tailoring":
                         RecipeTailoring.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
 
                     case "technologist":
                         RecipeTechnologist.Add(new global::Recipe(RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
+
                     case "baking":
                         RecipeBaking.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
                         break;
+
                     case "pottery":
                         RecipePottery.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
 
                     case "carpentry":
                         RecipeCarpentry.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
 
                     case "masonry":
                         RecipeMasonry.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
 
                     case "blacksmithing":
                         RecipeSmithing.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
                         recipesAdded += 1;
-
                         break;
+
                     case "chickenplucker":
                         RecipeChickenCoop.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
-
                         recipesAdded += 1;
                         break;
+
                     case "well":
                         RecipeWell.Add(new RecipeFueled(RecipeInstance.FuelCost, RecipeInstance.Requirements, RecipeInstance.Results));
-
                         recipesAdded += 1;
                         break;
+
                     default:
                         // if the type isn't registered (or is something random) then just say "nah ain't happenin' man"
                         Utilities.WriteLog("Unable to create recipe of type " + RecipeInstance.Type + " - invalid type");
-
                         break;
-                }
-
-                
+                } 
             }
 
             Pipliz.APIProvider.Recipes.RecipeManager.AddRecipes("cpp.crafter", RecipeCraftingStatic);

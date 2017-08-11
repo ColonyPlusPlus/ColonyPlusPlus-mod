@@ -13,7 +13,7 @@ namespace ColonyPlusPlus.Types.GameBase.Blocks
             this.NPCLimit = 0;
             this.IsPlaceable = true;
             this.Sides = "grasstemperateside";
-            this.SideXMinus = "dirt";
+            this.SideYMinus = "dirt";
 
             Classes.ItemHelper.OnRemove[] onRemoveNode = {
                 new Classes.ItemHelper.OnRemove("grasstemperate",       1,  1.0f),
