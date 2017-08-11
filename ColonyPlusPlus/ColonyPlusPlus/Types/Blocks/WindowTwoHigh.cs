@@ -6,10 +6,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class WindowTwoHigh : ColonyAPI.Classes.Type
+    class WindowTwoHigh : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowTwoHigh(string name) : base (name)
+        public WindowTwoHigh() : base ()
         {
+            this.TypeName = "windowtwohigh";
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
             this.Mesh = "windowtwohigh";
@@ -37,11 +38,13 @@ namespace ColonyPlusPlus.Types.Blocks
         }
     }
 
-    class WindowTwoHighXMinus : ColonyAPI.Classes.Type
+    class WindowTwoHighXMinus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowTwoHighXMinus(string name) : base(name)
+        public WindowTwoHighXMinus() : base()
         {
+            this.TypeName = "windowtwohighx-";
             this.ParentType = "windowtwohigh";
+            this.SideAll = "planks";
 
             this.Mesh = "windowtwohighx";
             this.IsBaseBlock = false;
@@ -49,11 +52,13 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowTwoHighXPlus : ColonyAPI.Classes.Type
+    class WindowTwoHighXPlus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowTwoHighXPlus(string name) : base(name)
+        public WindowTwoHighXPlus() : base()
         {
+            this.TypeName = "windowtwohighx+";
             this.ParentType = "windowtwohigh";
+            this.SideAll = "planks";
 
             this.Mesh = "windowtwohighx";
             this.IsBaseBlock = false;
@@ -61,11 +66,13 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowTwoHighZMinus : ColonyAPI.Classes.Type
+    class WindowTwoHighZMinus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowTwoHighZMinus(string name) : base(name)
+        public WindowTwoHighZMinus() : base()
         {
+            this.TypeName = "windowtwohighz-";
             this.ParentType = "windowtwohigh";
+            this.SideAll = "planks";
 
             this.Mesh = "windowtwohighz";
             this.IsBaseBlock = false;
@@ -73,11 +80,13 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowTwoHighZPlus : ColonyAPI.Classes.Type
+    class WindowTwoHighZPlus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowTwoHighZPlus(string name) : base(name)
+        public WindowTwoHighZPlus() : base()
         {
+            this.TypeName = "windowtwohighz+";
             this.ParentType = "windowtwohigh";
+            this.SideAll = "planks";
 
             this.Mesh = "windowtwohighz";
             this.IsBaseBlock = false;

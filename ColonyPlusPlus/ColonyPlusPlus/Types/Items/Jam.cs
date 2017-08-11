@@ -6,10 +6,12 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Jam : ColonyAPI.Classes.Type
+    class Jam : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Jam(string name) : base(name, true)
+        public Jam() : base(true)
         {
+
+            this.TypeName = "jam";
             this.AllowCreative = true;
             this.Register();
 

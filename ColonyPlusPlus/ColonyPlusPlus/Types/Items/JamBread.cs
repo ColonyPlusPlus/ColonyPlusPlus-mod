@@ -6,10 +6,11 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class JamBread : ColonyAPI.Classes.Type
+    class JamBread : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public JamBread(string name) : base(name, true)
+        public JamBread() : base(true)
         {
+            this.TypeName = "jambread";
             this.NutritionalValue = 4.5f;
             this.AllowCreative = true;
             this.Register();

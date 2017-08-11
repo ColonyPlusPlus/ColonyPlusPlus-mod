@@ -5,10 +5,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class Pillar : ColonyAPI.Classes.Type
+    class Pillar : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Pillar(string name) : base(name, true)
+        public Pillar() : base(true)
         {
+            this.TypeName = "pillar";
             this.SideAll = "marble";
             this.Mesh = "log";
             this.IsPlaceable = true;

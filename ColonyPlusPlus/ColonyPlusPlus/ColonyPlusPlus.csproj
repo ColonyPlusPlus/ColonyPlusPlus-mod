@@ -39,7 +39,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="ColonyAPI">
+    <Reference Include="ColonyAPI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\ColonyAPI.dll</HintPath>
     </Reference>
     <Reference Include="System" />

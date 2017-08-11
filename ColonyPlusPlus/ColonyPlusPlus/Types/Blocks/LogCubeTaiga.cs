@@ -6,15 +6,16 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeTaiga : ColonyAPI.Classes.Type
+    class LogCubeTaiga : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public LogCubeTaiga(string name) : base(name, true)
+        public LogCubeTaiga() : base(true)
         {
             ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("logcubetaiga",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
 
+            this.TypeName = "logcubetaiga";
             this.ParentType = "logcube";
 
             this.SideAll = "cpplogtaiga";

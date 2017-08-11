@@ -6,9 +6,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeTaigaRotated : ColonyAPI.Classes.Type
+    class LogCubeTaigaRotated : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public LogCubeTaigaRotated(string name) : base(name, true)
+        public LogCubeTaigaRotated() : base(true)
         {
             ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("logcubetaigarotated",   1,  1.0f)
@@ -17,6 +17,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.ParentType = "logcuberotated";
 
 
+            this.TypeName = "logcubetaigarotated";
             this.RotatableXMinus = "logcubetaigarotatedx";
             this.RotatableXPlus = "logcubetaigarotatedx";
             this.RotatableZMinus = "logcubetaigarotatedz";

@@ -17,7 +17,7 @@ namespace ColonyPlusPlus.Classes.Managers
             // init Items
 
             // materials
-            Types.Items.Cheese cheese                               = new Types.Items.Cheese("cheese");
+            /*Types.Items.Cheese cheese                               = new Types.Items.Cheese("cheese");
             Types.Items.Egg egg                                     = new Types.Items.Egg("egg");
             Types.Items.Feather feather                             = new Types.Items.Feather("feather");
             Types.Items.Milk milk                                   = new Types.Items.Milk("milk");
@@ -30,12 +30,12 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.Items.Jam jam                                     = new Types.Items.Jam("jam");
             Types.Items.JamBread jamBread                           = new Types.Items.JamBread("jambread");
             Types.Items.Omlette omlette                             = new Types.Items.Omlette("omlette");
-            Types.Items.BakedPotato bakedpotato                     = new Types.Items.BakedPotato("bakedpotato");
+            //Types.Items.BakedPotato bakedpotato                     = new Types.Items.BakedPotato("bakedpotato");
 
             // misc Items
             Types.Items.SugarcaneItem sugarcaneItem                 = new Types.Items.SugarcaneItem("sugarcaneitem");
             Types.Items.Bottle bottle = new Types.Items.Bottle("bottle");
-            Types.Items.WaterBottle waterbottle = new Types.Items.WaterBottle("waterbottle");
+            Types.Items.WaterBottle waterbottle = new Types.Items.WaterBottle("waterbottle");*/
         }
     }
 }

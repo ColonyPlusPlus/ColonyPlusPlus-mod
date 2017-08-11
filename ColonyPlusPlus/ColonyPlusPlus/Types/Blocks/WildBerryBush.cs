@@ -8,10 +8,11 @@ using UpdatableBlocks;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class WildBerryBush : ColonyAPI.Classes.Type
+    class WildBerryBush : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WildBerryBush(string name) : base(name, true)
+        public WildBerryBush() : base(true)
         {
+            this.TypeName = "wildberrybush";
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
 

@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.Classes.Managers
             // Tell the player what we're doing here
             Classes.Utilities.WriteLog("Starting To Register Blocks");
 
-            // And register!
+           /* // And register!
             Types.Blocks.Pillar pillar = new Types.Blocks.Pillar("pillar");
             Types.Blocks.WildBerryBush wildBerryBush                    = new Types.Blocks.WildBerryBush("wildberrybush");
             Types.Blocks.Window window                                  = new Types.Blocks.Window("window");
@@ -42,16 +42,16 @@ namespace ColonyPlusPlus.Classes.Managers
             Types.Blocks.LogCubeTaigaRotated logcubetaigarotated        = new Types.Blocks.LogCubeTaigaRotated("logcubetaigarotated");
             Types.Blocks.LogCubeTaigaRotatedX logcubetaigarotatedx      = new Types.Blocks.LogCubeTaigaRotatedX("logcubetaigarotatedx");
             Types.Blocks.LogCubeTaigaRotatedZ logcubetaigarotatedz      = new Types.Blocks.LogCubeTaigaRotatedZ("logcubetaigarotatedz");
-
+            */
 
             // job stuff
-            Types.JobBlocks.PotteryTable potterytable = new Types.JobBlocks.PotteryTable("potterytable");
+            /*Types.JobBlocks.PotteryTable potterytable = new Types.JobBlocks.PotteryTable("potterytable");
             Types.JobBlocks.MasonTable masontable = new Types.JobBlocks.MasonTable("masontable");
             Types.JobBlocks.Sawmill sawmill = new Types.JobBlocks.Sawmill("sawmill");
             Types.JobBlocks.Anvil anvil = new Types.JobBlocks.Anvil("anvil");
             Types.JobBlocks.ChickenCoop chickencoop = new Types.JobBlocks.ChickenCoop("chickencoop");
             Types.JobBlocks.Well well = new Types.JobBlocks.Well("well");
-            Types.Blocks.WellTop welltop = new Types.Blocks.WellTop("welltop");
+            //Types.Blocks.WellTop welltop = new Types.Blocks.WellTop("welltop");*/
             
 
             // interactive Items

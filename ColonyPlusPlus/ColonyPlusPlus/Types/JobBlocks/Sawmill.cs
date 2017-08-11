@@ -6,10 +6,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class Sawmill : ColonyAPI.Classes.Type
+    class Sawmill : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Sawmill(string name) : base(name)
+        public Sawmill() : base()
         {
+            this.TypeName = "sawmill";
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
             this.SideAll = "planks";

@@ -6,10 +6,11 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Bottle : ColonyAPI.Classes.Type
+    class Bottle : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Bottle(string name) : base(name, true)
+        public Bottle() : base(true)
         {
+            this.TypeName = "bottle";
             this.AllowCreative = true;
             this.Register();
         }

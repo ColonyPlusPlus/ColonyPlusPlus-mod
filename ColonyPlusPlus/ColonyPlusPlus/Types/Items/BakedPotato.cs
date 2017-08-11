@@ -7,10 +7,11 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class BakedPotato : ColonyAPI.Classes.Type
+    class BakedPotato : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public BakedPotato(string name) : base(name, true)
+        public BakedPotato() : base(true)
         {
+            this.TypeName = "bakedpotato";
             this.NutritionalValue = 1.0f;
             this.AllowCreative = true;
             this.Register();

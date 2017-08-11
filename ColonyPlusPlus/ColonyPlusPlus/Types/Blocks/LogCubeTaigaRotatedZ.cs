@@ -6,11 +6,12 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeTaigaRotatedZ : ColonyAPI.Classes.Type
+    class LogCubeTaigaRotatedZ : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public LogCubeTaigaRotatedZ(string name) : base(name, true)
+        public LogCubeTaigaRotatedZ() : base(true)
         {
-            
+
+            this.TypeName = "logcubetaigarotatedz";
             this.ParentType = "logcubetaigarotated";
 
             this.SideAll = "cpplogtaiga";

@@ -5,11 +5,12 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class Sugarcane : ColonyAPI.Classes.Type
+    class Sugarcane : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Sugarcane(string name) : base(name, true)
+        public Sugarcane() : base(true)
         {
 
+            this.TypeName = "sugarcane";
             ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("sugarcaneitem", 3, 0.5f),
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("sugarcaneitem", 2, 0.5f)

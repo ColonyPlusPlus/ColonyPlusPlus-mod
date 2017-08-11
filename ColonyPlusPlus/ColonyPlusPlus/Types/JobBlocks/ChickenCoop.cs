@@ -6,10 +6,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class ChickenCoop : ColonyAPI.Classes.Type
+    class ChickenCoop : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public ChickenCoop(string name) : base(name)
+        public ChickenCoop() : base()
         {
+            this.TypeName = "chickencoop";
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
             this.Mesh = "ChickenCoop";

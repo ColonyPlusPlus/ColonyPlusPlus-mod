@@ -5,10 +5,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class VegetablePatch : ColonyAPI.Classes.Type
+    class VegetablePatch : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public VegetablePatch(string name) : base(name, true)
+        public VegetablePatch() : base(true)
         {
+            this.TypeName = "vegetablepatch";
             ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("carrotstage1", 3, 0.5f),
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("potatostage1", 2, 0.5f),

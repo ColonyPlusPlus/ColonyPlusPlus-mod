@@ -62,6 +62,7 @@ namespace ColonyPlusPlus
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplus.AfterAddingBaseTypes")]
+        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterAddingBaseTypes")]
         public static void AfterAddingBaseTypes()
         {
             // Register Materials

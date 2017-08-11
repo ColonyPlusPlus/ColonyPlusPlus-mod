@@ -5,10 +5,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class WellTop : ColonyAPI.Classes.Type
+    class WellTop : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WellTop(string name) : base(name, true)
+        public WellTop() : base(true)
         {
+            this.TypeName = "welltop";
             this.SideAll = "planks";
             this.Mesh = "wellroof";
             this.IsPlaceable = true;

@@ -6,10 +6,11 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Egg : ColonyAPI.Classes.Type
+    class Egg : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Egg(string name) : base(name, true)
+        public Egg() : base(true)
         {
+            this.TypeName = "egg";
             this.AllowCreative = true;
             this.Register();
         }

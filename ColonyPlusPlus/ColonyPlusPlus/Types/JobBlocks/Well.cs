@@ -8,10 +8,11 @@ using ColonyPlusPlus.Classes.Helpers;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class Well : ColonyAPI.Classes.Type
+    class Well : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Well(string name) : base(name)
+        public Well() : base()
         {
+            this.TypeName = "well";
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
             this.SideAll = "stonebricks";

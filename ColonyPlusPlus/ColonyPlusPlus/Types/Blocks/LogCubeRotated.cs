@@ -5,10 +5,12 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class LogCubeRotated : ColonyAPI.Classes.Type
+    class LogCubeRotated : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public LogCubeRotated(string name) : base(name, true)
+        public LogCubeRotated() : base(true)
         {
+
+            this.TypeName = "logcuberotated";
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
             this.FuelValue = 0.6f;

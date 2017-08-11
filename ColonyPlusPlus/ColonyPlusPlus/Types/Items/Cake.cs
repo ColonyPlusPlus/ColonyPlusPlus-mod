@@ -7,10 +7,11 @@ using ColonyPlusPlus.Classes;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Cake : ColonyAPI.Classes.Type
+    class Cake : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Cake(string name) : base(name, true)
+        public Cake() : base(true)
         {
+            this.TypeName = "cake";
             this.NutritionalValue = 25.0f;
 			this.CustomData = new CustomDataHelper("test", "somevalue").customDataNode;
             this.AllowCreative = true;

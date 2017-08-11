@@ -6,10 +6,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class Anvil : ColonyAPI.Classes.Type
+    class Anvil : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Anvil(string name) : base(name)
+        public Anvil() : base()
         {
+            this.TypeName = "anvil";
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
             this.SideAll = "furnaceside";

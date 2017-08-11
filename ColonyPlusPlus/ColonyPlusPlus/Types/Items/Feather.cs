@@ -6,10 +6,11 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Feather : ColonyAPI.Classes.Type
+    class Feather : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Feather(string name) : base(name, true)
+        public Feather() : base(true)
         {
+            this.TypeName = "feather";
             this.AllowCreative = true;
             this.Register();
         }

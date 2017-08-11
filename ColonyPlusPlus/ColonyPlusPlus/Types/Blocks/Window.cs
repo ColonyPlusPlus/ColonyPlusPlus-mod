@@ -6,10 +6,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.Blocks
 {
-    class Window : ColonyAPI.Classes.Type
+    class Window : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Window(string name) : base (name)
+        public Window() : base ()
         {
+            this.TypeName = "window";
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
             this.Mesh = "window";
@@ -37,23 +38,27 @@ namespace ColonyPlusPlus.Types.Blocks
         }
     }
 
-    class WindowXMinus : ColonyAPI.Classes.Type
+    class WindowXMinus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowXMinus(string name) : base(name)
+        public WindowXMinus() : base()
         {
+            this.TypeName = "windowx-";
             this.ParentType = "window";
 
+            this.SideAll = "planks";
             this.Mesh = "windowx";
             this.IsBaseBlock = false;
             
             this.Register();
         }
     }
-    class WindowXPlus : ColonyAPI.Classes.Type
+    class WindowXPlus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowXPlus(string name) : base(name)
+        public WindowXPlus() : base()
         {
+            this.TypeName = "windowx+";
             this.ParentType = "window";
+            this.SideAll = "planks";
 
             this.Mesh = "windowx";
             this.IsBaseBlock = false;
@@ -61,11 +66,13 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowZMinus : ColonyAPI.Classes.Type
+    class WindowZMinus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowZMinus(string name) : base(name)
+        public WindowZMinus() : base()
         {
+            this.TypeName = "windowz-";
             this.ParentType = "window";
+            this.SideAll = "planks";
 
             this.Mesh = "windowz";
             this.IsBaseBlock = false;
@@ -73,11 +80,13 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Register();
         }
     }
-    class WindowZPlus : ColonyAPI.Classes.Type
+    class WindowZPlus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public WindowZPlus(string name) : base(name)
+        public WindowZPlus() : base()
         {
+            this.TypeName = "windowz+";
             this.ParentType = "window";
+            this.SideAll = "planks";
 
             this.Mesh = "windowz";
             this.IsBaseBlock = false;

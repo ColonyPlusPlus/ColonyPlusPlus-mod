@@ -6,10 +6,11 @@ using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlus.Types.Items
 {
-    class Salt : ColonyAPI.Classes.Type
+    class Salt : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Salt(string name) : base(name, true)
+        public Salt() : base(true)
         {
+            this.TypeName = "salt";
             this.AllowCreative = true;
             this.Register();
         }

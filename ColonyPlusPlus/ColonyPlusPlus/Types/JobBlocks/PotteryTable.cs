@@ -6,10 +6,11 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.JobBlocks
 {
-    class PotteryTable : ColonyAPI.Classes.Type
+    class PotteryTable : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public PotteryTable(string name) : base(name)
+        public PotteryTable() : base()
         {
+            this.TypeName = "potterytable";
             this.OnRemoveAudio = "woodDeleteLight";
             this.OnPlaceAudio = "woodPlace";
             this.SideAll = "stonebricks";
