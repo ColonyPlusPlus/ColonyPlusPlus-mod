@@ -1,4 +1,4 @@
-﻿using ColonyPlusPlus.Classes.Managers;
+﻿using ColonyPlusPlusDecorative.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,12 +35,11 @@ namespace ColonyPlusPlusDecorative.Classes
                 l.Add(ColonyAPI.Managers.RecipeManager.Item( kvp.Key, kvp.Value));
             }
 
-            RecipeManager.AddRecipe(this.CraftingType,
+            ColonyAPI.Managers.RecipeManager.AddRecipe(this.CraftingType,
                 l,
                 new List<InventoryItem> {
-                    RecipeManager.Item(this.TypeName, 1)
-                },
-                0.0f);
+                    ColonyAPI.Managers.RecipeManager.Item(this.TypeName, 1)
+                });
         }
     }
 
@@ -81,15 +80,14 @@ namespace ColonyPlusPlusDecorative.Classes
             List<InventoryItem> l = new List<InventoryItem>();
             foreach (KeyValuePair<string, int> kvp in CraftingRequiredItem)
             {
-                l.Add(RecipeManager.Item(kvp.Key, kvp.Value));
+                l.Add(ColonyAPI.Managers.RecipeManager.Item(kvp.Key, kvp.Value));
             }
 
-            RecipeManager.AddRecipe(this.CraftingType,
+            ColonyAPI.Managers.RecipeManager.AddRecipe(this.CraftingType,
                 l,
                 new List<InventoryItem> {
-                    RecipeManager.Item(this.TypeName, 1)
-                },
-                0.0f);
+                    ColonyAPI.Managers.RecipeManager.Item(this.TypeName, 1)
+                });
         }
     }
     class DecorativeTypeXMinus : ColonyAPI.Classes.Type

@@ -57,6 +57,7 @@
     <Compile Include="Classes\DecorativeType.cs" />
     <Compile Include="Managers\BlockManager.cs" />
     <Compile Include="Managers\DecorativeTypeManager.cs" />
+    <Compile Include="Managers\MaterialManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
