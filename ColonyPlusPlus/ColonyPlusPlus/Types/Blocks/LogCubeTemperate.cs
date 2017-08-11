@@ -23,7 +23,7 @@ namespace ColonyPlusPlus.Types.Blocks
 
             this.AllowCreative = true;
             this.IsPlaceable = true;
-            ) : base()
+            this.Register();
         }
 
         public override void AddRecipes()

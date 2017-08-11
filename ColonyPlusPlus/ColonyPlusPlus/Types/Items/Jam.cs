@@ -13,7 +13,7 @@ namespace ColonyPlusPlus.Types.Items
 
             this.TypeName = "jam";
             this.AllowCreative = true;
-            ) : base()
+            this.Register();
 
         }
 

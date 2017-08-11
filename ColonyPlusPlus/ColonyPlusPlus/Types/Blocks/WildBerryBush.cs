@@ -25,7 +25,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.OnRemove = onRemoveNode;
             this.IsBaseBlock = false;
 
-            ) : base()
+            this.Register();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.Types.Items
         {
             this.TypeName = "sugar";
             this.AllowCreative = true;
-            ) : base()
+            this.Register();
 
             
         }

@@ -13,7 +13,7 @@ namespace ColonyPlusPlus.Types.Items
             this.TypeName = "jambread";
             this.NutritionalValue = 4.5f;
             this.AllowCreative = true;
-            ) : base()
+            this.Register();
         }
 
         public override void AddRecipes()

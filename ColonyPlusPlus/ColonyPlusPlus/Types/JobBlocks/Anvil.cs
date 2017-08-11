@@ -19,7 +19,7 @@ namespace ColonyPlusPlus.Types.JobBlocks
             this.AllowCreative = true;
             this.AllowPlayerCraft = true;
             this.Mesh = "anvil";
-            ) : base()
+            this.Register();
         }
 
         public override void AddRecipes()

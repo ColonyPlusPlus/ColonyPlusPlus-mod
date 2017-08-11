@@ -12,7 +12,7 @@ namespace ColonyPlusPlus.Types.Items
         {
             this.TypeName = "waterbottle";
             this.AllowCreative = true;
-            ) : base()
+            this.Register();
         }
 
         public override void AddRecipes()

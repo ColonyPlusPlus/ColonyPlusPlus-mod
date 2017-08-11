@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.IsPlaceable = true;
 
             this.AllowCreative = true;
-            ) : base()
+            this.Register();
         }
     }
 }
