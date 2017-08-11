@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ColonyPlusPlus.Classes.Data;
 using Pipliz;
 using System.IO;
 using Pipliz.JSON;
@@ -10,11 +7,11 @@ using Steamworks;
 using UnityEngine;
 using Permissions;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusUtilities.Managers
 {
     public static class WorldManager
     {
-        public static Dictionary<string, ChunkData> ChunkDataList = new Dictionary<string, ChunkData>();
+        public static Dictionary<string, Data.ChunkData> ChunkDataList = new Dictionary<string, Data.ChunkData>();
 
         private static bool worldManagerLoaded = false;
 
@@ -30,7 +27,7 @@ namespace ColonyPlusPlus.Classes.Managers
             string chunkname = positionToString(p);
             if (ChunkDataList.ContainsKey(chunkname))
             {
-                ChunkData c = ChunkDataList[chunkname];
+                Data.ChunkData c = ChunkDataList[chunkname];
 
                 bool result = c.setOwner(playerid);
                 SaveJSON();
@@ -39,7 +36,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             else
             {
-                ChunkData c = new ChunkData(p, true, playerid, new List<NetworkID>() { playerid }, isSpawn);
+                Data.ChunkData c = new Data.ChunkData(p, true, playerid, new List<NetworkID>() { playerid }, isSpawn);
               
                 ChunkDataList.Add(chunkname, c);
                 SaveJSON();
@@ -55,7 +52,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
             if (ChunkDataList.ContainsKey(chunkname))
             {
-                ChunkData c = ChunkDataList[chunkname];
+                Data.ChunkData c = ChunkDataList[chunkname];
                 if (c.getOwner() == playerid || force)
                 {
                     bool result = c.removeOwner();
@@ -110,7 +107,7 @@ namespace ColonyPlusPlus.Classes.Managers
             try
             {
                 string jSONPath = GetJSONPath();
-                Utilities.MakeDirectoriesIfNeeded(jSONPath);
+                ColonyAPI.Helpers.Utilities.MakeDirectoriesIfNeeded(jSONPath);
                 if (ChunkDataList.Count == 0)
                 {
                     File.Delete(jSONPath);
@@ -122,7 +119,7 @@ namespace ColonyPlusPlus.Classes.Managers
                     JSONNode rootnode = new JSONNode(NodeType.Array);
 
                     // then go through stuff
-                    foreach (Classes.Data.ChunkData c in ChunkDataList.Values)
+                    foreach (Data.ChunkData c in ChunkDataList.Values)
                     {
                         //if(c.getSpawn()) { continue; }
                         // build a child node
@@ -152,7 +149,7 @@ namespace ColonyPlusPlus.Classes.Managers
             }
             catch (Exception exception2)
             {
-                Utilities.WriteLog("Exception in saving all Owned Chunks:" + exception2.Message);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", "Exception in saving all Owned Chunks:" + exception2.Message);
             }
         }
         
@@ -180,7 +177,7 @@ namespace ColonyPlusPlus.Classes.Managers
                                 // recapture instance class
                                 string chunkID = node["chunkID"].GetAs<string>();
 
-                                ChunkData instanceclass;
+                                Data.ChunkData instanceclass;
 
                                 bool owned = node["owned"].GetAs<bool>();
                                 ulong playerID = node["playerID"].GetAs<ulong>();
@@ -194,7 +191,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
                                 if(playerID > 0)
                                 {
-                                    instanceclass = new ChunkData(location, owned, new NetworkID(new CSteamID(playerID)),  ownerHistory);
+                                    instanceclass = new Data.ChunkData(location, owned, new NetworkID(new CSteamID(playerID)),  ownerHistory);
 
                                     ChunkDataList.Add(chunkID, instanceclass);
 
@@ -205,27 +202,27 @@ namespace ColonyPlusPlus.Classes.Managers
                             }
                             catch (Exception exception)
                             {
-                                Utilities.WriteLog("Exception loading a wheat block;" + exception.Message);
+                                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", "Exception loading a wheat block;" + exception.Message);
                             }
                         }
 
-                        Utilities.WriteLog("Loaded Chunk Data (" + chunksloaded + " chunks)");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", "Loaded Chunk Data (" + chunksloaded + " chunks)");
                         
                     }
                     else
                     {
-                        Utilities.WriteLog("Loading Chunk Data Returned 0 results");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", "Loading Chunk Data Returned 0 results");
                     }
                 }
                 else
                 {
-                    Utilities.WriteLog("Found no chunk data (read error?)");
+                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", "Found no chunk data (read error?)");
                 }
 
             }
             catch (Exception exception2)
             {
-                Utilities.WriteLog("Exception in loading all Chunk Data:" + exception2.Message);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", "Exception in loading all Chunk Data:" + exception2.Message);
             }
 
             worldManagerLoaded = true;
@@ -266,10 +263,10 @@ namespace ColonyPlusPlus.Classes.Managers
                     {
                         if(d.typeNew == ItemTypes.IndexLookup.GetIndex("banner"))
                         {
-                            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position.ToChunk());
-                            if (Classes.Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
+                            string ChunkID = Managers.WorldManager.positionToString(d.position.ToChunk());
+                            if (Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
                             {
-                                Classes.Data.ChunkData cd = Classes.Managers.WorldManager.ChunkDataList[ChunkID];
+                                Data.ChunkData cd = Managers.WorldManager.ChunkDataList[ChunkID];
                                 if (cd.hasOwner())
                                 {
                                     NetworkID id = cd.getOwner();
@@ -281,7 +278,7 @@ namespace ColonyPlusPlus.Classes.Managers
                                 }
                             }
                         }
-                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You don't own the chunk");
+                        ColonyAPI.Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You don't own the chunk");
                         return false;
                     }
                 }
@@ -295,14 +292,14 @@ namespace ColonyPlusPlus.Classes.Managers
                     }
                     else
                     {
-                        Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn");
+                        ColonyAPI.Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You aren't far enough from spawn");
                         return false;
                     }
                 }
             }
             else
             {
-                Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You don't have build permissions");
+                ColonyAPI.Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), "You don't have build permissions");
                 return false;
             }
 
@@ -316,10 +313,10 @@ namespace ColonyPlusPlus.Classes.Managers
 
         private static bool allowBlockFarEnoughFromSpawn(ModLoader.OnTryChangeBlockUserData d)
         {
-            if(Classes.Managers.ConfigManager.getConfigBoolean("spawnprotection.enabled"))
+            if(Colon.Managers.ConfigManager.getConfigBoolean("spawnprotection.enabled"))
             {
-                int startingX = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingX");
-                int startingZ = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingZ");
+                int startingX = ColonyAPI.Helpers.ServerVariablesParser.GetVariableAsInt("Terrain.StartingX");
+                int startingZ = ColonyAPI.Helpers.ServerVariablesParser.GetVariableAsInt("Terrain.StartingZ");
 
                 int distancex, distancez = 0;
                 
@@ -329,7 +326,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 distancex = System.Math.Abs(playerX - startingX);
                 distancez = System.Math.Abs(playerZ - startingZ);
 
-                int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("spawnprotection.radius");
+                int SpawnProtectionDistance = ColonyAPI.Managers.ConfigManager.getConfigInt("spawnprotection.radius");
 
                 //Helpers.Chat.send(Players.GetPlayer(d.requestedBy.ID), String.Format("Distance from spawn: X {0}, Z {1}. Protection Radius: {2}", distancex, distancez, SpawnProtectionDistance));
 
@@ -356,10 +353,10 @@ namespace ColonyPlusPlus.Classes.Managers
                 return true;
             }
 
-            string ChunkID = Classes.Managers.WorldManager.positionToString(d.position.ToChunk());
-            if (Classes.Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
+            string ChunkID = Managers.WorldManager.positionToString(d.position.ToChunk());
+            if (Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
             {
-                Classes.Data.ChunkData cd = Classes.Managers.WorldManager.ChunkDataList[ChunkID];
+                Data.ChunkData cd = Managers.WorldManager.ChunkDataList[ChunkID];
                 NetworkID id = cd.getOwner();
                 if (cd.hasOwner())
                 {
@@ -375,7 +372,7 @@ namespace ColonyPlusPlus.Classes.Managers
                 else
                 {
                     //Utilities.WriteLog("Enforce: " + ConfigManager.getConfigBoolean("chunks.enforce"));
-                    if (ConfigManager.getConfigBoolean("chunks.enforce") == true)
+                    if (ColonyAPI.Managers.ConfigManager.getConfigBoolean("chunks.enforce") == true)
                     {
                         return false;
                     }
@@ -403,8 +400,8 @@ namespace ColonyPlusPlus.Classes.Managers
         public static void SetupSpawn()
         {
             Vector3Int pos = new Vector3Int();
-            pos.x = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingX");
-            pos.z = Classes.Managers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingZ");
+            pos.x = ColonyAPI.Helpers.ServerVariablesParser.GetVariableAsInt("Terrain.StartingX");
+            pos.z = ColonyAPI.Helpers.ServerVariablesManager.GetVariableAsInt("Terrain.StartingZ");
             Vector3Int p = pos.ToChunk();
             int SpawnProtectionDistance = Classes.Managers.ConfigManager.getConfigInt("spawnprotection.radius");
             for(int x = p.x - SpawnProtectionDistance; x < p.x + SpawnProtectionDistance; x++)

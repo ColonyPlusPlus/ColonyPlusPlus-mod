@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Pipliz.JSON;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusUtilities.Managers
 {
     public static class BanManager
     {

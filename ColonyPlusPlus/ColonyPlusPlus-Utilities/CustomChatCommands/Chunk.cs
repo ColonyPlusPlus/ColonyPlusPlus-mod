@@ -1,12 +1,8 @@
 ﻿using Permissions;
 using System;
-using ChatCommands;
-using NPC;
 using Pipliz;
-using ColonyPlusPlus.Classes.Helpers;
-using System.Collections.Generic;
 
-namespace ColonyPlusPlus.Classes.CustomChatCommands
+namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
     public class Chunk : BaseChatCommand
     {

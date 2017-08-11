@@ -2,11 +2,10 @@
 using Permissions;
 using Pipliz.JSON;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using ColonyAPI.Helpers;
+using ColonyAPI.Managers;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusUtilities.Managers
 {
     class ChatManager : IChatCommand
     {
@@ -42,8 +41,8 @@ namespace ColonyPlusPlus.Classes.Managers
                 }
 
                 
-                Helpers.Chat.ChatColour chatColorEnum = (Helpers.Chat.ChatColour)Enum.Parse(typeof(Helpers.Chat.ChatColour), chatColor);
-                Helpers.Chat.ChatStyle chatStyleEnum = (Helpers.Chat.ChatStyle)Enum.Parse(typeof(Helpers.Chat.ChatStyle), chatStyle);
+                Chat.ChatColour chatColorEnum = (Chat.ChatColour)Enum.Parse(typeof(Chat.ChatColour), chatColor);
+                Chat.ChatStyle chatStyleEnum = (Chat.ChatStyle)Enum.Parse(typeof(Chat.ChatStyle), chatStyle);
 
                 string message = "";
                 if (chatPrefix != "")
@@ -54,10 +53,10 @@ namespace ColonyPlusPlus.Classes.Managers
                     message = String.Format("{0}: {1}", player.Name, chat);
                 }
 
-                Helpers.Chat.sendToAll(message , chatColorEnum, chatStyleEnum);
+                Chat.sendToAll(message , chatColorEnum, chatStyleEnum);
             } else
             {
-                Helpers.Chat.sendToAll(String.Format("{0}: {1}", player.Name, chat), Helpers.Chat.ChatColour.white);
+                Chat.sendToAll(String.Format("{0}: {1}", player.Name, chat), Chat.ChatColour.white);
             }
 
                 

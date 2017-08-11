@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ColonyPlusPlus.Classes.Data
+﻿namespace ColonyPlusPlusUtilities.Data
 {
     class TradeData
     {

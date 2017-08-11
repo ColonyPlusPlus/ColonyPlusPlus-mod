@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ColonyPlusPlus.Classes.Helpers;
 using Pipliz.JSON;
+using ColonyAPI.Helpers;
+using ColonyAPI.Managers;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusUtilities.Managers
 {
     public static class RotatingMessageManager
     {
@@ -44,7 +43,7 @@ namespace ColonyPlusPlus.Classes.Managers
 
             nextUpdateTime = nextUpdate();
 
-            Utilities.WriteLog(String.Format("Rotator is enabled ({0}) with {1} messages playing every {2} seconds. Next update: {3}", rotatorEnabled.ToString(), rotatorMessages.Count, rotatorSecondsBetween, nextUpdateTime));
+            Utilities.WriteLog("ColonyPlusPlusUtilities", String.Format("Rotator is enabled ({0}) with {1} messages playing every {2} seconds. Next update: {3}", rotatorEnabled.ToString(), rotatorMessages.Count, rotatorSecondsBetween, nextUpdateTime));
         }
 
         public static long nextUpdate()

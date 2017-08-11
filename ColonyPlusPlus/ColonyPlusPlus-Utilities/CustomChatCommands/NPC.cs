@@ -1,10 +1,7 @@
-﻿using ChatCommands;
-using NPC;
-using Permissions;
-using ColonyPlusPlus.Classes.Helpers;
+﻿using Permissions;
 using System;
 
-namespace ColonyPlusPlus.Classes.CustomChatCommands
+namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
     public class NPC : BaseChatCommand

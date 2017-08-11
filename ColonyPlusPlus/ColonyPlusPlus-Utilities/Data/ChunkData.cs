@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using static NetworkID;
 
-namespace ColonyPlusPlus.Classes.Data
+namespace ColonyPlusPlusUtilities.Data
 {
     public class ChunkData
     {

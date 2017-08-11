@@ -1,10 +1,6 @@
-﻿using ChatCommands;
-using NPC;
-using Permissions;
-using Pipliz.Chatting;
-using System;
+﻿using Permissions;
 
-namespace ColonyPlusPlus.Classes.CustomChatCommands
+namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
     public class Creative : BaseChatCommand

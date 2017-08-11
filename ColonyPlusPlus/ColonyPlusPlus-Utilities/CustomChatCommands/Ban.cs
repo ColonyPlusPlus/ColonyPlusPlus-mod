@@ -1,9 +1,8 @@
 ﻿using System;
 using Permissions;
 using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
-using System.Linq;
 
-namespace ColonyPlusPlus.Classes.CustomChatCommands
+namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
     public class Ban : BaseChatCommand
     {

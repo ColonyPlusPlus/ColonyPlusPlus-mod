@@ -1,7 +1,7 @@
 ﻿using Permissions;
 using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
 
-namespace ColonyPlusPlus.Classes.CustomChatCommands
+namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
     public class Kick : BaseChatCommand
     {

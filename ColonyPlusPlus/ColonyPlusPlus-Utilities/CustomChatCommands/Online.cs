@@ -1,11 +1,8 @@
-﻿using ChatCommands;
-using NPC;
-using Permissions;
-using ColonyPlusPlus.Classes.Helpers;
+﻿using Permissions;
 using System;
 using System.Collections.Generic;
 
-namespace ColonyPlusPlus.Classes.CustomChatCommands
+namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
     public class Online : BaseChatCommand

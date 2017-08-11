@@ -1,8 +1,6 @@
 ﻿using Permissions;
-using Pipliz.Chatting;
-using System;
 
-namespace ColonyPlusPlus.Classes.CustomChatCommands
+namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
     public class Clear : BaseChatCommand

@@ -1,10 +1,6 @@
-﻿using ChatCommands;
-using NPC;
-using Permissions;
-using ColonyPlusPlus.Classes.Helpers;
-using System;
+﻿using System;
 
-namespace ColonyPlusPlus.Classes.CustomChatCommands
+namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
     public class Trash : BaseChatCommand

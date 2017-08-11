@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace ColonyPlusPlus.Classes.Helpers
+namespace ColonyPlusPlusUtilities.Helpers
 {
     public static class Debug
     {
-		public static void outputTypes()
+        public static string GetDebugJSONPath(string type)
+        {
+            return "gamedata/debug/" + type + ".json";
+        }
+
+        public static void outputTypes()
 		{
 			Pipliz.JSON.JSONNode node = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Array);
 
-			foreach (string typename in Managers.TypeManager.AddedTypes)
+			foreach (string typename in ColonyAPI.Managers.TypeManager.AddedTypes)
 			{
 				Pipliz.JSON.JSONNode outputtype = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
 
@@ -47,14 +50,14 @@ namespace ColonyPlusPlus.Classes.Helpers
 				node.AddToArray(outputtype);
 			}
 
-			Pipliz.JSON.JSON.Serialize(Utilities.GetDebugJSONPath("types"), node);
+			Pipliz.JSON.JSON.Serialize(GetDebugJSONPath("types"), node);
 		}
 
 		public static void outputRecipes()
 		{
 			Pipliz.JSON.JSONNode node = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Array);
 
-			foreach (ColonyAPI.Classes.Recipe recipe in Managers.RecipeManager.recipeList)
+			foreach (ColonyAPI.Classes.Recipe recipe in ColonyAPI.Managers.RecipeManager.recipeList)
 			{
 				Pipliz.JSON.JSONNode recipenode = new Pipliz.JSON.JSONNode(Pipliz.JSON.NodeType.Object);
 
@@ -98,7 +101,7 @@ namespace ColonyPlusPlus.Classes.Helpers
 				node.AddToArray(recipenode);
 			}
 
-			Pipliz.JSON.JSON.Serialize(Utilities.GetDebugJSONPath("recipes"), node);
+			Pipliz.JSON.JSON.Serialize(GetDebugJSONPath("recipes"), node);
 		}
     }
 }

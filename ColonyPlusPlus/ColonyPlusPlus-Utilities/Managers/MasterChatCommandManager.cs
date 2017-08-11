@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ChatCommands;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusUtilities.Managers
 {
     public class MasterChatCommandManager : IChatCommand
     {
