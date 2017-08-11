@@ -33,7 +33,7 @@ namespace ColonyPlusPlus.Classes
                 if (Managers.ChatCommandManager.ChatCommandsList.TryGetValue(ChatCommandPrefix + " " + commandParameters[0], out newCommand))
                     return newCommand.TryDoCommand(ply, chatItem);
 
-                Chat.Send(ply, "Command " + commandParameters[0] + " is not a part of " + ChatCommandPrefix);
+                Chat.Send(ply, $"Command {commandParameters[0]} is not a part of {ChatCommandPrefix}");
                 return true;
             }
 
