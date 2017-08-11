@@ -1,5 +1,7 @@
-﻿using Permissions;
+﻿using System;
+using Permissions;
 using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
+using System.Linq;
 
 namespace ColonyPlusPlus.Classes.CustomChatCommands
 {
@@ -13,10 +15,9 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "ban"))
             {
-                
                 var targetPlayer = Players.GetPlayer(target);
                 BlackAndWhitelisting.AddBlackList(targetPlayer.ID.steamID.m_SteamID);
-                Classes.Managers.BanManager.addBan(targetPlayer.ID, "some reason");
+                Classes.Managers.BanManager.addBan(targetPlayer.ID, String.Join(" ", args.Where(p => p != args[0]).ToArray()));
                 ServerManager.Disconnect(targetPlayer);
                 Chat.send(ply, $"Banned {targetPlayer.Name}", Chat.ChatColour.cyan);
             }
