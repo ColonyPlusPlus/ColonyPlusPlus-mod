@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.Types.Blocks
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("egg", 3, 0.5f)
             };
             this.AllowCreative = true;
-            this.Register();
+            
         }
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class GrassTemperate : ColonyAPI.Classes.Type
+    class GrassTemperate : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public GrassTemperate(string name) : base(name)
+        public GrassTemperate() : base()
         {
             this.ParentType = "grass";
             this.NPCLimit = 0;

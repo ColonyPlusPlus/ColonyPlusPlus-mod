@@ -21,7 +21,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                 // get their stockpile
                 Stockpile s =  Stockpile.GetStockPile(ply);
 
-                foreach(string itemname in Managers.TypeManager.CreativeAddedTypes)
+                foreach(string itemname in ColonyAPI.Managers.TypeManager.CreativeAddedTypes)
                 {
                     ushort i = ItemTypes.IndexLookup.GetIndex(itemname);
                     s.Add(i, 10000);

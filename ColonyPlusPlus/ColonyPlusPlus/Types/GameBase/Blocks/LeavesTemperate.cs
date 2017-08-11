@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class LeavesTemperate : ColonyAPI.Classes.Type
+    class LeavesTemperate : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public LeavesTemperate(string name) : base(name)
+        public LeavesTemperate() : base()
         {
             ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("leavestemperate",   1,  0.6f),

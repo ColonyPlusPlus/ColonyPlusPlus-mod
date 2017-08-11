@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class GrassTaiga : ColonyAPI.Classes.Type
+    class GrassTaiga : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public GrassTaiga(string name) : base(name)
+        public GrassTaiga() : base()
         {
             this.ParentType = "grass";
             this.IsPlaceable = true;

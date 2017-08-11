@@ -24,7 +24,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.RotatableZPlus = "logcubetemperaterotatedz";
             this.IsAutoRotatable = true;
             this.IsPlaceable = true;
-            this.Register();
+            
         }
 
         public override void AddRecipes()

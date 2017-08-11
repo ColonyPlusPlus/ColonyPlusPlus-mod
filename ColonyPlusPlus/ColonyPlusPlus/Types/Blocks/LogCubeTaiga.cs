@@ -23,7 +23,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.SideYMinus = "cpplogtaigatop";
             this.AllowCreative = true;
             this.IsPlaceable = true;
-            this.Register();
+            
         }
 
         public override void AddRecipes()

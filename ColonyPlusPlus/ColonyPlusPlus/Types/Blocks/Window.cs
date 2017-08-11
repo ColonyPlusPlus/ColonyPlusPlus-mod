@@ -22,7 +22,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.RotatableXPlus = "windowx+";
             this.RotatableZMinus = "windowz-";
             this.RotatableZPlus = "windowz+";
-            this.Register();
+            
         }
 
         public override void AddRecipes()
@@ -49,7 +49,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "windowx";
             this.IsBaseBlock = false;
             
-            this.Register();
+            
         }
     }
     class WindowXPlus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
@@ -63,7 +63,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "windowx";
             this.IsBaseBlock = false;
 
-            this.Register();
+            
         }
     }
     class WindowZMinus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
@@ -77,7 +77,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "windowz";
             this.IsBaseBlock = false;
 
-            this.Register();
+            
         }
     }
     class WindowZPlus : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
@@ -91,7 +91,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.Mesh = "windowz";
             this.IsBaseBlock = false;
 
-            this.Register();
+            
         }
     }
 }

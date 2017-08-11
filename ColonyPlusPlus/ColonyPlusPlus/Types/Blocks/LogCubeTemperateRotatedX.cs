@@ -20,7 +20,7 @@ namespace ColonyPlusPlus.Types.Blocks
             this.IsBaseBlock = false;
 
 
-            this.Register();
+            
         }
 
 

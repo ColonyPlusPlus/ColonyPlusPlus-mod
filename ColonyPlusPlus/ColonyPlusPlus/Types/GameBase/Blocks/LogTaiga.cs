@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class LogTaiga : ColonyAPI.Classes.Type
+    class LogTaiga : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public LogTaiga(string name) : base(name)
+        public LogTaiga() : base()
         {
             ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
                 new ColonyAPI.Helpers.ItemHelper.OnRemove("logtaiga",   1,  1.0f)

@@ -22,6 +22,7 @@ namespace ColonyPlusPlus
 
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplus.AfterStartup")]
+        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
         public static void AfterStartup()
         {
             Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
@@ -65,8 +66,9 @@ namespace ColonyPlusPlus
         [ModLoader.ModCallbackProvidesFor("colonyapi.AfterAddingBaseTypes")]
         public static void AfterAddingBaseTypes()
         {
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Starting AfterAddingBaseTypes");
+
             // Register Materials
-            Classes.Managers.BaseGameMaterialManager.initialiseMaterials();
             Classes.Managers.MaterialManager.initialiseMaterials();
 
             // Register basegame Types
@@ -78,6 +80,8 @@ namespace ColonyPlusPlus
             Classes.Managers.ItemManager.register();
             Classes.Managers.BlockManager.register();
             Classes.Managers.CropManager.register();
+
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Ending AfterAddingBaseTypes");
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplus.AfterItemTypesServer" )]

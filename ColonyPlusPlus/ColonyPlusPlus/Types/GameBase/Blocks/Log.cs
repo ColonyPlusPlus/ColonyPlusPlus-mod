@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ColonyPlusPlus.Types.GameBase.Blocks
 {
-    class Log : ColonyAPI.Classes.Type
+    class Log : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public Log(string name) : base(name)
+        public Log() : base()
         {
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
