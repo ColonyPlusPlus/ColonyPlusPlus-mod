@@ -14,7 +14,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-		protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+		protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
 		{
 			return false;
 		}
@@ -30,7 +30,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
             
         }
 
-		override protected bool RunCommand(Players.Player player, string[] args, NetworkID target)
+		override protected bool RunCommand(Players.Player player, string[] args, NetworkID[] targets)
 		{
 			if (PermissionsManager.CheckAndWarnPermission(player, "debug") && Classes.Managers.ConfigManager.getConfigBoolean("debug.enabled"))
 			{

@@ -10,11 +10,11 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "locate"))
             {
-                var player = Players.GetPlayer(target);
+                var player = Players.GetPlayer(targets[0]);
                 var status = player.IsConnected ? "online" : "offline";
 
                 Chat.sendSilent(ply,
@@ -32,11 +32,11 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "locate"))
             {
-                var player = Players.GetPlayer(target);
+                var player = Players.GetPlayer(targets[0]);
 
                 var banner = (from b in BannerTracker.GetBanners()
                     where b.Owner == player

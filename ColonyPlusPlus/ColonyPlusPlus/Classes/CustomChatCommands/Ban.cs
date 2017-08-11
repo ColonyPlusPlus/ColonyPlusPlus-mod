@@ -11,11 +11,11 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "ban"))
             {
-                var targetPlayer = Players.GetPlayer(target);
+                var targetPlayer = Players.GetPlayer(targets[0]);
                 BlackAndWhitelisting.AddBlackList(targetPlayer.ID.steamID.m_SteamID);
 
                 var reason = "";
@@ -38,12 +38,12 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "unban"))
             {
                 //TODO: Log unbans
-                var targetPlayer = Players.GetPlayer(target);
+                var targetPlayer = Players.GetPlayer(targets[0]);
                 Classes.Managers.BanManager.removeBan(targetPlayer.ID);
                 BlackAndWhitelisting.RemoveBlackList(targetPlayer.ID.steamID.m_SteamID);
                 Chat.send(ply, $"Unbanned {targetPlayer.Name}", Chat.ChatColour.cyan);

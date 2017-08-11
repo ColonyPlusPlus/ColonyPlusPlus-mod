@@ -9,11 +9,11 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
         {
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "kick"))
             {
-                var targetPlayer = Players.GetPlayer(target);
+                var targetPlayer = Players.GetPlayer(targets[0]);
                 ServerManager.Disconnect(targetPlayer);
                 Chat.send(ply, $"Kicked {targetPlayer.Name}",Chat.ChatColour.magenta);
             }
