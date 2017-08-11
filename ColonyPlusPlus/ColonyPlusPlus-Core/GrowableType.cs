@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using ColonyPlusPlus.Classes.Managers;
 
-namespace ColonyPlusPlus.Classes
+namespace ColonyPlusPlusCore.Classes
 {
     public class GrowableType : ColonyAPI.Classes.Type
     {

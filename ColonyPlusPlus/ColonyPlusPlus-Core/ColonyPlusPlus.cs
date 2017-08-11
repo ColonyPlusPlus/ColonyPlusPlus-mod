@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlus
+namespace ColonyPlusPlusCore
 {
     [ModLoader.ModManager]
     public class ColonyPlusPlus

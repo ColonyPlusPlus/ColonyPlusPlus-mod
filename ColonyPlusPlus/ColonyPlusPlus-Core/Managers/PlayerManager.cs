@@ -6,7 +6,7 @@ using System.Text;
 using ColonyPlusPlus.Classes.Data;
 using Pipliz.Chatting;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusCore.Classes.Managers
 {
     public static class PlayerManager
     {

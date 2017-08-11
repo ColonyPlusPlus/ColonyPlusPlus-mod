@@ -6,7 +6,7 @@ using Pipliz;
 using Pipliz.JSON;
 using UnityEngine;
 
-namespace ColonyPlusPlus.Classes.BlockJobs.Defense
+namespace ColonyPlusPlusCore.Classes.BlockJobs.Defense
 {
 	public class BaseQuiver : BlockJobBase, IBlockJobBase, INPCTypeDefiner
     {

@@ -5,7 +5,7 @@ using System.Text;
 using ColonyPlusPlus.Classes.Managers;
 
 
-namespace ColonyPlusPlus.Types.Items
+namespace ColonyPlusPlusCore.Types.Items
 {
     class BakedPotato : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.Classes.Helpers
+namespace ColonyPlusPlusCore.Classes.Helpers
 {
     class NewBaseRecipes
     {

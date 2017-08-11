@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlus.Types.Blocks
+namespace ColonyPlusPlusCore.Types.Blocks
 {
     class WellTop : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {

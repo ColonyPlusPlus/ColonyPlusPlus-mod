@@ -5,7 +5,7 @@ using System.Text;
 using NPC;
 using Pipliz.APIProvider.Jobs;
 
-namespace ColonyPlusPlus.Classes.BlockJobs.BaseJobs
+namespace ColonyPlusPlusCore.Classes.BlockJobs.BaseJobs
 {
     public class Technologist : CraftingJobBase, IBlockJobBase, INPCTypeDefiner
     {

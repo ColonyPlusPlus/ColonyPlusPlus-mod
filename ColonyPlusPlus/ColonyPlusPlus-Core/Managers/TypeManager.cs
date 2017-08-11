@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlus.Classes.Managers
+namespace ColonyPlusPlusCore.Classes.Managers
 {
     public static class TypeManager
     {
