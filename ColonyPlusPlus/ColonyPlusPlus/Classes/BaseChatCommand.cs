@@ -46,15 +46,11 @@ namespace ColonyPlusPlus.Classes
                     return true;
                 }
                 var targets = new List<NetworkID>();
-                commandParameters.All(x =>
+                commandParameters.ToList().ForEach(x =>
                 {
                     Players.Player targetPlayer;
                     if (!String.IsNullOrEmpty(x) && Players.TryMatchName(x, out targetPlayer))
-                    {
                         targets.Add(targetPlayer.ID);
-                    }
-
-                    return false;
                 });
 
                 if (targets.Count == 0)
