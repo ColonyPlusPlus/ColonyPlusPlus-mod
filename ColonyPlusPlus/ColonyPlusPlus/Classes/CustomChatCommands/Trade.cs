@@ -10,7 +10,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             return false;
         }
@@ -23,7 +23,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             Managers.PlayerManager.acceptTrade(ply);
             return true;
@@ -37,7 +37,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             Managers.PlayerManager.rejectTrade(ply);
             return true;
@@ -52,7 +52,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (args.Length < 3)
             {
@@ -74,7 +74,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                 Helpers.Chat.sendSilent(ply, "/trade give <playername> <myitemid> <myitemamount>", Helpers.Chat.ChatColour.orange);
                 return true;
             }
-            Managers.PlayerManager.tradeGive(ply, Players.GetPlayer(target), giveid, giveamt);
+            Managers.PlayerManager.tradeGive(ply, Players.GetPlayer(targets[0]), giveid, giveamt);
             return true;
         }
     }
@@ -86,7 +86,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (args.Length < 5)
             {
@@ -117,7 +117,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
                 Helpers.Chat.sendSilent(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", Helpers.Chat.ChatColour.orange);
                 return true;
             }
-            Managers.PlayerManager.notifyTrade(ply, Players.GetPlayer(target), giveid, giveamt, takeid, takeamt);
+            Managers.PlayerManager.notifyTrade(ply, Players.GetPlayer(targets[0]), giveid, giveamt, takeid, takeamt);
             return true;
         }
     }

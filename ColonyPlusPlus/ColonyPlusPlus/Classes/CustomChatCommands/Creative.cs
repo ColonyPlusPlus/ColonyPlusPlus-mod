@@ -14,7 +14,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "cheats.creative"))
             {

@@ -15,7 +15,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             return false;
         }
@@ -28,7 +28,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
             {
@@ -74,7 +74,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim"))
             {
@@ -111,7 +111,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.delete"))
             {
@@ -147,7 +147,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.list") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
             {
@@ -189,7 +189,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
+        protected override bool RunCommand(Players.Player ply, string[] args, NetworkID[] targets)
         {
             if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.info") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
             {

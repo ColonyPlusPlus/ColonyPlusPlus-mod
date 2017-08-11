@@ -14,7 +14,7 @@ namespace ColonyPlusPlus.Classes.CustomChatCommands
 
         }
 
-        override protected bool RunCommand(Players.Player player, string[] args, NetworkID target)
+        override protected bool RunCommand(Players.Player player, string[] args, NetworkID[] targets)
         {
             if(args.Length > 0)
             {
