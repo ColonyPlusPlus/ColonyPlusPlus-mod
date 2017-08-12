@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.Classes.Managers;
+using ColonyPlusPlusCore.Managers;
 
 namespace ColonyPlusPlusCore.Types.Crops
 { 
-    class CarrotStage1 : Classes.GrowableType
+    class CarrotStage1 : GrowableType
     {
         public CarrotStage1(string name) : base(name, true)
         {
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("carrotstage1",   1,  0.6f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("carrotstage1",   1,  0.6f)
             };
             this.OnRemove = onRemoveNode;
             this.IsSolid = false;
@@ -39,14 +39,13 @@ namespace ColonyPlusPlusCore.Types.Crops
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("shopping",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
                 new List<InventoryItem> {
-                    RecipeManager.Item("goldcoin", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("goldcoin", 2)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("carrotstage1", 1)
-                },
-                0.0f);
+                    ColonyAPI.Managers.RecipeManager.Item("carrotstage1", 1)
+                });
         }
     }
 }

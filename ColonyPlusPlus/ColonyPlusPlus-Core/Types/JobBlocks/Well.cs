@@ -1,10 +1,9 @@
-﻿using ColonyPlusPlus.Classes.Managers;
+﻿using ColonyPlusPlusCore.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Pipliz;
-using ColonyPlusPlus.Classes.Helpers;
 
 namespace ColonyPlusPlusCore.Types.JobBlocks
 {
@@ -27,16 +26,15 @@ namespace ColonyPlusPlusCore.Types.JobBlocks
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("stonebricks", 12),
-                    RecipeManager.Item("planks", 6)
+                    ColonyAPI.Managers.RecipeManager.Item("stonebricks", 12),
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 6)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("well", 1),
-                    RecipeManager.Item("welltop", 1)
-                },
-                0.0f, true, true);
+                    ColonyAPI.Managers.RecipeManager.Item("well", 1),
+                    ColonyAPI.Managers.RecipeManager.Item("welltop", 1)
+                }, true, true);
         }
 
         /*public override void onAddAction(Vector3Int location, ushort type, Players.Player causedBy)

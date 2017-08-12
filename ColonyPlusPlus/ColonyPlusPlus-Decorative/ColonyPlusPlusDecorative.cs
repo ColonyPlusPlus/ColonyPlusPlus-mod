@@ -14,15 +14,18 @@ namespace ColonyPlusPlusDecorative
         public static Version modVersion = new Version(0, 2, 0);
 
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "cpp-decorative.AfterStartup")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusdecorative.AfterStartup")]
         [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
         public static void AfterStartup()
         {
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Loaded ColonyPlusPlus v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);
-            ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlus-Decorative", modVersion);    
+
+            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Decorative", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion.md");
+            ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlus-Decorative", modVersion);
+
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Loaded ColonyPlusPlus Decorative v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplus.AfterAddingBaseTypes")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypes")]
         [ModLoader.ModCallbackProvidesFor("colonyapi.AfterAddingBaseTypes")]
         public static void AfterAddingBaseTypes()
         {

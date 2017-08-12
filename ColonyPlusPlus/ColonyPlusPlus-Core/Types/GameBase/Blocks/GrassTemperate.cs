@@ -16,11 +16,11 @@ namespace ColonyPlusPlusCore.Types.GameBase.Blocks
             this.Sides = "grasstemperateside";
             this.SideYMinus = "dirt";
 
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("grasstemperate",       1,  1.0f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("wheatstage1",          1,  0.1f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("sappling",             1,  0.03f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("flaxstage1",             1,  0.03f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("grasstemperate",       1,  1.0f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("wheatstage1",          1,  0.1f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("sappling",             1,  0.03f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("flaxstage1",             1,  0.03f)
             };
             this.OnRemove = onRemoveNode;
 

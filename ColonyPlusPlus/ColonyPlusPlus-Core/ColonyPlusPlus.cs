@@ -18,36 +18,34 @@ namespace ColonyPlusPlusCore
         public static Version modVersion = new Version(0, 2, 0);
 
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplus.AfterStartup")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonypluspluscore.AfterStartup")]
         [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
         public static void AfterStartup()
         {
-            Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
-            ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlusCore", modVersion);
+
+            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Core", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion.md");
+            ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlus-Core", modVersion);
 
             // Initialise configuration
-            Classes.Managers.ConfigManager.initialise();
-            Classes.Managers.RotatingMessageManager.initialise();
-            Classes.Managers.ServerVariablesManager.init();
-            Classes.Managers.BanManager.initialise();
-            
-
-            ColonyLimitEnabled = ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusCore", "colony.enabled");
+            ColonyAPI.Managers.ConfigManager.registerConfig("ColonyPlusPlus-Core");
+           
+            ColonyLimitEnabled = ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Core", "colony.enabled");
             if(ColonyLimitEnabled)
             {
-                ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlusCore", "colony.limit");
+                ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlus-Core", "colony.limit");
             }
 
-           
-            
+
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loaded ColonyPlusPlus Core v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);
+
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate, "colonyplusplus.OnPlayerConnectedLate")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate, "colonypluspluscore.OnPlayerConnectedLate")]
         public static void OnPlayerConnectedLate(Player p)
         {
             if (p.ID.steamID.m_SteamID == 0)
             {
-                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.VersionManager.SinglePlayerrunVersionCheck("ColonyPlusPlusCore", modVersion), ColonyAPI.Helpers.Chat.ChatColour.red);
+                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.VersionManager.SinglePlayerrunVersionCheck("ColonyPlusPlus-Core", modVersion), ColonyAPI.Helpers.Chat.ChatColour.red);
             }
             else
             {
@@ -55,14 +53,14 @@ namespace ColonyPlusPlusCore
             }
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplus.AfterAddingBaseTypes")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonypluspluscore.AfterAddingBaseTypes")]
         [ModLoader.ModCallbackProvidesFor("colonyapi.AfterAddingBaseTypes")]
         public static void AfterAddingBaseTypes()
         {
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Starting AfterAddingBaseTypes");
 
             // Register Materials
-            Classes.Managers.MaterialManager.initialiseMaterials();
+            Managers.MaterialManager.initialiseMaterials();
 
             // Register basegame Types
             //Classes.Managers.BaseGameManager.registerItems();
@@ -72,46 +70,40 @@ namespace ColonyPlusPlusCore
 
             //Classes.Managers.ItemManager.register();
             //Classes.Managers.BlockManager.register();
-            Classes.Managers.CropManager.register();
+            Managers.CropManager.register();
 
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Ending AfterAddingBaseTypes");
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplus.AfterItemTypesServer" )]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonypluspluscore.AfterItemTypesServer")]
         public static void AfterItemTypesServer()
         {
             // Register Tracked Block Types (Wheat?)
-            Classes.Managers.TypeManager.registerTrackedTypes();
+            Managers.TypeManager.registerTrackedTypes();
             
             // Regsiter types with actions
-            Classes.Managers.TypeManager.registerActionableTypes();
+            Managers.TypeManager.registerActionableTypes();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplus.AfterWorldLoad")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonypluspluscore.AfterWorldLoad")]
         public static void AfterWorldLoad()
         {
-            Classes.Managers.CropManager.LoadCropTracker();
-           
-               
-            Classes.Managers.WorldManager.LoadJSON();
-
-            Classes.Managers.NPCManager.initialise();
+            Managers.CropManager.LoadCropTracker();
+       
+            Managers.NPCManager.initialise();
 
             //Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
         }
 
         // things to do every tick (or itnerval)
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate, "colonyplusplus.OnUpdate")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate, "colonypluspluscore.OnUpdate")]
         public static void OnUpdate()
         {
             if(Pipliz.Time.MillisecondsSinceStart > nextMillisecondUpdate)
             {
                 // update any crops
-                Classes.Managers.CropManager.doCropUpdates();
-                
-                // Do player update stuff
-                Classes.Managers.PlayerManager.notifyNewChunkEntrances();
-
+                Managers.CropManager.doCropUpdates();
+               
                 // set the next update time!
                 nextMillisecondUpdate = Pipliz.Time.MillisecondsSinceStart + millisecondDelta;
             }
@@ -121,7 +113,7 @@ namespace ColonyPlusPlusCore
             {
 
                 // save out crop progress to file
-                Classes.Managers.CropManager.SaveCropTrackerInterval();
+                Managers.CropManager.SaveCropTrackerInterval();
                               
                 // long term update time
                 nextMillisecondUpdateLong = Pipliz.Time.MillisecondsSinceStart +  60000;
@@ -129,37 +121,36 @@ namespace ColonyPlusPlusCore
 
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly, "colonyplusplus.OnQuitEarly")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly, "colonypluspluscore.OnQuitEarly")]
         public static void OnQuitEarly()
         {
-            Classes.Managers.CropManager.SaveCropTracker();
+            Managers.CropManager.SaveCropTracker();
            
 
-            Classes.Managers.NPCManager.saveNPCData();
+            Managers.NPCManager.saveNPCData();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonyplusplus.OnQuit")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonypluspluscore.OnQuit")]
         public static void OnQuit()
         {
             //Classes.BlockJobs.BlockJobManagerTracker.Save();
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonypluspluscore.AfterDefiningNPCTypes")]
         [ModLoader.ModCallbackProvidesForAttribute("pipliz.apiprovider.jobs.resolvetypes")]
         public static void AfterDefiningNPCTypes()
         {
-            Classes.Managers.NPCManager.registerAllJobs();
+            Managers.NPCManager.registerAllJobs();
         
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonypluspluscore.AfterItemTypesDefined")]
         [ModLoader.ModCallbackDependsOn("pipliz.blocknpcs.loadrecipes")]
         [ModLoader.ModCallbackProvidesFor("pipliz.apiprovider.registerrecipes")]
         public static void AfterItemTypesDefined()
         {
-            Classes.Managers.RecipeManager.AddBaseRecipes();
-            Classes.Managers.RecipeManager.BuildRecipeList();
-            Classes.Managers.RecipeManager.ProcessRecipes();
+            Managers.RecipeManager.AddBaseRecipes();
+            Managers.RecipeManager.ProcessRecipes();
         }
     }
 }

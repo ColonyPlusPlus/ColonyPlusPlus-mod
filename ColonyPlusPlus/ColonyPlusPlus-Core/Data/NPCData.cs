@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlusCore.Classes.Data
+namespace ColonyPlusPlusCore.Data
 {
     public class NPCData
     {

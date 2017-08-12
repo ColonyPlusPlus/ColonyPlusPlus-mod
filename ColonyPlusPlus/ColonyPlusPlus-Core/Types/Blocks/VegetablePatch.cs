@@ -10,11 +10,11 @@ namespace ColonyPlusPlusCore.Types.Blocks
         public VegetablePatch() : base(true)
         {
             this.TypeName = "vegetablepatch";
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("carrotstage1", 3, 0.5f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("potatostage1", 2, 0.5f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("lettucestage1", 2, 0.5f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("onionstage1", 2, 0.5f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("carrotstage1", 3, 0.5f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("potatostage1", 2, 0.5f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("lettucestage1", 2, 0.5f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("onionstage1", 2, 0.5f)
             };
 
             this.OnRemove = onRemoveNode;

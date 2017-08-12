@@ -1,4 +1,4 @@
-﻿using ColonyPlusPlus.Classes.Managers;
+﻿using ColonyPlusPlusCore.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +10,8 @@ namespace ColonyPlusPlusCore.Types.Blocks
     {
         public LogCubeTaiga() : base(true)
         {
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("logcubetaiga",   1,  1.0f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("logcubetaiga",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
 
@@ -28,14 +28,13 @@ namespace ColonyPlusPlusCore.Types.Blocks
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logtaiga", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("logtaiga", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("logcubetaiga", 1)
-                },
-                0.0f, false, true);
+                    ColonyAPI.Managers.RecipeManager.Item("logcubetaiga", 1)
+                },false, true);
         }
     }
 }

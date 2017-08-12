@@ -2,7 +2,7 @@
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
-    public class Trade : BaseChatCommand
+    public class Trade : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Trade() : base("/trade", false, true)
         {
@@ -15,7 +15,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         }
     }
 
-    public class TradeAccept : BaseChatCommand
+    public class TradeAccept : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public TradeAccept() : base("/trade accept", false)
         {
@@ -29,7 +29,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         }
     }
 
-    public class TradeReject : BaseChatCommand
+    public class TradeReject : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public TradeReject() : base("/trade reject", false)
         {
@@ -43,7 +43,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         }
     }
 
-    public class TradeGive : BaseChatCommand
+    public class TradeGive : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
 
         public TradeGive() : base("/trade give", true)
@@ -78,7 +78,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         }
     }
 
-    public class TradeSend : BaseChatCommand
+    public class TradeSend : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public TradeSend() : base("/trade send", true)
         {

@@ -16,11 +16,11 @@ namespace ColonyPlusPlusCore.Types.Blocks
             this.OnPlaceAudio = "dirtPlace";
             this.OnRemoveAudio = "grassDelete";
 
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("berry",        1,  0.8f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("berry",        2,  0.2f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("berry",        5,  0.01f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("berrybush",    1,  0.15f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("berry",        1,  0.8f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("berry",        2,  0.2f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("berry",        5,  0.01f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("berrybush",    1,  0.15f)
             };
             this.OnRemove = onRemoveNode;
             this.IsBaseBlock = false;

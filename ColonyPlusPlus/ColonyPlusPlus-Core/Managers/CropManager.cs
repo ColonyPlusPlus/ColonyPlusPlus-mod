@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine.Profiling;
 
-namespace ColonyPlusPlusCore.Classes.Managers
+namespace ColonyPlusPlusCore.Managers
 {
     public static class CropManager
     {
@@ -27,7 +27,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
         // Register crops
         public static void register()
         {
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Starting To Register Crops");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Starting To Register Crops");
 
             Types.Crops.CarrotStage1 CarrotStage1 = new Types.Crops.CarrotStage1("carrotstage1");
             Types.Crops.CarrotStage2 CarrotStage2 = new Types.Crops.CarrotStage2("carrotstage2");
@@ -46,7 +46,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
             Types.Crops.OnionStage2 OnionStage2 = new Types.Crops.OnionStage2("onionstage2");
             Types.Crops.OnionStage3 OnionStage3 = new Types.Crops.OnionStage3("onionstage3");
 
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Ending Crop Registration");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Ending Crop Registration");
         }
 
         // Run this every 500ms
@@ -106,7 +106,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
                                         // get a new classinstance to calculate the proper growth time
                                         GrowableType g = CropTypes[newBlockName];
-                                        float growthMulitiplier = ColonyAPI.Managers.ConfigManager.getConfigFloat("ColonyPlusPlusCore", "crops.growthMultiplier");
+                                        float growthMulitiplier = ColonyAPI.Managers.ConfigManager.getConfigFloat("ColonyPlusPlus-Core", "crops.growthMultiplier");
                                         if(growthMulitiplier == 0f)
                                         {
                                             growthMulitiplier = 1f;
@@ -141,7 +141,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
                         // remove the crop update holder, it'll be re-added anyway for the enxt update
                         CropUpdateHolder.Remove(time);
-                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Now tracking:" + CropTracker.Count + " crops");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Now tracking:" + CropTracker.Count + " crops");
                     }
 
                     SaveCropTracker();
@@ -161,7 +161,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
         public static void trackCrop(Pipliz.Vector3Int location, GrowableType classInstance, bool save = false)
         {
             long nextUpdate = (long)(Pipliz.Time.MillisecondsSinceStart + classInstance.maxGrowth * Pipliz.Random.NextFloat(classInstance.growthMultiplierMin, classInstance.growthMultiplierMax) * 60000);
-            string cropLocString = Managers.WorldManager.positionToString(location);
+            string cropLocString = ColonyAPI.Managers.WorldManager.XYZPositionToString(location);
 
             CropTracker.Add(cropLocString, location);
             
@@ -194,7 +194,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
         public static void untrackCrop(Pipliz.Vector3Int location, GrowableType classInstance, bool save = false)
         {
             // check if it's being tracked, if so remove it
-            string cropLocString = Managers.WorldManager.positionToString(location);
+            string cropLocString = ColonyAPI.Managers.WorldManager.XYZPositionToString(location);
 
             if (CropTracker.ContainsKey(cropLocString))
             {
@@ -309,7 +309,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
             }
             catch (Exception exception2)
             {
-                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Exception in saving all UpdatableBlocks:" + exception2.Message);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Exception in saving all UpdatableBlocks:" + exception2.Message);
             }
         }
 
@@ -355,25 +355,25 @@ namespace ColonyPlusPlusCore.Classes.Managers
                             }
                             catch (Exception exception)
                             {
-                                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Exception loading a wheat block;" + exception.Message);
+                                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Exception loading a wheat block;" + exception.Message);
                             }
                         }
 
-                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Loaded Crop Saves");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loaded Crop Saves");
                         SaveCropTracker();
                     } else
                     {
-                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Loading Crop Saves Returned 0 results");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loading Crop Saves Returned 0 results");
                     }
                 } else
                 {
-                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Found no crop saves (read error?)");
+                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Found no crop saves (read error?)");
                 }
 
             }
             catch (Exception exception2)
             {
-                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Exception in saving all UpdatableBlocks:" + exception2.Message);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Exception in saving all UpdatableBlocks:" + exception2.Message);
             }
 
             cropsLoaded = true;

@@ -3,7 +3,7 @@ using Permissions;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
-    public class Ban : BaseChatCommand
+    public class Ban : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Ban() : base("/ban", true)
         {
@@ -30,7 +30,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         }
     }
 
-    public class Unban : BaseChatCommand
+    public class Unban : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Unban() : base("/unban", true)
         {

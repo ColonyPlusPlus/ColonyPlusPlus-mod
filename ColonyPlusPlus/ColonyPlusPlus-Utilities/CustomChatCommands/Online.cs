@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
-    public class Online : BaseChatCommand
+    public class Online : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Online() : base("/online", false)
         {

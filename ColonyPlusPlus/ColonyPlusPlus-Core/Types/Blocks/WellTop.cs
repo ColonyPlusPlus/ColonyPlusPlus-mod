@@ -16,8 +16,8 @@ namespace ColonyPlusPlusCore.Types.Blocks
 
             this.AllowCreative = true;
 
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("welltop", 1, 1.0f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("welltop", 1, 1.0f)
             };
 
             this.OnRemove = onRemoveNode;

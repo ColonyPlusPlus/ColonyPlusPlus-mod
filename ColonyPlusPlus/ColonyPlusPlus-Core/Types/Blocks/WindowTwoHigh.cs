@@ -1,4 +1,4 @@
-﻿using ColonyPlusPlus.Classes.Managers;
+﻿using ColonyPlusPlusCore.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,14 +27,14 @@ namespace ColonyPlusPlusCore.Types.Blocks
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("planks", 4)
+                    ColonyAPI.Managers.RecipeManager.Item("planks", 4)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("windowtwohigh", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("windowtwohigh", 1)
                 },
-                0.0f, false, true);
+                false, true);
         }
     }
 

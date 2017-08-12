@@ -1,6 +1,6 @@
 ﻿namespace ColonyPlusPlusUtilities.Data
 {
-    class TradeData
+    public class TradeData
     {
 
         public ushort giveId { get; private set; }

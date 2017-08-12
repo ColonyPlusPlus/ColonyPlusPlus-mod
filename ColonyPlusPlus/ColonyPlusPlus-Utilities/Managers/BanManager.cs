@@ -77,26 +77,26 @@ namespace ColonyPlusPlusUtilities.Managers
                             }
                             catch (Exception exception)
                             {
-                                Utilities.WriteLog("Exception loading ban list;" + exception.Message);
+                                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", "Exception loading ban list;" + exception.Message);
                             }
                         }
 
-                        Utilities.WriteLog("Loaded Ban List");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", "Loaded Ban List");
                     }
                     else
                     {
-                        Utilities.WriteLog("Loading Ban list Returned 0 results");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", "Loading Ban list Returned 0 results");
                     }
                 }
                 else
                 {
-                    Utilities.WriteLog("Found no ban list (read error?)");
+                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", "Found no ban list (read error?)");
                 }
 
             }
             catch (Exception exception2)
             {
-                Utilities.WriteLog("Exception in loading all bans:" + exception2.Message);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", "Exception in loading all bans:" + exception2.Message);
             }
 
            
@@ -122,7 +122,7 @@ namespace ColonyPlusPlusUtilities.Managers
             }
             catch (Exception exception2)
             {
-                Utilities.WriteLog("Exception in saving bans:" + exception2.Message);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", "Exception in saving bans:" + exception2.Message);
             }
         }
 

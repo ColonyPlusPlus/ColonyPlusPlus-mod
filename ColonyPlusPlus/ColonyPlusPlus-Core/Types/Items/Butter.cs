@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.Classes.Managers;
+using ColonyPlusPlusCore.Managers;
 
 namespace ColonyPlusPlusCore.Types.Items
 {
@@ -17,14 +17,13 @@ namespace ColonyPlusPlusCore.Types.Items
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("milk", 2)
+                    ColonyAPI.Managers.RecipeManager.Item("milk", 2)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("butter", 1)
-                },
-                0.0f, true);
+                    ColonyAPI.Managers.RecipeManager.Item("butter", 1)
+                }, true);
         }
     }
 }

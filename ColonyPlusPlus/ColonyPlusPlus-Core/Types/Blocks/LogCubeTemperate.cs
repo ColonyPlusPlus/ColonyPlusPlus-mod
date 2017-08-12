@@ -1,4 +1,4 @@
-﻿using ColonyPlusPlus.Classes.Managers;
+﻿using ColonyPlusPlusCore.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,8 @@ namespace ColonyPlusPlusCore.Types.Blocks
         public LogCubeTemperate() : base(true)
         {
             this.TypeName = "logcubetemperate";
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("logcubetemperate",   1,  1.0f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("logcubetemperate",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "logcube";
@@ -28,23 +28,22 @@ namespace ColonyPlusPlusCore.Types.Blocks
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logtemperate", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("logtemperate", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("logcubetemperate", 1)
-                },
-                0.0f, false, true);
+                    ColonyAPI.Managers.RecipeManager.Item("logcubetemperate", 1)
+                }, false, true);
 
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logcubetemperaterotated", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("logcubetemperaterotated", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("logcubetemperate", 1)
-                },
-                0.0f);
+                    ColonyAPI.Managers.RecipeManager.Item("logcubetemperate", 1)
+                }
+                );
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ColonyPlusPlusUtilities.Data
 {
-    class PlayerData
+    public class PlayerData
     {
         public NetworkID PID { get; private set; }
         public string chunkID;

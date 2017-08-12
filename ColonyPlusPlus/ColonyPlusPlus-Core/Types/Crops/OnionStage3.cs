@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.Classes.Managers;
+using ColonyPlusPlusCore.Managers;
 
 namespace ColonyPlusPlusCore.Types.Crops
 {
@@ -10,11 +10,11 @@ namespace ColonyPlusPlusCore.Types.Crops
     {
         public OnionStage3(string name) : base(name, true)
         {
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("onionstage1",   1,  1.0f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("onionstage1",   2,  0.4f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("onionstage1",   2,  0.4f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("onionstage1",   2,  0.4f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("onionstage1",   1,  1.0f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("onionstage1",   2,  0.4f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("onionstage1",   2,  0.4f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("onionstage1",   2,  0.4f)
             };
 
             this.OnRemove = onRemoveNode;

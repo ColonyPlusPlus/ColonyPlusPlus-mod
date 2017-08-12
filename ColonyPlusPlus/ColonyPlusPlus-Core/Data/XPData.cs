@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlusCore.Classes.Data
+namespace ColonyPlusPlusCore.Data
 {
     public class XPData
     {
@@ -40,7 +40,7 @@ namespace ColonyPlusPlusCore.Classes.Data
                     NPCData n = Managers.NPCManager.getNPCData(npcID, owner);
                     // the NPC has levelled up!
                     XPLevels[jobtype] += 1;
-                    Helpers.Chat.sendSilent(owner, String.Format("{0} [{1}] has gained a level in {2} (Level: {3}, {4}% efficiency boost)", n.name, npcID, jobtype, XPLevels[jobtype], Math.Round((1 - getCraftingMultiplier(jobtype)) * 100,0)), Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(owner, String.Format("{0} [{1}] has gained a level in {2} (Level: {3}, {4}% efficiency boost)", n.name, npcID, jobtype, XPLevels[jobtype], Math.Round((1 - getCraftingMultiplier(jobtype)) * 100,0)), ColonyAPI.Helpers.Chat.ChatColour.orange);
                 }
             }
             else
@@ -148,7 +148,7 @@ namespace ColonyPlusPlusCore.Classes.Data
 
                     if (silent == false)
                     {
-                        Utilities.WriteLog("Updated NPC level in " + job + " to level " + getLevel(job));
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Updated NPC level in " + job + " to level " + getLevel(job));
                     }
                 }
 

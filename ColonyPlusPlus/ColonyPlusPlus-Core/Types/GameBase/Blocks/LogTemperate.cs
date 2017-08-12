@@ -10,8 +10,8 @@ namespace ColonyPlusPlusCore.Types.GameBase.Blocks
         public LogTemperate() : base()
         {
             this.TypeName = "logtemperate";
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("logtemperate",   1,  1.0f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("logtemperate",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "log";

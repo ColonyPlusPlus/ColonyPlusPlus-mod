@@ -3,7 +3,7 @@
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
-    public class Clear : BaseChatCommand
+    public class Clear : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Clear() : base("/clear", false)
         {

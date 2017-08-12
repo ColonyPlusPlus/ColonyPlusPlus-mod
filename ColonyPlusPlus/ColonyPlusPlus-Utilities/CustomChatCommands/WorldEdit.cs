@@ -1,7 +1,7 @@
 ﻿namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
-    public class WorldEdit : BaseChatCommand
+    public class WorldEdit : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public WorldEdit() : base("/worldedit")
         {

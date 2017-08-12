@@ -5,7 +5,7 @@ using ColonyPlusPlusUtilities;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
-    public class Chunk : BaseChatCommand
+    public class Chunk : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Chunk() : base("/chunk", false, true)
         {
@@ -18,7 +18,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         }
     }
 
-    public class ChunkClaim : BaseChatCommand
+    public class ChunkClaim : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public ChunkClaim() : base("/chunk claim")
         {
@@ -27,9 +27,9 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "chunks.enabled"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "chunks.enabled"))
             {
-                int maxClaims = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlusUtilities", "chunks.maxclaims");
+                int maxClaims = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlus-Utilities", "chunks.maxclaims");
 
                 if( Managers.WorldManager.getOwnedChunkCount(ply.ID) < maxClaims) {
                     // get the current chunk
@@ -59,12 +59,12 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             } else {
                 ColonyAPI.Helpers.Chat.sendSilent(ply, "You cannot claim chunks", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
             }
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", ply.Name + " attempted to use /chunk claim!");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", ply.Name + " attempted to use /chunk claim!");
             return true;
         }
     }
 
-    public class ChunkUnClaim : BaseChatCommand
+    public class ChunkUnClaim : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public ChunkUnClaim() : base("/chunk unclaim")
         {
@@ -96,12 +96,12 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                     ColonyAPI.Helpers.Chat.sendSilent(ply, "Unable to unclaim chunk", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 }
             }
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", ply.Name + " attempted to use /chunk unclaim!");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", ply.Name + " attempted to use /chunk unclaim!");
             return true;
         }
     }
 
-    public class ChunkDelete : BaseChatCommand
+    public class ChunkDelete : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public ChunkDelete() : base("/chunk delete")
         {
@@ -132,12 +132,12 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                 }
 
             }
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", ply.Name + " attempted to use /chunk delete!");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", ply.Name + " attempted to use /chunk delete!");
             return true;
         }
     }
 
-    public class ChunkList : BaseChatCommand
+    public class ChunkList : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public ChunkList() : base("/chunk list")
         {
@@ -146,7 +146,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.list") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "chunks.enabled"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.list") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "chunks.enabled"))
             {
 
                 if (Managers.WorldManager.getOwnedChunkCount(ply.ID) > 0)
@@ -157,7 +157,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                     {
                         if (c.getOwner() == ply.ID)
                         {
-                            ownedChunks += "[" + Managers.WorldManager.positionToString(c.location.ToChunk()) + "], ";
+                            ownedChunks += "[" + ColonyAPI.Managers.WorldManager.XZPositionToString(c.location.ToChunk()) + "], ";
                         }
                     }
 
@@ -179,7 +179,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         }
     }
 
-    public class ChunkInfo : BaseChatCommand
+    public class ChunkInfo : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public ChunkInfo() : base("/chunk info")
         {
@@ -188,10 +188,10 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.info") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "chunks.enabled"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.info") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "chunks.enabled"))
             {
-                Vector3Int pos = Managers.WorldManager.positionToVector3Int(ply.Position).ToChunk();
-                string chunkName = Managers.WorldManager.positionToString(pos);
+                Vector3Int pos = ColonyAPI.Managers.WorldManager.positionToVector3Int(ply.Position).ToChunk();
+                string chunkName = ColonyAPI.Managers.WorldManager.XZPositionToString(pos);
                 if (Managers.WorldManager.ChunkDataList.ContainsKey(chunkName))
                 {
                     Data.ChunkData c = Managers.WorldManager.ChunkDataList[chunkName];

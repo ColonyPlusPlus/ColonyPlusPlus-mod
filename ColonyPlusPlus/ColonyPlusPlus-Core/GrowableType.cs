@@ -1,6 +1,6 @@
 ﻿using Pipliz;
 
-namespace ColonyPlusPlusCore.Classes
+namespace ColonyPlusPlusCore
 {
     public class GrowableType : ColonyAPI.Classes.Type
     {

@@ -3,7 +3,7 @@
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
-    public class Debug : BaseChatCommand
+    public class Debug : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Debug() : base("/cppdebug", false, true)
         {
@@ -20,7 +20,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
     }
 
-    public class DebugTypes: BaseChatCommand
+    public class DebugTypes: ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public DebugTypes() : base("/cppdebug json") {
             
@@ -28,7 +28,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
 		override protected bool RunCommand(Players.Player player, string[] args, NetworkID target)
 		{
-			if (PermissionsManager.CheckAndWarnPermission(player, "debug") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "debug.enabled"))
+			if (PermissionsManager.CheckAndWarnPermission(player, "debug") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "debug.enabled"))
 			{
 				Helpers.Debug.outputTypes();
                 Helpers.Debug.outputRecipes();

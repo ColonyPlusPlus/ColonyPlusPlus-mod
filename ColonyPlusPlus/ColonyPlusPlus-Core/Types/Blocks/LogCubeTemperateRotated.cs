@@ -1,4 +1,4 @@
-﻿using ColonyPlusPlus.Classes.Managers;
+﻿using ColonyPlusPlusCore.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +11,8 @@ namespace ColonyPlusPlusCore.Types.Blocks
         public LogCubeTemperateRotated() : base(true)
         {
             this.TypeName = "logcubetemperaterotated";
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("logcubetemperaterotated",   1,  1.0f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("logcubetemperaterotated",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
             this.ParentType = "logcuberotated";
@@ -29,23 +29,22 @@ namespace ColonyPlusPlusCore.Types.Blocks
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logtemperate", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("logtemperate", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("logcubetemperaterotated", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("logcubetemperaterotated", 1)
                 },
-                0.0f, false, true);
+                false, true);
 
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("logcubetemperate", 1)
+                    ColonyAPI.Managers.RecipeManager.Item("logcubetemperate", 1)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("logcubetemperaterotated", 1)
-                },
-                0.0f);
+                    ColonyAPI.Managers.RecipeManager.Item("logcubetemperaterotated", 1)
+                });
         }
     }
 }

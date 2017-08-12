@@ -18,23 +18,23 @@ namespace ColonyPlusPlusUtilities.Managers
 
         public static void initialise()
         {
-            string rotatorColorConf = ConfigManager.getConfigString("rotatingmessages.color");
+            string rotatorColorConf = ConfigManager.getConfigString("ColonyPlusPlus-Utilities", "rotatingmessages.color");
             if (Enum.IsDefined(typeof(Chat.ChatColour), rotatorColorConf))
             {
                 rotatorColor = (Chat.ChatColour)Enum.Parse(typeof(Chat.ChatColour), rotatorColorConf);
             }
 
-            string rotatorStyleConf = ConfigManager.getConfigString("rotatingmessages.style");
+            string rotatorStyleConf = ConfigManager.getConfigString("ColonyPlusPlus-Utilities", "rotatingmessages.style");
             if (Enum.IsDefined(typeof(Chat.ChatStyle), rotatorStyleConf))
             {
                 rotatorStyle = (Chat.ChatStyle)Enum.Parse(typeof(Chat.ChatStyle), rotatorStyleConf);
             }
 
-            rotatorEnabled = ConfigManager.getConfigBoolean("rotatingmessages.enabled");
+            rotatorEnabled = ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "rotatingmessages.enabled");
 
-            rotatorSecondsBetween = ConfigManager.getConfigInt("rotatingmessages.interval");
+            rotatorSecondsBetween = ConfigManager.getConfigInt("ColonyPlusPlus-Utilities", "rotatingmessages.interval");
 
-            JSONNode rotatorMessagesConf = ConfigManager.getConfigNode("rotatingmessages.list");
+            JSONNode rotatorMessagesConf = ConfigManager.getConfigNode("ColonyPlusPlus-Utilities", "rotatingmessages.list");
 
             foreach (JSONNode message in rotatorMessagesConf.LoopArray())
             {
@@ -43,7 +43,7 @@ namespace ColonyPlusPlusUtilities.Managers
 
             nextUpdateTime = nextUpdate();
 
-            Utilities.WriteLog("ColonyPlusPlusUtilities", String.Format("Rotator is enabled ({0}) with {1} messages playing every {2} seconds. Next update: {3}", rotatorEnabled.ToString(), rotatorMessages.Count, rotatorSecondsBetween, nextUpdateTime));
+            Utilities.WriteLog("ColonyPlusPlus-Utilities", String.Format("Rotator is enabled ({0}) with {1} messages playing every {2} seconds. Next update: {3}", rotatorEnabled.ToString(), rotatorMessages.Count, rotatorSecondsBetween, nextUpdateTime));
         }
 
         public static long nextUpdate()

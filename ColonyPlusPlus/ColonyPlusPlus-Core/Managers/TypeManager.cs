@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using ColonyPlusPlus.Classes;
 
-namespace ColonyPlusPlusCore.Classes.Managers
+namespace ColonyPlusPlusCore.Managers
 {
     public static class TypeManager
     {
@@ -29,7 +28,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
                 ItemTypesServer.RegisterOnChange(gt.TypeName, gt.OnChangeAction);
             }
 
-            Utilities.WriteLog("Registered Crop Actions");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Registered Crop Actions");
         }
 
         public static void registerActionableTypes()

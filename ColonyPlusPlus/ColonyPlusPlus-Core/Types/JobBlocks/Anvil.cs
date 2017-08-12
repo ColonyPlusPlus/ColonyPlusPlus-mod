@@ -1,4 +1,4 @@
-﻿using ColonyPlusPlus.Classes.Managers;
+﻿using ColonyPlusPlusCore.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,14 +24,13 @@ namespace ColonyPlusPlusCore.Types.JobBlocks
 
         public override void AddRecipes()
         {
-            RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
                 new List<InventoryItem> {
-                    RecipeManager.Item("ironingot", 8)
+                    ColonyAPI.Managers.RecipeManager.Item("ironingot", 8)
                 },
                 new List<InventoryItem> {
-                    RecipeManager.Item("anvil", 1)
-                },
-                0.0f,true, true);
+                    ColonyAPI.Managers.RecipeManager.Item("anvil", 1)
+                }, true, true);
         }
     }
 }

@@ -3,7 +3,7 @@
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
-    public class Creative : BaseChatCommand
+    public class Creative : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Creative() : base("/creative", false)
         {
@@ -25,7 +25,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
                 ColonyAPI.Helpers.Chat.sendSilent(ply, "Enabled Creative Mode", ColonyAPI.Helpers.Chat.ChatColour.lime);
             }
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", ply.Name + " attempted to use /creative");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", ply.Name + " attempted to use /creative");
             
             return true;
         }

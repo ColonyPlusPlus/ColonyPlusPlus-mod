@@ -1,7 +1,7 @@
 {
 	"assemblies" : [
 		{
-			"path" : "ColonyAPI.dll",
+			"path" : "ColonyPlusPlus-Decorative.dll",
 			"enabled" : true
 		}
 	]

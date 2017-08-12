@@ -7,20 +7,20 @@ namespace ColonyPlusPlusUtilities.Managers
     public static class PlayerManager
     {
         private static Dictionary<NetworkID, Data.PlayerData> playerDataDict = new Dictionary<NetworkID, Data.PlayerData>();
-        
+
         public static void notifyNewChunkEntrances()
         {
             // get the number of connected players
             int playerCount = Players.CountConnected;
-            
-            if(playerCount > 0)
+
+            if (playerCount > 0)
             {
                 for (int i = 0; i < playerCount; i++)
                 {
                     notifyNewChunkEntrancesIterator(Players.GetConnectedByIndex(i));
                 }
             }
-           
+
 
         }
 
@@ -30,38 +30,40 @@ namespace ColonyPlusPlusUtilities.Managers
         /// <param name="player">player</param>
         private static void notifyNewChunkEntrancesIterator(Players.Player player)
         {
-            
+
             // get the current chunkID
-            string cid = Managers.WorldManager.positionToString(Managers.WorldManager.positionToVector3Int(player.Position).ToChunk());
+            string cid = ColonyAPI.Managers.WorldManager.XZPositionToString(ColonyAPI.Managers.WorldManager.positionToVector3Int(player.Position).ToChunk());
 
             Data.PlayerData pd = getPlayerData(player, cid);
 
-            if(pd.chunkID == cid)
+            if (pd.chunkID == cid)
             {
                 // they haven't changed chunks yet
 
-            } else
+            }
+            else
             {
                 // they have!
-                if(WorldManager.ChunkDataList.ContainsKey(cid))
+                if (WorldManager.ChunkDataList.ContainsKey(cid))
                 {
-                    if(WorldManager.ChunkDataList[cid].hasOwner())
+                    if (WorldManager.ChunkDataList[cid].hasOwner())
                     {
-                        if(WorldManager.ChunkDataList[cid].getOwner() != player.ID)
+                        if (WorldManager.ChunkDataList[cid].getOwner() != player.ID)
                         {
                             // we are in a foreign owned chunk!
                             Chat.send(player, String.Format("You now in chunk owned by: {0}", Players.GetPlayer(WorldManager.ChunkDataList[cid].getOwner()).Name));
-                        } else
+                        }
+                        else
                         {
                             //Chat.Send(player, "You own this chunk", ChatSenderType.Server);
                         }
                     }
                 }
 
-                    
+
                 //update the reference to the chunk they are in
                 pd.chunkID = cid;
-                    
+
             }
         }
 
@@ -72,7 +74,7 @@ namespace ColonyPlusPlusUtilities.Managers
         /// <param name="player">The player to get the storage of.</param>
         /// <param name="cid">Optional. The chunk to start the player in. Default is ""</param>
         /// <returns>The PlayerData of player.</returns>
-        private static Data.PlayerData getPlayerData(Players.Player player, string cid="")
+        private static Data.PlayerData getPlayerData(Players.Player player, string cid = "")
         {
             if (playerDataDict.ContainsKey(player.ID))
             {
@@ -83,7 +85,7 @@ namespace ColonyPlusPlusUtilities.Managers
 
             playerDataDict.Add(player.ID, pd);
 
-            Utilities.WriteLog("ColonyPlusPlusUtilities", "Player added:" + player.ID.steamID);
+            Utilities.WriteLog("ColonyPlusPlus-Utilities", "Player added:" + player.ID.steamID);
 
             return pd;
         }
@@ -324,7 +326,7 @@ namespace ColonyPlusPlusUtilities.Managers
 
         public static bool getTradeEnabled()
         {
-            return ColonyAPI.Managers.ConfigManager.getConfigBoolean("trade.enabled");
+            return ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "trade.enabled");
         }
     }
 }

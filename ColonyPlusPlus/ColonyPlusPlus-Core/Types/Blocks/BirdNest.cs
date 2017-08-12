@@ -10,9 +10,9 @@ namespace ColonyPlusPlusCore.Types.Blocks
         public BirdNest() : base(true)
         {
             this.TypeName = "birdnest";
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("feather", 3, 0.5f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("egg", 3, 0.5f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("feather", 3, 0.5f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("egg", 3, 0.5f)
             };
             this.AllowCreative = true;
             

@@ -16,9 +16,9 @@ namespace ColonyPlusPlusUtilities.Managers
 
         public bool TryDoCommand(Players.Player player, string chat)
         {
-            if(ConfigManager.getConfigBoolean("chat.enabled"))
+            if(ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "chat.enabled"))
             {
-                JSONNode chatColors = ConfigManager.getConfigNode("chat.colors");
+                JSONNode chatColors = ConfigManager.getConfigNode("ColonyPlusPlus-Utilities", "chat.colors");
                 string chatColor = "white";
                 string chatStyle = "normal";
                 string playerPerm = "";

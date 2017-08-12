@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
-    public class Locate : BaseChatCommand
+    public class Locate : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Locate() : base("/locate", true)
         {
@@ -26,7 +26,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         }
     }
 
-    public class LocateBanner : BaseChatCommand
+    public class LocateBanner : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public LocateBanner() : base("/locate banner", true)
         {

@@ -2,7 +2,7 @@
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
-    public class Kick : BaseChatCommand
+    public class Kick : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Kick() : base("/kick", true)
         {

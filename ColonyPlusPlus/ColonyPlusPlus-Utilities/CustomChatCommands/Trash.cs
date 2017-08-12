@@ -3,7 +3,7 @@
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
-    public class Trash : BaseChatCommand
+    public class Trash : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public Trash() : base("/trash")
         {
@@ -33,7 +33,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                 
             } else
             {
-                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", args[1]);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", args[1]);
                 successful2 = Int32.TryParse(args[1], out giveamt);
             }
 

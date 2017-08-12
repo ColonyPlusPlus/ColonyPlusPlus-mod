@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Latest\ColonyPlusPlus-Core\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -69,10 +69,11 @@
     <Compile Include="Classes\BlockJobs\Defense\BaseQuiver.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\Blacksmith.cs" />
     <Compile Include="Classes\BlockJobs\FueledCraftingJob\PotteryJob.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="CustomChatCommands\NPC.cs" />
     <Compile Include="Classes\NewBaseRecipes.cs" />
     <Compile Include="ColonyPlusPlus.cs" />
     <Compile Include="Data\NPCData.cs" />
+    <Compile Include="Data\PlayerData.cs" />
     <Compile Include="Data\XPData.cs" />
     <Compile Include="GrowableType.cs" />
     <Compile Include="Managers\CropManager.cs" />

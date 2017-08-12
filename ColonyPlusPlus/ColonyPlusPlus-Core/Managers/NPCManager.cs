@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlusCore.Classes.Managers
+namespace ColonyPlusPlusCore.Managers
 {
     public static class NPCManager
     {
@@ -22,25 +22,25 @@ namespace ColonyPlusPlusCore.Classes.Managers
         public static void initialise()
         {
             loadNPCData();
-            baseXP = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlusCore", "jobs.baseXP");
-            maxLevel = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlusCore", "jobs.maxLevel");
-            XPMultiplier = ColonyAPI.Managers.ConfigManager.getConfigFloat("ColonyPlusPlusCore", "jobs.xpMultiplier");
-            EfficiencyPerLevel = ColonyAPI.Managers.ConfigManager.getConfigFloat("ColonyPlusPlusCore", "jobs.efficiencyPerLevel");
+            baseXP = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlus-Core", "jobs.baseXP");
+            maxLevel = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlus-Core", "jobs.maxLevel");
+            XPMultiplier = ColonyAPI.Managers.ConfigManager.getConfigFloat("ColonyPlusPlus-Core", "jobs.xpMultiplier");
+            EfficiencyPerLevel = ColonyAPI.Managers.ConfigManager.getConfigFloat("ColonyPlusPlus-Core", "jobs.efficiencyPerLevel");
 
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", String.Format("NPC Config: baseXP: {0}, maxLevel: {1}, xpMultiplier: {2}, efficiencyPerLevel: {3}",baseXP, maxLevel, XPMultiplier, EfficiencyPerLevel));
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", String.Format("NPC Config: baseXP: {0}, maxLevel: {1}, xpMultiplier: {2}, efficiencyPerLevel: {3}",baseXP, maxLevel, XPMultiplier, EfficiencyPerLevel));
 
             JSONNode array;
             if (Pipliz.JSON.JSON.Deserialize("gamedata/mods/colonyplusplus/npcnames.json", out array, false))
             {
                 NPCNameList = array;
-                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Loaded NPC Names List");
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loaded NPC Names List");
             } else
             {
                 JSONNode j = new JSONNode(NodeType.Array);
                 j.SetAs<string>("Dave");
                 NPCNameList.AddToArray(j);
 
-                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Failed to load NPC Names List - assumed Dave");
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Failed to load NPC Names List - assumed Dave");
             }
         }
 
@@ -160,7 +160,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
             }
             catch (Exception exception2)
             {
-                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Exception in saving all NPC Data:" + exception2.Message);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Exception in saving all NPC Data:" + exception2.Message);
             }
         }
 
@@ -183,7 +183,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
                                
                                 int npcID = node["id"].GetAs<int>();
 
-                                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Loading NPC:" + npcID);
+                                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loading NPC:" + npcID);
                                 ulong ownerU = node["owner"].GetAs<ulong>();
                                 Players.Player owner;
 
@@ -203,7 +203,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
                                     // doesn't exist, add it!
                                     Data.NPCData npcData = new Data.NPCData(owner);
 
-                                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", String.Format("ID: {0}, ownerU: {1}, ", npcID, ownerU));
+                                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", String.Format("ID: {0}, ownerU: {1}, ", npcID, ownerU));
                                     JSONNode xpdata = node["xpdata"].GetAs<JSONNode>();
 
                                     if (xpdata.ChildCount > 0)
@@ -228,26 +228,26 @@ namespace ColonyPlusPlusCore.Classes.Managers
                             }
                             catch (Exception exception)
                             {
-                                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Exception loading NPC data;" + exception.Message);
+                                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Exception loading NPC data;" + exception.Message);
                             }
                         }
 
-                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Loaded NPCData");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loaded NPCData");
                     }
                     else
                     {
-                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Loading NPC data returned 0 results");
+                        ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loading NPC data returned 0 results");
                     }
                 }
                 else
                 {
-                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Found no NPC Data (read error?)");
+                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Found no NPC Data (read error?)");
                 }
 
             }
             catch (Exception exception2)
             {
-                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Exception in loading NPC data:" + exception2.Message);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Exception in loading NPC data:" + exception2.Message);
             }
         }
 

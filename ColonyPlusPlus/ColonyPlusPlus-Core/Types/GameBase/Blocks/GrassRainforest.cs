@@ -13,10 +13,10 @@ namespace ColonyPlusPlusCore.Types.GameBase.Blocks
             this.ParentType = "grass";
             this.IsPlaceable = true;
 
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("grassrainforest",   1,  1.0f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("wheatstage1",   1,  0.1f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("sappling",   1,  0.03f),
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("grassrainforest",   1,  1.0f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("wheatstage1",   1,  0.1f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("sappling",   1,  0.03f),
             };
             this.OnRemove = onRemoveNode;
 

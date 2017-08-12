@@ -18,63 +18,64 @@ namespace ColonyPlusPlusUtilities
         public static Version modVersion = new Version(0, 2, 0);
 
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplus.AfterStartup")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusutilities.AfterStartup")]
         [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
         public static void AfterStartup()
         {
             ColonyAPI.Managers.ConfigManager.registerConfig("ColonyPlusPlus-Utilities");
-            Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
-            ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlusUtilities", modVersion);
+
+
+            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Utilities", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion.md");
+            ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlus-Utilities", modVersion);
+
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", "Loaded ColonyPlusPlus Utilities v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);
 
             // Initialise configuration
             Managers.RotatingMessageManager.initialise();
             Managers.BanManager.initialise();
             
 
-            ColonyLimitEnabled = ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "colony.enabled");
+            ColonyLimitEnabled = ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "colony.enabled");
             if(ColonyLimitEnabled)
             {
-                ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlusUtilities", "colony.limit");
+                ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlus-Utilities", "colony.limit");
             }
 
-            // Initialize chat commands
-            Managers.ChatCommandManager.Initialize();
+            
 
            
             
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate, "colonyplusplus.OnPlayerConnectedLate")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate, "colonyplusplusutilities.OnPlayerConnectedLate")]
         public static void OnPlayerConnectedLate(Player p)
         {
             if (p.ID.steamID.m_SteamID == 0)
             {
-                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.VersionManager.SinglePlayerrunVersionCheck("ColonyPlusPlusUtilities", modVersion), ColonyAPI.Helpers.Chat.ChatColour.red);
+                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.VersionManager.SinglePlayerrunVersionCheck("ColonyPlusPlus-Utilities", modVersion), ColonyAPI.Helpers.Chat.ChatColour.red);
             }
             else
             {
-                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.ConfigManager.getConfigString("ColonyPlusPlusUtilities", "motd.message"));
+                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.ConfigManager.getConfigString("ColonyPlusPlus-Utilities", "motd.message"));
                 ColonyAPI.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus-Utilities v" + modVersion.ToString());
             }
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplus.AfterAddingBaseTypes")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusutilities.AfterAddingBaseTypes")]
         public static void AfterAddingBaseTypes()
         {
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplus.AfterItemTypesServer" )]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplusutilities.AfterItemTypesServer")]
         public static void AfterItemTypesServer()
         {
 
             // Register our chat parser
             ChatCommands.CommandManager.RegisterCommand(new Managers.ChatManager());
 
-            // Register Master Command
-            ChatCommands.CommandManager.RegisterCommand(new Managers.MasterChatCommandManager());
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplus.AfterWorldLoad")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplusutilities.AfterWorldLoad")]
         public static void AfterWorldLoad()
         {
             Managers.WorldManager.LoadJSON();
@@ -84,7 +85,7 @@ namespace ColonyPlusPlusUtilities
         }
 
         // things to do every tick (or itnerval)
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate, "colonyplusplus.OnUpdate")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnUpdate, "colonyplusplusutilities.OnUpdate")]
         public static void OnUpdate()
         {
             if(Pipliz.Time.MillisecondsSinceStart > nextMillisecondUpdate)
@@ -105,40 +106,40 @@ namespace ColonyPlusPlusUtilities
                         plyID++;
                     }
                 }
-                
-                // Do player update stuff
-                Managers.PlayerManager.notifyNewChunkEntrances();
 
                 // set the next update time!
                 nextMillisecondUpdate = Pipliz.Time.MillisecondsSinceStart + millisecondDelta;
             }
+
+            // Do player update stuff
+            Managers.PlayerManager.notifyNewChunkEntrances();
 
             // run the rotator
             Managers.RotatingMessageManager.doRun();
 
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly, "colonyplusplus.OnQuitEarly")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuitEarly, "colonyplusplusutilities.OnQuitEarly")]
         public static void OnQuitEarly()
         {
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonyplusplus.OnQuit")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnQuit, "colonyplusplusutilities.OnQuit")]
         public static void OnQuit()
         {
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplus.AfterDefiningNPCTypes")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterDefiningNPCTypes, "colonyplusplusutilities.AfterDefiningNPCTypes")]
         public static void AfterDefiningNPCTypes()
         {
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplus.AfterItemTypesDefined")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesDefined, "colonyplusplusutilities.AfterItemTypesDefined")]
         public static void AfterItemTypesDefined()
         {
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplus.OnTryChangeBlockUser")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplusutilities.OnTryChangeBlockUser")]
         public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
         {
 

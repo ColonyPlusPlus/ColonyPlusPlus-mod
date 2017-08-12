@@ -11,9 +11,9 @@ namespace ColonyPlusPlusCore.Types.Blocks
         {
 
             this.TypeName = "sugarcane";
-            ColonyAPI.Helpers.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("sugarcaneitem", 3, 0.5f),
-                new ColonyAPI.Helpers.ItemHelper.OnRemove("sugarcaneitem", 2, 0.5f)
+            ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
+                new ColonyAPI.Classes.ItemHelper.OnRemove("sugarcaneitem", 3, 0.5f),
+                new ColonyAPI.Classes.ItemHelper.OnRemove("sugarcaneitem", 2, 0.5f)
             };
 
             this.OnRemove = onRemoveNode;

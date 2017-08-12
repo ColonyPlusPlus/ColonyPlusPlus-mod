@@ -1,10 +1,10 @@
-﻿using ColonyPlusPlus.Classes.Managers;
+﻿using ColonyAPI.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ColonyPlusPlusCore.Classes.Helpers
+namespace ColonyPlusPlusCore.Classes
 {
     class NewBaseRecipes
     {
@@ -19,7 +19,7 @@ namespace ColonyPlusPlusCore.Classes.Helpers
                 new List<InventoryItem> {
                     RecipeManager.Item("arrow", 12)
                 },
-                0.0f, true);
+                true);
 
             RecipeManager.AddRecipe("masonry",
                new List<InventoryItem> {
@@ -28,9 +28,9 @@ namespace ColonyPlusPlusCore.Classes.Helpers
                new List<InventoryItem> {
                     RecipeManager.Item("stonebricks", 1)
                },
-               0.0f,true, true);
+               true, true);
 
-            RecipeManager.AddRecipe("baking",
+            RecipeManager.AddFueledRecipe("baking",
                 new List<InventoryItem> {
                     RecipeManager.Item("flour", 5),
                     RecipeManager.Item("waterbottle", 1)
@@ -51,7 +51,7 @@ namespace ColonyPlusPlusCore.Classes.Helpers
                 new List<InventoryItem> {
                     RecipeManager.Item("grasstaiga", 10)
                 },
-                0.0f, true);
+                true);
         }
     }
 }

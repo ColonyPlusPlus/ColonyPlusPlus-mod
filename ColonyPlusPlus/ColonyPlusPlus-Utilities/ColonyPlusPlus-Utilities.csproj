@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Latest\ColonyPlusPlus-Utilities\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -53,7 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseChatCommand.cs" />
     <Compile Include="ColonyPlusPlusUtilities.cs" />
     <Compile Include="CustomChatCommands\Ban.cs" />
     <Compile Include="CustomChatCommands\Chunk.cs" />
@@ -62,7 +61,6 @@
     <Compile Include="CustomChatCommands\Debug.cs" />
     <Compile Include="CustomChatCommands\Kick.cs" />
     <Compile Include="CustomChatCommands\Locate.cs" />
-    <Compile Include="CustomChatCommands\NPC.cs" />
     <Compile Include="CustomChatCommands\Online.cs" />
     <Compile Include="CustomChatCommands\Trade.cs" />
     <Compile Include="CustomChatCommands\Trash.cs" />
@@ -73,9 +71,7 @@
     <Compile Include="Data\TradeData.cs" />
     <Compile Include="Helpers\Debug.cs" />
     <Compile Include="Managers\BanManager.cs" />
-    <Compile Include="Managers\ChatCommandManager.cs" />
     <Compile Include="Managers\ChatManager.cs" />
-    <Compile Include="Managers\MasterChatCommandManager.cs" />
     <Compile Include="Managers\PlayerManager.cs" />
     <Compile Include="Managers\RotatingMessageManager.cs" />
     <Compile Include="Managers\WorldManager.cs" />

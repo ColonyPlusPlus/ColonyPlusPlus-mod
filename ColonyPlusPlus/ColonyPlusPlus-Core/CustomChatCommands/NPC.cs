@@ -1,10 +1,10 @@
 ﻿using Permissions;
 using System;
 
-namespace ColonyPlusPlusUtilities.CustomChatCommands
+namespace ColonyPlusPlusCore.CustomChatCommands
 {
 
-    public class NPC : BaseChatCommand
+    public class NPC : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public NPC() : base("/npc", false, true)
         {
@@ -21,7 +21,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
     }
 
-    public class NPCInfo : BaseChatCommand
+    public class NPCInfo : ColonyAPI.Classes.BaseChatCommand, ColonyAPI.Interfaces.IAutoChatCommand
     {
         public NPCInfo() : base("/npc info")
         {
@@ -37,7 +37,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                     int npcID = 0;
                     int.TryParse(args[0], out npcID);
 
-                    if(Managers.NPCManager.npcExists(npcID))
+                    if( Managers.NPCManager.npcExists(npcID))
                     {
                         Data.NPCData npcD = Managers.NPCManager.getNPCData(npcID, player);
 
