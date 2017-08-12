@@ -1,0 +1,8 @@
+{
+	"assemblies" : [
+		{
+			"path" : "ColonyPlusPlus-Core.dll",
+			"enabled" : true
+		}
+	]
+}
