@@ -331,19 +331,19 @@ namespace ColonyPlusPlusUtilities.Managers
 
         public static void notifyTeleport(Players.Player from, Players.Player to, bool here)
         {
-            PlayerData fromPD = getPlayerData(from);
-            PlayerData toPD = getPlayerData(to);
+            Data.PlayerData fromPD = getPlayerData(from);
+            Data.PlayerData toPD = getPlayerData(to);
 
             if (fromPD.requestingTP || fromPD.tpRequester != NetworkID.Invalid)
             {
-                Chat.Send(from, "You already have an outstanding tp request.");
+                Chat.sendSilent(from, "You already have an outstanding tp request.");
                 return;
             }
 
             if (toPD.tpRequester != NetworkID.Invalid || toPD.requestingTP)
             {
-                Chat.Send(from, "That player already has a request.");
-                Chat.Send(to, "Someone tried to send you a tp request, but you already have one.");
+                Chat.sendSilent(from, "That player already has a request.");
+                Chat.sendSilent(to, "Someone tried to send you a tp request, but you already have one.");
                 return;
             }
 
@@ -352,10 +352,10 @@ namespace ColonyPlusPlusUtilities.Managers
             fromPD.requestingTP = true;
             toPD.tpHere = here;
 
-            Chat.Send(from, (here?"TPHere":"TP") + " request sent to " + to.Name + ".");
-            Chat.Send(from, "Type '/tpreject' to cancel the request.");
-            Chat.Send(to, (here ? "TPHere" : "TP") + " request from " + from.Name + ".");
-            Chat.Send(to, "Type '/tpaccept' to allow " + from.Name + " to teleport " + (here?"here.":"to you, or type '/tpreject' to disallow."));
+            Chat.sendSilent(from, (here?"TPHere":"TP") + " request sent to " + to.Name + ".");
+            Chat.sendSilent(from, "Type '/tp reject' to cancel the request.");
+            Chat.sendSilent(to, (here ? "TPHere" : "TP") + " request from " + from.Name + ".");
+            Chat.sendSilent(to, "Type '/tp accept' to allow " + from.Name + " to teleport " + (here?"here":"to you" ) + ", or type '/tp reject' to disallow.");
 
             playerDataDict[from.ID] = fromPD;
             playerDataDict[to.ID] = toPD;
@@ -363,23 +363,23 @@ namespace ColonyPlusPlusUtilities.Managers
 
         public static void acceptTeleport(Players.Player ply)
         {
-            PlayerData pd = getPlayerData(ply);
+            Data.PlayerData pd = getPlayerData(ply);
             bool sucessful = Players.TryGetPlayer(pd.tpRequester, out Players.Player partner);
             if (!sucessful)
             {
-                Chat.Send(ply, "TP request invalid, deleting.");
+                Chat.sendSilent(ply, "TP request invalid, deleting.");
             } else
             {
-                PlayerData partnerPD = getPlayerData(partner);
+                Data.PlayerData partnerPD = getPlayerData(partner);
                 if (pd.tpHere)
                 {
-                    Chat.Send(ply, "Teleporting you to " + partner.Name + ".");
-                    Chat.Send(partner, "Teleporting " + ply.Name + " to you.");
+                    Chat.sendSilent(ply, "Teleporting you to " + partner.Name + ".");
+                    Chat.sendSilent(partner, "Teleporting " + ply.Name + " to you.");
                     ChatCommands.Implementations.Teleport.TeleportTo(ply, partner.Position);
                 } else
                 {
-                    Chat.Send(ply, "Teleporting " + partner.Name + " to you.");
-                    Chat.Send(partner, "Teleporting you to " + ply.Name + ".");
+                    Chat.sendSilent(ply, "Teleporting " + partner.Name + " to you.");
+                    Chat.sendSilent(partner, "Teleporting you to " + ply.Name + ".");
                     ChatCommands.Implementations.Teleport.TeleportTo(partner, ply.Position);
                 }
                 partnerPD.tpRequester = NetworkID.Invalid;
@@ -395,17 +395,17 @@ namespace ColonyPlusPlusUtilities.Managers
 
         public static void rejectTeleport(Players.Player ply)
         {
-            PlayerData pd = getPlayerData(ply);
+            Data.PlayerData pd = getPlayerData(ply);
             bool sucessful = Players.TryGetPlayer(pd.tpRequester, out Players.Player partner);
             if (!sucessful )
             {
-                Chat.Send(ply, "TP request invalid, deleting.");
+                Chat.sendSilent(ply, "TP request invalid, deleting.");
             }
             else
             {
-                PlayerData partnerPD = getPlayerData(partner);
-                Chat.Send(ply, "You canceled your TP request to " + partner.Name + ".");
-                Chat.Send(partner, ply.Name + " canceled their TP request.");
+                Data.PlayerData partnerPD = getPlayerData(partner);
+                Chat.sendSilent(ply, "You canceled your TP request to " + partner.Name + ".");
+                Chat.sendSilent(partner, ply.Name + " canceled their TP request.");
                 partnerPD.tpRequester = NetworkID.Invalid;
                 partnerPD.requestingTP = false;
                 partnerPD.tpHere = false;

@@ -1,4 +1,5 @@
 ﻿using System;
+using Pipliz.Chatting;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
@@ -11,7 +12,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (!Managers.ConfigManager.getConfigBoolean("trade.enable"))
+            if (!ColonyAPI.Managers.ConfigManager.getConfigBoolean("trade", "enable"))
             {
                 Chat.Send(ply, "Trade has been disabled on this server.");
                 return false;
@@ -66,7 +67,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             }
             ushort giveid = 0;
             int giveamt = 0;
-            bool sucessful = Utilities.TryParseItemFromArgument(args[1], out giveid);
+            bool sucessful = ItemTypes.IndexLookup.TryGetIndex(args[1], out giveid);
             sucessful = sucessful && Int32.TryParse(args[2], out giveamt);
             if (!sucessful)
             {
@@ -98,9 +99,9 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             int takeamt = 0;
             ushort giveid = 0;
             int giveamt = 0;
-            bool sucessful = Utilities.TryParseItemFromArgument(args[1], out giveid);
+            bool sucessful = ItemTypes.IndexLookup.TryGetIndex(args[1], out giveid);
             sucessful = sucessful && Int32.TryParse(args[2], out takeamt);
-            bool giveSucessful = Utilities.TryParseItemFromArgument(args[3], out giveid);
+            bool giveSucessful = ItemTypes.IndexLookup.TryGetIndex(args[3], out giveid);
             sucessful = sucessful && giveSucessful;
             sucessful = sucessful && Int32.TryParse(args[4], out giveamt);
             if (!sucessful)
