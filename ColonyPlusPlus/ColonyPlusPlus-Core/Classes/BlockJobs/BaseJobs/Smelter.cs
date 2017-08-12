@@ -10,7 +10,7 @@ namespace ColonyPlusPlusCore.Classes.BlockJobs.BaseJobs
     {
         public string jobtype = "smelting";
 
-        public override string NPCTypeKey { get { return "cpp.smelter"; } }
+        public override string NPCTypeKey { get { return "pipliz.smelter"; } }
 
         public override float TimeBetweenJobs
         {

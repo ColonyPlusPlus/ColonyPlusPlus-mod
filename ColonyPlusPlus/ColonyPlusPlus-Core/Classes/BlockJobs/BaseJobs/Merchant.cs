@@ -11,7 +11,7 @@ namespace ColonyPlusPlusCore.Classes.BlockJobs.BaseJobs
     {
         public string jobtype = "trading";
 
-        public override string NPCTypeKey { get { return "cpp.merchant"; } }
+        public override string NPCTypeKey { get { return "pipliz.merchant"; } }
 
         public override float TimeBetweenJobs
         {
