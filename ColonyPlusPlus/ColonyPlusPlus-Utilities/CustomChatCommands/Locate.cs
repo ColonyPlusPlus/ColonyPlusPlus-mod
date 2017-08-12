@@ -1,5 +1,5 @@
 ﻿using Permissions;
-using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
+using Chat = ColonyAPI.Helpers.Chat;
 using System.Linq;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands

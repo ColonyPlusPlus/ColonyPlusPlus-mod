@@ -18,13 +18,13 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                 Stockpile s = Stockpile.GetStockPile(ply);
 
                 // Cycle through each item we manage, check how many we have, then remove that.
-                foreach (string itemname in Managers.TypeManager.AddedTypes)
+                foreach (string itemname in ColonyAPI.Managers.TypeManager.AddedTypes)
                 {
                     ushort i = ItemTypes.IndexLookup.GetIndex(itemname);
                     s.Remove(i, s.AmountContained(i));
                 }
 
-                Helpers.Chat.sendSilent(ply, "Cleared Inventory!", Helpers.Chat.ChatColour.lime);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "Cleared Inventory!", ColonyAPI.Helpers.Chat.ChatColour.lime);
             }
             
             return true;

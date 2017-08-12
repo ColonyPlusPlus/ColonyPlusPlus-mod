@@ -54,7 +54,7 @@ namespace ColonyPlusPlusUtilities
             else
             {
                 ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.ConfigManager.getConfigString("ColonyPlusPlusUtilities", "motd.message"));
-                ColonyAPI.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus v" + modVersion.ToString());
+                ColonyAPI.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus-Utilities v" + modVersion.ToString());
             }
         }
 

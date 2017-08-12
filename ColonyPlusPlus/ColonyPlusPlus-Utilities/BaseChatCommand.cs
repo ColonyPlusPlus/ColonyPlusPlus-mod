@@ -5,7 +5,7 @@ using System.Text;
 using Pipliz.Chatting;
 using ChatCommands;
 
-namespace ColonyPlusPlus.Classes
+namespace ColonyPlusPlusUtilities
 {
     public abstract class BaseChatCommand
     {

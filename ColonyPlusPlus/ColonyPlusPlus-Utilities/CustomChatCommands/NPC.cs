@@ -44,11 +44,11 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                         if(npcD.owner == player || PermissionsManager.HasPermission(player, "npc.admin"))
                         {
                             // is their NPC or is admin
-                            Helpers.Chat.sendSilent(player, "NPC Info for: " + npcD.name + " (ID: " + npcID + ")", Helpers.Chat.ChatColour.cyan);
-                            Helpers.Chat.sendSilent(player, "Levels:", Helpers.Chat.ChatColour.cyan);
+                            ColonyAPI.Helpers.Chat.sendSilent(player, "NPC Info for: " + npcD.name + " (ID: " + npcID + ")", ColonyAPI.Helpers.Chat.ChatColour.cyan);
+                            ColonyAPI.Helpers.Chat.sendSilent(player, "Levels:", ColonyAPI.Helpers.Chat.ChatColour.cyan);
                             foreach (string job in npcD.XPData.XPLevels.Keys)
                             {
-                                Helpers.Chat.sendSilent(player, String.Format("{0}: {1} ({2}/{3} XP)",job, npcD.XPData.XPLevels[job], npcD.XPData.getRawXP(job), npcD.XPData.getXPForNextLevel(npcD.XPData.XPLevels[job])), Helpers.Chat.ChatColour.cyan);
+                                ColonyAPI.Helpers.Chat.sendSilent(player, String.Format("{0}: {1} ({2}/{3} XP)",job, npcD.XPData.XPLevels[job], npcD.XPData.getRawXP(job), npcD.XPData.getXPForNextLevel(npcD.XPData.XPLevels[job])), ColonyAPI.Helpers.Chat.ChatColour.cyan);
                             }
                         }
                         
@@ -56,8 +56,8 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
                 } else
                 {
-                    Helpers.Chat.sendSilent(player, "Invalid arguments. Usage:", Helpers.Chat.ChatColour.orange);
-                    Helpers.Chat.sendSilent(player, "/npc info <id> - get info on an NPC of ID 'id'", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(player, "Invalid arguments. Usage:", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(player, "/npc info <id> - get info on an NPC of ID 'id'", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 }
                 return true;
 
@@ -65,7 +65,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             }
             else
             {
-                Chat.sendSilent(player, "You are unable to use NPC commands", Chat.ChatColour.yellow);
+                ColonyAPI.Helpers.Chat.sendSilent(player, "You are unable to use NPC commands", ColonyAPI.Helpers.Chat.ChatColour.yellow);
                 return false;
             }
 

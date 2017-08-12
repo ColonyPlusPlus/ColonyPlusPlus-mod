@@ -1,6 +1,5 @@
 ﻿using System;
 using Permissions;
-using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
@@ -23,9 +22,9 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                     reason = String.Join(" ", args, 1, args.Length - 1);
                 }
 
-                Classes.Managers.BanManager.addBan(targetPlayer.ID, reason);
+                Managers.BanManager.addBan(targetPlayer.ID, reason);
                 ServerManager.Disconnect(targetPlayer);
-                Chat.send(ply, $"Banned {targetPlayer.Name}", Chat.ChatColour.cyan);
+                ColonyAPI.Helpers.Chat.send(ply, $"Banned {targetPlayer.Name}", ColonyAPI.Helpers.Chat.ChatColour.cyan);
             }
             return true;
         }
@@ -43,9 +42,9 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             {
                 //TODO: Log unbans
                 var targetPlayer = Players.GetPlayer(target);
-                Classes.Managers.BanManager.removeBan(targetPlayer.ID);
+                Managers.BanManager.removeBan(targetPlayer.ID);
                 BlackAndWhitelisting.RemoveBlackList(targetPlayer.ID.steamID.m_SteamID);
-                Chat.send(ply, $"Unbanned {targetPlayer.Name}", Chat.ChatColour.cyan);
+                ColonyAPI.Helpers.Chat.send(ply, $"Unbanned {targetPlayer.Name}", ColonyAPI.Helpers.Chat.ChatColour.cyan);
             }
             return true;
         }

@@ -28,19 +28,19 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
 		override protected bool RunCommand(Players.Player player, string[] args, NetworkID target)
 		{
-			if (PermissionsManager.CheckAndWarnPermission(player, "debug") && Classes.Managers.ConfigManager.getConfigBoolean("debug.enabled"))
+			if (PermissionsManager.CheckAndWarnPermission(player, "debug") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "debug.enabled"))
 			{
 				Helpers.Debug.outputTypes();
                 Helpers.Debug.outputRecipes();
 
-				Chat.send(player, "Outputted JSON to Debug Directory", Chat.ChatColour.yellow);
+				ColonyAPI.Helpers.Chat.send(player, "Outputted JSON to Debug Directory", ColonyAPI.Helpers.Chat.ChatColour.yellow);
 				return true;
 
 
 			}
 			else
 			{
-				Chat.send(player, "You are unable to use debug commands", Chat.ChatColour.yellow);
+				ColonyAPI.Helpers.Chat.send(player, "You are unable to use debug commands", ColonyAPI.Helpers.Chat.ChatColour.yellow);
 				return false;
 			}
 

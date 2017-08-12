@@ -1,8 +1,4 @@
-﻿using ColonyPlusPlus.Classes.Managers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ColonyPlusPlusCore.Classes
 {
@@ -278,14 +274,14 @@ namespace ColonyPlusPlusCore.Classes
         // Grinding Recipes
         public void AddGrindingRecipes()
         {
+
             ColonyAPI.Managers.RecipeManager.AddRecipe("grinding",
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("wheat", 2)
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("flour", 2)
-                },
-                );
+                });
         }
 
         // Grinding Recipes
@@ -297,8 +293,8 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("goldcoin", 2)
-                },
-                ); 
+                }
+            ); 
         }
 
         // Shopping Recipes
@@ -310,7 +306,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("flaxstage1", 10)
-                },
+                }
                 );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
@@ -319,7 +315,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("cherrysapling", 1)
-                },
+                }
                 );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
@@ -328,7 +324,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("berrybush", 10)
-                },
+                }
                 );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
@@ -337,7 +333,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("wheatstage1", 6)
-                },
+                }
                 );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
@@ -346,7 +342,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("dirt", 10)
-                },
+                }
                 );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("shopping",
@@ -355,7 +351,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("grasstemperate", 10)
-                },
+                }
                 );
 
         }
@@ -363,7 +359,7 @@ namespace ColonyPlusPlusCore.Classes
         // Smelting Recipes
         public void AddSmeltingRecipes()
         {
-            ColonyAPI.Managers.RecipeManager.AddRecipeFueled("smelting",
+            ColonyAPI.Managers.RecipeManager.AddFueledRecipe("smelting",
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("ironore", 3)
                 },
@@ -372,7 +368,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 0.2f);
 
-            ColonyAPI.Managers.RecipeManager.AddRecipeFueled("smelting",
+            ColonyAPI.Managers.RecipeManager.AddFueledRecipe("smelting",
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("goldore", 3)
                 },
@@ -381,7 +377,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 0.2f);
 
-            ColonyAPI.Managers.RecipeManager.AddRecipeFueled("pottery",
+            ColonyAPI.Managers.RecipeManager.AddFueledRecipe("pottery",
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("clay", 3)
                 },
@@ -400,7 +396,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("linen", 1)
-                },
+                }
                 );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
@@ -409,7 +405,7 @@ namespace ColonyPlusPlusCore.Classes
                },
                new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("clothing", 1)
-               },
+               }
                );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
@@ -418,7 +414,7 @@ namespace ColonyPlusPlusCore.Classes
                },
                new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("linenbag", 1)
-               },
+               }
                );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
@@ -429,7 +425,7 @@ namespace ColonyPlusPlusCore.Classes
                },
                new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("carpetblue", 1)
-               },
+               }
                );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
@@ -440,7 +436,7 @@ namespace ColonyPlusPlusCore.Classes
               },
               new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("carpetred", 1)
-              },
+              }
               );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("tailoring",
@@ -451,7 +447,7 @@ namespace ColonyPlusPlusCore.Classes
               },
               new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("carpetyellow", 1)
-              },
+              }
               );
 
         }
@@ -468,7 +464,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("sciencebaglife", 2)
-                },
+                }
                 );
 
             ColonyAPI.Managers.RecipeManager.AddRecipe("technologist",
@@ -480,7 +476,7 @@ namespace ColonyPlusPlusCore.Classes
                 },
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("sciencebagbasic", 2)
-                },
+                }
                 );
         }
     }

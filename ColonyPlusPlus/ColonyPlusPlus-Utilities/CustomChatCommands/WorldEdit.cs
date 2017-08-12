@@ -1,10 +1,4 @@
-﻿using ChatCommands;
-using NPC;
-using Permissions;
-using ColonyPlusPlus.Classes.Helpers;
-using System;
-
-namespace ColonyPlusPlusUtilities.CustomChatCommands
+﻿namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
 
     public class WorldEdit : BaseChatCommand
@@ -23,27 +17,27 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                 switch(commandType)
                 {
                     case "fill":
-                        Chat.send(player, "WorldEdit Command" + commandType, Chat.ChatColour.yellow);
+                        ColonyAPI.Helpers.Chat.send(player, "WorldEdit Command" + commandType, ColonyAPI.Helpers.Chat.ChatColour.yellow);
                         return true;
 
                     case "clear":
-                        Chat.send(player, "WorldEdit Command" + commandType, Chat.ChatColour.yellow);
+                        ColonyAPI.Helpers.Chat.send(player, "WorldEdit Command" + commandType, ColonyAPI.Helpers.Chat.ChatColour.yellow);
                         return true;
 
                     case "circle":
-                        Chat.send(player, "WorldEdit Command" + commandType, Chat.ChatColour.yellow);
+                        ColonyAPI.Helpers.Chat.send(player, "WorldEdit Command" + commandType, ColonyAPI.Helpers.Chat.ChatColour.yellow);
                         return true;
                         
                     default:
-                        Chat.send(player, "Invalid WorldEdit Command", Chat.ChatColour.yellow);
+                        ColonyAPI.Helpers.Chat.send(player, "Invalid WorldEdit Command", ColonyAPI.Helpers.Chat.ChatColour.yellow);
                         return false;
 
                 }
                 
             } else
             {
-                Chat.send(player, "Invalid WorldEdit Command", Chat.ChatColour.yellow);
-                Chat.send(player, "Usage: /worldedit {command} {arguments...}", Chat.ChatColour.yellow);
+                ColonyAPI.Helpers.Chat.send(player, "Invalid WorldEdit Command", ColonyAPI.Helpers.Chat.ChatColour.yellow);
+                ColonyAPI.Helpers.Chat.send(player, "Usage: /worldedit {command} {arguments...}", ColonyAPI.Helpers.Chat.ChatColour.yellow);
                 return false;
             }
         }

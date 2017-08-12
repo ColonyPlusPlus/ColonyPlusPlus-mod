@@ -25,15 +25,15 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                     successful2 = true;
                 } else
                 {
-                    Helpers.Chat.send(ply, "Invalid arguments. Usage:", Helpers.Chat.ChatColour.orange);
-                    Helpers.Chat.send(ply, "/trash <itemid> <itemamount> - trash an amount of an item", Helpers.Chat.ChatColour.orange);
-                    Helpers.Chat.send(ply, "/trash <itemid> - trash all of an item", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.send(ply, "Invalid arguments. Usage:", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.send(ply, "/trash <itemid> <itemamount> - trash an amount of an item", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.send(ply, "/trash <itemid> - trash all of an item", ColonyAPI.Helpers.Chat.ChatColour.orange);
                     return true;
                 }
                 
             } else
             {
-                Utilities.WriteLog(args[1]);
+                ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", args[1]);
                 successful2 = Int32.TryParse(args[1], out giveamt);
             }
 
@@ -46,9 +46,9 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
             if ((!sucessful) || (!successful2))
             {
-                Helpers.Chat.send(ply, "Invalid arguments. Usage:", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.send(ply, "/trash <itemid> <itemamount> - trash an amount of an item", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.send(ply, "/trash <itemid> - trash all of an item", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.send(ply, "Invalid arguments. Usage:", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.send(ply, "/trash <itemid> <itemamount> - trash an amount of an item", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.send(ply, "/trash <itemid> - trash all of an item", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return true;
             }
 

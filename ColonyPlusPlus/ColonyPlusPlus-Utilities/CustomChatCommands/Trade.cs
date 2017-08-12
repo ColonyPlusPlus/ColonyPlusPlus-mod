@@ -55,8 +55,8 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         {
             if (args.Length < 3)
             {
-                Helpers.Chat.sendSilent(ply, "Not enough arguments. Usage:", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.sendSilent(ply, "/trade give <playername> <myitemid> <myitemamount>", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "Not enough arguments. Usage:", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "/trade give <playername> <myitemid> <myitemamount>", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return true;
             }
             ushort giveid = 0;
@@ -69,8 +69,8 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             sucessful = sucessful && Int32.TryParse(args[2], out giveamt);
             if (!sucessful)
             {
-                Helpers.Chat.sendSilent(ply, "Invalid argument. Usage:", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.sendSilent(ply, "/trade give <playername> <myitemid> <myitemamount>", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "Invalid argument. Usage:", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "/trade give <playername> <myitemid> <myitemamount>", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return true;
             }
             Managers.PlayerManager.tradeGive(ply, Players.GetPlayer(target), giveid, giveamt);
@@ -89,8 +89,8 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
         {
             if (args.Length < 5)
             {
-                Helpers.Chat.sendSilent(ply, "Not enough arguments. Usage:", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.sendSilent(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "Not enough arguments. Usage:", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return true;
             }
             ushort takeid = 0;
@@ -112,8 +112,8 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             sucessful = sucessful && Int32.TryParse(args[4], out giveamt);
             if (!sucessful)
             {
-                Helpers.Chat.sendSilent(ply, "Invalid argument. Usage:", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.sendSilent(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "Invalid argument. Usage:", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "/trade send <playername> <myitemid> <myitemamount> <theiritemid> <theiritemamount>", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return true;
             }
             Managers.PlayerManager.notifyTrade(ply, Players.GetPlayer(target), giveid, giveamt, takeid, takeamt);

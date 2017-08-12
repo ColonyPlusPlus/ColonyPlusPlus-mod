@@ -23,9 +23,9 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                     s.Add(i, 10000);
                 }
 
-                Helpers.Chat.sendSilent(ply, "Enabled Creative Mode", Helpers.Chat.ChatColour.lime);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "Enabled Creative Mode", ColonyAPI.Helpers.Chat.ChatColour.lime);
             }
-            Utilities.WriteLog(ply.Name + " attempted to use /creative");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", ply.Name + " attempted to use /creative");
             
             return true;
         }

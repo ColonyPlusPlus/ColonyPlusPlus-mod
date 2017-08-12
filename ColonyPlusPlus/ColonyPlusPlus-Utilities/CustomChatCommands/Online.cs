@@ -27,7 +27,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
                 online.Sort();
                 
-                Chat.send(ply, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), Chat.ChatColour.white, Chat.ChatStyle.normal ,Pipliz.Chatting.ChatSenderType.Server);
+                ColonyAPI.Helpers.Chat.send(ply, String.Format("Players Online ({0}): {1}",Players.CountConnected, String.Join(", ",online.ToArray())), ColonyAPI.Helpers.Chat.ChatColour.white, ColonyAPI.Helpers.Chat.ChatStyle.normal ,Pipliz.Chatting.ChatSenderType.Server);
             }
             
             return true;

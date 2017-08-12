@@ -20,25 +20,25 @@ namespace ColonyPlusPlusUtilities.Managers
                 {
                     BaseChatCommand command = ((BaseChatCommand)Activator.CreateInstance(t));
                     ChatCommandsList.Add(command.ChatCommandPrefix, command);
-                    Utilities.WriteLog("Registered chat command: " + command.ChatCommandPrefix);
+                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", "Registered chat command: " + command.ChatCommandPrefix);
                 }
                 catch (MissingMethodException mme)
                 {
-                    Utilities.WriteLog(t.Name + " cannot be instantiated. This probably isn't an error.");
+                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", t.Name + " cannot be instantiated. This probably isn't an error.");
                     Pipliz.Log.WriteWarning(mme.Message);
                 }
                 catch (InvalidCastException ice)
                 {
-                    Utilities.WriteLog(t.Name + " doesn't use our command system. This probably isn't an error.");
+                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", t.Name + " doesn't use our command system. This probably isn't an error.");
                     Pipliz.Log.WriteWarning(ice.Message);
                 }
                 catch (Exception e)
                 {
-                    Utilities.WriteLog(t.Name + " Command Error.");
+                    ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", t.Name + " Command Error.");
                     Pipliz.Log.WriteWarning(e.Message + e.StackTrace);
                 }
             }
-            Utilities.WriteLog("Chat Commands Loaded.");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", "Chat Commands Loaded.");
         }
     }
 }

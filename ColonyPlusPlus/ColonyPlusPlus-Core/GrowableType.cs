@@ -1,9 +1,4 @@
 ﻿using Pipliz;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ColonyPlusPlus.Classes.Managers;
 
 namespace ColonyPlusPlusCore.Classes
 {
@@ -27,7 +22,7 @@ namespace ColonyPlusPlusCore.Classes
             // check if the block below is fertile
             if (World.TryGetTypeAt(position.Add(0, -1, 0), out num) && ItemTypes.IsFertile(num))
             {
-                CropManager.trackCrop(position, this);
+                Managers.CropManager.trackCrop(position, this);
             }
             else
             {
@@ -54,7 +49,7 @@ namespace ColonyPlusPlusCore.Classes
 
         public void OnRemoveAction(Vector3Int position, ushort wasType, Players.Player causedBy)
         {
-            CropManager.untrackCrop(position, this);
+            Managers.CropManager.untrackCrop(position, this);
         }
 
         public void OnChangeAction(Vector3Int position, ushort wasType, ushort newType, Players.Player causedBy)

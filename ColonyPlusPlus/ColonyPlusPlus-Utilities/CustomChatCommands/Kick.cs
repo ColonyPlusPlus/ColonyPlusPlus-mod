@@ -1,5 +1,4 @@
 ﻿using Permissions;
-using Chat = ColonyPlusPlus.Classes.Helpers.Chat;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
@@ -15,7 +14,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             {
                 var targetPlayer = Players.GetPlayer(target);
                 ServerManager.Disconnect(targetPlayer);
-                Chat.send(ply, $"Kicked {targetPlayer.Name}",Chat.ChatColour.magenta);
+                ColonyAPI.Helpers.Chat.send(ply, $"Kicked {targetPlayer.Name}", ColonyAPI.Helpers.Chat.ChatColour.magenta);
             }
             return true;
         }

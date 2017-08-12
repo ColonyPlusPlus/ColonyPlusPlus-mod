@@ -1,6 +1,7 @@
 ﻿using Permissions;
 using System;
 using Pipliz;
+using ColonyPlusPlusUtilities;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
@@ -26,9 +27,9 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.claim") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "chunks.enabled"))
             {
-                int maxClaims = Classes.Managers.ConfigManager.getConfigInt("chunks.maxclaims");
+                int maxClaims = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlusUtilities", "chunks.maxclaims");
 
                 if( Managers.WorldManager.getOwnedChunkCount(ply.ID) < maxClaims) {
                     // get the current chunk
@@ -43,22 +44,22 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                         Vector3Int chunkPos = position.ToChunk();
                         int owned = Managers.WorldManager.getOwnedChunkCount(ply.ID);
 
-                        Chat.sendSilent(ply, string.Format("Claimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
-                        Chat.sendSilent(ply, string.Format("You now own {0} chunks (max {1}).", owned, maxClaims), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                        ColonyAPI.Helpers.Chat.sendSilent(ply, string.Format("Claimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
+                        ColonyAPI.Helpers.Chat.sendSilent(ply, string.Format("You now own {0} chunks (max {1}).", owned, maxClaims), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                     }
                     else
                     {
                         // chunk already owned
-                        Chat.sendSilent(ply, "Unable to claim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                        ColonyAPI.Helpers.Chat.sendSilent(ply, "Unable to claim chunk", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                     }
                 } else {
-                    Chat.sendSilent(ply, String.Format("You already own the maximum number of chunks ({0}), please unclaim one to claim another.", maxClaims), Chat.ChatColour.red, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, String.Format("You already own the maximum number of chunks ({0}), please unclaim one to claim another.", maxClaims), ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 }
                 
             } else {
-                Chat.sendSilent(ply, "You cannot claim chunks", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "You cannot claim chunks", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
             }
-            Utilities.WriteLog(ply.Name + " attempted to use /chunk claim!");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", ply.Name + " attempted to use /chunk claim!");
             return true;
         }
     }
@@ -86,16 +87,16 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                     Vector3Int chunkPos = position.ToChunk();
                     int owned = Managers.WorldManager.getOwnedChunkCount(ply.ID);
 
-                    Chat.sendSilent(ply, string.Format("Unclaimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
-                    Chat.sendSilent(ply, string.Format("You now own {0} chunks.", owned), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, string.Format("Unclaimed chunk: {0}, {1}, {2}", chunkPos.x, chunkPos.y, chunkPos.z), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, string.Format("You now own {0} chunks.", owned), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 }
                 else
                 {
                     // chunk not owned
-                    Chat.sendSilent(ply, "Unable to unclaim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, "Unable to unclaim chunk", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 }
             }
-            Utilities.WriteLog(ply.Name + " attempted to use /chunk unclaim!");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", ply.Name + " attempted to use /chunk unclaim!");
             return true;
         }
     }
@@ -122,16 +123,16 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                 {
                     Vector3Int chunkPos = position.ToChunk();
 
-                    Chat.send(ply, string.Format("Chunk Owner Deleted ({0}, {1}, {2})", chunkPos.x, chunkPos.y, chunkPos.z), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.send(ply, string.Format("Chunk Owner Deleted ({0}, {1}, {2})", chunkPos.x, chunkPos.y, chunkPos.z), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 }
                 else
                 {
                     // chunk not owned
-                    Chat.sendSilent(ply, "Unable to unclaim chunk", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, "Unable to unclaim chunk", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 }
 
             }
-            Utilities.WriteLog(ply.Name + " attempted to use /chunk delete!");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusUtilities", ply.Name + " attempted to use /chunk delete!");
             return true;
         }
     }
@@ -145,7 +146,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.list") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.list") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "chunks.enabled"))
             {
 
                 if (Managers.WorldManager.getOwnedChunkCount(ply.ID) > 0)
@@ -160,18 +161,18 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                         }
                     }
 
-                    Chat.sendSilent(ply, ownedChunks, Chat.ChatColour.cyan, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, ownedChunks, ColonyAPI.Helpers.Chat.ChatColour.cyan, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                     
                 }
                 else
                 {
-                    Chat.sendSilent(ply, "You own no chunks", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, "You own no chunks", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 }
 
             }
             else
             {
-                Chat.sendSilent(ply, "You cannot claim chunks", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "You cannot claim chunks", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
             }
 
             return true;
@@ -187,20 +188,20 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.info") && Classes.Managers.ConfigManager.getConfigBoolean("chunks.enabled"))
+            if (PermissionsManager.CheckAndWarnPermission(ply, "chunk.info") && ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusUtilities", "chunks.enabled"))
             {
                 Vector3Int pos = Managers.WorldManager.positionToVector3Int(ply.Position).ToChunk();
                 string chunkName = Managers.WorldManager.positionToString(pos);
                 if (Managers.WorldManager.ChunkDataList.ContainsKey(chunkName))
                 {
                     Data.ChunkData c = Managers.WorldManager.ChunkDataList[chunkName];
-                    Chat.sendSilent(ply, String.Format("Chunk data for chunk: {0}", chunkName), Chat.ChatColour.lime, Chat.ChatStyle.bold);
-                    Chat.sendSilent(ply, String.Format("Currently owned: {0}", c.hasOwner()), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, String.Format("Chunk data for chunk: {0}", chunkName), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, String.Format("Currently owned: {0}", c.hasOwner()), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
 
                     if(c.hasOwner())
                     {
 
-                        Chat.sendSilent(ply, String.Format("Currently owned by: {0}", Players.GetPlayer(c.getOwner()).Name), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                        ColonyAPI.Helpers.Chat.sendSilent(ply, String.Format("Currently owned by: {0}", Players.GetPlayer(c.getOwner()).Name), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                     }
 
                     string prevOwners = "";
@@ -210,16 +211,16 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
                         prevOwners += Players.GetPlayer(n).Name + ", "; 
                     }
 
-                    Chat.sendSilent(ply, String.Format("Previous Owners ({0}): {1}", c.ownerHistory.Count, prevOwners), Chat.ChatColour.lime, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, String.Format("Previous Owners ({0}): {1}", c.ownerHistory.Count, prevOwners), ColonyAPI.Helpers.Chat.ChatColour.lime, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 } else
                 {
-                    Chat.sendSilent(ply, "No chunk data", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                    ColonyAPI.Helpers.Chat.sendSilent(ply, "No chunk data", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
                 }
                
             }
             else
             {
-                Chat.sendSilent(ply, "You cannot check chunk info", Chat.ChatColour.red, Chat.ChatStyle.bold);
+                ColonyAPI.Helpers.Chat.sendSilent(ply, "You cannot check chunk info", ColonyAPI.Helpers.Chat.ChatColour.red, ColonyAPI.Helpers.Chat.ChatStyle.bold);
             }
 
             return true;

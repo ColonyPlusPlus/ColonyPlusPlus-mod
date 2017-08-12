@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseChatCommand.cs" />
-    <Compile Include="ColonyPlusPlus.cs" />
+    <Compile Include="ColonyPlusPlusUtilities.cs" />
     <Compile Include="CustomChatCommands\Ban.cs" />
     <Compile Include="CustomChatCommands\Chunk.cs" />
     <Compile Include="CustomChatCommands\Clear.cs" />

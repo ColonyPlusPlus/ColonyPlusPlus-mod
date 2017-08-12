@@ -1,9 +1,5 @@
-﻿using Pipliz.Collections.Threadsafe;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using ColonyPlusPlus.Classes.Data;
 using Pipliz.Chatting;
 
 namespace ColonyPlusPlusCore.Classes.Managers
@@ -87,7 +83,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
             playerDataDict.Add(player.ID, pd);
 
-            Utilities.WriteLog("Player added:" + player.ID.steamID);
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlusCore", "Player added:" + player.ID.steamID);
 
             return pd;
         }
@@ -110,8 +106,8 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
             if (fromPd.tradeData != null || toPd.tradeData != null)
             {
-                Helpers.Chat.sendSilent(from, "Trade to " + to.Name + " failed, you or your trade partner have an outstanding trade.", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.sendSilent(to, "Trade from " + from.Name + " failed, you or your trade partner have an outstanding trade.", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(from, "Trade to " + to.Name + " failed, you or your trade partner have an outstanding trade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(to, "Trade from " + from.Name + " failed, you or your trade partner have an outstanding trade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return;
             }
             string name;
@@ -120,7 +116,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
             if (!legalIds)
             {
-                Helpers.Chat.sendSilent(from, "Invalid ID's", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(from, "Invalid ID's", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return;
             }
 
@@ -129,20 +125,20 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
             if (fromSP.AmountContained(take) <= takeamt)
             {
-                Helpers.Chat.sendSilent(from, "You can't afford that trade.", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(from, "You can't afford that trade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return;
             }
 
             fromPd.tradeData = new TradeData(give, giveamt, take, takeamt, ref toPd, true);
             toPd.tradeData = new TradeData(take, takeamt, give, giveamt, ref fromPd, false);
 
-            Helpers.Chat.sendSilent(from, "Trade sent to " + to.Name + ":", Helpers.Chat.ChatColour.orange);
-            Helpers.Chat.sendSilent(from, fromPd.tradeData.ToString() + " from " + to.Name, Helpers.Chat.ChatColour.orange);
-            Helpers.Chat.sendSilent(from, "Type '/trade reject' to cancel your trade.", Helpers.Chat.ChatColour.orange);
-            Helpers.Chat.sendSilent(to, "Incoming trade request:", Helpers.Chat.ChatColour.orange);
-            Helpers.Chat.sendSilent(to, toPd.tradeData.ToString() + " from " + from.Name, Helpers.Chat.ChatColour.orange);
-            Helpers.Chat.sendSilent(to, "Type '/trade accept' to accept the trade.", Helpers.Chat.ChatColour.orange);
-            Helpers.Chat.sendSilent(to, "Type '/trade reject' to reject the trade.", Helpers.Chat.ChatColour.orange);
+            ColonyAPI.Helpers.Chat.sendSilent(from, "Trade sent to " + to.Name + ":", ColonyAPI.Helpers.Chat.ChatColour.orange);
+            ColonyAPI.Helpers.Chat.sendSilent(from, fromPd.tradeData.ToString() + " from " + to.Name, ColonyAPI.Helpers.Chat.ChatColour.orange);
+            ColonyAPI.Helpers.Chat.sendSilent(from, "Type '/trade reject' to cancel your trade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
+            ColonyAPI.Helpers.Chat.sendSilent(to, "Incoming trade request:", ColonyAPI.Helpers.Chat.ChatColour.orange);
+            ColonyAPI.Helpers.Chat.sendSilent(to, toPd.tradeData.ToString() + " from " + from.Name, ColonyAPI.Helpers.Chat.ChatColour.orange);
+            ColonyAPI.Helpers.Chat.sendSilent(to, "Type '/trade accept' to accept the trade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
+            ColonyAPI.Helpers.Chat.sendSilent(to, "Type '/trade reject' to reject the trade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
 
             playerDataDict[from.ID] = fromPd;
             playerDataDict[to.ID] = toPd;
@@ -159,7 +155,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
             if (pd.tradeData == null)
             {
-                Helpers.Chat.sendSilent(Players.GetPlayer(player.ID), "You have no outstanding trade requests.", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(Players.GetPlayer(player.ID), "You have no outstanding trade requests.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 return;
             }
 
@@ -173,15 +169,15 @@ namespace ColonyPlusPlusCore.Classes.Managers
             {
                 if (partnerStockpile.AmountContained(pd.tradeData.giveId) <= pd.tradeData.giveAmount)
                 {
-                    Helpers.Chat.sendSilent(player, "Your partner can't afford this trade. It will need to be remade.", Helpers.Chat.ChatColour.orange);
-                    Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), "You can't afford your trade with " + player.Name + ". Please get the required items and send another request.", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(player, "Your partner can't afford this trade. It will need to be remade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), "You can't afford your trade with " + player.Name + ". Please get the required items and send another request.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                     rejectTrade(player, true);
                     return;
                 }
 
                 if (playerStockpile.AmountContained(pd.tradeData.takeId) <= pd.tradeData.takeAmount)
                 {
-                    Helpers.Chat.sendSilent(player, "You can't afford this trade. Please get the required items or reject the trade.", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(player, "You can't afford this trade. Please get the required items or reject the trade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
@@ -191,13 +187,13 @@ namespace ColonyPlusPlusCore.Classes.Managers
                 partnerStockpile.Add(pd.tradeData.takeId, pd.tradeData.takeAmount);
             } else
             {
-                Helpers.Chat.sendSilent(player, "Your partner doesn't exist. Ignoring trade.", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(player, "Your partner doesn't exist. Ignoring trade.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 rejectTrade(player, true);
                 return;
             }
 
-            Helpers.Chat.sendSilent(player, "Trade Accepted.", Helpers.Chat.ChatColour.lime);
-            Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), player.Name + " accepted your trade request.", Helpers.Chat.ChatColour.lime);
+            ColonyAPI.Helpers.Chat.sendSilent(player, "Trade Accepted.", ColonyAPI.Helpers.Chat.ChatColour.lime);
+            ColonyAPI.Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), player.Name + " accepted your trade request.", ColonyAPI.Helpers.Chat.ChatColour.lime);
 
             pd.tradeData = null;
             partnerData.tradeData = null;
@@ -219,7 +215,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
                 if (pd.tradeData == null)
                 {
-                    Helpers.Chat.sendSilent(player, "You have no outstanding trade requests.", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(player, "You have no outstanding trade requests.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
@@ -227,8 +223,8 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
                 if (!isInternal)
                 {
-                    Helpers.Chat.sendSilent(player, "Trade rejected.", Helpers.Chat.ChatColour.orange);
-                    Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), player.Name + " rejected your trade request.", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(player, "Trade rejected.", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(Players.GetPlayer(partnerData.PID), player.Name + " rejected your trade request.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                 }
 
                 pd.tradeData = null;
@@ -239,7 +235,7 @@ namespace ColonyPlusPlusCore.Classes.Managers
             }
             else
             {
-                Helpers.Chat.sendSilent(player, "Trade Disabled.", Helpers.Chat.ChatColour.red);
+                ColonyAPI.Helpers.Chat.sendSilent(player, "Trade Disabled.", ColonyAPI.Helpers.Chat.ChatColour.red);
             }
         }
 
@@ -264,24 +260,24 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
                 if (!legalIds)
                 {
-                    Helpers.Chat.sendSilent(from, "Invalid ID's", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(from, "Invalid ID's", ColonyAPI.Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
                 if (playerStockpile.AmountContained(give) <= giveamt)
                 {
-                    Helpers.Chat.sendSilent(from, "You can't afford that.", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(from, "You can't afford that.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
                 playerStockpile.Remove(give, giveamt);
                 partnerStockpile.Add(give, giveamt);
-                Helpers.Chat.sendSilent(from, "You sent " + giveamt + " " + name + " to " + to.Name + ".", Helpers.Chat.ChatColour.orange);
-                Helpers.Chat.sendSilent(to, from.Name + " sent " + giveamt + " " + name + " to you.", Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(from, "You sent " + giveamt + " " + name + " to " + to.Name + ".", ColonyAPI.Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(to, from.Name + " sent " + giveamt + " " + name + " to you.", ColonyAPI.Helpers.Chat.ChatColour.orange);
             }
             else
             {
-                Helpers.Chat.sendSilent(from, "Trade Disabled.", Helpers.Chat.ChatColour.red);
+                ColonyAPI.Helpers.Chat.sendSilent(from, "Trade Disabled.", ColonyAPI.Helpers.Chat.ChatColour.red);
             }
 
         }
@@ -305,30 +301,30 @@ namespace ColonyPlusPlusCore.Classes.Managers
 
                 if (!legalIds)
                 {
-                    Helpers.Chat.sendSilent(player, "Invalid ID's", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(player, "Invalid ID's", ColonyAPI.Helpers.Chat.ChatColour.orange);
                     return;
                 }
 
                 int stockPileAmount = playerStockpile.AmountContained(item);
                 if (stockPileAmount <= amount)
                 {
-                    Helpers.Chat.sendSilent(player, "You have less than " + amount +", trashing all.", Helpers.Chat.ChatColour.orange);
+                    ColonyAPI.Helpers.Chat.sendSilent(player, "You have less than " + amount +", trashing all.", ColonyAPI.Helpers.Chat.ChatColour.orange);
                     amount = stockPileAmount;
                 }
 
                 playerStockpile.Remove(item, amount);
-                Helpers.Chat.sendSilent(player, String.Format("{0} of item [{1}] trashed.", amount, name), Helpers.Chat.ChatColour.orange);
+                ColonyAPI.Helpers.Chat.sendSilent(player, String.Format("{0} of item [{1}] trashed.", amount, name), ColonyAPI.Helpers.Chat.ChatColour.orange);
             }
             else
             {
-                Helpers.Chat.sendSilent(player, "Trashing Failed.", Helpers.Chat.ChatColour.red);
+                ColonyAPI.Helpers.Chat.sendSilent(player, "Trashing Failed.", ColonyAPI.Helpers.Chat.ChatColour.red);
             }
 
         }
 
         public static bool getTradeEnabled()
         {
-            return Classes.Managers.ConfigManager.getConfigBoolean("trade.enabled");
+            return ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusCore", "trade.enabled");
         }
     }
 }

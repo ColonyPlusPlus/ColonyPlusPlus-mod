@@ -1,8 +1,5 @@
-using Pipliz.Chatting;
 using static Players;
 using System;
-using System.Collections.Generic;
-using ColonyPlusPlus.Classes;
 
 namespace ColonyPlusPlusCore
 {
@@ -26,7 +23,7 @@ namespace ColonyPlusPlusCore
         public static void AfterStartup()
         {
             Pipliz.Log.Write("<b><color=yellow>Loaded ColonyPlusPlus v" + modVersion.ToString() + "</color></b>");
-            Classes.Managers.VersionManager.runVersionCheck(modVersion);
+            ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlusCore", modVersion);
 
             // Initialise configuration
             Classes.Managers.ConfigManager.initialise();
@@ -35,14 +32,11 @@ namespace ColonyPlusPlusCore
             Classes.Managers.BanManager.initialise();
             
 
-            ColonyLimitEnabled = Classes.Managers.ConfigManager.getConfigBoolean("colony.enabled");
+            ColonyLimitEnabled = ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlusCore", "colony.enabled");
             if(ColonyLimitEnabled)
             {
-                ColonyLimit = Classes.Managers.ConfigManager.getConfigInt("colony.limit");
+                ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlusCore", "colony.limit");
             }
-
-            // Initialize chat commands
-            Classes.Managers.ChatCommandManager.Initialize();
 
            
             
@@ -53,12 +47,11 @@ namespace ColonyPlusPlusCore
         {
             if (p.ID.steamID.m_SteamID == 0)
             {
-                Classes.Helpers.Chat.sendSilent(p, Classes.Managers.VersionManager.SinglePlayerrunVersionCheck(modVersion), Classes.Helpers.Chat.ChatColour.red);
+                ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.VersionManager.SinglePlayerrunVersionCheck("ColonyPlusPlusCore", modVersion), ColonyAPI.Helpers.Chat.ChatColour.red);
             }
             else
             {
-                Classes.Helpers.Chat.sendSilent(p, Classes.Managers.ConfigManager.getConfigString("motd.message"));
-                Classes.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus v" + modVersion.ToString());
+                ColonyAPI.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus v" + modVersion.ToString());
             }
         }
 
@@ -77,8 +70,8 @@ namespace ColonyPlusPlusCore
 
             // Register Types
 
-            Classes.Managers.ItemManager.register();
-            Classes.Managers.BlockManager.register();
+            //Classes.Managers.ItemManager.register();
+            //Classes.Managers.BlockManager.register();
             Classes.Managers.CropManager.register();
 
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Ending AfterAddingBaseTypes");
@@ -92,12 +85,6 @@ namespace ColonyPlusPlusCore
             
             // Regsiter types with actions
             Classes.Managers.TypeManager.registerActionableTypes();
-
-            // Register our chat parser
-            ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.ChatManager());
-
-            // Register Master Command
-            ChatCommands.CommandManager.RegisterCommand(new Classes.Managers.MasterChatCommandManager());
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterWorldLoad, "colonyplusplus.AfterWorldLoad")]
@@ -107,7 +94,7 @@ namespace ColonyPlusPlusCore
            
                
             Classes.Managers.WorldManager.LoadJSON();
-            Classes.Managers.WorldManager.SetupSpawn();
+
             Classes.Managers.NPCManager.initialise();
 
             //Classes.BlockJobs.BlockJobManagerTracker.AfterWorldLoad();
@@ -119,23 +106,6 @@ namespace ColonyPlusPlusCore
         {
             if(Pipliz.Time.MillisecondsSinceStart > nextMillisecondUpdate)
             {
-                if(ColonyLimitEnabled)
-                {
-                    if (plyID >= Players.CountConnected)
-                    {
-                        plyID = 0;
-                    }
-                    if(Players.CountConnected != 0)
-                    {
-                        Colony col = Colony.Get(Players.GetConnectedByIndex(plyID));
-                        if (col.FollowerCount > ColonyLimit)
-                        {
-                            col.TakeMonsterHit(10000000, 1000000);
-                        }
-                        plyID++;
-                    }
-                }
-
                 // update any crops
                 Classes.Managers.CropManager.doCropUpdates();
                 
@@ -156,9 +126,6 @@ namespace ColonyPlusPlusCore
                 // long term update time
                 nextMillisecondUpdateLong = Pipliz.Time.MillisecondsSinceStart +  60000;
             }
-
-            // run the rotator
-            Classes.Managers.RotatingMessageManager.doRun();
 
         }
 
@@ -193,20 +160,6 @@ namespace ColonyPlusPlusCore
             Classes.Managers.RecipeManager.AddBaseRecipes();
             Classes.Managers.RecipeManager.BuildRecipeList();
             Classes.Managers.RecipeManager.ProcessRecipes();
-        }
-
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplus.OnTryChangeBlockUser")]
-        public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
-        {
-
-            if (d.requestedBy.ID.steamID.m_SteamID == 0)
-            {
-                return true;
-            }
-            bool allowed = Classes.Managers.WorldManager.AllowPlaceBlock(d);
-
-            //Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
-            return allowed;
         }
     }
 }
