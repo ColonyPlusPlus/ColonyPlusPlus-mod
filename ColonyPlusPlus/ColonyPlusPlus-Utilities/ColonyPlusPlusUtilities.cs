@@ -18,8 +18,8 @@ namespace ColonyPlusPlusUtilities
         public static Version modVersion = new Version(0, 2, 0);
 
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusutilities.AfterStartup")]
-        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusutilities.initialise")]
+        [ModLoader.ModCallbackDependsOn("colonyapi.initialise")]
         public static void AfterStartup()
         {
             ColonyAPI.Managers.ConfigManager.registerConfig("ColonyPlusPlus-Utilities");
@@ -59,11 +59,6 @@ namespace ColonyPlusPlusUtilities
                 ColonyAPI.Helpers.Chat.sendSilent(p, ColonyAPI.Managers.ConfigManager.getConfigString("ColonyPlusPlus-Utilities", "motd.message"));
                 ColonyAPI.Helpers.Chat.sendSilent(p, "The server is using ColonyPlusPlus-Utilities v" + modVersion.ToString());
             }
-        }
-
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusutilities.AfterAddingBaseTypes")]
-        public static void AfterAddingBaseTypes()
-        {
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonyplusplusutilities.AfterItemTypesServer")]

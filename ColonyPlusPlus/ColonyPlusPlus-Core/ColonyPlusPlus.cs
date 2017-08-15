@@ -19,7 +19,7 @@ namespace ColonyPlusPlusCore
 
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonypluspluscore.AfterStartup")]
-        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
+        [ModLoader.ModCallbackDependsOn("colonyapi.initialise")]
         public static void AfterStartup()
         {
 
@@ -53,26 +53,27 @@ namespace ColonyPlusPlusCore
             }
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonypluspluscore.AfterAddingBaseTypes")]
-        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterAddingBaseTypes")]
-        public static void AfterAddingBaseTypes()
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonypluspluscore.materials")]
+        [ModLoader.ModCallbackProvidesFor("colonyapi.registerMaterials")]
+        public static void RegisterMaterials()
         {
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Starting AfterAddingBaseTypes");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Starting Material Registration");
 
             // Register Materials
             Managers.MaterialManager.initialiseMaterials();
 
-            // Register basegame Types
-            //Classes.Managers.BaseGameManager.registerItems();
-            //Classes.Managers.BaseGameManager.registerBlocks();
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Ending Material Registration");
+        }
 
-            // Register Types
-
-            //Classes.Managers.ItemManager.register();
-            //Classes.Managers.BlockManager.register();
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonypluspluscore.AfterAddingBaseTypes")]
+        [ModLoader.ModCallbackProvidesFor("colonyapi.discoverTypes")]
+        public static void RegisterCrops()
+        {
+        
+            // Register crop Types
             Managers.CropManager.register();
 
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Ending AfterAddingBaseTypes");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "Registered Crops");
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterItemTypesServer, "colonypluspluscore.AfterItemTypesServer")]

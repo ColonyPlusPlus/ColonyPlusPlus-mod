@@ -14,8 +14,8 @@ namespace ColonyPlusPlusDecorative
         public static Version modVersion = new Version(0, 2, 0);
 
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusdecorative.AfterStartup")]
-        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusdecorative.initialise")]
+        [ModLoader.ModCallbackDependsOn("colonyapi.initialise")]
         public static void AfterStartup()
         {
 
@@ -26,19 +26,25 @@ namespace ColonyPlusPlusDecorative
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypes")]
-        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterAddingBaseTypes")]
+        [ModLoader.ModCallbackProvidesFor("colonyapi.registerMaterials")]
         public static void AfterAddingBaseTypes()
         {
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Starting AfterAddingBaseTypes");
 
             // Register Materials
             Managers.MaterialManager.initialiseMaterials();
 
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Registered Materials");
+        }
+
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypes")]
+        [ModLoader.ModCallbackProvidesFor("colonyapi.discoverTypes")]
+        public static void RegisterTypes()
+        {
             // Register Types
             Managers.BlockManager.register();
 
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Ending AfterAddingBaseTypes");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Registered Blocks");
         }
-      
+
     }
 }
