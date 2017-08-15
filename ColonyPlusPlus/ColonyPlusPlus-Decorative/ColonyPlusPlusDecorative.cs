@@ -1,5 +1,4 @@
 using Pipliz.Chatting;
-using static Players;
 using System;
 using System.Collections.Generic;
 using ColonyPlusPlusDecorative.Classes;
@@ -25,7 +24,7 @@ namespace ColonyPlusPlusDecorative
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Loaded ColonyPlusPlus Decorative v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypes")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypesMaterials")]
         [ModLoader.ModCallbackProvidesFor("colonyapi.registerMaterials")]
         public static void AfterAddingBaseTypes()
         {
@@ -36,7 +35,7 @@ namespace ColonyPlusPlusDecorative
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Registered Materials");
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypes")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypesBlocks")]
         [ModLoader.ModCallbackProvidesFor("colonyapi.discoverTypes")]
         public static void RegisterTypes()
         {
