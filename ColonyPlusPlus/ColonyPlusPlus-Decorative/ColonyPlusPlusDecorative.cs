@@ -7,7 +7,7 @@ using ColonyPlusPlusDecorative.Classes;
 namespace ColonyPlusPlusDecorative
 {
     [ModLoader.ModManager]
-    public class ColonyPlusPlus
+    public class ColonyPlusPlusDecorative
     {
         
         private static int plyID = 0;

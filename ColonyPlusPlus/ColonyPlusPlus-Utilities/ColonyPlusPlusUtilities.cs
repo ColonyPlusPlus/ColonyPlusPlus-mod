@@ -4,7 +4,7 @@ using System;
 namespace ColonyPlusPlusUtilities
 {
     [ModLoader.ModManager]
-    public class ColonyPlusPlus
+    public class ColonyPlusPlusUtilities
     {
         private static long nextMillisecondUpdate = 0;
         private static long nextMillisecondUpdateLong = 0;
