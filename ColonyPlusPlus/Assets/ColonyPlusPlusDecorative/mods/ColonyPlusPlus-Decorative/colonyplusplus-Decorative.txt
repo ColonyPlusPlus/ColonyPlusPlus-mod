@@ -1,0 +1,5 @@
+Version 0.2.0 (16-08-17): (Colony Survival 0.3.0)
+-------------------------------------
+Added:
+	First Release!
+	Moved the decorative blocks into ColonyPlusPlus-Decorative

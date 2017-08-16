@@ -1,4 +1,4 @@
-Version 0.2.0 (DD-MM-17): (Colony Survival 0.3.0)
+Version 0.2.0 (16-08-17): (Colony Survival 0.3.0)
 -------------------------------------
 Added:
 	Custom Jobs
@@ -29,22 +29,16 @@ Added:
 		Sawmill
 			Recipe: 12 Planks, 1 Iron Ingot
 		Windows both single and two block high.
+	
+	Localization
+		Started on de-DE(German Standard)
 		
 	Features
 		Can now enable or disable parts of the mod via the config.json file in the mod folder.
 		NPC Jobs now gain XP and do their job faster!
-		Message of the Day Feature.
-		Rotating Messages:
-			Rotates between messages after X seconds, both of these can be set in the config.json file
-		Version checking:
-			When you sign into the game it'll check if your running the newest version of the mod
 			
-	New commands (Admins)
-		Ban/Unban - Can now ban or unban a player via command, banning kicks the player from the server.
-		Kick - Kicks a player from the server
-	
-	Localization
-		Started on de-DE(German Standard)
+	New commands
+		/npc - Shows you the levels of your NPCs
 
 Changed:
 	Goldcoin Recipe is now 1 goldingot = 2 gold coins
