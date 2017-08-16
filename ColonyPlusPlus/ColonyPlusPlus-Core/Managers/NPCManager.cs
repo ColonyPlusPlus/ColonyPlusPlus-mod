@@ -30,7 +30,7 @@ namespace ColonyPlusPlusCore.Managers
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", String.Format("NPC Config: baseXP: {0}, maxLevel: {1}, xpMultiplier: {2}, efficiencyPerLevel: {3}",baseXP, maxLevel, XPMultiplier, EfficiencyPerLevel));
 
             JSONNode array;
-            if (Pipliz.JSON.JSON.Deserialize("gamedata/mods/colonyplusplus/npcnames.json", out array, false))
+            if (Pipliz.JSON.JSON.Deserialize("gamedata/mods/ColonyPlusPlus-Core/npcnames.json", out array, false))
             {
                 NPCNameList = array;
                 ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loaded NPC Names List");
