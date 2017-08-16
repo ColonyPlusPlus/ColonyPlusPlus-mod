@@ -9,7 +9,7 @@
         {
             ColonyAPI.Managers.MaterialManager.createMaterial("wildberrybush", "wildberrybush", "neutral", "berrybush", "berrybush");
             ColonyAPI.Managers.MaterialManager.createMaterial("vegetablepatch", "leavesTemperate", "neutral", "leavesTemperate", "leavesTemperate");
-            ColonyAPI.Managers.MaterialManager.createMaterial("sugarcane", "clayblocklime", "neutral", "leavesTemperate", "leavesTemperate");
+            ColonyAPI.Managers.MaterialManager.createMaterial("sugarcane", "grassTemperate", "neutral", "leavesTemperate", "leavesTemperate");
 
 
             ColonyAPI.Managers.MaterialManager.createMaterial("cpplogtemperatetop", "cpplogtemperatetop", "neutral", "plasterblock", "plasterblock");

@@ -1,5 +1,4 @@
 using Pipliz.Chatting;
-using static Players;
 using System;
 using System.Collections.Generic;
 using ColonyPlusPlusDecorative.Classes;
@@ -7,15 +6,15 @@ using ColonyPlusPlusDecorative.Classes;
 namespace ColonyPlusPlusDecorative
 {
     [ModLoader.ModManager]
-    public class ColonyPlusPlus
+    public class ColonyPlusPlusDecorative
     {
         
         private static int plyID = 0;
         public static Version modVersion = new Version(0, 2, 0);
 
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusdecorative.AfterStartup")]
-        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterStartup")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusdecorative.initialise")]
+        [ModLoader.ModCallbackDependsOn("colonyapi.initialise")]
         public static void AfterStartup()
         {
 
@@ -25,20 +24,26 @@ namespace ColonyPlusPlusDecorative
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Loaded ColonyPlusPlus Decorative v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);
         }
 
-        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypes")]
-        [ModLoader.ModCallbackProvidesFor("colonyapi.AfterAddingBaseTypes")]
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypesMaterials")]
+        [ModLoader.ModCallbackProvidesFor("colonyapi.registerMaterials")]
         public static void AfterAddingBaseTypes()
         {
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Starting AfterAddingBaseTypes");
 
             // Register Materials
             Managers.MaterialManager.initialiseMaterials();
 
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Registered Materials");
+        }
+
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterAddingBaseTypes, "colonyplusplusdecorative.AfterAddingBaseTypesBlocks")]
+        [ModLoader.ModCallbackProvidesFor("colonyapi.discoverTypes")]
+        public static void RegisterTypes()
+        {
             // Register Types
             Managers.BlockManager.register();
 
-            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Ending AfterAddingBaseTypes");
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Registered Blocks");
         }
-      
+
     }
 }

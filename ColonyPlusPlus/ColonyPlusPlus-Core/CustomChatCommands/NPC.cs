@@ -30,6 +30,8 @@ namespace ColonyPlusPlusCore.CustomChatCommands
 
         override protected bool RunCommand(Players.Player player, string[] args, NetworkID target)
         {
+
+            ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus", "NPC Command Called");
             if (PermissionsManager.CheckAndWarnPermission(player, "npc.info"))
             {
                 if (args.Length == 1)

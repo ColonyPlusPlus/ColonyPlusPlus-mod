@@ -234,7 +234,7 @@ namespace ColonyPlusPlusUtilities.Managers
                     // what about chunk ownership
                     if (allowBlockPlaceChunkOwnership(d))
                     {
-                        if (d.typeNew == ItemTypes.IndexLookup.GetIndex("water"))
+                        if (d.TypeNew == ItemTypes.IndexLookup.GetIndex("water"))
                         {
                             if (PermissionsManager.CheckAndWarnPermission(Players.GetPlayer(d.requestedBy.ID), "world.spawnbuilder"))
                             {
@@ -247,9 +247,9 @@ namespace ColonyPlusPlusUtilities.Managers
                     }
                     else
                     {
-                        if (d.typeNew == ItemTypes.IndexLookup.GetIndex("banner"))
+                        if (d.TypeNew == ItemTypes.IndexLookup.GetIndex("banner"))
                         {
-                            string ChunkID = ColonyAPI.Managers.WorldManager.XZPositionToString(d.position.ToChunk());
+                            string ChunkID = ColonyAPI.Managers.WorldManager.XZPositionToString(d.voxelHit.ToChunk());
                             if (Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
                             {
                                 Data.ChunkData cd = Managers.WorldManager.ChunkDataList[ChunkID];
@@ -306,8 +306,8 @@ namespace ColonyPlusPlusUtilities.Managers
 
                 int distancex, distancez = 0;
 
-                int playerX = (int)Pipliz.Math.RoundToInt(d.position.x);
-                int playerZ = (int)Pipliz.Math.RoundToInt(d.position.z);
+                int playerX = (int)Pipliz.Math.RoundToInt(d.voxelHit.x);
+                int playerZ = (int)Pipliz.Math.RoundToInt(d.voxelHit.z);
 
                 distancex = System.Math.Abs(playerX - startingX);
                 distancez = System.Math.Abs(playerZ - startingZ);
@@ -341,7 +341,7 @@ namespace ColonyPlusPlusUtilities.Managers
                 return true;
             }
 
-            string ChunkID = ColonyAPI.Managers.WorldManager.XZPositionToString(d.position.ToChunk());
+            string ChunkID = ColonyAPI.Managers.WorldManager.XZPositionToString(d.voxelHit.ToChunk());
             if (Managers.WorldManager.ChunkDataList.ContainsKey(ChunkID))
             {
                 Data.ChunkData cd = Managers.WorldManager.ChunkDataList[ChunkID];
