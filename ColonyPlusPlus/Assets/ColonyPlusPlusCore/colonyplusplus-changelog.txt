@@ -1,7 +1,7 @@
 Version 0.2.0 (DD-MM-17): (Colony Survival 0.3.0)
 -------------------------------------
 Added:
-	CUSTOM JOBS
+	Custom Jobs
 		Chicken plucker
 			Requires: Chickencoop
 		Stonemason
@@ -14,29 +14,37 @@ Added:
 			Requires: Pottery Table
 		Skilled Archer
 			Requires: QuiverTier2 (Needs to be named something better)
-	Anvil
-		Recipe: 8 Iron Ingot
-	Chickencoop
-		Recipe: 8 Planks, 9 Straw
-	Mason Table
-		Recipe: Temperate Log, 4 Planks, 3 Stone Brick
-	Pottery Table
-		Recipe: Temperate Log, 4 Planks, 1 Stone Brick
-	QuiverTier2
-		Recipe: Quiver, 5 Iron Ingot
-	Sawmill
-		Recipe: 12 Planks, 1 Iron Ingot
-	NPC Jobs now gain XP and do their job faster!
-	Windows both single and two block high.
-	Can now enable or disable parts of the mod via the config.json file in the mod folder.
-	Message of the Day Feature.
-	Rotating Messages:
-		Rotates between messages after X seconds, both of these can be set in the config.json file
-	Version checking:
-		When you sign into the game it'll check if your running the newest version of the mod
+			
+	Blocks
+		Anvil
+			Recipe: 8 Iron Ingot
+		Chickencoop
+			Recipe: 8 Planks, 9 Straw
+		Mason Table
+			Recipe: Temperate Log, 4 Planks, 3 Stone Brick
+		Pottery Table
+			Recipe: Temperate Log, 4 Planks, 1 Stone Brick
+		QuiverTier2
+			Recipe: Quiver, 5 Iron Ingot
+		Sawmill
+			Recipe: 12 Planks, 1 Iron Ingot
+		Windows both single and two block high.
+		
+	Features
+		Can now enable or disable parts of the mod via the config.json file in the mod folder.
+		NPC Jobs now gain XP and do their job faster!
+		Message of the Day Feature.
+		Rotating Messages:
+			Rotates between messages after X seconds, both of these can be set in the config.json file
+		Version checking:
+			When you sign into the game it'll check if your running the newest version of the mod
+			
 	New commands (Admins)
 		Ban/Unban - Can now ban or unban a player via command, banning kicks the player from the server.
 		Kick - Kicks a player from the server
+	
+	Localization
+		Started on de-DE(German Standard)
 
 Changed:
 	Goldcoin Recipe is now 1 goldingot = 2 gold coins

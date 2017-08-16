@@ -2,22 +2,17 @@
 	"carrotstage1" : "Karotten",
 	"cheese" : "Käse",
 	"egg" : "Eier",
-	
-	
-	
-	
-	
-	"feather" : "Feather",
+	"feather" : "Feder",
 	"lettucestage1" : "Lettuce",
-	"milk" : "Milk",
-	"onionstage1" : "Onion",
-	"potatostage1" : "Potato",
+	"milk" : "Milch",
+	"onionstage1" : "Zweibel",
+	"potatostage1" : "Kartoffel",
 	"salt" : "Salt",
 	"sugar" : "Sugar",
 	"sugarcaneitem" : "Sugarcane",
 	"bakedpotato" : "Baked potato",
-	"butter" : "Butter",
-	"cake" : "Cake",
+	"butter" : "Bütter",
+	"cake" : "Kartoffel",
 	"jam" : "Jam",
 	"jambread" : "Jam filled bun",
 	"omlette" : "Omlette",
