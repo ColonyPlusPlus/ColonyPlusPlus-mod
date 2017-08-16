@@ -364,7 +364,8 @@ namespace ColonyPlusPlusUtilities.Managers
         public static void acceptTeleport(Players.Player ply)
         {
             Data.PlayerData pd = getPlayerData(ply);
-            bool sucessful = Players.TryGetPlayer(pd.tpRequester, out Players.Player partner);
+            Players.Player partner;
+            bool sucessful = Players.TryGetPlayer(pd.tpRequester, out partner);
             if (!sucessful)
             {
                 Chat.sendSilent(ply, "TP request invalid, deleting.");
@@ -396,7 +397,8 @@ namespace ColonyPlusPlusUtilities.Managers
         public static void rejectTeleport(Players.Player ply)
         {
             Data.PlayerData pd = getPlayerData(ply);
-            bool sucessful = Players.TryGetPlayer(pd.tpRequester, out Players.Player partner);
+            Players.Player partner;
+            bool sucessful = Players.TryGetPlayer(pd.tpRequester, out partner);
             if (!sucessful )
             {
                 Chat.sendSilent(ply, "TP request invalid, deleting.");
