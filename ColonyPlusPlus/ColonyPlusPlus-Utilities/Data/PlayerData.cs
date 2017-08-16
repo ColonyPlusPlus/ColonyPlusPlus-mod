@@ -5,6 +5,9 @@
         public NetworkID PID { get; private set; }
         public string chunkID;
         public TradeData tradeData;
+        public NetworkID tpRequester = NetworkID.Invalid;
+        public bool requestingTP = false;
+        public bool tpHere = false;
 
         /// <summary>
         /// 

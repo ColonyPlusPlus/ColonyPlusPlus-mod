@@ -12,7 +12,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
 		protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
 		{
-			return false;
+			return true;
 		}
 
 

@@ -328,5 +328,93 @@ namespace ColonyPlusPlusUtilities.Managers
         {
             return ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "trade.enabled");
         }
+
+        public static void notifyTeleport(Players.Player from, Players.Player to, bool here)
+        {
+            Data.PlayerData fromPD = getPlayerData(from);
+            Data.PlayerData toPD = getPlayerData(to);
+
+            if (fromPD.requestingTP || fromPD.tpRequester != NetworkID.Invalid)
+            {
+                Chat.sendSilent(from, "You already have an outstanding tp request.");
+                return;
+            }
+
+            if (toPD.tpRequester != NetworkID.Invalid || toPD.requestingTP)
+            {
+                Chat.sendSilent(from, "That player already has a request.");
+                Chat.sendSilent(to, "Someone tried to send you a tp request, but you already have one.");
+                return;
+            }
+
+            toPD.tpRequester = from.ID;
+            fromPD.tpRequester = to.ID;
+            fromPD.requestingTP = true;
+            toPD.tpHere = here;
+
+            Chat.sendSilent(from, (here?"TPHere":"TP") + " request sent to " + to.Name + ".");
+            Chat.sendSilent(from, "Type '/tp reject' to cancel the request.");
+            Chat.sendSilent(to, (here ? "TPHere" : "TP") + " request from " + from.Name + ".");
+            Chat.sendSilent(to, "Type '/tp accept' to allow " + from.Name + " to teleport " + (here?"here":"to you" ) + ", or type '/tp reject' to disallow.");
+
+            playerDataDict[from.ID] = fromPD;
+            playerDataDict[to.ID] = toPD;
+        }
+
+        public static void acceptTeleport(Players.Player ply)
+        {
+            Data.PlayerData pd = getPlayerData(ply);
+            bool sucessful = Players.TryGetPlayer(pd.tpRequester, out Players.Player partner);
+            if (!sucessful)
+            {
+                Chat.sendSilent(ply, "TP request invalid, deleting.");
+            } else
+            {
+                Data.PlayerData partnerPD = getPlayerData(partner);
+                if (pd.tpHere)
+                {
+                    Chat.sendSilent(ply, "Teleporting you to " + partner.Name + ".");
+                    Chat.sendSilent(partner, "Teleporting " + ply.Name + " to you.");
+                    ChatCommands.Implementations.Teleport.TeleportTo(ply, partner.Position);
+                } else
+                {
+                    Chat.sendSilent(ply, "Teleporting " + partner.Name + " to you.");
+                    Chat.sendSilent(partner, "Teleporting you to " + ply.Name + ".");
+                    ChatCommands.Implementations.Teleport.TeleportTo(partner, ply.Position);
+                }
+                partnerPD.tpRequester = NetworkID.Invalid;
+                partnerPD.requestingTP = false;
+                partnerPD.tpHere = false;
+                playerDataDict[partner.ID] = partnerPD;
+            }
+            pd.tpRequester = NetworkID.Invalid;
+            pd.requestingTP = false;
+            pd.tpHere = false;
+            playerDataDict[ply.ID] = pd;
+        }
+
+        public static void rejectTeleport(Players.Player ply)
+        {
+            Data.PlayerData pd = getPlayerData(ply);
+            bool sucessful = Players.TryGetPlayer(pd.tpRequester, out Players.Player partner);
+            if (!sucessful )
+            {
+                Chat.sendSilent(ply, "TP request invalid, deleting.");
+            }
+            else
+            {
+                Data.PlayerData partnerPD = getPlayerData(partner);
+                Chat.sendSilent(ply, "You canceled your TP request to " + partner.Name + ".");
+                Chat.sendSilent(partner, ply.Name + " canceled their TP request.");
+                partnerPD.tpRequester = NetworkID.Invalid;
+                partnerPD.requestingTP = false;
+                partnerPD.tpHere = false;
+                playerDataDict[partner.ID] = partnerPD;
+            }
+            pd.tpRequester = NetworkID.Invalid;
+            pd.requestingTP = false;
+            pd.tpHere = false;
+            playerDataDict[ply.ID] = pd;
+        }
     }
 }

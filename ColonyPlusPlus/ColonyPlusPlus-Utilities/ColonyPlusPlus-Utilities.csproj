@@ -67,6 +67,7 @@
     <Compile Include="CustomChatCommands\Kick.cs" />
     <Compile Include="CustomChatCommands\Locate.cs" />
     <Compile Include="CustomChatCommands\Online.cs" />
+    <Compile Include="CustomChatCommands\TPA.cs" />
     <Compile Include="CustomChatCommands\Trade.cs" />
     <Compile Include="CustomChatCommands\Trash.cs" />
     <Compile Include="CustomChatCommands\WorldEdit.cs" />

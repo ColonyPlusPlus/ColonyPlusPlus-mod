@@ -1,4 +1,5 @@
 ﻿using System;
+using Pipliz.Chatting;
 
 namespace ColonyPlusPlusUtilities.CustomChatCommands
 {
@@ -11,7 +12,12 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
 
         protected override bool RunCommand(Players.Player ply, string[] args, NetworkID target)
         {
-            return false;
+            if (!ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "trade.enabled"))
+            {
+                Chat.Send(ply, "Trade has been disabled on this server.");
+                return false;
+            }
+            else return true;
         }
     }
 
@@ -61,11 +67,7 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             }
             ushort giveid = 0;
             int giveamt = 0;
-            bool sucessful = UInt16.TryParse(args[1], out giveid);
-            if (!sucessful)
-            {
-                sucessful = sucessful || ItemTypes.IndexLookup.TryGetIndex(args[1], out giveid);
-            }
+            bool sucessful = ItemTypes.IndexLookup.TryGetIndex(args[1], out giveid);
             sucessful = sucessful && Int32.TryParse(args[2], out giveamt);
             if (!sucessful)
             {
@@ -97,17 +99,9 @@ namespace ColonyPlusPlusUtilities.CustomChatCommands
             int takeamt = 0;
             ushort giveid = 0;
             int giveamt = 0;
-            bool sucessful = UInt16.TryParse(args[1], out takeid);
-            if (!sucessful)
-            {
-                sucessful = sucessful || ItemTypes.IndexLookup.TryGetIndex(args[1], out takeid);
-            }
+            bool sucessful = ItemTypes.IndexLookup.TryGetIndex(args[1], out giveid);
             sucessful = sucessful && Int32.TryParse(args[2], out takeamt);
-            bool giveSucessful = UInt16.TryParse(args[3], out giveid);
-            if (!giveSucessful)
-            {
-                giveSucessful = giveSucessful || ItemTypes.IndexLookup.TryGetIndex(args[3], out giveid);
-            }
+            bool giveSucessful = ItemTypes.IndexLookup.TryGetIndex(args[3], out giveid);
             sucessful = sucessful && giveSucessful;
             sucessful = sucessful && Int32.TryParse(args[4], out giveamt);
             if (!sucessful)
