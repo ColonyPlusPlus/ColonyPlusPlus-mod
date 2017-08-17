@@ -1,3 +1,8 @@
+Version 0.2.0b (16-08-17): (Colony Survival 0.3.0)
+-------------------------------------
+Fixed:
+	Erroneous overwriting of some core files
+
 Version 0.2.0 (16-08-17): (Colony Survival 0.3.0)
 -------------------------------------
 Added:

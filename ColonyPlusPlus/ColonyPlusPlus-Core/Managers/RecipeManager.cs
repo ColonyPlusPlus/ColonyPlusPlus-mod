@@ -16,7 +16,7 @@ namespace ColonyPlusPlusCore.Managers
             ColonyAPI.Managers.JobManager.RegisterJobType("carpentry", "cpp.carpenter");
             ColonyAPI.Managers.JobManager.RegisterJobType("pottery", "cpp.potter");
             ColonyAPI.Managers.JobManager.RegisterJobType("masonry", "cpp.stonemason");
-            ColonyAPI.Managers.JobManager.RegisterJobType("chickenplucking", "cpp.chickenplucker");
+            ColonyAPI.Managers.JobManager.RegisterJobType("chickenplucker", "cpp.chickenplucker");
             ColonyAPI.Managers.JobManager.RegisterJobType("well", "cpp.welloperator");
 
             // Log the number of added recipes
