@@ -25,7 +25,7 @@ namespace ColonyPlusPlusCore.Types.Items
                     ColonyAPI.Managers.RecipeManager.Item("bottle", 2)
                 });
 
-            ColonyAPI.Managers.RecipeManager.AddRecipe("smelting",
+            ColonyAPI.Managers.RecipeManager.AddFueledRecipe("smelting",
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("sand", 2)
                 },

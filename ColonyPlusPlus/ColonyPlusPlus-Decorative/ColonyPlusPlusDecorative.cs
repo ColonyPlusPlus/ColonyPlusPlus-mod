@@ -10,7 +10,7 @@ namespace ColonyPlusPlusDecorative
     {
         
         private static int plyID = 0;
-        public static Version modVersion = new Version(0, 2, 0);
+        public static Version modVersion = new Version(0, 2, 0, 2);
 
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusdecorative.initialise")]
@@ -18,7 +18,7 @@ namespace ColonyPlusPlusDecorative
         public static void AfterStartup()
         {
 
-            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Decorative", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion.md");
+            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Decorative", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion_decorative.md");
             ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlus-Decorative", modVersion);
 
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Decorative", "Loaded ColonyPlusPlus Decorative v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);

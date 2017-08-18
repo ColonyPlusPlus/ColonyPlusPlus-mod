@@ -15,7 +15,7 @@ namespace ColonyPlusPlusUtilities
         private static bool ColonyLimitEnabled = false;
         private static int ColonyLimit = 0;
         private static int plyID = 0;
-        public static Version modVersion = new Version(0, 2, 0);
+        public static Version modVersion = new Version(0, 2, 0, 1);
 
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonyplusplusutilities.initialise")]
@@ -25,7 +25,7 @@ namespace ColonyPlusPlusUtilities
             ColonyAPI.Managers.ConfigManager.registerConfig("ColonyPlusPlus-Utilities");
 
 
-            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Utilities", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion.md");
+            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Utilities", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion_utilities.md");
             ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlus-Utilities", modVersion);
 
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Utilities", "Loaded ColonyPlusPlus Utilities v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);

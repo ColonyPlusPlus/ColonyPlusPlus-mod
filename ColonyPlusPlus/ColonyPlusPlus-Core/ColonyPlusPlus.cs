@@ -15,7 +15,7 @@ namespace ColonyPlusPlusCore
         private static bool ColonyLimitEnabled = false;
         private static int ColonyLimit = 0;
         private static int plyID = 0;
-        public static Version modVersion = new Version(0, 2, 0);
+        public static Version modVersion = new Version(0, 2, 0, 5);
 
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonypluspluscore.AfterStartup")]
@@ -23,7 +23,7 @@ namespace ColonyPlusPlusCore
         public static void AfterStartup()
         {
 
-            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Core", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion.md");
+            ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Core", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion_core.md");
             ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlus-Core", modVersion);
 
             // Initialise configuration

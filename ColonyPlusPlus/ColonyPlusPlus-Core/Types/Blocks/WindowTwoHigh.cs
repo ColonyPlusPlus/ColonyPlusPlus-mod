@@ -27,7 +27,7 @@ namespace ColonyPlusPlusCore.Types.Blocks
 
         public override void AddRecipes()
         {
-            ColonyAPI.Managers.RecipeManager.AddRecipe("crafting",
+            ColonyAPI.Managers.RecipeManager.AddRecipe("carpentry",
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("planks", 4)
                 },
