@@ -18,7 +18,7 @@ namespace ColonyPlusPlusCore.Types.Items
 
         public override void AddRecipes()
         {
-            ColonyAPI.Managers.RecipeManager.AddRecipe("baking",
+            ColonyAPI.Managers.RecipeManager.AddFueledRecipe("baking",
                 new List<InventoryItem> {
                     ColonyAPI.Managers.RecipeManager.Item("jam", 1),
                     ColonyAPI.Managers.RecipeManager.Item("bread", 1)

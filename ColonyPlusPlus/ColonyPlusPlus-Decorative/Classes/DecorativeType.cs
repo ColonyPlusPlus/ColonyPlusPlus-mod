@@ -19,6 +19,7 @@ namespace ColonyPlusPlusDecorative.Classes
             this.CraftingType = craftingtype;
             this.CraftingRequiredItem = craftingingredients;
             this.AllowCreative = true;
+            this.SideAll = basematerial;
 
             this.OnPlaceAudio = "stonePlace";
             this.OnRemoveAudio = "stoneDelete";

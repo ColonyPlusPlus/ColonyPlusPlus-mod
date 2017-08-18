@@ -1,4 +1,14 @@
-Version 0.2.0b (16-08-17): (Colony Survival 0.3.0)
+Version 0.2.0d (18-08-17): (Colony Survival 0.3.0)
+-------------------------------------
+Fixed:
+	More recipes! (Omlette, Baked potato)
+
+Version 0.2.0c (16-08-17): (Colony Survival 0.3.0)
+-------------------------------------
+Fixed:
+	Cake recipe....
+
+Version 0.2.0b (17-08-17): (Colony Survival 0.3.0)
 -------------------------------------
 Fixed:
 	Erroneous overwriting of some core files
