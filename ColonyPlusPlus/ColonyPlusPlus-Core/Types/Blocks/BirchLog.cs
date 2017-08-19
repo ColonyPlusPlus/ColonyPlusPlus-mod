@@ -7,10 +7,10 @@ namespace ColonyPlusPlus_Core.Types.Blocks
 {
     class BirchLog : ColonyAPI.Classes.Type, ColonyAPI.Interfaces.IAutoType
     {
-        public BirchLog(string name) : base(name, true)
+        public BirchLog() : base(true)
         {
             ColonyAPI.Classes.ItemHelper.OnRemove[] onRemoveNode = {
-                new ColonyAPI.Classes.ItemHelper.OnRemove("logcubetaiga",   1,  1.0f)
+                new ColonyAPI.Classes.ItemHelper.OnRemove("birchlog",   1,  1.0f)
             };
             this.OnRemove = onRemoveNode;
 
@@ -18,6 +18,7 @@ namespace ColonyPlusPlus_Core.Types.Blocks
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
 
+            this.Mesh = "../mods/ColonyPlusPlus-Core/meshes/birchlog";
             this.SideAll = "cpplogbirch";
             this.SideYPlus = "cpplogtaigatop";
             this.SideYMinus = "cpplogtaigatop";
