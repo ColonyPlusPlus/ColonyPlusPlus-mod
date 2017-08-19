@@ -3,11 +3,11 @@
 	"trees" : [
 		{
 			"tree" : "temperateTreeSmall",
-			"chance" : 0.3555
+			"chance" : 0.3333
 		},
 		{
 			"tree" : "temperateTreeTiny",
-			"chance" : 0.3555
+			"chance" : 0.3333
 		},
 		{
 			"tree" : "temperateTreeMedium1",
@@ -31,20 +31,18 @@
 		},
 		
 		
-		
-		
-		
-		
+		{
+			"tree" : "birchTree",
+			"chance" : 0.3333
+		},
 		{
 			"tree" : "wildberrybush",
 			"chance" : 0.0222
-		}
-
+		},
 		{
 			"tree" : "vegetablepatch",
 			"chance" : 0.0222
-		}
-
+		},
 		{
 			"tree" : "sugarcane",
 			"chance" : 0.0222

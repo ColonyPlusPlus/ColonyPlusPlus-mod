@@ -1,4 +1,6 @@
-﻿namespace ColonyPlusPlusCore.Managers
+﻿using ColonyAPI.Managers;
+
+namespace ColonyPlusPlusCore.Managers
 {
     public static class MaterialManager
     {
@@ -16,6 +18,8 @@
             ColonyAPI.Managers.MaterialManager.createMaterial("cpplogtemperate", "cpplogtemperate", "neutral", "plasterblock", "plasterblock");
             ColonyAPI.Managers.MaterialManager.createMaterial("cpplogtaiga", "cpplogtaiga", "neutral", "plasterblock", "plasterblock");
             ColonyAPI.Managers.MaterialManager.createMaterial("cpplogtaigatop", "cpplogtaigatop", "neutral", "plasterblock", "plasterblock");
+
+            ColonyAPI.Managers.MaterialManager.createMaterial("cpplogbirch", "birch", "neutral", "plasterblock", "plasterblock");
 
             // job stuff
             ColonyAPI.Managers.MaterialManager.createMaterial("welltop", "well", "neutral", "well", "plasterblock");

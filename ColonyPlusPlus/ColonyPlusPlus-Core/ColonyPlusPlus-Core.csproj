@@ -88,6 +88,7 @@
     <Compile Include="Managers\RecipeManager.cs" />
     <Compile Include="Managers\TypeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\Blocks\BirchLog.cs" />
     <Compile Include="Types\Blocks\BirdNest.cs" />
     <Compile Include="Types\Blocks\LogCube.cs" />
     <Compile Include="Types\Blocks\LogCubeRotated.cs" />
