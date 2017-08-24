@@ -60,7 +60,7 @@ namespace ColonyPlusPlusCore.Classes.BlockJobs.Defense
                 if (General.Physics.Physics.CanSee(npcPos, targetPos))
                 {
                     usedNPC.LookAt(targetPos);
-                    if (Stockpile.GetStockPile(owner).Remove(BuiltinBlocks.Arrow, 1))
+                    if (Stockpile.GetStockPile(owner).TryRemove(BuiltinBlocks.Arrow, 1))
                     {
                         Arrow.New(npcPos, targetPos, target.Direction);
                         AddXP();
