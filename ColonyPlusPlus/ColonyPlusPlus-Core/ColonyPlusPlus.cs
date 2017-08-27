@@ -1,5 +1,6 @@
 using static Players;
 using System;
+using System.IO;
 
 namespace ColonyPlusPlusCore
 {
@@ -17,12 +18,20 @@ namespace ColonyPlusPlusCore
         private static int plyID = 0;
         public static Version modVersion = new Version(0, 2, 0, 5);
 
+        public static string ModDir;
 
+        [ModLoader.ModCallback(ModLoader.EModCallbackType.OnAssemblyLoaded, "colonypluspluscore.assemblyload")]
+        public static void OnAssemblyLoaded(string path)
+        {
+            ModDir = Path.GetDirectoryName(path);
+            string[] modname = ModDir.Split('\\');
+            ModDir = modname[modname.Length - 1];
+        }
         [ModLoader.ModCallback(ModLoader.EModCallbackType.AfterStartup, "colonypluspluscore.AfterStartup")]
         [ModLoader.ModCallbackDependsOn("colonyapi.initialise")]
         public static void AfterStartup()
         {
-
+            
             ColonyAPI.Managers.VersionManager.addVersionURL("ColonyPlusPlus-Core", "https://raw.githubusercontent.com/ColonyPlusPlus/ColonyPlusPlus/master/docs/currentversion_core.md");
             ColonyAPI.Managers.VersionManager.runVersionCheck("ColonyPlusPlus-Core", modVersion);
 
@@ -35,9 +44,7 @@ namespace ColonyPlusPlusCore
                 ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlus-Core", "colony.limit");
             }
 
-
             ColonyAPI.Helpers.Utilities.WriteLog("ColonyPlusPlus-Core", "Loaded ColonyPlusPlus Core v" + modVersion.ToString(), ColonyAPI.Helpers.Chat.ChatColour.yellow, ColonyAPI.Helpers.Chat.ChatStyle.normal);
-
         }
 
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnPlayerConnectedLate, "colonypluspluscore.OnPlayerConnectedLate")]
