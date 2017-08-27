@@ -1,3 +1,8 @@
+Version ?.?.? (DD-MM-17): (Colony Survival 0.3.0)
+-------------------------------------
+Changed:
+	Updated the English Localization to be up to date with the current base game.
+
 Version 0.2.0d (18-08-17): (Colony Survival 0.3.0)
 -------------------------------------
 Fixed:
