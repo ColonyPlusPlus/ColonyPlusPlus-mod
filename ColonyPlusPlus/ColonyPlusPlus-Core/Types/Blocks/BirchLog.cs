@@ -18,7 +18,7 @@ namespace ColonyPlusPlus_Core.Types.Blocks
             this.OnPlaceAudio = "woodPlace";
             this.OnRemoveAudio = "woodDeleteLight";
 
-            this.Mesh = "../mods/ColonyPlusPlus-Core/meshes/birchlog";
+            this.Mesh = "birchlog";
             this.SideAll = "cpplogbirch";
             this.SideYPlus = "cpplogtaigatop";
             this.SideYMinus = "cpplogtaigatop";
