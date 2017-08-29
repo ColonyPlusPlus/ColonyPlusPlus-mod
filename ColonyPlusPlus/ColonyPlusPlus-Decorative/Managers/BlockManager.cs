@@ -24,7 +24,7 @@ namespace ColonyPlusPlusDecorative.Managers
                 DecorativeTypeManager.TypeOption.TwoStairs, DecorativeTypeManager.TypeOption.FourStairs };
 
             List<KeyValuePair<string, int>> clayblockReqs = new List<KeyValuePair<string, int>>() { new KeyValuePair<string, int>("clay", 1), new KeyValuePair<string, int>("waterbottle", 1) };
-
+            #region Clayblocks
             DecorativeTypeManager clayblock = new DecorativeTypeManager("clayblock", "clayblock", clayblockReqs, "pottery", clayblocktypes);
             DecorativeTypeManager clayblockblack = new DecorativeTypeManager("clayblockblack", "clayblockblack", clayblockReqs, "pottery", clayblocktypes);
             DecorativeTypeManager clayblockblue = new DecorativeTypeManager("clayblockblue", "clayblockblue", clayblockReqs, "pottery", clayblocktypes);
@@ -42,6 +42,17 @@ namespace ColonyPlusPlusDecorative.Managers
             DecorativeTypeManager clayblocksilver = new DecorativeTypeManager("clayblocksilver", "clayblocksilver", clayblockReqs, "pottery", clayblocktypes);
             DecorativeTypeManager clayblockwhite = new DecorativeTypeManager("clayblockwhite", "clayblockwhite", clayblockReqs, "pottery", clayblocktypes);
             DecorativeTypeManager clayblockyellow = new DecorativeTypeManager("clayblockyellow", "clayblockyellow", clayblockReqs, "pottery", clayblocktypes);
+            #endregion
+
+            DecorativeTypeManager.TypeOption[] blocktypes = new DecorativeTypeManager.TypeOption[] {
+                DecorativeTypeManager.TypeOption.Curve, DecorativeTypeManager.TypeOption.CurveRotated, DecorativeTypeManager.TypeOption.CurveCorner,
+                DecorativeTypeManager.TypeOption.Slope, DecorativeTypeManager.TypeOption.SlopeCorner, DecorativeTypeManager.TypeOption.SlopeInsideCorner,
+                DecorativeTypeManager.TypeOption.UpsideDownSlope, DecorativeTypeManager.TypeOption.UpsideDownSlopeCorner, DecorativeTypeManager.TypeOption.UpsideDownSlopInsideCorner,
+                DecorativeTypeManager.TypeOption.TwoStairs, DecorativeTypeManager.TypeOption.FourStairs };
+            #region Non-Clay (Base game textures)
+            List<KeyValuePair<string, int>> blockReqs = new List<KeyValuePair<string, int>>() { new KeyValuePair<string, int>("planks", 1) };
+            DecorativeTypeManager planks = new DecorativeTypeManager("planks", "planks", blockReqs, "carpentry", blocktypes);
+            #endregion
         }
     }
 }
