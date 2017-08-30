@@ -15,6 +15,8 @@ namespace ColonyPlusPlusUtilities
         private static bool ColonyLimitEnabled = false;
         private static int ColonyLimit = 0;
         private static int plyID = 0;
+
+        private static bool ChunkClaim = false;
         public static Version modVersion = new Version(0, 2, 0, 1);
 
 
@@ -40,7 +42,7 @@ namespace ColonyPlusPlusUtilities
             {
                 ColonyLimit = ColonyAPI.Managers.ConfigManager.getConfigInt("ColonyPlusPlus-Utilities", "colony.limit");
             }
-
+            ChunkClaim = ColonyAPI.Managers.ConfigManager.getConfigBoolean("ColonyPlusPlus-Utilities", "chunks.enabled");
             
 
            
@@ -142,7 +144,10 @@ namespace ColonyPlusPlusUtilities
             {
                 return true;
             }
-            bool allowed = Managers.WorldManager.AllowPlaceBlock(d);
+            if(ChunkClaim)
+            {
+                bool allowed = Managers.WorldManager.AllowPlaceBlock(d);
+            }
 
             //Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
             return allowed;
