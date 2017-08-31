@@ -139,14 +139,14 @@ namespace ColonyPlusPlusUtilities
         [ModLoader.ModCallback(ModLoader.EModCallbackType.OnTryChangeBlockUser, "colonyplusplusutilities.OnTryChangeBlockUser")]
         public static bool OnTryChangeBlockUser(ModLoader.OnTryChangeBlockUserData d)
         {
-
+            bool allowed = false;
             if (d.requestedBy.ID.steamID.m_SteamID == 0)
             {
                 return true;
             }
             if(ChunkClaim)
             {
-                bool allowed = Managers.WorldManager.AllowPlaceBlock(d);
+                allowed = Managers.WorldManager.AllowPlaceBlock(d);
             }
 
             //Chat.Send(Players.GetPlayer(d.requestedBy.ID), "Block place allowed: " + allowed);
